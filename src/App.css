@@ -51,4 +51,14 @@
     .link-with-gradient-border:hover::after {
         width: 100%;
     }
+    .line1__bars-menu {
+        transform: rotate(45deg) translate(-2px, 1px);
+    }
+    .line2__bars-menu {
+        opacity: 0;
+        margin-left: -30px;
+    }
+    .line3__bars-menu {
+        transform: rotate(-45deg) translate(-2px, -1px);
+    }
 }

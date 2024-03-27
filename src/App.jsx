@@ -20,6 +20,9 @@ function App() {
     <>
       <Router>
         <Navbar />
+        <br/>
+        <br/>
+        <br/>
         <Routes>
           <Route exact path="/" element={<Inicio />} />
           <Route path="/conferencistas" element={<Conferencistas />} />
