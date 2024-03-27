@@ -20,18 +20,21 @@ export function Timer({Event_date}) {
             const actual = new Date();
             const difference = Event_date - actual;
 
-            // Calcula el tiempo restante
-            const weeks = Math.floor(difference / (1000 * 60 * 60 * 24 * 7));
-            const days = Math.floor((difference / (1000 * 60 * 60 * 24)) % 7);
-            const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-            const minutes = Math.floor((difference / (1000 * 60)) % 60);
-            const seconds = Math.floor((difference / 1000) % 60);
-            
-            // console.log(difference,weeks,days,hours,minutes,seconds);
-            setTime({ weeks, days, hours, minutes, seconds });
+            if (difference <= 0) {
+                clearInterval(intervalId);
+                setTime({ weeks: 0, days: 0, hours: 0, minutes: 0, seconds: 0 });
+            } else {
+                const weeks = Math.floor(difference / (1000 * 60 * 60 * 24 * 7));
+                const days = Math.floor((difference / (1000 * 60 * 60 * 24)) % 7);
+                const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((difference / (1000 * 60)) % 60);
+                const seconds = Math.floor((difference / 1000) % 60);
+                // console.log(difference,weeks,days,hours,minutes,seconds);
+                setTime({ weeks, days, hours, minutes, seconds });
+            }
         };
         const intervalId = setInterval(updateCountdown, 1000);
-        return () => clearInterval(intervalId);
+        return () => clearInterval(intervalId); 
     }
     
     useEffect(()=>{
