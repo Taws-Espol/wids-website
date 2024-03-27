@@ -10,7 +10,6 @@ export default {
                 'acumin': ['"Acumin Variable"', 'sans-serif'],
             },
         },
-
     },
     plugins: [],
 }
