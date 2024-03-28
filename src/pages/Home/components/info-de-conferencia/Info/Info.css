@@ -1,0 +1,43 @@
+.info-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    min-height: 9em;
+    width: 65em;
+    background-color: #232323;
+    color: #eeeeee;
+}
+
+.number-box {
+    margin: 0.2em;
+    min-width: 7.5em;
+    height: 100%;
+    border: 2px solid #6b6b6b;
+    border-radius: 1em;
+    position: relative;
+    padding-left: 1.5em;
+    padding-right: 2em;
+    border-right-color: transparent;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.number-box::before {
+    content: '';
+    position: absolute;
+    top: 19px;
+    left: -2.5px; /* Adjust this value to control the size of the cut-out */
+    width: 3px; /* Adjust this value to control the width of the cut-out */
+    height: 80px; /* Adjust this value to control the height of the cut-out */
+    background-color: #232323; /* Match this with the background color of your container */
+}
+
+.number-box::after {
+    content: '•';
+    position: absolute;
+    top: 45px;
+    left: -4px; /* Adjust this value to control the size of the cut-out */
+    width: 3px; /* Adjust this value to control the width of the cut-out */
+    height: 0;
+    color: #b0b0b0; /* Match this with the background color of your container */
+}
+
