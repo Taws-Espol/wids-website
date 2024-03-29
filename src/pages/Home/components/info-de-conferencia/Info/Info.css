@@ -2,7 +2,8 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     min-height: 9em;
-    width: 65em;
+    width: 60em;
+    padding: 0.5em;
     background-color: #232323;
     color: #eeeeee;
 }

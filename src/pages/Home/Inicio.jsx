@@ -7,7 +7,7 @@ function Inicio() {
             <div>
                 <h1 className="w-full text-center text-3xl font-sans font-bold" style={{color: '#004029'}}>
                     Conferencia
-                </h1>o
+                </h1>
                 <h2 className="w-full text-center text-xl font-mono p-5 font-semibold ">
                     13 de Julio, 2024 · Guayaquil - Espol
                 </h2>
