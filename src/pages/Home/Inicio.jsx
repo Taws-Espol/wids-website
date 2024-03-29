@@ -13,8 +13,8 @@ function Inicio() {
                 </h2>
                 <Info/>
             </div>
-            <div className='mt-20' style={{color: 'white', backgroundColor: 'black',}}>
-                <h1 className="text-center text-2xl font-serif font-bold">
+            <div className='mt-14' style={{color: 'white', backgroundColor: 'black',}}>
+                <h1 className="p-10 text-center text-3xl font-serif font-bold">
                     Conferencistas
                 </h1>
                 <Carrusel/>
