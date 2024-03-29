@@ -38,23 +38,23 @@ const settings = {
 const datos = [
    {
        id:1,
-       img:`src/pages/Home/components/info-de-conferencia/Carrusel/assets/prueba1.jpeg`
+       img:`src/assets/info-de-conferencia/Carrusel/prueba1.jpeg`
    },
    {
        id:2,
-       img:`src/pages/Home/components/info-de-conferencia/Carrusel/assets/prueba2.jpeg`
+       img:`src/assets/info-de-conferencia/Carrusel/prueba2.jpeg`
    },
    {
        id:3,
-       img:`src/pages/Home/components/info-de-conferencia/Carrusel/assets/prueba3.jpeg`
+       img:`src/assets/info-de-conferencia/Carrusel/prueba3.jpeg`
    },
    {
        id:4,
-       img:`src/pages/Home/components/info-de-conferencia/Carrusel/assets/prueba4.jpeg`
+       img:`src/assets/info-de-conferencia/Carrusel/prueba4.jpeg`
    },
    {
        id:5,
-       img:`src/pages/Home/components/info-de-conferencia/Carrusel/assets/prueba5.jpeg`
+       img:`src/assets/info-de-conferencia/Carrusel/prueba5.jpeg`
    }
 ];
 
