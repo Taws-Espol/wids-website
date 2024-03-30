@@ -1,11 +1,15 @@
 import {Carrusel} from "./Components/Carrusel";
 import InfoCarrusel from './components/info-de-conferencia/Carrusel/Carrusel';
 import Info from './components/info-de-conferencia/Info/Info'
+import Sponsors from "./Components/Sponsors";
+
 
 function Inicio() {
     return (
         <>
             <h1>INICIO</h1>
+            <Carrusel>
+            
             <Carrusel/>
             <section>
                 <div>
@@ -24,6 +28,7 @@ function Inicio() {
                     <InfoCarrusel/>
                 </div>
             </section>
+            <Sponsors/>
         </>
     )
 }
