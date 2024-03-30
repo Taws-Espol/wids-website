@@ -20,9 +20,7 @@ function App() {
     <>
       <Router>
         <Navbar />
-        <br/>
-        <br/>
-        <br/>
+        <div className='xl:h-40 h-20'></div> {/* div ghost Añadir un espacio para que no se oculte el contenido detrás del navbar */}
         <Routes>
           <Route exact path="/" element={<Inicio />} />
           <Route path="/conferencistas" element={<Conferencistas />} />
