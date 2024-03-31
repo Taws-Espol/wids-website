@@ -5,6 +5,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen1, setIsOpen1] = useState(false);
   const [isEventHovered, setIsEventHovered] = useState(false);
+  isEventHovered;
   const toggle = () => {
     setIsOpen(!isOpen);
   };
