@@ -19,14 +19,13 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar />
+        <Navbar/>
         <Routes>
           <Route exact path="/" element={<Inicio />} />
           <Route path="/conferencistas" element={<Conferencistas />} />
           <Route path="/cronograma" element={<Cronograma />} />
           <Route path="/eventos" element={<Eventos />} />
           <Route path="/nosotros" element={<Nosotros />} />
-          {/* Otras rutas aquí */}
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
