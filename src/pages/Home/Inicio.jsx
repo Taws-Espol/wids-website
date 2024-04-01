@@ -1,15 +1,12 @@
 import {Carrusel} from "./Components/Carrusel";
-import InfoCarrusel from './components/info-de-conferencia/Carrusel/Carrusel';
-import Info from './components/info-de-conferencia/Info/Info'
+import InfoCarrusel from './Components/info-de-conferencia/Carrusel/Carrusel';
+import Info from './Components/info-de-conferencia/Info/Info'
 import Sponsors from "./Components/Sponsors";
 
 
 function Inicio() {
     return (
         <>
-            <h1>INICIO</h1>
-            <Carrusel>
-            
             <Carrusel/>
             <section>
                 <div>
@@ -21,7 +18,7 @@ function Inicio() {
                     </h2>
                     <Info/>
                 </div>
-                <div className='mt-14' style={{color: 'white', backgroundColor: 'black',}}>
+                <div className='mt-14' style={{color: 'white', backgroundColor: 'black'}}>
                     <h1 className="p-10 text-center text-3xl font-serif font-bold">
                         Conferencistas
                     </h1>
@@ -30,7 +27,7 @@ function Inicio() {
             </section>
             <Sponsors/>
         </>
-    )
+    );
 }
 
 export default Inicio;

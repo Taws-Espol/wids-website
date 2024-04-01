@@ -19,15 +19,13 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar />
-        <div className='xl:h-40 h-20'></div> {/* div ghost Añadir un espacio para que no se oculte el contenido detrás del navbar */}
+        <Navbar/>
         <Routes>
           <Route exact path="/" element={<Inicio />} />
           <Route path="/conferencistas" element={<Conferencistas />} />
           <Route path="/cronograma" element={<Cronograma />} />
           <Route path="/eventos" element={<Eventos />} />
           <Route path="/nosotros" element={<Nosotros />} />
-          {/* Otras rutas aquí */}
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
