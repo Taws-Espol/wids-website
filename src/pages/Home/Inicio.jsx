@@ -27,9 +27,9 @@ function Inicio() {
                     <InfoCarrusel/>
                 </div>
             </section>
-            <Sponsors/>,
-            </Cronograma>,
-            </Ubicacion>
+            <Sponsors></Sponsors>,
+            <Cronograma/>,
+            <Ubicacion/>
         </>
     );
 
