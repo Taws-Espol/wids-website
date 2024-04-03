@@ -41,9 +41,10 @@ export function Timer({Event_date}) {
         updateTime(Event_date);
     });
 
+
     function Cuadro(props) {
         return (
-            <div className={`text-white h-28 w-28 flex flex-col place-content-center place-items-center text-center font-bold select-none  ${!props.isSec ? 'bg-gradient-to-b from-zinc-400 to-zinc-700' : 'bg-gradient-to-b from-pink-200 to-pink-500'} max-sm:w-14 max-sm:h-14 max-md:w-16 max-md:h-16 max-xl:w-[90px] max-xl:h-[90px] rounded-full` }>
+            <div className={`text-black h-28 w-28 flex flex-col place-content-center place-items-center text-center font-bold select-none  ${!props.isSec ? 'bg-white' : 'bg-gradient-to-b from-red-400 to-red-900'} max-sm:w-14 max-sm:h-14 max-md:w-16 max-md:h-16 max-xl:w-[90px] max-xl:h-[90px] rounded-full` }>
                 <p className="text-4xl max-sm:text-2xl max-lg:text-3xl">
                     {props.time}
                 </p>
