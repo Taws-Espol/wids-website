@@ -49,7 +49,7 @@ export function Carrusel() {
                 <p className="text-lg font-acumin font-normal">{infoImages[currentIndex].fecha}</p>
                 <p className="text-lg font-acumin font-normal">{infoImages[currentIndex].lugar}</p>
             </div>
-            <div className="absolute right-[5%] bottom-[8%] max-sm:left-[52%] max-md:left-[57%]  max-xl:left-[60%]  max-xl:transform max-xl:-translate-x-1/2 max-xl:translate-y-1/2 ">
+            <div className="absolute right-[5%] bottom-[9%] max-sm:left-[52%] max-md:left-[57%]  max-xl:left-[60%]  max-xl:transform max-xl:-translate-x-1/2 max-xl:translate-y-1/2 ">
                 <button className="text-white bg-blue-wids rounded-md px-10 py-3 text-center text-xl font-acumin font-medium">Registro</button>
             </div>
 
