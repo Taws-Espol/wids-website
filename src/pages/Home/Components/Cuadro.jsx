@@ -41,14 +41,14 @@ export function Timer({Event_date}) {
         updateTime(Event_date);
     });
 
-
     function Cuadro(props) {
+
         return (
-            <div className={`text-black h-28 w-28 flex flex-col place-content-center place-items-center text-center font-bold select-none  ${!props.isSec ? 'bg-white' : 'bg-gradient-to-b from-red-400 to-red-900'} max-sm:w-14 max-sm:h-14 max-md:w-16 max-md:h-16 max-xl:w-[90px] max-xl:h-[90px] rounded-full` }>
-                <p className="text-4xl max-sm:text-2xl max-lg:text-3xl">
+            <div className={`text-black h-28 w-24 flex flex-col place-content-center place-items-center font-bold select-none rounded-md ${!props.isSec ? 'bg-white' : 'bg-gradient-to-b from-red-400 to-red-900'} max-sm:w-14 max-sm:h-[72px] max-md:w-16  max-md:h-[80px] max-lg:w-20 max-lg:h-[96px] max-xl:w-[90px] max-xl:h-[116px]` }>
+                <p className="text-6xl max-md:text-3xl max-lg:test-4xl mx-xl:text-5xl">
                     {props.time}
                 </p>
-                <p className="text-xl max-sm:text-[10px] max-md:text-base max-lg:text-lg">
+                <p className="text-xl max-sm:text-sm max-md:text-base max-lg:text-lg">
                     {props.timeInfo}
                 </p>
             </div>
@@ -56,7 +56,7 @@ export function Timer({Event_date}) {
     }
 
     return (
-        <div className="bg-transparent flex flex-wrap gap-10 max-w-[900px] place-content-between p-1  max-sm:w-[340px] max-sm:gap-3 max-md:w-[500px] max-2xl:w-[800px] max-lg:gap-5" >
+        <div className="bg-transparent flex flex-wrap gap-4 max-w-[600px] place-content-between p-1  max-sm:w-[340px] max-md:w-[400px] max-lg:w-[500px] max-xl:w-[550px]   max-lg:gap-2 " >
             <Cuadro className=""
                 time={rest.weeks}
                 timeInfo="Weeks"

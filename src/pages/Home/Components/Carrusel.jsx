@@ -30,7 +30,7 @@ export function Carrusel() {
     // Second div left
     // Third div right 
     return (
-        <div className='m-0 h-[1000px] w-full py-2 relative group'>
+        <div className='m-0 h-[722px] w-full py-2 relative group'>
             <div
                 style={{ backgroundImage: `url(${infoImages[currentIndex].url})` }}
                 className='w-full h-full bg-center bg-cover duration-500'
@@ -41,15 +41,15 @@ export function Carrusel() {
             <div className='hidden group-hover:block absolute top-[50%] translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
                 <BsChevronCompactRight onClick={nextImage} size={30} />
             </div>
-            <div className="absolute bottom-[12%]  mx-xl:bottom-[16%] left-1/2 transform -translate-x-1/2 translate-y-1/2 flex justify-around max-xl:bottom-[20%]">
+            <div className="absolute bottom-[12%] max-lg:bottom-[22%] left-1/2 transform -translate-x-1/2 translate-y-1/2 flex justify-around">
                 <Timer Event_date = {new Date('July 13, 2024 00:00:00')}/>
             </div>
-            <div className="absolute top-[10%] left-[5%] text-white">
+            <div className="absolute top-[10%] left-[5%] text-white select-none">
                 <p className="text-4xl font-acumin font-bold">{infoImages[currentIndex].titulo}</p>
                 <p className="text-lg font-acumin font-normal">{infoImages[currentIndex].fecha}</p>
                 <p className="text-lg font-acumin font-normal">{infoImages[currentIndex].lugar}</p>
             </div>
-            <div className="absolute right-[5%] bottom-[9%] max-sm:left-[52%] max-md:left-[57%]  max-xl:left-[60%]  max-xl:transform max-xl:-translate-x-1/2 max-xl:translate-y-1/2 ">
+            <div className="absolute right-[5%] bottom-[9%] max-sm:left-[52%] max-md:left-[57%]  max-lg:left-[60%] max-lg:transform max-lg:-translate-x-1/2 max-lg:translate-y-1/2 ">
                 <button className="text-white bg-blue-wids rounded-md px-10 py-3 text-center text-xl font-acumin font-medium">Registro</button>
             </div>
 
