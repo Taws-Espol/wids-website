@@ -41,20 +41,16 @@ export function Carrusel() {
             <div className='hidden group-hover:block absolute top-[50%] translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
                 <BsChevronCompactRight onClick={nextImage} size={30} />
             </div>
+            <div className="absolute bottom-[12%]  mx-xl:bottom-[16%] left-1/2 transform -translate-x-1/2 translate-y-1/2 flex justify-around max-xl:bottom-[20%]">
+                <Timer Event_date = {new Date('July 13, 2024 00:00:00')}/>
+            </div>
             <div className="absolute top-[10%] left-[5%] text-white">
                 <p className="text-4xl font-acumin font-bold">{infoImages[currentIndex].titulo}</p>
                 <p className="text-lg font-acumin font-normal">{infoImages[currentIndex].fecha}</p>
                 <p className="text-lg font-acumin font-normal">{infoImages[currentIndex].lugar}</p>
             </div>
-            <div className="flex place-content-center w-full place-items-center absolute bottom-[12%] left-1/2 transform -translate-x-1/2 translate-y-1/2 max-xl:bottom-[20%]">
-                <div className="relative w-full flex place-content-end  place-items-center">
-                    <div className="absolute bottom-[12%] left-1/2 transform -translate-x-1/2 translate-y-1/2">
-                        <Timer Event_date = {new Date('July 13, 2024 00:00:00')}/>
-                    </div>
-                    <div className="absolute mr-20 ">
-                        <button className="text-white bg-blue-wids rounded-md px-10 py-3 text-center text-xl font-acumin font-medium">Registro</button>
-                    </div>
-                </div>
+            <div className="absolute right-[5%] bottom-[8%] max-sm:left-[52%] max-md:left-[57%]  max-xl:left-[60%]  max-xl:transform max-xl:-translate-x-1/2 max-xl:translate-y-1/2 ">
+                <button className="text-white bg-blue-wids rounded-md px-10 py-3 text-center text-xl font-acumin font-medium">Registro</button>
             </div>
 
         </div>
