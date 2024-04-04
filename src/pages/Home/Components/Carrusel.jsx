@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
-import { infoImages } from './info-Carrusel.js';
-import { Timer } from "./Cuadro.jsx";
+import { infoImages } from '../../../data/info-Carrusel.js';
+import { Timer } from "./Timer.jsx";
 import '../../../index.css'; // Asegúrate de que el path sea correcto.
 
 export function Carrusel() {
@@ -20,17 +20,10 @@ export function Carrusel() {
         const newIndex = isLastImage ? 0 : currentIndex + 1;
         setCurrentIndex(newIndex);
     };
-
-    const goImage = (goalIndex) => {
-        setCurrentIndex(goalIndex);
-    };
-
-
-
     // Second div left
     // Third div right 
     return (
-        <div className='m-0 h-[722px] w-full py-2 relative group'>
+        <div className='m-0 h-[1000px] w-full py-2 relative group'>
             <div
                 style={{ backgroundImage: `url(${infoImages[currentIndex].url})` }}
                 className='w-full h-full bg-center bg-cover duration-500'
