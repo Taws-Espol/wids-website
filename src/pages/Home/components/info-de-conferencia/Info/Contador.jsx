@@ -5,8 +5,8 @@ import CountUp from 'react-countup';
 //number y text son provisionales
 function Contador(props) {
     return (
-        <div className="p-2 flex-col justify-evenly number-box">
-            <CountUp style={{fontSize: '2.8em', fontWeight:'600'}} end={props.number} separator=" "/>
+        <div className="flex-col justify-evenly number-box">
+            <CountUp className='numbers' end={props.number} separator=" "/>
             <p>{props.text}</p>
         </div>
     )

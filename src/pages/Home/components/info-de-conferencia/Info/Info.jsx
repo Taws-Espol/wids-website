@@ -4,7 +4,7 @@ function Info() {
     return (
         <div className="flex justify-center">
             <div className="info-container rounded-3xl">
-                <div className="flex items-start flex-wrap justify-around pl-0 p-3 pb-5">
+                <div className="number-box-container">
                     <Contador number={38} text={"Lectures"}/>
                     <Contador number={15} text={"Speakers"}/>
                     <Contador number={18} text={"Master-Classes"}/>
