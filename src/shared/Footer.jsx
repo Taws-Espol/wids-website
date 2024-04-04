@@ -21,19 +21,21 @@ function Footer() {
     };
 
     return (
-      <footer>
-        <ul className="bg-[rgb(0,0,0)] xl:grid grid-flow-col justify-stretch w-full px-4 py-4">
-          <li className="xl:px-10 xl:py-5 xl:text-start text-center">
-            <h2 className="text-2xl font-semibold text-white">Contacto</h2>
+      <footer className='font-acumin' onSubmit={handleSubmit}>
+        <ul className="bg-[rgb(0,0,0)] grid xl:grid-cols-2 grid-cols-1 w-full px-4 py-4">
+          <li className="px-20 pt-10 xl:text-start text-center">
+            <h2 className="text-[35px] font-semibold text-white mb-10">Contacto</h2>
           </li>
-          <li className="xl:px-30 px-10 text-center">
-            <form onSubmit={handleSubmit}>
-              <div className="mb-4">
+          <li className="px-20 text-center">
+            <br className='xl:block hidden'/>
+            <br className='xl:block hidden'/>
+            <br className='xl:block hidden'/>
+            <br className='xl:block hidden'/>
+            <form className='' onSubmit={handleSubmit}>
+              <div className="mb-6">
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Nombre
+                  className="block text-sm font-medium mb-2">
                 </label>
                 <input
                   type="text"
@@ -45,12 +47,10 @@ function Footer() {
                   placeholder="Nombre"
                 />
               </div>
-              <div className="mb-4">
+              <div className="mb-6">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Correo Electrónico
+                  className="block text-sm font-medium mb-2">
                 </label>
                 <input
                   type="email"
@@ -62,12 +62,10 @@ function Footer() {
                   placeholder="Correo electrónico"
                 />
               </div>
-              <div className="mb-4">
+              <div className="mb-6">
                 <label
                   htmlFor="subject"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Asunto
+                  className="block text-sm font-medium mb-2">
                 </label>
                 <input
                   type="text"
@@ -79,12 +77,10 @@ function Footer() {
                   placeholder="Asunto del mensaje"
                 />
               </div>
-              <div className="mb-00">
+              <div className="mb-10">
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Mensaje
+                  className="block text-sm font-medium mb-2">
                 </label>
                 <textarea
                   id="message"
@@ -95,6 +91,9 @@ function Footer() {
                   className="bg-transparent border-2 border-white w-full text-white focus:outline-none py-1 px-2"
                   placeholder="mensaje"
                 ></textarea>
+              </div>
+              <div className="mb-10 xl:text-end">
+                <input type="submit" id="submit" name="submit" value="Enviar" className="cursor-pointer border-1 bg-white px-3 py-2 rounded-md"/>
               </div>
             </form>
           </li>
