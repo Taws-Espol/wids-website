@@ -10,18 +10,20 @@ function Inicio() {
     return (
         <>
             <Carrusel/>
-            <section className="mt-6">
-                <div>
-                    <h1 className="w-full text-center text-3xl font-sans font-bold" style={{color: '#004029'}}>
-                        CONFERENCIA
-                    </h1>
-                    <h2 className="w-full text-center text-xl font-mono p-5 font-semibold ">
-                        13 de Julio, 2024 · Guayaquil - Espol
-                    </h2>
+            <section>
+                <div className="h-screen" >
+                    <div className="h-96">
+                        <h1 className="w-full text-center text-[5rem] font-sans font-bold" style={{color: '#004029'}}>
+                            CONFERENCIA
+                        </h1>
+                        <h2 className="w-full text-center text-3xl font-mono p-5 font-semibold ">
+                            13 de Julio, 2024 · Guayaquil - Espol
+                        </h2>
+                    </div>
                     <Info/>
                 </div>
-                <div className='mt-14' style={{color: 'white', backgroundColor: 'black'}}>
-                    <h1 className="p-10 text-center text-3xl font-serif font-bold">
+                <div className="h-screen" style={{color: 'white', backgroundColor: 'black'}}>
+                    <h1 className="p-10 text-center text-[5rem] font-serif font-bold">
                         Conferencistas
                     </h1>
                     <InfoCarrusel/>

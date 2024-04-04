@@ -1,6 +1,4 @@
 .info-container{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
     padding: 0.5em;
     background-color: #232323;
     color: #eeeeee;
