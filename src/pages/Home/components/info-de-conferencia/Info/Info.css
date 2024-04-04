@@ -1,167 +1,42 @@
-@media (min-width:750px){
-    .info-container{
-        width: 80%;
-        padding: 0.25em;
-        background-color: #232323;
-        color: #eeeeee;
-    }
-
-    .number-box-container{
-        display: flex;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 0.5em;
-    }
-
-    .number-box {
-        margin: 0.1em;
-        min-width: 18%;
-        height: 7.5em;
-        position: relative;
-        text-align: center;
-        padding-top: 0.5em;
-        padding-left: 1.5em;
-        padding-right: 2em;
-    }
-
-    .numbers{
-        font-size: 2.8em;
-        font-weight: 600;
-    }
-
-    /* .number-box::before { */
-    /*     content: ''; */
-    /*     position: absolute; */
-    /*     top: 23px; */
-    /*     left: -2.5px; */
-    /*     width: 4px; */
-    /*     height: 70px; */
-    /*     background-color: #232323; */
-    /* } */
-    /**/
-    /* .number-box::after { */
-    /*     content: ''; */
-    /*     position: absolute; */
-    /*     top: 23px; */
-    /*     right: -2.5px; */
-    /*     width: 4px; */
-    /*     height: 70px; */
-    /*     background-color: #232323; */
-    /* } */
+.info-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 0.5em;
+    background-color: #232323;
+    color: #eeeeee;
 }
 
-@media (min-width:1024px){
-    .info-container{
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        width: 60em;
-        padding: 0.5em;
-        background-color: #232323;
-        color: #eeeeee;
-    }
-
-    .number-box-container{
-        display: flex;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding-bottom: 1.50em;
-        padding-left: 0;
-    }
-    .number-box {
-        margin: 0.3em;
-        min-width: 18%;
-        height: 100%;
-        border: 2px solid #6b6b6b;
-        border-radius: 1em;
-        text-align: left;
-        position: relative;
-        padding-left: 1.5em;
-        padding-right: 2em;
-        border-right-color: transparent;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    .numbers{
-        font-size: 2.8em;
-        font-weight: 600;
-    }
-
-    .number-box::before {
-        content: '';
-        position: absolute;
-        top: 19px;
-        left: -2.5px;
-        width: 4px;
-        height: 80px;
-        background-color: #232323;
-    }
-
-    .number-box::after {
-        content: '•';
-        position: absolute;
-        top: 45px;
-        left: -4px;
-        width: 3px;
-        height: 0;
-        color: #b0b0b0;
-    }
-
+.number-box {
+    margin: 0.2em;
+    min-width: 7.5em;
+    height: 8em;
+    border: 2px solid #6b6b6b;
+    border-radius: 1em;
+    position: relative;
+    padding-left: 1.5em;
+    padding-right: 2em;
+    border-right-color: transparent;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
-@media (min-width:1250px){
-    .info-container{
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        width: 80%;
-        background-color: #232323;
-        color: #eeeeee;
-    }
+.number-box::before {
+    content: '';
+    position: absolute;
+    top: 19px;
+    left: -2.5px;
+    width: 3.5px;
+    height: 80px;
+    background-color: #232323;
+}
 
-    .number-box-container{
-        display: flex;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding-top: 0.25em;
-        padding-bottom: 1.50em;
-    }
-
-    .number-box {
-        margin: 0.5em;
-        min-width: 18%;
-        height: 100%;
-        border: 2px solid #6b6b6b;
-        border-radius: 1em;
-        position: relative;
-        text-align: left;
-        padding-left: 1.5em;
-        padding-right: 2em;
-        border-right-color: transparent;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    .number-box::before {
-        content: '';
-        position: absolute;
-        top: 19px;
-        left: -2.5px;
-        width: 4px;
-        height: 82px;
-        background-color: #232323;
-    }
-
-    .number-box::after {
-        content: '•';
-        position: absolute;
-        top: 45px;
-        left: -4px;
-        width: 3px;
-        height: 0;
-        color: #b0b0b0;
-    }
+.number-box::after {
+    content: '•';
+    position: absolute;
+    top: 45px;
+    left: -4px;
+    width: 3px;
+    height: 0;
+    color: #b0b0b0;
 }
 

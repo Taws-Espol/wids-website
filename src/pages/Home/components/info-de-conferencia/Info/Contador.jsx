@@ -6,7 +6,7 @@ import CountUp from 'react-countup';
 function Contador(props) {
     return (
         <div className="flex-col justify-evenly number-box">
-            <CountUp className='numbers' end={props.number} separator=" "/>
+            <CountUp style={{fontSize:'3em', fontWeight:'600'}} end={props.number} separator=" "/>
             <p>{props.text}</p>
         </div>
     )
