@@ -38,12 +38,12 @@ export function Carrusel() {
                 <Timer Event_date = {new Date('July 13, 2024 00:00:00')}/>
             </div>
             <div className="absolute top-[10%] left-[5%] text-white select-none">
-                <p className="text-4xl font-acumin font-bold">{infoImages[currentIndex].titulo}</p>
-                <p className="text-lg font-acumin font-normal">{infoImages[currentIndex].fecha}</p>
-                <p className="text-lg font-acumin font-normal">{infoImages[currentIndex].lugar}</p>
+                <p className="text-4xl font-acumin font-bold">{infoImages[currentIndex].title}</p>
+                <p className="text-lg font-acumin font-normal">{infoImages[currentIndex].date}</p>
+                <p className="text-lg font-acumin font-normal">{infoImages[currentIndex].place}</p>
             </div>
             <div className="absolute right-[5%] bottom-[9%] max-sm:left-[52%] max-md:left-[57%]  max-lg:left-[60%] max-lg:transform max-lg:-translate-x-1/2 max-lg:translate-y-1/2 ">
-                <button className="text-white bg-blue-wids rounded-md px-10 py-3 text-center text-xl font-acumin font-medium">Registro</button>
+                <button className="text-white bg-blue-wids rounded-md px-10 py-3 text-center text-xl font-acumin font-medium">Register</button>
             </div>
 
         </div>
