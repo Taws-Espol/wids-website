@@ -11,19 +11,19 @@ function Inicio() {
         <>
             <Carrusel/>
             <section>
-                <div className="h-screen" >
-                    <div className="h-96">
-                        <h1 className="w-full text-center text-[5rem] font-sans font-bold" style={{color: '#004029'}}>
+                <div className="mt-[3vw] mb-[10vw]" >
+                    <div className="mt-5 max-md:mb-[2vw] md:mb-[3em]">
+                        <h1 className="w-full text-center text-[6vw] md:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw] font-sans font-bold" style={{color: '#004029'}}>
                             CONFERENCIA
                         </h1>
-                        <h2 className="w-full text-center text-3xl font-mono p-5 font-semibold ">
+                        <h2 className="w-full text-center text-[3vw] md:text-[2vw] 2xl:text-[1.5vw] min-[2474]:text-[1vw] font-mono p-5 font-semibold ">
                             13 de Julio, 2024 · Guayaquil - Espol
                         </h2>
                     </div>
-                    <Info/>
+                        <Info/>
                 </div>
-                <div className="h-screen" style={{color: 'white', backgroundColor: 'black'}}>
-                    <h1 className="p-10 text-center text-[5rem] font-serif font-bold">
+                <div className="pb-[6em]" style={{color: 'white', backgroundColor: 'black'}}>
+                    <h1 className="p-10 text-center text-[8vw] md:text-[6vw] lg:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw] font-serif font-bold">
                         Conferencistas
                     </h1>
                     <InfoCarrusel/>
