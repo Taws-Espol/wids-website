@@ -1,27 +1,33 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 import  redes  from '../data/redes';
+import emailjs from '@emailjs/browser';
 function Footer() {
-    const [formData, setFormData] = useState({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+    //https://www.emailjs.com/
+    //codigo: https://www.emailjs.com/docs/examples/reactjs/
+    //Cuenta google y Emialjs
+    //pruebastaws@gmail.com
+    //PruebasTaws1234
+    const form = useRef();
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(formData);
-    };
+    emailjs
+      .sendForm("service_6ygspus", "template_isxctpo", form.current, {
+        publicKey: "_cQ9l5FCItinKLnlc",
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
 
     return (
-      <footer className='font-acumin' onSubmit={handleSubmit}>
+      <footer className='font-acumin'>
         <ul className="bg-[rgb(0,0,0)] grid xl:grid-cols-2 grid-cols-1 w-full px-4 py-4">
           <li className="px-20 pt-10 xl:text-start text-center">
             <h2 className="text-[35px] font-semibold text-white mb-10">Contacto</h2>
@@ -31,7 +37,8 @@ function Footer() {
             <br className='xl:block hidden'/>
             <br className='xl:block hidden'/>
             <br className='xl:block hidden'/>
-            <form className='' onSubmit={handleSubmit}>
+            
+            <form className='' ref={form} onSubmit={sendEmail}>
               <div className="mb-6">
                 <label
                   htmlFor="name"
@@ -39,10 +46,7 @@ function Footer() {
                 </label>
                 <input
                   type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
+                  name="user_name"
                   className="bg-transparent border-b-2 border-white w-full text-white focus:outline-none py-1"
                   placeholder="Nombre"
                 />
@@ -54,10 +58,7 @@ function Footer() {
                 </label>
                 <input
                   type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
+                  name="user_email"
                   className="bg-transparent border-b-2 border-white w-full text-white focus:outline-none py-1"
                   placeholder="Correo electrónico"
                 />
@@ -69,10 +70,7 @@ function Footer() {
                 </label>
                 <input
                   type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
+                  name="Subject"
                   className="bg-transparent border-b-2 border-white w-full text-white focus:outline-none py-1"
                   placeholder="Asunto del mensaje"
                 />
@@ -83,17 +81,14 @@ function Footer() {
                   className="block text-sm font-medium mb-2">
                 </label>
                 <textarea
-                  id="message"
                   name="message"
                   rows="4"
-                  value={formData.message}
-                  onChange={handleChange}
                   className="bg-transparent border-2 border-white w-full text-white focus:outline-none py-1 px-2"
                   placeholder="mensaje"
                 ></textarea>
               </div>
               <div className="mb-10 xl:text-end">
-                <input type="submit" id="submit" name="submit" value="Enviar" className="cursor-pointer border-1 bg-white px-3 py-2 rounded-md"/>
+                <input type="submit" value="Enviar" className="cursor-pointer border-1 bg-white px-3 py-2 rounded-md"/>
               </div>
             </form>
           </li>

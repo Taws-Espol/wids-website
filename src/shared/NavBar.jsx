@@ -25,7 +25,7 @@ function Navbar() {
   };
   return (
     <>
-    <nav className='  xl:flex 
+    <nav className='  xl:flex
                       xl:items-center 
                       xl:justify-between 
                       xl:text-[20px] 
@@ -33,7 +33,7 @@ function Navbar() {
                       top-0 left-0 
                       w-full 
                       font-acumin 
-                      text-base '>
+                      text-base z-100'>
       <div className='flex 
                       items-center 
                       bg-[rgb(252,252,252)] 

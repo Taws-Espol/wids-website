@@ -20,6 +20,7 @@ function App() {
     <>
       <Router>
         <Navbar/>
+        <div className='-z-1000'>
         <Routes>
           <Route exact path="/" element={<Inicio />} />
           <Route path="/conferencistas" element={<Conferencistas />} />
@@ -28,6 +29,7 @@ function App() {
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </div>
         <Footer />
       </Router>
     </>
