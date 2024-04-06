@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen1, setIsOpen1] = useState(false);
-  const [isEventHovered, setIsEventHovered] = useState(false);
-  isEventHovered;
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -13,16 +11,7 @@ function Navbar() {
   const toggle1 = () => {
     setIsOpen1(!isOpen1);
   };
-  const handleEventHover = () => {
-    setIsEventHovered(true);
-    const arrowIcon = document.getElementById('arrow-icon');
-    arrowIcon.classList.add('gradient-text');
-  };
-  const handleEventHoverOut = () => {
-    setIsEventHovered(false);
-    const arrowIcon = document.getElementById('arrow-icon');
-    arrowIcon.classList.remove('gradient-text');
-  };
+  
   return (
     <>
     <nav className='  xl:flex
@@ -73,7 +62,9 @@ function Navbar() {
           </span>
         </div>
       </div>
-      <ul className={`z-50 
+      <ul className={`xl:w-auto w-full
+                      z-50 
+                      xl:static absolute
                       xl:flex 
                       xl:l-0 
                       xl:bg-none 
@@ -139,9 +130,7 @@ function Navbar() {
           <div className='flex 
           justify-center 
           items-center'>
-            <p onMouseEnter={handleEventHover} 
-                  onMouseLeave={handleEventHoverOut}  
-                  className=' xl:px-8 xl:py-8 
+            <p className=' xl:px-8 xl:py-8 
                               xl:text-[20px] text-[25px]
                               xl:text-black text-white
                               gradient-text-hover gradient-underline-hover 
