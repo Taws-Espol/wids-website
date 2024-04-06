@@ -6,13 +6,27 @@ export default {
     ],
     theme: {
         extend: {
-            fontFamily: {
-                'acumin': ['"Acumin Variable"', 'sans-serif'],
+            fontFamily: { 
+                'acumin': ['acumin-variable'],
             },
             colors: {
-                'custom-yellow': '#ffcb05',
-                'custom-green': '#4ab969',
-                'custom-blue': '#009fc9',
+                'primary-green': '#4ab969',
+                'primary-blue': '#00a7d5',
+                'primary-yellow': '#ffcb05',
+                'primary-orange': '#ff8003',
+                'primary-violet': '#a2a2ff',
+                'primary-dark-green': '#0040029',
+                'primary-acc-green': '#42a85f',
+                'primary-acc-blue': '#009fc9',
+                'primary-acc-orange': '#f76902',
+                'primary-acc-violet': '#8d73de',
+                'primary-acc-dark-green': '#173a21',
+                'secondary-green': '#95e6ac',
+                'secondary-blue': '#a1dbe4',
+                'secondary-yellow': '#ffea95',
+                'secondary-orange': '#fcc5a1',
+                'secondary-violet': '#ececff',
+                'neutral-grey': '676767'
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
