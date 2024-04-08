@@ -1,4 +1,4 @@
-import { sponsors } from "./sponsors"
+import { sponsors } from "../../../data/sponsors.js"
 import Sponsor from "./Sponsor"
 import Subtitle from "./Subtitle"
 

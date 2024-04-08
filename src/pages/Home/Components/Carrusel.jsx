@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
-import { infoImages } from './info-Carrusel.js';
+import { infoImages } from '../../../data/info-Carrusel.js';
 import { Timer } from "./Cuadro.jsx";
 import '../../../index.css'; // Asegúrate de que el path sea correcto.
 
