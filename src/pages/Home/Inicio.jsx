@@ -22,8 +22,8 @@ function Inicio() {
                     </div>
                         <Info/>
                 </div>
-                <div className="pb-[6em]" style={{color: 'white', backgroundColor: 'black'}}>
-                    <h1 className="p-10 text-center text-[8vw] md:text-[6vw] lg:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw] font-serif font-bold">
+                <div className="pb-[5vw]" style={{color: 'white', backgroundColor: 'black'}}>
+                    <h1 className="pt-6 md:pt-10 text-center text-[6vw] md:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw] font-serif font-bold">
                         Conferencistas
                     </h1>
                     <InfoCarrusel/>
