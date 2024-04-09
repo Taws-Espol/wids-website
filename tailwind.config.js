@@ -13,6 +13,7 @@ export default {
                 'custom-yellow': '#ffcb05',
                 'custom-green': '#4ab969',
                 'custom-blue': '#009fc9',
+                'blue-wids':'#00A7D5',
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
