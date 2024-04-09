@@ -6,9 +6,9 @@ import CountUp from 'react-countup';
 function Contador(props) {
     return (
         <div className='flex items-center'>
-            <div className="grid items-center rounded-[1vw] pl-[1vw] pr-[1.5vw] min-w-[9vw] rounded-r-none h-[100%] number-box"> 
-                <CountUp className='font-semibold max-md:text-[6vw] md:text-[4vw]' end={props.number} separator=" "/>
-                <p className='pb-[1vw] max-md:text-[1.75vw] md:text-[1vw]'>{props.text}</p>
+            <div className="grid items-center rounded-[1vw] pl-[2vw] pr-[2vw] min-w-[9vw] rounded-r-none h-[100%] number-box"> 
+                <CountUp className='font-semibold pt-[1vw] max-md:text-[5vw] md:text-[3.6vw]' end={props.number} separator=" "/>
+                <p className='pb-[2vw] max-md:text-[1.75vw] md:text-[1vw]'>{props.text}</p>
             </div>
         </div>
     )

@@ -107,7 +107,7 @@
     .number-box::after {
         content: '•';
         position: absolute;
-        top: 3.5vw;
+        top: 4vw;
         left: -4px;
         width: 3px;
         height: 0;
