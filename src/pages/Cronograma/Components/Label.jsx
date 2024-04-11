@@ -1,4 +1,4 @@
-export function Label({type}){
+export function Label({type, hiddenDiv}){
     let backgroundColor;
     switch (type) {
         case "Conferencia":
@@ -11,11 +11,11 @@ export function Label({type}){
             backgroundColor = "bg-gray-200";
     }
     return(
-        <div class="flex flex-row">
-            <div class="bg-blue-500 w-[580px] h-12 text-white font-bold py-2 px-4 flex items-center rounded-l-full overflow-hidden">
-                <span>{type}</span>
+        <div class="flex flex-row" onClick={hiddenDiv}>
+            <div class={`${backgroundColor} w-[450px] h-12 text-white font-bold py-2 px-4 flex items-center rounded-l-full overflow-hidden`}>
+                <p className="text-2xl text-black px-8">{type}</p>
             </div>
-            <div class= "bg-blue-500 h-12 w-8 triangle">
+            <div class= {`${backgroundColor} h-12 w-8 triangle`}>
             </div>
         </div>
     )
