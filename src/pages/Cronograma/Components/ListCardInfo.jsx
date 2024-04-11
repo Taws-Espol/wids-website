@@ -1,29 +1,42 @@
 import { Label } from "./Label";
 import { useState } from "react";
 import { CardInfo } from "./CardInfo";
+import {cronograma} from "../../../data/Cronograma.js";
+import { Switch } from "@material-tailwind/react";
 
-export function ListCardInfo({LabelInfo,InfoCard}){
-    const [hiddenConfe,setHiddenConfe] = useState(true);
+export function ListCardInfo({typeLabel}){
+    const [hidden,setHidden] = useState(false);
 
-    const changeHiddenConfeValue = () => {
-        setHiddenConfe(!hiddenConfe);
+    const changeHiddenValue = () => {
+        setHidden(!hidden);
     };
 
-    const [hiddenTall,setHiddenTall] = useState(true);
-
-    const changeHiddenTallValue = () => {
-        setHiddenTall(!hiddenTall);
-    };
+    let listaEventos; 
+    switch(typeLabel){
+        case "Conferencias":
+            listaEventos = cronograma.Conferencias;
+            break;
+        case "Talleres":
+            listaEventos= cronograma.Talleres;
+            break;
+        default :
+            listaEventos= cronograma.Conferencias;
+            break;
+    }
 
     return(
         <div className=" flex flex-col gap-15">
-            <Label type={LabelInfo.type} hiddenDiv={changeHiddenConfeValue}/>
-            <div className=" flex flex-col py-4">
-                <CardInfo
-                    type={InfoCard.type}
-                    title={InfoCard.title}
-                    info={InfoCard.info}
-                />
+            <Label type={typeLabel} hiddenDiv={changeHiddenValue}/>
+            <div className={`${hidden ? 'hidden':'block'} flex flex-col py-4 gap-4`}>
+            {
+                listaEventos.map((evento)=>
+                    <CardInfo
+                        type={evento.type}
+                        title={evento.title}
+                        info={evento.info}
+                    />
+                )
+            }
             </div>
         </div>
     )
