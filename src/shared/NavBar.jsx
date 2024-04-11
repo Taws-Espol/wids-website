@@ -94,6 +94,7 @@ function Navbar() {
                       xl:l-0 
                       xl:bg-none 
                       p-4 
+                      transition-all duration-600 ease-in
                       xl:translate-x-0 
                       bg-gradient-custom 
                       ${
