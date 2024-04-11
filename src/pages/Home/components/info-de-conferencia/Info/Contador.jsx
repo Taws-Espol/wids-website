@@ -5,9 +5,11 @@ import CountUp from 'react-countup';
 //number y text son provisionales
 function Contador(props) {
     return (
-        <div className="p-2 flex-col justify-evenly number-box">
-            <CountUp style={{fontSize: '2.8em', fontWeight:'600'}} end={props.number} separator=" "/>
-            <p>{props.text}</p>
+        <div className='flex items-center'>
+            <div className="grid items-center rounded-[1vw] pl-[2vw] pr-[2vw] min-w-[9vw] rounded-r-none h-[100%] number-box"> 
+                <CountUp className='font-semibold pt-[1vw] max-md:text-[5vw] md:text-[3.6vw]' end={props.number} separator=" "/>
+                <p className='pb-[2vw] max-md:text-[1.75vw] md:text-[1vw]'>{props.text}</p>
+            </div>
         </div>
     )
 }

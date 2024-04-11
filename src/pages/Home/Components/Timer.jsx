@@ -41,11 +41,11 @@ export function Timer({Event_date}) {
         updateTime(Event_date);
     });
 
-    function Cuadro(props) {
+    function CardTimer(props) {
 
         return (
-            <div className={`text-white h-28 w-24 flex flex-col place-content-center place-items-center font-bold select-none  ${!props.isSec ? 'bg-gradient-to-b from-zinc-400 to-zinc-700' : 'bg-gradient-to-b from-pink-200 to-pink-500'} max-sm:w-14 max-md:w-16 max-lg:w-20 max-xl:w-[90px]` }>
-                <p className="text-4xl max-lg:text-3xl">
+            <div className={`text-black h-28 w-24 flex flex-col place-content-center place-items-center font-bold select-none rounded-md ${!props.isSec ? 'bg-white' : 'bg-gradient-to-b from-red-400 to-red-900'} max-sm:w-14 max-sm:h-[72px] max-md:w-16  max-md:h-[80px] max-lg:w-20 max-lg:h-[96px] max-xl:w-[90px] max-xl:h-[116px]` }>
+                <p className="text-6xl max-md:text-3xl max-lg:test-4xl mx-xl:text-5xl">
                     {props.time}
                 </p>
                 <p className="text-xl max-sm:text-sm max-md:text-base max-lg:text-lg">
@@ -56,24 +56,24 @@ export function Timer({Event_date}) {
     }
 
     return (
-        <div className="bg-black flex flex-wrap gap-4 max-w-[600px] place-content-between p-1  max-sm:w-[340px] max-md:w-[400px] max-lg:w-[500px] max-xl:w-[550px]   max-lg:gap-2 " >
-            <Cuadro className=""
+        <div className="bg-transparent flex flex-wrap gap-4 max-w-[600px] place-content-between p-1  max-sm:w-[340px] max-md:w-[400px] max-lg:w-[500px] max-xl:w-[550px]   max-lg:gap-2 " >
+            <CardTimer className=""
                 time={rest.weeks}
                 timeInfo="Weeks"
             />
-            <Cuadro className=""
+            <CardTimer className=""
                 time={rest.days}
                 timeInfo="Days"
             />
-            <Cuadro className=""
+            <CardTimer className=""
                 time={rest.hours}
                 timeInfo="Hr"
             />
-            <Cuadro className=""
+            <CardTimer className=""
                 time={rest.minutes}
                 timeInfo="Min"
             />
-            <Cuadro className=""
+            <CardTimer className=""
                 time={rest.seconds}
                 timeInfo="Sec"
                 isSec={true}

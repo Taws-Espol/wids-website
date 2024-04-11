@@ -12,7 +12,7 @@ const Ubicacion = () => {
             <div className="container mx-auto flex flex-col md:flex-row items-center md:items-start px-4 md:px-20 pb-20 pt-8">
                 <div className="md:w-1/2"> 
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63792.24264597475!2d-80.04078705136719!3d-2.1478802000000035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d72f925e5bfdb%3A0x327cdb9f7f4ba3b2!2sEscuela%20Superior%20Polit%C3%A9cnica%20del%20Litoral%20(ESPOL)!5e0!3m2!1ses-419!2sec!4v1711645553097!5m2!1ses-419!2sec"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1494.5011907822418!2d-79.96631895396388!3d-2.145020582613316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d72f925e5bfdb%3A0x327cdb9f7f4ba3b2!2sEscuela%20Superior%20Polit%C3%A9cnica%20del%20Litoral%20(ESPOL)!5e0!3m2!1ses-419!2sec!4v1712382387776!5m2!1ses-419!2sec" 
                         width="650"
                         height="900"
                         style={{ border: 0 }}

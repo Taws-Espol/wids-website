@@ -11,17 +11,19 @@ function Inicio() {
         <>
             <Carrusel/>
             <section>
-                <div>
-                    <h1 className="w-full text-center text-3xl font-sans font-bold" style={{color: '#004029'}}>
-                        Conferencia
-                    </h1>
-                    <h2 className="w-full text-center text-xl font-mono p-5 font-semibold ">
-                        13 de Julio, 2024 · Guayaquil - Espol
-                    </h2>
-                    <Info/>
+                <div className="mt-[3vw] mb-[10vw]" >
+                    <div className="mt-5 max-md:mb-[2vw] md:mb-[3em]">
+                        <h1 className="w-full text-center text-[6vw] md:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw] font-sans font-bold" style={{color: '#004029'}}>
+                            CONFERENCIA
+                        </h1>
+                        <h2 className="w-full text-center text-[3vw] md:text-[2vw] 2xl:text-[1.5vw] min-[2474]:text-[1vw] font-mono p-5 font-semibold ">
+                            13 de Julio, 2024 · Guayaquil - Espol
+                        </h2>
+                    </div>
+                        <Info/>
                 </div>
-                <div className='mt-14' style={{color: 'white', backgroundColor: 'black'}}>
-                    <h1 className="p-10 text-center text-3xl font-serif font-bold">
+                <div className="pb-[5vw]" style={{color: 'white', backgroundColor: 'black'}}>
+                    <h1 className="pt-6 md:pt-10 text-center text-[6vw] md:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw] font-serif font-bold">
                         Conferencistas
                     </h1>
                     <InfoCarrusel/>
