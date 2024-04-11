@@ -2,10 +2,10 @@ import speakerImage from "../assets/images/stockSpeaker.jpg";
 export const ediciones = [
 	{
 		edicion: "2020",
-		eventos: ["Evento 1", "Evento 2", "Evento 3", "Evento 4", "Evento 5"],
+		eventos: ["Evento 1 2020", "Evento 2", "Evento 3", "Evento 4", "Evento 5"],
 		cronograma: [
 			{
-				nombre: "Evento 1",
+				nombre: "Evento 1 2020",
 				descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 			},
 			{
@@ -48,7 +48,7 @@ export const ediciones = [
 	},
 	{
 		edicion: "2021",
-		eventos: ["Evento 1", "Evento 2", "Evento 3", "Evento 4", "Evento 5"],
+		eventos: ["Evento 1 2021", "Evento 2", "Evento 3", "Evento 4", "Evento 5"],
 		cronograma: [
 			{
 				nombre: "Evento 1",
@@ -97,7 +97,7 @@ export const ediciones = [
 		eventos: ["Evento 1", "Evento 2", "Evento 3", "Evento 4", "Evento 5"],
 		cronograma: [
 			{
-				nombre: "Evento 1",
+				nombre: "Evento 1 2022",
 				descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 			},
 			{
@@ -143,7 +143,7 @@ export const ediciones = [
 		eventos: ["Evento 1", "Evento 2", "Evento 3", "Evento 4", "Evento 5"],
 		cronograma: [
 			{
-				nombre: "Evento 1",
+				nombre: "Evento 1 2023",
 				descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 			},
 			{
