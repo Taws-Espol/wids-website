@@ -1,8 +1,4 @@
     @import url("https://fonts.adobe.com/fonts/acumin-variable#fonts-section");
-    body {
-        overflow-x: hidden;
-    }
-    
     @media (min-width: 1280px) {
         .gradient-text {
             background: rgb(255, 203, 5);

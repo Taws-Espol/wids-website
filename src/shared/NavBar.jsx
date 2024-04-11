@@ -69,9 +69,10 @@ function Navbar() {
                       xl:l-0 
                       xl:bg-none 
                       p-4 
+                      transition-all duration-600 ease-in
                       xl:translate-x-0 
                       bg-gradient-custom 
-                      ${isOpen ? "translate-x-0 transition-transform duration-300 ease-in-out" : "translate-x-full transition-transform duration-300 ease-in-out"}`}>
+                      ${isOpen ? "opacity-100" : "top-[-490px] opacity-0"}`}>
         <li className=' xl:border-0 border-2 
                         xl:font-thin font-black 
                         xl:shadow-none shadow-lg  
