@@ -18,7 +18,7 @@ export default function Cronograma() {
         style={{
           marginBottom: '20px',
           fontWeight: 'bold',
-          fontFamily: '"Merriweather", serif', fontWeight: 700, fontStyle: 'normal',
+          fontFamily: '"Merriweather", serif', fontStyle: 'normal',
           paddingLeft: '20px', 
           paddingRight: '20px', 
           paddingBottom: '31px',
