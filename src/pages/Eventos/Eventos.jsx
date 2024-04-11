@@ -1,34 +1,39 @@
 import { ediciones } from "../../data/ediciones";
 import EventCard from "../Home/Components/EventCard";
-function Eventos() {
+import { Link } from "react-router-dom"; // Importa Link desde react-router-dom
+
+function Ediciones() {
 	return (
 		<>
-			<section>
-				<h1>Ediciones anteriores</h1>
-			</section>
+			<section className=''></section>
 			<section className='bg-gray-2 pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]'>
-				<div className='container'>
+				<h1>Ediciones anteriores</h1>
+				<div className='container '>
 					<div className='grid gap-8 sm:grid-cols-2 lg:grid-cols-3'>
-						<EventCard
-							image='https://i.ibb.co/r2zns1m/image-01.jpg'
-							CardTitle='50+ Best creative website themes & templates'
-							titleHref='/#'
-							btnHref='/#'
-							CardDescription='Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit.'
-							Button='View Details'
-						/>
-						<EventCard
-							image='https://i.ibb.co/0nbbWM9/image-02-1.jpg'
-							CardTitle='Creative Card Component designs graphic elements'
-							CardDescription='Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit.'
-							Button='View Details'
-						/>
-						<EventCard
-							image='https://i.ibb.co/dL9fH7N/image-03-1.jpg'
-							CardTitle='The ultimate UX and UI guide to card design'
-							CardDescription='Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit.'
-							Button='View Details'
-						/>
+						<Link to='edicion2020'>
+							<EventCard
+								image='https://tecdn.b-cdn.net/img/new/standard/nature/186.jpg'
+								CardTitle='2020'
+							/>
+						</Link>
+						<Link to='edicion2021'>
+							<EventCard
+								image='https://tecdn.b-cdn.net/img/new/standard/nature/186.jpg'
+								CardTitle='2021'
+							/>
+						</Link>
+						<Link to='edicion2022'>
+							<EventCard
+								image='https://tecdn.b-cdn.net/img/new/standard/nature/186.jpg'
+								CardTitle='2022'
+							/>
+						</Link>
+						<Link to='edicion2023'>
+							<EventCard
+								image='https://tecdn.b-cdn.net/img/new/standard/nature/186.jpg'
+								CardTitle='2023'
+							/>
+						</Link>
 					</div>
 				</div>
 			</section>
@@ -36,4 +41,4 @@ function Eventos() {
 	);
 }
 
-export default Eventos;
+export default Ediciones;

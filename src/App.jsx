@@ -1,37 +1,37 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
-import './index.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+import "./index.css";
 
-import Inicio from './pages/Home/Inicio';
-import Navbar from './shared/NavBar';
-import Footer from './shared/Footer';
-import Conferencistas from './pages/Conferencistas/Conferencistas';
-import Cronograma from './pages/Cronograma/Cronograma';
-import Eventos from './pages/Eventos/Eventos';
-import Nosotros from './pages/Nosotros/Nosotros';
-
+import Inicio from "./pages/Home/Inicio";
+import Navbar from "./shared/NavBar";
+import Footer from "./shared/Footer";
+import Conferencistas from "./pages/Conferencistas/Conferencistas";
+import Cronograma from "./pages/Cronograma/Cronograma";
+import Eventos from "./pages/Eventos/Eventos";
+import Nosotros from "./pages/Nosotros/Nosotros";
+import Ediciones from "./pages/Eventos/Eventos";
 function App() {
+	function NotFound() {
+		return <div>404 Not Found</div>;
+	}
 
-  function NotFound() {
-    return <div>404 Not Found</div>;
-  }
-
-  return (
-    <>
-      <Router>
-        <Navbar/>
-        <Routes>
-          <Route exact path="/" element={<Inicio />} />
-          <Route path="/conferencistas" element={<Conferencistas />} />
-          <Route path="/cronograma" element={<Cronograma />} />
-          <Route path="/eventos" element={<Eventos />} />
-          <Route path="/nosotros" element={<Nosotros />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </>
-  )
+	return (
+		<>
+			<Router>
+				<Navbar />
+				<Routes>
+					<Route exact path='/' element={<Inicio />} />
+					<Route path='/conferencistas' element={<Conferencistas />} />
+					<Route path='/cronograma' element={<Cronograma />} />
+					<Route path='/eventos' element={<Eventos />} />
+					<Route path='/ediciones' element={<Ediciones />} />
+					<Route path='/nosotros' element={<Nosotros />} />
+					<Route path='*' element={<NotFound />} />
+				</Routes>
+				<Footer />
+			</Router>
+		</>
+	);
 }
 
 export default App;

@@ -1,42 +1,21 @@
-const EventCard = ({
-	image,
-	Button,
-	CardDescription,
-	CardTitle,
-	titleHref,
-	btnHref,
-}) => {
-	return (
-		<>
-			{/*  */}
-			<div className='mb-10 overflow-hidden rounded-lg bg-white shadow-1 duration-300 hover:shadow-3 dark:bg-dark-2 dark:shadow-card dark:hover:shadow-3'>
-				<img src={image} alt='' className='w-full' />
-				<div className='p-8 text-center sm:p-9 md:p-7 xl:p-9'>
-					<h3>
-						<a
-							href={titleHref ? titleHref : "/#"}
-							className='mb-4 block text-xl font-semibold text-dark hover:text-primary dark:text-white sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]'
-						>
-							{CardTitle}
-						</a>
-					</h3>
-					<p className='mb-7 text-base leading-relaxed text-body-color dark:text-dark-6'>
-						{CardDescription}
-					</p>
+import React from "react";
+import { TERipple } from "tw-elements-react";
 
-					{Button && (
-						<a
-							href={btnHref ? btnHref : "#"}
-							className='inline-block rounded-full border border-gray-3 px-7 py-2 text-base font-medium text-body-color transition hover:border-primary hover:bg-primary hover:text-white dark:border-dark-3 dark:text-dark-6'
-						>
-							{Button}
-						</a>
-					)}
+const EventCard = ({ image, CardTitle }) => {
+	return (
+		<div className='block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700'>
+			<TERipple>
+				<div className='relative overflow-hidden bg-cover bg-no-repeat'>
+					<img className='rounded-t-lg' src={image} alt='' />
 				</div>
-			</div>
-			{/*  */}
-		</>
+
+				<div className='p-6'>
+					<h5 className='mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50'>
+						{CardTitle}
+					</h5>
+				</div>
+			</TERipple>
+		</div>
 	);
 };
-
 export default EventCard;
