@@ -1,8 +1,15 @@
+import { Label } from "./Components/Label";
 function Cronograma() {
     return (
-        <h1>CRONOGRAMA</h1>
+        <div flex flex-wrap w-full>
+            <div>
+                <Label type="Conferencia"/>
+            </div>
+            <div>
+                <Label type="Conferencia"/>
+            </div>
+        </div>
     );
-  }
-  
-  export default Cronograma;
-  
+}
+
+export default Cronograma;
