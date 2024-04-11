@@ -1,6 +1,6 @@
 import { Carrusel } from "./Components/Carrusel";
-// import InfoCarrusel from "./Components/info-de-conferencia/Carrusel/Carrusel";
-import Info from "./components/info-de-conferencia/Info/Info";
+import InfoCarrusel from "./Components/info-de-conferencia/Carrusel/Carrusel";
+import Info from "./Components/info-de-conferencia/Info/Info";
 import Sponsors from "./Components/Sponsors";
 import Cronograma from "./Components/Cronograma";
 import Ubicacion from "./Components/Ubicacion";
