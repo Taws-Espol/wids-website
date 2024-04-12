@@ -4,6 +4,7 @@ import {
 	AccordionHeader,
 	AccordionBody,
 } from "@material-tailwind/react";
+import EventBox from "./EventBox";
 
 function Icon({ id, open }) {
 	return (
@@ -43,13 +44,12 @@ export default function AccordionContainer({ edicionData }) {
 					Cronograma
 				</AccordionHeader>
 				<AccordionBody>
-					{edicionData &&
-						edicionData.cronograma.map((evento, index) => (
-							<div key={index}>
-								<h3>{evento.nombre}</h3>
-								<p>{evento.descripcion}</p>
-							</div>
-						))}
+					<div className="flex flex-col items-center space-y-4 px-7p py-4">
+						{edicionData &&
+							edicionData.cronograma.map((evento, index) => (
+								<EventBox key={index} name={evento.nombre} description={evento.descripcion} />
+							))}
+					</div>
 				</AccordionBody>
 			</Accordion>
 			<Accordion open={open === 2} icon={<Icon id={2} open={open} />}>
