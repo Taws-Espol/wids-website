@@ -6,14 +6,13 @@ import { Timer } from "./Timer.jsx";
 import '../../../index.css'; // Asegúrate de que el path sea correcto.
 
 export function Carrusel() {
+	const [currentIndex, setCurrentIndex] = useState(0);
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    const previousImage = () => {
-        const isfisrtImage = currentIndex === 0;
-        const newIndex = isfisrtImage ? infoImages.length - 1 : currentIndex - 1;
-        setCurrentIndex(newIndex);
-    };
+	const previousImage = () => {
+		const isfisrtImage = currentIndex === 0;
+		const newIndex = isfisrtImage ? infoImages.length - 1 : currentIndex - 1;
+		setCurrentIndex(newIndex);
+	};
 
     const nextImage = () => {
         const isLastImage = currentIndex === infoImages.length - 1;
