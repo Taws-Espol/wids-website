@@ -27,7 +27,7 @@ export function ListCardInfo({typeLabel}){
     return(
         <div className=" flex flex-col gap-15">
             <Label type={typeLabel} hiddenDiv={changeHiddenValue}/>
-            <div className={`${hidden ? 'hidden':'block'} flex flex-col py-4 gap-4`}>
+            <div className={`${hidden ? 'hidden':'block'} flex flex-col py-4 gap-4 place-content-center place-items-center`}>
             {
                 listaEventos.map((evento)=>
                     <CardInfo

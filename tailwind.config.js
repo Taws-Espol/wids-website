@@ -35,6 +35,9 @@ export default {
                 'gradient-conic': 'conic-gradient(var(--tw-gradient-stops))',
                 'gradient-custom': 'linear-gradient(90deg, rgba(255, 203, 5, 1) 0%, rgba(74, 185, 105, 1) 50%, rgba(0, 159, 201, 1) 100%)',
             },
+            screens: {
+                'xsm': '450px',
+            },
         },
     },
     plugins: [],
