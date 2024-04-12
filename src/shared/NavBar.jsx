@@ -93,7 +93,7 @@ function Navbar() {
                         xl:font-thin font-black
                         xl:shadow-none shadow-lg 
                         mb-1'>
-						<Link   to='/cronograma'
+						<Link   to='/conferencistas'
                                 className=' xl:px-8 xl:py-8 
 											xl:text-[20px] text-[25px]
 											xl:text-black text-white 

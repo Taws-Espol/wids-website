@@ -1,4 +1,3 @@
-import { info } from "autoprefixer";
 import { ListCardInfo } from "./Components/ListCardInfo";
 function Cronograma() {
     
