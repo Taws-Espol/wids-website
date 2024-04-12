@@ -9,6 +9,7 @@ import Conferencistas from './pages/Conferencistas/Conferencistas';
 import Cronograma from './pages/Cronograma/Cronograma';
 import Eventos from './pages/Eventos/Eventos';
 import Nosotros from './pages/Nosotros/Nosotros';
+import ButtonUp from './shared/ButtonUp';
 
 function App() {
 
@@ -30,8 +31,11 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
         </div>
+        <ButtonUp className="" />
         <Footer />
+    
       </Router>
+      
     </>
   )
 }

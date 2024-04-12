@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import  redes  from '../data/redes';
 import emailjs from '@emailjs/browser';
+import ButtonUp from './ButtonUp';
 function Footer() {
     //https://www.emailjs.com/
     //codigo: https://www.emailjs.com/docs/examples/reactjs/
@@ -119,7 +120,9 @@ function Footer() {
             </a>
           </li>
         </ul>
+        
       </footer>
+      
     );
   }
   
