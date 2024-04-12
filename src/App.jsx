@@ -11,6 +11,7 @@ import Eventos from "./pages/Eventos/Eventos";
 import Nosotros from "./pages/Nosotros/Nosotros";
 import Ediciones from "./pages/Eventos/Eventos";
 import Edicion from "./pages/Edicion/Edicion";
+import ButtonUp from "./shared/ButtonUp";
 function App() {
 	function NotFound() {
 		return <div>404 Not Found</div>;
@@ -37,6 +38,7 @@ function App() {
 				</Routes>
         </div>
 				<Footer />
+				<ButtonUp />
 			</Router>
 		</>
 	);
