@@ -183,7 +183,8 @@ function Navbar() {
 					</li>
 					<li className=' xl:border-0 border-2
 									xl:font-thin font-black
-									xl:shadow-none shadow-lg'>
+									xl:shadow-none shadow-lg
+									mb-1'>
 						<Link   to='/ediciones'
 								className='xl:px-10 xl:py-8 
 								xl:text-[20px] text-[25px]
