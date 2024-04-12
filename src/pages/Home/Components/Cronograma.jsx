@@ -7,7 +7,7 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import Typography from '@mui/material/Typography';
 import { StyledPaper, StyledTimelineConnector } from './ComponentStyleCro';
-import { timelineEvents } from './info-timeline.js';
+import { timelineEvents } from '../../../data/info-timeline.js';
 
 export default function Cronograma() {
   return (
