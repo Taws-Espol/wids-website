@@ -21,7 +21,7 @@ export function Carrusel() {
     };
     // Second div left
     // Third div right 
-    const linksForm = ['https://forms.gle/K49hcMVpajuw2QgT6'];
+    const linksForm = ['https://forms.gle/K49hcMVpajuw2QgT6','https://docs.google.com/forms/d/e/1FAIpQLSdhNss5S8yXrnr2nZdPmuNOwk2RZl56Hf8TtMXnpBXBWXECtA/viewform'];
     return (
         <div className='m-0 h-[1000px] w-full py-2 relative group'>
             <div
@@ -42,9 +42,9 @@ export function Carrusel() {
                 <p className="text-3xl font-acumin font-normal">{infoImages[currentIndex].date}</p>
                 <p className="text-3xl font-acumin font-normal">{infoImages[currentIndex].place}</p>
             </div>
-            <div className={`${currentIndex === 0 ? 'block':'hidden'} absolute right-[5%] bottom-[9%] max-sm:left-[52%] max-md:left-[57%]  max-lg:left-[60%] max-lg:transform max-lg:-translate-x-1/2 max-lg:translate-y-1/2`}>
+            <div className={`${infoImages[currentIndex].linkform ? 'block':'hidden'} absolute right-[5%] bottom-[9%] max-sm:left-[52%] max-md:left-[57%]  max-lg:left-[60%] max-lg:transform max-lg:-translate-x-1/2 max-lg:translate-y-1/2`}>
                 <button className="text-white bg-primary-blue select-none rounded-md px-10 py-3 text-center text-xl font-acumin font-medium"
-                onClick={() => window.open(linksForm[currentIndex], '_blank')}
+                onClick={() => window.open(infoImages[currentIndex].linkform, '_blank')}
                 >Registro</button>
             </div>
 
