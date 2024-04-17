@@ -73,7 +73,7 @@ function Navbar() {
                                 transition-all duration-600 ease-in
                                 xl:translate-x-0 
                                 bg-gradient-custom 
-                                ${isOpen ? "block mb-44" : "hidden"}`}>
+								${isOpen ? "opacity-100": "opacity-0 xl:opacity-100"}`}>
 					<li className=' xl:border-0 border-2 
                                     xl:font-thin font-black 
                                     xl:shadow-none shadow-lg  
