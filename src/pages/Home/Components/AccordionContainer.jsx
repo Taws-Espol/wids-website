@@ -10,10 +10,10 @@ function Icon({ id, open }) {
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
-			fill=''
+			fill='white'
 			viewBox='0 0 24 24'
 			strokeWidth={2}
-			stroke='currentColor'
+			stroke='white'
 			className={`${
 				id === open ? "rotate-180" : ""
 			} h-5 w-5 transition-transform`}
@@ -33,13 +33,11 @@ export default function AccordionContainer({ edicionData }) {
 	const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
 	return (
-		<>
+		<div className="flex flex-col space-y-4 px-10p mt-10">
 			<Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
 				<AccordionHeader
 					onClick={() => handleOpen(1)}
-					className={`border-b-0 transition-colors ${
-						open === 1 ? "text-blue-500 hover:!text-blue-700" : ""
-					}`}
+					className={`border-b-0 rounded p-4 bg-primary-acc-violet text-white transition-colors`}
 				>
 					Cronograma
 				</AccordionHeader>
@@ -55,9 +53,7 @@ export default function AccordionContainer({ edicionData }) {
 			<Accordion open={open === 2} icon={<Icon id={2} open={open} />}>
 				<AccordionHeader
 					onClick={() => handleOpen(2)}
-					className={`border-b-0 transition-colors ${
-						open === 2 ? "text-blue-500 hover:!text-blue-700" : ""
-					}`}
+					className={`border-b-0 rounded p-4 bg-primary-acc-violet text-white transition-colors`}
 				>
 					Conferencistas
 				</AccordionHeader>
@@ -74,9 +70,7 @@ export default function AccordionContainer({ edicionData }) {
 			<Accordion open={open === 3} icon={<Icon id={3} open={open} />}>
 				<AccordionHeader
 					onClick={() => handleOpen(3)}
-					className={`border-b-0 transition-colors ${
-						open === 3 ? "text-blue-500 hover:!text-blue-700" : ""
-					}`}
+					className={`border-b-0 rounded p-4 bg-primary-acc-violet text-white transition-colors`}
 				>
 					Talleres
 				</AccordionHeader>
@@ -90,6 +84,6 @@ export default function AccordionContainer({ edicionData }) {
 						))}
 				</AccordionBody>
 			</Accordion>
-		</>
+		</div>
 	);
 }

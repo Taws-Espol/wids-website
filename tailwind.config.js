@@ -35,6 +35,7 @@ export default {
             },
             padding: {
                 '7p': '7.5%',
+                '10p': '10%',
             }
         },
     },
