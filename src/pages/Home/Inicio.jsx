@@ -1,6 +1,6 @@
 import { Carrusel } from "./Components/Carrusel";
-import InfoCarrusel from "./Components/info-de-conferencia/Carrusel/Carrusel";
-import Info from "./Components/info-de-conferencia/Info/Info";
+// import InfoCarrusel from "./Components/info-de-conferencia/Carrusel/Carrusel";
+// import Info from "./Components/info-de-conferencia/Info/Info";
 import Sponsors from "./Components/Sponsors";
 import Cronograma from "./Components/Cronograma";
 import Ubicacion from "./Components/Ubicacion";
@@ -19,13 +19,13 @@ function Inicio() {
                             13 de Julio, 2024 · Guayaquil - Espol
                         </h2>
                     </div>
-                        <Info/>
+                        {/* <Info/> */}
                 </div>
                 <div className="pb-[5vw]" style={{color: 'white', backgroundColor: 'black'}}>
                     <h1 className="pt-6 md:pt-10 text-center text-[6vw] md:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw] font-serif font-bold">
                         Conferencistas
                     </h1>
-                    <InfoCarrusel/>
+                    {/* <InfoCarrusel/> */}
                 </div>
             </section>
             <Sponsors></Sponsors>,

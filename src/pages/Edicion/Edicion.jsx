@@ -10,8 +10,8 @@ function Edicion() {
 
 	return (
 		<>
-			<section className='bg-gray-2 pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]'>
-				<h1>Edicion {year}</h1>
+			<section className='bg-gray-2 pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px] p-12'>
+				<h1 className="text-primary-dark-green text-xl">Edición {year}</h1>
 				<div className='container'>
 					<AccordionContainer edicionData={edicionData} />
 				</div>
