@@ -3,14 +3,14 @@ export let infoImages = [
 		id: "1",
 		url: "src/assets/images-carrusel/Datathon.jpeg",
 		title: "DATATHON",
-		date: "14 de Junio, 2024",
+		date: "31 de Mayo, 2024",
 		place: "Guayaquil - ESPOL",
-		dateTimer:'June 14, 2024 00:00:00',
+		dateTimer:'May 31, 2024 00:00:00',
 		linkform :'https://forms.gle/TTYPtgiDfP6UgfHj9'
 	},
 	{
 		id: "2",
-		url: "src/assets/images-carrusel/Conferencia.png",
+		url: "src/assets/images-carrusel/Conferencia.jpeg",
 		title: "CONFERENCIA",
 		date: "13 de Julio, 2024",
 		place: "Guayaquil - ESPOL",
@@ -19,10 +19,10 @@ export let infoImages = [
 	},
 	{
 		id: "3",
-		url: "src/assets/images-carrusel/NextGen.png",
+		url: "src/assets/images-carrusel/NextGen.jpeg",
 		title: "NEXT GEN",
-		date: "13 de Julio, 2024",
+		date: "28 de Junio, 2024",
 		place: "Guayaquil - ESPOL",
-		dateTimer:'July 13, 2024 00:00:00'
+		dateTimer:'June 28, 2024 00:00:00'
 	},
 ];
