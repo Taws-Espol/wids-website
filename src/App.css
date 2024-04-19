@@ -78,8 +78,46 @@
         transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
     }
     
-    .arriba {
-        color: black;
-        top: 1000px;
-        opacity: 0;
+    @keyframes fadeIn {
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeOut {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+    }
+    /* Efectos de hover */
+    
+    .hover-grow {
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .hover-grow:hover {
+        transform: scale(1.1);
+    }
+    /* Animación continua */
+    
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(74, 185, 105, 0.7);
+        }
+        70% {
+            box-shadow: 0 0 0 10px rgba(74, 185, 105, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(74, 185, 105, 0);
+        }
     }
