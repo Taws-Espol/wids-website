@@ -15,7 +15,7 @@ export default {
                 'primary-yellow': '#ffcb05',
                 'primary-orange': '#ff8003',
                 'primary-violet': '#a2a2ff',
-                'primary-dark-green': '#012719',
+                'primary-dark-green': '#004029',
                 'primary-acc-green': '#42a85f',
                 'primary-acc-blue': '#009fc9',
                 'primary-acc-orange': '#f76902',
