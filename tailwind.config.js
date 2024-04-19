@@ -37,7 +37,11 @@ export default {
             },
             screens: {
                 'xsm': '450px',
-            },
+
+            padding: {
+                '7p': '7.5%',
+                '10p': '10%',
+            }
         },
     },
     plugins: [],

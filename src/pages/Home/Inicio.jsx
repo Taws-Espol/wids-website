@@ -1,6 +1,6 @@
 import { Carrusel } from "./Components/Carrusel";
-import InfoCarrusel from "./Components/info-de-conferencia/Carrusel/Carrusel";
-import Info from "./Components/info-de-conferencia/Info/Info";
+// import InfoCarrusel from "./Components/info-de-conferencia/Carrusel/Carrusel";
+// import Info from "./Components/info-de-conferencia/Info/Info";
 import Sponsors from "./Components/Sponsors";
 import Cronograma from "./Components/Cronograma";
 import Ubicacion from "./Components/Ubicacion";
@@ -15,17 +15,17 @@ function Inicio() {
                         <h1 className="w-full text-center text-[6vw] md:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw] font-sans font-bold" style={{color: '#004029'}}>
                             CONFERENCIA
                         </h1>
-                        <h2 className="w-full text-center text-[3vw] md:text-[2vw] 2xl:text-[1.5vw] min-[2474]:text-[1vw] font-mono p-5 font-semibold ">
+                        <h2 className="w-full text-center text-[3.5vw] md:text-[2vw] 2xl:text-[1.5vw] min-[2474]:text-[1vw] font-mono p-5 font-semibold ">
                             13 de Julio, 2024 · Guayaquil - Espol
                         </h2>
                     </div>
-                        <Info/>
+                        {/* <Info/> */}
                 </div>
                 <div className="pb-[5vw]" style={{color: 'white', backgroundColor: 'black'}}>
                     <h1 className="pt-6 md:pt-10 text-center text-[6vw] md:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw] font-serif font-bold">
                         Conferencistas
                     </h1>
-                    <InfoCarrusel/>
+                    {/* <InfoCarrusel/> */}
                 </div>
             </section>
             <Cronograma/>,
