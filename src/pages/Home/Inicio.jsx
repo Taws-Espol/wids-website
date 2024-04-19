@@ -16,7 +16,7 @@ function Inicio() {
                         <h1 className="w-full text-center text-[6vw] md:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw] font-sans font-bold" style={{color: '#004029'}}>
                             CONFERENCIA
                         </h1>
-                        <h2 className="w-full text-center text-[3vw] md:text-[2vw] 2xl:text-[1.5vw] min-[2474]:text-[1vw] font-mono p-5 font-semibold ">
+                        <h2 className="w-full text-center text-[3.5vw] md:text-[2vw] 2xl:text-[1.5vw] min-[2474]:text-[1vw] font-mono p-5 font-semibold ">
                             13 de Julio, 2024 · Guayaquil - Espol
                         </h2>
                     </div>
