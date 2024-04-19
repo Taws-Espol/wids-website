@@ -1,44 +1,28 @@
 export let infoImages = [
 	{
 		id: "1",
-		url: "src/assets/images-carrusel/imagen1.png",
-		title: "CONFERENCIA",
-		date: "13 de Julio, 2024",
+		url: "src/assets/images-carrusel/Datathon.jpeg",
+		title: "DATATHON",
+		date: "31 de Mayo, 2024",
 		place: "Guayaquil - ESPOL",
+		dateTimer:'May 31, 2024 00:00:00',
+		linkform :'https://forms.gle/TTYPtgiDfP6UgfHj9'
 	},
 	{
 		id: "2",
-		url: "src/assets/images-carrusel/Copy-of-Welcome030624_20DG.jpg",
-		title: "REUNION",
+		url: "src/assets/images-carrusel/Conferencia.jpeg",
+		title: "CONFERENCIA",
 		date: "13 de Julio, 2024",
 		place: "Guayaquil - ESPOL",
+		dateTimer:'July 13, 2024 00:00:00',
+		linkform :'https://forms.gle/BnU5kCFcho3m4f4Y8'
 	},
 	{
 		id: "3",
-		url: "src/assets/images-carrusel/Carousel-3-Image-Replacement.jpg",
-		title: "CONFERENCIA 2",
-		date: "13 de Julio, 2024",
+		url: "src/assets/images-carrusel/NextGen.jpeg",
+		title: "NEXT GEN",
+		date: "28 de Junio, 2024",
 		place: "Guayaquil - ESPOL",
-	},
-	{
-		id: "4",
-		url: "src/assets/images-carrusel/Our-Mission-2-Hero_O-1.jpg",
-		title: "REUNION 2",
-		date: "13 de Julio, 2024",
-		place: "Guayaquil - ESPOL",
-	},
-	{
-		id: "5",
-		url: "src/assets/images-carrusel/Join_Accordion_O.jpg",
-		title: "CONFERENCIA 3",
-		date: "13 de Julio, 2024",
-		place: "Guayaquil - ESPOL",
-	},
-	{
-		id: "6",
-		url: "src/assets/images-carrusel/WiDS_Opportunities.jpg",
-		title: "REUNION3",
-		date: "13 de Julio, 2024",
-		place: "Guayaquil - ESPOL",
+		dateTimer:'June 28, 2024 00:00:00'
 	},
 ];

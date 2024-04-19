@@ -15,7 +15,7 @@ export default {
                 'primary-yellow': '#ffcb05',
                 'primary-orange': '#ff8003',
                 'primary-violet': '#a2a2ff',
-                'primary-dark-green': '#004029',
+                'primary-dark-green': '#012719',
                 'primary-acc-green': '#42a85f',
                 'primary-acc-blue': '#009fc9',
                 'primary-acc-orange': '#f76902',
@@ -26,13 +26,18 @@ export default {
                 'secondary-yellow': '#ffea95',
                 'secondary-orange': '#fcc5a1',
                 'secondary-violet': '#ececff',
-                'neutral-grey': '676767'
+                'neutral-grey': '676767',
+                'blue-label':'#00ADF2',
+                'cian-label':"#5CCFE1"
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
                 'gradient-conic': 'conic-gradient(var(--tw-gradient-stops))',
                 'gradient-custom': 'linear-gradient(90deg, rgba(255, 203, 5, 1) 0%, rgba(74, 185, 105, 1) 50%, rgba(0, 159, 201, 1) 100%)',
             },
+            screens: {
+                'xsm': '450px',
+
             padding: {
                 '7p': '7.5%',
                 '10p': '10%',

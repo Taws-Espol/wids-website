@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { MdLocationPin } from "react-icons/md";
 const Ubicacion = () => {
     return (
         <div className="bg-black text-white">
@@ -24,7 +24,10 @@ const Ubicacion = () => {
                 </div>
                 <div className="md:w-1/2 mt-4 md:mt-0 md:ml-8">
                     <div className=' px-8 pt-12'> 
-                        <h2 className="mt-4  text-4xl">Edificio STEM</h2>
+                        <div className='flex place-items-center  text-center gap-5'>
+                            <MdLocationPin className='w-10 h-16 mt-4' />
+                            <h2 className="mt-4  text-4xl">Edificio STEM</h2>
+                        </div>
                         <h2 className="mt-10 text-2xl">Campus Gustavo Galindo</h2>
                         <h2 className="mt-2 text-2xl">Km. 30 vía Perimetral</h2>
                     </div>

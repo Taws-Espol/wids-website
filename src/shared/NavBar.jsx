@@ -5,7 +5,6 @@ function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isOpen1, setIsOpen1] = useState(false);
 	const [isOpen2, setIsOpen2] = useState(false);
-	
 
 	const toggle = () => {
 		setIsOpen(!isOpen);
@@ -38,7 +37,7 @@ function Navbar() {
 					<Link to='/'>
 						<img
 							src='/src/assets/navbar/Imagen de WhatsApp 2024-03-25 a las 21.16.47_83686aab.jpg'
-							alt=''/>
+							alt='' />
 					</Link>
 					<div className='xl:hidden 
                                     rounded-md 
@@ -52,7 +51,7 @@ function Navbar() {
 											rounded 
 											bg-black 
 											transition-transform duration-300 
-                                            ${isOpen ? "transform rotate-45 translate-y-1.5 -translate-x-0": "mt-1"}`}
+                                            ${isOpen ? "transform rotate-45 translate-y-1.5 -translate-x-0" : "mt-1"}`}
 						></span>
 						<span className={`  block 
 											w-full h-1 
@@ -68,9 +67,9 @@ function Navbar() {
 											transition-transform duration-300 
 											${isOpen ? 'transform -rotate-45 -translate-y-0.5 -translate-x-0' : 'mt-1'}`}
 						></span>
-                    </div>
-                </div>
-                <ul className={`xl:w-auto w-full
+					</div>
+				</div>
+				<ul className={`xl:w-auto w-full
                                 z-50 
                                 xl:static absolute
                                 xl:flex 
@@ -143,7 +142,7 @@ function Navbar() {
 						<div className='flex 
 										justify-center 
 										items-center'>
-                            <p className='  xl:px-8 xl:py-8 
+							<p className='  xl:px-8 xl:py-8 
 											xl:text-[20px] text-[25px]
 											xl:text-black text-white
 											gradient-text-hover gradient-underline-hover 

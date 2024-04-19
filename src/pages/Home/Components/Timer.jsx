@@ -44,7 +44,7 @@ export function Timer({Event_date}) {
     function CardTimer(props) {
 
         return (
-            <div className={`text-black h-28 w-24 flex flex-col place-content-center place-items-center font-bold select-none rounded-md ${!props.isSec ? 'bg-white' : 'bg-gradient-to-b from-red-400 to-red-900'} max-sm:w-14 max-sm:h-[72px] max-md:w-16  max-md:h-[80px] max-lg:w-20 max-lg:h-[96px] max-xl:w-[90px] max-xl:h-[116px]` }>
+            <div className={`text-black h-28 w-24 flex flex-col place-content-center place-items-center font-acumin font-bold select-none rounded-md ${!props.isSec ? 'bg-white' : 'bg-gradient-to-b from-red-400 to-red-900'} max-sm:w-14 max-sm:h-[72px] max-md:w-16  max-md:h-[80px] max-lg:w-20 max-lg:h-[96px] max-xl:w-[90px] max-xl:h-[116px]` }>
                 <p className="text-6xl max-md:text-3xl max-lg:test-4xl mx-xl:text-5xl">
                     {props.time}
                 </p>
@@ -56,7 +56,7 @@ export function Timer({Event_date}) {
     }
 
     return (
-        <div className="bg-transparent flex flex-wrap gap-4 max-w-[600px] place-content-between p-1  max-sm:w-[340px] max-md:w-[400px] max-lg:w-[500px] max-xl:w-[550px]   max-lg:gap-2 " >
+        <div className="bg-transparent font-acumin flex flex-wrap gap-4 max-w-[600px] place-content-between p-1  max-sm:w-[340px] max-md:w-[400px] max-lg:w-[500px] max-xl:w-[550px]   max-lg:gap-2 " >
             <CardTimer className=""
                 time={rest.weeks}
                 timeInfo="Weeks"
