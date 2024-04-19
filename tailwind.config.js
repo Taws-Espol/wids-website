@@ -36,8 +36,7 @@ export default {
                 'gradient-custom': 'linear-gradient(90deg, rgba(255, 203, 5, 1) 0%, rgba(74, 185, 105, 1) 50%, rgba(0, 159, 201, 1) 100%)',
             },
             screens: {
-                'xsm': '450px',
-
+                'xsm': '450px',},
             padding: {
                 '7p': '7.5%',
                 '10p': '10%',
