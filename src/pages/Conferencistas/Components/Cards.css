@@ -1,0 +1,26 @@
+.cards{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1;
+}
+
+.image_wrapper {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 140, 186, 0.95);
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image_wrapper:hover .overlay{
+    opacity: 1;
+}
