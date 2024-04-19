@@ -77,3 +77,9 @@
         transform: translateY(0);
         transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
     }
+    
+    .arriba {
+        color: black;
+        top: 1000px;
+        opacity: 0;
+    }

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isOpen1, setIsOpen1] = useState(false);
+	const [isOpen2, setIsOpen2] = useState(false);
 	
 
 	const toggle = () => {
@@ -11,6 +12,12 @@ function Navbar() {
 	};
 	const toggle1 = () => {
 		setIsOpen1(!isOpen1);
+	};
+	const toggle2 = () => {
+		setIsOpen2(!isOpen2);
+		setIsOpen(false);
+		setIsOpen1(false);
+		
 	};
 
 	return (
@@ -73,11 +80,13 @@ function Navbar() {
                                 transition-all duration-600 ease-in
                                 xl:translate-x-0 
                                 bg-gradient-custom 
-                                ${isOpen ? "opacity-100": "opacity-0 xl:opacity-100"}`}>
+                                ${isOpen ? "opacity-100 ": "opacity-0 top-[-1000px] xl:top-0 xl:opacity-100"}`}
+								id='Menu'>
 					<li className=' xl:border-0 border-2 
                                     xl:font-thin font-black 
                                     xl:shadow-none shadow-lg  
-                                    xl:mb-0 mb-1'>
+                                    xl:mb-0 mb-1'
+						onClick={toggle2}>
 						<Link   to='/'
                                 className=' xl:px-8 xl:py-8 
                                             xl:text-[20px] text-[25px] 
@@ -92,7 +101,8 @@ function Navbar() {
 					<li className=' xl:border-0 border-2
                         xl:font-thin font-black
                         xl:shadow-none shadow-lg 
-                        mb-1'>
+                        mb-1'
+						onClick={toggle2} >
 						<Link   to='/cronograma'
                                 className=' xl:px-8 xl:py-8 
 											xl:text-[20px] text-[25px]
@@ -108,7 +118,8 @@ function Navbar() {
 					<li className=' xl:border-0 border-2
                         xl:font-thin font-black
                         xl:shadow-none shadow-lg
-                        mb-1 relative'>
+                        mb-1 relative'
+						onClick={toggle2}>
 						<Link   to='/cronograma'
                                 className='xl:px-8 xl:py-8 
 								xl:text-[20px] text-[25px]
@@ -156,7 +167,7 @@ function Navbar() {
 										text-center 
 										dropdown-menu 
 										${isOpen1 ? "show" : ""}`}>
-							<li className='link-with-gradient-border '>
+							<li className='link-with-gradient-border' onClick={toggle2}>
 								<Link
 									to='/eventos/wids'
 									className=' gradient-border-bottom 
@@ -168,7 +179,7 @@ function Navbar() {
 									Wids
 								</Link>
 							</li>
-							<li className='link-with-gradient-border '>
+							<li className='link-with-gradient-border ' onClick={toggle2}>
 								<Link
 									to='/eventos/datathon'
 									className=' xl:px-8 xl:py-2 
@@ -184,7 +195,8 @@ function Navbar() {
 					<li className=' xl:border-0 border-2
 									xl:font-thin font-black
 									xl:shadow-none shadow-lg
-									mb-1'>
+									mb-1'
+									onClick={toggle2}>
 						<Link   to='/ediciones'
 								className='xl:px-10 xl:py-8 
 								xl:text-[20px] text-[25px]
@@ -199,7 +211,8 @@ function Navbar() {
 					</li>
 					<li className=' xl:border-0 border-2
 									xl:font-thin font-black
-									xl:shadow-none shadow-lg'>
+									xl:shadow-none shadow-lg'
+									onClick={toggle2}>
 						<Link   to='/nosotros'
 								className='xl:px-10 xl:py-8 
 											xl:text-[20px] text-[25px]
