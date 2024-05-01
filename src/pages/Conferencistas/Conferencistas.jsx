@@ -17,7 +17,7 @@ function Conferencistas() {
             </div>
         </div>
     );
-  }
+}
 export default Conferencistas;
 
 //De prueba
