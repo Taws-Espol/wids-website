@@ -10,7 +10,7 @@ function Conferencistas() {
                 {datos.map((dato) => {
                     return(
                         <div key={dato.id} className="max-md:mb-[6vw]">
-                            <Cards name={dato.name} info={dato.info}/>
+                            <Cards image={dato.img} name={dato.name} info={dato.info}/>
                         </div>
                     )
                 })}
