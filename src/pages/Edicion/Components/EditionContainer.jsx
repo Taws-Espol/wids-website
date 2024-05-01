@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {ButtonEditionComponents} from './ButtonEditionComponents.jsx';
 import EventBox from "./EventBox";
 import { CardInfoEdition } from "./CardInfoEdition.jsx";
+import ProfileCard from "./ProfileCard.jsx";
 
 export function EditionContainer({edicionData}){
     const [active,setActive] = useState('Cronograma');
@@ -30,6 +31,13 @@ export function EditionContainer({edicionData}){
             </div>
             <div className={`${active=='Conferencista' ? 'block':'hidden'} flex place-content-center place-items-center flex-col my-5 gap-10`}>
                 <h3 className="text-2xl text-primary-dark-green font-bold">Conferencistas</h3>
+                <div className="flex flex-wrap justify-center gap-[6vw]">
+                {edicionData &&
+                                edicionData.conferencistas.map((datos, index) => (
+                                    <ProfileCard name={datos.nombre} image={datos.imgUrl} />
+                                ))
+                }
+                </div>
             </div>
             <div className={`${active=='Talleres' ? 'block':'hidden'} flex place-content-center place-items-center flex-col my-5 gap-10`}>
                 <h3 className="text-2xl text-primary-dark-green font-bold">Talleres</h3>
