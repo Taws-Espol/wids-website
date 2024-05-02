@@ -1,6 +1,20 @@
+import Cards from "./Components/Cards";
+
 function Conferencistas() {
     return (
         <div className="ml-[10vw] mr-[10vw] mb-[20vw]">
+            <div className="flex items-center h-[20vw] md:h-[12vw]">
+                <h1 className="font-bold text-[4vw] md:text-[2.5vw]">Edicion 2024</h1>
+            </div>
+            <div className="flex flex-wrap justify-start gap-[6vw]">
+                {datos.map((dato) => {
+                    return(
+                        <div key={dato.id} className="max-md:mb-[6vw]">
+                            <Cards image={dato.img} name={dato.name} info={dato.info}/>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     );
 }
