@@ -36,7 +36,7 @@ function Navbar() {
                                 justify-between'>
 					<Link to='/'>
 						<img
-							src='/src/assets/navbar/Imagen de WhatsApp 2024-03-25 a las 21.16.47_83686aab.jpg'
+							src='/src/assets/navbar/Logo_wids2024.jpg'
 							alt='' />
 					</Link>
 					<div className='xl:hidden 
@@ -102,7 +102,7 @@ function Navbar() {
                         xl:shadow-none shadow-lg 
                         mb-1'
 						onClick={toggle2} >
-						<Link   to='/cronograma'
+						<Link   to='/conferencistas'
                                 className=' xl:px-8 xl:py-8 
 											xl:text-[20px] text-[25px]
 											xl:text-black text-white 
@@ -168,14 +168,14 @@ function Navbar() {
 										${isOpen1 ? "show" : ""}`}>
 							<li className='link-with-gradient-border' onClick={toggle2}>
 								<Link
-									to='/eventos/wids'
+									to='/eventos/conferencia'
 									className=' gradient-border-bottom 
 												xl:px-8 xl:py-2 
 												xl:text-[20px] text-[25px]
 												block  
 												hover:bg-gray-100 
 												pt-5 pb-5'>
-									Wids
+									Conferencia
 								</Link>
 							</li>
 							<li className='link-with-gradient-border ' onClick={toggle2}>
@@ -187,6 +187,17 @@ function Navbar() {
 												hover:bg-gray-100 
 												pt-5 pb-5'>
 									Datathon
+								</Link>
+							</li>
+							<li className='link-with-gradient-border ' onClick={toggle2}>
+								<Link
+									to='/eventos/nextgen'
+									className=' xl:px-8 xl:py-2 
+												xl:text-[20px] text-[25px] 
+												block  
+												hover:bg-gray-100 
+												pt-5 pb-5'>
+									Next Gen
 								</Link>
 							</li>
 						</ul>

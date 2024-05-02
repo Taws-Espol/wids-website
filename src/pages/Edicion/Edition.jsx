@@ -1,9 +1,9 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import {EditionContainer}from "./Components/EditionContainer.jsx";
-import { ediciones } from "../../data/ediciones";
+import { ediciones } from "../../data/ediciones.js";
 
-function Edicion() {
+function Edition() {
 	const location = useLocation();
 	const year = location.pathname.split("/").pop();
 	const edicionData = ediciones.find((edicion) => edicion.edicion === year);
@@ -20,4 +20,4 @@ function Edicion() {
 	);
 }
 
-export default Edicion;
+export default Edition;
