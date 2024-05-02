@@ -1,13 +1,10 @@
-import { ediciones } from "../../data/ediciones";
-import EventCard from "../Home/Components/EventCard";
-import { Link } from "react-router-dom"; // Importa Link desde react-router-dom
-
-function Eventos() {
+import Working from "../../shared/Working";
+function Conferencia() {
 	return (
-		<>
-		CONFERENCIA
-		</>
+        <div className="w-full">
+            <Working/>
+        </div>
 	);
 }
 
-export default Eventos;
+export default Conferencia;

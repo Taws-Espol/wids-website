@@ -14,11 +14,11 @@ export function EditionContainer({edicionData}){
     return(
         <>
             <div className="flex flex-wrap gap-5 max-lg:flex-col max-lg:place-content-center max-lg:place-items-center"> 
-                <ButtonEditionComponents key='1' text='Cronograma' changeButton={() => changeButton('Cronograma')}/>
+                <ButtonEditionComponents key='1' text='Cronograma'  active={active} changeButton={() => changeButton('Cronograma')}/>
                 <div></div>
-                <ButtonEditionComponents key='2' text='Conferencistas'changeButton={()=>changeButton('Conferencista')}/>
+                <ButtonEditionComponents key='2' text='Conferencistas' active={active} changeButton={()=>changeButton('Conferencistas')}/>
                 <div></div>
-                <ButtonEditionComponents key='3'  text='Talleres'changeButton={()=>changeButton('Talleres')}/>
+                <ButtonEditionComponents key='3'  text='Talleres' active={active} changeButton={()=>changeButton('Talleres')}/>
                 <div></div>
             </div>
             <div className={`${active=='Cronograma' ? 'block':'hidden'} flex place-content-center place-items-center flex-col my-5 gap-10`}>
@@ -29,7 +29,7 @@ export function EditionContainer({edicionData}){
                                 ))
                 }
             </div>
-            <div className={`${active=='Conferencista' ? 'block':'hidden'} flex place-content-center place-items-center flex-col my-5 gap-10`}>
+            <div className={`${active=='Conferencistas' ? 'block':'hidden'} flex place-content-center place-items-center flex-col my-5 gap-10`}>
                 <h3 className="text-2xl text-primary-dark-green font-bold">Conferencistas</h3>
                 <div className="flex flex-wrap justify-center gap-[6vw]">
                 {edicionData &&

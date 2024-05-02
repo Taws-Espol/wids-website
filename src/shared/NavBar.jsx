@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -18,26 +19,31 @@ function Navbar() {
 		setIsOpen1(false);
 		
 	};
+	const location = useLocation();
+	const nothome = location.pathname.split("/").pop();
 
 	return (
 		<>
-			<nav className='    xl:flex 
-								xl:items-center 
-								xl:justify-between 
-								xl:text-[20px] 
-								xl:text-lg 
-								top-0 left-0 
-								w-full 
-								font-acumin 
-								text-base'>
+			<nav className={`xl:flex 
+							xl:items-center 
+							xl:justify-between 
+							xl:text-[20px] 
+							xl:text-lg 
+							top-0 left-0 
+							w-full 
+							font-acumin 
+							text-base
+							${nothome ? 'border-b-[6px] border-b-primary-blue' : ''}
+							`}>
 				<div className='flex 
                                 items-center 
                                 bg-[rgb(252,252,252)] 
                                 justify-between'>
 					<Link to='/'>
 						<img
-							src='/src/assets/navbar/Logo_wids2024.jpg'
-							alt='' />
+							src='/src/assets/navbar/Logo_wids2024.png'
+							alt='' 
+							className="w-[400px] h-[120px] bg-white max-sm:w-[200px] max-sm:h-[60px]"/>
 					</Link>
 					<div className='xl:hidden 
                                     rounded-md 
@@ -200,24 +206,18 @@ function Navbar() {
 									Next Gen
 								</Link>
 							</li>
+							<li className='link-with-gradient-border ' onClick={toggle2}>
+								<Link
+									to='/eventos/ediciones'
+									className=' xl:px-8 xl:py-2 
+												xl:text-[20px] text-[25px] 
+												block  
+												hover:bg-gray-100 
+												pt-5 pb-5'>
+									Ediciones
+								</Link>
+							</li>
 						</ul>
-					</li>
-					<li className=' xl:border-0 border-2
-									xl:font-thin font-black
-									xl:shadow-none shadow-lg
-									mb-1'
-									onClick={toggle2}>
-						<Link   to='/ediciones'
-								className='xl:px-10 xl:py-8 
-								xl:text-[20px] text-[25px]
-								xl:text-black text-white
-								xl:relative 
-								gradient-text-hover gradient-underline-hover 
-								block 
-								text-center 
-								pt-6 pb-6'>
-							Ediciones
-						</Link>
 					</li>
 					<li className=' xl:border-0 border-2
 									xl:font-thin font-black

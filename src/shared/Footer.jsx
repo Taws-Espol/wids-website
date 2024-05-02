@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import  redes  from '../data/redes';
 import emailjs from '@emailjs/browser';
+import { useLocation } from "react-router-dom";
 function Footer() {
     //https://www.emailjs.com/
     //codigo: https://www.emailjs.com/docs/examples/reactjs/
@@ -25,10 +26,12 @@ function Footer() {
         },
       );
   };
+	const location = useLocation();
+	const nothome = location.pathname.split("/").pop();
 
     return (
       <footer className='font-acumin'>
-        <ul className="bg-[rgb(0,0,0)] grid xl:grid-cols-2 grid-cols-1 w-full px-4 py-4">
+        <ul className={`bg-[rgb(0,0,0)] grid xl:grid-cols-2 grid-cols-1 w-full px-4 py-4 ${nothome ? 'hidden':'block'}`}>
           <li className="px-20 pt-10 xl:text-start text-center">
             <h2 className="text-[35px] font-semibold text-white mb-10">Contacto</h2>
           </li>

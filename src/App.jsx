@@ -32,12 +32,12 @@ function App() {
 					<Route path='/eventos/conferencia' element={<Conferencia />} />
 					<Route path='/eventos/datathon' element={<Datathon />} />
 					<Route path='/eventos/nextgen' element={<NextGen />} />
-					<Route path='/ediciones' element={<Editions />} />
+					<Route path='/eventos/ediciones' element={<Editions />} />
 					{/*TODO: Add the component!!! */}
-					<Route path='/ediciones/2020' element={<Edition />} />
-					<Route path='/ediciones/2021' element={<Edition />} />
-					<Route path='/ediciones/2022' element={<Edition />} />
-					<Route path='/ediciones/2023' element={<Edition />} />
+					<Route path='/eventos/ediciones/2020' element={<Edition />} />
+					<Route path='/eventos/ediciones/2021' element={<Edition />} />
+					<Route path='/eventos/ediciones/2022' element={<Edition />} />
+					<Route path='/eventos/ediciones/2023' element={<Edition />} />
 					<Route path='/nosotros' element={<Nosotros />} />
 					<Route path='*' element={<NotFound />} />
 				</Routes>
