@@ -1,5 +1,4 @@
 import React from "react";
-
 export function ButtonEditionComponents({text,changeButton,active}){
     return (
         <div className={`bg-primary-acc-violet rounded-lg text-white text-center w-52 h-14 flex place-content-center place-items-center text-2xl font-acumin

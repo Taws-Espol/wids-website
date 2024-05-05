@@ -1,7 +1,7 @@
 import evento from '../../../assets/images-cardInfo/Event.png';
 import taller from '../../../assets/images-cardInfo/Taller.png';
 
-export function CardInfoEdition({type,title, info,changeButton}){
+export function CardInfoEdition({type,title, info}){
     let image;
     switch (type) {
         case "Cronograma":
@@ -21,5 +21,5 @@ export function CardInfoEdition({type,title, info,changeButton}){
                 <p className="text-xl max-xsm:text-base">{info}</p>
             </div>
         </div>
-    )
-}
+    );
+};
