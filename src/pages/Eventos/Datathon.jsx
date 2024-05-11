@@ -8,6 +8,7 @@ function Datathon() {
     const div3 = DatathonInfo[2];
     const requirements = div3.requirements;
     const div4 = DatathonInfo[3];
+    const div5 = DatathonInfo[4];
     return (
         <div className="w-full  select-none flex flex-col place-content-center place-items-center pb-10 font-acumin max-sm:text-base">
             <div>
@@ -133,11 +134,20 @@ function Datathon() {
                     </p>
                 </div>
             </div>
+            <div className=" w-4/5 m-w-[500px] border-l-secondary-green border-y-secondary-blue border-r-secondary-yellow  font-acumin border-4 py-10 flex flex-col place-content-center place-items-center rounded-3xl gap-5 mt-10">
+                <div className="flex flex-wrap w-10/12 max-sm:flex-col max-sm:place-content-center max-sm:place-items-center max-sm:gap-5 place-content-around bg-gradient-to-br from-secondary-green via-primary-blue to-secondary-yellow rounded-3xl py-10">
+                    <div className="w-4/5 min-w-[250px] flex place-content-start place-items-center justify-start text-3xl text-center">
+                        <p className="px-10 text-justify">
+                            {div4.msg}
+                        </p>
+                    </div>
+                </div>
+            </div>
             <div className="w-4/5 flex flex-col text-2xl mt-20 place-content-center  place-items-center">
                 <h3 className="font-bold text-primary-dark-green  text-3xl text-center">
-                    {div4.title}
+                    {div5.title}
                 </h3>
-                {div4.crono.map((day,index) => (<HackatonDay key={index} dayHackaton={day}/>) )}
+                {div5.crono.map((day,index) => (<HackatonDay key={index} dayHackaton={day}/>) )}
             </div>
         </div>
     );

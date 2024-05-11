@@ -1,4 +1,4 @@
-export let NextGenInfo = [
+export const NextGenInfo = [
 	{
 		id: "div_1",
 		title: "Next Gen: Empoderando a la siguiente generación",
