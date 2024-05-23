@@ -14,8 +14,8 @@ export function ProfileCard({ conferencista }) {
   }
   return (
     <div>
-      <Card className={`w-96 h-[600px] ${state ? '' : 'border-4 border-primary-violet'}`}>
-        <CardHeader floated={false} className="min-h-96 min-w-96 relative overflow-hidden" onClick={changeState}>
+      <Card className={`w-96 h-[600px] ${state ? 'block' : 'hidden'} max-sm:w-80`}>
+        <CardHeader floated={false} className="min-h-96 w-full relative overflow-hidden" onClick={changeState}>
           <img src={image} alt="Conferencista" className="h-full w-full object-cover" />
         </CardHeader>
         <CardBody className="text-center h-32">
@@ -39,7 +39,7 @@ export function ProfileCard({ conferencista }) {
           }
         </CardFooter>
       </Card>
-      <Card className={`w-96 max-h-96 overflow-scroll py-10 ${state ? 'hidden' : 'block border-4 border-primary-violet'}`}>
+      <Card className={`w-96 h-[600px] overflow-scroll  scroll-smooth py-10 ${state ? 'hidden' : 'block'}`} onClick={changeState}>
         <p className="px-10 text-justify text-2xl">
           {conferencista.info}
         </p>
