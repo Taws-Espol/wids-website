@@ -84,29 +84,33 @@ function Navbar() {
                                 p-4 
                                 transition-all duration-600 ease-in
                                 xl:translate-x-0 
-                                bg-gradient-custom 
+								max-xl:bg-primary-green
+								max-xl:bg-opacity-95
                                 ${isOpen ? "opacity-100 ": "opacity-0 top-[-1000px] xl:top-0 xl:opacity-100"}`}
                                 id='Menu'>
-                    <li className={` xl:border-0 border-2 
+                    <li className={` xl:border-0
                                     xl:font-thin font-black 
                                     xl:shadow-none shadow-lg  
-                                    xl:mb-1 ${nothome==="" ? 'underline-offset-8 primary-yellow active':''}`}
+									max-xl:w-full
+                                    mb-1 ${nothome==="" ? 'underline-offset-8 primary-yellow active':''}`}
                         onClick={toggle2}>
                         <Link   to='/'
                                 className={`xl:px-8 xl:py-8 
                                             xl:text-[20px] text-[25px] 
-                                            xl:text-black text-white  
+                                            xl:text-black text-white 
+											max-xl:w-full
                                             block  
                                             text-center text-stroke  
                                             pt-6 pb-6
+											max-xl:hover:bg-primary-yellow
                                             `}>
                             Inicio
                         </Link>
                     </li>
-                    <li className={`xl:border-0 border-2
+                    <li className={`xl:border-0
                         xl:font-thin font-black
                         xl:shadow-none shadow-lg 
-                        mb-1 ${nothome==="conferencistas" ? 'underline-offset-8 primary-green active':''}`}
+                        mb-1 ${nothome==="conferencistas" ? 'underline-offset-8  primary-dark-green active':''}`}
                         onClick={toggle2} >
                         <Link   to='/conferencistas'
                                 className={`xl:px-8 xl:py-8 
@@ -116,11 +120,12 @@ function Navbar() {
                                             block  
                                             text-center  
                                             pt-6 pb-6
+											max-xl:hover:bg-primary-dark-green
                                             `}>
                             Conferencistas
                         </Link>
                     </li>
-                    <li className={`xl:border-0 border-2 xl:font-thin font-black  xl:shadow-none shadow-lg mb-1 relative ${nothome==="cronograma" ? 'underline-offset-8 primary-orange active':''}`}
+                    <li className={`xl:border-0 xl:font-thin font-black  xl:shadow-none shadow-lg mb-1 relative ${nothome==="cronograma" ? 'underline-offset-8 primary-orange active':''}`}
                         onClick={toggle2}>
                         <Link   to='/cronograma'
                                 className={`xl:px-8 xl:py-8 
@@ -130,12 +135,13 @@ function Navbar() {
                                 block  
                                 text-center  
                                 pt-6 pb-6
+								max-xl:hover:bg-primary-orange
                                 `}>
                             Cronograma
                         </Link>
                     </li>
                     <li className=' xl:relative
-                                    xl:border-0 border-2
+                                    xl:border-0
                                     xl:font-thin font-black
                                     xl:shadow-none shadow-lg   
                                     xl:flex 
@@ -144,7 +150,8 @@ function Navbar() {
                                     mb-1'>
                         <div className='flex 
                                         justify-center 
-                                        items-center'>
+                                        items-center
+										max-xl:hover:bg-primary-blue'>
                             <p className={` xl:px-8 xl:py-8 
                                             xl:text-[20px] text-[25px]
                                             xl:text-black text-white
@@ -179,6 +186,7 @@ function Navbar() {
                                                 block  
                                                 hover:bg-gray-100 
                                                 pt-5 pb-5
+												max-xl:hover:bg-primary-blue
                                                 `}>
                                     Conferencia
                                 </Link>
@@ -190,6 +198,7 @@ function Navbar() {
                                                 xl:text-[20px] text-[25px] 
                                                 block  
                                                 hover:bg-gray-100 
+												max-xl:hover:bg-primary-blue
                                                 pt-5 pb-5'>
                                     Datathon
                                 </Link>
@@ -201,6 +210,7 @@ function Navbar() {
                                                 xl:text-[20px] text-[25px] 
                                                 block  
                                                 hover:bg-gray-100 
+												max-xl:hover:bg-primary-blue
                                                 pt-5 pb-5'>
                                     Next Gen
                                 </Link>
@@ -212,15 +222,18 @@ function Navbar() {
                                                 xl:text-[20px] text-[25px] 
                                                 block  
                                                 hover:bg-gray-100 
+												max-xl:hover:bg-primary-blue
                                                 pt-5 pb-5'>
                                     Ediciones
                                 </Link>
                             </li>
                         </ul>
                     </li>
-                    <li className={` xl:border-0 border-2
+                    <li className={` xl:border-0
                                     xl:font-thin font-black
-                                    xl:shadow-none shadow-lg ${nothome==="nosotros" ? 'underline-offset-8 primary-violet active':''}`}
+                                    xl:shadow-none shadow-lg
+									max-xl:hover:bg-primary-violet
+									${nothome==="nosotros" ? 'underline-offset-8 primary-violet active':''}`}
                                     onClick={toggle2}>
                         <Link   to='/nosotros'
                                 className={`xl:px-10 xl:py-8 
@@ -239,5 +252,4 @@ function Navbar() {
         </>
     );
 }
-
 export default Navbar;
