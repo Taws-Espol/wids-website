@@ -1,4 +1,3 @@
-import speakerImage from "../assets/images/stockSpeaker.jpg";
 export const ediciones = [
 	{
 		edicion: "2020",

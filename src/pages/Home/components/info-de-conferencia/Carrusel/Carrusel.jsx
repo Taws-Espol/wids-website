@@ -3,7 +3,8 @@ import "./Carrusel.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState } from "react";
-
+import {ediciones} from "../../../../../data/ediciones";
+import {ProfileCard} from "../../../../Edicion/Components/ProfileCard";
 function Carrusel() {
 
     const [slidesToShow, setSlidesToShow] = useState(4);
@@ -11,13 +12,12 @@ function Carrusel() {
 
     const updateSlidesToShow = () => {
         const windowWidth = window.innerWidth;
-        console.log(windowWidth)
         if (windowWidth >= 1280){
-            setSlidesToShow(4);
+            setSlidesToShow(3);
         }
 
         else if (windowWidth >= 768){
-            setSlidesToShow(3);
+            setSlidesToShow(2);
         }
 
         else {
@@ -32,6 +32,8 @@ function Carrusel() {
             window.removeEventListener('resize', updateSlidesToShow);
         }
     }, []);
+    
+	const edicionData = ediciones.find((edicion) => edicion.edicion === '2020');
 
     const settings = {
         infinite: true,
@@ -46,43 +48,14 @@ function Carrusel() {
         <div className="w-3/4 m-auto">
             <div className="mt-[5vw] mb-[5vw]">
                 <Slider {...settings}>
-                    {datos.map((dato) => {
-                        return(
-                            <div key={dato.id} className="">
-                                <div className="flex justify-center">
-                                    <img className="hover:scale-105 carrusel-img p-2 rounded-xl w-[65%] md:w-[85%] " src={dato.img}/>
-                                </div>
-                            </div>
-                        )
-                    })}
+                    {edicionData.conferencistas &&
+                                    edicionData.conferencistas.map((conferencista, index) => (
+                                        <ProfileCard key={index} conferencista={conferencista} home={true} />
+                                    ))
+                    }
                 </Slider>
             </div>
         </div>
     )
 }
-
-//datos temporales
-const datos = [
-   {
-       id:1,
-       img:`src/assets/info-de-conferencia/Carrusel/prueba6.jpeg`
-   },
-   {
-       id:2,
-       img:`src/assets/info-de-conferencia/Carrusel/prueba6.jpeg`
-   },
-   {
-       id:3,
-       img:`src/assets/info-de-conferencia/Carrusel/prueba6.jpeg`
-   },
-   {
-       id:4,
-       img:`src/assets/info-de-conferencia/Carrusel/prueba6.jpeg`
-   },
-   {
-       id:5,
-       img:`src/assets/info-de-conferencia/Carrusel/prueba6.jpeg`
-   }
-];
-
 export default Carrusel

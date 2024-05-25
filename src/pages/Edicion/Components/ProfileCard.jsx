@@ -2,7 +2,7 @@ import { Card, CardHeader, CardBody, CardFooter, Typography, Tooltip } from "@ma
 import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { useState } from "react";
-export function ProfileCard({ conferencista }) {
+export function ProfileCard({ conferencista,home }) {
   const path_conferencistas = "/src/assets/Eventos/Ediciones/2020/Images/conferencistas/"
   let image = path_conferencistas + conferencista.imageName;
 
@@ -14,15 +14,15 @@ export function ProfileCard({ conferencista }) {
   }
   return (
     <div>
-      <Card className={`w-96 h-[600px] ${state ? 'block' : 'hidden'} max-sm:w-80`}>
-        <CardHeader floated={false} className="min-h-96 w-full relative overflow-hidden" onClick={changeState}>
+      <Card className={`w-96 h-[600px] ${state ? 'block' : 'hidden'} max-sm:w-80 ${home ? 'h-[600px] w-80':''}`}>
+        <CardHeader floated={false} className={`min-h-96 w-full relative overflow-hidden ${home ? 'h-60':''}`} onClick={changeState}>
           <img src={image} alt="Conferencista" className="h-full w-full object-cover" />
         </CardHeader>
-        <CardBody className="text-center h-32">
+        <CardBody className="text-center h-32 text-primary-dark-green">
           <p className="text-primary-dark-green font-bold">{conferencista.name}</p>
           <p>{conferencista.work}, {conferencista.place}</p>
         </CardBody>
-        <CardFooter className="flex justify-center gap-7 pt-2">
+        <CardFooter className="flex justify-center gap-7 pt-2 text-black">
           {conferencista.linkeding ?
             <Tooltip content="Follow on LinkedIn">
               <a href={conferencista.linkeding} target="_blank" rel="noopener noreferrer">

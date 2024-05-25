@@ -5,7 +5,7 @@ import { infoImages } from '../../../data/info-Carrusel.js';
 import { Timer } from "./Timer.jsx";
 import '../../../index.css'; // Asegúrate de que el path sea correcto.
 
-export function Carrusel() {
+export default function Carrusel() {
 	const [currentIndex, setCurrentIndex] = useState(0);
 
 	const previousImage = () => {

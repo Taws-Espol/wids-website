@@ -12,7 +12,7 @@ export function ItemTimeLine({ Evento }) {
             break;
         case "Break":
             imagen = "/src/assets/images-cardInfo/Break.png";
-            background_color = "#ffcb05";
+            background_color = "#fcc5a1";
             break;
         case "Talleres":
             imagen = "/src/assets/images-cardInfo/Break.png";

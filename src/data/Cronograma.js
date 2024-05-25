@@ -19,7 +19,22 @@ export let cronograma = {
             type:'Conferencia',
             title:'Evento 3',
             info:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin dictum ante et tincidunt. Phasellus porta eleifend dignissim. Suspendisse potenti. Nam a rhoncus mi.'
-        }
+        },
+        {
+            type:'Break',
+            title:'Break 2',
+            info:'',
+        },
+        {
+            type:'Conferencia',
+            title:'Evento 4',
+            info:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin dictum ante et tincidunt. Phasellus porta eleifend dignissim. Suspendisse potenti. Nam a rhoncus mi.'
+        },
+        {
+            type:'Conferencia',
+            title:'Evento 5',
+            info:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin dictum ante et tincidunt. Phasellus porta eleifend dignissim. Suspendisse potenti. Nam a rhoncus mi.'
+        },
     ],
     Talleres : [
         {
@@ -46,6 +61,16 @@ export let cronograma = {
             type:'Taller',
             title:'Taller 4',
             info:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-        }
+        },
+        {
+            type:'Taller',
+            title:'Taller 5',
+            info:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        },
+        {
+            type:'Taller',
+            title:'Taller 6',
+            info:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+        },
     ]
 }

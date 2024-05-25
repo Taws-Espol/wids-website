@@ -7,7 +7,7 @@ export default {
     theme: {
         extend: {
             fontFamily: { 
-                'acumin': ['acumin-variable'],
+                'acumin': ['acumin-pro','acumin-variable'],
             },
             colors: {
                 'primary-green': '#4ab969',

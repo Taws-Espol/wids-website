@@ -43,7 +43,7 @@ function Navbar() {
                         <img
                             src='/src/assets/navbar/Logo_wids2024.png'
                             alt='' 
-                            className="w-[400px] h-[120px] bg-white max-sm:w-[200px] max-sm:h-[60px]"/>
+                            className="w-[400px] h-[120px] bg-white max-sm:w-[200px] max-sm:h-[60px] ml-5"/>
                     </Link>
                     <div className='xl:hidden 
                                     rounded-md 
@@ -224,7 +224,7 @@ function Navbar() {
                                                 hover:bg-gray-100 
 												max-xl:hover:bg-primary-blue
                                                 pt-5 pb-5'>
-                                    Ediciones
+                                    Ediciones Anteriores
                                 </Link>
                             </li>
                         </ul>

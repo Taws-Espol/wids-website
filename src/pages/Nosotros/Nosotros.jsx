@@ -1,7 +1,7 @@
 function Nosotros() {
     return (
         <>
-            <section className='bg-gray-2 pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px] flex place-content-center place-items-center select-none'>
+            <section className='bg-gray-2 pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px] flex place-content-center place-items-center select-none font-acumin'>
                 <div className='container flex w-[100%] py-20 px-10 place-content-center place-items-center max-lg:flex-col max-lg:gap-10'>
                     <div className='w-3/5 flex place-content-center place-items-center '>
                         <img
