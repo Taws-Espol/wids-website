@@ -1,18 +1,18 @@
 import {
-  Card,
-  CardHeader,
-  CardBody,
-  Typography,
+    Card,
+    CardHeader,
+    CardBody,
+    Typography,
 } from "@material-tailwind/react";
 import './Cards.css'
 import PropTypes from 'prop-types'
- 
+
 export function Cards(props) {
     return (
         <Card className='w-[35vw] md:w-[22vw]'>
             <div className='image_wrapper'>
                 <CardHeader floated={false} className="h-fit">
-                    <img src={props.image} alt='profile-picture' className='w-full'/>
+                    <img src={props.image} alt='profile-picture' className='w-full' />
                 </CardHeader>
                 <div className='overlay rounded-xl'>
                     <div className='flex justify-center p-[2vw]'>
