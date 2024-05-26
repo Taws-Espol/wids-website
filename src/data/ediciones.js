@@ -8,7 +8,7 @@ export const ediciones = [
 				place: "ESPOL",
 				work: "Rectora de ESPOL",
 				schedule: "14:00 - 14:20",
-				imageName: "ceciliaparedes.jpg"
+				imageName: "ceciliaparedes.png"
 			},
 			{
 				title: "Estructura de Redes y su influencia en Machine Learning",
@@ -16,7 +16,7 @@ export const ediciones = [
 				place: "GESIS - Leibniz Institute for the Social Sciences",
 				work: "Asistente de investigación",
 				schedule: "14:20 - 14:40",
-				imageName: "lisetteespin.jpeg"
+				imageName: "lisetteespin.png"
 			},
 			{
 				title: "Ciencia de datos para la extracción de información valiosa a partir de las redes sociales",
@@ -33,7 +33,7 @@ export const ediciones = [
 				place: "Politécnico Rensselaer",
 				work: "Profesora de Ciencias Computacionales",
 				schedule: "15:00 - 15:20",
-				imageName: "UzmaMushtaque.jpg",
+				imageName: "UzmaMushtaque.png",
 				language: "inglés"
 			},
 			{
@@ -50,7 +50,7 @@ export const ediciones = [
 				place: "Banco del Pacífico",
 				work: "Arquitecta de datos",
 				schedule: "15:25 - 15:45",
-				imageName: "estefanialozano.jpeg"
+				imageName: "estefanialozano.png"
 			},
 			{
 				title: "Análisis y visualización de datos multimodales en ambientes de aprendizaje",
@@ -66,7 +66,7 @@ export const ediciones = [
 				place: "OPEV",
 				work: "Directora Ejecutiva",
 				schedule: "16:05 - 16:25",
-				imageName: "anamariapesante.jpg"
+				imageName: "anamariapesante.png"
 			},
 			{
 				title: "Break",
@@ -82,7 +82,7 @@ export const ediciones = [
 				place: "Universidad de Stanford",
 				work: "Ph.D. Student",
 				schedule: "16:30 - 16:50",
-				imageName: "CindyOrozco.jpg"
+				imageName: "CindyOrozco.png"
 			},
 			{
 				title: "Datos para evaluar políticas públicas: El acceso gratuito a la Universidad en Ecuador",
@@ -90,7 +90,7 @@ export const ediciones = [
 				place: "ESPOL",
 				work: "Decana de grado de ESPOL",
 				schedule: "16:50 - 17:10",
-				imageName: "aliciaguerrero.jpg"
+				imageName: "aliciaguerrero.png"
 			},
 			{
 				title: "Epidemiología y Ciencia de Datos en la Salud Pública",
@@ -122,7 +122,7 @@ export const ediciones = [
 				place: "Universidad Casa Grande",
 				work: "Profesora en la Facultad de Comunicación",
 				schedule: "17:55 - 18:15",
-				imageName: "gabrielabaquerizo.jpeg"
+				imageName: "gabrielabaquerizo.png"
 			},
 			{
 				title: "Escalabilidad y rendimiento para arquitecturas de Big Data en la nube",
@@ -130,7 +130,7 @@ export const ediciones = [
 				place: "ESPOL",
 				work: "Directora de Investigación de grado de FIEC",
 				schedule: "18:15 - 18:35",
-				imageName: "cristinaabad.jpg"
+				imageName: "cristinaabad.png"
 			},
 			{
 				title: "Clausura",
@@ -138,7 +138,7 @@ export const ediciones = [
 				place: "ESPOL",
 				work: "Decana de la Facultad de Ingeniería en Electricidad y Computación",
 				schedule: "18:35",
-				imageName: "katherinechiluiza.jpg"
+				imageName: "katherinechiluiza.png"
 			}
 		],
 		conferencistas: [
@@ -148,7 +148,7 @@ export const ediciones = [
 				place: "GESIS - Leibniz Institute for the Social Sciences",
 				work: "Asistente de investigación",
 				schedule: "14:20 - 14:40",
-				imageName: "lisetteespin.jpeg",
+				imageName: "lisetteespin.png",
 				linkeding:"https://www.linkedin.com/company/widsespol/",
 				x:"https://twitter.com/widsespol",
 				info: "Lisette está cursando su último año de doctorado en la Universidad de Koblenz en Alemania. Trabaja en su tesis doctoral en el departamento Computational Social Science (CSS) en GESIS. Sus intereses se enfocan en la intersección de Network Science y Machine Learning. Actualmente investiga la influencia que tienen las diferentes estructuras de grafos en los algoritmos de clasificación y ranking. Entre el 2017 y 2018, Lisette realizó dos pasantías académicas en la Universidad del Sur de California (USC-ISI) y una en Stanford. Obtuvo su maestría en Ciencias de la Computación en la Universidad de Saarland e hizo una pasantía en el Max Planck Institute for Software Systems (MPI-SWS) en Saarbrücken. Se graduó de ingeniera en Ciencias Computacionales en la ESPOL en el 2010."
@@ -171,7 +171,7 @@ export const ediciones = [
 				place: "Politécnico Rensselaer",
 				work: "Profesora de Ciencias Computacionales",
 				schedule: "15:00 - 15:20",
-				imageName: "UzmaMushtaque.jpg",
+				imageName: "UzmaMushtaque.png",
 				language: "inglés",
 				linkeding:"https://www.linkedin.com/company/widsespol/",
 				x:"https://twitter.com/widsespol",
@@ -183,7 +183,7 @@ export const ediciones = [
 				place: "Banco del Pacífico",
 				work: "Arquitecta de datos",
 				schedule: "15:25 - 15:45",
-				imageName: "estefanialozano.jpeg",
+				imageName: "estefanialozano.png",
 				instagram:"https://www.instagram.com/widsespol/",
 				x:"https://twitter.com/widsespol",
 				info: "Ingeniera en Ciencias Computacionales graduada de la ESPOL, promotora del software libre y evangelizadora de la enseñanza de programación a niños y niñas. Actualmente, trabaja en el Banco del Pacífico como arquitecta de datos y líder técnico en la implementación de un datalake con gobernanza de datos. La misión del proyecto es evangelizar a todas las áreas del banco para que usen la plataforma en sus casos de uso que requieran Big data. Fue seleccionada como embajadora de innovación y vocera de transformación cultural del banco."
@@ -204,7 +204,7 @@ export const ediciones = [
 				place: "OPEV",
 				work: "Directora Ejecutiva",
 				schedule: "16:05 - 16:25",
-				imageName: "anamariapesante.jpg",
+				imageName: "anamariapesante.png",
 				x:"https://twitter.com/widsespol",
 				info: "Máster en Dirección de Empresas del IDE Business School, Máster en Marketing y Gestión Comercial de la Universidad de Barcelona (UB) y EAE Business School. También realizó diferentes programas como; Diplomado de Igualdad y Empoderamiento de la Mujer de la Universidad de Salamanca, Certificada por la ONU en Igualdad de Género, Programa de Desarrollo Directivo (PADE), Gestión en Proyectos, Marketing Relacional y Digital, Estrategia de Comunicación y Formación de Mujeres en el IDE Business School, además de un Diplomado en Marketing y Ventas en la Universidad de Especialidades Empresarial (UEES). Es ingeniera en Administración y Marketing Estratégico de la Universidad Casa Grande de Guayaquil. Con 40 años, es Directora Ejecutiva de OPEV® – Organización y Promoción para la Economía Violeta, una ONG sin fines de lucro, que tiene como base la investigación aplicada que proporciona la evidencia científica, recomendaciones innovadoras y soluciones concretas en diferentes escalas del ciclo de vida de la mujer para plantear estrategias en los ODS 5, 1, 4, 8,9 y 10. Co-Autora de la teoría y propiedad intelectual de - Economía Violeta® – que se define como una estrategia cuyo objetivo buscar reducir la brecha de género estableciendo las “mismas reglas del juego” para hombres y mujeres en el ámbito social, educativo, económico y político a través de la igualdad, competitividad y sostenibilidad. Adicionalmente, es presidenta de la primera y única agencia consultora de Marketing e Innovación con perspectiva en género llamada Bridge The Gap® Ecuador, una franquicia con matriz en Argentina especializada en procesos de transformación cultural en Diversidad, Equidad de Género, Sustentabilidad, Comunicación y Bienestar Organizacional. Además, es representante de los derechos de comercialización para Ecuador de Blakcs Worth of Knowledge una de las empresas más emblemáticas de marketing y negocios en el mundo, ya que es un HUB integrado por marcas como; WOBI, CDU, Re-think, Universidad de Chicago, Marketing Tech y Apprecia. También es Miembro del Directorio de la Asociación de Marketing del Ecuador, Miembro del Directorio de la Asociación de Jóvenes Emprendedores del Ecuador, conferencista del Women Economic Forum 2019 y Miembro del Jurado del Festival AMAPRO 2019 en México. Se desempeñó en el Banco Pichincha donde hizo una carrera de 9 años, fue Directora Junior de la Cámara de Comercio de Guayaquil y Gerente de Marketing en Las Fragancias."
 			},
@@ -214,7 +214,7 @@ export const ediciones = [
 				place: "Universidad de Stanford",
 				work: "Ph.D. Student",
 				schedule: "16:30 - 16:50",
-				imageName: "CindyOrozco.jpg",
+				imageName: "CindyOrozco.png",
 				x:"https://twitter.com/widsespol",
 				info: "Cindy es una candidata a doctorado en Ingeniería Computacional y Matemática en Stanford. Tiene una maestría en Matemáticas Aplicadas de KAUST, Arabia Saudita e hizo su pregado en Ingeniería Civil y Matemáticas en la Universidad de los Andes, Colombia. Siempre se ha interesado en descubrir y dar a conocer el valor de las matemáticas en las aplicaciones cotidianas, y eso la ha llevado a trabajar en simulación computacional y ahora en ciencia de datos. En su tiempo libre, pinta y camina en la naturaleza."
 			},
@@ -224,7 +224,7 @@ export const ediciones = [
 				place: "ESPOL",
 				work: "Decana de grado de ESPOL",
 				schedule: "16:50 - 17:10",
-				imageName: "aliciaguerrero.jpg",
+				imageName: "aliciaguerrero.png",
 				linkeding:"https://www.linkedin.com/company/widsespol/",
 				x:"https://twitter.com/widsespol",
 				info: "Alicia Guerrero, decana de grado de ESPOL y profesora titular de las materias de: Economía de los Mercados y Regulación, Introducción a la Microeconomía, Microeconomía I, II y III, Desarrollo Social y Voluntariado. Además consta con una Maestría en Economía, Universidad Alberto Hurtado de Chile. Master of Arts in Economics, ILADES-Georgetown University. Además es miembro del equipo del Ecuador participante del proceso de certificación de Oro de Comercio Justo. Proyecto auspiciado por la Asociación por la Minería Responsable (Colombia) y FLO – CERT."
@@ -256,7 +256,7 @@ export const ediciones = [
 				place: "Universidad Casa Grande",
 				work: "Profesora en la Facultad de Comunicación",
 				schedule: "17:55 - 18:15",
-				imageName: "gabrielabaquerizo.jpeg",
+				imageName: "gabrielabaquerizo.png",
 				linkeding:"https://www.linkedin.com/company/widsespol/",
 				x:"https://twitter.com/widsespol",
 				info: "PhD. por la Universidad Austral de Buenos Aires, Argentina y magíster en DIRCOM y Nuevas Tecnologías de la Información, España. Docente Investigadora en la Universidad de Casa Grande en áreas como: reputación, liderazgo político femenino, comunicación estratégica, redes sociales y sentiment analysis. Miembro del grupo de Gestión de la Comunicación Estratégica, miembro de la Red de Investigadores en Comunicación de Ecuador (RICE) y colaboradora de la Red Internacional de Investigación de la Gestión de la Comunicación (XESCOM). Coordinadora y autora del libro 'La comunicación política en campaña. Identidad, imagen y lenguaje como elementos estratégicos en campañas políticas latinoamericanas'. Publicaciones en Journal of Social Informatics, IEEE Transactions on Emerging Topics in Computing, Revista de Comunicación, revista Trípodos, Revista Ibérica de Sistemas y Tecnologías de Información (RISTI), entre otras."
@@ -267,7 +267,7 @@ export const ediciones = [
 				place: "ESPOL",
 				work: "Directora de Investigación de grado de FIEC",
 				schedule: "18:15 - 18:35",
-				imageName: "cristinaabad.jpg",
+				imageName: "cristinaabad.png",
 				linkeding:"https://www.linkedin.com/company/widsespol/",
 				x:"https://twitter.com/widsespol",
 				info: "Cristina Abad es profesora de la ESPOL, dirige el Laboratorio de Investigación de Sistemas Distribuidos y co-dirige el Grupo de Investigación de Big Data. Recibió su Ph.D. de la Universidad de Illinois en Urbana-Champaign. Del 2011-2014 fue parte del equipo de desarrollo de Hadoop en Yahoo, donde buscó mejorar el rendimiento del HDFS. Sus intereses yacen en la intersección de Sistemas Distribuidos e Ingeniería de Rendimiento en sistemas de la infraestructura de Big Data y Cloud Computing. Ha recibido financiamiento de Vlir-UOS, Google, Microsoft, Amazon Web Services y AT&T Labs Research. Ha recibido una beca Fulbright, el UIUC CS Excellence Fellowship y dos Google Faculty Research Awards."
@@ -280,7 +280,7 @@ export const ediciones = [
 				place: "ESPOL",
 				work: "Profesora en la Facultad de Ingeniería en Electricidad y Computación",
 				schedule: "09:00 - 10:00",
-				imageName: "gladyscarrillo.jpeg"
+				imageName: "gladyscarrillo.png"
 			},
 			{
 				title: "Introducción a NLP: Análisis de sentimientos",
@@ -288,7 +288,7 @@ export const ediciones = [
 				place: "ESPOL",
 				work: "Profesora en la Facultad de Ingeniería en Electricidad y Computación",
 				schedule: "10:15 - 11:15",
-				imageName: "rociomera.jpg"
+				imageName: "rociomera.png"
 			},
 			{
 				title: "Visualizaciones interactivas con Bokeh (Python)",
@@ -296,7 +296,7 @@ export const ediciones = [
 				place: "ESPOL",
 				work: "Miembro de Big Data Research Group",
 				schedule: "11:30 - 12:30",
-				imageName: "ysabelatiencia.jpg"
+				imageName: "ysabelatiencia.png"
 			}
 		],
 	},

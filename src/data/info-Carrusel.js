@@ -1,7 +1,7 @@
 export let infoImages = [
 	{
 		id: "1",
-		url: "src/assets/images-carrusel/Datathon.jpeg",
+		url: "src/assets/images-carrusel/Datathon.png",
 		title: "DATATHON",
 		date: "31 de Mayo, 2024",
 		place: "Guayaquil - ESPOL",
@@ -10,7 +10,7 @@ export let infoImages = [
 	},
 	{
 		id: "2",
-		url: "src/assets/images-carrusel/Conferencia.jpeg",
+		url: "src/assets/images-carrusel/Conferencia.png",
 		title: "CONFERENCIA",
 		date: "13 de Julio, 2024",
 		place: "Guayaquil - ESPOL",
@@ -19,7 +19,7 @@ export let infoImages = [
 	},
 	{
 		id: "3",
-		url: "src/assets/images-carrusel/NextGen.jpeg",
+		url: "src/assets/images-carrusel/NextGen.png",
 		title: "NEXT GEN",
 		date: "28 de Junio, 2024",
 		place: "Guayaquil - ESPOL",

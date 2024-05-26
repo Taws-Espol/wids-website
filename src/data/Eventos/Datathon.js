@@ -7,7 +7,7 @@ export const DatathonInfo = [
         duration:"4 días",
         dates :"28 - 31 Mayo",
         linkform :'https://forms.gle/TTYPtgiDfP6UgfHj9',
-        link_image : "/src/assets/Eventos/NextGen/NextGen_empoderando.jpeg"
+        link_image : "/src/assets/Eventos/NextGen/NextGen_empoderando.png"
     },
     {
 		id: "div_2",
@@ -28,14 +28,14 @@ export const DatathonInfo = [
                 id:"r1",
                 title:"Espol",
                 info:"Los participantes deben ser estudiantes activos de la Escuela Superior Politécnica del Litoral (ESPOL)",
-                imagen_r:"/src/assets/Eventos/NextGen/Requirements/Jovenes.jpg"
+                imagen_r:"/src/assets/Eventos/NextGen/Requirements/Jovenes.png"
             },
             {
                 id:"r2",
                 alt:"Profesor",
                 title:"Equipo",
                 info:"Cada equipo puede conformarse de 1 a 4 integrantes y al menos la mitad de los miembros del equipo deben ser personas que se identifiquen como mujeres.",
-                imagen_r:"/src/assets/Eventos/NextGen/Requirements/Profesor.jpeg"
+                imagen_r:"/src/assets/Eventos/NextGen/Requirements/Profesor.png"
             },
             {
                 id:"r3",

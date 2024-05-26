@@ -5,7 +5,7 @@ export const NextGenInfo = [
         info:[
         "Un taller dirigido a jóvenes de bachillerato, el cual se llevará a cabo en los laboratorios de la Facultad de Ingeniería Eléctrica y Computación (FIEC) de la ESPOL y se realizará el -viernes 28 de junio desde las 09h00 hasta la 13h00",
         "El contenido del taller consta de 3 secciones,Introducción a la Ciencia de Datos,Estadística básica y Visualizaciones, dondelos estudiantes podrán reforzar losconocimientos adquiridos."],
-        link_image : "/src/assets/Eventos/NextGen/NextGen_empoderando.jpeg"
+        link_image : "/src/assets/Eventos/NextGen/NextGen_empoderando.png"
     },
     {
 		id: "div_2",
@@ -51,13 +51,13 @@ export const NextGenInfo = [
                 id:"r1",
                 alt:"Jovenes",
                 info:"Jóvenes que estén cursando bachillerato",
-                imagen_r:"/src/assets/Eventos/NextGen/Requirements/Jovenes.jpg"
+                imagen_r:"/src/assets/Eventos/NextGen/Requirements/Jovenes.png"
             },
             {
                 id:"r2",
                 alt:"Profesor",
                 info:"Tener un profesor encargado de acompañar a los asistentes",
-                imagen_r:"/src/assets/Eventos/NextGen/Requirements/Profesor.jpeg"
+                imagen_r:"/src/assets/Eventos/NextGen/Requirements/Profesor.png"
             }
         ]
     },
@@ -65,7 +65,7 @@ export const NextGenInfo = [
         id:"div_4",
         alt: "Mensaje Next Gen",
         info:"A fin de formar jóvenes preparados para enfrentar los desafíos del mundo actual, le extendemos una cordial invitación para que sean partícipes de este taller introductorio a la ciencia de datos, campo con gran relevancia en áreas como: medicina, política, matemática, informática, entre otros. ",
-        link_image :"/src/assets/Eventos/NextGen/Msg/NextGen.jpeg"
+        link_image :"/src/assets/Eventos/NextGen/Msg/NextGen.png"
     }
 ];
 
