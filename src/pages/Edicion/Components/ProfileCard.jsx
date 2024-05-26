@@ -1,13 +1,19 @@
 import { Card, CardHeader, CardBody, CardFooter, Typography, Tooltip } from "@material-tailwind/react";
 import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-export function ProfileCard({ conferencista,home,onClickFunction }) {
+export function ProfileCard({ conferencista,home,onClickFunction,active }) {
   const path_conferencistas = "/src/assets/Eventos/Ediciones/2020/Images/conferencistas/"
   let image = path_conferencistas + conferencista.imageName;
-
+  let value = false;
+  if (active == null){
+    value = false;
+  }
+  else{
+    value = conferencista.name == active.name;
+  }
   return (
     <div>
-      <Card className={`w-96 h-[600px]  max-sm:w-80 ${home ? 'h-[600px] w-80':''}`}>
+      <Card className={`w-96 h-[600px]  max-sm:w-80 ${home ? 'h-[600px] w-80':''} ${value ? 'opacity-40':''}` }>
         <CardHeader floated={false} className={`min-h-96 w-full relative overflow-hidden ${home ? 'h-60':''}`} onClick={() => onClickFunction(conferencista)}>
           <img src={image} alt="Conferencista" className="h-full w-full object-cover" />
         </CardHeader>
