@@ -1,21 +1,11 @@
-import PropTypes from 'prop-types';
-import './Info.css';
-import CountUp from 'react-countup';
-
-//number y text son provisionales
-function Contador(props) {
+function Contador({number,text,color,className}) {
     return (
-        <div className='flex items-center'>
-            <div className="grid items-center rounded-[1vw] pl-[2vw] pr-[2vw] min-w-[9vw] rounded-r-none h-[100%] number-box"> 
-                <CountUp className='font-semibold pt-[1vw] text-[8vw] sm:text-[6vw] md:text-[3.6vw]' end={props.number} separator=" "/>
-                <p className='pb-[2vw] text-[2.7vw] sm:text-[2vw] md:text-[1.1vw]'>{props.text}</p>
-            </div>
-        </div>
+    <div className={`mb-4 md:mb-0 max-sm:w-[100px] max-md:w-[200px] max-xl:w-[300px]  ${className} max-xl:text-center`}>
+        <p className="text-3xl max-xl:text-xl text-gray-800">Over</p>
+        <h1 className={`text-9xl max-xl:text-6xl font-bold ${color}`}>{number}</h1>
+        <p className="text-3xl max-xl:text-xl text-gray-800">{text}</p>
+    </div>
     )
 }
-Contador.propTypes = {
-    number: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired
-};
 
 export default Contador
