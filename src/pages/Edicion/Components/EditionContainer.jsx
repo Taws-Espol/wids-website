@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { ButtonEditionComponents } from './ButtonEditionComponents.jsx';
 import { CardInfoEdition } from "./CardInfoEdition.jsx";
 import { ProfileCard } from "./ProfileCard.jsx";
+import {Tooltip } from "@material-tailwind/react";
+import { FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 export function EditionContainer({ edicionData }) {
     const [active, setActive] = useState('Cronograma');
@@ -18,15 +21,26 @@ export function EditionContainer({ edicionData }) {
         }, 0);
     };
 
+    let link = {
+        '2020': '/src/assets/Eventos/Ediciones/2020/Images/conferencistas/',
+        '2021': '/src/assets/Eventos/Ediciones/2020/Images/conferencistas/',
+        '2022': '/src/assets/Eventos/Ediciones/2020/Images/conferencistas/',
+        '2023': '/src/assets/Eventos/Ediciones/2020/Images/conferencistas/',
+        '2024': '/src/assets/Eventos/Ediciones/2020/Images/conferencistas/',
+    }
+    let edition = edicionData.edicion;
+    const path_conferencistas = link[edition]
+    let imganName = conferenceActive && conferenceActive.imageName
+    let image = path_conferencistas + imganName;
+
     return (
         <>
-            <div className="flex flex-wrap gap-5 max-lg:flex-col max-lg:place-content-center max-lg:place-items-center">
+            <div className="flex flex-wrap gap-5 max-lg:flex-col max-lg:place-content-center max-lg:place-items-center mb-20">
                 <ButtonEditionComponents key='1' text='Cronograma' active={active} changeButton={() => changeButton('Cronograma')} />
                 <ButtonEditionComponents key='2' text='Conferencistas' active={active} changeButton={() => changeButton('Conferencistas')} />
                 <ButtonEditionComponents key='3' text='Talleres' active={active} changeButton={() => changeButton('Talleres')} />
             </div>
             <div className={`${active === 'Cronograma' ? 'block' : 'hidden'} flex place-content-center place-items-center flex-col my-5 gap-10`}>
-                <h3 className="text-2xl text-primary-dark-green font-bold">Cronograma</h3>
                 {edicionData &&
                     edicionData.cronograma.map((evento, index) => (
                         <CardInfoEdition key={index} type='Cronograma' evento={evento} />
@@ -34,27 +48,47 @@ export function EditionContainer({ edicionData }) {
                 }
             </div>
             <div className={`${active === 'Conferencistas' ? 'block' : 'hidden'} flex place-content-center place-items-center flex-col my-5 gap-10`}>
-                <h3 className="text-2xl text-primary-dark-green font-bold">Conferencistas</h3>
                 <div className="flex flex-row place-content-center place-items-center gap-10 flex-wrap">
                     {conferenceActive && (
-                        <div id="details-div" className="flex flex-row place-content-center place-items-center w-full gap-10">
-                            <ProfileCard conferencista={conferenceActive} onClickFunction={changeConferenceActive} />
-                            <div className="h-[550px] w-[800px] place-content-center place-items-center rounded-xl overflow-scroll p-10">
-                                <p className="px-10 text-justify">
-                                    {conferenceActive.info}
-                                </p>
+                        <div id="details-div" className="flex flex-row place-content-center place-items-center w-full gap-10 my-20">
+                            <img src={image} alt="Conferencista" className="h-96 w-96 object-cover rounded-3xl" />
+                            <div className="flex flex-col h-[384px] w-[800px] justify-center align-middle rounded-xl p-10 gap-8">
+                                <div className="flex flex-col">
+                                    <p className="text-primary-dark-green font-bold text-3xl">{conferenceActive.name}</p>
+                                    <p className="text-2xl">{conferenceActive.work}, {conferenceActive.place}</p>
+                                </div>
+                                <div className="flex place-content-start w-9/10 min-h-[200px] overflow-scroll">
+                                    <p className="text-justify">
+                                        {conferenceActive.info}
+                                    </p>
+                                </div>
+                                <div className="flex gap-20">
+                                    {conferenceActive.linkeding &&
+                                        <Tooltip content="Follow on LinkedIn">
+                                            <a href={conferenceActive.linkeding} target="_blank" rel="noopener noreferrer">
+                                                <FaLinkedin size={30} />
+                                            </a>
+                                        </Tooltip>
+                                    }
+                                    {conferenceActive.x &&
+                                        <Tooltip content="Follow on X">
+                                            <a href={conferenceActive.x} target="_blank" rel="noopener noreferrer">
+                                                <FaXTwitter size={30} />
+                                            </a>
+                                        </Tooltip>
+                                    }
+                                </div>
                             </div>
                         </div>
                     )}
                     {edicionData &&
                         edicionData.conferencistas.map((conferencista, index) => (
-                            <ProfileCard key={index} conferencista={conferencista} onClickFunction={() => changeConferenceActive(conferencista)} active={conferenceActive}/>
+                            <ProfileCard key={index} conferencista={conferencista} onClickFunction={() => changeConferenceActive(conferencista)} active={conferenceActive} />
                         ))
                     }
                 </div>
             </div>
             <div className={`${active === 'Talleres' ? 'block' : 'hidden'} flex place-content-center place-items-center flex-col my-5 gap-10`}>
-                <h3 className="text-2xl text-primary-dark-green font-bold">Talleres</h3>
                 {edicionData &&
                     edicionData.talleres.map((evento, index) => (
                         <CardInfoEdition key={index} type='Talleres' evento={evento} />
