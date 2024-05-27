@@ -50,9 +50,9 @@ export function EditionContainer({ edicionData }) {
             <div className={`${active === 'Conferencistas' ? 'block' : 'hidden'} flex place-content-center place-items-center flex-col my-5 gap-10`}>
                 <div className="flex flex-row place-content-center place-items-center gap-10 flex-wrap">
                     {conferenceActive && (
-                        <div id="details-div" className="flex flex-row place-content-center place-items-center w-full gap-10 my-20">
+                        <div id="details-div" className="flex flex-row flex-wrap place-content-center place-items-center w-full gap-10 my-20">
                             <img src={image} alt="Conferencista" className="h-96 w-96 object-cover rounded-3xl" />
-                            <div className="flex flex-col h-[384px] w-[800px] justify-center align-middle rounded-xl p-10 gap-8">
+                            <div className="flex flex-col h-[384px] w-[800px] max-sm:w-[350px] justify-center align-middle rounded-xl p-10 gap-8">
                                 <div className="flex flex-col">
                                     <p className="text-primary-dark-green font-bold text-3xl">{conferenceActive.name}</p>
                                     <p className="text-2xl">{conferenceActive.work}, {conferenceActive.place}</p>
