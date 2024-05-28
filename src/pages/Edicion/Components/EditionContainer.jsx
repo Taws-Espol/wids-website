@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { ButtonEditionComponents } from './ButtonEditionComponents.jsx';
 import { CardInfoEdition } from "./CardInfoEdition.jsx";
-import { ProfileCard } from "./ProfileCard.jsx";
-import {Tooltip } from "@material-tailwind/react";
-import { FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import {ConferenceContainer} from "../../Conferencistas/Components/ConferencesContainer.jsx"
 
 export function EditionContainer({ edicionData }) {

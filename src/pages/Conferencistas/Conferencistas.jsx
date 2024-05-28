@@ -1,5 +1,3 @@
-import Cards from "./Components/Cards";
-import Working from "../../shared/Working";
 import {ConferenceContainer} from "./Components/ConferencesContainer"
 import { ediciones } from "../../data/ediciones";
 function Conferencistas() {
