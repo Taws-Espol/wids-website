@@ -6,7 +6,7 @@ export function TimeLine({Data,active}){
     return <VerticalTimeline>
         {
             data && data.map((evento, index) => (
-                <ItemTimeLine Key={index} Evento={evento}/>
+                <ItemTimeLine key={index} Evento={evento}/>
             ))
         }
     </VerticalTimeline>
