@@ -43,7 +43,7 @@ function Navbar() {
                         <img
                             src='/src/assets/navbar/Logo_wids2024.png'
                             alt='' 
-                            className="w-[400px] h-[120px] bg-white max-sm:w-[200px] max-sm:h-[60px] ml-5"/>
+                            className=" bg-white w-[200px] h-[60px] sm:w-[300px] sm:h-[90px] md:w-[400px] md:h-[120px] ml-5"/>
                     </Link>
                     <div className='xl:hidden 
                                     rounded-md 
