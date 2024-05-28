@@ -1,45 +1,21 @@
 import Cards from "./Components/Cards";
 import Working from "../../shared/Working";
-
+import {ConferenceContainer} from "./Components/ConferencesContainer"
+import { ediciones } from "../../data/ediciones";
 function Conferencistas() {
+    const edicionData = ediciones.find((edicion) => edicion.edicion === "2024");
     return (
-        <div className="w-full">
-            <Working/>
+        <div className="flex flex-col place-content-center place-items-center w-full">
+            <div className="w-3/4">
+                <div className="">
+                    <img src="/src/assets/Conferences/conference.png" alt="conference"  className="w-full h-96 object-cover object-top"/>
+                </div>
+            </div>
+            <div className="w-3/4">
+                <ConferenceContainer edicionData={edicionData} />
+            </div>
         </div>
     );
 }
 export default Conferencistas;
 
-//De prueba
-const datos = [
-    {
-        id:1,
-        name: 'Jose Luis Chong',
-        info: 'Embajadora de los estados unidos de america defensora de los derechos humanos y gran aficionada de las carreras de formula 1',
-        img:`src/assets/info-de-conferencia/Carrusel/prueba6.jpeg`
-    },
-    {
-        id:2,
-        name: 'Ms. Roberta Patiño',
-        info: 'Embajadora de los estados unidos de america defensora de los derechos humanos y gran aficionada de las carreras de formula 1',
-        img:`src/assets/info-de-conferencia/Carrusel/prueba6.jpeg`
-    },
-    {
-        id:3,
-        name: 'Maria Alberta',
-        info: 'Embajadora de los estados unidos de america defensora de los derechos humanos y gran aficionada de las carreras de formula 1',
-        img:`src/assets/info-de-conferencia/Carrusel/prueba6.jpeg`
-    },
-    {
-        id:4,
-        name: 'Ana Garcia Mendoza',
-        info: 'Embajadora de los estados unidos de america defensora de los derechos humanos y gran aficionada de las carreras de formula 1',
-        img:`src/assets/info-de-conferencia/Carrusel/prueba6.jpeg`
-    },
-    {
-        id:5,
-        name: 'Dolores Maldonado',
-        info: 'Embajadora de los estados unidos de america defensora de los derechos humanos y gran aficionada de las carreras de formula 1',
-        img:`src/assets/info-de-conferencia/Carrusel/prueba6.jpeg`
-    }
-];
