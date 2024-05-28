@@ -1,7 +1,7 @@
 export let infoImages = [
 	{
 		id: "1",
-		url: "src/assets/images-carrusel/Datathon.png",
+		url: "https://res.cloudinary.com/dcagfmioc/image/upload/v1716910869/Image_for_Promotional_Materials_Regional_Events_1_hgdkft.webp",
 		title: "DATATHON",
 		date: "31 de Mayo, 2024",
 		place: "Guayaquil - ESPOL",
