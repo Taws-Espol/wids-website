@@ -1,4 +1,4 @@
-import Contador from "./Contador";
+import {Contador} from "./Contador";
 export function Infos() {
     return (
         <div className="relative flex flex-row max-xl:flex-wrap place-content-center place-items-center p-5 md:w-[1000px] font-acumin gap-0 xl:pb-48 max-xl:gap-10">

@@ -7,21 +7,20 @@ export function ItemTimeLine({ Evento }) {
     let value = Evento.type;
     switch (value) {
         case "Conferencia":
-            imagen = "/src/assets/images-cardInfo/Conferencia.png";
-            background_color = "#00a7d5";
+            imagen = "/assets/images-cardInfo/Conferencia.png";
+            background_color = "#4ab969";
             break;
         case "Break":
-            imagen = "/src/assets/images-cardInfo/Break.png";
-            background_color = "#fcc5a1";
+            imagen = "/assets/images-cardInfo/Break.png";
+            background_color = "#a2a2ff";
             break;
-        case "Talleres":
-            imagen = "/src/assets/images-cardInfo/Break.png";
-            background_color = "#4ab969";
+        case "Taller":
+            imagen = "/assets/images-cardInfo/Conferencia.png";
+            background_color = "#00a7d5";
             break;
         default:
-            imagen = "/src/assets/images-cardInfo/Conferencia.png";
-            background_color = "#4ab969";
-            break;
+            imagen = "/assets/images-cardInfo/Conferencia.png";
+            background_color = "#a2a2ff";
     }
     
     return <VerticalTimelineElement
@@ -35,11 +34,11 @@ export function ItemTimeLine({ Evento }) {
         {Evento.info ? (
             <>
                 <h3 className="vertical-timeline-element-title text-primary-dark-green font-bold">{Evento.title}</h3>
-                <p>{Evento.info}</p>
+                <p className="">{Evento.info}</p>
             </>
         ) : (
-                <h1 className="text-primary-dark-green font-bold">{Evento.title}</h1>
-        )}
+                <h1 className={`font-bold text-2xl ${value == "Break" ? 'text-primary-violet':'text-primary-dark-green'}`}>{Evento.title}</h1>
+        )} 
     </VerticalTimelineElement>
 
 }

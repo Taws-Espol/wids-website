@@ -1,6 +1,5 @@
 import Carrusel from "./Components/Carrusel";
-import InfoCarrusel from "./Components/info-de-conferencia/Carrusel/Carrusel";
-import {Infos} from "./Components/info-de-conferencia/Info/Infos";
+import {Infos} from "./Components/Infos";
 import Sponsors from "./Components/Sponsors";
 import Cronograma from "./Components/Cronograma";
 import Ubicacion from "./Components/Ubicacion";

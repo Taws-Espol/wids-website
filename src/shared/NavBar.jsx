@@ -41,7 +41,7 @@ function Navbar() {
                                 justify-between'>
                     <Link to='/'>
                         <img
-                            src='/src/assets/navbar/Logo_wids2024.png'
+                            src='/assets/navbar/Logo_wids2024.png'
                             alt='' 
                             className="w-[400px] h-[120px] bg-white max-sm:w-[200px] max-sm:h-[60px] ml-5"/>
                     </Link>

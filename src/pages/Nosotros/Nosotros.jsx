@@ -5,7 +5,7 @@ function Nosotros() {
                 <div className='container flex w-[100%] py-20 px-10 place-content-center place-items-center max-lg:flex-col max-lg:gap-10'>
                     <div className='w-3/5 flex place-content-center place-items-center '>
                         <img
-                            src='/src/assets/navbar/Logo_wids2024.png'
+                            src='/assets/navbar/Logo_wids2024.png'
                             alt='Imagen de evento'
                             className='w-[100%] h-2/4 max-sm:min-w-[300px] max-md:min-w-[500px] max-lg:min-w-[700px]'
                         />

@@ -44,7 +44,7 @@ const ButtonUp = () => {
                             ${isVisible ? 'opacity-100 animate-fadeIn' : 'opacity-0 animate-fadeOut' } `}
                 onClick={scrollUp} style={{ animation: 'pulse 2s infinite' }}>
             <div className="">
-                <img src="/src/assets/ButtonUP/icons8-chevron-para-arriba-30 (1).png" alt="" style={{ animation: 'spin 2s linear infinite' }}/>
+                <img src="/assets/ButtonUP/icons8-chevron-para-arriba-30 (1).png" alt="" style={{ animation: 'spin 2s linear infinite' }}/>
             </div>
         </div>
 
