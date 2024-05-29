@@ -3,41 +3,41 @@ export const sponsors = [
         "name": "Sherpa.ai",
         "location": "B14",
         "website": "https://sherpa.ai/",
-        "logo": "/assets/sherpa.png"
+        "logo": "/public/assets/sherpa.png"
     },
     {
         "name": "Microsoft",
         "location": "A10",
-        "logo": "/assets/microsoft.png"
+        "logo": "/public/assets/microsoft.png"
     },
     {
         "name": "Iris-AI",
         "location": "B07",
-        "logo": "/assets/iris.png"
+        "logo": "/public/assets/iris.png"
     },
     {
         "name": "Tamr",
         "location": "B11",
-        "logo": "/assets/tamr.png"
+        "logo": "/public/assets/tamr.png"
     },
     {
         "name": "Next IT",
         "location": "B06",
-        "logo": "/assets/next.png"
+        "logo": "/public/assets/next.png"
     },
     {
         "name": "Google",
         "location": "A01",
-        "logo": "/assets/google.png"
+        "logo": "/public/assets/google.png"
     },
     {
         "name": "Cognitive Scale",
         "location": "A05",
-        "logo": "/assets/cognitive.png"
+        "logo": "/public/assets/cognitive.png"
     },
     {
         "name": "AlphaSense",
         "location": "B15",
-        "logo": "/assets/alpha.png"
+        "logo": "/public/assets/alpha.png"
     }
 ]
