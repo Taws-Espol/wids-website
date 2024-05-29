@@ -1,9 +1,14 @@
-export function CardRequirement({requirement}) {
+export function CardRequirement({ requirement }) {
     return (
-        <div className="flex flex-col place-content-center place-items-center text-center w-1/5 min-w-[200px] h-[200px] font-acumin rounded-3xl bg-secondary-blue py-10 border-spacing-0 border-4">
-            <p className="text-xl px-10">
-                {requirement.info}
-            </p>
+        <div className="flex flex-col items-center justify-center h-full p-4">
+            <div className="flex justify-center w-full mb-4">
+                <img src={requirement.imagen_r} alt={requirement.alt} className="h-48 max-w-full object-contain" />
+            </div>
+            <div className="flex justify-center w-full">
+                <p className="text-xl px-4 text-center">
+                    {requirement.info}
+                </p>
+            </div>
         </div>
     )
 }
