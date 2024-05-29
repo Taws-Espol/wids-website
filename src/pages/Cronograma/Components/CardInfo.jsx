@@ -4,16 +4,16 @@ export function CardInfo({type,title, info}){
     let image;
     switch (type) {
         case "Conferencia":
-            image = "src/assets/images-cardInfo/Conferencia.png";
+            image = "/assets/images-cardInfo/Conferencia.png";
             break;
         case "Taller":
-            image = "src/assets/images-cardInfo/Taller.png";
+            image = "/assets/images-cardInfo/Taller.png";
             break;
         case "Break":
-            image ="src/assets/images-cardInfo/Break.png";
+            image ="/assets/images-cardInfo/Break.png";
             break
         default:
-            image = "src/assets/images-cardInfo/Evento.png";
+            image = "/assets/images-cardInfo/Evento.png";
     }
 
     return(

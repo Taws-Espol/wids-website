@@ -48,7 +48,7 @@ function Datathon() {
                     </p>
                 </div>
                 <div className="md:absolute top-[40px] right-12 max-md:right-0 max-md:flex max-md:place-content-center max-md:place-items-center max-md:pt-5 max-xl:top-1 ">
-                    <img src="/src/assets/Eventos/Datathon/datathon_portada.webp" alt="Logo"  className={`max-w-full max-h-44 h-auto object-contain shadow-2xl max-md:max-h-44 max-lg:max-h-32 max-xl:h-40 `} />
+                    <img src="/assets//Eventos/Datathon/datathon_portada.webp" alt="Logo"  className={`max-w-full max-h-44 h-auto object-contain shadow-2xl max-md:max-h-44 max-lg:max-h-32 max-xl:h-40 `} />
                 </div>
                 <div>
                 <div className="flex px-5  pt-5 text-center place-content-center place-items-center text-lg md:hidden  max-sm:text-lg max-md:text-2xl">
