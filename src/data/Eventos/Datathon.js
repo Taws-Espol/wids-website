@@ -2,16 +2,11 @@ export const DatathonInfo = [
 	{
 		id: "div_1",
 		title: "Diagnóstico de Cancer Metastásico en 90 Días",
-        words:["Diagnóstico de","Cancer Metastásico","en 90 Días"],
-        linkform :'https://forms.gle/TTYPtgiDfP6UgfHj9',
-        link_image : "/src/assets/Eventos/NextGen/NextGen_empoderando.png"
-    },
-    {
-		id: "div_1.1",
-		title: "Información General",
+        words:["Diagnóstico","de Cancer","Metastásico","en 90 Días"],
         msg:"Únete y usa tus skills de data para luchar contra el cáncer más rápido.",
         duration:"4 días",
         dates :"28 - 31 Mayo",
+        premio: "$100",
         linkform :'https://forms.gle/TTYPtgiDfP6UgfHj9',
         link_image : "/src/assets/Eventos/NextGen/NextGen_empoderando.png"
     },
@@ -104,6 +99,16 @@ export const DatathonInfo = [
                 topic:"Hackaton",
                 content:[" * Presentación Final : participantes entrenarán su primer modelo con guía paso a paso."]
             }
+        ]
+    },
+    {
+        id:"div_6",
+        title:"Participantes",
+        infos:[
+            "Estudiantes de ESPOL",
+            "Equipos de 4 integrantes",
+            "Al menos 2 mujeres por equipo",
+            "Registro por formulario de inscripción",
         ]
     }
 ];
