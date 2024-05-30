@@ -10,76 +10,58 @@ function Datathon() {
     const div4 = DatathonInfo[3];
     const div5 = DatathonInfo[4];
     return (
-        <div className="w-full  select-none flex flex-col place-content-center place-items-center pb-10 font-acumin max-sm:text-base">
+        <div className="w-full  select-none flex flex-col pb-10 font-sans max-sm:text-base">
             <div>
-                <h1 className="text-4xl font-bold font-acumin text-primary-dark-green text-center py-5">
-                    Datathon 2024
+                <h1 className="text-8xl font-bold font-sans text-left text-primary-dark-green py-5 pl-10 sm:pl-20 md:pl-30 lg:pl-40 xl:pl-50 2xl:pl-60">
+                    Datathon 
                 </h1>
             </div>
-            <div className="relative w-4/5 h-[750px] max-sm:h-[650px] max-md:h-[750px] max-lg:h-[400px] max-xl:h-[500px] max-2xl:h-[600px] rounded-3xl pb-10 bg-gradient-to-tr from-secondary-yellow via-primary-blue to-secondary-green text-primary-dark-green">
+            <div className="relative flex justify-center items-center h-[700px] max-sm:h-[650px] max-md:h-[750px] max-lg:h-[400px] max-xl:h-[500px] max-2xl:h-[600px] pb-10 bg-yellow-500 text-primary-dark-green">
                 <div className="absolute top-[40px] left-20 text-9xl max-md:hidden max-lg:text-5xl max-lg:left-10 max-lg:top-[30px] max-xl:text-7xl max-xl:left-5 max-2xl:text-8xl">
-                    <p className="font-bold">
-                        {words[0]}
+                    <p className="font-bold text-[60px]">
+                        {div1.title}
                     </p>
                 </div>
-                <div className="absolute top-[160px] left-96 text-9xl max-md:hidden max-lg:text-5xl max-lg:top-[80px] max-lg:left-44 max-xl:text-7xl max-xl:left-44 max-xl:top-[100px] max-2xl:text-8xl max-2xl:left-48 max-2xl:top-[120px]">
+                { 
+                 /*
+                <div className="absolute top-[160px] left-20 text-9xl max-md:hidden max-lg:text-5xl max-lg:top-[80px] max-lg:left-44 max-xl:text-7xl max-xl:left-44 max-xl:top-[100px] max-2xl:text-8xl max-2xl:left-48 max-2xl:top-[120px]">
                     <p className="font-bold">
                         {words[1]}
                     </p>
                 </div>
-                <div className="absolute top-[300px] right-44 text-9xl max-md:hidden max-lg:text-5xl max-lg:top-[130px] max-lg:right-44 max-xl:text-7xl max-xl:right-36 max-xl:top-[170px] max-2xl:text-8xl max-2xl:right-44 max-2xl:top-[210px]">
+                <div className="absolute top-[300px] left-20 right-44 text-9xl max-md:hidden max-lg:text-5xl max-lg:top-[130px] max-lg:right-44 max-xl:text-7xl max-xl:right-36 max-xl:top-[170px] max-2xl:text-8xl max-2xl:right-44 max-2xl:top-[210px]">
                     <p className="font-bold">
                         {words[2]}
                     </p>
                 </div>
-                <div className="absolute top-[440px] right-20 text-9xl max-md:hidden max-lg:text-5xl max-lg:top-[180px] max-lg:right-10 max-xl:text-7xl max-xl:right-5 max-xl:top-[240px] max-2xl:text-8xl max-2xl:right-20 max-2xl:top-[300px]">
+                <div className="absolute top-[440px] left-20 right-20 text-9xl max-md:hidden max-lg:text-5xl max-lg:top-[180px] max-lg:right-10 max-xl:text-7xl max-xl:right-5 max-xl:top-[240px] max-2xl:text-8xl max-2xl:right-20 max-2xl:top-[300px]">
                     <p className="font-bold">
                         {words[3]}
                     </p>
                 </div>
-                <div className="absolute top-[345px] left-32 text-2xl w-1/5 max-md:hidden max-lg:top-[150px] max-lg:left-10 max-xl:left-5 max-lg:w-[250px] max-xl:top-[200px] max-xl:w-[300px] max-2xl:top-[250px]">
-                    <p className="text-center">
-                        {div1.msg}
-                    </p>
-                </div>
+                */}
                 <div className="flex px-5  pt-5 text-center place-content-center place-items-center text-2xl font-bold md:hidden max-sm:text-2xl max-md:text-3xl" >
                     <p>
                         {div1.title}
                     </p>
                 </div>
-                <div className="md:absolute top-[40px] right-12 max-md:right-0 max-md:flex max-md:place-content-center max-md:place-items-center max-md:pt-5 max-xl:top-1 ">
-                    <img src="/src/assets/Eventos/Datathon/datathon_portada.webp" alt="Logo"  className={`max-w-full max-h-44 h-auto object-contain shadow-2xl max-md:max-h-44 max-lg:max-h-32 max-xl:h-40 `} />
-                </div>
                 <div>
-                <div className="flex px-5  pt-5 text-center place-content-center place-items-center text-lg md:hidden  max-sm:text-lg max-md:text-2xl">
-                    <p className="text-center">
-                        {div1.msg}
-                    </p>
-                </div>
                 </div>
                 <div className="flex flex-wrap place-content-center w-full absolute bottom-14 text-2xl gap-10 ml-10 max-md:m-0 max-md:flex-col max-sm:gap-5 max-md:gap-10 max-sm:text-lg max-md:text-2xl max-lg:bottom-10">
-                    <div className="flex flex-col place-content-center place-items-center">
-                        <p className="border-b-2 border-b-slate-600 px-2">
-                            Duración
-                        </p>
-                        <p>
-                            {div1.duration}
-                        </p>
-                    </div>
-                    <button className="text-white bg-primary-blue select-none rounded-lg px-10 py-3 text-center text-2xl font-acumin font-medium max-md:text-lg max-md:px-4"
+                    <button className="text-white bg-green-900 select-none rounded-2xl px-10 py-3 text-center text-2xl font-sans font-medium max-md:text-lg max-md:px-4"
                         onClick={() => window.open(div1.linkform, '_blank')}
-                    >Registro</button>
-                    <div className="flex flex-col place-content-center place-items-center">
-                        <p className="border-b-2 border-b-slate-600 px-2">
-                            Fecha del datathon
-                        </p>
-                        <p>
-                            {div1.dates}
-                        </p>
-                    </div>
+                    >Registrate Aquí</button>
                 </div>
+                <div className="md:absolute right-12 max-md:right-0 max-md:flex max-md:place-content-right max-md:place-items-right max-md:pt-5 max-xl:top-1 justify-end">
+                    <img src="/src/assets/Eventos/Datathon/data_portada.webp" alt="Logo"  className={`max-w-full max-h-[700px] h-auto object-contain shadow-2xl max-md:max-h-44 max-lg:max-h-32 max-xl:h-40 rounded-full`} />
+                </div>'
             </div>
-            <div className=" w-4/5 m-w-[500px] border-l-secondary-green border-y-secondary-blue border-r-secondary-yellow  font-acumin border-4 py-10 flex flex-col place-content-center place-items-center rounded-3xl gap-5">
+           
+            <div>
+                ..
+
+            </div>
+            <div className=" w-4/5 m-w-[500px] border-l-secondary-green border-y-secondary-blue border-r-secondary-yellow  font-sans border-4 py-10 flex flex-col place-content-center place-items-center rounded-3xl gap-5">
                 <p className="text-primary-dark-green text-4xl font-bold text-center py-10">
                     {div2.title}
                 </p>
@@ -134,7 +116,7 @@ function Datathon() {
                     </p>
                 </div>
             </div>
-            <div className=" w-4/5 m-w-[500px] border-l-secondary-green border-y-secondary-blue border-r-secondary-yellow  font-acumin border-4 py-10 flex flex-col place-content-center place-items-center rounded-3xl gap-5 mt-10">
+            <div className=" w-4/5 m-w-[500px] border-l-secondary-green border-y-secondary-blue border-r-secondary-yellow  font-sans border-4 py-10 flex flex-col place-content-center place-items-center rounded-3xl gap-5 mt-10">
                 <div className="flex flex-wrap w-10/12 max-sm:flex-col max-sm:place-content-center max-sm:place-items-center max-sm:gap-5 place-content-around bg-gradient-to-br from-secondary-green via-primary-blue to-secondary-yellow rounded-3xl py-10">
                     <div className="w-4/5 min-w-[250px] flex place-content-start place-items-center justify-start text-3xl text-center">
                         <p className="px-10 text-justify">

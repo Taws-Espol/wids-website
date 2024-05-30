@@ -1,4 +1,4 @@
-export const DatathonInfo = [
+export const DatathonInfo2 = [
 	{
 		id: "div_1",
 		title: "Diagnóstico de Cancer Metastásico en 90 Días",
