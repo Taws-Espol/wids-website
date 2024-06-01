@@ -1,6 +1,6 @@
 export function CardInfoEdition({type, evento}){
-    const path_info_crongrama = "/src/assets/Eventos/Ediciones/2020/Images/cronograma/";
-    const path_info_talleres = "/src/assets/Eventos/Ediciones/2020/Images/talleres/";
+    const path_info_crongrama = "/assets/Eventos/Ediciones/2020/Images/cronograma/";
+    const path_info_talleres = "/assets/Eventos/Ediciones/2020/Images/talleres/";
     let image_crono = path_info_crongrama+evento.imageName;
     let image_talleres = path_info_talleres+evento.imageName;
     let image = "";
@@ -20,7 +20,7 @@ export function CardInfoEdition({type, evento}){
                 <p className="text-xl max-xsm:text-base">{evento.work}</p>
             </div>
             <div className="flex place-content-center place-items-center first: gap-2 text-justify w-1/6 max-sm:w-full min-w-44">
-                    <img src="/src/assets/Eventos/Datathon/reloj.png" alt="reloj" className="max-h-5 aspect-square object-contain shadow-2xl" />
+                    <img src="/assets//Eventos/Datathon/reloj.png" alt="reloj" className="max-h-5 aspect-square object-contain shadow-2xl" />
                     <p>{evento.schedule}</p>
             </div>
         </div>

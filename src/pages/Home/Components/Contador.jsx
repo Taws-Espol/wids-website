@@ -1,4 +1,4 @@
-function Contador({number,text,color,className}) {
+export function Contador({number,text,color,className}) {
     return (
     <div className={`mb-4 md:mb-0 max-sm:w-[100px] max-md:w-[200px] max-xl:w-[300px]  ${className} max-xl:text-center`}>
         <p className="text-3xl max-xl:text-xl text-gray-800">Over</p>
@@ -7,5 +7,3 @@ function Contador({number,text,color,className}) {
     </div>
     )
 }
-
-export default Contador

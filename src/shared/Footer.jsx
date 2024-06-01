@@ -106,7 +106,7 @@ function Footer() {
           <li className="pl-5 pr-5">
             <a href={redes.fb} target='_blank'>
               <img
-                src="/src/assets/footer/icons8-facebook.svg"
+                src="/assets/footer/icons8-facebook.svg"
                 className="xl:w-10 xl:h-10 w-6 h-6"
               />
             </a>
@@ -114,7 +114,7 @@ function Footer() {
           <li className="pl-5 pr-5">
             <a href={redes.ig} target='_blank'>
               <img
-                src="/src/assets/footer/icons8-instagram.svg"
+                src="/assets/footer/icons8-instagram.svg"
                 className="xl:w-10 xl:h-10 w-6 h-6"
               />
             </a>
@@ -122,7 +122,7 @@ function Footer() {
           <li className="pl-5 pr-5">
             <a href={redes.tw} target='_blank'>
               <img
-                src="/src/assets/footer/icons8-twitterx.svg"
+                src="/assets/footer/icons8-twitterx.svg"
                 className="xl:w-10 xl:h-10 w-6 h-6"
               />
             </a>
