@@ -1,7 +1,6 @@
 import { DatathonInfo } from "../../data/Eventos/Datathon";
 import {HackatonDay} from "./Components/HackatonDay";
-import SectionPanel from "./Components/SectionPanel";
-import { panelData } from "../../data/Eventos/panelData";
+;
 function Datathon() {
     const div1 = DatathonInfo[0];
     const words = div1.words
@@ -16,27 +15,27 @@ function Datathon() {
     return (
         <div className="w-full  select-none flex flex-col pb-10 font-sans max-sm:text-base">
             <div>
-                <h1 className="text-8xl font-bold font-sans text-left text-primary-dark-green py-5 pl-10 sm:pl-20 md:pl-30 lg:pl-40 xl:pl-50 2xl:pl-60">
+                <h1 className="flex justify-center items-center xl:justify-normal xl:items-stretch text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-10xl 2xl:text-11xl font-bold font-sans text-left text-primary-dark-green py-5 pb-5 xl:pl-40 2xl:pl-48">
                     Datathon 
                 </h1>
             </div>
-        <div className="relative overflow-hidden flex flex-col md:flex-row justify-between items-center bg-yellow-500 text-primary-dark-green h-[700px] pb-10">
-            <div className="w-1/2 flex flex-col items-start text-9xl font-bold p-5">
-                <p className='text-[80px] m-40 mb-20 '>
+        <div className="relative overflow-hidden flex flex-col xl:justify-between justify-center items-center sm:items-center md:items-center lg:items-center xl:items-start 2xl:items-start bg-yellow-500 text-primary-dark-green h-[800px] sm:h-[900px] md:h-[1000px] lg:h-[1400px] xl:h-[700px] 2xl:h-[700px] pb-10">
+            <div className=" xl:w-1/2 w-4/5 flex flex-col xl:items-start 2xl:items-start font-bold p-10 xl:p-5 2xl:p-5">
+                <p className=' text-5xl md:text-[50px] lg:text-[80px] xl:text-[80px] 2xl:text-[80px] mb-10 sm:mb-20 lg:max-mt-16 lg:max-mb-16 xl:ml-48 xl:mb-10 2xl:ml-48 2xl:mt-20 2xl:mb-10 '>
                     {div1.title}
                 </p>                
-                <div className="flex flex-wrap place-content-center w-full mt-auto text-2xl gap-10 px-20 max-md:m-0 max-md:flex-col max-sm:gap-5 max-md:gap-10 max-sm:text-lg max-md:text-2xl">
-                    <button className="text-white bg-green-900 select-none rounded-2xl px-20 py-5 text-center font-sans font-medium max-md:text-lg max-md:px-4 text-3xl"
+                <div className="flex flex-wrap place-content-center w-full mt-auto text-2xl gap-10 px-20 max-md:m-0 max-md:flex-col max-sm:gap-5 max-md:gap-10 max-sm:text-lg max-md:text-2xl justify-center items-center">
+                    <button className="text-white bg-green-900 whitespace-nowrap select-none rounded-3xl px-20 py-5 text-center font-sans font-medium max-md:text-lg max-md:px-4 text-3xl"
                          onClick={() => window.open(div1.linkform, '_blank')}
                     >
-                        Registrate Aquí
+                        Registrate aquí
                     </button>
                 </div>
             </div> 
-                <img src="/src/assets/Eventos/Datathon/data_portada.webp" alt="Logo" className="absolute right-[-55%] top-0 w-full max-w-full max-h-full h-auto object-cover shadow-2xl rounded-full ml-12" />
-            </div>
-            <div className="flex justify-around items-center px-10 py-5 mt-20 mb-20">
-                <div className="text-center">
+                <img src="/src/assets/Eventos/Datathon/data_portada.webp" alt="Logo" className="xl:absolute xl:right-[-55%] xl:top-0 xl:pt-0 w-full max-w-[80%] sm:max-w-[70%] md:max-w-[80%] lg:max-w-[90%] xl:max-w-full max-h-[80%] sm:max-h-[70%] md:max-h-[70%] lg:max-h-[90%] xl:max-h-full h-auto xl:object-cover shadow-xl xl:shadow-2xl rounded-full sm:ml-0 md:ml-0 lg:ml-0 xl:ml-12 ml-12" />
+        </div>
+            <div className="flex flex-col sm:flex-row sm:justify-around items-center px-10 py-5 mt-20 mb-20">
+                <div className="text-center sm:mb-0 mb-24">
                     <h3 className="text-5xl font-bold text-cyan-600 mb-5" >{div1.duration}</h3>
                     <p className="text-3xl text-gray-800">Duración</p>
                 </div>
@@ -47,13 +46,13 @@ function Datathon() {
             </div>
             <div className="flex justify-center items-center px-10 py-5 mt-5 mb-20">
                 <div className="text-center">
-                    <h3 className="text-[200px] font-bold text-cyan-600 mb-2" >{div1.premio}</h3>
-                    <p className="text-3xl text-gray-800">1er Lugar</p>
+                    <h3 className="text-[150px] sm:text-[200px] font-bold text-cyan-600 sm:mb-2" >{div1.premio}</h3>
+                    <p className="text-3xl text-gray-800 sm:mt-0 mt-20">1er Lugar</p>
                 </div>
             </div>
             <div className="bg-cyan-600 flex justify-center items-center px-10 py-5 mt-10 mb-10">
                 <div className="text-center">
-                    <h3 className="text-7xl font-bold text-white mb-2" >Problema por resolver</h3>
+                    <h3 className="text-5xl sm:text-7xl font-bold text-white mb-2" >Problema por resolver</h3>
                 </div>
             </div>
             <div className="flex justify-center items-center px-10 py-5 mt-10 mb-20">
@@ -61,28 +60,28 @@ function Datathon() {
                     <h3 className="text-3xl font-bold text-gray-800 mb-2" >{div2.msg}</h3>
                 </div>
             </div>
-            <div className="flex flex-row justify-center items-center px-10 py-5">
+            <div className="flex flex-col lg:flex-row justify-center items-center px-10 py-5">
                 <div className="flex flex-col items-center justifiy-center">
                     <img src="/src/assets/Eventos/Datathon/informe-medico.webp" alt="Logo" className="w-[92px] h-[92px] object-cover " />
                     <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
                         <p>{infos_dvi2[0]}</p>
                     </div>
                 </div>
-                <div className="h-32 w-[5px] bg-gray-600 rounded-full "></div>
+                <div className="h-[5px] w-32 lg:h-32 lg:w-[5px] mt-5 mb-5 lg:mt-0 lg:mb-0 bg-gray-600 rounded-full "></div>
                 <div className="flex flex-col items-center">
                     <img src="/src/assets/Eventos/Datathon/tierra.webp" alt="Logo" className="w-[92px] h-[92px] object-cover " />
                     <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
                         <p>{infos_dvi2[1]}</p>
                     </div>
                 </div>
-                <div className="h-32 w-[5px] bg-gray-600 rounded-full "></div>
+                <div className="h-[5px] w-32 lg:h-32 lg:w-[5px] mt-5 mb-5 lg:mt-0 lg:mb-0 bg-gray-600 rounded-full "></div>
                 <div className="flex flex-col items-center">
                     <img src="/src/assets/Eventos/Datathon/medico.webp" alt="Logo" className="w-[92px] h-[92px] object-cover" />
                     <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
                         <p>{infos_dvi2[2]}</p>
                     </div>
                 </div>
-                <div className="h-32 w-[5px] bg-gray-600 rounded-full "></div>
+                <div className="h-[5px] w-32 lg:h-32 lg:w-[5px] mt-5 mb-5 lg:mt-0 lg:mb-0 bg-gray-600 rounded-full "></div>
                 <div className="flex flex-col items-center"> 
                     <img src="/src/assets/Eventos/Datathon/analitica.webp" alt="Logo" className="w-[92px] h-[92px] object-cover" />
                     <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
@@ -90,33 +89,33 @@ function Datathon() {
                     </div>
                 </div>
             </div>
-            <div className="bg-orange-600 flex justify-center items-center px-10 py-5 mt-10 mb-10">
+            <div className="bg-orange-600 flex  justify-center items-center px-10 py-5 mt-10 mb-10">
                 <div className="text-center">
-                    <h3 className="text-7xl font-bold text-white mb-2" >Participantes</h3>
+                    <h3 className="text-5xl sm:text-7xl font-bold text-white mb-2" >Participantes</h3>
                 </div>
             </div>
-            <div className="flex flex-row justify-center items-center px-10 py-5">
+            <div className="flex flex-col lg:flex-row justify-center items-center px-10 py-5">
                 <div className="flex flex-col items-center justifiy-center">
                     <img src="/src/assets/Eventos/Datathon/espol.webp" alt="Logo" className="w-[92px] h-[92px] object-cover " />
                     <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
                         <p>{infos_dvi6[0]}</p>
                     </div>
                 </div>
-                <div className="h-32 w-[5px] bg-gray-600 rounded-full "></div>
+                <div className="h-[5px] w-32 lg:h-32 lg:w-[5px] mt-5 mb-5 lg:mt-0 lg:mb-0 bg-gray-600 rounded-full "></div>
                 <div className="flex flex-col items-center">
                     <img src="/src/assets/Eventos/Datathon/colaboracion.webp" alt="Logo" className="w-[92px] h-[92px] object-cover " />
                     <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
                         <p>{infos_dvi6[1]}</p>
                     </div>
                 </div>
-                <div className="h-32 w-[5px] bg-gray-600 rounded-full "></div>
+                <div className="h-[5px] w-32 lg:h-32 lg:w-[5px] mt-5 mb-5 lg:mt-0 lg:mb-0 bg-gray-600 rounded-full "></div>
                 <div className="flex flex-col items-center">
                     <img src="/src/assets/Eventos/Datathon/mujer.webp" alt="Logo" className="w-[92px] h-[92px] object-cover" />
                     <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
                         <p>{infos_dvi6[2]}</p>
                     </div>
                 </div>
-                <div className="h-32 w-[5px] bg-gray-600 rounded-full "></div>
+                <div className="h-[5px] w-32 lg:h-32 lg:w-[5px] mt-5 mb-5 lg:mt-0 lg:mb-0 bg-gray-600 rounded-full "></div>
                 <div className="flex flex-col items-center"> 
                     <img src="/src/assets/Eventos/Datathon/registro.webp" alt="Logo" className="w-[92px] h-[92px] object-cover" />
                     <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
