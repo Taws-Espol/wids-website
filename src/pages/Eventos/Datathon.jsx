@@ -15,16 +15,16 @@ function Datathon() {
     return (
         <div className="w-full  select-none flex flex-col pb-10 font-sans max-sm:text-base">
             <div>
-                <h1 className="flex justify-center items-center xl:justify-normal xl:items-stretch text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-10xl 2xl:text-11xl font-bold font-sans text-left text-primary-dark-green py-5 pb-5 xl:pl-40 2xl:pl-48">
+                <h1 className="flex justify-center items-center lg:justify-normal lg:items-stretch text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-10xl 2xl:text-11xl font-bold font-sans text-left text-primary-dark-green py-5 pb-5 lg:pl-32 xl:pl-40 2xl:pl-48">
                     Datathon 
                 </h1>
             </div>
-        <div className="relative overflow-hidden flex flex-col xl:justify-between justify-center items-center sm:items-center md:items-center lg:items-center xl:items-start 2xl:items-start bg-yellow-500 text-primary-dark-green h-[800px] sm:h-[900px] md:h-[1000px] lg:h-[1400px] xl:h-[700px] 2xl:h-[700px] pb-10">
-            <div className=" xl:w-1/2 w-4/5 flex flex-col xl:items-start 2xl:items-start font-bold p-10 xl:p-5 2xl:p-5">
-                <p className=' text-5xl md:text-[50px] lg:text-[80px] xl:text-[80px] 2xl:text-[80px] mb-10 sm:mb-20 lg:max-mt-16 lg:max-mb-16 xl:ml-48 xl:mb-10 2xl:ml-48 2xl:mt-20 2xl:mb-10 '>
+        <div className="relative overflow-hidden flex flex-col lg:justify-between justify-center items-center sm:items-center md:items-center lg:items-start 2xl:items-start bg-yellow-500 text-primary-dark-green h-[800px] sm:h-[900px] md:h-[1000px] lg:h-[500px] 2xl:h-[700px] pb-10">
+            <div className=" lg:w-1/2 w-4/5 flex flex-col xl:items-start 2xl:items-start font-bold p-10 xl:p-5 2xl:p-5">
+                <p className=' text-5xl md:text-[50px] lg:text-[65px] xl:text-[80px] 2xl:text-[80px] mb-10 sm:mb-20 lg:ml-32 lg:mb-8 xl:ml-48 xl:mb-10 2xl:ml-48 2xl:mt-20 2xl:mb-10 '>
                     {div1.title}
                 </p>                
-                <div className="flex flex-wrap place-content-center w-full mt-auto text-2xl gap-10 px-20 max-md:m-0 max-md:flex-col max-sm:gap-5 max-md:gap-10 max-sm:text-lg max-md:text-2xl justify-center items-center">
+                <div className="flex flex-wrap place-content-center w-full mt-auto text-2xl gap-10 px-20 max-md:m-0 max-md:flex-col max-sm:gap-5 max-md:gap-10 max-sm:text-lg max-md:text-2xl justify-center items-center lg:pl-56">
                     <button className="text-white bg-green-900 whitespace-nowrap select-none rounded-3xl px-20 py-5 text-center font-sans font-medium max-md:text-lg max-md:px-4 text-3xl"
                          onClick={() => window.open(div1.linkform, '_blank')}
                     >
@@ -32,7 +32,7 @@ function Datathon() {
                     </button>
                 </div>
             </div> 
-                <img src="/src/assets/Eventos/Datathon/data_portada.webp" alt="Logo" className="xl:absolute xl:right-[-55%] xl:top-0 xl:pt-0 w-full max-w-[80%] sm:max-w-[70%] md:max-w-[80%] lg:max-w-[90%] xl:max-w-full max-h-[80%] sm:max-h-[70%] md:max-h-[70%] lg:max-h-[90%] xl:max-h-full h-auto xl:object-cover shadow-xl xl:shadow-2xl rounded-full sm:ml-0 md:ml-0 lg:ml-0 xl:ml-12 ml-12" />
+                <img src="/src/assets/Eventos/Datathon/data_portada.webp" alt="Logo" className="lg:absolute lg:right-[-55%] lg:top-0 lg:pt-0 w-full max-w-[80%] sm:max-w-[70%] md:max-w-[80%] lg:max-w-full max-h-[80%] sm:max-h-[70%] md:max-h-[70%] lg:max-h-full h-auto lg:object-cover shadow-xl lg:shadow-2xl rounded-full sm:ml-0 md:ml-0 lg:ml-12 xl:ml-12 ml-12" />
         </div>
             <div className="flex flex-col sm:flex-row sm:justify-around items-center px-10 py-5 mt-20 mb-20">
                 <div className="text-center sm:mb-0 mb-24">
