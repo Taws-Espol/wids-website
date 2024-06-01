@@ -3,6 +3,8 @@ import {Infos} from "./Components/Infos";
 import Sponsors from "./Components/Sponsors";
 import Cronograma from "./Components/Cronograma";
 import Ubicacion from "./Components/Ubicacion";
+import CarruselConferences from "./Components/CarruselConferences";
+
 function Inicio() {
     return (
         <>
@@ -21,12 +23,8 @@ function Inicio() {
                         <Infos/>
                     </div>
                 </div>
-                <div className="pb-[5vw]" style={{color: 'white', backgroundColor: 'black'}}>
-                    <h1 className="pt-6 md:pt-10 text-center text-[6vw] md:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw] font-serif font-bold">
-                        Conferencistas
-                    </h1>
-                </div>
             </section>
+            <CarruselConferences/>,
             <Cronograma/>,
             <Ubicacion/>,
             <Sponsors/>
