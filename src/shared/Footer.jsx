@@ -36,7 +36,7 @@ function Footer() {
             <h2 className="text-[35px] font-sans font-semibold text-black mb-3">Contacto</h2>
             <h3 className="text-lg font-sans text-gray-500 mb-12">wids@fiec.espol.edu.ec</h3> 
 
-            <img src="/src/assets/wids-logo.png" className="mx-auto"/>
+            <img src="assets/wids-logo.png" className="mx-auto"/>
 
             
 
