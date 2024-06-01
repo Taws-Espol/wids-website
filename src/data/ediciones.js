@@ -341,7 +341,7 @@ export const ediciones = [
 				place: "GESIS - Leibniz Institute for the Social Sciences",
 				work: "Asistente de investigación",
 				schedule: "14:20 - 14:40",
-				imageName: "lisetteespin.jpeg",
+				imageName: "lisetteespin.png",
 				linkeding:"https://www.linkedin.com/company/widsespol/",
 				x:"https://twitter.com/widsespol",
 				info: "Lisette está cursando su último año de doctorado en la Universidad de Koblenz en Alemania. Trabaja en su tesis doctoral en el departamento Computational Social Science (CSS) en GESIS. Sus intereses se enfocan en la intersección de Network Science y Machine Learning. Actualmente investiga la influencia que tienen las diferentes estructuras de grafos en los algoritmos de clasificación y ranking. Entre el 2017 y 2018, Lisette realizó dos pasantías académicas en la Universidad del Sur de California (USC-ISI) y una en Stanford. Obtuvo su maestría en Ciencias de la Computación en la Universidad de Saarland e hizo una pasantía en el Max Planck Institute for Software Systems (MPI-SWS) en Saarbrücken. Se graduó de ingeniera en Ciencias Computacionales en la ESPOL en el 2010."
@@ -364,7 +364,7 @@ export const ediciones = [
 				place: "Politécnico Rensselaer",
 				work: "Profesora de Ciencias Computacionales",
 				schedule: "15:00 - 15:20",
-				imageName: "UzmaMushtaque.jpg",
+				imageName: "UzmaMushtaque.png",
 				language: "inglés",
 				linkeding:"https://www.linkedin.com/company/widsespol/",
 				x:"https://twitter.com/widsespol",
@@ -376,7 +376,7 @@ export const ediciones = [
 				place: "Banco del Pacífico",
 				work: "Arquitecta de datos",
 				schedule: "15:25 - 15:45",
-				imageName: "estefanialozano.jpeg",
+				imageName: "estefanialozano.png",
 				instagram:"https://www.instagram.com/widsespol/",
 				x:"https://twitter.com/widsespol",
 				info: "Ingeniera en Ciencias Computacionales graduada de la ESPOL, promotora del software libre y evangelizadora de la enseñanza de programación a niños y niñas. Actualmente, trabaja en el Banco del Pacífico como arquitecta de datos y líder técnico en la implementación de un datalake con gobernanza de datos. La misión del proyecto es evangelizar a todas las áreas del banco para que usen la plataforma en sus casos de uso que requieran Big data. Fue seleccionada como embajadora de innovación y vocera de transformación cultural del banco."
@@ -387,7 +387,7 @@ export const ediciones = [
 				place: "",
 				work: "",
 				schedule: "",
-				imageName: "",
+				imageName: "/assets/Conferences/Logo.png",
 				linkeding:"",
 				x:"",
 				info:""
@@ -398,7 +398,7 @@ export const ediciones = [
 				place: "",
 				work: "",
 				schedule: "",
-				imageName: "",
+				imageName: "/assets/Conferences/Logo.png",
 				linkeding:"",
 				x:"",
 				info:""
@@ -409,7 +409,7 @@ export const ediciones = [
 				place: "",
 				work: "",
 				schedule: "",
-				imageName: "",
+				imageName: "/assets/Conferences/Logo.png",
 				linkeding:"",
 				x:"",
 				info:""
@@ -420,7 +420,7 @@ export const ediciones = [
 				place: "",
 				work: "",
 				schedule: "",
-				imageName: "",
+				imageName: "/assets/Conferences/Logo.png",
 				linkeding:"",
 				x:"",
 				info:""
@@ -431,7 +431,7 @@ export const ediciones = [
 				place: "",
 				work: "",
 				schedule: "",
-				imageName: "",
+				imageName: "/assets/Conferences/Logo.png",
 				linkeding:"",
 				x:"",
 				info:""
