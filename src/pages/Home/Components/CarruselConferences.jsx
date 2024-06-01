@@ -7,7 +7,9 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // Importa los icono
 
 export default function CarruselConferences() {
 
-    const edicion2020 = ediciones.find(edicion => edicion.edicion === "2020");
+    const year = "2020";
+
+    const edicion2020 = ediciones.find(edicion => edicion.edicion === year);
 
     const CustomPrevArrow = (props) => (
         <div {...props}>
@@ -20,6 +22,7 @@ export default function CarruselConferences() {
             <FaArrowRight color="black" size={20} />
         </div>
     );
+    const path_images = `/assets/Eventos/Ediciones/${year}/Images/conferencistas/`
 
     var settings = {
         dots: true,
@@ -75,7 +78,7 @@ export default function CarruselConferences() {
                     {edicion2020.conferencistas.map((evento, index) => (
                         <div key={index} >
                             <div className="flex justify-center items-center pt-8 pb-2" >
-                                <img src={'src/assets/pruebaMaru/' + evento.imageName} alt={evento.title} className="h-44 w-44 rounded-full" />
+                                <img src={path_images+evento.imageName} alt={evento.imageName} className="h-44 w-44 rounded-full" />
                             </div>
 
                             <div className="flex flex-col justify-center items-center pt-2 pb-12">
