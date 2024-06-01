@@ -31,15 +31,11 @@ function Footer() {
 
     return (
       <footer className='font-acumin'>
-        <ul className={`bg-[rgb(231,231,231)] grid xl:grid-cols-2 grid-cols-1 w-full px-4 py-4 ${nothome ? 'hidden':'block'}`}>
+        <ul className={`bg-neutral-grey bg-opacity-20 grid xl:grid-cols-2 grid-cols-1 w-full px-4 py-4 ${nothome ? 'hidden':'block'}`}>
           <li className="px-20 pt-10 xl:text-start text-center">
             <h2 className="text-[35px] font-sans font-semibold text-black mb-3">Contacto</h2>
             <h3 className="text-lg font-sans text-gray-500 mb-12">wids@fiec.espol.edu.ec</h3> 
-
-            <img src="assets/wids-logo.png" className="mx-auto"/>
-
-            
-
+            <img src="/assets/wids-logo.png" className="mx-auto"/>
           </li>
           <li className="px-20 text-center">
             <br className='xl:block hidden'/>
@@ -48,7 +44,7 @@ function Footer() {
             <br className='xl:block hidden'/>
             
             <form className='' ref={form} onSubmit={sendEmail}>
-              <div className="mb-6">
+              <div className="mb-6 max-sm:mt-10">
                 <label
                   htmlFor="name"
                   className="block text-sm font-medium mb-2">
