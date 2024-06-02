@@ -1,7 +1,7 @@
 import { MdLocationPin } from "react-icons/md";
 const Ubicacion = () => {
     return (
-        <div className="bg-black text-white">
+        <div className="bg-neutral-grey bg-opacity-20 text-primary-dark-green">
             <div className="container mx-auto py-6 px-8">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold" >Ubicación</h1>

@@ -16,30 +16,35 @@ export const NextGenInfo = [
                 front_title : "Datos",
                 image_bene : "/assets/Eventos/NextGen/Benefits/datos.png",
                 back_title : "Conceptos de ciencias de datos",
+                bgColor: "#a2a2ff"
             },  
             {
                 id:"b2",
                 front_title : "Break",
                 image_bene : "/assets/Eventos/NextGen/Benefits/break.png",
                 back_title : "Coffee break (Refrigerio)",
+                bgColor: "#ffcba4"
             },    
             {
                 id:"b3",
                 front_title : "STEM",
                 image_bene : "/assets/Eventos/NextGen/Benefits/stem.png",
                 back_title : "Conocer carreras STEM",
+                bgColor: "#fff891"
             },
             {
                 id:"b4",
                 front_title : "Objetivos",
                 image_bene : "/assets/Eventos/NextGen/Benefits/objetivos.png",
                 back_title : "Alineado a objetivos institucionales",
+                bgColor: "#b0e0e6"
             },         
             {
                 id:"b5",
                 front_title : "Prácticas",
                 image_bene : "/assets/Eventos/NextGen/Benefits/practicas.png",
                 back_title : "Casos prácticos",
+                bgColor: "#98fb98"
             }                    
         ]
     },
@@ -50,13 +55,13 @@ export const NextGenInfo = [
             {
                 id:"r1",
                 alt:"Jovenes",
-                info:"Jóvenes que estén cursando bachillerato",
-                imagen_r:"/assets/Eventos/NextGen/Requirements/Jovenes.png"
+                info:"1. Jóvenes que estén cursando bachillerato",
+                imagen_r:"/assets/Eventos/NextGen/Requirements/Bachiller.png"
             },
             {
                 id:"r2",
                 alt:"Profesor",
-                info:"Tener un profesor encargado de acompañar a los asistentes",
+                info:"2. Tener un profesor encargado de acompañar a los asistentes",
                 imagen_r:"/assets/Eventos/NextGen/Requirements/Profesor.png"
             }
         ]
