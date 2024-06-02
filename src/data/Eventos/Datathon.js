@@ -96,7 +96,7 @@ export const DatathonInfo = [
                 id:"day4",
                 date:"31-05-2024",
                 time:"9:00 - 13:00",
-                title:"Hackaton",
+                title:"Datathon",
                 info:["Presentación Final: participantes entrenarán su primer modelo con guía paso a paso."]
             }
         ]

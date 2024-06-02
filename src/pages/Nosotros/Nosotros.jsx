@@ -22,7 +22,7 @@ function Nosotros() {
             <AboutUsCard/>
           </div>
           <div className="flex-grow md:w-1/2 pl-5 pr-10 grid place-content-center place-items-center">
-            <p className="text-center md:text-left text-xs sm:text-base md:text-lg lg:text-xl xl:text-xl font-sans">
+            <p className="!text-justify md:text-left text-xs sm:text-base md:text-lg lg:text-xl xl:text-xl font-acumin">
               {/* Texto de Lorem Ipsum */}
               WiDS Guayaquil@ESPOL es un evento independiente organizado por la
               PhD. Carmen Vaca con sede en la Escuela Superior Politécnica del

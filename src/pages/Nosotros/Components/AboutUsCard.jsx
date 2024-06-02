@@ -14,7 +14,7 @@ export default function AboutUsCard() {
         src="/assets/about-us/logo_wids.svg"
       />
       <img
-        className="w-[25rem]"
+        className="w-[35rem]"
         src="/assets/about-us/conference.png"
         alt="Imagen de evento"
       />

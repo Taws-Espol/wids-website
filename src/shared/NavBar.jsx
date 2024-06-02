@@ -34,6 +34,7 @@ function Navbar() {
                             w-full 
                             font-acumin 
                             text-base
+                            select-none
                             `}>
                 <div className='flex 
                                 items-center 
