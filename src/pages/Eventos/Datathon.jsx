@@ -1,5 +1,6 @@
 import { DatathonInfo } from "../../data/Eventos/Datathon";
 import {HackatonDay} from "./Components/HackatonDay";
+;
 function Datathon() {
     const div1 = DatathonInfo[0];
     const words = div1.words
@@ -9,145 +10,118 @@ function Datathon() {
     const requirements = div3.requirements;
     const div4 = DatathonInfo[3];
     const div5 = DatathonInfo[4];
+    const div6 = DatathonInfo[5];
+    const infos_dvi6 = div6.infos;
     return (
-        <div className="w-full  select-none flex flex-col place-content-center place-items-center pb-10 font-acumin max-sm:text-base">
+        <div className="w-full  select-none flex flex-col pb-10 font-sans max-sm:text-base">
             <div>
-                <h1 className="text-4xl font-bold font-acumin text-primary-dark-green text-center py-5">
-                    Datathon 2024
+                <h1 className="flex justify-center items-center md:justify-normal md:items-stretch text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-10xl 2xl:text-11xl font-bold font-sans text-left text-primary-dark-green py-5 pb-5 md:pl-16 lg:pl-32 xl:pl-40 2xl:pl-48">
+                    Datathon 
                 </h1>
             </div>
-            <div className="relative w-4/5 h-[750px] max-sm:h-[650px] max-md:h-[750px] max-lg:h-[400px] max-xl:h-[500px] max-2xl:h-[600px] rounded-3xl pb-10 bg-gradient-to-tr from-secondary-yellow via-primary-blue to-secondary-green text-primary-dark-green">
-                <div className="absolute top-[40px] left-20 text-9xl max-md:hidden max-lg:text-5xl max-lg:left-10 max-lg:top-[30px] max-xl:text-7xl max-xl:left-5 max-2xl:text-8xl">
-                    <p className="font-bold">
-                        {words[0]}
-                    </p>
+        <div className="relative overflow-hidden flex flex-col md:justify-between justify-center items-center sm:items-center md:items-start 2xl:items-start bg-yellow-500 text-primary-dark-green h-[800px] sm:h-[900px] md:h-[500px] lg:h-[500px] 2xl:h-[700px] pb-10">
+            <div className=" md:w-1/2 w-4/5 flex flex-col md:items-start 2xl:items-start font-bold p-10 md:p-5 2xl:p-5">
+                <p className=' text-5xl md:text-[50px] lg:text-[65px] xl:text-[80px] 2xl:text-[80px] mb-10 sm:mb-20 md:mt-10 md:ml-16 lg:ml-32 lg:mb-8 xl:ml-48 xl:mb-10 2xl:ml-48 2xl:mt-20 2xl:mb-10 '>
+                    {div1.title}
+                </p>                
+                <div className="flex flex-wrap place-content-center w-full mt-auto text-2xl gap-10 px-20 max-md:m-0 max-md:flex-col max-sm:gap-5 max-md:gap-10 max-sm:text-lg max-md:text-xl justify-center items-center lg:pl-56">
+                    <button className="text-white bg-green-900 whitespace-nowrap select-none rounded-3xl px-20 py-5 text-center font-sans font-medium max-md:text-lg max-md:px-4 text-3xl"
+                         onClick={() => window.open(div1.linkform, '_blank')}
+                    >
+                        Registrate aquí
+                    </button>
                 </div>
-                <div className="absolute top-[160px] left-96 text-9xl max-md:hidden max-lg:text-5xl max-lg:top-[80px] max-lg:left-44 max-xl:text-7xl max-xl:left-44 max-xl:top-[100px] max-2xl:text-8xl max-2xl:left-48 max-2xl:top-[120px]">
-                    <p className="font-bold">
-                        {words[1]}
-                    </p>
+            </div> 
+                <img src="/public/assets/Eventos/Datathon/data_portada.webp" alt="Logo" className="md:absolute md:right-[-55%] md:top-0 md:pt-0 w-full max-w-[80%] sm:max-w-[70%] md:max-w-full max-h-[80%] sm:max-h-[70%] md:max-h-full h-auto md:object-cover shadow-xl md:shadow-2xl rounded-full sm:ml-0 md:ml-0 lg:ml-12 xl:ml-12 ml-12" />
+        </div>
+            <div className="flex flex-col sm:flex-row sm:justify-around items-center px-10 py-5 mt-20 mb-20">
+                <div className="text-center sm:mb-0 mb-24">
+                    <h3 className="text-5xl font-bold text-cyan-600 mb-5" >{div1.duration}</h3>
+                    <p className="text-3xl text-gray-800">Duración</p>
                 </div>
-                <div className="absolute top-[300px] right-44 text-9xl max-md:hidden max-lg:text-5xl max-lg:top-[130px] max-lg:right-44 max-xl:text-7xl max-xl:right-36 max-xl:top-[170px] max-2xl:text-8xl max-2xl:right-44 max-2xl:top-[210px]">
-                    <p className="font-bold">
-                        {words[2]}
-                    </p>
+                <div className="text-center">
+                    <h3 className="text-5xl font-bold text-orange-600 mb-5">{div1.dates}</h3>
+                    <p className="text-3xl text-gray-800">Fecha del Datathon</p>
                 </div>
-                <div className="absolute top-[440px] right-20 text-9xl max-md:hidden max-lg:text-5xl max-lg:top-[180px] max-lg:right-10 max-xl:text-7xl max-xl:right-5 max-xl:top-[240px] max-2xl:text-8xl max-2xl:right-20 max-2xl:top-[300px]">
-                    <p className="font-bold">
-                        {words[3]}
-                    </p>
+            </div>
+            <div className="flex justify-center items-center px-10 py-5 mt-5 mb-20">
+                <div className="text-center">
+                    <h3 className="text-[150px] sm:text-[200px] font-bold text-cyan-600 sm:mb-2" >{div1.premio}</h3>
+                    <p className="text-3xl text-gray-800 sm:mt-0 mt-20">1er Lugar</p>
                 </div>
-                <div className="absolute top-[345px] left-32 text-2xl w-1/5 max-md:hidden max-lg:top-[150px] max-lg:left-10 max-xl:left-5 max-lg:w-[250px] max-xl:top-[200px] max-xl:w-[300px] max-2xl:top-[250px]">
-                    <p className="text-center">
-                        {div1.msg}
-                    </p>
+            </div>
+            <div className="bg-cyan-600 flex justify-center items-center px-10 py-5 mt-10 mb-10">
+                <div className="text-center">
+                    <h3 className="text-5xl sm:text-7xl font-bold text-white mb-2" >Problema por resolver</h3>
                 </div>
-                <div className="flex px-5  pt-5 text-center place-content-center place-items-center text-2xl font-bold md:hidden max-sm:text-2xl max-md:text-3xl" >
-                    <p>
-                        {div1.title}
-                    </p>
+            </div>
+            <div className="flex justify-center items-center px-10 py-5 mt-10 mb-20">
+                <div className="text-center">
+                    <h3 className="text-3xl font-bold text-gray-800 mb-2" >{div2.msg}</h3>
                 </div>
-                <div className="md:absolute top-[40px] right-12 max-md:right-0 max-md:flex max-md:place-content-center max-md:place-items-center max-md:pt-5 max-xl:top-1 ">
-                    <img src="/assets//Eventos/Datathon/datathon_portada.webp" alt="Logo"  className={`max-w-full max-h-44 h-auto object-contain shadow-2xl max-md:max-h-44 max-lg:max-h-32 max-xl:h-40 `} />
-                </div>
-                <div>
-                <div className="flex px-5  pt-5 text-center place-content-center place-items-center text-lg md:hidden  max-sm:text-lg max-md:text-2xl">
-                    <p className="text-center">
-                        {div1.msg}
-                    </p>
-                </div>
-                </div>
-                <div className="flex flex-wrap place-content-center w-full absolute bottom-14 text-2xl gap-10 ml-10 max-md:m-0 max-md:flex-col max-sm:gap-5 max-md:gap-10 max-sm:text-lg max-md:text-2xl max-lg:bottom-10">
-                    <div className="flex flex-col place-content-center place-items-center">
-                        <p className="border-b-2 border-b-slate-600 px-2">
-                            Duración
-                        </p>
-                        <p>
-                            {div1.duration}
-                        </p>
+            </div>
+            <div className="flex flex-col lg:flex-row justify-center items-center px-10 py-5">
+                <div className="flex flex-col items-center justifiy-center">
+                    <img src="/public/assets/Eventos/Datathon/informe-medico.webp" alt="Logo" className="w-[92px] h-[92px] object-cover " />
+                    <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
+                        <p>{infos_dvi2[0]}</p>
                     </div>
-                    <button className="text-white bg-primary-blue select-none rounded-lg px-10 py-3 text-center text-2xl font-acumin font-medium max-md:text-lg max-md:px-4"
-                        onClick={() => window.open(div1.linkform, '_blank')}
-                    >Registro</button>
-                    <div className="flex flex-col place-content-center place-items-center">
-                        <p className="border-b-2 border-b-slate-600 px-2">
-                            Fecha del datathon
-                        </p>
-                        <p>
-                            {div1.dates}
-                        </p>
+                </div>
+                <div className="h-[5px] w-32 lg:h-32 lg:w-[5px] mt-5 mb-5 lg:mt-0 lg:mb-0 bg-gray-600 rounded-full "></div>
+                <div className="flex flex-col items-center">
+                    <img src="/public/assets/Eventos/Datathon/tierra.webp" alt="Logo" className="w-[92px] h-[92px] object-cover " />
+                    <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
+                        <p>{infos_dvi2[1]}</p>
+                    </div>
+                </div>
+                <div className="h-[5px] w-32 lg:h-32 lg:w-[5px] mt-5 mb-5 lg:mt-0 lg:mb-0 bg-gray-600 rounded-full "></div>
+                <div className="flex flex-col items-center">
+                    <img src="/public/assets/Eventos/Datathon/medico.webp" alt="Logo" className="w-[92px] h-[92px] object-cover" />
+                    <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
+                        <p>{infos_dvi2[2]}</p>
+                    </div>
+                </div>
+                <div className="h-[5px] w-32 lg:h-32 lg:w-[5px] mt-5 mb-5 lg:mt-0 lg:mb-0 bg-gray-600 rounded-full "></div>
+                <div className="flex flex-col items-center"> 
+                    <img src="/public/assets/Eventos/Datathon/analitica.webp" alt="Logo" className="w-[92px] h-[92px] object-cover" />
+                    <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
+                        <p>{infos_dvi2[3]}</p>
                     </div>
                 </div>
             </div>
-            <div className=" w-4/5 m-w-[500px] border-l-secondary-green border-y-secondary-blue border-r-secondary-yellow  font-acumin border-4 py-10 flex flex-col place-content-center place-items-center rounded-3xl gap-5">
-                <p className="text-primary-dark-green text-4xl font-bold text-center py-10">
-                    {div2.title}
-                </p>
-                <div className="flex flex-wrap w-10/12 max-sm:flex-col max-sm:place-content-center max-sm:place-items-center max-sm:gap-5 place-content-around bg-gradient-to-br from-secondary-green via-primary-blue to-secondary-yellow rounded-3xl py-10">
-                    <div className="w-5/12 min-w-[250px] flex place-content-start place-items-center justify-start text-3xl text-center">
-                        <p className="px-4">
-                            {div2.msg}
-                        </p>
-                    </div>
-                    <div className="flex flex-wrap w-6/12 gap-5 place-content-center place-items-center text-center">
-                        <p className="py-4 px-5 bg-white bg-opacity-20 rounded-sm">{infos_dvi2[0]}</p>
-                        <p className="py-4 px-5 bg-white bg-opacity-20 rounded-sm">{infos_dvi2[1]}</p>
-                        <p className="py-4 px-5 bg-white bg-opacity-20 rounded-sm">{infos_dvi2[2]}</p>
-                        <p className="py-4 px-5 bg-white bg-opacity-20 rounded-sm">{infos_dvi2[3]}</p>
-                    </div>
+            <div className="bg-orange-600 flex  justify-center items-center px-10 py-5 mt-10 mb-10">
+                <div className="text-center">
+                    <h3 className="text-5xl sm:text-7xl font-bold text-white mb-2" >Participantes</h3>
                 </div>
             </div>
-            <div className="mt-20 w-4/5 flex flex-wrap place-content-around place-items-center text-center text-2xl max-md:flex-col max-md:place-content-center max-md:place-items-center max-sm:text-lg max-md:text-center max-md:gap-5">
-                <div className="md:hidden text-4xl font-bold text-primary-dark-green text-center px-5 max-sm:place-content-center max-sm:place-items-center max-sm:pb-5 ">
-                    <p className="text-center">
-                        {div3.title}
-                    </p>
-                </div>
-                <div className="py-5 px-10 w-4/12 rounded-3xl  border-l-secondary-green border-y-secondary-blue border-r-secondary-yellow border-4 h-72 gap-5 flex flex-col place-content-center place-items-center text-justify max-sm:w-[300px] max-md:w-[400px] max-xl:w-[300px] max-xl:h-[400px]" >
-                    <h3 className="text-3xl">
-                        {requirements[0].title}
-                    </h3>
-                    <p>
-                        {requirements[0].info}
-                    </p>
-                </div>
-                <div className="text-4xl font-bold text-primary-dark-green w-4/12 text-center px-5 max-md:hidden" >
-                    <p>
-                        {div3.title}
-                    </p>
-                </div>
-                <div className="py-5 px-10 w-4/12 rounded-3xl  border-l-secondary-green border-y-secondary-blue border-r-secondary-yellow border-4 h-72 gap-5 flex flex-col place-content-center place-items-center text-justify max-sm:w-[300px] max-md:w-[400px] max-xl:w-[300px] max-xl:h-[400px]" >
-                    <h3 className="text-3xl">
-                        {requirements[1].title}
-                    </h3>
-                    <p>
-                        {requirements[1].info}
-                    </p>
-                </div>
-                <div className="py-5 px-10 w-4/12 rounded-3xl  border-l-secondary-green border-y-secondary-blue border-r-secondary-yellow border-4 h-72 gap-5 flex flex-col place-content-center place-items-center text-justify max-sm:w-[300px] max-md:w-[400px] max-xl:w-[300px] max-xl:h-[400px]"  >
-                    <h3 className="text-3xl">
-                        {requirements[2].title}
-                    </h3>
-                    <p>
-                        {requirements[2].info[0]}
-                        <a href={requirements[2].linkform} target="_blank" className="text-primary-dark-green">{requirements[2].info[1]}</a>
-                    </p>
-                </div>
-            </div>
-            <div className=" w-4/5 m-w-[500px] border-l-secondary-green border-y-secondary-blue border-r-secondary-yellow  font-acumin border-4 py-10 flex flex-col place-content-center place-items-center rounded-3xl gap-5 mt-10">
-                <div className="flex flex-wrap w-10/12 max-sm:flex-col max-sm:place-content-center max-sm:place-items-center max-sm:gap-5 place-content-around bg-gradient-to-br from-secondary-green via-primary-blue to-secondary-yellow rounded-3xl py-10">
-                    <div className="w-4/5 min-w-[250px] flex place-content-start place-items-center justify-start text-3xl text-center">
-                        <p className="px-10 text-justify">
-                            {div4.msg}
-                        </p>
+            <div className="flex flex-col lg:flex-row justify-center items-center px-10 py-5">
+                <div className="flex flex-col items-center justifiy-center">
+                    <img src="/public/assets/Eventos/Datathon/espol.webp" alt="Logo" className="w-[92px] h-[92px] object-cover " />
+                    <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
+                        <p>{infos_dvi6[0]}</p>
                     </div>
                 </div>
-            </div>
-            <div className="w-4/5 flex flex-col text-2xl mt-20 place-content-center  place-items-center">
-                <h3 className="font-bold text-primary-dark-green  text-3xl text-center">
-                    {div5.title}
-                </h3>
-                {div5.crono.map((day,index) => (<HackatonDay key={index} dayHackaton={day}/>) )}
+                <div className="h-[5px] w-32 lg:h-32 lg:w-[5px] mt-5 mb-5 lg:mt-0 lg:mb-0 bg-gray-600 rounded-full "></div>
+                <div className="flex flex-col items-center">
+                    <img src="/public/assets/Eventos/Datathon/colaboracion.webp" alt="Logo" className="w-[92px] h-[92px] object-cover " />
+                    <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
+                        <p>{infos_dvi6[1]}</p>
+                    </div>
+                </div>
+                <div className="h-[5px] w-32 lg:h-32 lg:w-[5px] mt-5 mb-5 lg:mt-0 lg:mb-0 bg-gray-600 rounded-full "></div>
+                <div className="flex flex-col items-center">
+                    <img src="/public/assets/Eventos/Datathon/mujer.webp" alt="Logo" className="w-[92px] h-[92px] object-cover" />
+                    <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
+                        <p>{infos_dvi6[2]}</p>
+                    </div>
+                </div>
+                <div className="h-[5px] w-32 lg:h-32 lg:w-[5px] mt-5 mb-5 lg:mt-0 lg:mb-0 bg-gray-600 rounded-full "></div>
+                <div className="flex flex-col items-center"> 
+                    <img src="/public/assets/Eventos/Datathon/registro.webp" alt="Logo" className="w-[92px] h-[92px] object-cover" />
+                    <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
+                        <p>{infos_dvi6[3]}</p>
+                    </div>
+                </div>
             </div>
         </div>
     );
