@@ -1,28 +1,28 @@
+import  AboutUsCard  from "./Components/AboutUsCard";
 function Nosotros() {
   return (
     <>
-      <div className="pt-5 pb-5 pl-40">
-        <h1 className="text-xl sm:text-4xl md:text-5xl  lg:text-6xl text-sans text-teal-700">
+      <div
+        className="flex px-5 justify-center 
+          md:justify-start py-7 sm:pl-20 md:pl-40"
+      >
+        <h1
+          className="text-sans text-[#1e4620] text-center md:text-left
+            font-bold text-7xl sm:text-5xl md:text-5xl lg:text-6xl select-none"
+        >
           Sobre Nosotros
         </h1>
       </div>
-      <section
-        className="bg-gray-2 dark:bg-dark
-        flex place-content-center place-items-center select-none font-acumin"
-      >
-        <div
-          className="container flex py-20 px-10
-        place-content-center place-items-center max-lg:flex-col max-lg:gap-10"
-        >
-          <div className="w-3/5 flex place-content-center place-items-center ">
-            <img
-              src="/assets/navbar/Logo_wids2024.png"
-              alt="Imagen de evento"
-              className="w-[300px] h-2/4 md:w-[500px]"
-            />
+      <section className="w-full select-none pt-5 pb-20">
+        <div className="flex flex-col md:flex-row gap-5">
+          <div
+            className=" flex-grow md:w-1/2 px-5 grid
+            place-content-center place-items-center"
+          >
+            <AboutUsCard/>
           </div>
-          <div className="w-2/5 max-sm:min-w-[300px] max-md:min-w-[500px] max-lg:min-w-[700px]">
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-sans">
+          <div className="flex-grow md:w-1/2 pl-5 pr-10 grid place-content-center place-items-center">
+            <p className="text-center md:text-left text-xs sm:text-base md:text-lg lg:text-xl xl:text-xl font-sans">
               {/* Texto de Lorem Ipsum */}
               WiDS Guayaquil@ESPOL es un evento independiente organizado por la
               PhD. Carmen Vaca con sede en la Escuela Superior Politécnica del
