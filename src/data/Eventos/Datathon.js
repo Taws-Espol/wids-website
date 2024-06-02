@@ -59,45 +59,45 @@ export const DatathonInfo = [
         crono:[
             {
                 id:"day1",
-                date:"28.05",
+                date:"28-05-2024",
                 time:"19:00 - 21:00 ",
-                topic: "Fundamentos de la Ciencia de Datos",
-                content :[
-                " * Qué es la ciencia de datos y por qué es importante.",
-                " * Visión general de los procesos y ciclos de vida de un proyecto de datos.",
-                " * Casos de uso y aplicaciones en la industria real.",
-                " * Instalar librerias y dependencias necesarias para inciar un proyecto."]
+                title: "Fundamentos de la Ciencia de Datos",
+                info :[
+                "Qué es la ciencia de datos y por qué es importante.",
+                "Visión general de los procesos y ciclos de vida de un proyecto de datos.",
+                "Casos de uso y aplicaciones en la industria real.",
+                "Instalar librerias y dependencias necesarias para inciar un proyecto."]
             },
             {
                 id:"day2",
-                date:"29.05",
+                date:"29-05-2024",
                 time:"19:00 - 21:00 ",
-                topic:"Manipulación y Análisis de Datos",
-                content :[
-                    " * Introducción a la limpieza y preparación de datos.",
-                    " * Análisis exploratorio de datos con Python usando Plotly express.",
-                    " * Construcción de visualizaciones de datos para extraer insights.",
-                    " * Ejemplos prácticos y ejercicios con datasets reales."
+                title:"Manipulación y Análisis de Datos",
+                info :[
+                    "Introducción a la limpieza y preparación de datos.",
+                    "Análisis exploratorio de datos con Python usando Plotly express.",
+                    "Construcción de visualizaciones de datos para extraer insights.",
+                    "Ejemplos prácticos y ejercicios con datasets reales."
                 ]
             },
             {
                 id:"day3",
-                date:"30.05",
+                date:"30-05-2024",
                 time:"19:00 - 21:00 ",
-                topic:"Modelado y Entrenamiento de Modelos de Machine Learning",
-                content:[
-                    " * Diferencia entre aprendizaje supervisado y no supervisado.",
-                    " * Creación y entrenamiento de modelos simples con scikit-learn.",
-                    " * Evaluación de modelos: cómo medir la efectividad de tu modelo.",
+                title:"Modelado y Entrenamiento de Modelos de Machine Learning",
+                info:[
+                    "Diferencia entre aprendizaje supervisado y no supervisado.",
+                    "Creación y entrenamiento de modelos simples con scikit-learn.",
+                    "Evaluación de modelos: cómo medir la efectividad de tu modelo.",
                 ]
                 
             },
             {
                 id:"day4",
-                date:"31.05",
+                date:"31-05-2024",
                 time:"9:00 - 13:00",
-                topic:"Hackaton",
-                content:[" * Presentación Final : participantes entrenarán su primer modelo con guía paso a paso."]
+                title:"Hackaton",
+                info:["Presentación Final: participantes entrenarán su primer modelo con guía paso a paso."]
             }
         ]
     },

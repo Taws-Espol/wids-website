@@ -1,6 +1,7 @@
 import { DatathonInfo } from "../../data/Eventos/Datathon";
 import {HackatonDay} from "./Components/HackatonDay";
-;
+import { TimeLine } from "../Cronograma/Components/TimeLineDatathon";
+
 function Datathon() {
     const div1 = DatathonInfo[0];
     const words = div1.words
@@ -10,8 +11,10 @@ function Datathon() {
     const requirements = div3.requirements;
     const div4 = DatathonInfo[3];
     const div5 = DatathonInfo[4];
+    const cronograma = div5.crono;
     const div6 = DatathonInfo[5];
     const infos_dvi6 = div6.infos;
+
     return (
         <div className="w-full  select-none flex flex-col pb-10 font-sans max-sm:text-base">
             <div>
@@ -122,6 +125,14 @@ function Datathon() {
                         <p>{infos_dvi6[3]}</p>
                     </div>
                 </div>
+            </div>
+            <div className="bg-green-600 flex  justify-center items-center px-10 py-5 mt-10 mb-10">
+                <div className="text-center">
+                    <h3 className="text-5xl sm:text-7xl font-bold text-white mb-2" >Cronograma</h3>
+                </div>
+            </div>
+            <div className='w-full'>
+                {<TimeLine Data={cronograma}/>}
             </div>
         </div>
     );

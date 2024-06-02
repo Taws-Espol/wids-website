@@ -1,4 +1,4 @@
-import {VerticalTimelineElement}  from 'react-vertical-timeline-component';
+import { VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 export function ItemTimeLine({ Evento }) {
 
@@ -22,23 +22,37 @@ export function ItemTimeLine({ Evento }) {
             imagen = "/assets/images-cardInfo/Conferencia.png";
             background_color = "#a2a2ff";
     }
-    
+    console.log(Evento.date)
     return <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        contentArrowStyle={{ 
+        contentArrowStyle={{
             borderRight: `10px solid ${background_color}`
         }}
         contentStyle={{ borderTop: ` 10px solid ${background_color}` }}
-        iconStyle={{ background:`${background_color}`, color: '#fff' }}
+        iconStyle={{ background: `${background_color}`, color: '#fff' }}
+        date={Evento.date}
+        dateClassName="vertical-timeline-element-date"
     >
         {Evento.info ? (
             <>
-                <h3 className="vertical-timeline-element-title text-primary-dark-green font-bold">{Evento.title}</h3>
-                <p className="">{Evento.info}</p>
+                <h3 className="vertical-timeline-element-title text-primary-dark-green font-bold text-3xl">{Evento.title}</h3>
+                {Array.isArray(Evento.info) ? (
+                    Evento.info.map((infoItem, index) => (
+                        <p key={index} className="!text-lg">{infoItem}</p>
+                    ))
+                ) : (
+                    <p className="">{Evento.info}</p>
+                )}
+                {Evento.time && (
+                    <div className="flex flex-row items-center">
+                        <img src="/assets/Eventos/Datathon/reloj.webp" alt="Logo" className="w-8 h-8  mt-[21px] mr-2" />
+                        <p className='!text-2xl'>{Evento.time}</p>
+                    </div>
+                )}
             </>
         ) : (
-                <h1 className={`font-bold text-2xl ${value == "Break" ? 'text-primary-violet':'text-primary-dark-green'}`}>{Evento.title}</h1>
-        )} 
+            <h1 className={`font-bold text-2xl ${value == "Break" ? 'text-primary-violet' : 'text-primary-dark-green'}`}>{Evento.title}</h1>
+        )}
     </VerticalTimelineElement>
 
 }
