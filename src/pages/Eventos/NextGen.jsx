@@ -10,7 +10,7 @@ function NextGen() {
     return (
         <div className="w-full flex flex-col place-content-center place-items-center pb-10 font-acumin select-none">
             <div className="w-full px-4 sm:px-8 md:px-16 lg:px-32 xl:px-64">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-acumin text-primary-dark-green text-center  lg:text-left py-0 sm:py-5">
+                <h1 className="text-5xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-acumin text-primary-dark-green text-center  lg:text-left py-0 sm:py-5">
                     Next Gen 2024
                 </h1>
             </div>

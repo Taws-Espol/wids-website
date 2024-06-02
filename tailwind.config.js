@@ -10,6 +10,7 @@ export default {
                 'acumin': ['acumin-pro','acumin-variable'],
             },
             colors: {
+                'custom-gre':'#43a75f',
                 'custom-yel':'#fff891',
                 'custom-purpl2':'#ececff',
                 'custom-white':'#FAFAFA',
