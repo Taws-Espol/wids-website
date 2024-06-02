@@ -1,13 +1,11 @@
 function Nosotros() {
   return (
     <>
-      <div className="pb-5 pt-5 mt-4 sm:pb-8 sm:pt-8 md:pb-10 md:pt-10 flex
-      items-center justify-center bg-gradient-to-r from-yellow-500 to-amber-400">
-        <h1 className="text-xl sm:text-4xl md:text-5xl  lg:text-6xl text-sans text-slate-100">
+      <div className="pt-5 pb-5 pl-40">
+        <h1 className="text-xl sm:text-4xl md:text-5xl  lg:text-6xl text-sans text-teal-700">
           Sobre Nosotros
         </h1>
       </div>
-      <div className="h-2 bg-gradient-to-r from-cyan-500 to-blue-500"></div>
       <section
         className="bg-gray-2 dark:bg-dark
         flex place-content-center place-items-center select-none font-acumin"
@@ -18,7 +16,7 @@ function Nosotros() {
         >
           <div className="w-3/5 flex place-content-center place-items-center ">
             <img
-              src="/src/assets/navbar/Logo_wids2024.png"
+              src="/assets/navbar/Logo_wids2024.png"
               alt="Imagen de evento"
               className="w-[300px] h-2/4 md:w-[500px]"
             />
