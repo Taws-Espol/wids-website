@@ -35,7 +35,7 @@ function Datathon() {
                     </button>
                 </div>
             </div> 
-                <img src="/public/assets/Eventos/Datathon/data_portada.webp" alt="Logo" className="md:absolute md:right-[-55%] md:top-0 md:pt-0 w-full max-w-[80%] sm:max-w-[70%] md:max-w-full max-h-[80%] sm:max-h-[70%] md:max-h-full h-auto md:object-cover shadow-xl md:shadow-2xl rounded-full sm:ml-0 md:ml-0 lg:ml-12 xl:ml-12 ml-12" />
+                <img src="/assets/Eventos/Datathon/data_portada.webp" alt="Logo" className="md:absolute md:right-[-55%] md:top-0 md:pt-0 w-full max-w-[80%] sm:max-w-[70%] md:max-w-full max-h-[80%] sm:max-h-[70%] md:max-h-full h-auto md:object-cover shadow-xl md:shadow-2xl rounded-full sm:ml-0 md:ml-0 lg:ml-12 xl:ml-12 ml-12" />
         </div>
             <div className="flex flex-col sm:flex-row sm:justify-around items-center px-10 py-5 mt-20 mb-20">
                 <div className="text-center sm:mb-0 mb-24">
@@ -65,28 +65,28 @@ function Datathon() {
             </div>
             <div className="flex flex-col lg:flex-row justify-center items-center px-10 py-5">
                 <div className="flex flex-col items-center justifiy-center">
-                    <img src="/public/assets/Eventos/Datathon/informe-medico.webp" alt="Logo" className="w-[92px] h-[92px] object-cover " />
+                    <img src="/assets/Eventos/Datathon/informe-medico.webp" alt="Logo" className="w-[92px] h-[92px] object-cover " />
                     <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
                         <p>{infos_dvi2[0]}</p>
                     </div>
                 </div>
                 <div className="h-[5px] w-32 lg:h-32 lg:w-[5px] mt-5 mb-5 lg:mt-0 lg:mb-0 bg-gray-600 rounded-full "></div>
                 <div className="flex flex-col items-center">
-                    <img src="/public/assets/Eventos/Datathon/tierra.webp" alt="Logo" className="w-[92px] h-[92px] object-cover " />
+                    <img src="/assets/Eventos/Datathon/tierra.webp" alt="Logo" className="w-[92px] h-[92px] object-cover " />
                     <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
                         <p>{infos_dvi2[1]}</p>
                     </div>
                 </div>
                 <div className="h-[5px] w-32 lg:h-32 lg:w-[5px] mt-5 mb-5 lg:mt-0 lg:mb-0 bg-gray-600 rounded-full "></div>
                 <div className="flex flex-col items-center">
-                    <img src="/public/assets/Eventos/Datathon/medico.webp" alt="Logo" className="w-[92px] h-[92px] object-cover" />
+                    <img src="/assets/Eventos/Datathon/medico.webp" alt="Logo" className="w-[92px] h-[92px] object-cover" />
                     <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
                         <p>{infos_dvi2[2]}</p>
                     </div>
                 </div>
                 <div className="h-[5px] w-32 lg:h-32 lg:w-[5px] mt-5 mb-5 lg:mt-0 lg:mb-0 bg-gray-600 rounded-full "></div>
                 <div className="flex flex-col items-center"> 
-                    <img src="/public/assets/Eventos/Datathon/analitica.webp" alt="Logo" className="w-[92px] h-[92px] object-cover" />
+                    <img src="/assets/Eventos/Datathon/analitica.webp" alt="Logo" className="w-[92px] h-[92px] object-cover" />
                     <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
                         <p>{infos_dvi2[3]}</p>
                     </div>
@@ -99,28 +99,28 @@ function Datathon() {
             </div>
             <div className="flex flex-col lg:flex-row justify-center items-center px-10 py-5">
                 <div className="flex flex-col items-center justifiy-center">
-                    <img src="/public/assets/Eventos/Datathon/espol.webp" alt="Logo" className="w-[92px] h-[92px] object-cover " />
+                    <img src="/assets/Eventos/Datathon/espol.webp" alt="Logo" className="w-[92px] h-[92px] object-cover " />
                     <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
                         <p>{infos_dvi6[0]}</p>
                     </div>
                 </div>
                 <div className="h-[5px] w-32 lg:h-32 lg:w-[5px] mt-5 mb-5 lg:mt-0 lg:mb-0 bg-gray-600 rounded-full "></div>
                 <div className="flex flex-col items-center">
-                    <img src="/public/assets/Eventos/Datathon/colaboracion.webp" alt="Logo" className="w-[92px] h-[92px] object-cover " />
+                    <img src="/assets/Eventos/Datathon/colaboracion.webp" alt="Logo" className="w-[92px] h-[92px] object-cover " />
                     <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
                         <p>{infos_dvi6[1]}</p>
                     </div>
                 </div>
                 <div className="h-[5px] w-32 lg:h-32 lg:w-[5px] mt-5 mb-5 lg:mt-0 lg:mb-0 bg-gray-600 rounded-full "></div>
                 <div className="flex flex-col items-center">
-                    <img src="/public/assets/Eventos/Datathon/mujer.webp" alt="Logo" className="w-[92px] h-[92px] object-cover" />
+                    <img src="/assets/Eventos/Datathon/mujer.webp" alt="Logo" className="w-[92px] h-[92px] object-cover" />
                     <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
                         <p>{infos_dvi6[2]}</p>
                     </div>
                 </div>
                 <div className="h-[5px] w-32 lg:h-32 lg:w-[5px] mt-5 mb-5 lg:mt-0 lg:mb-0 bg-gray-600 rounded-full "></div>
                 <div className="flex flex-col items-center"> 
-                    <img src="/public/assets/Eventos/Datathon/registro.webp" alt="Logo" className="w-[92px] h-[92px] object-cover" />
+                    <img src="/assets/Eventos/Datathon/registro.webp" alt="Logo" className="w-[92px] h-[92px] object-cover" />
                     <div className="text-3xl font-bold text-gray-800 mt-4 mb-2 text-center">
                         <p>{infos_dvi6[3]}</p>
                     </div>
