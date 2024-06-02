@@ -64,7 +64,7 @@ export function ConferenceContainer({ edicionData }){
                     )}
                     {edicionData &&
                         edicionData.conferencistas.map((conferencista, index) => (
-                            <ProfileCard key={index} conferencista={conferencista} onClickFunction={() => changeConferenceActive(conferencista)} active={conferenceActive} />
+                            <ProfileCard key={index} conferencista={conferencista} onClickFunction={() => changeConferenceActive(conferencista)} active={conferenceActive} year={edition}/>
                         ))
                     }
                 </div>
