@@ -2,7 +2,7 @@ import { Card, CardHeader, CardBody, CardFooter, Typography, Tooltip } from "@ma
 import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 export function ProfileCard({ conferencista,home,onClickFunction,active }) {
-  const path_conferencistas = "/src/assets/Eventos/Ediciones/2020/Images/conferencistas/"
+  const path_conferencistas = "/assets//Eventos/Ediciones/2020/Images/conferencistas/"
   let image = path_conferencistas + conferencista.imageName;
   let value = false;
   if (active == null){

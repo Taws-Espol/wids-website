@@ -8,7 +8,7 @@ export default function Sponsor(data) {
         <div className="my-auto">
         <p>{data.name}</p>
         <div className="flex flex-row items-center">
-          <img src="src/assets/location.png" alt="Ubicación" className="h-5 w-auto"/>
+          <img src="/assets/location.png" alt="Ubicación" className="h-5 w-auto"/>
           <p>{data.location}</p>
         </div>
         {data.website ? <a href={data.website} className="text-pink-500">Ir al sitio web</a> : null}

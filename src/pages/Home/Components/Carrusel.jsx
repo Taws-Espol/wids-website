@@ -21,6 +21,7 @@ export default function Carrusel() {
     };
     // Second div left
     // Third div right 
+    console.log(infoImages[currentIndex].url)
     const linksForm = ['https://forms.gle/K49hcMVpajuw2QgT6','https://docs.google.com/forms/d/e/1FAIpQLSdhNss5S8yXrnr2nZdPmuNOwk2RZl56Hf8TtMXnpBXBWXECtA/viewform'];
     return (
         <div className='m-0 h-[1000px] w-full relative group'>

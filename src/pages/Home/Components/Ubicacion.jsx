@@ -1,4 +1,3 @@
-import React from 'react';
 import { MdLocationPin } from "react-icons/md";
 const Ubicacion = () => {
     return (
