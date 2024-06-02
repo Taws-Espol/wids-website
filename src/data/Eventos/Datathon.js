@@ -59,7 +59,7 @@ export const DatathonInfo = [
         crono:[
             {
                 id:"day1",
-                date:"28.05",
+                date:"28-05-2024",
                 time:"19:00 - 21:00 ",
                 title: "Fundamentos de la Ciencia de Datos",
                 info :[
@@ -70,7 +70,7 @@ export const DatathonInfo = [
             },
             {
                 id:"day2",
-                date:"29.05",
+                date:"29-05-2024",
                 time:"19:00 - 21:00 ",
                 title:"Manipulación y Análisis de Datos",
                 info :[
@@ -82,7 +82,7 @@ export const DatathonInfo = [
             },
             {
                 id:"day3",
-                date:"30.05",
+                date:"30-05-2024",
                 time:"19:00 - 21:00 ",
                 title:"Modelado y Entrenamiento de Modelos de Machine Learning",
                 info:[
@@ -94,7 +94,7 @@ export const DatathonInfo = [
             },
             {
                 id:"day4",
-                date:"31.05",
+                date:"31-05-2024",
                 time:"9:00 - 13:00",
                 title:"Hackaton",
                 info:["Presentación Final: participantes entrenarán su primer modelo con guía paso a paso."]

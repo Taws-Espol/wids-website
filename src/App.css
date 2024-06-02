@@ -268,3 +268,12 @@
     .grey-edition {
         color: #D9D9D9;
     }
+    .vertical-timeline-element-date{
+        font-size: 24px !important;
+        font-weight: bold !important;
+        color:#004029;
+        top: -10px !important;
+    }
+    .vertical-timeline-element-content-arrow{
+        top: 10px !important;
+    }
