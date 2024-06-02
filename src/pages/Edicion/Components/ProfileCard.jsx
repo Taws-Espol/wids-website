@@ -42,10 +42,8 @@ export function ProfileCard({ conferencista, home, onClickFunction, active, year
           </CardFooter>
         </Card>
       </div> : 
-      <div className="mb-10">
-        <Card className={`w-96 h-[600px]  max-sm:w-80 ${home ? 'h-[600px] w-80' : ''} ${value ? 'opacity-40' : ''}`}>
-            <img src={image} alt="Conferencista" className="h-full w-full object-cover rounded-3xl" />
+        <Card className={`w-96 h-[580px] mt-5 max-sm:w-80 bg-neutral-grey bg-opacity-55 text-center place-content-center place-items-center` }>
+            <p className="font-acumin font-bold text-9xl text-white">?</p>
         </Card> 
-      </div> 
   )
 }
