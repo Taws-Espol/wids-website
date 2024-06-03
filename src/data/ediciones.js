@@ -336,52 +336,6 @@ export const ediciones = [
 		],
 		conferencistas: [
 			{
-				title: "Estructura de Redes y su influencia en Machine Learning",
-				name: "Lisette Espín",
-				place: "GESIS - Leibniz Institute for the Social Sciences",
-				work: "Asistente de investigación",
-				schedule: "14:20 - 14:40",
-				imageName: "lisetteespin.png",
-				linkeding:"https://www.linkedin.com/company/widsespol/",
-				x:"https://twitter.com/widsespol",
-				info: "Lisette está cursando su último año de doctorado en la Universidad de Koblenz en Alemania. Trabaja en su tesis doctoral en el departamento Computational Social Science (CSS) en GESIS. Sus intereses se enfocan en la intersección de Network Science y Machine Learning. Actualmente investiga la influencia que tienen las diferentes estructuras de grafos en los algoritmos de clasificación y ranking. Entre el 2017 y 2018, Lisette realizó dos pasantías académicas en la Universidad del Sur de California (USC-ISI) y una en Stanford. Obtuvo su maestría en Ciencias de la Computación en la Universidad de Saarland e hizo una pasantía en el Max Planck Institute for Software Systems (MPI-SWS) en Saarbrücken. Se graduó de ingeniera en Ciencias Computacionales en la ESPOL en el 2010."
-			},
-			{
-				title: "Ciencia de datos para la extracción de información valiosa a partir de las redes sociales",
-				name: "Bárbara Poblete",
-				place: "DCCU Chile",
-				work: "Profesora asociada",
-				schedule: "14:40 - 15:00",
-				imageName: "BPoblete.png",
-				language: "español",
-				linkeding:"https://www.linkedin.com/company/widsespol/",
-				x:"https://twitter.com/widsespol",
-				info: "PhD en Informática y Comunicaciones Digitales. Profesora asociada en el Departamento de Ciencias de la Computación de la Universidad de Chile e investigadora del Millenium Institute Foundational Research on Data. Actualmente es copresidente de The Web Conference 2021 Track sobre minería web y usabilidad, copresidente del Consorcio de Doctorado SIGIR 2020 y copresidente de DEI para SIGIR. Su investigación se centra en las áreas de minería de datos/ciencia de datos, redes sociales y recuperación de información en la web. Anteriormente, fue investigadora en Yahoo! Labs."
-			},
-			{
-				title: "Recomendaciones en línea bajo efectos de contexto de cardinalidad",
-				name: "Uzma Mushtaque",
-				place: "Politécnico Rensselaer",
-				work: "Profesora de Ciencias Computacionales",
-				schedule: "15:00 - 15:20",
-				imageName: "UzmaMushtaque.png",
-				language: "inglés",
-				linkeding:"https://www.linkedin.com/company/widsespol/",
-				x:"https://twitter.com/widsespol",
-				info: "Uzma es profesora en el departamento de Ciencias de la Computación en el Instituto Politécnico Rensselaer, Troy Nueva York. Antes de su trabajo actual, su experiencia laboral más reciente incluye trabajar en EY como Científica de Datos Senior, con su proyecto enfocado en análisis de crédito y riesgo. La investigación de su tesis encuentra una aplicación directa en plataformas en línea de entretenimiento por subscripción y minorista como Amazon y Netflix. Su trabajo de tesis se encuentra en la intersección de cuatro campos: (1) sistemas de recomendación en línea, (2) modelos de elección del consumidor, (3) modelos de cadena de suministro y (4) planificación de surtido. En su investigación actual, desarrolla modelos matemáticos para recomendaciones personalizadas en línea que capturan diferentes efectos de contexto asociados con el comportamiento de selección del usuario individual. Para analizar las herramientas de decisión matemáticas desarrolladas, está usando grandes conjuntos de datos (MovieLens, Amazon Product Review, dataset de venta minorista en línea en el repositorio de UCI, etc). Su tesis incluye una exploración en profundidad, iterativa y metódica de algunos de los grandes datasets disponibles para las calificaciones de preferencia de los consumidores. Logró insights importantes para los sistemas de recomendación en línea a través de un análisis estadístico integral a partir de los resultados generados por sus modelos matemáticos desarrollados, tanto a través de de datos simulados como de los datasets del mundo real mencionados. Su futura investigación incluye la incorporación de mejores representaciones matemáticas del comportamiento del consumidor como resultado del contexto de elección, a través de enfoques basados en datos no paramétricos y el uso de analítica de datos para mejorar los modelos de elección del consumidor. Su formación en ingeniería, experiencia laboral en consultoría ERP, una maestría en cadena de suministros y su investigación actual motiva la naturaleza interdisciplinaria de sus intereses de investigación."
-			},
-			{
-				title: "Gobierno y arquitectura de datos en el ecosistema financiero",
-				name: "Estefanía Lozano",
-				place: "Banco del Pacífico",
-				work: "Arquitecta de datos",
-				schedule: "15:25 - 15:45",
-				imageName: "estefanialozano.png",
-				instagram:"https://www.instagram.com/widsespol/",
-				x:"https://twitter.com/widsespol",
-				info: "Ingeniera en Ciencias Computacionales graduada de la ESPOL, promotora del software libre y evangelizadora de la enseñanza de programación a niños y niñas. Actualmente, trabaja en el Banco del Pacífico como arquitecta de datos y líder técnico en la implementación de un datalake con gobernanza de datos. La misión del proyecto es evangelizar a todas las áreas del banco para que usen la plataforma en sus casos de uso que requieran Big data. Fue seleccionada como embajadora de innovación y vocera de transformación cultural del banco."
-			},
-			{
 				title: "",
 				name: "",
 				place: "",

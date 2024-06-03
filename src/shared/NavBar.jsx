@@ -23,6 +23,21 @@ function Navbar() {
 	console.log(nothome)
     const specialPages = ["conferencia", "nextgen", "ediciones","datathon"];
 
+    // <li className={`xl:border-0 xl:font-thin font-black  xl:shadow-none shadow-lg mb-1 relative ${nothome==="cronograma" ? 'underline-offset-8 primary-orange active':''}`}
+    // onClick={toggle2}>
+    // <Link   to='/cronograma'
+    //         className={`xl:px-8 xl:py-8 
+    //         xl:text-[20px] text-[25px]
+    //         xl:text-black text-white
+    //         relative
+    //         block  
+    //         text-center  
+    //         pt-6 pb-6
+    //         max-xl:hover:bg-primary-orange
+    //         `}>
+    //     Cronograma
+    // </Link>
+    // </li>
     return (
         <>
             <nav className={`xl:flex 
@@ -124,21 +139,6 @@ function Navbar() {
 											max-xl:hover:bg-primary-dark-green
                                             `}>
                             Conferencistas
-                        </Link>
-                    </li>
-                    <li className={`xl:border-0 xl:font-thin font-black  xl:shadow-none shadow-lg mb-1 relative ${nothome==="cronograma" ? 'underline-offset-8 primary-orange active':''}`}
-                        onClick={toggle2}>
-                        <Link   to='/cronograma'
-                                className={`xl:px-8 xl:py-8 
-                                xl:text-[20px] text-[25px]
-                                xl:text-black text-white
-                                relative
-                                block  
-                                text-center  
-                                pt-6 pb-6
-								max-xl:hover:bg-primary-orange
-                                `}>
-                            Cronograma
                         </Link>
                     </li>
                     <li className=' xl:relative

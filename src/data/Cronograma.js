@@ -2,47 +2,42 @@ export let cronograma = {
     Conferencias : [
         {
             type:'Conferencia',
-            title:'Evento 1',
-            info:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin dictum ante et tincidunt. Phasellus porta eleifend dignissim. Suspendisse potenti. Nam a rhoncus mi.',
-            time: '08:00 AM',
+            title:'Bienvenida',
+            info:'Cecilia Paredes, Ph.D., Rectora de ESPOL',
+            time: '09:00 AM',
             day: 'Día 1'
         },
         {
             type:'Break',
-            title:'Break 1',
-            info:'',
+            title:'Charla 1',
+            info:' ',
             time: '09:30 AM'
         },
         {
             type:'Conferencia',
-            title:'Evento 2',
-            info:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin dictum ante et tincidunt. Phasellus porta eleifend dignissim. Suspendisse potenti. Nam a rhoncus mi.',
+            title:'Charla 2',
+            info:' ',
             time: '10:00 AM'
         },
         {
             type:'Conferencia',
-            title:'Evento 3',
-            info:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin dictum ante et tincidunt. Phasellus porta eleifend dignissim. Suspendisse potenti. Nam a rhoncus mi.',
-            time: '11:30 AM'
-        },
-        {
-            type:'Break',
-            title:'Break 2',
-            info:'',
-            time: '01:00 PM'
+            title:'Charla 3',
+            info:' ',
+            time: '11:00 AM'
         },
         {
             type:'Conferencia',
-            title:'Evento 4',
-            info:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin dictum ante et tincidunt. Phasellus porta eleifend dignissim. Suspendisse potenti. Nam a rhoncus mi.',
-            time: '01:30 PM'
+            title:'Charla 4',
+            info:' ',
+            time: '12:00 AM'
         },
         {
             type:'Conferencia',
-            title:'Evento 5',
-            info:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin dictum ante et tincidunt. Phasellus porta eleifend dignissim. Suspendisse potenti. Nam a rhoncus mi.',
-            time: '03:00 PM'
+            title:'Charla 5',
+            info:' ',
+            time: '13:00 AM'
         },
+
     ],
     Talleres : [
         {
