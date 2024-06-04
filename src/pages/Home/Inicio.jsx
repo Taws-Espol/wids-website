@@ -16,7 +16,7 @@ function Inicio() {
     return (
         <>
             <Carrusel/>
-            <section>
+            <section className="select-none">
                 <div className="mt-[3vw] mb-[10vw]" >
                     <div className="mt-5 max-md:mb-[2vw] md:mb-[3em]">
                         <h1 className="w-full text-center text-[6vw] md:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw] font-sans font-bold" style={{color: '#004029'}}>
