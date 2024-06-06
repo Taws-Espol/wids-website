@@ -7,7 +7,7 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // Importa los icono
 
 export default function CarruselConferences() {
 
-    const year = "2020";
+    const year = "2024";
 
     const edicion2020 = ediciones.find(edicion => edicion.edicion === year);
 

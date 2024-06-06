@@ -40,6 +40,7 @@ function Inicio() {
                     {"MUY PRONTO !!"}
                 </h2>
             </div>
+            <CarruselConferences/>,
             <Sponsors/>,
         </>
     );
