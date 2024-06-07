@@ -16,8 +16,8 @@ export function ProfileCard({ conferencista, home, onClickFunction, active, year
   return (
     ! boolean ?
       <div>
-        <Card className={`w-96 h-[600px]  max-sm:w-80 ${home ? 'h-[600px] w-80' : ''} ${value ? 'opacity-40' : ''}`}>
-          <CardHeader floated={false} className={`min-h-96 w-full relative overflow-hidden ${home ? 'h-60' : ''}`} onClick={() => onClickFunction(conferencista)}>
+        <Card className={`w-96 h-[600px]  max-sm:w-80 ${home ? 'h-[600px] w-80' : ''} ${value ? 'opacity-40' : ''} hover:cursor-pointer`} onClick={() => onClickFunction(conferencista)} >
+          <CardHeader floated={false} className={`min-h-96 w-full relative overflow-hidden ${home ? 'h-60' : ''}`}>
             <img src={image} alt="Conferencista" className="h-full w-full object-cover" />
           </CardHeader>
           <CardBody className="text-center h-32 text-primary-dark-green">

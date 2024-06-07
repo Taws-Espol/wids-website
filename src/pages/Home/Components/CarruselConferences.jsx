@@ -9,7 +9,7 @@ export default function CarruselConferences() {
 
     const year = "2024";
 
-    const edicion2020 = ediciones.find(edicion => edicion.edicion === year);
+    const edicion2024 = ediciones.find(edicion => edicion.edicion === year);
 
     const CustomPrevArrow = (props) => (
         <div {...props}>
@@ -24,6 +24,8 @@ export default function CarruselConferences() {
     );
     const path_images = `/assets/Eventos/Ediciones/${year}/Images/conferencistas/`
 
+    const conferencistas = edicion2024.conferencistas.filter(edicion => edicion.name != "");
+    console.log(conferencistas)
     var settings = {
         dots: true,
         infinite: true,
@@ -65,7 +67,7 @@ export default function CarruselConferences() {
         <div className="relative h-[500px]">
             <div className="absolute inset-0">
                 <div className="h-[200px] bg-primary-dark-green"></div>
-                <div className="h-[200px] bg-white"></div>
+                <div className="h-[250px] bg-white"></div>
                 <div className="h-[100px] bg-primary-dark-green"></div>
             </div>
 
@@ -75,18 +77,17 @@ export default function CarruselConferences() {
                     Conferencistas
                 </h1>
                 <Slider {...settings}>
-                    {edicion2020.conferencistas.map((evento, index) => (
+                    {conferencistas.map((evento, index) => (
                         <div key={index} >
                             <div className="flex justify-center items-center pt-8 pb-2" >
                                 <img src={path_images+evento.imageName} alt={evento.imageName} className="h-44 w-44 rounded-full" />
                             </div>
 
                             <div className="flex flex-col justify-center items-center pt-2 pb-12">
-                                <p style={{ fontSize: '16px', fontWeight: 'bold', color: 'black' }}> {evento.name}</p>
-                                <p style={{ fontSize: '14px', color: 'grey' }}>{evento.name}</p>
+                                <p style={{ fontSize: '25px', fontWeight: 'bold', color: 'black'}} > {evento.name}</p>
                             </div>
 
-                        </div>
+                        </div> 
                     ))}
                 </Slider>
             </div>

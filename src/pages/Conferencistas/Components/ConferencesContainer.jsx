@@ -17,10 +17,10 @@ export function ConferenceContainer({ edicionData }){
         };
         let link = {
             '2020': '/assets/Eventos/Ediciones/2020/Images/conferencistas/',
-            '2021': '/assets/Eventos/Ediciones/2020/Images/conferencistas/',
-            '2022': '/assets/Eventos/Ediciones/2020/Images/conferencistas/',
-            '2023': '/assets/Eventos/Ediciones/2020/Images/conferencistas/',
-            '2024': '/assets/Eventos/Ediciones/2020/Images/conferencistas/',
+            '2021': '/assets/Eventos/Ediciones/2021/Images/conferencistas/',
+            '2022': '/assets/Eventos/Ediciones/2022/Images/conferencistas/',
+            '2023': '/assets/Eventos/Ediciones/2023/Images/conferencistas/',
+            '2024': '/assets/Eventos/Ediciones/2024/Images/conferencistas/',
         }
         let edition = edicionData.edicion;
         const path_conferencistas = link[edition]
