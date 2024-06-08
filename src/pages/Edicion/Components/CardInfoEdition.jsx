@@ -1,6 +1,7 @@
-export function CardInfoEdition({type, evento}){
-    const path_info_crongrama = "/assets/Eventos/Ediciones/2020/Images/cronograma/";
-    const path_info_talleres = "/assets/Eventos/Ediciones/2020/Images/talleres/";
+export function CardInfoEdition({type, evento,year}){
+
+    const path_info_crongrama = `/assets/Eventos/Ediciones/${year}/Images/cronograma/`;
+    const path_info_talleres = `/assets/Eventos/Ediciones/${year}/Images/talleres/`;
     let image_crono = path_info_crongrama+evento.imageName;
     let image_talleres = path_info_talleres+evento.imageName;
     let image = "";

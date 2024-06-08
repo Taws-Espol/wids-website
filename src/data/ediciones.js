@@ -279,7 +279,7 @@ export const ediciones = [
 				name: "Gladys Carrillo",
 				place: "ESPOL",
 				work: "Profesora en la Facultad de Ingeniería en Electricidad y Computación",
-				schedule: "09:00 - 10:00",
+				schedule: "009:00 - 10:00",
 				imageName: "gladyscarrillo.png"
 			},
 			{
@@ -323,11 +323,202 @@ export const ediciones = [
 	{
 		edicion: "2023",
 		cronograma: [
-
+			{
+				title: "Bienvenida",
+				name: "Carmen Vaca Ruiz",
+				place: "ESPOL",
+				work: "Mentora del Club TAWS",
+				schedule: "09:00 - 09:15",
+				imageName: "carmenVacaRuiz.png"
+			},
+			{
+				title: "Explicación del WiDS",
+				name: "Cecilia Paredes Verduga",
+				place: "ESPOL",
+				work: "Rectora de ESPOL",
+				schedule: "09:15 - 09:20",
+				imageName: "ceciliaparedes.png"
+			},
+			{
+                title: "Herramientas y recursos tecnológicos para la Ciencia de Datos",
+                name: "Karen Calva",
+                place: "Kushki",
+                work: "Machine Learning Lead",
+                schedule: "09:20 - 09:45",
+                imageName: "karen_calva.png",
+                linkeding: "https://www.linkedin.com/in/karen-calva-2381b34a",
+                x: "",
+                info: `Karen Calva es especialista en ciencia de datos enfocada en alcanzar objetivos empresariales utilizando la computación en la nube. Actualmente, se desempeña como Machine Learning Lead en Kushki, donde lidera proyectos de desarrollo de algoritmos de machine learning e implementación de soluciones de big data. Anteriormente, fue Data Science Lead en la misma empresa y ha trabajado como Profesora en la Escuela Superior Politécnica del Litoral y la Sociedad Ecuatoriana de Estadística. Además, ha ocupado puestos como Data Scientist en Banco Pichincha y PRODUBANCO - Grupo Promerica.`
+            },
+            {
+                title: "Detección de imágenes falsificadas",
+                name: "Marina Gardella",
+                place: "École normale supérieure Paris-Saclay",
+                work: "Postdoctoral Fellow",
+                schedule: "09:45 - 10:10",
+                imageName: "marina.jpg",
+                linkeding: "https://www.linkedin.com/in/marina-gardella-9506b248",
+                x: "",
+                info: `Marina Gardella es una experta en procesamiento digital de imágenes con un doctorado en Matemáticas Aplicadas de la École normale supérieure Paris-Saclay. Actualmente, trabaja como Postdoctoral Fellow en la misma institución. Su investigación se centra en la detección de falsificaciones de imágenes y el desarrollo de algoritmos automáticos para la detección de anomalías. Marina también tiene experiencia como asistente de investigación en la Comisión Económica para América Latina y el Caribe de las Naciones Unidas y como docente en la Universidad de la República en Uruguay.`
+            },
+            {
+                title: "Supply Chain + Data Science: Innovación y Mejora Continua",
+                name: "Karen Veintimilla Alarcón",
+                place: "HEINEKEN Ecuador",
+                work: "Continuous Improvement Lead (End-to-End Supply Chain)",
+                schedule: "10:10 - 10:35",
+                imageName: "Karen_Veintimilla.jpg",
+                linkeding: "https://www.linkedin.com/in/karen-veintimilla-alarc%C3%B3n-451021142",
+                x: "",
+                info: `Karen Veintimilla Alarcón es una Ingeniera Industrial con amplia experiencia en mejora continua, análisis de datos y automatización de procesos a lo largo de toda la cadena de suministro. Actualmente, se desempeña como líder de Mejora Continua en HEINEKEN Ecuador, donde ha implementado estrategias para optimizar la eficiencia operativa y reducir costos. Anteriormente, trabajó en roles de gestión logística y análisis en Claro Ecuador y ha sido instructora de Power BI. Karen posee un Máster en Gestión de Operaciones y Cadena de Suministro de EADA Business School y una licenciatura en Ingeniería Industrial de la Escuela Superior Politécnica del Litoral.`
+            },
+			{
+				title: "Exposición de proyectos",
+				name: "Clubes de Espol",
+				place: "TAWS, NIOT, GISSC, CIAP, DATA CLUB, RAMA ESTUDIANTIL IEEE",
+				work: "",
+				schedule: "10:35 - 11:20",
+				imageName: "exposicion.jpg",
+			},
+			{
+                title: "Desbloqueando el poder oculto de los datos: La analítica de datos como catalizador de la Transformación Digital",
+                name: "Ana Gabriela Valdiviezo Black",
+                place: "TACTIC Asesoría y Consultora Especializada",
+                work: "CEO",
+                schedule: "11:20 - 11:45",
+                imageName: "Ana_Gabriela_Black.jpg",
+                linkeding: "https://www.linkedin.com/in/anagabrielavaldiviezoblack",
+                x: "",
+                info: `Ana Gabriela Valdiviezo Black es la CEO de TACTIC Asesoría y Consultora Especializada, una empresa que ofrece soluciones estratégicas en Telecomunicaciones, TIC, Transformación Digital y Big Data. Con más de 19 años de experiencia en el sector, Ana Gabriela ha liderado y gestionado proyectos de alto impacto que han contribuido significativamente al desarrollo y la competitividad del país. Es fundadora y coordinadora del Observatorio de la Transformación Digital Ecuador, una iniciativa que promueve el conocimiento y la investigación de nuevas tecnologías. Además, ha sido reconocida como Líder Digital Mundial en los 'Women That Build Awards' y es oradora TEDx. Ana Gabriela trabaja activamente por la inclusión en el acceso a las TIC para erradicar brechas y generar igualdad, especialmente en el ámbito de las mujeres en STEM.`
+            },
+			{
+                title: "El uso de Inteligencia Artificial para el reconocimiento de Patrones de Lesiones cerebrales asociadas a enfermedades",
+                name: "Jocellyn Luna González",
+                place: "ESPOL Smart Energy",
+                work: "Asistente de investigación",
+                schedule: "11:45 - 12:10",
+                imageName: "jocellyn.JPG",
+                linkeding: "https://www.linkedin.com/in/jocellyn-luna-gonz%C3%A1lez-b2a957168",
+                x :"",
+                info: `Jocellyn Luna González es una Ingeniera en Ciencias de la Computación de Guayaquil, Ecuador, con una sólida formación en Drupal, aplicaciones web y ciencia de datos.
+                Actualmente, trabaja como Asistente de investigación en ESPOL Smart Energy, donde ha estado involucrada en proyectos de investigación desde julio de 2022. Anteriormente, fue pasante de pruebas de software en Explora: Educación virtual para niños, donde diseñó y creó entornos para pruebas unitarias utilizando Travis CI y Jenkins. Además, Jocellyn tiene experiencia en desarrollo web y docencia en la Escuela Superior Politécnica del Litoral, donde ayudó en la actualización de contenido web y en la enseñanza de estructuras de datos y fundamentos de programación. Es reconocida por sus méritos académicos y ha sido galardonada con la Insignia mérito académico al mejor graduado por Carrera y el Mérito a la Investigación por la Publicación de un Artículo Indexado. Jocellyn es graduada de Ingeniería en Computación de la Escuela Superior Politécnica del Litoral (2017-2021).`
+            },
+			{
+                title: "El impacto de la generación de estrategias basadas en datos en el mercado ecuatoriano",
+                name: "Paulette Vázquez",
+                place: "AB InBev",
+                work: "Senior Data Scientist",
+                schedule: "12:10 - 12:35",
+                imageName: "paulettevazquez.jpeg",
+                linkeding: "https://www.linkedin.com/in/paulettevazquez",
+                x: "https://twitter.com/paulettevazquez",
+                info: `Paulette Vázquez es una Ingeniera en Ciencias de la Computación especializada en Big Data y Análisis de Datos. 
+                Actualmente, trabaja como Senior Data Scientist en AB InBev, donde lidera la adaptación y mejora de modelos de Machine Learning para promociones, logrando un incremento de $2.5 millones en ingresos netos en Q4 de 2023. Paulette ha desarrollado modelos personalizados de retención de clientes, propensión de compra y clustering de clientes, contribuyendo significativamente al crecimiento y optimización de estrategias de marketing de la empresa. También tiene experiencia en el desarrollo de algoritmos descentralizados para aprendizaje federado y análisis de adecuación de tierras en sistemas de información geográfica. Su experiencia y habilidades abarcan frameworks de Machine Learning, visualización de datos, análisis de series temporales, entre otros.`
+            },
+			{
+				title: "Clausura",
+				name: "Cristina Abad",
+				place: "ESPOL",
+				work: "Directora de Investigación de grado de FIEC",
+				schedule: "13:00",
+				imageName: "cristinaAbad.jpg"
+			}
 		],
-		conferencistas: [
-		],
+        conferencistas: [
+            {
+                title: "Herramientas y recursos tecnológicos para la Ciencia de Datos",
+                name: "Karen Calva",
+                place: "Kushki",
+                work: "Machine Learning Lead",
+                schedule: "09:20 - 09:45",
+                imageName: "karen_calva.png",
+                linkeding: "https://www.linkedin.com/in/karen-calva-2381b34a",
+                x: "",
+                info: `Karen Calva es especialista en ciencia de datos enfocada en alcanzar objetivos empresariales utilizando la computación en la nube. Actualmente, se desempeña como Machine Learning Lead en Kushki, donde lidera proyectos de desarrollo de algoritmos de machine learning e implementación de soluciones de big data. Anteriormente, fue Data Science Lead en la misma empresa y ha trabajado como Profesora en la Escuela Superior Politécnica del Litoral y la Sociedad Ecuatoriana de Estadística. Además, ha ocupado puestos como Data Scientist en Banco Pichincha y PRODUBANCO - Grupo Promerica.`
+            },
+            {
+                title: "Detección de imágenes falsificadas",
+                name: "Marina Gardella",
+                place: "École normale supérieure Paris-Saclay",
+                work: "Postdoctoral Fellow",
+                schedule: "09:45 - 10:10",
+                imageName: "marina.jpg",
+                linkeding: "https://www.linkedin.com/in/marina-gardella-9506b248",
+                x: "",
+                info: `Marina Gardella es una experta en procesamiento digital de imágenes con un doctorado en Matemáticas Aplicadas de la École normale supérieure Paris-Saclay. Actualmente, trabaja como Postdoctoral Fellow en la misma institución. Su investigación se centra en la detección de falsificaciones de imágenes y el desarrollo de algoritmos automáticos para la detección de anomalías. Marina también tiene experiencia como asistente de investigación en la Comisión Económica para América Latina y el Caribe de las Naciones Unidas y como docente en la Universidad de la República en Uruguay.`
+            },
+            {
+                title: "Supply Chain + Data Science: Innovación y Mejora Continua",
+                name: "Karen Veintimilla Alarcón",
+                place: "HEINEKEN Ecuador",
+                work: "Continuous Improvement Lead (End-to-End Supply Chain)",
+                schedule: "10:10 - 10:35",
+                imageName: "Karen_Veintimilla.jpg",
+                linkeding: "https://www.linkedin.com/in/karen-veintimilla-alarc%C3%B3n-451021142",
+                x: "",
+                info: `Karen Veintimilla Alarcón es una Ingeniera Industrial con amplia experiencia en mejora continua, análisis de datos y automatización de procesos a lo largo de toda la cadena de suministro. Actualmente, se desempeña como líder de Mejora Continua en HEINEKEN Ecuador, donde ha implementado estrategias para optimizar la eficiencia operativa y reducir costos. Anteriormente, trabajó en roles de gestión logística y análisis en Claro Ecuador y ha sido instructora de Power BI. Karen posee un Máster en Gestión de Operaciones y Cadena de Suministro de EADA Business School y una licenciatura en Ingeniería Industrial de la Escuela Superior Politécnica del Litoral.`
+            },
+			{
+                title: "Desbloqueando el poder oculto de los datos: La analítica de datos como catalizador de la Transformación Digital",
+                name: "Ana Gabriela Valdiviezo Black",
+                place: "TACTIC Asesoría y Consultora Especializada",
+                work: "CEO",
+                schedule: "11:20 - 11:45",
+                imageName: "Ana_Gabriela_Black.jpg",
+                linkeding: "https://www.linkedin.com/in/anagabrielavaldiviezoblack",
+                x: "",
+                info: `Ana Gabriela Valdiviezo Black es la CEO de TACTIC Asesoría y Consultora Especializada, una empresa que ofrece soluciones estratégicas en Telecomunicaciones, TIC, Transformación Digital y Big Data. Con más de 19 años de experiencia en el sector, Ana Gabriela ha liderado y gestionado proyectos de alto impacto que han contribuido significativamente al desarrollo y la competitividad del país. Es fundadora y coordinadora del Observatorio de la Transformación Digital Ecuador, una iniciativa que promueve el conocimiento y la investigación de nuevas tecnologías. Además, ha sido reconocida como Líder Digital Mundial en los 'Women That Build Awards' y es oradora TEDx. Ana Gabriela trabaja activamente por la inclusión en el acceso a las TIC para erradicar brechas y generar igualdad, especialmente en el ámbito de las mujeres en STEM.`
+            },
+			{
+                title: "El uso de Inteligencia Artificial para el reconocimiento de Patrones de Lesiones cerebrales asociadas a enfermedades",
+                name: "Jocellyn Luna González",
+                place: "ESPOL Smart Energy",
+                work: "Asistente de investigación",
+                schedule: "11:45 - 12:10",
+                imageName: "jocellyn.JPG",
+                linkeding: "https://www.linkedin.com/in/jocellyn-luna-gonz%C3%A1lez-b2a957168",
+                x :"",
+                info: `Jocellyn Luna González es una Ingeniera en Ciencias de la Computación de Guayaquil, Ecuador, con una sólida formación en Drupal, aplicaciones web y ciencia de datos.
+                Actualmente, trabaja como Asistente de investigación en ESPOL Smart Energy, donde ha estado involucrada en proyectos de investigación desde julio de 2022. Anteriormente, fue pasante de pruebas de software en Explora: Educación virtual para niños, donde diseñó y creó entornos para pruebas unitarias utilizando Travis CI y Jenkins. Además, Jocellyn tiene experiencia en desarrollo web y docencia en la Escuela Superior Politécnica del Litoral, donde ayudó en la actualización de contenido web y en la enseñanza de estructuras de datos y fundamentos de programación. Es reconocida por sus méritos académicos y ha sido galardonada con la Insignia mérito académico al mejor graduado por Carrera y el Mérito a la Investigación por la Publicación de un Artículo Indexado. Jocellyn es graduada de Ingeniería en Computación de la Escuela Superior Politécnica del Litoral (2017-2021).`
+            },
+			{
+                title: "El impacto de la generación de estrategias basadas en datos en el mercado ecuatoriano",
+                name: "Paulette Vázquez",
+                place: "AB InBev",
+                work: "Senior Data Scientist",
+                schedule: "12:10 - 12:35",
+                imageName: "paulettevazquez.jpeg",
+                linkeding: "https://www.linkedin.com/in/paulettevazquez",
+                x: "https://twitter.com/paulettevazquez",
+                info: `Paulette Vázquez es una Ingeniera en Ciencias de la Computación especializada en Big Data y Análisis de Datos. 
+                Actualmente, trabaja como Senior Data Scientist en AB InBev, donde lidera la adaptación y mejora de modelos de Machine Learning para promociones, logrando un incremento de $2.5 millones en ingresos netos en Q4 de 2023. Paulette ha desarrollado modelos personalizados de retención de clientes, propensión de compra y clustering de clientes, contribuyendo significativamente al crecimiento y optimización de estrategias de marketing de la empresa. También tiene experiencia en el desarrollo de algoritmos descentralizados para aprendizaje federado y análisis de adecuación de tierras en sistemas de información geográfica. Su experiencia y habilidades abarcan frameworks de Machine Learning, visualización de datos, análisis de series temporales, entre otros.`
+            },
+        ],
 		talleres: [
+				{
+					title: "Introducción a Ciencia de Datos",
+					name: "Martha Julissa Tomala Mendez",
+					place: "ESPOL",
+					work: "Analista de datos",
+					schedule: "",
+					imageName: "Martha.jpeg"
+				},
+				{
+					title: "Introducción a estadística descriptiva",
+					name: "Ana Gabriela De La Torre Bohorquez",
+					place: "ESPOL",
+					work: "Estudiante de Ingeniería en Estadística",
+					schedule: "",
+					imageName: "Gabriela.JPG"
+				},
+				{
+					title: "Visualización de Datos en Power BI",
+					name: "Yanayra Yissek Batalla Zambrano",
+					place: "ESPOL",
+					work: "Estudiante de Economía",
+					schedule: "",
+					imageName: "yissek.png"
+				}
 		],
 	},
 	{

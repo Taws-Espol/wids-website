@@ -6,6 +6,7 @@ import {ConferenceContainer} from "../../Conferencistas/Components/ConferencesCo
 export function EditionContainer({ edicionData }) {
     const [active, setActive] = useState('Cronograma');
     
+    const year = edicionData.edicion
     const changeButton = (place) => {
         setActive(place);
     };
@@ -20,7 +21,7 @@ export function EditionContainer({ edicionData }) {
             <div className={`${active === 'Cronograma' ? 'block' : 'hidden'} flex place-content-center place-items-center flex-col my-5 gap-10`}>
                 {edicionData &&
                     edicionData.cronograma.map((evento, index) => (
-                        <CardInfoEdition key={index} type='Cronograma' evento={evento} />
+                        <CardInfoEdition key={index} type='Cronograma' evento={evento}  year={year}/>
                     ))
                 }
             </div>
@@ -30,7 +31,7 @@ export function EditionContainer({ edicionData }) {
             <div className={`${active === 'Talleres' ? 'block' : 'hidden'} flex place-content-center place-items-center flex-col my-5 gap-10`}>
                 {edicionData &&
                     edicionData.talleres.map((evento, index) => (
-                        <CardInfoEdition key={index} type='Talleres' evento={evento} />
+                        <CardInfoEdition key={index} type='Talleres' evento={evento} year={year} />
                     ))
                 }
             </div>
