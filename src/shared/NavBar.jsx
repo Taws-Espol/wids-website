@@ -178,20 +178,6 @@ function Navbar() {
                                         text-center 
                                         dropdown-menu 
                                         ${isOpen1 ? "show" : ""}`}>
-                            <li className='link-with-gradient-border' onClick={toggle2}>
-                                <Link
-                                    to='/eventos/conferencia'
-                                    className={`gradient-border-bottom 
-                                                xl:px-8 xl:py-2 
-                                                xl:text-[20px] text-[25px]
-                                                block  
-                                                hover:bg-gray-100 
-                                                pt-5 pb-5
-												max-xl:hover:bg-primary-blue
-                                                `}>
-                                    Conferencia
-                                </Link>
-                            </li>
                             <li className='link-with-gradient-border ' onClick={toggle2}>
                                 <Link
                                     to='/eventos/datathon'

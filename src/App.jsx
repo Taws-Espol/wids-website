@@ -12,7 +12,6 @@ import Editions from "./pages/Edicion/Editions";
 import Edition from "./pages/Edicion/Edition";
 import ButtonUp from "./shared/ButtonUp";
 import Datathon from "./pages/Eventos/Datathon";
-import Conferencia from "./pages/Eventos/Conferencia";
 import NextGen from "./pages/Eventos/NextGen";
 function App() {
 	function NotFound() {
@@ -29,7 +28,6 @@ function App() {
 					<Route path='/conferencistas' element={<Conferencistas />} />
 					<Route path='/cronograma' element={<Cronograma />} />
 					{/*TODO: Events */}
-					<Route path='/eventos/conferencia' element={<Conferencia />} />
 					<Route path='/eventos/datathon' element={<Datathon />} />
 					<Route path='/eventos/nextgen' element={<NextGen />} />
 					<Route path='/eventos/ediciones' element={<Editions />} />
