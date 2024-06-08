@@ -313,11 +313,170 @@ export const ediciones = [
 	{
 		edicion: "2022",
 		cronograma: [
-
+			{
+				title: "ML-CI: intervalos de confianza de aprendizaje automático para pronósticos de COVID-19",
+				name: "Isabelle Guyon",
+				place: "Université Paris-Saclay, París, Francia",
+				work: "Profesora de Inteligencia Artificial",
+				schedule: "14:20 - 14:45",
+				imageName: "Isabelle_Guyon.png",
+			},
+			{
+				title: "ML-CI: intervalos de confianza de aprendizaje automático para pronósticos de COVID-19",
+				name: "Alice Lacan",
+				place: "Universidad Paris-Saclay, Francia",
+				work: "Estudiante de doctorado",
+				schedule: "14:20 - 14:45",
+				imageName: "Alice_Lacan.jpg",
+			},
+			{
+				title: "Inteligencia Artificial Conversacional: uso de señales vocales y no-vocales en aplicaciones reales",
+				name: "Cristina Guerrero",
+				place: "Contexta360",
+				work: "Científica del Habla",
+				schedule: "14:45 - 15:10",
+				imageName: "Cristina_Guerrero.jpg",
+			},
+			{
+				title: "Variables latentes interpretables. Caso de estudio: segmentación de imágenes",
+				name: "Katherine Morales",
+				place: "Télécom SudParis",
+				work: "Estudiante de doctorado ",
+				schedule: "15:10 - 15:35",
+				imageName: "Katherine_Morales.jpg",
+			},
+			{
+				title: "Break",
+				name: "",
+				place: "",
+				work: "",
+				schedule: "15:35 - 15:40",
+				imageName: "Break.png"
+			},
+			{
+				title: "El rol de los datos en el desarrollo de sistemas de soporte a la decisión",
+				name: "Andre Ortega",
+				place: "The UK Kidney Association, UKKA",
+				work: "Científica de datos",
+				schedule: "15:40 - 16:05",
+				imageName: "Andre_Ortega.jpg",
+			},
+			{
+				title: "El uso de la Inteligencia Artificial en Recursos Hídricos",
+				name: "Johanna Orellana",
+				place: "Universidad de Cuenca",
+				work: "Profesora e investigadora postdoctoral",
+				schedule: "16:05 - 16:30",
+				imageName: "Johanna_Orellana.jpeg",
+			},
+			{
+				title: "Visión por Computador bajo el agua: Buscando camarones con imágenes acústicas",
+				name: "Nicole Agila",
+				place: "BioDynamics",
+				work: "Asistente del Departamento de Investigación",
+				schedule: "16:30",
+				imageName: "Nicole_Agila.jpg",
+			}
 		],
 		conferencistas: [
+			{
+				title: "ML-CI: intervalos de confianza de aprendizaje automático para pronósticos de COVID-19",
+				name: "Isabelle Guyon",
+				place: "Université Paris-Saclay, París, Francia",
+				work: "Profesora de Inteligencia Artificial",
+				schedule: "14:20 - 14:45",
+				imageName: "Isabelle_Guyon.png",
+				linkeding:"https://www.linkedin.com/in/isabelle-guyon-aa371170/",
+				info: "Isabelle Guyon es profesora de inteligencia artificial en la Université Paris-Saclay, París, Francia. También es presidenta de ChaLearn, una corporación sin fines de lucro que ella misma fundó, que se dedica a organizar concursos científicos para educar al público. Es co-receptora del premio Frontiers in Research BBVA con Vladimir Vapnik y Bernhard Schoelkopf por la invención de las SVM. Su enfoque principal actual es democratizar la inteligencia artificial mediante la automatización del aprendizaje automático, con énfasis en la privacidad, la equidad y la explicabilidad."
+			},
+			{
+				title: "ML-CI: intervalos de confianza de aprendizaje automático para pronósticos de COVID-19",
+				name: "Alice Lacan",
+				place: "Universidad Paris-Saclay, Francia",
+				work: "Estudiante de doctorado",
+				schedule: "14:20 - 14:45",
+				imageName: "Alice_Lacan.jpg",
+				linkeding:"https://www.linkedin.com/in/alice-lacan/",
+				info: "Alice Lacan es estudiante de doctorado en aprendizaje profundo para transcriptómica (IBISC/LISN, Francia). Sus dominios de interés incluyen aprendizaje profundo, visión artificial, procesamiento natural del lenguaje, aprendizaje reforzado, informática general y estadísticas en el campo médico/biomédico."
+			},
+			{
+				title: "Inteligencia Artificial Conversacional: uso de señales vocales y no-vocales en aplicaciones reales",
+				name: "Cristina Guerrero",
+				place: "Contexta360",
+				work: "Científica del Habla",
+				schedule: "14:45 - 15:10",
+				imageName: "Cristina_Guerrero.jpg",
+				linkeding:"https://www.linkedin.com/in/cristinaguerrero/",
+				info: "Cristina es una Científica del Habla en Contexta360 en Holanda, donde trabaja en la implementación de soluciones tecnológicas basadas en el procesamiento de la voz. Anteriormente lideró el desarollo científico detrás de la startup AmberScript y formó parte del equipo de Ingeniería del Habla en Omilia. Obtuvo una Maestría en Tecnologías de Lenguaje Humano y posteriormente el título de Ph.D. en Informática de la Universidad de Trento, Italia. Realizó un periodo de post-doctorado como investigadora dentro del proyecto Europeo ACANTO, en la construcción de un sistema de guia interactiva para personas de edad avanzada. Desarrolló sus estudios de pregrado en el área de Ingeniería en Computación, en la Escuela Superior Politécnica del Litoral, Ecuador. Durante ese mismo periodo, trabajó en varios proyectos de Tecnologías de Información en el Centro de Tecnologías de Información."
+			},
+			{
+				title: "Variables latentes interpretables. Caso de estudio: segmentación de imágenes",
+				name: "Katherine Morales",
+				place: "Télécom SudParis",
+				work: "Estudiante de doctorado",
+				schedule: "15:10 - 15:35",
+				imageName: "Katherine_Morales.jpg",
+				linkeding:"https://www.linkedin.com/in/katherine-morales-7194a3108/",
+				info: "Ingeniera Matemática, mención Estadística, de la Escuela Politécnica Nacional y máster en Ciencia de Datos en École Polytechnique - Francia. Actualmente desarrolla su doctorado en el Departamento de Comunicaciones, Imágenes y Procesamiento de la Información de Télécom SudParis. Su área de estudio son los modelos probabilísticos desde un punto de vista teórico; y combinarlos con técnicas variacionales y de aprendizaje profundo para la estimación de parámetros. La aplicación es en la segmentación de imágenes médicas. Además, se ha desempeñado como científica de datos, consultora independiente, investigadora y capacitadora de la  Sociedad Ecuatoriana de Estadística y de la Universidad de los Hemisferios, en temas de aprendizaje supervisado, no supervisado, analítica de datos y manejo de bases de datos."
+			},
+			{
+				title: "El rol de los datos en el desarrollo de sistemas de soporte a la decisión",
+				name: "Andre Ortega",
+				place: "The UK Kidney Association, UKKA",
+				work: "Científica de datos",
+				schedule: "15:40 - 16:05",
+				imageName: "Andre_Ortega.jpg",
+				linkeding:"https://www.linkedin.com/in/andreeortega/",
+				info: "Científica de datos en la Asociación de Datos Renales en el Reino Unido (The UK Kidney Association, UKKA). Tiene un doctorado en Ciencias Computacionales de la Universidad de Southampton y una maestría en Tecnologías de la Información de la Universidad Politécnica de Madrid. Su experiencia incluye análisis de datos sensoriales, datos del uso de dispositivos móviles y actualmente se enfoca en recopilar, procesar y analizar datos de lesiones renales agudas de pacientes de unidades médicas del Reino Unido."
+			},
+			{
+				title: "El uso de la Inteligencia Artificial en Recursos Hídricos",
+				name: "Johanna Orellana",
+				place: "Universidad de Cuenca",
+				work: "Profesora e investigadora postdoctoral",
+				schedule: "16:05 - 16:30",
+				imageName: "Johanna_Orellana.jpeg",
+				linkeding:"https://www.linkedin.com/in/johanna-orellana-alvear/",
+				info: "Johanna Orellana Alvear es miembro activo de la Red Ecuatoriana de Mujeres Científicas (REMCI). Es Ingeniera de Sistemas por la Universidad de Cuenca y Master en Inteligencia Artificial por la Universidad Católica de Lovaina en Bélgica. Obtuvo su doctorado en Ciencias Naturales, por la Universidad de Marburg en Alemania. Actualmente es docente e investigadora Post-doctoral en el Departamento de Recusos Hídricos y Ciencias Ambientales de la Universidad de Cuenca en el proyecto internacional SDGnexus Network enmarcado en los Objetivos de Desarrollo Sostenible, nexo agua-alimentos. Especialista en el uso de software libre y multiplatorma R y Python. Ha dirigido y partipado en varios proyectos interdisciplinarios y transversales en diversas áreas de la ingeniería, tales como optimización de procesos y modelación ambiental, relacionados a la aplicación de ciencia de datos y técnicas de inteligencia artificial a nivel nacional e internacional. Experta en técnicas de machine learning y data mining con experiencia en modelos de pronóstico, análisis de sensibilidad e incertidumbre y tratamiento de imágenes."
+			},
+			{
+				title: "Visión por Computador bajo el agua: Buscando camarones con imágenes acústicas",
+				name: "Nicole Agila",
+				place: "BioDynamics",
+				work: "Asistente del Departamento de Investigación",
+				schedule: "16:30",
+				imageName: "Nicole_Agila.jpg",
+				linkeding:"https://www.linkedin.com/in/nicoleagilap/",
+				info: "Estudiante de la carrera de Ingeniería en Ciencias Computacionales en ESPOL, miembro activo del Grupo de Investigación de Tecnologías Web, Móviles y Ciencia de Datos (TAWS) y ayudante de investigación del Laboratorio de Visión y Robótica de la Facultad de Ingeniería en Electricidad y Computación donde ha trabajado en proyecto aplicados a AgTech. Actualmente trabaja como asistente en el Departamento de Investigación en BioDynamics. Sus intereses de investigación incluyen la Visión por Computador y la Inteligencia Artificial."
+			}
+			
+			
 		],
 		talleres: [
+			{
+				title: "Usando Power BI para Business Analytics",
+				name: "Denisse Orozco",
+				place: "ESPOL",
+				work: "Estudiante de Ingenieria en Computacion",
+				schedule: "09:00 - 10:00",
+				imageName: "Denisse_Orozco.JPG"
+			},
+			{
+				title: "",
+				name: "Domenica Barreiro",
+				place: "ESPOL",
+				work: "Economista e investigadora junior",
+				schedule: "10:15 - 11:15",
+				imageName: "Domenica_Barreiro.JPG"
+			},
+			{
+				title: "",
+				name: "Katherine Parrales",
+				place: "ESPOL",
+				work: "Estudiante de Economía",
+				schedule: "11:30 - 12:30",
+				imageName: "Katherine_Parrales.jpg"
+			}
 		],
 	},
 	{
