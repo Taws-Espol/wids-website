@@ -306,6 +306,96 @@ export const ediciones = [
 
 		],
 		conferencistas: [
+			{
+				title: "La importancia de contar historias con datos",
+				name: "Ruth García",
+				place: "Spotify",
+				work: "Científica de datos senior",
+				schedule: "14:20 - 14:45",
+				imageName: "ruthGarcia.jpg",
+				linkeding: "https://www.linkedin.com/in/ruthygarcia/",
+				info: "Ruth es una Científico de Datos Sénior en Spotify en el Reino Unido. Anteriormente, ella trabajó como Científico de Datos en Skyscanner. Tiene un doctorado y una maestría en Tecnología de la Información y una licenciatura en Ingeniería Informática de la ESPE. En Spotify, Ruth contribuyó en el asesoramiento del lanzamiento de 'Spotify Kids' en 14 mercados y actualmente se enfoca en guiar proyectos de innovación usando métodos de la ciencia de datos."
+			},
+			{
+				title: "El papel de la analítica de datos en los procesos de transformación digital",
+				name: "Jessica Zambrano",
+				place: "Banco del Pacífico",
+				work: "Analista de Datos",
+				schedule: "14:45 - 15:10",
+				imageName: "jessicaZambrano.JPG",
+				linkeding: "https://www.linkedin.com/in/jessica-zambrano-f/?originalSubdomain=ec",
+				info: "Ingeniera Empresarial por la Escuela Politécnica Nacional y Máster en Estadística e Investigación Operativa por la Universidad Politécnica de Cataluña y la Universidad de Barcelona. Actualmente, se desempeña como científico de datos en el sector financiero."
+			},
+			{
+				title: "Los grandes desafíos del machine learning y combatir el cambio climático: una carretera de ida y vuelta",
+				name: "Nayat Sanchez",
+				place: "Centro de Investigación, Inria",
+				work: "Directora e Investigadora",
+				schedule: "15:10 - 15:25",
+				imageName: "NayatSanchez.jpg",
+				linkeding: "https://www.linkedin.com/in/nayat-sanchez-pi-02812110/",
+				info: "Nayat Sánchez-Pi es directora del Centro de Investigación de Inria en Chile y coordina el Laboratorio Internacional Inria Chile. Tiene un doctorado en Inteligencia Artificial por la Universidad Carlos III de Madrid, y ha trabajado en España, Brasil, Francia y Chile."
+			},
+			{
+				title: "Detecting Damaged Regions After Natural Disasters Using mobile Phone Activity Data",
+				name: "Maria Belén Guaranda",
+				place: "AB-InBev",
+				work: "Científica de datos",
+				schedule: "15:40 - 16:05",
+				imageName: "MabeGuaranda.jpg",
+				linkeding: "https://www.linkedin.com/in/belen-guaranda/",
+				info: "Científica de datos en AB-InBev con interés en Inteligencia Artificial y Teoría de Grafos aplicada al bien social. Graduada en Ciencias de la Computación en ESPOL y ha participado en proyectos de investigación y desarrollo tecnológico."
+			},
+			{
+				title: "Selección e Implementación de Proyectos de Creación de Valor basado en Big Data",
+				name: "Silvana Cisneros",
+				place: "Claro",
+				work: "Jefa del área de analítica de negocios",
+				schedule: "16:05 - 16:30",
+				imageName: "SILVANA CISNEROS.jpg",
+				linkeding: "https://www.linkedin.com/in/silvanacisneros/",
+				info: "Project Manager de Analítica en Claro Ecuador con 15 años de experiencia. Tiene un Máster en Dirección de Empresas Tecnológicas y cursa un Máster en Inteligencia Artificial."
+			},
+			{
+				title: "¿Por qué Machine Learning necesita datos?",
+				name: "Lesly Zerna",
+				place: "Google Developer",
+				work: "Tech Educator - GDE Machine Learning - TEDx speaker",
+				schedule: "16:30 - 16:45",
+				imageName: "lzerna.jpg",
+				linkeding: "https://www.linkedin.com/in/lesly-zerna-78540957/",
+				info: "Google Developer Expert en tecnologías de Machine Learning y cofundadora de MentorHer. Profesional en Telecomunicaciones y Ciencias de la Computación."
+			},
+			{
+				title: "Operationalizing Ethical Data Computation and AI Development",
+				name: "Laura Montoya",
+				place: "Instituto de Investigación de Ciencias Matemáticas de San Francisco",
+				work: "Fundadora y Directora ejecutiva, Accel.AI",
+				schedule: "16:55 - 17:20",
+				imageName: "LauraMontoya.jpg",
+				linkeding: "https://www.linkedin.com/in/lnmontoya/",
+				info: "Fundadora y Managing Partner de Accel Impact Organizations. Tiene una amplia experiencia en el desarrollo ético de la IA y es asesora para Udacity’s AI and Data nano degree."
+			},
+			{
+				title: "Cómo la IA nos puede ayudar a entender el funcionamiento de nuestro cerebro?",
+				name: "Diana Mosquera",
+				place: "Mila - Montreal",
+				work: "Neurocientífica",
+				schedule: "17:20 - 17:45",
+				imageName: "DianaMosquera.jpg",
+				linkeding: "https://www.linkedin.com/in/diana-m-856316164/",
+				info: "Neurocientífica con grados en Física y Ciencias Cognitivas del MIT. Consultora de IA para varias startups y con interés en la interfaz cerebro-máquina."
+			},
+			{
+				title: "El impacto del enfoque data-driven en la toma de decisiones en esta era",
+				name: "Andrea Bayancela",
+				place: "Anheuser-Busch InBev",
+				work: "Innovation and Data Analytics Peru & Ecuador Manager",
+				schedule: "17:45 - 18:00",
+				imageName: "AndreaBayen.jpg",
+				linkeding: "https://www.linkedin.com/in/andrea-bayancela-b1364286/?originalSubdomain=ec",
+				info: "Gerente de Innovation & Data Analytics para Peru & Ecuador en ABInBev con más de 7 años de experiencia en distintos sectores. Economista graduada en la ESPOL y con un Máster en Estadística por la Universitat Politècnica de Catalunya."
+			}
 		],
 		talleres: [
 		],
@@ -475,7 +565,7 @@ export const ediciones = [
 				place: "ESPOL",
 				work: "Estudiante de Economía",
 				schedule: "11:30 - 12:30",
-				imageName: "Katherine_Parrales.jpg"
+				imageName: "Katherine_Parrales."
 			}
 		],
 	},
