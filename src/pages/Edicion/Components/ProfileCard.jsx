@@ -27,7 +27,7 @@ export function ProfileCard({ conferencista, home, onClickFunction, active, year
                         <img src={image} alt="Conferencista" className="h-full w-full object-cover" />
                     </CardHeader>
                     <CardBody className="text-center h-32 text-primary-dark-green">
-                        <p className="text-primary-dark-green font-bold">{conferencista.name}</p>
+                        <p className="text-primary-dark-green font-bold text-2xl">{conferencista.name}</p>
                         <p>{conferencista.work}, {conferencista.place}</p>
                     </CardBody>
                     <CardFooter className="flex justify-center gap-7 pt-2 text-black">

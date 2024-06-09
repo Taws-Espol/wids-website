@@ -279,7 +279,7 @@ export const ediciones = [
 				name: "Gladys Carrillo",
 				place: "ESPOL",
 				work: "Profesora en la Facultad de Ingeniería en Electricidad y Computación",
-				schedule: "009:00 - 10:00",
+				schedule: "09:00 - 10:00",
 				imageName: "gladyscarrillo.png"
 			},
 			{
