@@ -21,7 +21,7 @@ export function EditionContainer({ edicionData }) {
             <div className={`${active === 'Cronograma' ? 'block' : 'hidden'} flex place-content-center place-items-center flex-col my-5 gap-10`}>
                 {edicionData &&
                     edicionData.cronograma.map((evento, index) => (
-                        <CardInfoEdition key={index} type='Cronograma' evento={evento}  year={year}/>
+                        <CardInfoEdition key={index} type='Cronograma' evento={evento}  year={year} index={index}/>
                     ))
                 }
             </div>
@@ -31,7 +31,7 @@ export function EditionContainer({ edicionData }) {
             <div className={`${active === 'Talleres' ? 'block' : 'hidden'} flex place-content-center place-items-center flex-col my-5 gap-10`}>
                 {edicionData &&
                     edicionData.talleres.map((evento, index) => (
-                        <CardInfoEdition key={index} type='Talleres' evento={evento} year={year} />
+                        <CardInfoEdition key={index} type='Talleres' evento={evento} year={year} index={index} />
                     ))
                 }
             </div>

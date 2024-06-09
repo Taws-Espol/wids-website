@@ -1,7 +1,7 @@
 export const sponsors = [
     {
         "name": "BOOTCAMP ESPOL",
-        "location": "Nose",
+        "location": "",
         "website": "",
         "logo": "/assets/sponsors/BOOTCAMPESPOL.png"
     },
