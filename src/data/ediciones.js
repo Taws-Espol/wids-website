@@ -303,7 +303,137 @@ export const ediciones = [
 	{
 		edicion: "2021",
 		cronograma: [
-
+			{
+				title: "Bienvenida",
+				name: "Cecilia Paredes Verduga",
+				place: "ESPOL",
+				work: "Rectora de ESPOL",
+				schedule: "14:00 - 14:10",
+				imageName: "ceciliaparedes.png"
+			},
+			{
+				title: "Bienvenida Embajadora Wids Espol",
+				name: "Carmen Vaca Ruiz",
+				place: "ESPOL",
+				work: "Mentora del Club TAWS",
+				schedule: "14:10 - 14:20",
+				imageName: "carmenVacaRuiz.png"
+			},
+			{
+				title: "La importancia de contar historias con datos",
+				name: "Ruth García",
+				place: "Spotify",
+				work: "Científica de datos senior",
+				schedule: "14:20 - 14:45",
+				imageName: "ruthGarcia.jpg",
+				linkedin: "https://www.linkedin.com/in/ruthygarcia/",
+				info: 'Ruth es una Científico de Datos Sénior en Spotify en el Reino Unido. Anteriormente, ella trabajó como Científico de Datos en Skyscanner. Tiene un doctorado y una maestría en Tecnología de la Información y una licenciatura en Ingeniería Informática de la ESPE. En Spotify, Ruth contribuyó en el asesoramiento del lanzamiento de "Spotify Kids" en 14 mercados y actualmente se enfoca en guiar proyectos de innovación usando métodos de la ciencia de datos'
+			},
+			{
+				title: "El papel de la analítica de datos en los procesos de transformación digital",
+				name: "Jessica Zambrano",
+				place: "Banco del Pacífico",
+				work: "Analista de Datos",
+				schedule: "14:45 - 15:10",
+				imageName: "jessicaZambrano.JPG",
+				linkedin: "https://www.linkedin.com/in/jessica-zambrano-f/?originalSubdomain=ec",
+				info: "Ingeniera Empresarial por la Escuela Politécnica Nacional y Máster en Estadística e Investigación Operativa por la Universidad Politécnica de Cataluña y la Universidad de Barcelona. Ha colaborado en el análisis de datos para la investigación sobre los usos del internet y la interacción de grupos intergeneracionales en la adopción de dispositivos móviles . Sus intereses se enfocan en el tratamiento, análisis e interpretación de datos relacionados al ámbito empresarial y social. Actualmente, se desempeña como científico de datos en el sector financiero"
+			},
+			{
+				title: "Los grandes desafíos del machine learning y combatir el cambio climático: una carretera de ida y vuelta",
+				name: "Nayat Sanchez",
+				place: "Centro de Investigación, Inria",
+				work: "Directora e Investigadora",
+				schedule: "15:10 - 15:25",
+				imageName: "NayatSanchez.jpg",
+				linkedin: "https://www.linkedin.com/in/nayat-sanchez-pi-02812110/",
+				info: "Nayat Sánchez-Pi es directora del Centro de Investigación de Inria en Chile y coordina el Laboratorio Internacional Inria Chile. Además desde 2018, también fue nombrada CEO de la Fundación Inria Chile, y, desde entonces, lidera también el Centro de Excelencia CIRIC (Centro de Investigación e Innovación en Comunicación e Información). Antes de unirse a Inria, Nayat fue profesor titular de Inteligencia Artificial e Interacción Hombre-Computadora en la Universidad Estatal de Río de Janeiro, fundando y codirigiendo el Grupo de Investigación en Inteligencia Artificial y Optimización (Grupo RIO). Desarrolló su carrera científica en España, Brasil, Francia y más recientemente en Chile. Tiene un doctorado en Inteligencia Artificial por la Universidad Carlos III de Madrid, por la que recibió un Premio Extraordinario de Doctorado. Los intereses de investigación de Nayat van desde la inteligencia artificial, el aprendizaje automático, el Internet de las cosas, la inteligencia ambiental y la interacción humano-computador. Su carrera científica se caracteriza por una amplia experiencia internacional y un enfoque en la investigación aplicada y la innovación. Tiene varias publicaciones en congresos y revistas de alto impacto y ha sido distinguida con varios premios. También tiene una amplia experiencia liderando equipos de I + D interdisciplinarios con socios industriales y académicos enfocados en resolver problemas desafiantes del mundo real que generan un alto impacto social, económico, ecológico y tecnológico."
+			},
+			{
+				title: "Break",
+				name: "",
+				place: "",
+				work: "",
+				schedule: "15:25 - 15:40",
+				imageName: "Break.png",
+			},
+			{
+				title: "Detecting Damaged Regions After Natural Disasters Using mobile Phone Activity Data",
+				name: "Maria Belén Guaranda",
+				place: "AB-InBev",
+				work: "Científica de datos",
+				schedule: "15:40 - 16:05",
+				imageName: "MabeGuaranda.jpg",
+				linkedin: "https://www.linkedin.com/in/belen-guaranda/",
+				info: "I currently work as a data scientist at the Analytics Department of AB-InBev. My research interests include Artificial Intelligence and Graph Theory, all applied in Social Good. I seek to get involved in the research and development of tools that impact positively a community.\n I graduated with a Bachelor in Computer Science at ESPOL. During my studies, I worked as a Research Assistant at the Big Data Research Group and at the Center of Vision and Robotics, both at ESPOL. In the first one, I co-authored papers with applications in public policy and risk management. In the latter, I worked with Image Processing and Computer Vision applied in AgTech projects.\n I was selected for an internship at Creative Commons through the Google Summer of Code program. I developed “The Linked Commons”, a visualization of a force-directed graph, with data from Common Crawl. I later participated as a mentor."
+			},
+			{
+				title: "Selección e Implementación de Proyectos de Creación de Valor basado en Big Data",
+				name: "Silvana Cisneros ",
+				place: "Jefa del área de analítica de negocios",
+				work: "Claro",
+				schedule: "16:05 - 16:30",
+				imageName: "SILVANA CISNEROS.jpg",
+				linkedin: "https://www.linkedin.com/in/silvanacisneros/",
+				info: 'Project Manager de Analítica en Claro Ecuador con 15 años de experiencia en industria de Telecomunicaciones y Servicios. Gestiona proyectos soportados en Big Data aplicando modelos de Inteligencia Artificial. Realizó sus estudios de postgrado en la Universidad Nebrija España, obteniendo el título de Máster en Dirección de Empresas Tecnológicas. Actualmente cursa un Máster en Inteligencia Artificial en la Universidad de la Rioja España. Realizó un diplomado en Formulación y Gestión de Proyectos en la Espol. Ha obtenido tres certificaciones las cuales son Project Manager Professional PMP®, Six Sigma Black Belt y Scrum Master. Ha realizado estudios complementarios y especializaciones de Machine Learning y Business Analytics en MIT - Massachusetts Institute of Technology y Universidad de Pensilvania –Wharton respectivamente. Desarrolló el proyecto para la creación del programa “Maestría en Dirección de Proyectos” para Universidad de Especialidades Espíritu Santo.'
+			},
+			{
+				title: "¿Por qué Machine Learning necesita datos?",
+				name: "Lesly Zerna",
+				place: "Tech Educator - GDE Machine Learning - TEDx speaker",
+				work: "Google Developer ",
+				schedule: "16:30 - 16:45",
+				imageName: "lzerna.jpg",
+				linkedin: "https://www.linkedin.com/in/lesly-zerna-78540957/",
+				info: "Developer Relations en Code Inspector. Google Developer Expert in Machine Learning technologies. Mentora en Google Launchpad Latinamerica y Startup Weekends. Ed Tech educator. Co-founder of MentorHer, la iniciativa para motiivar a más chicas a la tecnología. Profesional en Telecomunicaciones y Ciencias de la Computación"
+			},
+			{
+				title: "Break",
+				name: "",
+				place: "",
+				work: "",
+				schedule: "16:45 - 16:55",
+				imageName: "Break.png",
+			},
+			{
+				title: "Operationalizing Ethical Data Computation and AI Development",
+				name: "Laura Montoya",
+				place: "Instituto de Investigación de Ciencias Matemáticas de San Francisto",
+				work: "Fundadora y Directora ejecutiva, Accel.AI",
+				schedule: "16:55 - 17:20",
+				imageName: "LauraMontoya.jpg",
+				linkedin: "https://www.linkedin.com/in/lnmontoya/",
+				info: "Lead on tech social impact and ethical AI development, Laura is the founder and Managing Partner of Accel Impact Organizations, including Accel AI Institute, Latinx in AI (LXAI), and Research Colab. Her academic background is in Biology, Physical Science, and Human Development. She relocated to the San Francisco Bay area to work at the Mathematical Sciences Research Institute before jump-starting her career in software engineering at Intuit revamping their Quickbooks online platform. She is a director with Women Who Code, advisor for Udacity’s AI and Data nano degree, and an affiliate with the Berkman Klein Center for Internet and Society at Harvard Law. She chairs and serves on Program Committees for research workshops at AI and ML conferences including NeurIPS, ICLR, ICML, and ACM FAccT. Recent research areas include reducing bias data representations in machine learning models, the effects of artificial intelligence development for developing countries, and paralleling biological and synthetic neural networks seen in mycology, entomology, and computational science. She has led sessions on social impact, tech diversity, and ethical AI development for Creative Mornings, Katapult Future Fest, Silicon Valley Future Forum, Tech Inclusion Conference, Thrival Summit, Global Hive Summit, and keynoted the “Future of Work” for the Data and Society Conference at UC Berkeley. Laura has given guest lectures and technical workshops at Google, Santa Clara University Law, Stanford University Computational Social Science, and GTC Deep Learning School. Recently she spoke at TEDx Santa Barbara and has been featured in WITtalks and CIIS podcasts, Xconomy, Verizon News, and Forbes Leadership. Scientist and engineer turned serial entrepreneur and startup advisor. I appreciate the experimental process of startups, software engineering, data exploration, and optimizing neural networks. Recent work includes reducing bias data representations in machine learning models for facial recognition applications."
+			},
+			{
+				title: "Cómo la IA nos puede ayudar a entender el funcionamiento de nuestro cerebro?",
+				name: "Diana Mosquera",
+				place: "Mila - Montreal",
+				work: "Neurocientífica",
+				schedule: "17:20 - 17:45",
+				imageName: "DianaMosquera.jpg",
+				linkedin: "https://www.linkedin.com/in/diana-m-856316164/",
+				info: "Estudié en el Instituto de Tecnología de Massachusetts (MIT) cursando grados en Física y Ciencias Cognitivas. Completé una pasantía de inteligencia artificial en Google Brain en mi segundo verano , trabajé en la reinvención de la tecnología de interfaz cerebro-máquina en el grupo de Neurobiología sintética en Media Lab.Soy consultora de IA para varias startups alrededor del mundo. Me imagino dedicando la mayor parte de mi vida profesional a investigar métodos para el aumento humano, el aumento del cerebro y el arte y diseño ambiental para responder a las demandas actuales de la exploración ambiental extrema (como las profundidades marinas y el espacio, la vida con IA), así como la comunicación. desarrollo (cerebro-cerebro o cerebro-computadora) para tratar de resolver las cuestiones socioeconómicas más importantes y, con suerte, empujar los límites de la humanidad."
+			},
+			{
+				title: "El impacto del enfoque data-driven en la toma de decisiones en esta era",
+				name: "Andrea Bayancela",
+				place: "Anheuser-Busch InBev",
+				work: "Innovation and Data Analytics Peru & Ecuador Manager",
+				schedule: "17:45 - 18:00",
+				imageName: "AndreaBayen.jpg",
+				linkedin: "https://www.linkedin.com/in/andrea-bayancela-b1364286/?originalSubdomain=ec",
+				info: "Guayaquileña, actualmente Gerente de Innovation & Data Analytics para Peru & Ecuador en ABInBev. Economista, graduada en la Escuela Superior Politécnica del Litoral. Máster en Estadística por la Universitat Politècnica de Catalunya. Con más de 7 años de experiencia en distintos sectores: financiero, comercio exterior y consumo masivo."
+			},
+			{
+				title: "Clausura",
+				name: "Cristina Abad",
+				place: "ESPOL",
+				work: " Coordinadora de Investigación de grado de FIEC",
+				schedule: "18:15",
+				imageName: "cristinaabad_2.jpg",
+				linkedin: "https://linkedin.com/in/cristina-abad-40ab352",
+			}
 		],
 		conferencistas: [
 			{
@@ -403,6 +533,22 @@ export const ediciones = [
 	{
 		edicion: "2022",
 		cronograma: [
+			{
+				title: "Bienvenida",
+				name: "Cecilia Paredes Verduga",
+				place: "ESPOL",
+				work: "Rectora de ESPOL",
+				schedule: "14:00 - 14:10",
+				imageName: "ceciliaparedes.png"
+			},
+			{
+				title: "Bienvenida Embajadora Wids Espol",
+				name: "Carmen Vaca Ruiz",
+				place: "ESPOL",
+				work: "Mentora del Club TAWS",
+				schedule: "14:10 - 14:20",
+				imageName: "carmenVacaRuiz.png"
+			},
 			{
 				title: "ML-CI: intervalos de confianza de aprendizaje automático para pronósticos de COVID-19",
 				name: "Isabelle Guyon",
@@ -565,7 +711,7 @@ export const ediciones = [
 				place: "ESPOL",
 				work: "Estudiante de Economía",
 				schedule: "11:30 - 12:30",
-				imageName: "Katherine_Parrales."
+				imageName: "Katherine_Parrales.jpg"
 			}
 		],
 	},
@@ -574,19 +720,19 @@ export const ediciones = [
 		cronograma: [
 			{
 				title: "Bienvenida",
-				name: "Carmen Vaca Ruiz",
-				place: "ESPOL",
-				work: "Mentora del Club TAWS",
-				schedule: "09:00 - 09:15",
-				imageName: "carmenVacaRuiz.png"
-			},
-			{
-				title: "Explicación del WiDS",
 				name: "Cecilia Paredes Verduga",
 				place: "ESPOL",
 				work: "Rectora de ESPOL",
 				schedule: "09:15 - 09:20",
 				imageName: "ceciliaparedes.png"
+			},
+			{
+				title: "Bienvenida Embajadora Wids Espol",
+				name: "Carmen Vaca Ruiz",
+				place: "ESPOL",
+				work: "Mentora del Club TAWS",
+				schedule: "09:00 - 09:15",
+				imageName: "carmenVacaRuiz.png"
 			},
 			{
                 title: "Herramientas y recursos tecnológicos para la Ciencia de Datos",
