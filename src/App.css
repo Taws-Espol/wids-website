@@ -332,6 +332,15 @@
         animation: zoomIn 1s ease-in-out forwards;
     }
 
-*{
-    user-select: none;
-}
+    * {
+        user-select: none;
+    }
+
+    .directions {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        color: white;
+        background-color: #2d3748;
+        border-radius: 0.25rem;
+    }
