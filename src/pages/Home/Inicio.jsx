@@ -37,11 +37,11 @@ function Inicio() {
                         CRONOGRAMA
                     </h1>
                     <h2 className="w-full text-center text-[3.5vw] md:text-[2vw] 2xl:text-[1.5vw] min-[2474px]:text-[1vw] font-mono p-5 font-semibold ">
-                        09:00 am - 13:00 pm
-                    </h2>
-                    <h2 className="w-full text-center text-[3.5vw] md:text-[2vw] 2xl:text-[1.5vw] min-[2474px]:text-[1vw] font-mono p-5 font-semibold ">
                         {"MUY PRONTO"}
                     </h2>
+                    <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                        <img src="https://i.pinimg.com/originals/0f/5c/58/0f5c5833f72166b72193d12d81d56d5f.gif" alt="Animated GIF" style={{ maxWidth: '100%', height: 'auto' }} />
+                    </div>
                 </div>
             </AnimatedSection>
             <AnimatedSection>
