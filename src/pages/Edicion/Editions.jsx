@@ -12,7 +12,7 @@ function Editions() {
 
 	return (
 		<>
-			<section className='bg-gray-2 pt-20 pb-20'>
+			<section className='bg-gray-2 pt-20 pb-20 font-acumin'>
 				<div className="flex flex-col w-full place-content-center place-items-center">
 					<div className="flex w-4/5 place-content-start place-items-center pb-40 max-md:pb-20">
 						<h1 className="text-4xl text-primary-dark-green max-sm:text-2xl font-bold">Ediciones anteriores</h1>

@@ -4,7 +4,7 @@ function Conferencistas() {
     const year = "2024";
     const edicionData = ediciones.find((edicion) => edicion.edicion === year);
     return (
-        <div className="flex flex-col place-content-center place-items-center w-full select-none">
+        <div className="font-acumin flex flex-col place-content-center place-items-center w-full select-none">
             <div className="w-full flex justify-center items-center text-center relative mt-10 mb-20">
                 <div id='rectangulo_corneL' className="absolute bottom-[-30px] left-9 max-xl:left-4 w-1/4 h-48 bg-custom-peach max-lg:hidden z-[5]"></div>
                 <div id='rectangulo_corneR' className="absolute top-[-30px] right-9 max-xl:right-4 w-1/4 h-48 bg-custom-purple max-lg:hidden z-[5]"></div>

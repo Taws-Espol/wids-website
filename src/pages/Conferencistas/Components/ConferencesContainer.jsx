@@ -29,7 +29,7 @@ export function ConferenceContainer({ edicionData }) {
 
     return (
         <>
-            <div className="flex flex-row place-content-center place-items-center gap-10 flex-wrap">
+            <div className="font-acumin flex flex-row place-content-center place-items-center gap-10 flex-wrap">
                 {conferenceActive && (
                     <div id="details-div" className="flex flex-row flex-wrap place-content-center place-items-center w-full gap-10 my-20 py-10 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hover:shadow-2xl">
                         <img src={image} alt="Conferencista" className="h-96 w-96  max-sm:w-80 max-sm:h-80 object-cover rounded-3xl" />

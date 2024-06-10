@@ -73,7 +73,7 @@ export default function CarruselConferences() {
 
             <div className="relative w-3/4 m-auto ">
 
-                <h1 className="pt-6 md:pt-10 text-center text-[6vw] md:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw] font-serif font-bold text-white">
+                <h1 className="pt-6 md:pt-10 text-center text-[6vw] md:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw] font-acumin font-bold text-white">
                     Conferencistas
                 </h1>
                 <Slider {...settings}>
@@ -83,7 +83,7 @@ export default function CarruselConferences() {
                                 <img src={path_images+evento.imageName} alt={evento.imageName} className="h-44 w-44 rounded-full" />
                             </div>
 
-                            <div className="flex flex-col justify-center items-center pt-2 pb-12">
+                            <div className="flex flex-col justify-center items-center pt-2 pb-12 font-acumin">
                                 <p style={{ fontSize: '25px', fontWeight: 'bold', color: 'black'}} > {evento.name}</p>
                             </div>
 

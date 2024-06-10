@@ -16,9 +16,9 @@ function Datathon() {
     const infos_dvi6 = div6.infos;
 
     return (
-        <div className="w-full  select-none flex flex-col pb-10 font-sans max-sm:text-base">
+        <div className="w-full select-none flex flex-col pb-10 font-acumin max-sm:text-base">
             <div>
-                <h1 className="flex justify-center items-center md:justify-normal md:items-stretch text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-10xl 2xl:text-11xl font-bold font-sans text-left text-primary-dark-green py-5 pb-5 md:pl-16 lg:pl-32 xl:pl-40 2xl:pl-48">
+                <h1 className="flex justify-center items-center md:justify-normal md:items-stretch text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-10xl 2xl:text-11xl font-bold font-acumin text-left text-primary-dark-green py-5 pb-5 md:pl-16 lg:pl-32 xl:pl-40 2xl:pl-48">
                     Datathon
                 </h1>
             </div>
@@ -28,7 +28,7 @@ function Datathon() {
                         {div1.title}
                     </p>
                     <div className="flex flex-wrap place-content-center w-full mt-auto text-2xl gap-10 px-20 max-md:m-0 max-md:flex-col max-sm:gap-5 max-md:gap-10 max-sm:text-lg max-md:text-xl justify-center items-center lg:pl-56">
-                        <button className="text-white bg-green-900 whitespace-nowrap select-none rounded-3xl px-20 py-5 text-center font-sans font-medium max-md:text-lg max-md:px-4 text-3xl"
+                        <button className="text-white bg-green-900 whitespace-nowrap select-none rounded-3xl px-20 py-5 text-center font-acumin font-medium max-md:text-lg max-md:px-4 text-3xl"
                             onClick={() => window.open(div1.linkform, '_blank')}
                         >
                             Registrate aquí
