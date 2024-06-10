@@ -72,9 +72,8 @@ export default function CarruselConferences() {
             </div>
 
             <div className="relative w-3/4 m-auto ">
-
                 <h1 className="pt-6 md:pt-10 text-center text-[6vw] md:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw] font-serif font-bold text-white">
-                    Conferencistas
+                    CONFERENCISTAS
                 </h1>
                 <Slider {...settings}>
                     {conferencistas.map((evento, index) => (
