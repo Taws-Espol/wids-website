@@ -9,7 +9,7 @@ function Nosotros() {
             md:justify-start py-7 sm:pl-20 md:pl-40"
         >
           <h1
-            className="text-sans text-[#1e4620] text-center md:text-left
+            className="font-acumin text-[#1e4620] text-center md:text-left
               font-bold text-7xl sm:text-5xl md:text-5xl lg:text-6xl select-none"
           >
             Sobre Nosotros

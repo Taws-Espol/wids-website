@@ -4,7 +4,7 @@ const Ubicacion = () => {
         <div className="bg-neutral-grey bg-opacity-20 text-primary-dark-green">
             <div className="container mx-auto py-6 px-8">
                 <div className="text-center">
-                    <h1 className="text-4xl font-bold" >Ubicación</h1>
+                    <h1 className="text-4xl font-acumin font-bold" >Ubicación</h1>
                 </div>
             </div>
 
@@ -22,7 +22,7 @@ const Ubicacion = () => {
                     ></iframe>
                 </div>
                 <div className="md:w-1/2 mt-4 md:mt-0 md:ml-8">
-                    <div className='flex flex-col place-content-start  px-8 pt-12 '> 
+                    <div className='flex flex-col place-content-start  font-acumin px-8 pt-12 '> 
                         <div className='flex place-items-center  text-center gap-5'>
                             <MdLocationPin className='w-10 h-16 mt-4 ' />
                             <h2 className="mt-4  text-4xl">Edificio STEM</h2>

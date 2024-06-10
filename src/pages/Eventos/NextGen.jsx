@@ -22,7 +22,7 @@ function NextGen() {
                         <img src={div1.link_image} alt="NextGen-Empoderando a la siguiente generación" className="w-4/5 h-[350px] z-20 max-sm:min-w-[300px] max-sm:h-[200px] max-md:min-w-[550px] max-md:h-[300px] max-lg:min-w-[600px] max-lg:h-[400px] max-lg:rounded-2xl" />
                     </div>
                     <div id='nextgen-empoderando' className="ml-10 text-2xl w-2/5 text-justify px-4 flex flex-col gap-5 max-sm:text-base max-md:text-lg max-lg:text-xl max-lg:w-full max-lg:m-0">
-                        <p>
+                        <p className="font-acumin">
                             {text1[0]}<b>{text1[1]}</b>
                         </p>
                         <p>
