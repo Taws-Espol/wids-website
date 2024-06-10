@@ -4,9 +4,9 @@ import Subtitle from "./Subtitle";
 import AnimatedSection from "./../../../shared/AnimatedSection";
 export default function Sponsors() {
 	return (
-		<div className={`font-acumin flex flex-col items-center p-20 select-none`}>
+		<div className={`flex flex-col items-center p-20 select-none mt-32 font-acumin`}>
 			<AnimatedSection>
-				<Subtitle text='Organizador' />
+				<Subtitle text='ORGANIZADOR' />
 			</AnimatedSection>
 			<AnimatedSection>
 				<div className='my-20'>
@@ -14,7 +14,7 @@ export default function Sponsors() {
 				</div>
 			</AnimatedSection>
 			<AnimatedSection>
-				<Subtitle text='Sponsors' />
+				<Subtitle text='SPONSORS' />
 			</AnimatedSection>
 			<AnimatedSection>
 				<div className='font-acumin grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-10 gap-y-12 gap-x-10'>
