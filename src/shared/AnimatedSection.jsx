@@ -6,7 +6,7 @@ const AnimatedSection = ({ children, className = '' }) => {
     const isVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
 
     return (
-        <div ref={sectionRef} className={`${className} transition-opacity duration-1000 ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`}>
+        <div ref={sectionRef} className={`${className} transition-opacity duration-1000 ${isVisible ? 'animate-fadeIn' : 'opacity-0'} !w-full`}>
             {children}
         </div>
     );
