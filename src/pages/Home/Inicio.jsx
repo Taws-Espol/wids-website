@@ -8,7 +8,7 @@ import AnimatedSection from "./../../shared/AnimatedSection";
 
 function Inicio() {
     return (
-        <div className='w-full'>
+        <>
             <Carrusel />
             <AnimatedSection>
                 <section className="select-none">
@@ -43,7 +43,7 @@ function Inicio() {
             <AnimatedSection>
                 <Sponsors />
             </AnimatedSection>
-        </div>
+        </>
     );
 }
 
