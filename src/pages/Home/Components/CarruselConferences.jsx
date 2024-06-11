@@ -81,7 +81,7 @@ export default function CarruselConferences() {
                             <div className="flex justify-center items-center pt-8 pb-2" >
                                 <img src={path_images+evento.imageName} alt={evento.imageName} className="h-60 w-60 rounded-full" />
                             </div>
-                            <div className="flex flex-col justify-center items-center pt-2 pb-12">
+                            <div className="text-center overflow-hidden whitespace-normal break-words flex flex-col justify-center items-center pt-2 pb-12">
                                 <p style={{ fontSize: '25px', fontWeight: 'bold', color: 'black'}} > {evento.name}</p>
                             </div>
 
