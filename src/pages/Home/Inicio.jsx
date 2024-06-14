@@ -5,6 +5,7 @@ import Sponsors from "./Components/Sponsors";
 import Ubicacion from "./Components/Ubicacion";
 import CarruselConferences from "./Components/CarruselConferences";
 import AnimatedSection from "./../../shared/AnimatedSection";
+import Posts from './Components/Posts';
 
 function Inicio() {
     return (
@@ -42,6 +43,9 @@ function Inicio() {
             </AnimatedSection>
             <AnimatedSection>
                 <Sponsors />
+            </AnimatedSection>
+            <AnimatedSection>
+                <Posts />
             </AnimatedSection>
         </>
     );
