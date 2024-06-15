@@ -1,22 +1,22 @@
-import { useEffect } from "react";
-import Subtitle from "./Subtitle";
-import "./post.css";
-
+import {Instagrams} from "./../../../data/Instagrams";
+import CardPosts from './CardPost';
+import ProfileCard from "./ProfileCard";
 export default function Posts() {
 
-  useEffect(() => {
-    window.addEventListener("load", () => {
-      const script = document.createElement("script", { id: "instafeed" });
-      script.setAttribute("src", "src/shared/startInstafeed.js");
-      document.body.appendChild(script);
-    });
-  }, []);
-
   return (
-    <div className="flex flex-col justify-items-center items-center">
-      <Subtitle text="Mira nuestros últimos posts en Instagram!" />
-      <div id="instafeed" className="px-8 py-4 flex flex-col md:flex-row">
+    <>
+      <div className='flex flex-col w-full place-content-center place-items-center'>
+        <div className='flex flex-row !place-content-start !justify-start !place-items-start flex-wrap min-w-[360px]'>
+          <ProfileCard profileinfo={Instagrams.profile}/>
+        </div>
+        <div className='flex justify-center items-center flex-wrap min-w-[360px] gap-5 mb-20'>
+          {
+            Instagrams.publications.map((post,index)=>(
+              <CardPosts  key={index} post={post}/>
+            ))
+          }
+        </div>
       </div>
-    </div>
+    </>
   )
 }
