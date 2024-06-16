@@ -48,7 +48,8 @@ export default {
             },
             screens: {
                 'xsm': '450px',
-                'xxl': '1328px'
+                'xxl': '1328px',
+                '5xl': '2352px',
             },
             padding: {
                 '7p': '7.5%',

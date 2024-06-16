@@ -13,14 +13,14 @@ function Inicio() {
             <Carrusel />
             <AnimatedSection>
                 <section className="select-none">
-                    <div className="mt-[3vw] mb-[10vw]">
+                    <div className="mt-[3vw] md:mb-[8vw] lg:mb-[12vw] xl:mb-[15vw]">
                         <div className="mt-5 max-md:mb-[2vw] md:mb-[3em]">
-                            <h1 className="w-full text-center text-[6vw] md:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw] font-acumin font-bold" style={{ color: '#004029' }}>
+                            <h1 className="w-full text-center text-[6vw] md:text-[5vw] 2xl:text-[4vw] min-[2474px]:text-[3vw] font-acumin font-bold" style={{ color: '#004029' }}>
                                 CONFERENCIA
                             </h1>
                         </div>
                         <div className="flex place-content-center place-items-center">
-                            <Infos />
+                            <Infos/>
                         </div>
                     </div>
                 </section>

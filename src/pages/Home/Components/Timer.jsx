@@ -44,11 +44,11 @@ export function Timer({Event_date}) {
     function CardTimer(props) {
 
         return (
-            <div className={`text-black h-36 w-32 flex flex-col place-content-center place-items-center font-acumin font-bold select-none rounded-2xl ${!props.isSec ? 'bg-white' : 'bg-primary-dark-green text-white'} max-sm:w-14 max-sm:h-[72px] max-md:w-16  max-md:h-[80px] max-lg:w-20 max-lg:h-[96px] max-xl:w-[90px] max-xl:h-[116px]` }>
-                <p className="text-6xl max-md:text-3xl max-lg:test-4xl mx-xl:text-5xl">
+            <div className={`text-black h-[14vw] w-[13vw] sm:h-[12vw] sm:w-[11vw] md:h-[11vw] md:w-[10vw] xl:h-[8rem] rounded-[2vw] xl:w-[7rem] min-[1536px]:h-36 min-[1536px]:w-32 flex flex-col place-content-center place-items-center font-acumin font-bold select-none md:rounded-2xl ${!props.isSec ? 'bg-white' : 'bg-primary-dark-green text-white'}` }>
+                <p className="text-[5.5vw] sm:text-[4.5vw] md:text-[4vw] xl:text-6xl">
                     {props.time}
                 </p>
-                <p className="text-xl max-sm:text-sm max-md:text-base max-lg:text-lg">
+                <p className="text-[3.5vw] sm:text-[2.5vw] md:text-[2vw] xl:text-xl">
                     {props.timeInfo}
                 </p>
             </div>
@@ -56,7 +56,7 @@ export function Timer({Event_date}) {
     }
 
     return (
-        <div className="bg-transparent font-acumin flex flex-wrap gap-4 max-w-[900px] place-content-between p-1  max-sm:w-[340px] max-md:w-[400px] max-lg:w-[500px] max-xl:w-[550px]   max-lg:gap-2 " >
+        <div className="bg-transparent font-acumin flex flex-wrap gap-[2vw] md:gap-4 place-content-between p-1" >
             <CardTimer className=""
                 time={rest.weeks}
                 timeInfo="Weeks"
