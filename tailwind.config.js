@@ -49,7 +49,7 @@ export default {
             screens: {
                 'xsm': '450px',
                 'xxl': '1328px',
-                'min-2352': {'min':'2352px'},
+                '5xl': '2352px',
             },
             padding: {
                 '7p': '7.5%',

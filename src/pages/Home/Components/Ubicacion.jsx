@@ -14,16 +14,16 @@ const Ubicacion = () => {
                     className="!w-full !h-[500px] shadow-md rounded-lg"
                 ></iframe>
             </div>
-            <div className="pr-[1vw] min-[1651px]:pl-[1.2vw] min-2352:pl-[2vw] flex flex-col">
+            <div className="pr-[1vw] min-[1651px]:pl-[1.2vw] 5xl:pl-[2vw] flex flex-col">
                 <div className='flex flex-col place-items-center md:place-items-start  font-acumin px-8 pt-[10vw] md:pt-12 '>
-                    <h1 className="text-[7vw] md:text-[4vw] lg:text-[3.5vw] min-2352:text-[5em] font-acumin font-bold" >UBICACIÓN</h1>
+                    <h1 className="text-[7vw] md:text-[4vw] lg:text-[3.5vw] 5xl:text-[5em] font-acumin font-bold" >UBICACIÓN</h1>
                     <div className='flex place-items-center text-center gap-3 lg:gap-5'>
-                        <MdLocationPin className='w-[5vw] md:w-[3vw] lg:w-[2.5vw] min-2352:w-[3.8em] h-fit md:h-16 mt-[3vw] md:mt-4 ' />
-                        <h2 className="mt-[3vw] text-[5vw] md:mt-4 md:text-[3vw] lg:text-[2.5vw] min-2352:text-[3.8em]">Edificio STEM</h2>
+                        <MdLocationPin className='w-[5vw] md:w-[3vw] lg:w-[2.5vw] 5xl:w-[3.8em] h-fit md:h-16 mt-[3vw] md:mt-4 ' />
+                        <h2 className="mt-[3vw] text-[5vw] md:mt-4 md:text-[3vw] lg:text-[2.5vw] 5xl:text-[3.8em]">Edificio STEM</h2>
                     </div>
                     <div className="">
-                        <h2 className="text-[3vw] mt-[2vw] min-2352:mt-10 md:text-[2vw] lg:text-[1.5vw] min-2352:text-[2.2em] ml-3">Campus Gustavo Galindo</h2>
-                        <h2 className="text-[3vw] mt-2 lg:text-[1.5vw] min-2352:text-[2.2em] md:text-[2vw]  ml-3">Km. 30 vía Perimetral</h2>
+                        <h2 className="text-[3vw] mt-[2vw] 5xl:mt-10 md:text-[2vw] lg:text-[1.5vw] 5xl:text-[2.2em] ml-3">Campus Gustavo Galindo</h2>
+                        <h2 className="text-[3vw] mt-2 lg:text-[1.5vw] 5xl:text-[2.2em] md:text-[2vw]  ml-3">Km. 30 vía Perimetral</h2>
                     </div>
                 </div>
             </div>
