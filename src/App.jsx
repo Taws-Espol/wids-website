@@ -11,8 +11,8 @@ import Nosotros from "./pages/Nosotros/Nosotros";
 import Editions from "./pages/Edicion/Editions";
 import Edition from "./pages/Edicion/Edition";
 import ButtonUp from "./shared/ButtonUp";
-import Datathon from "./pages/Eventos/Datathon";
-import NextGen from "./pages/Eventos/NextGen";
+import Datathon from "./pages/Eventos/Datathon/DatathonPage";
+import NextGen from "./pages/Eventos/NextGen/NextGenPage";
 function App() {
 	function NotFound() {
 		return <div>404 Not Found</div>;

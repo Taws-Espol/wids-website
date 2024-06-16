@@ -1,4 +1,4 @@
-import { NextGenInfo } from "../../data/Eventos/NextGen";
+import { NextGenInfo } from "../../../data/Eventos/NextGen";
 import { CardRequirement } from "./Components/CardRequirements";
 import { ColBenef } from "./Components/ColBene";
 function NextGen() {
