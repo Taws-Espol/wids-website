@@ -37,7 +37,7 @@ export default function Posts() {
         </div>
         <div className='flex justify-center items-center flex-wrap min-w-[360px] gap-5 mb-20'>
           {
-             posts && posts.map(({ permalink },index)=>(
+            posts && posts.map(({ permalink },index)=>(
               <CardPosts  key={index} post={permalink}/>
             )) 
           }
