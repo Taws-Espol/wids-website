@@ -50,6 +50,7 @@ export default {
                 'xsm': '450px',
                 'xxl': '1328px',
                 '5xl': '2352px',
+                'xs': '480px',
             },
             padding: {
                 '7p': '7.5%',
