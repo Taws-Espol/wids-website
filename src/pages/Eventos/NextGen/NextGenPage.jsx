@@ -1,5 +1,5 @@
-import { NextGenInfo } from "../../data/Eventos/NextGen";
-import AnimatedSection from "./../../shared/AnimatedSection";
+import { NextGenInfo } from "./../../../data/Eventos/NextGen";
+import AnimatedSection from "./../../../shared/AnimatedSection";
 import { CardRequirement } from "./Components/CardRequirements";
 import { ColBenef } from "./Components/ColBene";
 function NextGen() {
