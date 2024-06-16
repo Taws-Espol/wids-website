@@ -35,18 +35,18 @@ export default function Carrusel() {
             <div className='hidden group-hover:block  group-hover:z-20 absolute top-[50%] translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
                 <BsChevronCompactRight onClick={nextImage} size={30} />
             </div>
-            <div className="absolute max-sm:right-5 xl:bottom-[50px] max-xl:bottom-[22px] 2xl:right-10 max-xl:right-[20%] flex justify-around">
+            <div className="xl:absolute place-content-center relative bottom-[20vw] sm:bottom-[17vw] md:bottom-[16vw] xl:bottom-[50px] xl:right-10 flex">
                 <Timer key={currentIndex} Event_date = {new Date(infoImages[currentIndex].dateTimer)}/>
             </div>
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden group-hover:z-10">
-                <div className="absolute top-[-50%] left-[-1200px] text-white text-shadow-black select-none font-acumin rounded-full h-[1900px] w-[1900px] overflow-hidden bg-primary-yellow max-xl:h-full max-xl:w-full max-xl:top-[-65%] max-xl:left-[-30%]">
+                <div className="absolute xl:top-[-50%] xl:left-[-1220px] text-white text-shadow-black select-none font-acumin rounded-full xl:h-[1900px] xl:w-[1900px] overflow-hidden bg-primary-yellow h-full w-full top-[-78%] xsm:top-[-74%] sm:top-[-70%] left-[-45%] md:top-[-62%] lg:top-[-56%] md:left-[-45%]">
                 </div>
             </div>
-            <div className="absolute top-[40%] left-[5%] text-primary-dark-green text-shadow-black select-none font-acumin group-hover:z-20 flex flex-col gap-5 max-xl:top-10 max-xl:left-10 max-lg:text-center">
-                <p className="text-7xl font-acumin font-bold max-sm:text-2xl max-xl:text-3xl">{infoImages[currentIndex].title}</p>
-                <p className="text-[3vh] font-acumin font-normal ">{infoImages[currentIndex].date}</p>
-                <p className="text-[3vh] font-acumin font-normal ">{infoImages[currentIndex].place}</p>
-                <p className="text-[3vh] font-acumin font-normal ">{infoImages[currentIndex].uni}</p>
+            <div className="absolute top-[35%] left-[5vw] 5xl:left-[3%] text-primary-dark-green text-shadow-black select-none font-acumin group-hover:z-20 flex flex-col max-xl:gap-[1.5vw] gap-4 max-xl:top-10 max-xl:left-15">
+                <p className="text-[7vw] xsm:text-[6.5vw] sm:text-[6vw] xl:text-[5.5em] 2xl:text-[6em] 5xl:text-[5em] font-acumin font-bold">{infoImages[currentIndex].title}</p>
+                <p className="text-[4vw] xsm:text-[3.5vw] sm:text-[3vw] xl:text-[2.5em] 2xl:text-[3em] 5xl:text-[3em] font-acumin font-normal ">{infoImages[currentIndex].date}</p>
+                <p className="text-[4vw] xsm:text-[3.5vw] sm:text-[3vw] xl:text-[2.5em] 2xl:text-[3em] 5xl:text-[3em] font-acumin font-normal ">{infoImages[currentIndex].place}</p>
+                <p className="text-[4vw] xsm:text-[3.5vw] sm:text-[3vw] xl:text-[2.5em] 2xl:text-[3em] 5xl:text-[3em] font-acumin font-normal ">{infoImages[currentIndex].uni}</p>
                 <div className={`${infoImages[currentIndex].linkform ? 'block':'hidden'}`}>
                 <button className="text-white text-5xl max-sm:text-2xl max-sm:w-32 bg-primary-dark-green select-none rounded-3xl py-3 text-center w-2/3 font-acumin font-medium"
                 onClick={() => window.open(infoImages[currentIndex].linkform, '_blank')}
