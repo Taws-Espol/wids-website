@@ -344,3 +344,8 @@
         background-color: #2d3748;
         border-radius: 0.25rem;
     }
+
+    .Embed .Header {
+        display: none !important; /* Asegura que el estilo sea aplicado */
+    }
+    
