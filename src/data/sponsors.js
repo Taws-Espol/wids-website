@@ -20,35 +20,5 @@ export const Sponsors_Cola = {
             "website": "",
             "logo": "/assets/sponsors/BOOTCAMPESPOL.png"
         },
-        {
-            "name": "BOOTCAMP ESPOL",
-            "location": "",
-            "website": "",
-            "logo": "/assets/sponsors/BOOTCAMPESPOL.png"
-        },
-        {
-            "name": "BOOTCAMP ESPOL",
-            "location": "",
-            "website": "",
-            "logo": "/assets/sponsors/BOOTCAMPESPOL.png"
-        },
-        {
-            "name": "BOOTCAMP ESPOL",
-            "location": "",
-            "website": "",
-            "logo": "/assets/sponsors/BOOTCAMPESPOL.png"
-        },
-        {
-            "name": "BOOTCAMP ESPOL",
-            "location": "",
-            "website": "",
-            "logo": "/assets/sponsors/BOOTCAMPESPOL.png"
-        },
-        {
-            "name": "BOOTCAMP ESPOL",
-            "location": "",
-            "website": "",
-            "logo": "/assets/sponsors/BOOTCAMPESPOL.png"
-        },
     ]
 }
