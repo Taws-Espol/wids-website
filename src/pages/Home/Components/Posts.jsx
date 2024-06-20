@@ -5,19 +5,54 @@ import { useState, useEffect } from "react";
 
 const ACCESS_TOKEN = 'IGQWRNaXpCNE1MSVBnZA0pLNFVMSU9LQktEMlJEN3ZALVEE4R0ZAlWEVNcjV6b1dJLTE4MnZA5WnAxRGZAIcmM3NnhsejFuWDRpWHJUN2ljWHJBNUJJNnRpNGFRbjJmU2dqT19OQ2JkRGc0OEVMQQZDZD';
 
-const getPosts = async () => {
-  const URL = `https://graph.instagram.com/me/media?fields=permalink&access_token=${ACCESS_TOKEN}`;
-  const reqOptions = {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  }
+const fields = 'id,media_url,media_type,permalink';
+
+const reqOptions = {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*'
+  },
+}
+
+const getMediaById = async (media_id) => {
+  const URL = `https://graph.instagram.com/${media_id}?fields=${fields}&access_token=${ACCESS_TOKEN}`;
 
   const response = await fetch(URL, reqOptions);
   const data = await response.json();
 
-  return data.data;
+  return data;
+}
+
+const getPosts = async () => {
+  const URL = `https://graph.instagram.com/me/media?fields=${fields},children&access_token=${ACCESS_TOKEN}`;
+
+  const response = await fetch(URL, reqOptions);
+  const json = await response.json();
+  const data = json.data;
+
+  const finalData = await Promise.all(data.map(async (post) => {
+    const type = post.media_type;
+    if (type === 'CAROUSEL_ALBUM') {
+      const children = post.children.data;
+      const album = await Promise.all(children.map(async (childId) => {
+        const id = childId.id;
+        const media = await getMediaById(id);
+        return media.media_url;
+      })
+      );
+      return {
+        type,
+        album
+      }
+    } 
+    return {
+      media_url: post.media_url,
+      type: post.media_type,
+    };
+  }));
+
+  return finalData;
 }
 
 export default function Posts() {
@@ -37,8 +72,8 @@ export default function Posts() {
         </div>
         <div className='flex justify-center items-center flex-wrap min-w-[360px] gap-5 mb-20'>
           {
-            posts && posts.map(({ permalink },index)=>(
-              <CardPosts  key={index} post={permalink}/>
+            posts && posts.map((data, index)=>(
+              <CardPosts key={index} data={data}/>
             )) 
           }
         </div>
