@@ -89,7 +89,7 @@ export default function CardPosts({ data }) {
 
     return (
         <div className="flex justify-center overflow-hidden h-[330px] border-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hover:shadow-2xl">
-            <div className="max-w-96 max-h-96">
+            <div className="w-80 h-80">
                 {element}
             </div>
         </div>
