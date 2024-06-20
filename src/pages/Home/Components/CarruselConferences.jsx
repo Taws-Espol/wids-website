@@ -25,7 +25,6 @@ export default function CarruselConferences() {
     const path_images = `/assets/Eventos/Ediciones/${year}/Images/conferencistas/`
 
     const conferencistas = edicion2024.conferencistas.filter(edicion => edicion.name != "");
-    console.log(conferencistas)
     var settings = {
         dots: true,
         infinite: true,
