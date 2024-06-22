@@ -15,7 +15,7 @@ export default function AboutUsCard() {
       />
       <img
         className="w-[35rem]"
-        src="/assets/about-us/conference.png"
+        src="/assets/about-us/conference.webp"
         alt="Imagen de evento"
       />
     </div>

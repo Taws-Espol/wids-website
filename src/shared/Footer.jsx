@@ -35,7 +35,7 @@ function Footer() {
           <li className="px-20 pt-10 xl:text-start text-center">
             <h2 className="text-[35px] font-acumin font-semibold text-black mb-3">Contacto</h2>
             <h3 className="text-lg font-acumin text-gray-500 mb-12">wids@fiec.espol.edu.ec</h3> 
-            <img src="/assets/wids-logo.png" className="mx-auto"/>
+            <img src="/assets/wids-logo.webp" className="mx-auto"/>
           </li>
           <li className="px-20 text-center">
             <br className='xl:block hidden'/>

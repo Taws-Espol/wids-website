@@ -7,19 +7,19 @@ export function ItemTimeLine({ Evento }) {
     let value = Evento.type;
     switch (value) {
         case "Conferencia":
-            imagen = "/assets/images-cardInfo/Conferencia.png";
+            imagen = "/assets/images-cardInfo/Conferencia.webp";
             background_color = "#4ab969";
             break;
         case "Break":
-            imagen = "/assets/images-cardInfo/Break.png";
+            imagen = "/assets/images-cardInfo/Break.webp";
             background_color = "#a2a2ff";
             break;
         case "Taller":
-            imagen = "/assets/images-cardInfo/Conferencia.png";
+            imagen = "/assets/images-cardInfo/Conferencia.webp";
             background_color = "#00a7d5";
             break;
         default:
-            imagen = "/assets/images-cardInfo/Conferencia.png";
+            imagen = "/assets/images-cardInfo/Conferencia.webp";
             background_color = "#a2a2ff";
     }
     console.log(Evento.date)

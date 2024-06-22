@@ -34,7 +34,7 @@ function Inicio() {
                         CRONOGRAMA
                     </h1>
                     <div style={{ textAlign: 'center', marginTop: '20px' }}>
-                        <img src="/assets/pronto.png" alt="Animated GIF" style={{ maxWidth: '100%', height: 'auto' }} />
+                        <img src="/assets/pronto.webp" alt="Animated GIF" style={{ maxWidth: '100%', height: 'auto' }} />
                     </div>
                 </div>
             </AnimatedSection>

@@ -4,13 +4,13 @@ export const Sponsors_Cola = {
             "name": "BOOTCAMP ESPOL",
             "location": "",
             "website": "",
-            "logo": "/assets/sponsors/BOOTCAMPESPOL.png"
+            "logo": "/assets/sponsors/BOOTCAMPESPOL.webp"
         },
         {
             "name": "BREIK ESPOL",
             "location": "",
             "website": "https://www.instagram.com/breikgye/",
-            "logo": "/assets/sponsors/Breik.png"
+            "logo": "/assets/sponsors/Breik.webp"
         },
     ],
     sponsors:[
@@ -18,7 +18,7 @@ export const Sponsors_Cola = {
             "name": "BOOTCAMP ESPOL",
             "location": "",
             "website": "",
-            "logo": "/assets/sponsors/BOOTCAMPESPOL.png"
+            "logo": "/assets/sponsors/BOOTCAMPESPOL.webp"
         },
     ]
 }

@@ -1,6 +1,6 @@
 export let Instagrams = {
     profile: {
-        profile_image : '/assets/profilepicture.JPG',
+        profile_image : '/assets/profilepicture.webp',
         name : 'WiDS Guayaquil@ESPOL',
         user : '@widsespol',
     },

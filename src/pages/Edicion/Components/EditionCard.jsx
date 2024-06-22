@@ -1,10 +1,10 @@
 function EditionCard({color,year}) {
 
     const imgYear  = {
-        2020 : "/assets/images-carrusel/MujeresComputadoras.jpg",
-        2021 : "/assets/images-carrusel/MujeresUnaCoputadora.jpg",
-        2022 : "/assets/images-carrusel/Conferencistas.jpg",
-        2023 : "/assets/images-carrusel/MujeresComputadora.jpg",
+        2020 : "/assets/images-carrusel/MujeresComputadoras.webp",
+        2021 : "/assets/images-carrusel/MujeresUnaCoputadora.webp",
+        2022 : "/assets/images-carrusel/Conferencistas.webp",
+        2023 : "/assets/images-carrusel/MujeresComputadora.webp",
     }
     return (
         <div className={`relative w-[400px] h-[400px] overflow-hidden rounded-3xl flex flex-col items-start max-xxl:h-[300px] max-xxl:w-[300px] select-none bg-center bg-cover bg-no-repeat`} style={{ backgroundImage: `url(${imgYear[year]})` }}>
