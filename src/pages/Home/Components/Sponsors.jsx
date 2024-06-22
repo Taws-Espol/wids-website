@@ -11,7 +11,7 @@ export default function Sponsors() {
 						<div className="flex flex-col gap-10 place-content-center place-items-center !w2/5">
 							<p className="text-4xl font-bold">ORGANIZADOR</p>
 							<div className=''>
-								<img src='/assets/taws.png' alt='Taws' width={230} className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" />
+								<img src='/assets/taws.webp' alt='Taws' width={230} className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" />
 							</div>
 						</div>
 						<div className="flex flex-col place-items-center !w2/5">

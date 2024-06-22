@@ -2,7 +2,7 @@ function working(){
     return (
         <div className='w-full flex place-content-center place-items-center flex-col items-center  gap-10 py-52 select-none max-xl:py-100'>
                 <img
-                    src='/assets/navbar/Logo_wids2024.png'
+                    src='/assets/navbar/Logo_wids2024.webp'
                     alt='Imagen de evento'
                     className='max-h-60 w-3/5 content-center lg:ml-40'
                 />
