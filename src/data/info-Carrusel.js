@@ -1,15 +1,6 @@
 export let infoImages = [
 	{
 		id: "1",
-		url: "/assets/images-carrusel/NextGen.webp",
-		title: "NEXT GEN",
-		date: "28 de Junio, 2024",
-		place: "Guayaquil",
-		uni : "ESPOL",
-		dateTimer:'June 28, 2024 00:00:00'
-	},
-	{
-		id: "2",
 		url: "/assets/images-carrusel/imagen1.webp",
 		title: "CONFERENCIA",
 		date: "13 de Julio, 2024",
@@ -17,6 +8,15 @@ export let infoImages = [
 		uni : "ESPOL",
 		dateTimer:'July 13, 2024 00:00:00',
 		linkform :'https://forms.gle/BnU5kCFcho3m4f4Y8'
+	},
+	{
+		id: "2",
+		url: "/assets/images-carrusel/NextGen.webp",
+		title: "NEXT GEN",
+		date: "28 de Junio, 2024",
+		place: "Guayaquil",
+		uni : "ESPOL",
+		dateTimer:'June 28, 2024 00:00:00'
 	},
 	{
 		id: "3",
