@@ -35,7 +35,7 @@ export const Sponsors_Cola = {
         {
             "name": "BANCO GUAYAQUIL",
             "location": "",
-            "website": "https://www.instagram.com/papelesa_ec/",
+            "website": "https://www.bancoguayaquil.com/",
             "logo": "/assets/sponsors/banco-guayaquil-logo.webp"
         },
     ]
