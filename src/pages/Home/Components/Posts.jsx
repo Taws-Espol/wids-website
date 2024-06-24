@@ -32,7 +32,7 @@ export default function Posts() {
   return (
     <>
       <div className='flex flex-col w-full place-content-center place-items-center'>
-        <div className='flex flex-row !place-content-start !justify-start !place-items-start flex-wrap min-w-[360px]'>
+        <div className='flex flex-row !place-content-start !justify-start !place-items-start flex-wrap min-w-[360px] mb-10'>
           <ProfileCard profileinfo={Instagrams.profile}/>
         </div>
         <div className='flex justify-center items-center flex-wrap min-w-[360px] gap-5 mb-20'>
