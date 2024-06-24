@@ -21,18 +21,6 @@ export const Sponsors_Cola = {
             "logo": "/assets/sponsors/datil.webp"
         },
         {
-            "name": "TELCONET LATAM",
-            "location": "",
-            "website": "https://www.telconet.net/",
-            "logo": "/assets/sponsors/logo-telconetlatam-retina.webp"
-        },
-        {
-            "name": "PAPELESA",
-            "location": "",
-            "website": "https://www.instagram.com/papelesa_ec?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-            "logo": "/assets/sponsors/papelesa.png"
-        },
-        {
             "name": "BANCO GUAYAQUIL",
             "location": "",
             "website": "https://www.bancoguayaquil.com/",
@@ -40,3 +28,16 @@ export const Sponsors_Cola = {
         },
     ]
 }
+
+// {
+//     "name": "TELCONET LATAM",
+//     "location": "",
+//     "website": "https://www.telconet.net/",
+//     "logo": "/assets/sponsors/logo-telconetlatam-retina.webp"
+// },
+// {
+//     "name": "PAPELESA",
+//     "location": "",
+//     "website": "https://www.instagram.com/papelesa_ec?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+//     "logo": "/assets/sponsors/papelesa.png"
+// },
