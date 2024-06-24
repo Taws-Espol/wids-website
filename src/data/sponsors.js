@@ -15,10 +15,10 @@ export const Sponsors_Cola = {
     ],
     sponsors:[
         {
-            "name": "BOOTCAMP ESPOL",
+            "name": "DATIL",
             "location": "",
             "website": "",
-            "logo": "/assets/sponsors/BOOTCAMPESPOL.webp"
+            "logo": "/assets/sponsors/datil.webp"
         },
     ]
 }
