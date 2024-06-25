@@ -4,7 +4,7 @@ import { Tooltip } from "@material-tailwind/react";
 import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
-export function ConferenceContainer({ edicionData }) {
+export function ConferenceContainer({ edicionData, campo= "conferencistas" }) {
     const [active, setActive] = useState('Cronograma');
     const [conferenceActive, setConferenceActive] = useState(null);
 
@@ -63,7 +63,7 @@ export function ConferenceContainer({ edicionData }) {
                     </div>
                 )}
                 {edicionData &&
-                    edicionData.conferencistas.map((conferencista, index) => (
+                    edicionData[campo].map((conferencista, index) => (
                         <ProfileCard
                             key={index}
                             conferencista={conferencista}

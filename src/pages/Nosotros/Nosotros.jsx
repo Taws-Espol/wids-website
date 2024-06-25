@@ -1,6 +1,9 @@
-import  AboutUsCard  from "./Components/AboutUsCard";
+import AboutUsCard from "./Components/AboutUsCard";
 import AnimatedSection from "./../../shared/AnimatedSection";
+import { ConferenceContainer } from "./../Conferencistas/Components/ConferencesContainer";
+import { ediciones } from "./../../data/ediciones";
 function Nosotros() {
+  const edicionData = ediciones.find((edicion) => edicion.edicion == 2024);
   return (
     <>
       <AnimatedSection>
@@ -23,7 +26,7 @@ function Nosotros() {
               className=" flex-grow md:w-1/2 px-5 grid
               place-content-center place-items-center"
             >
-              <AboutUsCard/>
+              <AboutUsCard />
             </div>
             <div className="flex-grow md:w-1/2 pl-5 pr-10 grid place-content-center place-items-center">
               <p className="!text-justify md:text-left text-xs sm:text-base md:text-lg lg:text-xl xl:text-xl font-acumin">
@@ -40,6 +43,22 @@ function Nosotros() {
             </div>
           </div>
         </section>
+        <div className="w-full flex flex-col place-content-center place-items-center">
+          <p className="font-acumin font-bold text-primary-dark-green text-5xl pb-10">
+            Embajadoras
+          </p>
+          <div className="w-3/4 mb-10 flex place-content-center place-items-center">
+              <ConferenceContainer edicionData={edicionData} campo="embajadoras" />
+            </div>
+        </div>
+        <div className="w-full flex flex-col place-content-center place-items-center my-20">
+          <p className="font-acumin font-bold text-primary-dark-green text-5xl pb-10">
+            Coembajadoras
+          </p>
+          <div className="w-3/4 mb-10 flex place-content-center place-items-center">
+              <ConferenceContainer edicionData={edicionData} campo="coembajadoras" />
+            </div>
+        </div>
       </AnimatedSection>
     </>
   );

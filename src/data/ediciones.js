@@ -299,6 +299,12 @@ export const ediciones = [
 				imageName: "ysabelatiencia.webp"
 			}
 		],
+		embajadoras: [
+
+		],
+		coembajadoras : [
+			
+		]
 	},
 	{
 		edicion: "2021",
@@ -529,6 +535,12 @@ export const ediciones = [
 		],
 		talleres: [
 		],
+		embajadoras: [
+
+		],
+		coembajadoras : [
+			
+		]
 	},
 	{
 		edicion: "2022",
@@ -685,8 +697,6 @@ export const ediciones = [
 				linkeding: "https://www.linkedin.com/in/nicoleagilap/",
 				info: "Estudiante de la carrera de Ingeniería en Ciencias Computacionales en ESPOL, miembro activo del Grupo de Investigación de Tecnologías Web, Móviles y Ciencia de Datos (TAWS) y ayudante de investigación del Laboratorio de Visión y Robótica de la Facultad de Ingeniería en Electricidad y Computación donde ha trabajado en proyecto aplicados a AgTech. Actualmente trabaja como asistente en el Departamento de Investigación en BioDynamics. Sus intereses de investigación incluyen la Visión por Computador y la Inteligencia Artificial."
 			}
-
-
 		],
 		talleres: [
 			{
@@ -714,6 +724,12 @@ export const ediciones = [
 				imageName: "Katherine_Parrales.webp"
 			}
 		],
+		embajadoras: [
+
+		],
+		coembajadoras : [
+			
+		]
 	},
 	{
 		edicion: "2023",
@@ -915,6 +931,12 @@ export const ediciones = [
 				imageName: "yissek.webp"
 			}
 		],
+		embajadoras: [
+
+		],
+		coembajadoras : [
+			
+		]
 	},
 	{
 		edicion: "2024",
@@ -927,7 +949,7 @@ export const ediciones = [
 				place: "Guayaquil",
 				work: "Pycca (Analista de riesgos), ESPOL (Asistente de investigación económica)",
 				schedule: "",
-				imageName: "CyndyCulanata.webp",
+				imageName: "CyndyCunalata.webp",
 				linkeding: "http://linkedin.com/in/cindy-cunalata-soledispa-94541a143",
 				x: "",
 				info: "Cindy Cunalata Soledispa es una economista experta en investigación económica y riesgo de crédito. Domina Stata, Python, R y Power BI. Apasionada por el análisis de datos para la toma de decisiones, está comprometida con la excelencia y el desarrollo económico."
@@ -1056,6 +1078,74 @@ export const ediciones = [
 				info: ""
 			}
 		],
+		embajadoras: [
+			{
+				title: "",
+				name: "Carmen Vaca Ruiz",
+				place: "ESPOL",
+				work: "Data Driven Decisions",
+				schedule: "",
+				imageName: "carmenVacaRuiz.webp",
+				linkeding: "https://www.linkedin.com/in/carmen-vaca-ruiz/",
+				x: "",
+				info: ""
+			},			{
+				title: "",
+				name: "Cristina Abad",
+				place: "ESPOL",
+				work: "Professora e investigadora",
+				schedule: "",
+				imageName: "cristinaAbad.webp",
+				linkeding: "https://www.linkedin.com/in/estefanialozano11/",
+				x: "",
+				info: ""
+			},
+			{
+				title: "",
+				name: "Adriana Collaguazo",
+				place: "ESPOL",
+				work: "Professora e investigadora",
+				schedule: "",
+				imageName: "Adriana Collaguazo.webp",
+				linkeding: "https://www.linkedin.com/in/adriana-collaguazo-355334138/",
+				x: "",
+				info: ""
+			}
+		],
+		coembajadoras : [
+			{
+				title: "",
+				name: "Andrea Adelina Mero Plaza",
+				place: "ESPOL",
+				work: "Investigadora Ad Honorem",
+				schedule: "",
+				imageName: "AndreaMero.webp",
+				linkeding: "https://www.linkedin.com/in/andrea-adelina-mero-plaza-522011b0/",
+				x: "",
+				info: "Desarrolladora Fullstack y analista de datos con amplia experiencia en aprendizaje profundo, aprendizaje automático, desarrollo web y análisis de datos. Su diversa experiencia incluye tutoría en aprendizaje automático, participación en hackatones y contribución a importantes proyectos de investigación."
+			},			{
+				title: "",
+				name: "Marlene Cordova",
+				place: "ESPOL",
+				work: "Investigadora Ad Honorem",
+				schedule: "",
+				imageName: "MarleneCordova.webp",
+				linkeding: "https://www.linkedin.com/in/marlene-cordova-ingenieria-civil/",
+				x: "",
+				info: ""
+			},
+			{
+				title: "",
+				name: "Samira Carrillo",
+				place: "ESPOL",
+				work: "Estudiante de economía",
+				schedule: "",
+				imageName: "SamiraCarrillo.webp",
+				linkeding: "https://www.linkedin.com/in/samira-carrillo/",
+				x: "",
+				info:"Samira Carrillo es estudiante de economía con interés en Ciencia de Datos e Inteligencia Artificial. Cursa materias como Big Data y visualización de datos. Su interés por la programación la llevó a unirse a un club, mejorando sus habilidades. Es responsable y dedicada en todos sus esfuerzos."
+			}
+		]
 	},
 ];
 
@@ -1070,3 +1160,5 @@ export const ediciones = [
 //	x: "",
 //	info: ""
 //},
+
+// Embajadora y Coembajadoras por el momento van a estar 
