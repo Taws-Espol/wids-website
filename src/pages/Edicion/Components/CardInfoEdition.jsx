@@ -33,7 +33,7 @@ export function CardInfoEdition({ type, evento, year, index }) {
             </div>
             <div className="flex place-content-center place-items-center first:gap-2 text-justify w-1/6 max-sm:w-full min-w-44">
                 <img src="/assets//Eventos/Datathon/reloj.png" alt="reloj" className="max-h-5 aspect-square object-contain shadow-2xl" />
-                <p>{evento.schedule}</p>
+                <p className='ml-1'>{evento.schedule}</p>
             </div>
         </div>
     );

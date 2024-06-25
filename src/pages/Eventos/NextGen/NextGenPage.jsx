@@ -2,12 +2,17 @@ import { NextGenInfo } from "./../../../data/Eventos/NextGen";
 import AnimatedSection from "./../../../shared/AnimatedSection";
 import { CardRequirement } from "./Components/CardRequirements";
 import { ColBenef } from "./Components/ColBene";
+import {CardInfoEdition} from "./../../Edicion/Components/CardInfoEdition";
+import { ediciones } from "./../../../data/ediciones";
 function NextGen() {
     const div1 = NextGenInfo[0];
     const text1 = div1.info[0].split("-");
     const { benefits } = NextGenInfo[1];
     const { title, requirements } = NextGenInfo[2];
     const { alt, link_image, info } = NextGenInfo[3];
+
+	const edicionData = ediciones.find((edicion) => edicion.edicion == 2024);
+
     return (
         <AnimatedSection>
             <div className="w-full flex flex-col place-content-center place-items-center pb-10 font-acumin select-none">
@@ -104,7 +109,18 @@ function NextGen() {
                         </div>
                     </div>
                 </div>
-            </div></AnimatedSection>
+            </div>
+            <div className={`flex place-content-center place-items-center flex-col my-5 gap-10`}>
+                    <p className="font-acumin text-primary-dark-green font-bold text-5xl">
+                        Talleristas
+                    </p>
+                {edicionData &&
+                    edicionData.talleres.map((evento, index) => (
+                        <CardInfoEdition key={index} type='Talleres' evento={evento} year={2024} index={index} />
+                    ))
+                }
+            </div>
+        </AnimatedSection>
     );
 }
 

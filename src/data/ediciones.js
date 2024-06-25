@@ -1022,6 +1022,39 @@ export const ediciones = [
 			}
 		],
 		talleres: [
+			{
+				title: "De las Olas a los Datos: Cómo la Ciencia de Datos Revolucionó mi Vida Profesional",
+				name: "Kelly Denisse Mendoza Camino",
+				place: "ESPOL",
+				work: "Científico de Datos / Ing. Oceanográfica",
+				schedule: " 09:00 - 10:00",
+				imageName: "KellyMendoza.webp",
+				linkeding: "https://www.linkedin.com/in/kelly-mendoza-camino-2082ab153/",
+				x: "",
+				info: ""
+			},
+			{
+				title: "Estadística básica con visualizaciones",
+				name: "Samira Isabel Carrillo Ríos",
+				place: "WIDS-ESPOL",
+				work: "",
+				schedule: " 10:00 - 11:00",
+				imageName: "SamiraCarrillo.webp",
+				linkeding: "www.linkedin.com/in/samira-carrillo",
+				x: "",
+				info: ""
+			},
+			{
+				title: "The Inner Development Goals within the Tech Industry Leadership",
+				name: "Estefania Lozano Jara",
+				place: "SomosKolibri",
+				work: "MBA Ing. en computación Life coach",
+				schedule: " 11:00 - 12:00",
+				imageName: "EstefaniaJara.webp",
+				linkeding: "https://www.linkedin.com/in/estefanialozano11/",
+				x: "",
+				info: ""
+			}
 		],
 	},
 ];
