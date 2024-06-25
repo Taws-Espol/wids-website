@@ -112,7 +112,7 @@ function NextGen() {
             </div>
             <div className={`flex place-content-center place-items-center flex-col my-5 gap-10`}>
                     <p className="font-acumin text-primary-dark-green font-bold text-5xl">
-                        Talleristas
+                        Cromograma
                     </p>
                 {edicionData &&
                     edicionData.talleres.map((evento, index) => (
