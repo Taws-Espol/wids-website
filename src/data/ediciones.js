@@ -1132,7 +1132,7 @@ export const ediciones = [
 				imageName: "MarleneCordova.webp",
 				linkeding: "https://www.linkedin.com/in/marlene-cordova-ingenieria-civil/",
 				x: "",
-				info: ""
+				info: "Marlene Cordova es una ingeniera civil graduada de la Escuela Superior Politécnica del Litoral en Guayaquil, Ecuador. Ha trabajado como Trainee de proyectos en la Sociedad Nacional de Galapagos (SONGA) y como pasante en Interagua Ecuador. Sus habilidades incluyen gestión de proyectos, modelado BIM, hidráulica, y tratamiento de aguas. Además, ha recibido reconocimientos por su mérito en la investigación y ha participado en diversos concursos y hackathons. Actualmente, es investigadora Ad Honorem en la Escuela Superior Politécnica del Litoral (ESPOL) y está en busca de nuevas oportunidades laborales en el campo de la ingeniería civil."
 			},
 			{
 				title: "",
