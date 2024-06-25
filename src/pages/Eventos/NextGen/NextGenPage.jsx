@@ -4,6 +4,7 @@ import { CardRequirement } from "./Components/CardRequirements";
 import { ColBenef } from "./Components/ColBene";
 import {CardInfoEdition} from "./../../Edicion/Components/CardInfoEdition";
 import { ediciones } from "./../../../data/ediciones";
+import {ConferenceContainer} from "./../../Conferencistas/Components/ConferencesContainer";
 function NextGen() {
     const div1 = NextGenInfo[0];
     const text1 = div1.info[0].split("-");
@@ -108,6 +109,14 @@ function NextGen() {
         max-lg:min-w-[600px] max-lg:h-[400px]" />
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="flex place-content-center place-items-center flex-col my-5 gap-10">
+                <p className="font-acumin text-primary-dark-green font-bold text-5xl">
+                        Talleristas
+                    </p>
+                <div className="w-3/4 mb-10">
+                    <ConferenceContainer edicionData={edicionData} campo="talleres" />
                 </div>
             </div>
             <div className={`flex place-content-center place-items-center flex-col my-5 gap-10`}>

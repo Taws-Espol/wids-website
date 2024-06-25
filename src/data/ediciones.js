@@ -1057,14 +1057,14 @@ export const ediciones = [
 			},
 			{
 				title: "Estadística básica con visualizaciones",
-				name: "Samira Isabel Carrillo Ríos",
-				place: "WIDS-ESPOL",
-				work: "",
-				schedule: " 10:00 - 11:00",
+				name: "Samira Carrillo",
+				place: "ESPOL",
+				work: "Estudiante de economía",
+				schedule: "",
 				imageName: "SamiraCarrillo.webp",
-				linkeding: "www.linkedin.com/in/samira-carrillo",
+				linkeding: "https://www.linkedin.com/in/samira-carrillo/",
 				x: "",
-				info: ""
+				info:"Samira Carrillo es estudiante de economía con interés en Ciencia de Datos e Inteligencia Artificial. Cursa materias como Big Data y visualización de datos. Su interés por la programación la llevó a unirse a un club, mejorando sus habilidades. Es responsable y dedicada en todos sus esfuerzos."
 			},
 			{
 				title: "The Inner Development Goals within the Tech Industry Leadership",
