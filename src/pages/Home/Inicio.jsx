@@ -19,9 +19,11 @@ function Inicio() {
                                 CONFERENCIA
                             </h1>
                         </div>
-                        <div className="flex place-content-center place-items-center">
-                            <Infos/>
-                        </div>
+                        <AnimatedSection>
+                            <div className="flex place-content-center place-items-center">
+                                <Infos/>
+                            </div>
+                        </AnimatedSection>
                     </div>
                 </section>
             </AnimatedSection>
