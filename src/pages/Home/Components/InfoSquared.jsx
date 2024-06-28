@@ -4,7 +4,7 @@ export function InfoSquared({ number, text, color }) {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
-        const duration = 1000; 
+        const duration = 2500; 
         const end = typeof number === 'string' && number.startsWith('+') ? parseInt(number.slice(1)) : number;
         if (end === 0) return;
 
