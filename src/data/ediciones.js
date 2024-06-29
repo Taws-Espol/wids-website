@@ -946,8 +946,8 @@ export const ediciones = [
 			{
 				title: "Evaluación de la alfabetización bursátil en jóvenes profesionales ecuatorianos: hallazgos y retos para el desarrollo del mercado de valores",
 				name: "Cindy Samantha Cunalata Soledispa",
-				place: "Guayaquil",
-				work: "Pycca (Analista de riesgos), ESPOL (Asistente de investigación económica)",
+				place: "Pycca",
+				work: "Analista de riesgos",
 				schedule: "",
 				imageName: "CyndyCunalata.webp",
 				linkeding: "http://linkedin.com/in/cindy-cunalata-soledispa-94541a143",
@@ -1096,7 +1096,7 @@ export const ediciones = [
 				work: "Professora e investigadora",
 				schedule: "",
 				imageName: "cristinaAbad.webp",
-				linkeding: "https://www.linkedin.com/in/estefanialozano11/",
+				linkeding: "https://www.linkedin.com/in/cristina-abad-40ab352/",
 				x: "",
 				info: ""
 			},

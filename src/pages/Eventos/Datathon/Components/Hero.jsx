@@ -18,16 +18,6 @@ export default function Hero({ title, link }) {
           >
             {title}
           </h2>
-          <div className="flex text-lg  justify-start">
-            <button
-              className="text-white bg-green-900 whitespace-nowrap select-none
-                rounded-3xl px-20 py-5 text-center font-acumin font-medium
-                max-md:text-lg  text-3xl"
-              onClick={() => window.open(link, "_blank")}
-            >
-              Registrate aquí
-            </button>
-          </div>
         </div>
 
         <div className="flex justify-center">
