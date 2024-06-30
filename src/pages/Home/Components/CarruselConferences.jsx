@@ -67,7 +67,7 @@ export default function CarruselConferences() {
             <div className="absolute inset-0">
                 <div className="h-[200px] bg-primary-dark-green"></div>
                 <div className="h-[350px] bg-white"></div>
-                <div className="h-[100px] bg-primary-dark-green mb-10"></div>
+                <div className="mt-4 h-[100px] bg-primary-dark-green mb-10"></div>
             </div>
 
             <div className="relative w-3/4 m-auto font-acumin ">
