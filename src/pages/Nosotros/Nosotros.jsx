@@ -48,7 +48,7 @@ function Nosotros() {
             Embajadoras
           </p>
           <div className="w-3/4 mb-10 flex place-content-center place-items-center">
-              <ConferenceContainer edicionData={edicionData} campo="embajadoras" />
+              <ConferenceContainer edicionData={edicionData} campo="embajadoras" div_principal="div_embajadoras" />
             </div>
         </div>
         <div className="w-full flex flex-col place-content-center place-items-center my-20">
@@ -56,7 +56,7 @@ function Nosotros() {
             Coembajadoras
           </p>
           <div className="w-3/4 mb-10 flex place-content-center place-items-center">
-              <ConferenceContainer edicionData={edicionData} campo="coembajadoras" />
+              <ConferenceContainer edicionData={edicionData} campo="coembajadoras" div_principal="div_coembajadoras"/>
             </div>
         </div>
       </AnimatedSection>

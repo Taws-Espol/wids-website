@@ -18,7 +18,7 @@ export const Sponsors_Cola = {
             "name": "DATIL",
             "location": "",
             "website": "https://datil.dev/#introduccion",
-            "logo": "/assets/sponsors/datil.webp"
+            "logo": "/assets/sponsors/datil.png"
         },
         {
             "name": "BANCO GUAYAQUIL",

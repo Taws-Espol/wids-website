@@ -4,7 +4,7 @@ import { Tooltip } from "@material-tailwind/react";
 import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
-export function ConferenceContainer({ edicionData, campo = "conferencistas" }) {
+export function ConferenceContainer({ edicionData, campo = "conferencistas",div_principal="details-div" }) {
     const [conferenceActive, setConferenceActive] = useState(null);
     const [active, setActive] = useState('Cronograma');
     const detailsDivRef = useRef(null); 
@@ -15,7 +15,7 @@ export function ConferenceContainer({ edicionData, campo = "conferencistas" }) {
             if (detailsDivRef.current) {
                 detailsDivRef.current.scrollTop = 0; 
             }
-            document.getElementById("details-div").scrollIntoView({ behavior: 'smooth' });
+            document.getElementById(div_principal).scrollIntoView({ behavior: 'smooth' });
         }, 0);
     };
 
@@ -35,7 +35,7 @@ export function ConferenceContainer({ edicionData, campo = "conferencistas" }) {
         <>
             <div className="font-acumin flex flex-row place-content-center place-items-center gap-10 flex-wrap">
                 {conferenceActive && (
-                    <div id="details-div" className="flex flex-row flex-wrap place-content-center place-items-center w-full gap-10 my-20 py-10 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hover:shadow-2xl">
+                    <div id={div_principal} className="flex flex-row flex-wrap place-content-center place-items-center w-full gap-10 my-20 py-10 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 hover:shadow-2xl">
                         <img src={image} alt="Conferencista" className="h-96 w-96 max-sm:w-80 max-sm:h-80 object-cover rounded-3xl" />
                         <div className="flex flex-col h-[384px] w-[800px] max-sm:w-[350px] justify-center align-middle rounded-xl p-10 gap-8">
                             <div className="flex flex-col max-sm:mt-10">

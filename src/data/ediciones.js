@@ -1088,7 +1088,7 @@ export const ediciones = [
 				imageName: "carmenVacaRuiz.webp",
 				linkeding: "https://www.linkedin.com/in/carmen-vaca-ruiz/",
 				x: "",
-				info: ""
+				info: "Carmen Vaca es profesora e investigadora en ESPOL, donde también dirige los Coding Bootcamps. Es ex alumna de Fulbright con especialidades en ciencia de datos, estrategia de datos y análisis de negocios. Posee experiencia en minería de datos espaciales, análisis de redes sociales y seguimiento de indicadores socioeconómicos urbanos a través de redes sociales. Tiene estudios en la Saïd Business School de la Universidad de Oxford y Stanford University. En ESPOL, lleva trabajando desde mayo de 2021, liderando decisiones basadas en datos y diseñando cursos para los Coding Bootcamps. También ha trabajado como investigadora en el Politecnico di Milano, el Instituto Max Planck para Sistemas de Software y Yahoo!, centrándose en el análisis de redes sociales, patrones temporales en la actividad de usuarios y computación urbana con datos de redes sociales. Ha participado en varios proyectos de investigación y publicaciones en revistas científicas y conferencias internacionales."
 			},			{
 				title: "",
 				name: "Cristina Abad",
@@ -1098,7 +1098,7 @@ export const ediciones = [
 				imageName: "cristinaAbad.webp",
 				linkeding: "https://www.linkedin.com/in/cristina-abad-40ab352/",
 				x: "",
-				info: ""
+				info: "Cristina Abad es profesora e investigadora en la Escuela Superior Politécnica del Litoral (ESPOL), donde ha trabajado durante más de 19 años. Se especializa en sistemas distribuidos, almacenamiento de datos, Big Data, redes y seguridad informática. Cristina tiene un doctorado y una maestría en Ciencias de la Computación de la Universidad de Illinois en Urbana-Champaign. Ha trabajado como investigadora en el NCSA y Yahoo, centrándose en la caracterización de cargas de trabajo de HDFS y modelado de Big Data. Ha sido galardonada con el Google Faculty Research Award y la Computer Science Excellence Fellowship, y es autora de numerosas publicaciones y proyectos de investigación reconocidos a nivel internacional."
 			},
 			{
 				title: "",
@@ -1109,7 +1109,7 @@ export const ediciones = [
 				imageName: "Adriana Collaguazo.webp",
 				linkeding: "https://www.linkedin.com/in/adriana-collaguazo-355334138/",
 				x: "",
-				info: ""
+				info: "Adriana Collaguazo es profesora e investigadora en la Escuela Superior Politécnica del Litoral (ESPOL) en Ecuador, donde ha trabajado desde octubre de 2015. Es miembro del grupo de investigación ReDIT y tiene una maestría en Sistemas de Información de Gestión por la ESPOL, obtenida en 2014. Antes de unirse a ESPOL, trabajó en Telconet LATAM desde 2004 hasta 2015, donde se enfocó en el desarrollo de software y bases de datos para la automatización de datos MPLS. Adriana ha obtenido varias certificaciones, incluida la de Trabajador Remoto por HRGlobalDay en junio de 2024 y la de Gestor para la Transformación Digital en Mipymes por ESPOL en febrero de 2024."
 			}
 		],
 		coembajadoras : [
