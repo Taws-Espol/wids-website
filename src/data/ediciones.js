@@ -974,7 +974,7 @@ export const ediciones = [
 				imageName: "Maria belen.webp",
 				linkeding: "https://www.linkedin.com/in/mar%C3%ADa-bel%C3%A9n-rojas-arguello-173a63172",
 				x: "",
-				info: "Analista de datos de Ecuador con experiencia en análisis financiero y contabilidad. Actualmente trabaja en el Banco Amazonas como analista de datos desde septiembre de 2022. Anteriormente, ha desempeñado roles en la Superintendencia de Compañías, Valores y Seguros y en Pycca. Posee una maestría en Inteligencia de Negocios y Ciencia de Datos de la Universidad Espíritu Santo, además de una licenciatura en Economía de la Escuela Superior Politécnica del Litoral. Su perfil profesional destaca su capacidad analítica y habilidades en contabilidad y análisis financiero",
+				info: "Analista de datos de Ecuador con experiencia en análisis financiero y contabilidad. Actualmente trabaja en el Banco Bolivariano. Anteriormente, ha desempeñado roles en la Superintendencia de Compañías, Valores y Seguros y en Pycca. Posee una maestría en Inteligencia de Negocios y Ciencia de Datos de la Universidad Espíritu Santo, además de una licenciatura en Economía de la Escuela Superior Politécnica del Litoral. Su perfil profesional destaca su capacidad analítica y habilidades en contabilidad y análisis financiero",
 			},
 			{
 				title: "",
