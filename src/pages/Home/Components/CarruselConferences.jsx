@@ -90,7 +90,7 @@ export default function CarruselConferences() {
                     {conferencistas.map((evento, index) => (
                         <div key={index} >
                             <div className="flex justify-center items-center pt-8 pb-2" >
-                                <img src={path_images + evento.imageName} alt={evento.imageName} className="h-60 w-60 object-contain rounded-full" />
+                                <img src={path_images + evento.imageName} alt={evento.imageName} className="h-60 w-60 object-cover rounded-full" />
                             </div>
                             <div className="text-center overflow-hidden whitespace-normal break-words flex flex-col justify-center items-center pt-2 pb-12">
                                 <p style={{ fontSize: '25px', fontWeight: 'bold', color: 'black' }}>{evento.name}</p>
