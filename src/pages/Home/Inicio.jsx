@@ -24,7 +24,7 @@ function Inicio() {
             </div>
             <AnimatedSection>
               <div className="flex place-content-center place-items-center">
-                <Infos />
+                  <Infos />
               </div>
             </AnimatedSection>
           </div>
@@ -50,9 +50,6 @@ function Inicio() {
       </AnimatedSection>
       <AnimatedSection>
         <Sponsors />
-      </AnimatedSection>
-      <AnimatedSection>
-        <Posts />
       </AnimatedSection>
     </>
   );

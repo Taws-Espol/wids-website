@@ -33,7 +33,7 @@ function Footer() {
     <footer className='font-acumin'>
       <div className={`bg-neutral-grey bg-opacity-20 flex-wrap flex place-content-center place-items-center ${nothome ? 'hidden' : 'block'}`}>
         <img src="/assets/WidsLogoVertical.webp" className="h-96 w-96" />
-        <div className='flex flex-col'>
+        <div className='flex flex-col max-lg:place-content-center max-lg:place-items-center'>
           <h2 className="text-7xl font-acumin font-bold text-primary-dark-green mb-3 max-sm:text-5xl">Contacto</h2>
           <h3 className="text-5xl font-acumin text-primary-dark-green mb-12 !select-text max-sm:text-3xl">wids@fiec.espol.edu.ec</h3>
         </div>

@@ -6,7 +6,7 @@ export default function Sponsors() {
   return (
     <div
       className={`flex flex-col items-center place-content-center 
-		place-items-center p-20 select-none mt-32 font-acumin`}
+		place-items-center select-none mt-32 font-acumin mb-20`}
     >
       <AnimatedSection>
         <div className="flex w-full mb-20">
@@ -37,7 +37,7 @@ export default function Sponsors() {
       <AnimatedSection>
         <p className="text-4xl font-bold">SPONSORS</p>
       </AnimatedSection>
-      <div className="flex gap-10  mt-10 max-sm:flex-col sm:flex-wrap place-content-center place-items-center">
+      <div className="flex gap-10  mt-10 max-sm:flex-col sm:flex-wrap place-content-center place-items-center ">
         {Sponsors_Cola.sponsors.map((sponsor, index) => (
           <Sponsor key={index} {...sponsor} />
         ))}

@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import useIntersectionObserver from "./../../../shared/Hook_scroll";
+
 export default function Sponsor(
   data,
   animationClass = "animate-fadeInFromBottom"
@@ -9,29 +10,21 @@ export default function Sponsor(
   return (
     <div
       ref={cardRef}
-      className={`grid grid-cols-2 font-bold ${
-        isVisible ? `${animationClass}` : "opacity-0"
+      className={`flex w-[350px] items-center font-bold ${
+        isVisible ? animationClass : "opacity-0"
       } select-none`}
     >
-      <div className="m-auto">
+      <div className="flex border-r-2 border-gray-400 !w-[230px] !h-[112px]">
         <img
           src={data.logo}
           alt={data.name}
-          className="!w-56 transition ease-in-out
-            delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+          className="!w-[224px] !h-[112px] transition ease-in-out
+            delay-150 hover:-translate-y-1 hover:scale-110 duration-300 pr-4"
         />
       </div>
-      <div className="ml-4 border-l-2 border-gray-400 pl-4 flex flex-col">
-        <div className="my-auto">
+      <div className="ml-4 pl-4 flex flex-col !w-[120px] !h-[112px] place-content-center place-items-center">
+        <div className="">
           <p>{data.name}</p>
-          {/* <div className="flex flex-row items-center">
-            <img
-              src="/assets/location.webp"
-              alt="Ubicación"
-              className="h-5 w-auto"
-            />
-            <p>{data.location}</p>
-          </div> */}
           {data.website ? (
             <a href={data.website} className="text-pink-500">
               Ir al sitio web
