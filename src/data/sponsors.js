@@ -3,7 +3,7 @@ export const Sponsors_Cola = {
         {
             "name": "BOOTCAMP ESPOL",
             "location": "",
-            "website": "",
+            "website": "https://bootcamps.espol.edu.ec/",
             "logo": "/assets/sponsors/BOOTCAMPESPOL.webp"
         },
     ],
@@ -11,7 +11,7 @@ export const Sponsors_Cola = {
         {
             "name": "DATIL",
             "location": "",
-            "website": "https://datil.dev/#introduccion",
+            "website": "https://datil.com/",
             "logo": "/assets/sponsors/datil.png"
         },
         {

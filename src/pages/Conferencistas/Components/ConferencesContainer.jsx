@@ -42,7 +42,7 @@ export function ConferenceContainer({ edicionData, campo = "conferencistas",div_
                                 <p className="text-primary-dark-green font-bold text-3xl">{conferenceActive.name}</p>
                                 <p className="text-2xl">{conferenceActive.work}, {conferenceActive.place}</p>
                             </div>
-                            <div className="flex place-content-start w-9/10 min-h-[200px] overflow-scroll" ref={detailsDivRef}>  {}
+                            <div className="flex place-content-start w-full min-h-[200px] overflow-y-auto" ref={detailsDivRef}>  {}
                                 <p className="text-justify">
                                     {conferenceActive.info}
                                 </p>
