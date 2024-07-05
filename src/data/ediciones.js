@@ -1108,7 +1108,7 @@ export const ediciones = [
 				imageName: "EstefaniaLozano.webp",
 				linkeding: "https://www.linkedin.com/in/estefanialozano11/",
 				x: "",
-				info: ""
+				info: "Es Ingeniera en Computación con un MBA y certificaciones en análisis de datos y liderazgo personal. Además, es una Life Coach certificada. Actualmente trabaja como Product Owner y Product Manager, además de desempeñarse como Data Architect y Coach de vida. Reside en Guayaquil, Ecuador, y posee una vasta experiencia en desarrollo de software, gestión de datos y liderazgo de equipos. Estefanía ha trabajado en importantes instituciones financieras como Banco Pichincha y Banco del Pacífico, destacándose en la implementación de estrategias de automatización y migración a la nube."
 			}
 		],
 		embajadoras: [
