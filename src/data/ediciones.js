@@ -974,7 +974,7 @@ export const ediciones = [
 				imageName: "KellyMendoza.webp",
 				linkeding: "https://www.linkedin.com/in/kelly-mendoza-camino-2082ab153/",
 				x: "",
-				info: "Kelly Denisse Mendoza Camino es una ingeniera oceanógrafa con conocimiento en dinámica costera y oceánica, así como en el manejo integrado de recursos. Ha trabajado en proyectos de sistemas de alerta temprana para construir resiliencia en Ecuador. Actualmente, es desarrolladora de software en ESPOL y fue técnica de investigación en CIP-RRD. Es graduada en Ingeniería Oceanográfica y Full Stack Developer por la ESPOL."
+				info: "Es una ingeniera oceanográfica y científica de datos con conocimiento en dinámica costera y oceánica, análisis exploratorio de datos y machine learning. Dado su perfil científico y tecnológico, ha trabajado en proyectos de sistemas de alerta temprana para construir resiliencia en Ecuador, así como también en proyectos tecnológicos de Data-Driven y desarrollo de software. Actualmente, es Científica de Datos en ESPOL y fue técnica de riesgos en el Centro Internacional del Pacífico para la Reducción de Riesgo de Desastres (CIP-RRD). Es graduada en Ingeniería Oceanográfica  por la ESPOL  y tiene certificaciones de Data Scientist y Full Stack Developer por Coding Bootcamps ESPOL."
 			},
 			{
 				title: "ScIDiff: Modelo de difusión multi-escala para la generación de trayectorias Lagrangianas",
@@ -1018,7 +1018,7 @@ export const ediciones = [
 				imageName: "Mirian Silva.webp",
 				linkeding: "https://www.linkedin.com/in/mirianfsilva/",
 				x: "",
-				info: "Ingeniera en IA en IBM Research, colaborando con el MIT-IBM Watson AI Lab en Modelos Fundamentales y Generativa IA. Estudia una maestría en Ciencias de la Computación en la Universidad Federal de Minas Gerais y tiene una licenciatura en Matemáticas Computacionales. Sus intereses de investigación incluyen la equidad en IA, privacidad de datos y ética en IA. Es miembro de la comunidad Black in AI y organiza talleres en conferencias de alto nivel. Además, cofundó la comunidad Girls Support Girls en Belo Horizonte, Brasil, promoviendo a mujeres en STEM."
+				info: "AI engineer en IBM Research, colaborando con el MIT-IBM Watson AI Lab en modelos fundamentales y IA generativa. Ella está estudiando una maestría en Ciencias de la Computación en la Universidad Federal de Minas Gerais y tiene una licenciatura en Matemáticas Computacionales. Sus intereses de investigación incluyen equidad en IA, privacidad de datos y ética en IA. Ella es miembro de la comunidad Black in AI y organiza talleres en conferencias de alto perfil. Además, es cofundadora de la comunidad Girls Support Girls en Belo Horizonte, Brasil, promoviendo a las mujeres en STEM."
 			},
 			{
 				title: "Eficiencia Gubernamental: Validación con Reconocimiento de Imágenes",
