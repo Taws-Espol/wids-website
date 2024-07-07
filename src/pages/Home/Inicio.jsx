@@ -6,6 +6,7 @@ import Ubicacion from "./Components/Ubicacion";
 import CarruselConferences from "./Components/CarruselConferences";
 import AnimatedSection from "./../../shared/AnimatedSection";
 import Posts from "./Components/Posts";
+import Programa from "./Components/Programa";
 
 function Inicio() {
   return (
@@ -35,13 +36,9 @@ function Inicio() {
       </AnimatedSection>
       <AnimatedSection>
         <div className="flex flex-col place-content-center place-items-center select-none my-10 font-acumin text-primary-dark-green">
-          <h1 className="font-bold text-5xl">CRONOGRAMA</h1>
+          <h1 className="font-bold text-5xl">PROGRAMA</h1>
           <div style={{ textAlign: "center", marginTop: "20px" }}>
-            <img
-              src="/assets/pronto.webp"
-              alt="Animated GIF"
-              style={{ maxWidth: "100%", height: "auto" }}
-            />
+            <Programa/>
           </div>
         </div>
       </AnimatedSection>
