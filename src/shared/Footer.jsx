@@ -35,7 +35,7 @@ function Footer() {
         <img src="/assets/WidsLogoVertical.webp" className="h-96 w-96" />
         <div className='flex flex-col max-lg:place-content-center max-lg:place-items-center'>
           <h2 className="text-7xl font-acumin font-bold text-primary-dark-green mb-3 max-sm:text-5xl">Contacto</h2>
-          <h3 className="text-5xl font-acumin text-primary-dark-green mb-12 !select-text max-sm:text-3xl">wids@fiec.espol.edu.ec</h3>
+          <h3 className="text-5xl font-acumin text-primary-dark-green mb-12 !select-text max-sm:text-3xl">wids_taws@fiec.espol.edu.ec</h3>
         </div>
       </div>
       <ul className="flex w-full bottom-0 justify-center bg-[rgb(0,65,43)] pt-4 pb-6">
