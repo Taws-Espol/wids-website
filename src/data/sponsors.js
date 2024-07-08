@@ -6,6 +6,18 @@ export const Sponsors_Cola = {
             "website": "https://bootcamps.espol.edu.ec/",
             "logo": "/assets/sponsors/BOOTCAMPESPOL.webp"
         },
+        {
+            "name": "CIAP",
+            "location": "",
+            "website": "https://www.instagram.com/ciap_espol/",
+            "logo": "/assets/sponsors/CIAP.webp"
+        },
+                {
+            "name": "IEEE",
+            "location": "",
+            "website": "https://www.instagram.com/ieee.espol/",
+            "logo": "/assets/sponsors/IEEE.webp"
+        },
     ],
     sponsors:[
         {
@@ -13,6 +25,12 @@ export const Sponsors_Cola = {
             "location": "",
             "website": "https://datil.com/",
             "logo": "/assets/sponsors/datil.png"
+        },
+        {
+            "name": "GOOGLE DEEPMIND",
+            "location": "",
+            "website": "https://deepmind.google/",
+            "logo": "/assets/sponsors/deepMind.webp"
         },
         {
             "name": "BANCO GUAYAQUIL",
