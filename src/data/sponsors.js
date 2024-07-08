@@ -1,12 +1,6 @@
 export const Sponsors_Cola = {
     colaboradores:[
         {
-            "name": "BOOTCAMP ESPOL",
-            "location": "",
-            "website": "https://bootcamps.espol.edu.ec/",
-            "logo": "/assets/sponsors/BOOTCAMPESPOL.webp"
-        },
-        {
             "name": "CIAP",
             "location": "",
             "website": "https://www.instagram.com/ciap_espol/",
@@ -37,6 +31,12 @@ export const Sponsors_Cola = {
             "location": "",
             "website": "https://www.bancoguayaquil.com/",
             "logo": "/assets/sponsors/banco-guayaquil-logo.webp"
+        },
+        {
+            "name": "BOOTCAMP ESPOL",
+            "location": "",
+            "website": "https://bootcamps.espol.edu.ec/",
+            "logo": "/assets/sponsors/BOOTCAMPESPOL.webp"
         },
     ]
 }
