@@ -974,7 +974,7 @@ export const ediciones = [
 				imageName: "SeoyoungOh.png",
 				linkeding: "https://www.linkedin.com/in/seoyoungoh/",
 				x: "",
-				info: "Candidata a doctorado en inteligencia artificial en Sorbonne Université, París. Tiene una maestría en informática de Université Paris-Saclay y ha trabajado en investigación sobre segmentación cerebral utilizando aprendizaje profundo. Fue ingeniera de machine learning en lululab y ha publicado en conferencias internacionales como ICCV. También cuenta con certificaciones en estructuras de datos y aprendizaje automático de Coursera."
+				info: "Candidata a doctorado en inteligencia artificial en Sorbonne Université, París. Tiene una maestría en ciencias computacionales de la Université Paris-Saclay y ha trabajado en investigación sobre segmentación cerebral utilizando aprendizaje profundo. Fue ingeniera de machine learning en lululab y ha publicado en conferencias internacionales como ICCV. Su trabajo reciente ha sido publicado en la conferencia ISBI 2024."
 			},
 			{
 				title: "Optimizando el Análisis de Datos: Cómo la Segmentación de Usuarios Potencia el Entendimiento Profundo",
