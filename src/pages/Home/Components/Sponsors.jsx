@@ -9,8 +9,8 @@ export default function Sponsors() {
 		place-items-center select-none mt-32 font-acumin mb-20`}
     >
       <AnimatedSection>
-        <div className="flex w-full mb-20">
-          <div className="flex !w-full max-xl:flex-col xl:flex-wrap xl:gap-40  xl:ml-36 max-xl:gap-20">
+        <div className="flex w-full place-items-center place-content-center mb-20">
+          <div className="flex !w-full max-xl:flex-col xl:flex-wrap xl:gap-40 max-xl:gap-20">
             <div className="flex flex-col gap-10 place-content-center place-items-center !w2/5">
               <p className="text-4xl font-bold">ORGANIZADOR</p>
               <div className="">
@@ -24,7 +24,7 @@ export default function Sponsors() {
             </div>
             <div className="flex flex-col place-items-center !w2/5">
               <p className="text-4xl font-bold pb-10">COLABORADORES</p>
-              <div className="flex flex-col gap-10">
+              <div className="flex flex-col gap-10 place-content-center place-items-center">
                 {Sponsors_Cola.colaboradores.map((colaborador, index) => (
                   <Sponsor key={index} {...colaborador} />
                 ))}

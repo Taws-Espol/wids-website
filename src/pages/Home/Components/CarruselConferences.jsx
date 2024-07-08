@@ -79,7 +79,7 @@ export default function CarruselConferences() {
         <div className="relative h-[500px]">
             <div className="absolute inset-0">
                 <div className="h-[200px] bg-primary-dark-green"></div>
-                <div className="h-[270px] bg-white"></div>
+                <div className="h-[280px] bg-white"></div>
                 <div className="h-[100px] bg-primary-dark-green mb-10"></div>
             </div>
             <div className="relative w-3/4 m-auto font-acumin ">

@@ -955,15 +955,15 @@ export const ediciones = [
 				info: "Es una especialista en datos en Anheuser-Busch InBev, con una formación en Ingeniería en Ciencias de la Computación por la Escuela Superior Politécnica del Litoral. Tiene experiencia en análisis predictivo, desarrollo de software backend y aprendizaje analítico. Ha trabajado en investigación de Big Data y ha publicado en conferencias de renombre como IEEE. Además, ha obtenido certificaciones en desarrollo ágil y análisis de datos de instituciones prestigiosas como IBM y la Universidad de California, Irvine."
 			},
 			{
-				title: "Aplicación de ciencia de datos en agricultura de precisión: caso banano ecuatoriano",
-				name: "Daniela Roldán Carranza",
-				place: "AB InBev",
-				work: "Graduate Management Trainee",
-				schedule: "09:40 - 10:00",
-				imageName: "Daniela roldan.webp",
-				linkeding: "https://www.linkedin.com/in/danielaroldanc",
+				title: "Importancia de Model Governance en la era de la Ciencia de Datos",
+				name: "Valeria del Pilar Valencia Rentería",
+				place: "Banco Guayaquil",
+				work: "Subgerente de Model Governance y Líder de la Comunidad Analítica",
+				schedule: "13:15 - 13:35",
+				imageName: "ValeriaValenciaRenteria.webp",
+				linkeding: "https://www.linkedin.com/in/valevalenciar",
 				x: "",
-				info: "Economista y científica de datos con experiencia en análisis de datos estadísticos, modelado de datos y SQL. Actualmente, trabaja como Graduate Management Trainee en AB InBev desde agosto de 2023. Anteriormente, fue analista de datos en BANALYTKS - TDL y data manager en la Asociación de Exportadores de Banano del Ecuador. Posee una maestría en Ciencia de Datos de la Escuela Superior Politécnica del Litoral, donde también obtuvo su licenciatura en Economía. Daniela es apasionada por la ciencia de datos y ha liderado proyectos de implementación de agricultura inteligente y cadena de suministro.",
+				info: "Subgerente de Model Governance y Líder de la Comunidad Analítica en Banco Guayaquil, donde ha trabajado durante más de 20 años cumpliendo diversos roles. Es economista con Mención en Gestión Empresarial y Especialización en Finanzas, posee un Magíster en Seguros y Riesgos Financieros y un Diplomado en Big Data y Analítica de Datos. Su experiencia se ha enfocado en riesgos financieros, Analítica Avanzada y Gobernanza de la Información, perfeccionándose a través de diversas capacitaciones, proyectos realizados y un enfoque de trabajo interdisciplinario. Además, Valeria ha obtenido certificaciones en Gobierno de Datos, Fintech y Agile Mindset Management. Es miembro activo de la Rama de Familias de Schoenstatt Ecuador, contribuyendo a los servicios sociales."
 			},
 			{
 				title: "MRI Segmentation of Brainstem Structures using Deep Learning Techniques",
@@ -1021,15 +1021,15 @@ export const ediciones = [
 				info: "Economista con experiencia en investigación económica, desarrollo de metodologías de riesgo de crédito, análisis financiero, estadístico y econométrico. Con conocimientos en lenguajes de programación como Stata, Python y R, así como en la herramienta Power BI. Apasionada por explorar nuevos insights a través de la investigación y el análisis de datos para la toma de decisiones, y bastante comprometida con la excelencia y el desarrollo económico de la sociedad."
 			},
 			{
-				title: "Revolutionizing Data Centers: The Convergence of Data Science and Hardware",
-				name: "María Isabel Mera Collantes",
-				place: "ESPOL",
-				work: "Profesora e Investigadora",
-				schedule: "11:50 - 12:10",
-				imageName: "MariaIsabelMera.webp",
-				linkeding: "https://www.linkedin.com/in/mimera/",
+				title: "Aplicación de ciencia de datos en agricultura de precisión: caso banano ecuatoriano",
+				name: "Daniela Roldán Carranza",
+				place: "AB InBev",
+				work: "Graduate Management Trainee",
+				schedule: "09:40 - 10:00",
+				imageName: "Daniela roldan.webp",
+				linkeding: "https://www.linkedin.com/in/danielaroldanc",
 				x: "",
-				info: "Maria Isabel Mera es profesora en la Facultad de Ingeniería en Electricidad y Computación de ESPOL. Ella fue una de las primeras latinas en recibir su PhD en Ing. Eléctrica en el Center for Cybersecurity de New York University en 2021. Complementó su formación al integrar el grupo de Google encargado del diseño de chips para Inteligencia Artificial. Previamente, como becaria Fulbright, realizó su maestría en Ing. Eléctrica en Stony Brook University. Ella se graduó de la ESPOL, su alma mater, como Ing. en Electrónica y Telecomunicaciones. Sus áreas de interés incluyen seguridad y privacidad de sistemas de inteligencia artificial y cloud, procesadores especializados y sistemas reconfigurables."
+				info: "Economista y científica de datos con experiencia en análisis de datos estadísticos, modelado de datos y SQL. Actualmente, trabaja como Graduate Management Trainee en AB InBev desde agosto de 2023. Anteriormente, fue analista de datos en BANALYTKS - TDL y data manager en la Asociación de Exportadores de Banano del Ecuador. Posee una maestría en Ciencia de Datos de la Escuela Superior Politécnica del Litoral, donde también obtuvo su licenciatura en Economía. Daniela es apasionada por la ciencia de datos y ha liderado proyectos de implementación de agricultura inteligente y cadena de suministro.",
 			},
 			{
 				title: "Licitaciones Transparentes: El Poder del Análisis de Datos para Prevenir Irregularidades",
@@ -1065,16 +1065,16 @@ export const ediciones = [
 				info: "Nicole Gaibor Onofre es economista y analista de datos en el Instituto Nacional de Evaluación Educativa (Ineval) en Quito, Ecuador. Se graduó en Economía y Finanzas de la Escuela Superior Politécnica del Litoral. Ha colaborado en investigaciones con el Club de Aplicación, Desarrollo e Investigaciones Económicas (CADIEC-ESPOL) y la Superintendencia de Compañías. Tiene experiencia como analista de proyectos en la Unidad de Registro Social y ha formado parte del Consejo Cantonal de Protección Integral de Derechos. Nicole cuenta con certificaciones en análisis de datos y un alto nivel de inglés, avalado por EF SET y ECCE de Michigan Language Assessment."
 			},
 			{
-				title: "Importancia de Model Governance en la era de la Ciencia de Datos",
-				name: "Valeria del Pilar Valencia Rentería",
-				place: "Banco Guayaquil",
-				work: "Subgerente de Model Governance y Líder de la Comunidad Analítica",
-				schedule: "13:15 - 13:35",
-				imageName: "ValeriaValenciaRenteria.webp",
-				linkeding: "https://www.linkedin.com/in/valevalenciar",
+				title: "Revolutionizing Data Centers: The Convergence of Data Science and Hardware",
+				name: "María Isabel Mera Collantes",
+				place: "ESPOL",
+				work: "Profesora e Investigadora",
+				schedule: "11:50 - 12:10",
+				imageName: "MariaIsabelMera.webp",
+				linkeding: "https://www.linkedin.com/in/mimera/",
 				x: "",
-				info: "Subgerente de Model Governance y Líder de la Comunidad Analítica en Banco Guayaquil, donde ha trabajado durante más de 20 años cumpliendo diversos roles. Es economista con Mención en Gestión Empresarial y Especialización en Finanzas, posee un Magíster en Seguros y Riesgos Financieros y un Diplomado en Big Data y Analítica de Datos. Su experiencia se ha enfocado en riesgos financieros, Analítica Avanzada y Gobernanza de la Información, perfeccionándose a través de diversas capacitaciones, proyectos realizados y un enfoque de trabajo interdisciplinario. Además, Valeria ha obtenido certificaciones en Gobierno de Datos, Fintech y Agile Mindset Management. Es miembro activo de la Rama de Familias de Schoenstatt Ecuador, contribuyendo a los servicios sociales."
-			}
+				info: "Maria Isabel Mera es profesora en la Facultad de Ingeniería en Electricidad y Computación de ESPOL. Ella fue una de las primeras latinas en recibir su PhD en Ing. Eléctrica en el Center for Cybersecurity de New York University en 2021. Complementó su formación al integrar el grupo de Google encargado del diseño de chips para Inteligencia Artificial. Previamente, como becaria Fulbright, realizó su maestría en Ing. Eléctrica en Stony Brook University. Ella se graduó de la ESPOL, su alma mater, como Ing. en Electrónica y Telecomunicaciones. Sus áreas de interés incluyen seguridad y privacidad de sistemas de inteligencia artificial y cloud, procesadores especializados y sistemas reconfigurables."
+			},
 		],
 		talleres: [
 			{
