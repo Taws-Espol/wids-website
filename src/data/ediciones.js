@@ -1024,7 +1024,7 @@ export const ediciones = [
 				title: "Aplicación de ciencia de datos en agricultura de precisión: caso banano ecuatoriano",
 				name: "Daniela Roldán Carranza",
 				place: "AB InBev",
-				work: "Graduate Management Trainee",
+				work: "Rewards Analyst en TaDa",
 				schedule: "09:40 - 10:00",
 				imageName: "Daniela roldan.webp",
 				linkeding: "https://www.linkedin.com/in/danielaroldanc",
