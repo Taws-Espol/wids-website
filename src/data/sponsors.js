@@ -3,13 +3,13 @@ export const Sponsors_Cola = {
         {
             "name": "CIAP",
             "location": "",
-            "website": "https://www.instagram.com/ciap_espol/",
+            "website": "",
             "logo": "/assets/sponsors/CIAP.webp"
         },
                 {
             "name": "IEEE",
             "location": "",
-            "website": "https://www.instagram.com/ieee.espol/",
+            "website": "",
             "logo": "/assets/sponsors/IEEE.webp"
         },
     ],
@@ -19,12 +19,6 @@ export const Sponsors_Cola = {
             "location": "",
             "website": "https://datil.com/",
             "logo": "/assets/sponsors/datil.png"
-        },
-        {
-            "name": "GOOGLE DEEPMIND",
-            "location": "",
-            "website": "https://deepmind.google/",
-            "logo": "/assets/sponsors/deepMind.webp"
         },
         {
             "name": "BANCO GUAYAQUIL",
@@ -38,18 +32,13 @@ export const Sponsors_Cola = {
             "website": "https://bootcamps.espol.edu.ec/",
             "logo": "/assets/sponsors/BOOTCAMPESPOL.webp"
         },
+    ],
+    importants : [
+        {
+            "name": "GOOGLE DEEPMIND",
+            "location": "",
+            "website": "https://deepmind.google/",
+            "logo": "/assets/sponsors/deepMind.webp"
+        },
     ]
 }
-
-// {
-//     "name": "TELCONET LATAM",
-//     "location": "",
-//     "website": "https://www.telconet.net/",
-//     "logo": "/assets/sponsors/logo-telconetlatam-retina.webp"
-// },
-// {
-//     "name": "PAPELESA",
-//     "location": "",
-//     "website": "https://www.instagram.com/papelesa_ec?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-//     "logo": "/assets/sponsors/papelesa.png"
-// },

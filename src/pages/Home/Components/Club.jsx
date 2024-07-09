@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
-import useIntersectionObserver from "./../../../shared/Hook_scroll";
+import useIntersectionObserver from "../../../shared/Hook_scroll";
 
-export default function Sponsor({ name, website, logo }, animationClass = "animate-fadeInFromBottom") {
+export default function Club({ name, website, logo }, animationClass = "animate-fadeInFromBottom") {
   const cardRef = useRef(null);
   const isVisible = useIntersectionObserver(cardRef, { threshold: 0.1 });
   const style = {
@@ -14,14 +14,14 @@ export default function Sponsor({ name, website, logo }, animationClass = "anima
       ref={cardRef}
       className={`flex font-bold ${isVisible ? animationClass : "opacity-0"} select-none`}
     >
-      <a href={website} className="text-pink-500 w-full h-full flex justify-center items-center">
+      <div href={website} className="text-pink-500 w-full h-full flex justify-center items-center">
         <img
           src={logo}
           alt={name}
           style={style}
           className="transition ease-in-out delay-150 duration-300 hover:-translate-y-1 hover:scale-110"
         />
-      </a>
+      </div>
     </div>
   );
 }

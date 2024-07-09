@@ -42,9 +42,8 @@ function Inicio() {
           </div>
         </div>
       </AnimatedSection>
-      <AnimatedSection>
-        <CarruselConferences />
-      </AnimatedSection>
+        <div className="w-full bg-primary-dark-green h-20">
+        </div>
       <AnimatedSection>
         <Sponsors />
       </AnimatedSection>
