@@ -23,7 +23,18 @@ export function ItemTimeLine({ Evento }) {
             imagen = "/assets/images-cardInfo/Conferencia.webp";
             background_color = "#a2a2ff";
     }
-    console.log(Evento.date)
+    const timeAlignmentClass = Evento.index % 2 === 0 ? 'justify-start min-[1170px]:justify-end' : 'justify-start';
+    const title = Evento.title
+    let titleFirstPart = title;
+    let titleSecondPart = "";
+    if (title.includes(':')) {
+        const splitTitle = title.split(':');
+        if (splitTitle[0].length > 8) {
+            titleFirstPart = splitTitle[0];
+            titleSecondPart = splitTitle[1];
+        }
+    }
+
     return <VerticalTimelineElement
         className="vertical-timeline-element--work"
         contentArrowStyle={{
@@ -31,37 +42,48 @@ export function ItemTimeLine({ Evento }) {
         }}
         contentStyle={{ borderTop: ` 10px solid ${background_color}` }}
         iconStyle={{ background: `${background_color}`, color: '#fff' }}
-        date={Evento.date}
+        date= {Evento.date}
         dateClassName="vertical-timeline-element-date"
     >
-        {Evento.info ? (
-            <>
-                <h3 className="vertical-timeline-element-title text-primary-dark-green font-bold text-3xl">{Evento.title}</h3>
-                {Array.isArray(Evento.info) ? (
-                    Evento.info.map((infoItem, index) => (
-                        <p key={index} className="!text-lg">{infoItem}</p>
-                    ))
-                ) : (
-                        <div className='h-[18.5em]'>
-                            <br/>
-                            <div className='p-4 flex items-center justify-center'>
-                                <img src={imagenConferencista} alt='conferencista' className='h-[12rem] w-[12rem] object-cover rounded-full  ' />
-                            </div>
-                            <div className=' h-100%'>
-                                <p className='align-bottom'>{Evento.info}</p>
-                            </div>
-                        </div>
-                    )}
-                {Evento.time && (
-                    <div className="mt-2 flex flex-row items-center">
-                        <img src="/assets/Eventos/Datathon/reloj.webp" alt="Logo" className="w-8 h-8  mt-[21px] mr-2" />
-                        <p className='!text-2xl'>{Evento.time}</p>
-                    </div>
-                )}
-            </>
-        ) : (
-            <h1 className={`font-bold text-2xl ${value == "Break" ? 'text-primary-violet' : 'text-primary-dark-green'}`}>{Evento.title}</h1>
+        <div className='flex flex-col h-full justify-between'>
+        {Evento.time && (
+            <div className={`pb-5 flex flex-row items-center ${timeAlignmentClass}`}>
+                <img src="/assets/Eventos/Datathon/reloj.webp" alt="Logo" className="w-8 h-8 mr-2" />
+                <p className='!m-0 !text-2xl'>{Evento.time}</p>
+            </div>
         )}
+            <div>
+                {Evento.info ? (
+                    <>
+                        { titleSecondPart ?
+                            <>
+                                <h3 className={`vertical-timeline-element-title text-primary-dark-green font-bold text-[1.7em] text-center`}>{titleFirstPart + ':'}</h3>
+                                <h3 className={`vertical-timeline-element-title text-primary-dark-green font-bold text-[1.7em] text-center`}>{titleSecondPart}</h3>
+                            </>
+                            :
+                            <h3 className={`vertical-timeline-element-title text-primary-dark-green font-bold text-[1.7em] text-center`}>{title}</h3>
+                        }
+                        {Array.isArray(Evento.info) ? (
+                            Evento.info.map((infoItem, index) => (
+                                <p key={index} className="!text-lg">{infoItem}</p>
+                            ))
+                        ) : (
+                                <div className='h-[22em] mt-4'>
+                                    <div className='p-4 flex items-center justify-center'>
+                                        <img src={imagenConferencista} alt='conferencista' className='h-[12rem] w-[12rem] object-cover rounded-full  ' />
+                                    </div>
+                                    <div className='flex flex-col h-100% items-center'>
+                                        <p className='!text-2xl !font-bold '>{Evento.info}</p>
+                                        <p className='text-center !text-xl !mt-3'>{Evento.work}</p>
+                                    </div>
+                                </div>
+                            )}
+                    </>
+                ) : (
+                        <h1 className={`font-bold text-2xl ${value == "Break" ? 'text-primary-violet' : 'text-primary-dark-green'}`}>{Evento.title}</h1>
+                    )}
+            </div>
+        </div>
     </VerticalTimelineElement>
 
 }

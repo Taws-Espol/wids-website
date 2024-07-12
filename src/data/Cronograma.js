@@ -1,101 +1,129 @@
 export let cronograma = {
     Conferencias : [
         {
+            index: 0,
             color:'verde',
             title:'Bienvenida',
-            info:'Carlos Monsalve, Ph.D., Vice Rector de ESPOL',
-            image:'',
+            info:'Carlos Monsalve',
+            image:'DrMonsalve.webp',
+            work: 'Ph.D., Vice Rector de ESPOL',
             time: '09:00 AM',
         },
         {
+            index: 1,
             color:'morado',
             title:'Transformando Empresas con datos e insights',
-            info:'Ysabel Atiencia, Ing., Analista de Datos, AB InBev',
+            info:'Ysabel Atiencia',
             image:'YsabelAtiencia.png',
+            work: 'Ing., Analista de Datos, AB InBev',
             time: '09:20 AM'
         },
         {
+            index: 2,
             color:'celeste',
             title:'Importancia de Model Governance en la era de la Ciecia de Datos',
-            info:'Valeria Valencia, Mgtr., Gobierno de Información y Analítica - Subgerente Model Governance, Banco Guayaquil',
+            info:'Valeria Valencia',
             image:'ValeriaValenciaRenteria.webp',
+            work: 'Subgerente Model Governance, Banco Guayaquil',
             time: '09:40 AM'
         },
         {
+            index: 3,
             color:'verde',
             title:'MRI Segmentation of Brainstem Structures using Deep Learning Techniques',
-            info:'Seoyoung Oh, M.Sc.,Candidata Ph.D., Sorbonne University',
+            info:'Seoyoung Oh',
             image:'SeoyoungOh.png',
+            work: 'M.Sc., Candidata Ph.D., Sorbonne University',
             time: '10:00 AM'
         },
         {
+            index: 4,
             color:'morado',
             title:'Optimizando el Análisis de Datos: Cómo la Segmentación de Usuarios Potencia el Entendimiento Profundo',
-            info:'Viviana Córdova, Lic., Líder de conversión y análisis, Rappi',
+            info:'Viviana Córdova',
             image:'VivianaCordova.webp',
+            work: 'Lic., Líder de conversión y análisis, Rappi',
             time: '10:25 AM'
         },
         {
+            index: 5,
             color:'celeste',
             title:'De las Olas a los Datos: Cómo la Ciencia de Datos Revolucionó mi Vida Profesional',
-            info:'Kelly Mendoza, Ing., Científica de Datos, ESPOL',
+            info:'Kelly Mendoza',
             image:'KellyMendoza.webp',
+            work: 'Ing., Científica de Datos, ESPOL',
             time: '10:45 AM'
         },
         {
+            index: 6,
             color:'verde',
             title:'AI, Academia and Industry: Bridging the Gap Between Theory and Practice',
-            info:'Mirian Silva, M.Sc., AI Engineer, IBM Research/UFMG',
+            info:'Mirian Silva',
             image:'Mirian Silva.webp',
+            work: 'M.Sc., AI Engineer, IBM Research/UFMG',
             time: '11:05 AM'
         },
         {
+            index: 7,
             color:'morado',
             title:'Jóvenes Ecuatorianos y el Mercado de Valores: Desafíos y Oportunidades',
-            info:'Cindy Cunalata, Econ., Analista de Riesgos, Pycca',
+            info:'Cindy Cunalata',
             image:'CindyCunalata.webp',
+            work: 'Econ., Analista de Riesgos, Pycca',
             time: '11:30 AM'
         },
         {
+            index: 8,
             color:'celeste',
             title:'Aplicación de Ciencia de Datos en Agricultura de Precisión: Caso Banano Ecuatoriano',
-            info:'Daniela Roldán, Econ. y M.Sc., Graduate Management Trainee, AB InBev',
+            info:'Daniela Roldán',
             image:'Daniela roldan.webp',
+            work: 'Econ. y M.Sc., Rewards Analyst en TaDa, AB InBev',
             time: '11:50 AM'
         },
         {
+            index: 9,
             color:'verde',
             title:'Licitaciones Transparentes: El Poder del Análisis de Datos para Prevenir Irregularidades',
-            info:'María Belén Rojas, Econ., Analista de Datos, Banco Bolivariano',
+            info:'María Belén Rojas',
             image:'MaríaBelénRojas.webp',
+            work: 'Econ., Analista de Datos, Banco Bolivariano',
             time: '12:10 AM'
         },
         {
+            index: 10,
             color:'morado',
             title:'SciDiff: Modelo de difusión multi-escala para la generación de trayectorias Lagrangianas',
-            info:'María Belén Guaranda, M.Sc., LISN, Universidad Paris-Saclay',
+            info:'María Belén Guaranda',
             image:'MariaBelenGuaranda.webp',
+            work: 'M.Sc., LISN, Universidad Paris-Saclay',
             time: '12:35 AM'
         },
         {
+            index: 11,
             color:'celeste',
             title:'Eficiencia Gubernamental: Validación con Reconocimiento de Imágenes',
-            info:'Nicole Gaibor, Econ., Gobierno',
+            info:'Nicole Gaibor',
             image:'NicoleGaibor.webp',
+            work: 'Econ., Analista de Datos, Ineval',
             time: '12:55 AM'
         },
         {
+            index: 12,
             color:'verde',
             title:'Revolutionizing Data Centers: The Convergence of Data Science and Hardware',
-            info:'María Isabel Mera, Ph.H., Profesora e Investigadora de FIEC, ESPOL',
+            info:'María Isabel Mera',
             image:'MariaIsabelMera.webp',
+            work: 'Ph.H., Profesora e Investigadora de FIEC, ESPOL',
             time: '13:15 AM'
         },
         {
+            index: 13,
             color:'morado',
             title:'Clausura',
-            info:'Carmen Vaca, Ph.D., Profesora de FIEC, ESPOL',
+            info:'Carmen Vaca',
             image:'carmenVacaRuiz.webp',
+            work: 'Ph.D., Profesora de FIEC, ESPOL',
             time: '13:35 AM'
         }
     ],
