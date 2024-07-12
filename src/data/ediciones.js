@@ -1029,7 +1029,7 @@ export const ediciones = [
 				imageName: "Daniela roldan.webp",
 				linkeding: "https://www.linkedin.com/in/danielaroldanc",
 				x: "",
-				info: "Economista y científica de datos con experiencia en análisis de datos estadísticos, modelado de datos y SQL. Actualmente, trabaja como Rewards Analyst en TaDa en AB InBev desde agosto de 2023. Anteriormente, fue analista de datos en BANALYTKS - TDL y data manager en la Asociación de Exportadores de Banano del Ecuador. Posee una maestría en Ciencia de Datos de la Escuela Superior Politécnica del Litoral, donde también obtuvo su licenciatura en Economía. Daniela es apasionada por la ciencia de datos y ha liderado proyectos de implementación de agricultura inteligente y cadena de suministro.",
+				info: "Economista y MsC. en Ciencia de Datos con experiencia en análisis de datos estadísticos, modelado de datos y Python. En agosto de 2023, comenzó como Talento Graduate Management Trainee en el sector de bebidas en AB InBev y actualmente se desempeña como Rewards Analyst en TaDa. Previamente, su incursión en la ciencia de datos provino de su rol como consultora en BANALYTKS y Trade Data Lab, así como de su liderazgo como data manager en la Asociación de Exportadores de Banano del Ecuador. Posee una maestría en Ciencia de Datos de la Escuela Superior Politécnica del Litoral, donde también obtuvo su título de Economista con mención en Gestión Empresarial. Daniela es apasionada por la ciencia de datos y ha liderado proyectos de implementación de agricultura inteligente y cadena de suministro."
 			},
 			{
 				title: "Licitaciones Transparentes: El Poder del Análisis de Datos para Prevenir Irregularidades",
