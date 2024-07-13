@@ -46,7 +46,7 @@ export function ItemTimeLine({ Evento }) {
         dateClassName="vertical-timeline-element-date"
     >
         <div className='flex flex-col h-full justify-between'>
-        {Evento.time && (
+        {!Evento.date && (
             <div className={`pb-5 flex flex-row items-center ${timeAlignmentClass}`}>
                 <img src="/assets/Eventos/Datathon/reloj.webp" alt="Logo" className="w-8 h-8 mr-2" />
                 <p className='!m-0 !text-2xl'>{Evento.time}</p>
@@ -83,6 +83,12 @@ export function ItemTimeLine({ Evento }) {
                         <h1 className={`font-bold text-2xl ${value == "Break" ? 'text-primary-violet' : 'text-primary-dark-green'}`}>{Evento.title}</h1>
                     )}
             </div>
+            {Evento.date && (
+                <div className={`pt-5 flex flex-row items-center ${timeAlignmentClass}`}>
+                    <img src="/assets/Eventos/Datathon/reloj.webp" alt="Logo" className="w-8 h-8 mr-2" />
+                    <p className='!m-0 !text-2xl'>{Evento.time}</p>
+                </div>
+            )}
         </div>
     </VerticalTimelineElement>
 
