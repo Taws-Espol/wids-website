@@ -108,7 +108,7 @@ function Navbar() {
                             Inicio
                         </Link>
                     </li>
-                    {/*<li className={`xl:border-0 xl:font-thin font-black  xl:shadow-none shadow-lg mb-1 relative ${nothome==="cronograma" ? 'underline-offset-8 primary-orange active':''}`}
+                    <li className={`xl:border-0 xl:font-thin font-black  xl:shadow-none shadow-lg mb-1 relative ${nothome==="cronograma" ? 'underline-offset-8 primary-orange active':''}`}
                         onClick={toggle2}>
                         <Link   to='/cronograma'
                             className={`xl:px-8 xl:py-8
@@ -122,7 +122,7 @@ max-xl:hover:bg-primary-orange
 `}>
                             Cronograma
                         </Link>
-                    </li>*/}
+                    </li>
                     <li className={`xl:border-0
                         xl:font-thin font-black
                         xl:shadow-none shadow-lg
