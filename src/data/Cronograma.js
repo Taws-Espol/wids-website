@@ -4,9 +4,9 @@ export let cronograma = {
             index: 0,
             color:'verde',
             title:'Bienvenida',
-            info:'Carlos Monsalve',
-            image:'DrMonsalve.webp',
-            work: 'Ph.D., Vice Rector de ESPOL',
+            info:'Carmen Vaca',
+            image:'carmenVacaRuiz.webp',
+            work: 'Ph.D., Profesora de FIEC, ESPOL',
             time: '09:00 AM',
         },
         {
