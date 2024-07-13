@@ -88,7 +88,7 @@ export let cronograma = {
             info:'María Belén Rojas',
             image:'MaríaBelénRojas.webp',
             work: 'Econ., Analista de Datos, Banco Bolivariano',
-            time: '12:10 AM'
+            time: '12:10 PM'
         },
         {
             index: 10,
@@ -97,7 +97,7 @@ export let cronograma = {
             info:'María Belén Guaranda',
             image:'MariaBelenGuaranda.webp',
             work: 'M.Sc., LISN, Universidad Paris-Saclay',
-            time: '12:35 AM'
+            time: '12:35 PM'
         },
         {
             index: 11,
@@ -106,7 +106,7 @@ export let cronograma = {
             info:'Nicole Gaibor',
             image:'NicoleGaibor.webp',
             work: 'Econ., Analista de Datos, Ineval',
-            time: '12:55 AM'
+            time: '12:55 PM'
         },
         {
             index: 12,
@@ -115,16 +115,16 @@ export let cronograma = {
             info:'María Isabel Mera',
             image:'MariaIsabelMera.webp',
             work: 'Ph.H., Profesora e Investigadora de FIEC, ESPOL',
-            time: '13:15 AM'
+            time: '01:15 PM'
         },
         {
             index: 13,
             color:'morado',
             title:'Clausura',
-            info:'Carmen Vaca',
-            image:'carmenVacaRuiz.webp',
-            work: 'Ph.D., Profesora de FIEC, ESPOL',
-            time: '13:35 AM'
+            info:'Samira Carrillo',
+            image:'SamiraCarrillo.webp',
+            work: 'Estudiante de economía',
+            time: '01:35 PM'
         }
     ],
     Talleres : [
