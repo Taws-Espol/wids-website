@@ -1043,17 +1043,6 @@ export const ediciones = [
 				info: "Analista de datos de Ecuador con experiencia en análisis financiero y contabilidad. Actualmente trabaja en el Banco Bolivariano. Anteriormente, ha desempeñado roles en la Superintendencia de Compañías, Valores y Seguros y en Pycca. Posee una maestría en Inteligencia de Negocios y Ciencia de Datos de la Universidad Espíritu Santo y un título en Economía con mención en Gestión Empresarial de la Escuela Superior Politécnica del Litoral. Su perfil profesional destaca su capacidad analítica y habilidades en contabilidad y análisis financiero.",
 			},
 			{
-				title: "ScIDiff: Modelo de difusión multi-escala para la generación de trayectorias Lagrangianas",
-				name: "María Belén Guaranda",
-				place: "Jumbo Supermarkten",
-				work: "Científica de Datos",
-				schedule: "12:35 - 12:55",
-				imageName: "MariaBelenGuaranda.webp",
-				linkeding: "https://www.linkedin.com/in/belen-guaranda/",
-				x: "",
-				info: "Especialista en inteligencia artificial con experiencia en ciencia de datos y desarrollo de software. Posee un MSc en Inteligencia Artificial de la Université Paris-Saclay y una licenciatura en Ciencias de la Computación de la Escuela Superior Politécnica del Litoral. Ha trabajado como científica de datos en AB-InBev y actualmente en Jumbo Supermarkten. Además, ha realizado pasantías en CERN y contribuciones a proyectos de código abierto. Sus intereses incluyen la aplicación de la IA en la ciencia y la equidad en la inteligencia artificial."
-			},
-			{
 				title: "Eficiencia Gubernamental: Validación con Reconocimiento de Imágenes",
 				name: "Nicole Stephanie Gaibor Onofre",
 				place: "Gobierno",

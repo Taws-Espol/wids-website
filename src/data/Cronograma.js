@@ -91,16 +91,6 @@ export let cronograma = {
             time: '12:10 PM'
         },
         {
-            index: 10,
-            color:'morado',
-            title:'SciDiff: Modelo de difusión multi-escala para la generación de trayectorias Lagrangianas',
-            info:'María Belén Guaranda',
-            image:'MariaBelenGuaranda.webp',
-            work: 'M.Sc., LISN, Universidad Paris-Saclay',
-            time: '12:35 PM'
-        },
-        {
-            index: 11,
             color:'celeste',
             title:'Eficiencia Gubernamental: Validación con Reconocimiento de Imágenes',
             info:'Nicole Gaibor',
