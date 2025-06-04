@@ -25,7 +25,7 @@ function Inicio() {
             </div>
             <AnimatedSection>
               <div className="flex place-content-center place-items-center">
-                  <Infos />
+                <Infos />
               </div>
             </AnimatedSection>
           </div>
@@ -38,12 +38,11 @@ function Inicio() {
         <div className="flex flex-col place-content-center place-items-center select-none my-10 font-acumin text-primary-dark-green">
           <h1 className="font-bold text-5xl">PROGRAMA</h1>
           <div style={{ textAlign: "center", marginTop: "20px" }}>
-            <Programa/>
+            <Programa />
           </div>
         </div>
       </AnimatedSection>
-        <div className="w-full bg-primary-dark-green h-20">
-        </div>
+      <div className="w-full bg-primary-dark-green h-20"></div>
       <AnimatedSection>
         <Sponsors />
       </AnimatedSection>

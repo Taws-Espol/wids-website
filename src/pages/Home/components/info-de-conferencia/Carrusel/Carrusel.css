@@ -1,4 +1,4 @@
-.carrusel-img{
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
+.carrusel-img {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }

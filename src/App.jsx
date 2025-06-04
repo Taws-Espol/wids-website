@@ -14,37 +14,37 @@ import ButtonUp from "./shared/ButtonUp";
 import Datathon from "./pages/Eventos/Datathon/DatathonPage";
 import NextGen from "./pages/Eventos/NextGen/NextGenPage";
 function App() {
-	function NotFound() {
-		return <div>404 Not Found</div>;
-	}
+  function NotFound() {
+    return <div>404 Not Found</div>;
+  }
 
-	return (
-		<>
-			<Router>
-				<Navbar />
-        <div className='-z-1000'>
-				<Routes>
-					<Route exact path='/' element={<Inicio />} />
-					<Route path='/conferencistas' element={<Conferencistas />} />
-					<Route path='/cronograma' element={<Cronograma />} />
-					{/*TODO: Events */}
-					<Route path='/eventos/datathon' element={<Datathon />} />
-					<Route path='/eventos/nextgen' element={<NextGen />} />
-					<Route path='/eventos/ediciones' element={<Editions />} />
-					{/*TODO: Add the component!!! */}
-					<Route path='/eventos/ediciones/2020' element={<Edition />} />
-					<Route path='/eventos/ediciones/2021' element={<Edition />} />
-					<Route path='/eventos/ediciones/2022' element={<Edition />} />
-					<Route path='/eventos/ediciones/2023' element={<Edition />} />
-					<Route path='/nosotros' element={<Nosotros />} />
-					<Route path='*' element={<NotFound />} />
-				</Routes>
+  return (
+    <>
+      <Router>
+        <Navbar />
+        <div className="-z-1000">
+          <Routes>
+            <Route exact path="/" element={<Inicio />} />
+            <Route path="/conferencistas" element={<Conferencistas />} />
+            <Route path="/cronograma" element={<Cronograma />} />
+            {/*TODO: Events */}
+            <Route path="/eventos/datathon" element={<Datathon />} />
+            <Route path="/eventos/nextgen" element={<NextGen />} />
+            <Route path="/eventos/ediciones" element={<Editions />} />
+            {/*TODO: Add the component!!! */}
+            <Route path="/eventos/ediciones/2020" element={<Edition />} />
+            <Route path="/eventos/ediciones/2021" element={<Edition />} />
+            <Route path="/eventos/ediciones/2022" element={<Edition />} />
+            <Route path="/eventos/ediciones/2023" element={<Edition />} />
+            <Route path="/nosotros" element={<Nosotros />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </div>
-				<Footer />
-				<ButtonUp />
-			</Router>
-		</>
-	);
+        <Footer />
+        <ButtonUp />
+      </Router>
+    </>
+  );
 }
 
 export default App;

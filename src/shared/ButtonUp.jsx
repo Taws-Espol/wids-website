@@ -1,34 +1,34 @@
-import { useState, useEffect } from 'react';
-
+import { useState, useEffect } from "react";
 
 const ButtonUp = () => {
-    const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
-    useEffect(() => {
-        const toggleVisibility = () => {
-        if (window.pageYOffset > 40) {
-            setIsVisible(true);
-        } else {
-            setIsVisible(false);
-        }
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 40) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
     };
 
     window.addEventListener("scroll", toggleVisibility);
 
     return () => {
-        window.removeEventListener("scroll", toggleVisibility);
+      window.removeEventListener("scroll", toggleVisibility);
     };
-    }, []);
+  }, []);
 
-    const scrollUp = () => {
-        const c = document.documentElement.scrollTop || document.body.scrollTop;
-        if (c > 0) {
-            window.requestAnimationFrame(scrollUp);
-            window.scrollTo(0, c - c / 10);
-        }
-    };
-    return (
-        <div    className={`  fixed 
+  const scrollUp = () => {
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    if (c > 0) {
+      window.requestAnimationFrame(scrollUp);
+      window.scrollTo(0, c - c / 10);
+    }
+  };
+  return (
+    <div
+      className={`  fixed 
                             flex
                             right-5 bottom-5 
                             w-14 h-14 
@@ -41,14 +41,19 @@ const ButtonUp = () => {
                             cursor-pointer 
                             justify-center items-center
                             transition-all duration-300 ease-in-out
-                            ${isVisible ? 'opacity-100 animate-fadeIn' : 'opacity-0 animate-fadeOut' } `}
-                onClick={scrollUp} style={{ animation: 'pulse 2s infinite' }}>
-            <div className="">
-                <img src="/assets/ButtonUP/icons8-chevron-para-arriba-30 (1).png" alt="" style={{ animation: 'spin 2s linear infinite' }}/>
-            </div>
-        </div>
+                            ${isVisible ? "opacity-100 animate-fadeIn" : "opacity-0 animate-fadeOut"} `}
+      onClick={scrollUp}
+      style={{ animation: "pulse 2s infinite" }}
+    >
+      <div className="">
+        <img
+          src="/assets/ButtonUP/icons8-chevron-para-arriba-30 (1).png"
+          alt=""
+          style={{ animation: "spin 2s linear infinite" }}
+        />
+      </div>
+    </div>
+  );
+};
 
-    );
-}
-
-export default ButtonUp
+export default ButtonUp;

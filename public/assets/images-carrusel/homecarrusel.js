@@ -1,6 +1,6 @@
 export let homeCarrusel = [
-    {
-        id : "1",
-        link : ""
-    },
-]
+  {
+    id: "1",
+    link: "",
+  },
+];
