@@ -20,6 +20,7 @@ export default {
         "primary-violet": "#a2a2ff",
         "primary-dark-green": "#004029",
         "primary-acc-green": "#42a85f",
+        "primary-acc-yellow": "#fecb01",
         "primary-acc-blue": "#009fc9",
         "primary-acc-orange": "#f76902",
         "primary-acc-violet": "#8d73de",
