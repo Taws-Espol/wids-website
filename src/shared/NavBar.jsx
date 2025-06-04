@@ -27,7 +27,7 @@ function Navbar() {
             />
           </Link>
           <div
-            className="xl:hidden rounded-md w-6 items-center mx-6 hover:bg-gray-100"
+            className="xl:hidden rounded-md w-full items-center mx-6 hover:bg-gray-100"
             onClick={toggle}
           >
             <span
@@ -62,8 +62,9 @@ function Navbar() {
               to="/"
               className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] text-center  block"
             >
-              <div className="flex text-center border-b-4 border-primary-acc-green font-bold ">
+              <div className="relative flex items-center justify-center group  hover:text-gray-300">
                 Inicio
+                <div className={`absolute bottom-0 left-1/2 w-full h-1 bg-primary-acc-green transform -translate-x-1/2 transition-all duration-300 ${nothome === "" ? "" : "group-hover:w-[200%]"} `}></div>
               </div>
             </Link>
           </li>
@@ -75,8 +76,9 @@ function Navbar() {
               to="/cronograma"
               className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] text-center  block"
             >
-              <div className="flex text-center border-b-4 border-primary-orange font-bold">
+              <div className="relative flex items-center justify-center group  hover:text-gray-300">
                 Conferencia
+                <div className={`absolute bottom-0 left-1/2 w-full h-1 bg-primary-orange transform -translate-x-1/2 transition-all duration-300   ${nothome === "cronograma" ? "" : "group-hover:w-[200%]"} `}></div>
               </div>
             </Link>
           </li>
@@ -88,8 +90,9 @@ function Navbar() {
               to="/nextgen"
               className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] text-center  block"
             >
-              <div className="flex text-center border-b-4 border-primary-acc-violet font-bold">
+              <div className="relative flex items-center justify-center  group  hover:text-gray-300">
                 Next Gen
+                <div className={`absolute bottom-0 left-1/2 w-full h-1 bg-primary-acc-violet transform -translate-x-1/2 transition-all duration-300  ${nothome === "nextgen" ? "" : "group-hover:w-[200%]"} `}></div>
               </div>
             </Link>
           </li>
@@ -101,8 +104,9 @@ function Navbar() {
               to="/datathon"
               className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] text-center  block"
             >
-              <div className="flex text-center border-b-4 border-primary-acc-yellow font-bold">
+              <div className="relative flex items-center justify-center group hover:text-gray-300">
                 Datathon
+                <div className={`absolute bottom-0 left-1/2 w-full h-1 bg-primary-acc-yellow transform -translate-x-1/2 transition-all duration-300  ${nothome === "datathon" ? "" : "group-hover:w-[200%]"} `}></div>
               </div>
             </Link>
           </li>
@@ -112,10 +116,11 @@ function Navbar() {
           >
             <Link
               to="/nosotros"
-              className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] text-center  block"
+              className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] text-center block"
             >
-              <div className="flex text-center border-b-4 border-primary-acc-blue font-bold">
+              <div className="relative flex items-center justify-center group  hover:text-gray-300">
                 Nosotros
+                <div className={`absolute bottom-0 left-1/2 w-full h-1 bg-primary-acc-blue transform -translate-x-1/2 transition-all duration-300  ${nothome === "nosotros" ? "" : "group-hover:w-[200%]"} `}></div>
               </div>
             </Link>
           </li>
