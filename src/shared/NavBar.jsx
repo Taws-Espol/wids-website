@@ -21,9 +21,9 @@ function Navbar() {
         <div className="flex items-center bg-[rgb(252,252,252)] justify-between">
           <Link to="/">
             <img
-              src="/assets/navbar/Logo_wids2024.webp"
+              src="/assets/navbar/Logo_wids2024SG.webp"
               alt=""
-              className="bg-white w-[200px] h-[60px] sm:w-[300px] sm:h-[90px] md:w-[400px] md:h-[120px] ml-5"
+              className="bg-white w-[120px] h-[30px] sm:w-[150px] sm:h-[45px] md:w-[200px] md:h-[80px]"
             />
           </Link>
           <div
