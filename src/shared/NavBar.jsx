@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { FaFacebook, FaInstagram, FaXTwitter } from 'react-icons/fa6';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,7 +52,7 @@ function Navbar() {
         <ul
           className={`z-50 p-4 transition-all duration-600 ease-in
             xl:w-auto xl:static xl:flex xl:bg-none xl:top-0 xl:opacity-100
-            max-xl:w-6/12 max-xl:bg-primary-acc-dark-green max-xl:bg-opacity-95 max-xl:absolute max-xl:h-screen
+            max-xl:w-10/12 max-xl:bg-primary-acc-dark-green max-xl:bg-opacity-95 max-xl:fixed max-xl:h-screen max-xl:top-0
             ${isOpen ? "max-xl:opacity-100 max-xl:right-0" : "max-xl:opacity-0 max-xl:right-[-100%]"}
           }`}
           id="Menu"
@@ -62,9 +63,9 @@ function Navbar() {
           >
             <Link
               to="/"
-              className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] text-center  block"
+              className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] block"
             >
-              <div className="relative flex items-center justify-center group  hover:text-gray-300">
+              <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white  text-left py-2  text-3xl ml-10 mt-52" : "items-center justify-center"}`}>
                 Inicio
                 <div className={`absolute bottom-0 left-1/2 w-full h-1 
                 ${isOpen ? "" : "bg-primary-acc-green"} transform -translate-x-1/2 transition-all duration-300 ${nothome === "" ? "" : "group-hover:w-[200%]"} `}></div>
@@ -77,9 +78,9 @@ function Navbar() {
           >
             <Link
               to="/cronograma"
-              className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] text-center  block"
+              className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] block"
             >
-              <div className="relative flex items-center justify-center group  hover:text-gray-300">
+                <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white  text-left py-2  text-3xl ml-10" : "items-center justify-center"}`}>
                 Conferencia
                 <div className={`absolute bottom-0 left-1/2 w-full h-1 ${isOpen ? "" : "bg-primary-orange"}  transform -translate-x-1/2 transition-all duration-300   ${nothome === "cronograma" ? "" : "group-hover:w-[200%]"} `}></div>
               </div>
@@ -91,9 +92,9 @@ function Navbar() {
           >
             <Link
               to="/nextgen"
-              className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] text-center  block"
+              className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] block"
             >
-              <div className="relative flex items-center justify-center  group  hover:text-gray-300">
+                <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white  text-left py-2  text-3xl ml-10" : "items-center justify-center"}`}>
                 Next Gen
                 <div className={`absolute bottom-0 left-1/2 w-full h-1 ${isOpen ? "" : "bg-primary-acc-violet"}  transform -translate-x-1/2 transition-all duration-300  ${nothome === "nextgen" ? "" : "group-hover:w-[200%]"} `}></div>
               </div>
@@ -105,9 +106,9 @@ function Navbar() {
           >
             <Link
               to="/datathon"
-              className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] text-center  block"
+              className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] block"
             >
-              <div className="relative flex items-center justify-center group hover:text-gray-300">
+                <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white  text-left py-2  text-3xl ml-10" : "items-center justify-center"}`}>
                 Datathon
                 <div className={`absolute bottom-0 left-1/2 w-full h-1 ${isOpen ? "" : "bg-primary-acc-yellow"} transform -translate-x-1/2 transition-all duration-300  ${nothome === "datathon" ? "" : "group-hover:w-[200%]"} `}></div>
               </div>
@@ -119,15 +120,27 @@ function Navbar() {
           >
             <Link
               to="/nosotros"
-              className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] text-center block"
+              className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] block"
             >
-              <div className="relative flex items-center justify-center group  hover:text-gray-300">
+                <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white text-left py-2  text-3xl ml-10" : "items-center justify-center"}`}>
                 Nosotros
                 <div className={`absolute bottom-0 left-1/2 w-full h-1 ${isOpen ? "" : "bg-primary-acc-blue"}  transform -translate-x-1/2 transition-all duration-300  ${nothome === "nosotros" ? "" : "group-hover:w-[200%]"} `}></div>
               </div>
             </Link>
           </li>
+          <div className={`xl:hidden flex justify-center items-center gap-6 mt-52 ${isOpen ? '' : 'hidden'}`}>
+            <a href="https://www.facebook.com/widsespol" target="_blank" rel="noopener noreferrer">
+              <FaFacebook size={40} color="white" />
+            </a>
+            <a href="https://www.instagram.com/widsespol/" target="_blank" rel="noopener noreferrer">
+              <FaInstagram size={40} color="white" />
+            </a>
+            <a href="https://x.com/widsespol" target="_blank" rel="noopener noreferrer">
+              <FaXTwitter size={40} color="white" />
+            </a>
+          </div>
         </ul>
+
       </nav>
     </>
   );
