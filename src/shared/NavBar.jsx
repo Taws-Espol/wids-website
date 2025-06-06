@@ -27,21 +27,21 @@ function Navbar() {
             />
           </Link>
           <div
-            className="xl:hidden rounded-md w-full items-center mx-6 hover:bg-gray-100"
+            className="xl:hidden rounded-md w-8 items-center mx-6 hover:bg-gray-100"
             onClick={toggle}
           >
             <span
-              className={`block w-full h-1 rounded bg-black transition-transform duration-300 ${
+              className={`block w-6 h-1 rounded bg-black transition-transform duration-300 ${
                 isOpen ? "transform rotate-45 translate-y-1.5" : "mt-1"
               }`}
             ></span>
             <span
-              className={`block w-full h-1 rounded bg-black transition-all duration-300 ${
+              className={`block w-6 h-1 rounded bg-black transition-all duration-300 ${
                 isOpen ? "opacity-0" : "mt-1"
               }`}
             ></span>
             <span
-              className={`block w-full h-1 rounded bg-black transition-transform duration-300 ${
+              className={`block w-6 h-1 rounded bg-black transition-transform duration-300 ${
                 isOpen ? "transform -rotate-45 -translate-y-0.5" : "mt-1"
               }`}
             ></span>
