@@ -50,13 +50,28 @@ function Navbar() {
         </div>
 
         <ul
-          className={`z-50 p-4 transition-all duration-600 ease-in
+          className={`z-50 p-4 transition-all duration-600 ease-in relative
             xl:w-auto xl:static xl:flex xl:bg-none xl:top-0 xl:opacity-100
-            max-xl:w-10/12 max-xl:bg-primary-acc-dark-green max-xl:bg-opacity-95 max-xl:fixed max-xl:h-screen max-xl:top-0
+            max-xl:w-10/12 max-xl:bg-primary-acc-dark-green max-xl:fixed max-xl:h-screen max-xl:top-0
             ${isOpen ? "max-xl:opacity-100 max-xl:right-0" : "max-xl:opacity-0 max-xl:right-[-100%]"}
-          }`}
+          `}
           id="Menu"
         >
+          {/* Close button in the top right corner when menu is open */}
+          <div
+            className={`xl:hidden absolute top-4 right-4 rounded-md w-8 items-center hover:bg-gray-100 ${isOpen ? 'block' : 'hidden'}`}
+            onClick={toggle}
+          >
+            <span
+              className={`block w-6 h-1 rounded bg-white transition-transform duration-300 transform rotate-45 translate-y-1.5`}
+            ></span>
+            <span
+              className={`block w-6 h-1 rounded bg-white transition-all duration-300 opacity-0`}
+            ></span>
+            <span
+              className={`block w-6 h-1 rounded bg-white transition-transform duration-300 transform -rotate-45 -translate-y-0.5`}
+            ></span>
+          </div>
           <li
             className={`mb-1`}
             onClick={toggle2}
