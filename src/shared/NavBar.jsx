@@ -49,8 +49,10 @@ function Navbar() {
         </div>
 
         <ul
-          className={`xl:w-auto w-full z-50 xl:static absolute xl:flex xl:bg-none p-4 transition-all duration-600 ease-in max-xl:bg-primary-green max-xl:bg-opacity-95 ${
-            isOpen ? "opacity-100" : "opacity-0 top-[-1000px] xl:top-0 xl:opacity-100"
+          className={`z-50 p-4 transition-all duration-600 ease-in
+            xl:w-auto xl:static xl:flex xl:bg-none xl:top-0 xl:opacity-100
+            max-xl:w-6/12 max-xl:bg-primary-acc-dark-green max-xl:bg-opacity-95 max-xl:absolute max-xl:h-screen
+            ${isOpen ? "max-xl:opacity-100 max-xl:right-0" : "max-xl:opacity-0 max-xl:right-[-100%]"}
           }`}
           id="Menu"
         >
@@ -64,7 +66,8 @@ function Navbar() {
             >
               <div className="relative flex items-center justify-center group  hover:text-gray-300">
                 Inicio
-                <div className={`absolute bottom-0 left-1/2 w-full h-1 bg-primary-acc-green transform -translate-x-1/2 transition-all duration-300 ${nothome === "" ? "" : "group-hover:w-[200%]"} `}></div>
+                <div className={`absolute bottom-0 left-1/2 w-full h-1 
+                ${isOpen ? "" : "bg-primary-acc-green"} transform -translate-x-1/2 transition-all duration-300 ${nothome === "" ? "" : "group-hover:w-[200%]"} `}></div>
               </div>
             </Link>
           </li>
@@ -78,7 +81,7 @@ function Navbar() {
             >
               <div className="relative flex items-center justify-center group  hover:text-gray-300">
                 Conferencia
-                <div className={`absolute bottom-0 left-1/2 w-full h-1 bg-primary-orange transform -translate-x-1/2 transition-all duration-300   ${nothome === "cronograma" ? "" : "group-hover:w-[200%]"} `}></div>
+                <div className={`absolute bottom-0 left-1/2 w-full h-1 ${isOpen ? "" : "bg-primary-orange"}  transform -translate-x-1/2 transition-all duration-300   ${nothome === "cronograma" ? "" : "group-hover:w-[200%]"} `}></div>
               </div>
             </Link>
           </li>
@@ -92,7 +95,7 @@ function Navbar() {
             >
               <div className="relative flex items-center justify-center  group  hover:text-gray-300">
                 Next Gen
-                <div className={`absolute bottom-0 left-1/2 w-full h-1 bg-primary-acc-violet transform -translate-x-1/2 transition-all duration-300  ${nothome === "nextgen" ? "" : "group-hover:w-[200%]"} `}></div>
+                <div className={`absolute bottom-0 left-1/2 w-full h-1 ${isOpen ? "" : "bg-primary-acc-violet"}  transform -translate-x-1/2 transition-all duration-300  ${nothome === "nextgen" ? "" : "group-hover:w-[200%]"} `}></div>
               </div>
             </Link>
           </li>
@@ -106,7 +109,7 @@ function Navbar() {
             >
               <div className="relative flex items-center justify-center group hover:text-gray-300">
                 Datathon
-                <div className={`absolute bottom-0 left-1/2 w-full h-1 bg-primary-acc-yellow transform -translate-x-1/2 transition-all duration-300  ${nothome === "datathon" ? "" : "group-hover:w-[200%]"} `}></div>
+                <div className={`absolute bottom-0 left-1/2 w-full h-1 ${isOpen ? "" : "bg-primary-acc-yellow"} transform -translate-x-1/2 transition-all duration-300  ${nothome === "datathon" ? "" : "group-hover:w-[200%]"} `}></div>
               </div>
             </Link>
           </li>
@@ -120,7 +123,7 @@ function Navbar() {
             >
               <div className="relative flex items-center justify-center group  hover:text-gray-300">
                 Nosotros
-                <div className={`absolute bottom-0 left-1/2 w-full h-1 bg-primary-acc-blue transform -translate-x-1/2 transition-all duration-300  ${nothome === "nosotros" ? "" : "group-hover:w-[200%]"} `}></div>
+                <div className={`absolute bottom-0 left-1/2 w-full h-1 ${isOpen ? "" : "bg-primary-acc-blue"}  transform -translate-x-1/2 transition-all duration-300  ${nothome === "nosotros" ? "" : "group-hover:w-[200%]"} `}></div>
               </div>
             </Link>
           </li>
