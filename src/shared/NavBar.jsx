@@ -18,7 +18,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="xl:flex xl:items-center xl:justify-between xl:text-[20px] xl:text-lg top-0 left-0 w-full font-acumin text-base select-none">
+      <nav className="lg:flex lg:items-center lg:justify-between lg:text-[20px] lg:text-lg top-0 left-0 w-full font-acumin text-base select-none">
         <div className="flex items-center bg-[rgb(252,252,252)] justify-between">
           <Link to="/">
             <img
@@ -28,7 +28,7 @@ function Navbar() {
             />
           </Link>
           <div
-            className="xl:hidden rounded-md w-8 items-center mx-6 hover:bg-gray-100"
+            className="lg:hidden rounded-md w-8 items-center mx-6 hover:bg-gray-100"
             onClick={toggle}
           >
             <span
@@ -51,15 +51,15 @@ function Navbar() {
 
         <ul
           className={`z-50 p-4 transition-all duration-600 ease-in relative
-            xl:w-auto xl:static xl:flex xl:bg-none xl:top-0 xl:opacity-100
-            max-xl:w-10/12 max-xl:bg-primary-acc-dark-green max-xl:fixed max-xl:h-screen max-xl:top-0
-            ${isOpen ? "max-xl:opacity-100 max-xl:right-0" : "max-xl:opacity-0 max-xl:right-[-100%]"}
+            lg:w-auto lg:static lg:flex lg:bg-none lg:top-0 lg:opacity-100
+            max-lg:w-10/12 max-lg:bg-primary-acc-dark-green max-lg:fixed max-lg:h-screen max-lg:top-0
+            ${isOpen ? "max-lg:opacity-100 max-lg:right-0" : "max-lg:opacity-0 max-lg:right-[-100%]"}
           `}
           id="Menu"
         >
           {/* Close button in the top right corner when menu is open */}
           <div
-            className={`xl:hidden absolute top-4 right-4 rounded-md w-8 items-center hover:bg-gray-100 ${isOpen ? 'block' : 'hidden'}`}
+            className={`lg:hidden absolute top-4 right-4 rounded-md w-8 items-center hover:bg-gray-100 ${isOpen ? 'block' : 'hidden'}`}
             onClick={toggle}
           >
             <span
@@ -78,7 +78,7 @@ function Navbar() {
           >
             <Link
               to="/"
-              className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] block"
+              className="lg:px-8 lg:py-8 lg:text-[20px] text-[25px] block"
             >
               <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white  text-left py-2  text-3xl ml-10 mt-52" : "items-center justify-center"}`}>
                 Inicio
@@ -93,7 +93,7 @@ function Navbar() {
           >
             <Link
               to="/cronograma"
-              className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] block"
+              className="lg:px-8 lg:py-8 lg:text-[20px] text-[25px] block"
             >
                 <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white  text-left py-2  text-3xl ml-10" : "items-center justify-center"}`}>
                 Conferencia
@@ -107,7 +107,7 @@ function Navbar() {
           >
             <Link
               to="/nextgen"
-              className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] block"
+              className="lg:px-8 lg:py-8 lg:text-[20px] text-[25px] block"
             >
                 <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white  text-left py-2  text-3xl ml-10" : "items-center justify-center"}`}>
                 Next Gen
@@ -121,7 +121,7 @@ function Navbar() {
           >
             <Link
               to="/datathon"
-              className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] block"
+              className="lg:px-8 lg:py-8 lg:text-[20px] text-[25px] block"
             >
                 <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white  text-left py-2  text-3xl ml-10" : "items-center justify-center"}`}>
                 Datathon
@@ -135,7 +135,7 @@ function Navbar() {
           >
             <Link
               to="/nosotros"
-              className="xl:px-8 xl:py-8 xl:text-[20px] text-[25px] block"
+              className="lg:px-8 lg:py-8 lg:text-[20px] text-[25px] block"
             >
                 <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white text-left py-2  text-3xl ml-10" : "items-center justify-center"}`}>
                 Nosotros
@@ -143,7 +143,7 @@ function Navbar() {
               </div>
             </Link>
           </li>
-          <div className={`xl:hidden flex justify-center items-center gap-6 mt-52 ${isOpen ? '' : 'hidden'}`}>
+          <div className={`lg:hidden flex justify-center items-center gap-6 mt-52 ${isOpen ? '' : 'hidden'}`}>
             <a href="https://www.facebook.com/widsespol" target="_blank" rel="noopener noreferrer">
               <FaFacebook size={40} color="white" />
             </a>
