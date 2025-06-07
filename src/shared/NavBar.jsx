@@ -1,10 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaXTwitter } from 'react-icons/fa6';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen1, setIsOpen1] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsOpen(false);
+        setIsOpen1(false); // Also close the second menu if it's open
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const toggle = () => setIsOpen(!isOpen);
   const toggle1 = () => setIsOpen1(!isOpen1);
