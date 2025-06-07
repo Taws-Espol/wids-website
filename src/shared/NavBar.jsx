@@ -33,13 +33,13 @@ function Navbar() {
 
   return (
     <>
-      <nav className="lg:flex lg:items-center lg:justify-between lg:text-[20px] lg:text-lg top-0 left-0 w-full font-acumin text-base select-none">
+      <nav className="lg:flex lg:items-center lg:justify-between lg:text-[20px] lg:text-lg top-0 left-0 w-full font-acumin text-md select-none lg:px-32">
         <div className="flex items-center bg-[rgb(252,252,252)] justify-between">
           <Link to="/">
             <img
               src="/assets/navbar/Logo_wids2024SG.webp"
               alt=""
-              className="bg-white w-[120px] h-[30px] sm:w-[150px] sm:h-[45px] md:w-[200px] md:h-[80px]"
+              className="bg-white w-[300px] h-[100px] "
             />
           </Link>
           <div
@@ -95,7 +95,7 @@ function Navbar() {
               to="/"
               className="lg:px-8 lg:py-8 lg:text-[20px] text-[25px] block"
             >
-              <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white  text-left py-2  text-3xl ml-10 mt-52" : "items-center justify-center"}`}>
+              <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white  text-left py-2  text-3xl ml-10 mt-52" : "items-center justify-center text-2xl"}`}>
                 Inicio
                 <div className={`absolute bottom-0 left-1/2 w-full h-1 
                 ${isOpen ? "" : "bg-primary-acc-green"} transform -translate-x-1/2 transition-all duration-300 ${nothome === "" ? "" : "group-hover:w-[200%]"} `}></div>
@@ -110,7 +110,7 @@ function Navbar() {
               to="/cronograma"
               className="lg:px-8 lg:py-8 lg:text-[20px] text-[25px] block"
             >
-                <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white  text-left py-2  text-3xl ml-10" : "items-center justify-center"}`}>
+                <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white  text-left py-2  text-3xl ml-10" : "items-center justify-center text-2xl"}`}>
                 Conferencia
                 <div className={`absolute bottom-0 left-1/2 w-full h-1 ${isOpen ? "" : "bg-primary-orange"}  transform -translate-x-1/2 transition-all duration-300   ${nothome === "cronograma" ? "" : "group-hover:w-[200%]"} `}></div>
               </div>
@@ -124,7 +124,7 @@ function Navbar() {
               to="/nextgen"
               className="lg:px-8 lg:py-8 lg:text-[20px] text-[25px] block"
             >
-                <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white  text-left py-2  text-3xl ml-10" : "items-center justify-center"}`}>
+                <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white  text-left py-2  text-3xl ml-10" : "items-center justify-center text-2xl"}`}>
                 Next Gen
                 <div className={`absolute bottom-0 left-1/2 w-full h-1 ${isOpen ? "" : "bg-primary-acc-violet"}  transform -translate-x-1/2 transition-all duration-300  ${nothome === "nextgen" ? "" : "group-hover:w-[200%]"} `}></div>
               </div>
@@ -138,7 +138,7 @@ function Navbar() {
               to="/datathon"
               className="lg:px-8 lg:py-8 lg:text-[20px] text-[25px] block"
             >
-                <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white  text-left py-2  text-3xl ml-10" : "items-center justify-center"}`}>
+                <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white  text-left py-2  text-3xl ml-10" : "items-center justify-center text-2xl"}`}>
                 Datathon
                 <div className={`absolute bottom-0 left-1/2 w-full h-1 ${isOpen ? "" : "bg-primary-acc-yellow"} transform -translate-x-1/2 transition-all duration-300  ${nothome === "datathon" ? "" : "group-hover:w-[200%]"} `}></div>
               </div>
@@ -152,7 +152,7 @@ function Navbar() {
               to="/nosotros"
               className="lg:px-8 lg:py-8 lg:text-[20px] text-[25px] block"
             >
-                <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white text-left py-2  text-3xl ml-10" : "items-center justify-center"}`}>
+                <div className={`relative flex group hover:text-gray-300 ${isOpen ? "text-white text-left py-2  text-3xl ml-10" : "items-center justify-center text-2xl"}`}>
                 Nosotros
                 <div className={`absolute bottom-0 left-1/2 w-full h-1 ${isOpen ? "" : "bg-primary-acc-blue"}  transform -translate-x-1/2 transition-all duration-300  ${nothome === "nosotros" ? "" : "group-hover:w-[200%]"} `}></div>
               </div>
