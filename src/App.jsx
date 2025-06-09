@@ -28,9 +28,9 @@ function App() {
             <Route path="/conferencistas" element={<Conferencistas />} />
             <Route path="/cronograma" element={<Cronograma />} />
             {/*TODO: Events */}
-            <Route path="/eventos/datathon" element={<Datathon />} />
-            <Route path="/eventos/nextgen" element={<NextGen />} />
-            <Route path="/eventos/ediciones" element={<Editions />} />
+            <Route path="/datathon" element={<Datathon />} />
+            <Route path="/nextgen" element={<NextGen />} />
+            <Route path="/ediciones" element={<Editions />} />
             {/*TODO: Add the component!!! */}
             <Route path="/eventos/ediciones/2020" element={<Edition />} />
             <Route path="/eventos/ediciones/2021" element={<Edition />} />
