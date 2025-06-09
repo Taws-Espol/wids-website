@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Label } from "./Label";
-import { CardInfo } from "./CardInfo";
-import { cronograma } from "../../../data/Cronograma.js";
+import React, { useState, useEffect } from 'react';
+import { Label } from './Label';
+import { CardInfo } from './CardInfo';
+import { cronograma } from '../../../data/Cronograma.js';
 
 export function ListCardInfo({ typeLabel }) {
   const [hidden, setHidden] = useState(false);
@@ -16,18 +16,18 @@ export function ListCardInfo({ typeLabel }) {
       }
     };
     checkSize();
-    window.addEventListener("resize", checkSize);
+    window.addEventListener('resize', checkSize);
     return () => {
-      window.removeEventListener("resize", checkSize);
+      window.removeEventListener('resize', checkSize);
     };
   }, []);
 
   let listaEventos;
   switch (typeLabel) {
-    case "Conferencias":
+    case 'Conferencias':
       listaEventos = cronograma.Conferencias;
       break;
-    case "Talleres":
+    case 'Talleres':
       listaEventos = cronograma.Talleres;
       break;
     default:
@@ -36,14 +36,14 @@ export function ListCardInfo({ typeLabel }) {
   }
 
   return (
-    <div className="flex flex-col gap-15">
+    <div className="gap-15 flex flex-col">
       <Label
         type={typeLabel}
         hiddenDiv={() => setHidden(!hidden)}
         stateHidden={hidden}
       />
       <div
-        className={`${hidden ? "hidden" : "block"} flex flex-col py-4 gap-4 place-content-center place-items-center`}
+        className={`${hidden ? 'hidden' : 'block'} flex flex-col place-content-center place-items-center gap-4 py-4`}
       >
         {listaEventos.map((evento) => (
           <CardInfo

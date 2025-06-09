@@ -1,4 +1,4 @@
-@import url("https://fonts.adobe.com/fonts/acumin-variable#fonts-section");
+@import url('https://fonts.adobe.com/fonts/acumin-variable#fonts-section');
 @media (min-width: 1280px) {
   .gradient-text {
     background: rgb(255, 203, 5);
@@ -32,7 +32,7 @@
   }
 
   .gradient-underline-hover::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 25px;
     left: 0;
@@ -52,7 +52,7 @@
   }
 
   .link-with-gradient-border::after {
-    content: "";
+    content: '';
     display: block;
     width: 0;
     height: 2px;
@@ -162,7 +162,7 @@
   }
 
   .underline-offset-8::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -174,7 +174,7 @@
   }
 
   .underline-offset-8-evento::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 20px;
     left: 50%;
