@@ -33,9 +33,18 @@ function Footer() {
   return (
     <footer className="font-sans">
       <div
-        className={`flex flex-wrap place-content-center place-items-center bg-opacity-20 ${nothome ? 'hidden' : 'block'}`}
+        className={`flex flex-col flex-wrap place-content-center place-items-center bg-opacity-20 sm:flex-row ${nothome ? 'hidden' : 'block'}`}
       >
-        <img src="/assets/WidsLogoVertical.webp" className="h-40 w-40" />
+        {/* Imagen para escritorio */}
+        <img
+          src="/assets/WidsLogoVertical.webp"
+          className="hidden h-40 w-40 sm:block"
+        />
+        {/* Imagen para móviles */}
+        <img
+          src="/assets/navbar/Logo_wids2024SG.webp"
+          className="block h-20 w-40 sm:hidden"
+        />
         <div className="mx-8 hidden h-32 border-l-2 border-[rgb(0,65,43)] md:block"></div>
         <div className="flex flex-col items-center text-center md:items-start md:text-left">
           <p className="mb-1 text-lg font-semibold text-[rgb(0,65,43)]">
