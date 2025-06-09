@@ -4,7 +4,14 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        acumin: ['acumin-pro', 'acumin-variable'],
+        sans: [
+          '"Source Sans Pro"',
+          'ui-sans-serif',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'sans-serif',
+        ],
       },
       colors: {
         'custom-gre': '#43a75f',
