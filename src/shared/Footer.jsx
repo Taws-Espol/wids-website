@@ -89,7 +89,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="mb-16 mt-2 flex h-2 w-full px-4 md:px-8 lg:px-16">
+      <div className="mb-16 mt-2 flex h-2 w-full">
         <div className="flex-1 bg-primary-acc-blue"></div>
         <div className="flex-1 bg-primary-acc-green"></div>
         <div className="flex-1 bg-primary-acc-yellow"></div>
