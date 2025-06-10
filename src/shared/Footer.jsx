@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import redes from '../data/redes';
 import emailjs from '@emailjs/browser';
 import { useLocation } from 'react-router-dom';
+import { FaSquareFacebook, FaInstagram, FaXTwitter } from 'react-icons/fa6';
 function Footer() {
   //https://www.emailjs.com/
   //codigo: https://www.emailjs.com/docs/examples/reactjs/
@@ -30,46 +31,69 @@ function Footer() {
   const nothome = location.pathname.split('/').pop();
 
   return (
-    <footer className="font-acumin">
+    <footer className="font-sans">
       <div
-        className={`flex flex-wrap place-content-center place-items-center bg-neutral-grey bg-opacity-20 ${nothome ? 'hidden' : 'block'}`}
+        className={`flex flex-col flex-wrap place-content-center place-items-center bg-opacity-20 sm:flex-row ${nothome ? 'hidden' : 'block'}`}
       >
-        <img src="/assets/WidsLogoVertical.webp" className="h-96 w-96" />
-        <div className="flex flex-col max-lg:place-content-center max-lg:place-items-center">
-          <h2 className="mb-3 font-acumin text-7xl font-bold text-primary-dark-green max-sm:text-5xl">
-            Contacto
-          </h2>
-          <h3 className="mb-12 !select-text font-acumin text-5xl text-primary-dark-green max-sm:text-3xl">
+        {/* Imagen para escritorio */}
+        <img
+          src="/assets/WidsLogoVertical.webp"
+          className="hidden h-40 w-40 sm:block"
+        />
+        {/* Imagen para móviles */}
+        <img
+          src="/assets/navbar/Logo_wids2024SG.webp"
+          className="block h-20 w-40 sm:hidden"
+        />
+        <div className="mx-8 hidden h-32 border-l-2 border-[rgb(0,65,43)] md:block"></div>
+        <div className="flex flex-col items-center text-center md:items-start md:text-left">
+          <p className="mb-1 text-lg font-semibold text-[rgb(0,65,43)]">
+            Email
+          </p>
+          <a
+            href="mailto:wids_taws@fiec.espol.edu.ec"
+            className="md:text-1xl lg:text-1xl text-xl font-bold text-primary-dark-green hover:underline"
+          >
             wids_taws@fiec.espol.edu.ec
-          </h3>
+          </a>
+          <div className="mt-4 flex items-center space-x-6">
+            {/* Facebook */}
+            <a
+              href={redes.fb}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-dark-green hover:text-green-700"
+            >
+              <FaSquareFacebook className="h-8 w-8" />{' '}
+              {/* Tamaño con h-10 w-10 */}
+            </a>
+            {/* Instagram */}
+            <a
+              href={redes.ig}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-dark-green hover:text-green-700"
+            >
+              <FaInstagram className="h-8 w-8" /> {/* Mismo tamaño */}
+            </a>
+            {/* X / Twitter */}
+            <a
+              href={redes.tw}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-dark-green hover:text-green-700"
+            >
+              <FaXTwitter className="h-8 w-8" />{' '}
+              {/* Mismo tamaño, se debería alinear */}
+            </a>
+          </div>
         </div>
       </div>
-      <ul className="bottom-0 flex w-full justify-center bg-[rgb(0,65,43)] pb-6 pt-4">
-        <li className="pl-5 pr-5">
-          <a href={redes.fb} target="_blank">
-            <img
-              src="/assets/footer/icons8-facebook.svg"
-              className="h-6 w-6 xl:h-10 xl:w-10"
-            />
-          </a>
-        </li>
-        <li className="pl-5 pr-5">
-          <a href={redes.ig} target="_blank">
-            <img
-              src="/assets/footer/icons8-instagram.svg"
-              className="h-6 w-6 xl:h-10 xl:w-10"
-            />
-          </a>
-        </li>
-        <li className="pl-5 pr-5">
-          <a href={redes.tw} target="_blank">
-            <img
-              src="/assets/footer/icons8-twitterx.svg"
-              className="h-6 w-6 xl:h-10 xl:w-10"
-            />
-          </a>
-        </li>
-      </ul>
+      <div className="mb-16 mt-2 flex h-2 w-full">
+        <div className="flex-1 bg-primary-acc-blue"></div>
+        <div className="flex-1 bg-primary-acc-green"></div>
+        <div className="flex-1 bg-primary-acc-yellow"></div>
+      </div>
     </footer>
   );
 }
