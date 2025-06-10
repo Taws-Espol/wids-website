@@ -7,6 +7,7 @@ import CarruselConferences from "./Components/CarruselConferences";
 import AnimatedSection from "./../../shared/AnimatedSection";
 import Posts from "./Components/Posts";
 import Programa from "./Components/Programa";
+import AboutUsHome from "./Components/about-us-home/AboutUsHome";
 
 function Inicio() {
   return (
@@ -34,6 +35,7 @@ function Inicio() {
       <AnimatedSection>
         <Ubicacion />
       </AnimatedSection>
+      <AboutUsHome />
       <AnimatedSection>
         <div className="flex flex-col place-content-center place-items-center select-none my-10 font-acumin text-primary-dark-green">
           <h1 className="font-bold text-5xl">PROGRAMA</h1>
