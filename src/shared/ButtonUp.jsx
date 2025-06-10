@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 const ButtonUp = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,10 +12,10 @@ const ButtonUp = () => {
       }
     };
 
-    window.addEventListener("scroll", toggleVisibility);
+    window.addEventListener('scroll', toggleVisibility);
 
     return () => {
-      window.removeEventListener("scroll", toggleVisibility);
+      window.removeEventListener('scroll', toggleVisibility);
     };
   }, []);
 
@@ -28,28 +28,15 @@ const ButtonUp = () => {
   };
   return (
     <div
-      className={`  fixed 
-                            flex
-                            right-5 bottom-5 
-                            w-14 h-14 
-                            bg-[rgba(74,185,105)]
-                            xl:hover:bg-slate-400 
-                            rounded-full 
-                            z-50 
-                            px-4 py-4
-                            border-2 border-white
-                            cursor-pointer 
-                            justify-center items-center
-                            transition-all duration-300 ease-in-out
-                            ${isVisible ? "opacity-100 animate-fadeIn" : "opacity-0 animate-fadeOut"} `}
+      className={`fixed bottom-5 right-5 z-50 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border-2 border-white bg-[rgba(74,185,105)] px-4 py-4 transition-all duration-300 ease-in-out xl:hover:bg-slate-400 ${isVisible ? 'animate-fadeIn opacity-100' : 'animate-fadeOut opacity-0'} `}
       onClick={scrollUp}
-      style={{ animation: "pulse 2s infinite" }}
+      style={{ animation: 'pulse 2s infinite' }}
     >
       <div className="">
         <img
           src="/assets/ButtonUP/icons8-chevron-para-arriba-30 (1).png"
           alt=""
-          style={{ animation: "spin 2s linear infinite" }}
+          style={{ animation: 'spin 2s linear infinite' }}
         />
       </div>
     </div>

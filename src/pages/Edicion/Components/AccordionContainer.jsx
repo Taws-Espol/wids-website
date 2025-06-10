@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 import {
   Accordion,
   AccordionHeader,
   AccordionBody,
-} from "@material-tailwind/react";
-import EventBox from "./EventBox";
+} from '@material-tailwind/react';
+import EventBox from './EventBox';
 
 function Icon({ id, open }) {
   return (
@@ -15,7 +15,7 @@ function Icon({ id, open }) {
       strokeWidth={2}
       stroke="white"
       className={`${
-        id === open ? "rotate-180" : ""
+        id === open ? 'rotate-180' : ''
       } h-5 w-5 transition-transform`}
     >
       <path
@@ -33,11 +33,11 @@ export default function AccordionContainer({ edicionData }) {
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
   return (
-    <div className="flex flex-col space-y-4 px-10p mt-10">
+    <div className="mt-10 flex flex-col space-y-4 px-10p">
       <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
         <AccordionHeader
           onClick={() => handleOpen(1)}
-          className={`border-b-0 rounded p-4 bg-primary-acc-violet text-white transition-colors`}
+          className={`rounded border-b-0 bg-primary-acc-violet p-4 text-white transition-colors`}
         >
           Cronograma
         </AccordionHeader>
@@ -57,7 +57,7 @@ export default function AccordionContainer({ edicionData }) {
       <Accordion open={open === 2} icon={<Icon id={2} open={open} />}>
         <AccordionHeader
           onClick={() => handleOpen(2)}
-          className={`border-b-0 rounded p-4 bg-primary-acc-violet text-white transition-colors`}
+          className={`rounded border-b-0 bg-primary-acc-violet p-4 text-white transition-colors`}
         >
           Conferencistas
         </AccordionHeader>
@@ -74,7 +74,7 @@ export default function AccordionContainer({ edicionData }) {
       <Accordion open={open === 3} icon={<Icon id={3} open={open} />}>
         <AccordionHeader
           onClick={() => handleOpen(3)}
-          className={`border-b-0 rounded p-4 bg-primary-acc-violet text-white transition-colors`}
+          className={`rounded border-b-0 bg-primary-acc-violet p-4 text-white transition-colors`}
         >
           Talleres
         </AccordionHeader>

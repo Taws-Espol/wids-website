@@ -1,17 +1,17 @@
-import { Instagrams } from "./../../../data/Instagrams";
-import CardPosts from "./CardPost";
-import ProfileCard from "./ProfileCard";
-import { useState, useEffect } from "react";
+import { Instagrams } from './../../../data/Instagrams';
+import CardPosts from './CardPost';
+import ProfileCard from './ProfileCard';
+import { useState, useEffect } from 'react';
 
 const ACCESS_TOKEN =
-  "IGQWRNaXpCNE1MSVBnZA0pLNFVMSU9LQktEMlJEN3ZALVEE4R0ZAlWEVNcjV6b1dJLTE4MnZA5WnAxRGZAIcmM3NnhsejFuWDRpWHJUN2ljWHJBNUJJNnRpNGFRbjJmU2dqT19OQ2JkRGc0OEVMQQZDZD";
+  'IGQWRNaXpCNE1MSVBnZA0pLNFVMSU9LQktEMlJEN3ZALVEE4R0ZAlWEVNcjV6b1dJLTE4MnZA5WnAxRGZAIcmM3NnhsejFuWDRpWHJUN2ljWHJBNUJJNnRpNGFRbjJmU2dqT19OQ2JkRGc0OEVMQQZDZD';
 
 const getPosts = async () => {
   const URL = `https://graph.instagram.com/me/media?fields=permalink&access_token=${ACCESS_TOKEN}`;
   const reqOptions = {
-    method: "GET",
+    method: 'GET',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
   };
 
@@ -32,11 +32,11 @@ export default function Posts() {
 
   return (
     <>
-      <div className="flex flex-col w-full place-content-center place-items-center">
-        <div className="flex flex-row !place-content-start !justify-start !place-items-start flex-wrap min-w-[360px] mb-10">
+      <div className="flex w-full flex-col place-content-center place-items-center">
+        <div className="mb-10 flex min-w-[360px] flex-row flex-wrap !place-content-start !place-items-start !justify-start">
           <ProfileCard profileinfo={Instagrams.profile} />
         </div>
-        <div className="flex justify-center items-center flex-wrap min-w-[360px] gap-5 mb-20">
+        <div className="mb-20 flex min-w-[360px] flex-wrap items-center justify-center gap-5">
           {posts &&
             posts.map(({ permalink }, index) => (
               <CardPosts key={index} post={permalink} />

@@ -1,38 +1,38 @@
 /* eslint-disable react/prop-types */
-import { VerticalTimelineElement } from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
+import { VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 export function ItemTimeLine({ Evento }) {
   const imagenConferencista =
-    "/assets/Eventos/Ediciones/2024/Images/conferencistas/" + Evento.image;
-  let imagen = "";
-  let background_color = "";
+    '/assets/Eventos/Ediciones/2024/Images/conferencistas/' + Evento.image;
+  let imagen = '';
+  let background_color = '';
   let value = Evento.color;
   switch (value) {
-    case "verde":
-      imagen = "/assets/images-cardInfo/Conferencia.webp";
-      background_color = "#4ab969";
+    case 'verde':
+      imagen = '/assets/images-cardInfo/Conferencia.webp';
+      background_color = '#4ab969';
       break;
-    case "morado":
-      imagen = "/assets/images-cardInfo/Break.webp";
-      background_color = "#a2a2ff";
+    case 'morado':
+      imagen = '/assets/images-cardInfo/Break.webp';
+      background_color = '#a2a2ff';
       break;
-    case "celeste":
-      imagen = "/assets/images-cardInfo/Conferencia.webp";
-      background_color = "#00a7d5";
+    case 'celeste':
+      imagen = '/assets/images-cardInfo/Conferencia.webp';
+      background_color = '#00a7d5';
       break;
     default:
-      imagen = "/assets/images-cardInfo/Conferencia.webp";
-      background_color = "#a2a2ff";
+      imagen = '/assets/images-cardInfo/Conferencia.webp';
+      background_color = '#a2a2ff';
   }
   const timeAlignmentClass =
     Evento.index % 2 === 0
-      ? "justify-start min-[1170px]:justify-end"
-      : "justify-start";
+      ? 'justify-start min-[1170px]:justify-end'
+      : 'justify-start';
   const title = Evento.title;
   let titleFirstPart = title;
-  let titleSecondPart = "";
-  if (title.includes(":")) {
-    const splitTitle = title.split(":");
+  let titleSecondPart = '';
+  if (title.includes(':')) {
+    const splitTitle = title.split(':');
     if (splitTitle[0].length > 8) {
       titleFirstPart = splitTitle[0];
       titleSecondPart = splitTitle[1];
@@ -46,19 +46,19 @@ export function ItemTimeLine({ Evento }) {
         borderRight: `10px solid ${background_color}`,
       }}
       contentStyle={{ borderTop: ` 10px solid ${background_color}` }}
-      iconStyle={{ background: `${background_color}`, color: "#fff" }}
+      iconStyle={{ background: `${background_color}`, color: '#fff' }}
       date={Evento.date}
       dateClassName="vertical-timeline-element-date"
     >
-      <div className="flex flex-col h-full justify-between">
+      <div className="flex h-full flex-col justify-between">
         {!Evento.date && (
           <div
-            className={`pb-5 flex flex-row items-center ${timeAlignmentClass}`}
+            className={`flex flex-row items-center pb-5 ${timeAlignmentClass}`}
           >
             <img
               src="/assets/Eventos/Datathon/reloj.webp"
               alt="Logo"
-              className="w-8 h-8 mr-2"
+              className="mr-2 h-8 w-8"
             />
             <p className="!m-0 !text-2xl">{Evento.time}</p>
           </div>
@@ -69,19 +69,19 @@ export function ItemTimeLine({ Evento }) {
               {titleSecondPart ? (
                 <>
                   <h3
-                    className={`vertical-timeline-element-title text-primary-dark-green font-bold text-[1.7em] text-center`}
+                    className={`vertical-timeline-element-title text-center text-[1.7em] font-bold text-primary-dark-green`}
                   >
-                    {titleFirstPart + ":"}
+                    {titleFirstPart + ':'}
                   </h3>
                   <h3
-                    className={`vertical-timeline-element-title text-primary-dark-green font-bold text-[1.7em] text-center`}
+                    className={`vertical-timeline-element-title text-center text-[1.7em] font-bold text-primary-dark-green`}
                   >
                     {titleSecondPart}
                   </h3>
                 </>
               ) : (
                 <h3
-                  className={`vertical-timeline-element-title text-primary-dark-green font-bold text-[1.7em] text-center`}
+                  className={`vertical-timeline-element-title text-center text-[1.7em] font-bold text-primary-dark-green`}
                 >
                   {title}
                 </h3>
@@ -93,24 +93,24 @@ export function ItemTimeLine({ Evento }) {
                   </p>
                 ))
               ) : (
-                <div className="h-[22em] mt-4">
-                  <div className="p-4 flex items-center justify-center">
+                <div className="mt-4 h-[22em]">
+                  <div className="flex items-center justify-center p-4">
                     <img
                       src={imagenConferencista}
                       alt="conferencista"
-                      className="h-[12rem] w-[12rem] object-cover rounded-full  "
+                      className="h-[12rem] w-[12rem] rounded-full object-cover"
                     />
                   </div>
-                  <div className="flex flex-col h-100% items-center">
-                    <p className="!text-2xl !font-bold ">{Evento.info}</p>
-                    <p className="text-center !text-xl !mt-3">{Evento.work}</p>
+                  <div className="h-100% flex flex-col items-center">
+                    <p className="!text-2xl !font-bold">{Evento.info}</p>
+                    <p className="!mt-3 text-center !text-xl">{Evento.work}</p>
                   </div>
                 </div>
               )}
             </>
           ) : (
             <h1
-              className={`font-bold text-2xl ${value == "Break" ? "text-primary-violet" : "text-primary-dark-green"}`}
+              className={`text-2xl font-bold ${value == 'Break' ? 'text-primary-violet' : 'text-primary-dark-green'}`}
             >
               {Evento.title}
             </h1>
@@ -118,12 +118,12 @@ export function ItemTimeLine({ Evento }) {
         </div>
         {Evento.date && (
           <div
-            className={`pt-5 flex flex-row items-center ${timeAlignmentClass}`}
+            className={`flex flex-row items-center pt-5 ${timeAlignmentClass}`}
           >
             <img
               src="/assets/Eventos/Datathon/reloj.webp"
               alt="Logo"
-              className="w-8 h-8 mr-2"
+              className="mr-2 h-8 w-8"
             />
             <p className="!m-0 !text-2xl">{Evento.time}</p>
           </div>

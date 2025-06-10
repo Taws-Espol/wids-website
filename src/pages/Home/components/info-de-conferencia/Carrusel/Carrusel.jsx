@@ -1,10 +1,10 @@
-import Slider from "react-slick";
-import "./Carrusel.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { useEffect, useState } from "react";
-import { ediciones } from "../../../../../data/ediciones";
-import { ProfileCard } from "../../../../Edicion/Components/ProfileCard";
+import Slider from 'react-slick';
+import './Carrusel.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { useEffect, useState } from 'react';
+import { ediciones } from '../../../../../data/ediciones';
+import { ProfileCard } from '../../../../Edicion/Components/ProfileCard';
 function Carrusel() {
   const [slidesToShow, setSlidesToShow] = useState(4);
 
@@ -21,13 +21,13 @@ function Carrusel() {
 
   useEffect(() => {
     updateSlidesToShow();
-    window.addEventListener("resize", updateSlidesToShow);
+    window.addEventListener('resize', updateSlidesToShow);
     return () => {
-      window.removeEventListener("resize", updateSlidesToShow);
+      window.removeEventListener('resize', updateSlidesToShow);
     };
   }, []);
 
-  const edicionData = ediciones.find((edicion) => edicion.edicion === "2020");
+  const edicionData = ediciones.find((edicion) => edicion.edicion === '2020');
 
   const settings = {
     infinite: true,
@@ -39,8 +39,8 @@ function Carrusel() {
   };
 
   return (
-    <div className="w-3/4 m-auto">
-      <div className="mt-[5vw] mb-[5vw]">
+    <div className="m-auto w-3/4">
+      <div className="mb-[5vw] mt-[5vw]">
         <Slider {...settings}>
           {edicionData.conferencistas &&
             edicionData.conferencistas.map((conferencista, index) => (

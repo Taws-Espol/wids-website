@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-import "../../../index.css"; // Asegúrate de que el path sea correcto.
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+import '../../../index.css'; // Asegúrate de que el path sea correcto.
 
 export function Timer({ Event_date }) {
   const [rest, setTime] = useState({
@@ -41,7 +41,7 @@ export function Timer({ Event_date }) {
   function CardTimer(props) {
     return (
       <div
-        className={`text-black h-[14vw] w-[13vw] sm:h-[12vw] sm:w-[11vw] md:h-[11vw] md:w-[10vw] xl:h-[8rem] rounded-[2vw] xl:w-[7rem] min-[1536px]:h-36 min-[1536px]:w-32 flex flex-col place-content-center place-items-center font-acumin font-bold select-none md:rounded-2xl ${!props.isSec ? "bg-white" : "bg-primary-dark-green text-white"}`}
+        className={`font-acumin flex h-[14vw] w-[13vw] select-none flex-col place-content-center place-items-center rounded-[2vw] font-bold text-black sm:h-[12vw] sm:w-[11vw] md:h-[11vw] md:w-[10vw] md:rounded-2xl xl:h-[8rem] xl:w-[7rem] min-[1536px]:h-36 min-[1536px]:w-32 ${!props.isSec ? 'bg-white' : 'bg-primary-dark-green text-white'}`}
       >
         <p className="text-[5.5vw] sm:text-[4.5vw] md:text-[4vw] xl:text-6xl">
           {props.time}
@@ -54,7 +54,7 @@ export function Timer({ Event_date }) {
   }
 
   return (
-    <div className="bg-transparent font-acumin flex flex-wrap gap-[2vw] md:gap-4 place-content-between p-1">
+    <div className="font-acumin flex flex-wrap place-content-between gap-[2vw] bg-transparent p-1 md:gap-4">
       <CardTimer className="" time={rest.weeks} timeInfo="Weeks" />
       <CardTimer className="" time={rest.days} timeInfo="Days" />
       <CardTimer className="" time={rest.hours} timeInfo="Hr" />

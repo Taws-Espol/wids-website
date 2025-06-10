@@ -1,12 +1,12 @@
-import { ediciones } from "../../../data/ediciones";
-import React, { useRef, useEffect } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Importa los iconos de flecha
+import { ediciones } from '../../../data/ediciones';
+import React, { useRef, useEffect } from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // Importa los iconos de flecha
 
 export default function CarruselConferences() {
-  const year = "2024";
+  const year = '2024';
   const edicion2024 = ediciones.find((edicion) => edicion.edicion === year);
 
   const sliderRef = useRef(null);
@@ -19,9 +19,9 @@ export default function CarruselConferences() {
         );
       }
     };
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -39,7 +39,7 @@ export default function CarruselConferences() {
 
   const path_images = `/assets/Eventos/Ediciones/${year}/Images/conferencistas/`;
   const conferencistas = edicion2024.conferencistas.filter(
-    (edicion) => edicion.name != "",
+    (edicion) => edicion.name != '',
   );
 
   var settings = {
@@ -84,28 +84,28 @@ export default function CarruselConferences() {
       <div className="absolute inset-0">
         <div className="h-[200px] bg-primary-dark-green"></div>
         <div className="h-[280px] bg-white"></div>
-        <div className="h-[100px] bg-primary-dark-green mb-10"></div>
+        <div className="mb-10 h-[100px] bg-primary-dark-green"></div>
       </div>
-      <div className="relative w-3/4 m-auto font-acumin ">
-        <h1 className="pt-6 md:pt-10 text-center text-[6vw] md:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw] font-serif font-bold text-white">
+      <div className="font-acumin relative m-auto w-3/4">
+        <h1 className="pt-6 text-center font-serif text-[6vw] font-bold text-white md:pt-10 md:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw]">
           CONFERENCISTAS
         </h1>
         <Slider ref={sliderRef} {...settings}>
           {conferencistas.map((evento, index) => (
             <div key={index}>
-              <div className="flex justify-center items-center pt-8 pb-2">
+              <div className="flex items-center justify-center pb-2 pt-8">
                 <img
                   src={path_images + evento.imageName}
                   alt={evento.imageName}
-                  className="h-60 w-60 object-cover rounded-full"
+                  className="h-60 w-60 rounded-full object-cover"
                 />
               </div>
-              <div className="text-center overflow-hidden whitespace-normal break-words flex flex-col justify-center items-center pt-2 pb-12">
+              <div className="flex flex-col items-center justify-center overflow-hidden whitespace-normal break-words pb-12 pt-2 text-center">
                 <p
                   style={{
-                    fontSize: "25px",
-                    fontWeight: "bold",
-                    color: "black",
+                    fontSize: '25px',
+                    fontWeight: 'bold',
+                    color: 'black',
                   }}
                 >
                   {evento.name}

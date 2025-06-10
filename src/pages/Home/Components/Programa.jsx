@@ -1,8 +1,8 @@
-import { ediciones } from "../../../data/ediciones";
-import { CardPrograma } from "./CardPrograma";
+import { ediciones } from '../../../data/ediciones';
+import { CardPrograma } from './CardPrograma';
 
 function Programa() {
-  const year = "2024";
+  const year = '2024';
   const edicionData = ediciones.find((edicion) => edicion.edicion === year);
 
   return (

@@ -1,19 +1,19 @@
 export function Contador({ number, text, color, className, position }) {
   return (
     <div
-      className={`mb-4 md:mb-0 max-md:w-[38vw]  ${className} max-md:text-center flex flex-col place-content-center place-items-center`}
+      className={`mb-4 max-md:w-[38vw] md:mb-0 ${className} flex flex-col place-content-center place-items-center max-md:text-center`}
     >
       <h1
-        className={`sm:text-[9vw] text-[11vw] md:text-[8vw] font-bold ${color} relative`}
+        className={`text-[11vw] font-bold sm:text-[9vw] md:text-[8vw] ${color} relative`}
       >
         {number}
       </h1>
       <p
-        className={`md:absolute md:top-[1.2vw] md:left-[5vw] md:text-[3vw] max-md:hidden font-bold ${color}`}
+        className={`font-bold max-md:hidden md:absolute md:left-[5vw] md:top-[1.2vw] md:text-[3vw] ${color}`}
       >
         {position}
       </p>
-      <p className="sm:text-[2.2vw] text-[3vw] md:text-[2vw] text-gray-800">
+      <p className="text-[3vw] text-gray-800 sm:text-[2.2vw] md:text-[2vw]">
         {text}
       </p>
     </div>
