@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        acumin: ["acumin-pro", "acumin-variable"],
+        acumin: ["Source Sans Pro", "acumin-variable"],
       },
       colors: {
         "custom-gre": "#43a75f",

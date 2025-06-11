@@ -27,6 +27,7 @@ export default function Sponsors() {
       <AnimatedSection>
         <div className="flex flex-col place-content-center place-items-center mb-20">
           <p className="text-4xl font-bold">SPONSORS</p>
+
           <div className="flex gap-10  mt-10 max-sm:flex-col sm:flex-wrap place-content-center place-items-center ">
             <a
               href={google.website}
