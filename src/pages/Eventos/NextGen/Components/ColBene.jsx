@@ -1,19 +1,19 @@
 export function ColBenef({ benefit }) {
   return (
-    <div className="flex flex-col lg:flex-row items-center lg:items-start my-4">
-      <div className="w-full lg:w-1/4 flex justify-center lg:justify-end lg:pr-4">
+    <div className="my-4 flex flex-col items-center lg:flex-row lg:items-start">
+      <div className="flex w-full justify-center lg:w-1/4 lg:justify-end lg:pr-4">
         <img
           src={benefit.image_bene}
           alt={benefit.front_title}
           className="h-20 w-20"
         />
       </div>
-      <div className="w-full lg:w-3/4 flex justify-center lg:justify-start mt-4 lg:mt-0 items-center lg:pt-4">
+      <div className="mt-4 flex w-full items-center justify-center lg:mt-0 lg:w-3/4 lg:justify-start lg:pt-4">
         <div
-          className="rounded-full flex items-center bg-primary-blue w-full lg:w-96 h-12 justify-center lg:justify-start"
+          className="flex h-12 w-full items-center justify-center rounded-full bg-primary-blue lg:w-96 lg:justify-start"
           style={{ backgroundColor: benefit.bgColor }}
         >
-          <p className="text-center lg:text-left pl-4 font-bold text-xl lg:text-2xl">
+          <p className="pl-4 text-center text-xl font-bold lg:text-left lg:text-2xl">
             {benefit.back_title}
           </p>
         </div>

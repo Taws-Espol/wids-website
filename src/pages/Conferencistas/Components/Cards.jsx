@@ -3,9 +3,9 @@ import {
   CardHeader,
   CardBody,
   Typography,
-} from "@material-tailwind/react";
-import "./Cards.css";
-import PropTypes from "prop-types";
+} from '@material-tailwind/react';
+import './Cards.css';
+import PropTypes from 'prop-types';
 
 export function Cards(props) {
   return (
@@ -16,17 +16,17 @@ export function Cards(props) {
         </CardHeader>
         <div className="overlay rounded-xl">
           <div className="flex justify-center p-[2vw]">
-            <p className="text-[2.8vw] md:text-[1.6vw] font-medium">
+            <p className="text-[2.8vw] font-medium md:text-[1.6vw]">
               {props.info}
             </p>
           </div>
         </div>
       </div>
-      <CardBody className="text-center p-[0.8vw]  lg:p-[1.2vw] 2xl:p-[2.1vw]">
+      <CardBody className="p-[0.8vw] text-center lg:p-[1.2vw] 2xl:p-[2.1vw]">
         <Typography
           variant="h4"
           color="blue-gray"
-          className="sm:mb-2 max-md:text-[2.8vw] md:text-[1.7vw] lg:text-[1.8vw]"
+          className="max-md:text-[2.8vw] sm:mb-2 md:text-[1.7vw] lg:text-[1.8vw]"
         >
           {props.name}
         </Typography>

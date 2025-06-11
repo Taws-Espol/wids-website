@@ -2,11 +2,11 @@ export default function AboutUsCard() {
   return (
     <div className="relative">
       <img
-        className="absolute top-[-15px] right-[-15px] w-[7rem] z-[-1]"
+        className="absolute right-[-15px] top-[-15px] z-[-1] w-[7rem]"
         src="/assets/about-us/rectangle.svg"
       />
       <img
-        className="absolute bottom-[-35px] left-[-35px] w-[10rem] z-[-1]"
+        className="absolute bottom-[-35px] left-[-35px] z-[-1] w-[10rem]"
         src="/assets/about-us/circle.svg"
       />
       <img

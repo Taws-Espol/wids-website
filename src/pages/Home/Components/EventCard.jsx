@@ -1,5 +1,5 @@
-import React from "react";
-import { TERipple } from "tw-elements-react";
+import React from 'react';
+import { TERipple } from 'tw-elements-react';
 
 const EventCard = ({ image, CardTitle }) => {
   return (

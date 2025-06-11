@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"; // Importa Link desde react-router-dom
-import EditionCard from "./Components/EditionCard";
+import { Link } from 'react-router-dom'; // Importa Link desde react-router-dom
+import EditionCard from './Components/EditionCard';
 
 function Editions() {
   const breakpoint = 1025;
@@ -11,10 +11,10 @@ function Editions() {
 
   return (
     <>
-      <section className="bg-gray-2 pt-20 pb-20 font-acumin">
-        <div className="flex flex-col w-full place-content-center place-items-center">
+      <section className="bg-gray-2 pb-20 pt-20 font-acumin">
+        <div className="flex w-full flex-col place-content-center place-items-center">
           <div className="flex w-4/5 place-content-start place-items-center pb-40 max-md:pb-20">
-            <h1 className="text-4xl text-primary-dark-green max-sm:text-2xl font-bold">
+            <h1 className="text-4xl font-bold text-primary-dark-green max-sm:text-2xl">
               Ediciones anteriores
             </h1>
           </div>
@@ -32,8 +32,8 @@ function Editions() {
               <Link to="/eventos/ediciones/2023">
                 <EditionCard key="4" color="bg-yellow-edition" year="2023" />
               </Link>
-              <div className="w-[400px] h-[400px] max-xxl:h-[300px] max-xxl:w-[300px] max-lg:hidden"></div>
-              <div className="w-[400px] h-[400px] max-xxl:h-[300px] max-xxl:w-[300px] max-lg:hidden"></div>
+              <div className="h-[400px] w-[400px] max-xxl:h-[300px] max-xxl:w-[300px] max-lg:hidden"></div>
+              <div className="h-[400px] w-[400px] max-xxl:h-[300px] max-xxl:w-[300px] max-lg:hidden"></div>
             </div>
           </div>
         </div>

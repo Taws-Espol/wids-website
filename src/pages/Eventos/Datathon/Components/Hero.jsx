@@ -1,21 +1,11 @@
-import AnimatedSection from "../../../../shared/AnimatedSection";
+import AnimatedSection from '../../../../shared/AnimatedSection';
 
 export default function Hero({ title, link }) {
   return (
     <AnimatedSection>
-      <div
-        className="relative flex flex-col md:flex-row justify-center items-center 
-          md:items-start md:justify-start  bg-yellow-500 text-primary-dark-green
-          pb-10 overflow-hidden"
-      >
-        <div
-          className="w-4/5 md:w-1/2 flex flex-col  
-            items-center justify-center md:justify-start py-10 md:p-16"
-        >
-          <h2
-            className="text-4xl lg:text-5xl xl:text-6xl
-            2xl:text-[80px]  text-center md:text-start  font-bold pb-10"
-          >
+      <div className="relative flex flex-col items-center justify-center overflow-hidden bg-yellow-500 pb-10 text-primary-dark-green md:flex-row md:items-start md:justify-start">
+        <div className="flex w-4/5 flex-col items-center justify-center py-10 md:w-1/2 md:justify-start md:p-16">
+          <h2 className="pb-10 text-center text-4xl font-bold md:text-start lg:text-5xl xl:text-6xl 2xl:text-[80px]">
             {title}
           </h2>
         </div>
@@ -24,10 +14,7 @@ export default function Hero({ title, link }) {
           <img
             src="/assets/Eventos/Datathon/data_portada.webp"
             alt="Event logo"
-            className=" md:absolute md:right-[-55%] md:top-0 w-full
-            max-w-[80%] sm:max-w-[70%] md:max-w-full max-h-[80%] sm:max-h-[70%]
-            md:max-h-full h-auto md:object-cover shadow-xl md:shadow-2xl
-            rounded-full py-2"
+            className="h-auto max-h-[80%] w-full max-w-[80%] rounded-full py-2 shadow-xl sm:max-h-[70%] sm:max-w-[70%] md:absolute md:right-[-55%] md:top-0 md:max-h-full md:max-w-full md:object-cover md:shadow-2xl"
           />
         </div>
       </div>
