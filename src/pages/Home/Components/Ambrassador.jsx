@@ -1,17 +1,13 @@
 import { useState, useEffect } from 'react';
 import CardAmbrassador from './CardAmbrassador';
+import ambassadors from '../../../data/Ambrassador';
 
 const Ambassador = () => {
-  const [ambassadors, setAmbassadors] = useState([]);
-
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    const fetchAmbassadors = async () => {
-      const response = await fetch('../../../data/Ambrassador.js');
-      const data = await response.json();
-      setAmbassadors(data);
-    };
-
-    fetchAmbassadors();
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   }, []);
 
   return (
@@ -35,7 +31,7 @@ const Ambassador = () => {
         </text>
       </svg>
 
-      <h2 className="mx-auto mb-10 ml-4 max-w-xl px-6 text-left text-4xl font-semibold text-gray-700 sm:px-0 md:ml-6 lg:ml-[110px]">
+      <h2 className="mx-auto mb-10 ml-4 max-w-xl px-6 text-left text-2xl font-semibold text-gray-700 sm:px-0 md:ml-6 lg:ml-[50px]">
         Estas son las voces que representan a WiDS como embajadora y
         coembajadoras.
       </h2>

@@ -1,4 +1,4 @@
-[
+const ambassadors = [
   {
     name: 'Daniela Roldón Carranza',
     role: 'Coembajadora',
@@ -20,3 +20,5 @@
     image: 'https://www.w3schools.com/w3images/avatar2.png',
   },
 ];
+
+export default ambassadors;
