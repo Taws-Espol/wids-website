@@ -7,6 +7,7 @@ import CarruselConferences from './Components/CarruselConferences';
 import AnimatedSection from './../../shared/AnimatedSection';
 import Posts from './Components/Posts';
 import Programa from './Components/Programa';
+import AboutUs from './Components/AboutUs';
 
 function Inicio() {
   return (
@@ -17,7 +18,7 @@ function Inicio() {
           <div className="mb-20 mt-[3vw]">
             <div className="mt-5 max-md:mb-[2vw] md:mb-[3em]">
               <h1
-                className="w-full text-center font-acumin text-[6vw] font-bold md:text-[5vw] 2xl:text-[4vw] min-[2474px]:text-[3vw]"
+                className="font-acumin w-full text-center text-[6vw] font-bold md:text-[5vw] 2xl:text-[4vw] min-[2474px]:text-[3vw]"
                 style={{ color: '#004029' }}
               >
                 CONFERENCIA
@@ -32,10 +33,13 @@ function Inicio() {
         </section>
       </AnimatedSection>
       <AnimatedSection>
+        <AboutUs />
+      </AnimatedSection>
+      <AnimatedSection>
         <Ubicacion />
       </AnimatedSection>
       <AnimatedSection>
-        <div className="my-10 flex select-none flex-col place-content-center place-items-center font-acumin text-primary-dark-green">
+        <div className="font-acumin my-10 flex select-none flex-col place-content-center place-items-center text-primary-dark-green">
           <h1 className="text-5xl font-bold">PROGRAMA</h1>
           <div style={{ textAlign: 'center', marginTop: '20px' }}>
             <Programa />
