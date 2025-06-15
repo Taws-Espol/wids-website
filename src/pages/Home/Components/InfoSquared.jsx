@@ -30,19 +30,19 @@ export function InfoSquared({ number, text, color, m_top }) {
   return (
     <div
       ref={ref}
-      className={`w-[250px] flex flex-col ${color} ${m_top} text-5xl  font-bold place-content-center place-items-center text-center px-5 gap-5  max-sm:text-sm max-md:text-xl`}
+      className={`flex w-[250px] flex-col ${color} ${m_top} place-content-center place-items-center gap-5 px-5 text-center text-5xl font-bold max-md:text-xl max-sm:text-sm`}
     >
-      <p className="text-[#727272] w-full text-[12px] text-center md:text-start">
+      <p className="w-full text-center text-[12px] text-[#727272] md:text-start">
         OVER
       </p>
-      <p className="xl:text-[4rem] text-[3.5rem]">
-        {count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+      <p className="text-[3.5rem] xl:text-[4rem]">
+        {count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
       </p>
-      <p className="w-full text-center xl:text-start text-green-950 text-[1.2rem] xl:text-[2rem] font-light ">
+      <p className="w-full text-center text-[1.2rem] font-light text-green-950 xl:text-start xl:text-[2rem]">
         {text}
       </p>
-      className={`flex aspect-square h-[360px] flex-col ${color} place-content-center place-items-center gap-5 px-5 text-center text-5xl font-bold text-white max-md:h-[200px] max-md:w-[200px] max-md:text-xl max-sm:h-[120px] max-sm:w-[120px] max-sm:text-sm`}
-    >
+      className=
+      {`flex aspect-square h-[360px] flex-col ${color} place-content-center place-items-center gap-5 px-5 text-center text-5xl font-bold text-white max-md:h-[200px] max-md:w-[200px] max-md:text-xl max-sm:h-[120px] max-sm:w-[120px] max-sm:text-sm`}
       <p className="text-7xl max-md:text-3xl max-sm:text-xl">{count}</p>
       <p className="max-md:text-lg max-sm:text-sm">{text}</p>
     </div>
