@@ -20,6 +20,7 @@
     "@material-tailwind/react": "^2.1.10",
     "@mui/lab": "5.0.0-alpha.176",
     "@mui/material": "^5.17.1",
+    "animate.css": "^4.1.1",
     "common-js": "^0.3.8",
     "express": "^4.21.2",
     "nodemailer": "^6.10.1",
