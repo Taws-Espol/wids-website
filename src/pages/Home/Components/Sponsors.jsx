@@ -1,7 +1,6 @@
 import { Sponsors_Cola } from '../../../data/sponsors';
 import Sponsor from './Sponsor';
 import Club from './Club';
-import Subtitle from './Subtitle'; // No parece ser utilizado, puedes eliminar si no lo necesitas
 import AnimatedSection from './../../../shared/AnimatedSection';
 
 export default function Sponsors() {
