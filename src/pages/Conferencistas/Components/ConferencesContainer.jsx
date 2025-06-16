@@ -39,7 +39,7 @@ export function ConferenceContainer({
 
   return (
     <>
-      <div className="flex flex-row flex-wrap place-content-center place-items-center gap-10 font-acumin">
+      <div className="font-acumin flex flex-row flex-wrap place-content-center place-items-center gap-10">
         {conferenceActive && (
           <div
             id={div_principal}

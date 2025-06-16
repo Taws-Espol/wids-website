@@ -15,7 +15,7 @@ export function CardInfo({ type, title, info }) {
   }
 
   return (
-    <div className="flex w-[482px] place-content-start gap-5 rounded-md border border-indigo-600 p-8 font-acumin max-sm:w-[375px] max-xsm:w-[300px]">
+    <div className="font-acumin flex w-[482px] place-content-start gap-5 rounded-md border border-indigo-600 p-8 max-sm:w-[375px] max-xsm:w-[300px]">
       <img
         src={image}
         alt="Logo-Evento"

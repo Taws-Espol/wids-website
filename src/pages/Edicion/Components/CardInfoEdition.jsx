@@ -23,7 +23,7 @@ export function CardInfoEdition({ type, evento, year, index }) {
   return (
     <div
       ref={cardRef}
-      className={`flex w-[1100px] place-content-start place-items-center gap-10 rounded-md border-2 p-8 font-acumin hover:border-primary-violet max-xl:w-[700px] max-md:w-[500px] max-sm:w-[375px] max-sm:flex-col max-xsm:w-[300px] ${animationClass}`}
+      className={`font-acumin flex w-[1100px] place-content-start place-items-center gap-10 rounded-md border-2 p-8 hover:border-primary-violet max-xl:w-[700px] max-md:w-[500px] max-sm:w-[375px] max-sm:flex-col max-xsm:w-[300px] ${animationClass}`}
     >
       <div className="flex h-[5rem] w-[5rem] items-center justify-center overflow-hidden rounded-full border-2 sm:h-[4rem] sm:w-[4rem] md:h-[6rem] md:w-[6rem] lg:h-[7rem] lg:w-[7rem] xl:h-[8rem] xl:w-[8rem]">
         <img

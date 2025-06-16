@@ -33,7 +33,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="text-md left-0 top-0 w-full select-none font-acumin lg:flex lg:items-center lg:justify-between lg:px-32 lg:text-[20px] lg:text-lg">
+      <nav className="text-md font-acumin left-0 top-0 w-full select-none lg:flex lg:items-center lg:justify-between lg:px-32 lg:text-[20px] lg:text-lg">
         <div className="flex items-center justify-between bg-[rgb(252,252,252)]">
           <Link to="/">
             <img

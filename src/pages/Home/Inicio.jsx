@@ -1,13 +1,12 @@
-import React from 'react';
 import Carrusel from './Components/Carrusel';
 import { Infos } from './Components/Infos';
 import Sponsors from './Components/Sponsors';
 import Ubicacion from './Components/Ubicacion';
-import CarruselConferences from './Components/CarruselConferences';
 import AnimatedSection from './../../shared/AnimatedSection';
-import Posts from './Components/Posts';
 import Programa from './Components/Programa';
+import AboutUsHome from './Components/about-us-home/AboutUsHome';
 import Ambrassador from './Components/Ambrassador';
+
 function Inicio() {
   return (
     <>
@@ -19,9 +18,7 @@ function Inicio() {
             <h1
               className="mt-[20px] w-full pl-[0px] text-center font-acumin text-[2.5rem] font-thin xl:pl-[60px] xl:text-start"
               style={{ color: '#004029' }}
-            >
-              {/* Title or content */}
-            </h1>
+            ></h1>
           </div>
 
           <div className="mb-20 mt-[3vw]">
@@ -46,6 +43,8 @@ function Inicio() {
       <AnimatedSection>
         <Ubicacion />
       </AnimatedSection>
+
+      <AboutUsHome />
 
       <AnimatedSection>
         <div className="my-10 flex select-none flex-col place-content-center place-items-center font-acumin text-primary-dark-green">

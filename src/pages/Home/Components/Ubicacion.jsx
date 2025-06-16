@@ -15,7 +15,7 @@ const Ubicacion = () => {
         ></iframe>
       </div>
       <div className="flex flex-col pr-[1vw] min-[1651px]:pl-[1.2vw] 5xl:pl-[2vw]">
-        <div className="flex flex-col place-items-center px-8 pt-[10vw] font-acumin md:place-items-start md:pt-12">
+        <div className="font-acumin flex flex-col place-items-center px-8 pt-[10vw] md:place-items-start md:pt-12">
           <h1 className="font-acumin text-[7vw] font-bold md:text-[4vw] lg:text-[3.5vw] 5xl:text-[5em]">
             UBICACIÓN
           </h1>

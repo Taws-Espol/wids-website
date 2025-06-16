@@ -13,11 +13,11 @@ function Edition() {
       <section className="dark:bg-dark m-0 mx-10 my-2 select-none px-20 py-10 max-md:flex max-md:flex-col max-md:place-content-center max-md:place-items-center max-md:p-0">
         <div className="flex w-full items-center gap-2 text-center">
           <Link to="/eventos/ediciones">
-            <h1 className="my-5 font-acumin text-4xl font-bold text-primary-dark-green max-md:text-2xl max-sm:text-lg">
+            <h1 className="font-acumin my-5 text-4xl font-bold text-primary-dark-green max-md:text-2xl max-sm:text-lg">
               {'Ediciones anteriores  > '}{' '}
             </h1>
           </Link>
-          <h1 className="my-5 font-acumin text-4xl font-bold text-primary-dark-green max-md:text-2xl max-sm:text-lg">
+          <h1 className="font-acumin my-5 text-4xl font-bold text-primary-dark-green max-md:text-2xl max-sm:text-lg">
             Edición {year}
           </h1>
         </div>

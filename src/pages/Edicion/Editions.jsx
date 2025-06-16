@@ -11,7 +11,7 @@ function Editions() {
 
   return (
     <>
-      <section className="bg-gray-2 pb-20 pt-20 font-acumin">
+      <section className="bg-gray-2 font-acumin pb-20 pt-20">
         <div className="flex w-full flex-col place-content-center place-items-center">
           <div className="flex w-4/5 place-content-start place-items-center pb-40 max-md:pb-20">
             <h1 className="text-4xl font-bold text-primary-dark-green max-sm:text-2xl">

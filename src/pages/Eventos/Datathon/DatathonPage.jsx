@@ -14,7 +14,7 @@ function Datathon() {
   const infos_dvi6 = div6.infos;
 
   return (
-    <div className="flex w-full select-none flex-col font-acumin">
+    <div className="font-acumin flex w-full select-none flex-col">
       <div className="justify-items-center py-5 pl-6 md:pl-16 lg:pl-32 xl:pl-40 2xl:pl-48">
         <h1 className="xl:text-10xl 2xl:text-11xl text-center text-6xl font-bold text-primary-dark-green sm:text-7xl md:items-stretch md:text-left md:text-8xl lg:text-9xl">
           Datathon

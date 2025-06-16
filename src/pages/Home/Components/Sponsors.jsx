@@ -7,8 +7,9 @@ export default function Sponsors() {
   const google = Sponsors_Cola.importants[0];
 
   return (
-    <div className="mb-20 mt-16 flex select-none flex-col place-content-center place-items-center items-center font-acumin text-primary-dark-green">
-      {/* Organizador Section */}
+    <div
+      className={`mb-20 mt-16 flex select-none flex-col place-content-center place-items-center items-center font-acumin text-primary-dark-green`}
+    >
       <AnimatedSection>
         <div className="mb-20 flex flex-col place-content-center place-items-center gap-10">
           <p className="text-4xl font-bold">ORGANIZADOR</p>

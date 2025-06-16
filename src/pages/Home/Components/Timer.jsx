@@ -41,7 +41,7 @@ export function Timer({ Event_date }) {
   function CardTimer(props) {
     return (
       <div
-        className={`flex h-[14vw] w-[13vw] select-none flex-col place-content-center place-items-center rounded-[2vw] font-acumin font-bold text-black sm:h-[12vw] sm:w-[11vw] md:h-[11vw] md:w-[10vw] md:rounded-2xl xl:h-[8rem] xl:w-[7rem] min-[1536px]:h-36 min-[1536px]:w-32 ${!props.isSec ? 'bg-white' : 'bg-primary-dark-green text-white'}`}
+        className={`font-acumin flex h-[14vw] w-[13vw] select-none flex-col place-content-center place-items-center rounded-[2vw] font-bold text-black sm:h-[12vw] sm:w-[11vw] md:h-[11vw] md:w-[10vw] md:rounded-2xl xl:h-[8rem] xl:w-[7rem] min-[1536px]:h-36 min-[1536px]:w-32 ${!props.isSec ? 'bg-white' : 'bg-primary-dark-green text-white'}`}
       >
         <p className="text-[5.5vw] sm:text-[4.5vw] md:text-[4vw] xl:text-6xl">
           {props.time}
@@ -54,7 +54,7 @@ export function Timer({ Event_date }) {
   }
 
   return (
-    <div className="flex flex-wrap place-content-between gap-[2vw] bg-transparent p-1 font-acumin md:gap-4">
+    <div className="font-acumin flex flex-wrap place-content-between gap-[2vw] bg-transparent p-1 md:gap-4">
       <CardTimer className="" time={rest.weeks} timeInfo="Weeks" />
       <CardTimer className="" time={rest.days} timeInfo="Days" />
       <CardTimer className="" time={rest.hours} timeInfo="Hr" />

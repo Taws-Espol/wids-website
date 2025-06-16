@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        acumin: ["Source Sans Pro", "acumin-variable"],
+        acumin: ['Source Sans Pro', 'acumin-variable'],
         sans: [
           '"Source Sans Pro"',
           'ui-sans-serif',

@@ -86,7 +86,7 @@ export default function CarruselConferences() {
         <div className="h-[280px] bg-white"></div>
         <div className="mb-10 h-[100px] bg-primary-dark-green"></div>
       </div>
-      <div className="relative m-auto w-3/4 font-acumin">
+      <div className="font-acumin relative m-auto w-3/4">
         <h1 className="pt-6 text-center font-serif text-[6vw] font-bold text-white md:pt-10 md:text-[4vw] 2xl:text-[3vw] min-[2474px]:text-[2.25vw]">
           CONFERENCISTAS
         </h1>
