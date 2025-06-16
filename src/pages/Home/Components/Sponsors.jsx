@@ -1,19 +1,21 @@
 import { Sponsors_Cola } from '../../../data/sponsors';
-import Sponsor from './Sponsor';
-import Club from './Club';
 import AnimatedSection from './../../../shared/AnimatedSection';
+import SponsorsCarousel from './SponsorsCarousel';
 
 export default function Sponsors() {
   const google = Sponsors_Cola.importants[0];
+  const allSponsors = [
+    ...Sponsors_Cola.importants,
+    ...Sponsors_Cola.sponsors,
+    ...Sponsors_Cola.colaboradores,
+  ];
 
   return (
-    <div
-      className={`mb-20 mt-16 flex select-none flex-col place-content-center place-items-center items-center font-acumin text-primary-dark-green`}
-    >
+    <div className={`mb-20 mt-16 font-acumin text-primary-dark-green`}>
       <AnimatedSection>
         <div className="mb-20 flex flex-col place-content-center place-items-center gap-10">
           <p className="text-4xl font-bold">ORGANIZADOR</p>
-          <a href={'https://www.instagram.com/taws_espol'}>
+          <a href={'https://www.instagram.com/taws_espol'} className="">
             <img
               src="/assets/taws.webp"
               alt="Taws"
@@ -23,47 +25,12 @@ export default function Sponsors() {
           </a>
         </div>
       </AnimatedSection>
-
-      {/* Sponsors Section */}
       <AnimatedSection>
         <div className="mb-20 flex flex-col place-content-center place-items-center">
-          <p className="text-4xl font-bold">SPONSORS</p>
-          <div className="mt-10 flex place-content-center place-items-center gap-10 max-sm:flex-col sm:flex-wrap">
-            {/* Google Sponsor */}
-            <div className="mt-10 flex place-content-center place-items-center gap-10 max-sm:flex-col sm:flex-wrap">
-              <a
-                href={google.website}
-                className="flex h-full w-full items-center justify-center text-pink-500"
-              >
-                <img
-                  src={google.logo}
-                  alt={google.name}
-                  className="h-2/5 w-3/5 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
-                />
-              </a>
-            </div>
-
-            {/* All Other Sponsors */}
-            <div className="mt-10 flex place-content-center place-items-center gap-10 max-sm:flex-col sm:flex-wrap">
-              {Sponsors_Cola.sponsors.map((sponsor, index) => (
-                <Sponsor key={index} {...sponsor} />
-              ))}
-            </div>
-          </div>
+          <p className="text-4xl font-bold">Sponsors y más</p>
         </div>
       </AnimatedSection>
-
-      {/* Clubes Asociados Section */}
-      <AnimatedSection>
-        <div className="flex flex-col place-content-center place-items-center">
-          <p className="text-4xl font-bold">CLUBES ASOCIADOS</p>
-          <div className="mt-10 flex place-content-center place-items-center gap-10 max-sm:flex-col sm:flex-wrap">
-            {Sponsors_Cola.colaboradores.map((club, index) => (
-              <Club key={index} {...club} />
-            ))}
-          </div>
-        </div>
-      </AnimatedSection>
+      <SponsorsCarousel sponsors={allSponsors} />
     </div>
   );
 }
