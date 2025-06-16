@@ -1,15 +1,7 @@
-import { useState, useEffect } from 'react';
 import CardAmbrassador from './CardAmbrassador';
 import ambassadors from '../../../data/Ambrassador';
 
 const Ambassador = () => {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  }, []);
-
   return (
     <div className="relative bg-cyan-200 p-8 text-center shadow-lg">
       <svg

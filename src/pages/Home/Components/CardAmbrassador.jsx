@@ -1,5 +1,3 @@
-import React from 'react';
-
 const AmbassadorCard = ({ name, title, imageSrc }) => {
   return (
     <div className="max-w-xs overflow-hidden bg-white shadow-lg">
