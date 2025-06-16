@@ -7,7 +7,7 @@ import CarruselConferences from './Components/CarruselConferences';
 import AnimatedSection from './../../shared/AnimatedSection';
 import Posts from './Components/Posts';
 import Programa from './Components/Programa';
-
+import Ambrassador from './Components/Ambrassador';
 function Inicio() {
   return (
     <>
@@ -60,6 +60,9 @@ function Inicio() {
 
       <AnimatedSection>
         <Sponsors />
+      </AnimatedSection>
+      <AnimatedSection>
+        <Ambrassador />
       </AnimatedSection>
     </>
   );
