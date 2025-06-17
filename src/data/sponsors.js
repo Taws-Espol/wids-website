@@ -32,6 +32,12 @@ export const Sponsors_Cola = {
       website: 'https://bootcamps.espol.edu.ec/',
       logo: '/assets/sponsors/BOOTCAMPESPOL.webp',
     },
+    {
+      name: 'TAWS',
+      location: '',
+      website: 'https://taws.espol.edu.ec/',
+      logo: '/assets/sponsors/taws.webp',
+    },
   ],
   importants: [
     {

@@ -6,6 +6,8 @@ import AnimatedSection from './../../shared/AnimatedSection';
 import Programa from './Components/Programa';
 import AboutUsHome from './Components/about-us-home/AboutUsHome';
 import Ambrassador from './Components/Ambrassador';
+import Contact from './Components/Contact_home';
+import AboutUsHome2 from './Components/Sobre_nosotros';
 
 function Inicio() {
   return (
@@ -43,7 +45,9 @@ function Inicio() {
       {/*<AnimatedSection>
         <Ubicacion />
       </AnimatedSection>*/}
-
+      <AnimatedSection>
+        <AboutUsHome2 />
+      </AnimatedSection>
       <AboutUsHome />
 
       {/*<AnimatedSection>
@@ -60,6 +64,10 @@ function Inicio() {
       </AnimatedSection>
       <AnimatedSection>
         <Sponsors />
+      </AnimatedSection>
+
+      <AnimatedSection>
+        <Contact />
       </AnimatedSection>
     </div>
   );
