@@ -7,7 +7,7 @@ import Programa from './Components/Programa';
 import AboutUsHome from './Components/about-us-home/AboutUsHome';
 import Ambrassador from './Components/Ambrassador';
 import Contact from './Components/Contact_home';
-import AboutUsHome2 from './Components/Sobre_nosotros';
+import AboutUsHome2 from './Components/AboutUs2';
 
 function Inicio() {
   return (
@@ -46,7 +46,10 @@ function Inicio() {
         <Ubicacion />
       </AnimatedSection>*/}
       <AnimatedSection>
-        <AboutUsHome2 />
+        <AboutUsHome2
+          circleText="Sobre Nosotros"
+          bgImage="/assets/images-carrusel/Events_Accordion_O.webp"
+        />
       </AnimatedSection>
       <AboutUsHome />
 

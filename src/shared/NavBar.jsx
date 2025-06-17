@@ -33,13 +33,13 @@ function Navbar() {
 
   return (
     <>
-      <nav className="text-md font-acumin left-0 top-0 w-full select-none lg:flex lg:items-center lg:justify-between lg:px-32 lg:text-[20px] lg:text-lg">
-        <div className="flex items-center justify-between bg-[rgb(252,252,252)]">
+      <nav className="left-0 top-0 w-full select-none font-acumin text-sm lg:flex lg:items-center lg:justify-between lg:px-4 lg:text-base lg:text-lg">
+        <div className="flex items-center justify-between bg-[rgb(252,252,252)] px-4 py-2">
           <Link to="/">
             <img
-              src="/assets/navbar/Logo_wids2024SG.webp"
+              src="/assets/navbar/Logo_wids2024.svg"
               alt=""
-              className="h-[100px] w-[300px] bg-white"
+              className="h-[80px] w-[250px] bg-white"
             />
           </Link>
           <div
@@ -47,25 +47,19 @@ function Navbar() {
             onClick={toggle}
           >
             <span
-              className={`block h-1 w-6 rounded bg-black transition-transform duration-300 ${
-                isOpen ? 'translate-y-1.5 rotate-45 transform' : 'mt-1'
-              }`}
+              className={`block h-1 w-6 rounded bg-black transition-transform duration-300 ${isOpen ? 'translate-y-1.5 rotate-45 transform' : 'mt-1'}`}
             ></span>
             <span
-              className={`block h-1 w-6 rounded bg-black transition-all duration-300 ${
-                isOpen ? 'opacity-0' : 'mt-1'
-              }`}
+              className={`block h-1 w-6 rounded bg-black transition-all duration-300 ${isOpen ? 'opacity-0' : 'mt-1'}`}
             ></span>
             <span
-              className={`block h-1 w-6 rounded bg-black transition-transform duration-300 ${
-                isOpen ? '-translate-y-0.5 -rotate-45 transform' : 'mt-1'
-              }`}
+              className={`block h-1 w-6 rounded bg-black transition-transform duration-300 ${isOpen ? '-translate-y-0.5 -rotate-45 transform' : 'mt-1'}`}
             ></span>
           </div>
         </div>
 
         <ul
-          className={`duration-600 relative z-50 p-4 transition-all ease-in max-lg:fixed max-lg:top-0 max-lg:h-screen max-lg:w-10/12 max-lg:bg-primary-acc-dark-green lg:static lg:top-0 lg:flex lg:w-auto lg:bg-none lg:opacity-100 ${isOpen ? 'max-lg:right-0 max-lg:opacity-100' : 'max-lg:right-[-100%] max-lg:opacity-0'} `}
+          className={`duration-600 relative z-50 p-4 text-sm transition-all ease-in max-lg:fixed max-lg:top-0 max-lg:h-screen max-lg:w-10/12 max-lg:bg-primary-acc-dark-green lg:static lg:top-0 lg:flex lg:w-auto lg:bg-none lg:opacity-100 ${isOpen ? 'max-lg:right-0 max-lg:opacity-100' : 'max-lg:right-[-100%] max-lg:opacity-0'} `}
           id="Menu"
         >
           {/* Close button in the top right corner when menu is open */}
@@ -83,10 +77,12 @@ function Navbar() {
               className={`block h-1 w-6 -translate-y-0.5 -rotate-45 transform rounded bg-white transition-transform duration-300`}
             ></span>
           </div>
+
+          {/* Menu items with reduced margin and smaller text */}
           <li className={`mb-1`} onClick={toggle2}>
             <Link
               to="/"
-              className="block text-[25px] lg:px-8 lg:py-8 lg:text-[20px]"
+              className="block text-[18px] lg:px-6 lg:py-4 lg:text-[16px]"
             >
               <div
                 className={`group relative flex hover:text-gray-300 ${isOpen ? 'ml-10 mt-52 py-2 text-left text-3xl text-white' : 'items-center justify-center text-2xl'}`}
@@ -98,10 +94,11 @@ function Navbar() {
               </div>
             </Link>
           </li>
+
           <li className={`mb-1`} onClick={toggle2}>
             <Link
               to="/cronograma"
-              className="block text-[25px] lg:px-8 lg:py-8 lg:text-[20px]"
+              className="block text-[18px] lg:px-6 lg:py-4 lg:text-[16px]"
             >
               <div
                 className={`group relative flex hover:text-gray-300 ${isOpen ? 'ml-10 py-2 text-left text-3xl text-white' : 'items-center justify-center text-2xl'}`}
@@ -113,10 +110,11 @@ function Navbar() {
               </div>
             </Link>
           </li>
+
           <li className={`mb-1`} onClick={toggle2}>
             <Link
               to="/nextgen"
-              className="block text-[25px] lg:px-8 lg:py-8 lg:text-[20px]"
+              className="block text-[18px] lg:px-6 lg:py-4 lg:text-[16px]"
             >
               <div
                 className={`group relative flex hover:text-gray-300 ${isOpen ? 'ml-10 py-2 text-left text-3xl text-white' : 'items-center justify-center text-2xl'}`}
@@ -128,10 +126,11 @@ function Navbar() {
               </div>
             </Link>
           </li>
+
           <li className={`mb-1`} onClick={toggle2}>
             <Link
               to="/datathon"
-              className="block text-[25px] lg:px-8 lg:py-8 lg:text-[20px]"
+              className="block text-[18px] lg:px-6 lg:py-4 lg:text-[16px]"
             >
               <div
                 className={`group relative flex hover:text-gray-300 ${isOpen ? 'ml-10 py-2 text-left text-3xl text-white' : 'items-center justify-center text-2xl'}`}
@@ -143,10 +142,11 @@ function Navbar() {
               </div>
             </Link>
           </li>
+
           <li className={`mb-1`} onClick={toggle2}>
             <Link
               to="/nosotros"
-              className="block text-[25px] lg:px-8 lg:py-8 lg:text-[20px]"
+              className="block text-[18px] lg:px-6 lg:py-4 lg:text-[16px]"
             >
               <div
                 className={`group relative flex hover:text-gray-300 ${isOpen ? 'ml-10 py-2 text-left text-3xl text-white' : 'items-center justify-center text-2xl'}`}
@@ -158,6 +158,8 @@ function Navbar() {
               </div>
             </Link>
           </li>
+
+          {/* Social media icons with reduced size */}
           <div
             className={`mt-52 flex items-center justify-center gap-6 lg:hidden ${isOpen ? '' : 'hidden'}`}
           >
@@ -166,21 +168,21 @@ function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaFacebook size={40} color="white" />
+              <FaFacebook size={30} color="white" />
             </a>
             <a
               href="https://www.instagram.com/widsespol/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaInstagram size={40} color="white" />
+              <FaInstagram size={30} color="white" />
             </a>
             <a
               href="https://x.com/widsespol"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaXTwitter size={40} color="white" />
+              <FaXTwitter size={30} color="white" />
             </a>
           </div>
         </ul>

@@ -16,9 +16,9 @@ function NextGen() {
 
   return (
     <AnimatedSection>
-      <div className="font-acumin flex w-full select-none flex-col place-content-center place-items-center pb-10">
+      <div className="flex w-full select-none flex-col place-content-center place-items-center overflow-x-hidden pb-10 font-acumin">
         <div className="w-full px-4 sm:px-8 md:px-16 lg:px-32 xl:px-64">
-          <h1 className="font-acumin py-0 text-center text-5xl font-bold text-primary-dark-green sm:py-5 sm:text-3xl md:text-4xl lg:text-left lg:text-5xl xl:text-6xl">
+          <h1 className="py-0 text-center font-acumin text-5xl font-bold text-primary-dark-green sm:py-5 sm:text-3xl md:text-4xl lg:text-left lg:text-5xl xl:text-6xl">
             Next Gen 2024
           </h1>
         </div>
