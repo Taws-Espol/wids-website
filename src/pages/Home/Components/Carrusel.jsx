@@ -1,75 +1,86 @@
 import React from 'react';
-import { useState } from 'react';
-import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+import { useState, useEffect } from 'react';
 import { infoImages } from '../../../data/info-Carrusel.js';
 import { Timer } from './Timer.jsx';
-import '../../../index.css'; // Asegúrate de que el path sea correcto.
+import '../../../index.css';
 
 export default function Carrusel() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const previousImage = () => {
-    const isfisrtImage = currentIndex === 0;
-    const newIndex = isfisrtImage ? infoImages.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
+  // Auto-play cada 10 segundos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => {
+        const isLastImage = prevIndex === infoImages.length - 1;
+        return isLastImage ? 0 : prevIndex + 1;
+      });
+    }, 10000); // 10 segundos
 
-  const nextImage = () => {
-    const isLastImage = currentIndex === infoImages.length - 1;
-    const newIndex = isLastImage ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
-  // Second div left
-  // Third div right
-  const linksForm = [
-    'https://forms.gle/K49hcMVpajuw2QgT6',
-    'https://docs.google.com/forms/d/e/1FAIpQLSdhNss5S8yXrnr2nZdPmuNOwk2RZl56Hf8TtMXnpBXBWXECtA/viewform',
-  ];
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="group relative m-0 h-[1000px] w-full">
-      <div
-        style={{ backgroundImage: `url(${infoImages[currentIndex].url})` }}
-        className="h-full w-full bg-opacity-50 bg-cover bg-center duration-500"
-      ></div>
-      <div className="absolute left-5 top-[50%] hidden translate-x-0 translate-y-[-50%] cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white group-hover:z-20 group-hover:block">
-        <BsChevronCompactLeft onClick={previousImage} size={30} />
-      </div>
-      <div className="absolute right-5 top-[50%] hidden translate-x-0 translate-y-[-50%] cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white group-hover:z-20 group-hover:block">
-        <BsChevronCompactRight onClick={nextImage} size={30} />
-      </div>
-      <div className="relative bottom-[20vw] flex place-content-center sm:bottom-[17vw] md:bottom-[16vw] xl:absolute xl:bottom-[50px] xl:right-10">
-        <Timer
-          key={currentIndex}
-          Event_date={new Date(infoImages[currentIndex].dateTimer)}
-        />
-      </div>
-      <div className="absolute left-0 top-0 h-full w-full overflow-hidden group-hover:z-10">
-        <div className="text-shadow-black font-acumin absolute left-[-35%] top-[-72%] h-full w-full select-none overflow-hidden rounded-full bg-primary-yellow text-white xsm:left-[-40%] xsm:top-[-67%] sm:left-[-45%] sm:top-[-60%] md:left-[-45%] md:top-[-57%] lg:top-[-50%] xl:left-[-1220px] xl:top-[-50%] xl:h-[1900px] xl:w-[1900px]"></div>
-      </div>
-      <div className="text-shadow-black max-xl:left-15 font-acumin absolute left-[5vw] top-[35%] flex select-none flex-col gap-4 text-primary-dark-green group-hover:z-20 max-xl:top-10 max-xl:gap-[1.5vw] 5xl:left-[3%]">
-        <p className="font-acumin text-[7vw] font-bold xsm:text-[5vw] sm:text-[vw] xl:text-[3.5em] 2xl:text-[4em] 5xl:text-[4em]">
-          {infoImages[currentIndex].title}
-        </p>
-        <p className="font-acumin text-[4vw] font-normal xsm:text-[4vw] sm:text-[3vw] xl:text-[2.5em] 2xl:text-[3em] 5xl:text-[3em]">
-          {infoImages[currentIndex].date}
-        </p>
-        <p className="font-acumin text-[4vw] font-normal xsm:text-[4vw] sm:text-[3vw] xl:text-[2.5em] 2xl:text-[3em] 5xl:text-[3em]">
-          {infoImages[currentIndex].place}
-        </p>
-        <p className="font-acumin text-[4vw] font-normal xsm:text-[4vw] sm:text-[3vw] xl:text-[2.5em] 2xl:text-[3em] 5xl:text-[3em]">
-          {infoImages[currentIndex].uni}
-        </p>
+    <div className="group relative w-full overflow-hidden bg-gray-100">
+      {/* Container principal */}
+      <div className="relative h-[300px] w-full sm:h-[350px] md:h-[400px] lg:h-[450px]">
+        {/* Imagen de fondo */}
         <div
-          className={`${infoImages[currentIndex].linkform ? 'block' : 'hidden'}`}
-        >
-          <button
-            className="font-acumin mt-3 w-52 select-none rounded-3xl bg-primary-dark-green py-3 text-center text-4xl font-medium text-white max-sm:w-32 max-sm:text-2xl lg:w-2/3 lg:text-5xl"
-            onClick={() =>
-              window.open(infoImages[currentIndex].linkform, '_blank')
-            }
-          >
-            Registro
-          </button>
+          style={{ backgroundImage: `url(${infoImages[currentIndex].url})` }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-500"
+        />
+
+        {/* Bloque amarillo rectangular como en la imagen */}
+        <div className="clip-path-diagonal absolute left-0 top-0 z-10 h-full w-[200px] bg-primary-yellow sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px]">
+          {/* Forma diagonal usando CSS personalizado */}
+          <div
+            className="absolute inset-0 bg-primary-yellow"
+            style={{
+              clipPath: 'polygon(0 0, 85% 0, 70% 100%, 0% 100%)',
+            }}
+          ></div>
+        </div>
+
+        {/* Contenido de texto sobre el bloque amarillo */}
+        <div className="absolute left-6 top-8 z-20 max-w-[45%] sm:left-8 sm:top-10 sm:max-w-[40%] md:left-10 md:top-12 md:max-w-[35%] lg:left-12 lg:top-16">
+          {/* Título */}
+          <h1 className="mb-2 font-acumin text-lg font-bold uppercase leading-tight tracking-wide text-primary-dark-green sm:mb-3 sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+            {infoImages[currentIndex].title}
+          </h1>
+
+          {/* Fecha */}
+          <p className="mb-1 font-acumin text-sm font-medium text-primary-dark-green sm:mb-2 sm:text-base md:text-lg lg:text-xl">
+            {infoImages[currentIndex].date}
+          </p>
+
+          {/* Lugar */}
+          <p className="mb-2 font-acumin text-sm font-medium text-primary-dark-green sm:mb-3 sm:text-base md:text-lg lg:text-xl">
+            {infoImages[currentIndex].place}
+          </p>
+
+          {/* Universidad */}
+          <p className="mb-4 font-acumin text-sm font-medium text-primary-dark-green sm:mb-6 sm:text-base md:text-lg lg:text-xl">
+            {infoImages[currentIndex].uni}
+          </p>
+
+          {/* Botón de registro */}
+          {infoImages[currentIndex].linkform && (
+            <button
+              className="transform rounded-full bg-primary-dark-green px-4 py-2 font-acumin text-xs font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-opacity-90 hover:shadow-xl sm:px-6 sm:py-3 sm:text-sm md:px-8 md:py-3 md:text-base lg:text-lg"
+              onClick={() =>
+                window.open(infoImages[currentIndex].linkform, '_blank')
+              }
+            >
+              Registro
+            </button>
+          )}
+        </div>
+
+        {/* Timer - Posicionado como en la imagen original */}
+        <div className="absolute bottom-4 right-4 z-20 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8">
+          <Timer
+            key={currentIndex}
+            Event_date={new Date(infoImages[currentIndex].dateTimer)}
+          />
         </div>
       </div>
     </div>

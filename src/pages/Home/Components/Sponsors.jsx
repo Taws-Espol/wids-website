@@ -12,7 +12,7 @@ export default function Sponsors() {
 
   return (
     <div className={`mb-20 mt-16 font-acumin text-primary-dark-green`}>
-      <AnimatedSection>
+      {/*<AnimatedSection>
         <div className="mb-20 flex flex-col place-content-center place-items-center gap-10">
           <p className="text-4xl font-bold">ORGANIZADOR</p>
           <a href={'https://www.instagram.com/taws_espol'} className="">
@@ -24,7 +24,7 @@ export default function Sponsors() {
             />
           </a>
         </div>
-      </AnimatedSection>
+      </AnimatedSection>*/}
       <AnimatedSection>
         <div className="mb-20 flex flex-col place-content-center place-items-center">
           <p className="text-4xl font-bold">Sponsors y más</p>

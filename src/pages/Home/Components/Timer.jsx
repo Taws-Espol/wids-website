@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
-import '../../../index.css'; // Asegúrate de que el path sea correcto.
+import React, { useEffect, useState } from 'react';
+import '../../../index.css'; // Ensure the path is correct
 
 export function Timer({ Event_date }) {
   const [rest, setTime] = useState({
@@ -11,8 +10,8 @@ export function Timer({ Event_date }) {
     seconds: 0,
   });
 
+  // Function to update time
   function updateTime(Event_date) {
-    // Función para actualizar el tiempo restante
     const updateCountdown = () => {
       const actual = new Date();
       const difference = Event_date - actual;
@@ -26,7 +25,6 @@ export function Timer({ Event_date }) {
         const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
         const minutes = Math.floor((difference / (1000 * 60)) % 60);
         const seconds = Math.floor((difference / 1000) % 60);
-        // console.log(difference,weeks,days,hours,minutes,seconds);
         setTime({ weeks, days, hours, minutes, seconds });
       }
     };
@@ -34,32 +32,37 @@ export function Timer({ Event_date }) {
     return () => clearInterval(intervalId);
   }
 
+  // Correcting the useEffect to ensure it handles the Event_date correctly
   useEffect(() => {
-    updateTime(Event_date);
-  });
+    if (Event_date) {
+      updateTime(Event_date);
+    }
+  }, [Event_date]);
 
-  function CardTimer(props) {
+  function CardTimer({ time, timeInfo, isSec }) {
     return (
       <div
-        className={`font-acumin flex h-[14vw] w-[13vw] select-none flex-col place-content-center place-items-center rounded-[2vw] font-bold text-black sm:h-[12vw] sm:w-[11vw] md:h-[11vw] md:w-[10vw] md:rounded-2xl xl:h-[8rem] xl:w-[7rem] min-[1536px]:h-36 min-[1536px]:w-32 ${!props.isSec ? 'bg-white' : 'bg-primary-dark-green text-white'}`}
+        className={`flex h-[8vw] w-[7vw] select-none flex-col place-content-center place-items-center rounded-lg font-acumin font-bold text-black sm:h-[8vw] sm:w-[8vw] md:h-[7vw] md:w-[7vw] md:rounded-lg xl:h-[6rem] xl:w-[5.5rem] min-[1536px]:h-28 min-[1536px]:w-24 ${
+          !isSec ? 'bg-white' : 'bg-primary-dark-green text-white'
+        }`}
       >
-        <p className="text-[5.5vw] sm:text-[4.5vw] md:text-[4vw] xl:text-6xl">
-          {props.time}
+        <p className="text-[3rem] font-thin sm:text-[3rem] md:text-[3rem] xl:text-[5.2rem]">
+          {time}
         </p>
-        <p className="text-[3.5vw] sm:text-[2.5vw] md:text-[2vw] xl:text-xl">
-          {props.timeInfo}
+        <p className="mt-[-20px] text-[1rem] sm:text-[1rem] md:mt-[-22px] md:text-[1rem] xl:mt-[-30px] xl:text-[1rem]">
+          {timeInfo}
         </p>
       </div>
     );
   }
 
   return (
-    <div className="font-acumin flex flex-wrap place-content-between gap-[2vw] bg-transparent p-1 md:gap-4">
-      <CardTimer className="" time={rest.weeks} timeInfo="Weeks" />
-      <CardTimer className="" time={rest.days} timeInfo="Days" />
-      <CardTimer className="" time={rest.hours} timeInfo="Hr" />
-      <CardTimer className="" time={rest.minutes} timeInfo="Min" />
-      <CardTimer className="" time={rest.seconds} timeInfo="Sec" isSec={true} />
+    <div className="flex flex-wrap place-content-between gap-[1vw] bg-transparent p-1 font-acumin md:gap-4">
+      <CardTimer time={rest.weeks} timeInfo="Weeks" />
+      <CardTimer time={rest.days} timeInfo="Days" />
+      <CardTimer time={rest.hours} timeInfo="Hr" />
+      {/* <CardTimer time={rest.minutes} timeInfo="Min" /> */}
+      <CardTimer time={rest.seconds} timeInfo="Sec" isSec={true} />
     </div>
   );
 }

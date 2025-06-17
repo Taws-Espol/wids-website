@@ -9,7 +9,7 @@ import Ambrassador from './Components/Ambrassador';
 
 function Inicio() {
   return (
-    <>
+    <div className="w-full overflow-x-hidden">
       <Carrusel />
 
       <AnimatedSection>
@@ -40,30 +40,28 @@ function Inicio() {
         </section>
       </AnimatedSection>
 
-      <AnimatedSection>
+      {/*<AnimatedSection>
         <Ubicacion />
-      </AnimatedSection>
+      </AnimatedSection>*/}
 
       <AboutUsHome />
 
-      <AnimatedSection>
+      {/*<AnimatedSection>
         <div className="my-10 flex select-none flex-col place-content-center place-items-center font-acumin text-primary-dark-green">
           <h1 className="text-5xl font-bold">PROGRAMA</h1>
           <div style={{ textAlign: 'center', marginTop: '20px' }}>
             <Programa />
           </div>
         </div>
-      </AnimatedSection>
+      </AnimatedSection>*/}
 
-      <div className="h-20 w-full bg-primary-dark-green"></div>
-
-      <AnimatedSection>
-        <Sponsors />
-      </AnimatedSection>
       <AnimatedSection>
         <Ambrassador />
       </AnimatedSection>
-    </>
+      <AnimatedSection>
+        <Sponsors />
+      </AnimatedSection>
+    </div>
   );
 }
 

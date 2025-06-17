@@ -23,7 +23,7 @@ function App() {
       <Router>
         <Navbar />
         <div className="-z-1000">
-          <Routes>
+          <Routes className="">
             <Route exact path="/" element={<Inicio />} />
             <Route path="/conferencistas" element={<Conferencistas />} />
             <Route path="/cronograma" element={<Cronograma />} />
