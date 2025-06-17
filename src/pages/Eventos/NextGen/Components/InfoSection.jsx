@@ -1,0 +1,69 @@
+import React from 'react';
+
+// Puedes reemplazar estas URLs con tus propias imágenes.
+const image1 =
+  'https://images.pexels.com/photos/5940841/pexels-photo-5940841.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
+const image2 =
+  'https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
+
+export default function InfoSection() {
+  // Textos extraídos de la imagen
+  const textRight =
+    'Un taller dirigido a jóvenes de bachillerato, el cual se llevará a cabo en los laboratorios de la Facultad de Ingeniería Eléctrica y Computación (FIEC) de la ESPOL.';
+  const textLeft =
+    'El contenido del taller consta de 3 secciones, Introducción a la Ciencia de Datos, Estadística básica y Visualizaciones, dondelos estudiantes podrán reforzar losconocimientos adquiridos.';
+
+  return (
+    <div className="relative flex w-full flex-col items-center justify-center gap-24 px-6 py-20 font-sans">
+      {/* --- Sección Superior: Imagen a la Izquierda | Texto a la Derecha --- */}
+      <div className="flex w-full max-w-5xl flex-col items-center justify-center gap-12 md:flex-row">
+        {/* Contenedor de la Imagen Izquierda */}
+        <div className="flex w-full justify-center md:w-1/2 md:justify-end">
+          <div className="relative w-full max-w-sm">
+            {/* Forma decorativa azul */}
+            <div
+              id="rectangulo_blue"
+              className="absolute left-[-1.5rem] top-[-1.5rem] z-10 h-full w-full rounded-2xl bg-cyan-300"
+            ></div>
+            {/* Imagen */}
+            <img
+              src={image1}
+              alt="Estudiantes en laboratorio de computación"
+              className="relative z-20 h-auto w-full rounded-2xl object-cover shadow-lg"
+            />
+          </div>
+        </div>
+
+        {/* Contenedor del Texto Derecho */}
+        <div className="w-full text-center md:w-1/2 md:text-left">
+          <p className="text-lg text-gray-800">{textRight}</p>
+        </div>
+      </div>
+
+      {/* --- Sección Inferior: Texto a la Izquierda | Imagen a la Derecha --- */}
+      <div className="flex w-full max-w-5xl flex-col-reverse items-center justify-center gap-12 md:flex-row">
+        {/* Contenedor del Texto Izquierdo */}
+        <div className="w-full text-center md:w-1/2 md:text-left">
+          <p className="text-lg text-gray-800">{textLeft}</p>
+        </div>
+
+        {/* Contenedor de la Imagen Derecha */}
+        <div className="flex w-full justify-center md:w-1/2 md:justify-start">
+          <div className="relative w-full max-w-sm">
+            {/* Forma decorativa violeta */}
+            <div
+              id="shape_purple"
+              className="absolute bottom-[-1.5rem] right-[-1.5rem] z-10 h-full w-full rounded-2xl bg-violet-300"
+            ></div>
+            {/* Imagen */}
+            <img
+              src={image2}
+              alt="Estudiantes colaborando en un proyecto"
+              className="relative z-20 h-auto w-full rounded-2xl object-cover shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
