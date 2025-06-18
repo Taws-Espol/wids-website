@@ -6,7 +6,7 @@ function Conferencistas() {
   const edicionData = ediciones.find((edicion) => edicion.edicion === year);
   return (
     <AnimatedSection>
-      <div className="font-acumin flex w-full select-none flex-col place-content-center place-items-center">
+      <div className="flex w-full select-none flex-col place-content-center place-items-center font-acumin">
         <div className="relative mb-20 mt-10 flex w-full items-center justify-center text-center">
           <div
             id="rectangulo_corneL"

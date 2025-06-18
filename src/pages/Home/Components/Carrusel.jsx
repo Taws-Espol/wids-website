@@ -1,87 +1,164 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { infoImages } from '../../../data/info-Carrusel.js';
-import { Timer } from './Timer.jsx';
-import '../../../index.css';
+import { infoImages } from '../../../data/info-Carrusel.js'; // Asegúrate que la ruta sea correcta
+import { Timer } from './Timer.jsx'; // Asegúrate que la ruta sea correcta
+import '../../../index.css'; // Asegúrate que la ruta sea correcta
+
+// Datos de ejemplo por si infoImages no carga
+const infoImagesExample = [
+  {
+    url: 'https://images.unsplash.com/photo-1582653429934-20a2da35d0bf?q=80&w=2070&auto=format&fit=crop',
+    title: 'Conferencia',
+    date: '13 de Julio, 2024',
+    place: 'ESPOL, Guayaquil',
+    uni: '',
+    linkform: '#',
+    dateTimer: '2024-07-13T09:00:00',
+  },
+  {
+    url: 'https://images.unsplash.com/photo-1573496773905-f5b17e76b254?q=80&w=2070&auto=format&fit=crop',
+    title: 'Taller de Liderazgo',
+    date: '25 de Agosto, 2025',
+    place: 'UCSG, Guayaquil',
+    uni: '',
+    linkform: '#',
+    dateTimer: '2025-08-25T10:00:00',
+  },
+];
+
+// --- Componentes para los íconos de las flechas (SVG) ---
+const LeftArrowIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    className="h-6 w-6"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M15.75 19.5 8.25 12l7.5-7.5"
+    />
+  </svg>
+);
+
+const RightArrowIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    className="h-6 w-6"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+    />
+  </svg>
+);
 
 export default function Carrusel() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // --- CAMBIO: Se lee el índice guardado en localStorage al iniciar ---
+  const [currentIndex, setCurrentIndex] = useState(() => {
+    const savedIndex = localStorage.getItem('carouselIndex');
+    // Si existe un índice guardado y es válido, úsalo. Si no, empieza en 0.
+    return savedIndex !== null ? Number(savedIndex) : 0;
+  });
 
-  // Auto-play cada 10 segundos
+  // --- CAMBIO: Se añade un useEffect para guardar el índice en localStorage cada vez que cambia ---
+  useEffect(() => {
+    localStorage.setItem('carouselIndex', currentIndex);
+  }, [currentIndex]);
+
+  // --- CAMBIO: El auto-play ahora depende de `currentIndex` para reiniciarse ---
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => {
-        const isLastImage = prevIndex === infoImages.length - 1;
-        return isLastImage ? 0 : prevIndex + 1;
-      });
+      // La lógica interna de cambio es la misma
+      setCurrentIndex((prevIndex) =>
+        prevIndex === infoImages.length - 1 ? 0 : prevIndex + 1,
+      );
     }, 10000); // 10 segundos
 
+    // La limpieza sigue funcionando igual
     return () => clearInterval(interval);
-  }, []);
+  }, [currentIndex]); // Añadimos currentIndex como dependencia
+
+  // --- NUEVO: Funciones para manejar la navegación manual ---
+  const goToPrevious = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? infoImages.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToNext = () => {
+    const isLastSlide = currentIndex === infoImages.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  // Se usan los datos reales, con fallback a los de ejemplo
+  const currentEvent =
+    infoImages[currentIndex] || infoImagesExample[currentIndex];
 
   return (
-    <div className="group relative w-full overflow-hidden bg-gray-100">
-      {/* Container principal */}
-      <div className="relative h-[300px] w-full sm:h-[350px] md:h-[400px] lg:h-[450px]">
-        {/* Imagen de fondo */}
+    // Se añade `group` para que las flechas aparezcan al hacer hover sobre el carrusel
+    <div className="group relative h-[450px] w-full overflow-hidden bg-gray-100 md:h-[500px]">
+      <div className="relative h-full w-full">
+        {/* --- Imagen de fondo --- */}
         <div
-          style={{ backgroundImage: `url(${infoImages[currentIndex].url})` }}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-500"
+          style={{ backgroundImage: `url(${currentEvent.url})` }}
+          className="absolute inset-0 h-full w-full bg-cover bg-center transition-all duration-700"
         />
 
-        {/* Bloque amarillo rectangular como en la imagen */}
-        <div className="clip-path-diagonal absolute left-0 top-0 z-10 h-full w-[200px] bg-primary-yellow sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px]">
-          {/* Forma diagonal usando CSS personalizado */}
-          <div
-            className="absolute inset-0 bg-primary-yellow"
-            style={{
-              clipPath: 'polygon(0 0, 85% 0, 70% 100%, 0% 100%)',
-            }}
-          ></div>
-        </div>
+        <div className="absolute inset-0 h-full w-full bg-black bg-opacity-10"></div>
+        <div className="absolute left-0 top-1/2 h-[800px] w-[1200px] -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-yellow-400"></div>
+        <div className="absolute left-[290px] top-[60px] z-10 h-16 w-[400px] bg-yellow-300"></div>
 
-        {/* Contenido de texto sobre el bloque amarillo */}
-        <div className="absolute left-6 top-8 z-20 max-w-[45%] sm:left-8 sm:top-10 sm:max-w-[40%] md:left-10 md:top-12 md:max-w-[35%] lg:left-12 lg:top-16">
-          {/* Título */}
-          <h1 className="mb-2 font-acumin text-lg font-bold uppercase leading-tight tracking-wide text-primary-dark-green sm:mb-3 sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
-            {infoImages[currentIndex].title}
+        <div className="absolute left-6 top-1/2 z-20 w-[400px] -translate-y-1/2 transform pl-4 text-center md:left-[100px]">
+          <h1 className="mb-3 font-sans text-4xl font-bold text-gray-800 md:text-5xl lg:text-6xl">
+            {currentEvent.title}
           </h1>
-
-          {/* Fecha */}
-          <p className="mb-1 font-acumin text-sm font-medium text-primary-dark-green sm:mb-2 sm:text-base md:text-lg lg:text-xl">
-            {infoImages[currentIndex].date}
+          <p className="mb-6 font-sans text-base text-gray-700 md:text-lg">
+            {currentEvent.date} <br /> {currentEvent.place}
           </p>
-
-          {/* Lugar */}
-          <p className="mb-2 font-acumin text-sm font-medium text-primary-dark-green sm:mb-3 sm:text-base md:text-lg lg:text-xl">
-            {infoImages[currentIndex].place}
-          </p>
-
-          {/* Universidad */}
-          <p className="mb-4 font-acumin text-sm font-medium text-primary-dark-green sm:mb-6 sm:text-base md:text-lg lg:text-xl">
-            {infoImages[currentIndex].uni}
-          </p>
-
-          {/* Botón de registro */}
-          {infoImages[currentIndex].linkform && (
-            <button
-              className="transform rounded-full bg-primary-dark-green px-4 py-2 font-acumin text-xs font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-opacity-90 hover:shadow-xl sm:px-6 sm:py-3 sm:text-sm md:px-8 md:py-3 md:text-base lg:text-lg"
-              onClick={() =>
-                window.open(infoImages[currentIndex].linkform, '_blank')
-              }
+          {currentEvent.linkform && (
+            <a
+              href={currentEvent.linkform}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block transform rounded-full bg-[#004425] px-8 py-3 font-semibold text-white shadow-lg transition-transform duration-300 hover:scale-105"
             >
-              Registro
-            </button>
+              Ir a la página
+            </a>
           )}
         </div>
 
-        {/* Timer - Posicionado como en la imagen original */}
-        <div className="absolute bottom-4 right-4 z-20 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8">
+        <div className="absolute bottom-6 right-6 z-20 md:bottom-8 md:right-8">
           <Timer
-            key={currentIndex}
-            Event_date={new Date(infoImages[currentIndex].dateTimer)}
+            key={currentIndex} // La key asegura que el Timer se reinicie si el evento cambia
+            Event_date={new Date(currentEvent.dateTimer)}
           />
         </div>
+      </div>
+
+      {/* --- NUEVO: Flechas de Navegación --- */}
+      {/* Flecha Izquierda */}
+      <div
+        onClick={goToPrevious}
+        className="absolute left-5 top-1/2 z-30 -translate-y-1/2 cursor-pointer rounded-full bg-black/30 p-2 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+      >
+        <LeftArrowIcon />
+      </div>
+      {/* Flecha Derecha */}
+      <div
+        onClick={goToNext}
+        className="absolute right-5 top-1/2 z-30 -translate-y-1/2 cursor-pointer rounded-full bg-black/30 p-2 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+      >
+        <RightArrowIcon />
       </div>
     </div>
   );

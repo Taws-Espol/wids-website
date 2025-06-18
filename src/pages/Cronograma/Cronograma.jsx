@@ -6,6 +6,7 @@ import { cronograma } from '../../data/Cronograma';
 import ConferenceBanner from './Components/ConferenceBanner';
 import InfoBanner from './Components/InforBanner';
 import ProgramSchedule from './Components/ProgramSchedule';
+import AboutUs2 from './Components/AboutUs2';
 function Cronograma() {
   const [active, setActive] = useState('Conferencias');
 
@@ -16,6 +17,7 @@ function Cronograma() {
   return (
     <div className="flex select-none flex-col place-content-center place-items-center gap-10">
       <ConferenceBanner />
+      <AboutUs2 circleText="Ubicación" bgImage="/assets/stemK.png" />
       <InfoBanner />
       <div>
         <ProgramSchedule events={cronograma.Conferencias} />

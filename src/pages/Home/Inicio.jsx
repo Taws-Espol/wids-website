@@ -68,10 +68,6 @@ function Inicio() {
       <AnimatedSection>
         <Sponsors />
       </AnimatedSection>
-
-      <AnimatedSection>
-        <Contact />
-      </AnimatedSection>
     </div>
   );
 }
