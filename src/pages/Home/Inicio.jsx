@@ -11,7 +11,7 @@ import AboutUsHome2 from './Components/AboutUs2';
 
 function Inicio() {
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="">
       <Carrusel />
 
       <AnimatedSection>

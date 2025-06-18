@@ -15,6 +15,11 @@ export default {
         ],
       },
       colors: {
+        'primary-blue': '#0b9dc8', // use this
+        'primary-yellow': '#ffcb03', // use this
+        'primary-orange': '#f36a21', // use this
+        'primary-violet': '#a2a2ff',
+        'primary-dark-green': '#004029',
         'custom-gre': '#43a75f',
         'custom-yel': '#fff891',
         'custom-purpl2': '#ececff',
@@ -22,11 +27,6 @@ export default {
         'custom-peach': '#F6B190',
         'custom-purple': '#A594F9',
         'primary-green': '#4ab969',
-        'primary-blue': '#00a7d5',
-        'primary-yellow': '#ffcb05',
-        'primary-orange': '#ff8003',
-        'primary-violet': '#a2a2ff',
-        'primary-dark-green': '#004029',
         'primary-acc-green': '#42a85f',
         'primary-acc-yellow': '#fecb01',
         'primary-acc-blue': '#009fc9',

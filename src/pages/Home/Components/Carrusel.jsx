@@ -1,88 +1,56 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import Slider from 'react-slick';
 import { infoImages } from '../../../data/info-Carrusel.js';
 import { Timer } from './Timer.jsx';
 import '../../../index.css';
 
 export default function Carrusel() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Auto-play cada 10 segundos
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => {
-        const isLastImage = prevIndex === infoImages.length - 1;
-        return isLastImage ? 0 : prevIndex + 1;
-      });
-    }, 10000); // 10 segundos
-
-    return () => clearInterval(interval);
-  }, []);
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 5000,
+    speed: 500,
+    cssEase: 'linear',
+    arrows: false,
+  };
 
   return (
-    <div className="group relative w-full overflow-hidden bg-gray-100">
-      {/* Container principal */}
-      <div className="relative h-[300px] w-full sm:h-[350px] md:h-[400px] lg:h-[450px]">
-        {/* Imagen de fondo */}
-        <div
-          style={{ backgroundImage: `url(${infoImages[currentIndex].url})` }}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-500"
-        />
-
-        {/* Bloque amarillo rectangular como en la imagen */}
-        <div className="clip-path-diagonal absolute left-0 top-0 z-10 h-full w-[200px] bg-primary-yellow sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px]">
-          {/* Forma diagonal usando CSS personalizado */}
-          <div
-            className="absolute inset-0 bg-primary-yellow"
-            style={{
-              clipPath: 'polygon(0 0, 85% 0, 70% 100%, 0% 100%)',
-            }}
-          ></div>
-        </div>
-
-        {/* Contenido de texto sobre el bloque amarillo */}
-        <div className="absolute left-6 top-8 z-20 max-w-[45%] sm:left-8 sm:top-10 sm:max-w-[40%] md:left-10 md:top-12 md:max-w-[35%] lg:left-12 lg:top-16">
-          {/* Título */}
-          <h1 className="mb-2 font-acumin text-lg font-bold uppercase leading-tight tracking-wide text-primary-dark-green sm:mb-3 sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
-            {infoImages[currentIndex].title}
-          </h1>
-
-          {/* Fecha */}
-          <p className="mb-1 font-acumin text-sm font-medium text-primary-dark-green sm:mb-2 sm:text-base md:text-lg lg:text-xl">
-            {infoImages[currentIndex].date}
-          </p>
-
-          {/* Lugar */}
-          <p className="mb-2 font-acumin text-sm font-medium text-primary-dark-green sm:mb-3 sm:text-base md:text-lg lg:text-xl">
-            {infoImages[currentIndex].place}
-          </p>
-
-          {/* Universidad */}
-          <p className="mb-4 font-acumin text-sm font-medium text-primary-dark-green sm:mb-6 sm:text-base md:text-lg lg:text-xl">
-            {infoImages[currentIndex].uni}
-          </p>
-
-          {/* Botón de registro */}
-          {infoImages[currentIndex].linkform && (
-            <button
-              className="transform rounded-full bg-primary-dark-green px-4 py-2 font-acumin text-xs font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-opacity-90 hover:shadow-xl sm:px-6 sm:py-3 sm:text-sm md:px-8 md:py-3 md:text-base lg:text-lg"
-              onClick={() =>
-                window.open(infoImages[currentIndex].linkform, '_blank')
-              }
-            >
-              Registro
-            </button>
-          )}
-        </div>
-
-        {/* Timer - Posicionado como en la imagen original */}
-        <div className="absolute bottom-4 right-4 z-20 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8">
-          <Timer
-            key={currentIndex}
-            Event_date={new Date(infoImages[currentIndex].dateTimer)}
-          />
-        </div>
-      </div>
-    </div>
+    <>
+      <Slider {...settings} className="h-[500px] w-full">
+        {infoImages.map(
+          ({ url, color, title, uni, place, date, dateTimer }, index) => {
+            return (
+              <div key={index} className="h-[500px]">
+                <div
+                  style={{ backgroundImage: `url(${url})` }}
+                  className="flex h-[500px] w-full flex-col-reverse bg-cover bg-center bg-no-repeat lg:flex-row-reverse"
+                >
+                  <div
+                    className={`align-center flex flex-col content-center justify-center gap-2 text-center text-primary-dark-green bg-primary-${color} h-[35%] w-full pb-10 lg:h-full lg:w-[30%] lg:pb-0 lg:pr-10`}
+                  >
+                    <h3 className="text-3xl font-bold">{title}</h3>
+                    <div>
+                      <p>{date}</p>
+                      <p>
+                        {uni}, {place}
+                      </p>
+                    </div>
+                    <button className="mx-auto w-2/3 max-w-[250px] rounded-full rounded-lg bg-primary-dark-green px-4 py-2 text-white">
+                      Más información
+                    </button>
+                  </div>
+                  <div
+                    className={`bg-primary-${color} h-[10%] w-full rounded-t-full lg:h-full lg:w-[10%] lg:rounded-l-full lg:rounded-r-[0px]`}
+                  ></div>
+                  <Timer key={index} Event_date={new Date(dateTimer)} />
+                </div>
+              </div>
+            );
+          },
+        )}
+      </Slider>
+    </>
   );
 }

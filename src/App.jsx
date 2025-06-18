@@ -22,7 +22,7 @@ function App() {
     <>
       <Router>
         <Navbar />
-        <div className="-z-1000">
+        <div className="">
           <Routes className="">
             <Route exact path="/" element={<Inicio />} />
             <Route path="/conferencistas" element={<Conferencistas />} />

@@ -6,7 +6,8 @@ export let infoImages = [
     date: '13 de Julio, 2024',
     place: 'Guayaquil',
     uni: 'ESPOL',
-    dateTimer: 'July 13, 2024 00:00:00',
+    color: 'yellow',
+    dateTimer: 'July 13, 2025 00:00:00',
     linkform: 'https://forms.gle/BnU5kCFcho3m4f4Y8',
   },
   {
@@ -16,7 +17,8 @@ export let infoImages = [
     date: '28 de Junio, 2024',
     place: 'Guayaquil',
     uni: 'ESPOL',
-    dateTimer: 'June 28, 2024 00:00:00',
+    dateTimer: 'June 28, 2025 00:00:00',
+    color: 'orange',
   },
   {
     id: '3',
@@ -25,7 +27,8 @@ export let infoImages = [
     date: '31 de Mayo, 2024',
     place: 'Guayaquil',
     uni: 'ESPOL',
-    dateTimer: 'May 31, 2024 00:00:00',
+    dateTimer: 'June 31, 2025 00:00:00',
+    color: 'blue',
     linkform: '',
   },
 ];

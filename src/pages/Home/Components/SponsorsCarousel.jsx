@@ -12,6 +12,7 @@ export default function SponsorsCarousel({ sponsors }) {
     slidesToShow: 3,
     slidesToScroll: 2,
     initialSlide: 0,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,
