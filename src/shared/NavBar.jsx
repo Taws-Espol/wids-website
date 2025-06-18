@@ -34,12 +34,12 @@ function Navbar() {
   return (
     <>
       <nav className="left-0 top-0 w-full select-none font-acumin text-sm lg:flex lg:items-center lg:justify-between lg:px-4 lg:text-base lg:text-lg">
-        <div className="flex items-center justify-between bg-[rgb(252,252,252)] px-4 py-2">
+        <div className="flex items-center justify-between px-4 py-2">
           <Link to="/">
             <img
-              src="/assets/navbar/Logo_wids2024.svg"
+              src="/assets/navbar/header_logo.png"
               alt=""
-              className="h-[80px] w-[250px] bg-white"
+              className="h-[80px] w-auto bg-white"
             />
           </Link>
           <div

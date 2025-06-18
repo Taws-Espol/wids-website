@@ -31,19 +31,19 @@ function Footer() {
   const nothome = location.pathname.split('/').pop();
 
   return (
-    <footer className="font-sans">
+    <footer className="my-4 font-sans">
       <div
         className={`flex flex-col flex-wrap place-content-center place-items-center bg-opacity-20 sm:flex-row ${nothome ? 'hidden' : 'block'}`}
       >
         {/* Imagen para escritorio */}
         <img
-          src="/assets/WidsLogoVertical.webp"
-          className="hidden h-40 w-40 sm:block"
+          src="/assets/footer/footer_logo.png"
+          className="hidden h-32 w-auto sm:block"
         />
         {/* Imagen para móviles */}
         <img
-          src="/assets/navbar/Logo_wids2024SG.webp"
-          className="block h-20 w-40 sm:hidden"
+          src="/assets/navbar/header_logo.png"
+          className="my-2 block h-20 w-auto sm:hidden"
         />
         <div className="mx-8 hidden h-32 border-l-2 border-[rgb(0,65,43)] md:block"></div>
         <div className="flex flex-col items-center text-center md:items-start md:text-left">
