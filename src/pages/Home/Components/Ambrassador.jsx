@@ -22,7 +22,6 @@ const Ambassador = () => {
           Team WiDS
         </text>
       </svg>
-
       <h2 className="mx-auto mb-10 ml-4 max-w-xl px-6 text-left text-2xl font-semibold text-gray-700 sm:px-0 md:ml-6 lg:ml-[50px]">
         Estas son las voces que representan a WiDS como embajadora y
         coembajadoras.
@@ -33,8 +32,7 @@ const Ambassador = () => {
           <CardAmbrassador
             key={index}
             name={ambassador.name}
-            role={ambassador.role}
-            image={ambassador.image}
+            imageSrc={ambassador.image}
           />
         ))}
       </div>

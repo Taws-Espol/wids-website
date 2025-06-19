@@ -7,6 +7,7 @@ import ConferenceBanner from './Components/ConferenceBanner';
 import InfoBanner from './Components/InforBanner';
 import ProgramSchedule from './Components/ProgramSchedule';
 import AboutUs2 from './Components/AboutUs2';
+import LocationBanner from './components/LocationBanner';
 function Cronograma() {
   const [active, setActive] = useState('Conferencias');
 
@@ -18,7 +19,13 @@ function Cronograma() {
     <div className="flex select-none flex-col place-content-center place-items-center gap-10">
       <ConferenceBanner />
       <AboutUs2 circleText="Ubicación" bgImage="/assets/stemK.png" />
+      <LocationBanner
+        title="Edificio STEM, ESPOL"
+        address="Campus Gustavo Galindo, Km. 30 vía Perimetral"
+        mapLink="https://www.google.com/maps/place/ESPOL+Campus+Gustavo+Galindo/@-2.1464923,-79.9652514,15z" // Link de ejemplo a Google Maps
+      />
       <InfoBanner />
+
       <div>
         <ProgramSchedule events={cronograma.Conferencias} />
       </div>

@@ -1,23 +1,23 @@
 const ambassadors = [
   {
-    name: 'Daniela Roldón Carranza',
+    name: 'Annabella Sanchez',
     role: 'Coembajadora',
-    image: 'https://www.w3schools.com/w3images/avatar2.png',
+    image: 'assets/ambrassador/anna.webp',
   },
   {
-    name: 'Carlos Pérez',
+    name: 'Samira Carrillo',
     role: 'Coembajador',
-    image: 'https://www.w3schools.com/w3images/avatar2.png',
+    image: 'assets/ambrassador/samira_1.webp',
   },
   {
-    name: 'María López',
+    name: 'Isabella Martin',
     role: 'Coembajadora',
-    image: 'https://www.w3schools.com/w3images/avatar2.png',
+    image: 'assets/ambrassador/isa_1.webp',
   },
   {
-    name: 'Juan Rodríguez',
-    role: 'Coembajador',
-    image: 'https://www.w3schools.com/w3images/avatar2.png',
+    name: 'Carmen Vaca',
+    role: 'Embajador',
+    image: 'assets/ambrassador/anna.png',
   },
 ];
 
