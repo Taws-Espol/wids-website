@@ -11,7 +11,7 @@ export let cronograma = {
     },
     {
       index: 1,
-      color: 'morado',
+      color: 'amarillo',
       title: 'Transformando Empresas con datos e insights',
       info: 'Ysabel Atiencia',
       image: 'YsabelAtiencia.png',
@@ -29,7 +29,7 @@ export let cronograma = {
     },
     {
       index: 3,
-      color: 'verde',
+      color: 'rosa',
       title:
         'MRI Segmentation of Brainstem Structures using Deep Learning Techniques',
       info: 'Seoyoung Oh',
@@ -39,7 +39,7 @@ export let cronograma = {
     },
     {
       index: 4,
-      color: 'morado',
+      color: 'verde',
       title:
         'Optimizando el Análisis de Datos: Cómo la Segmentación de Usuarios Potencia el Entendimiento Profundo',
       info: 'Viviana Córdova',
@@ -49,81 +49,13 @@ export let cronograma = {
     },
     {
       index: 5,
-      color: 'celeste',
+      color: 'amarillo',
       title:
         'De las Olas a los Datos: Cómo la Ciencia de Datos Revolucionó mi Vida Profesional',
       info: 'Kelly Mendoza',
       image: 'KellyMendoza.webp',
       work: 'Ing., Científica de Datos, ESPOL',
       time: '10:45 AM',
-    },
-    {
-      index: 6,
-      color: 'verde',
-      title:
-        'AI, Academia and Industry: Bridging the Gap Between Theory and Practice',
-      info: 'Mirian Silva',
-      image: 'Mirian Silva.webp',
-      work: 'M.Sc., AI Engineer, IBM Research/UFMG',
-      time: '11:05 AM',
-    },
-    {
-      index: 7,
-      color: 'morado',
-      title:
-        'Jóvenes Ecuatorianos y el Mercado de Valores: Desafíos y Oportunidades',
-      info: 'Cindy Cunalata',
-      image: 'CindyCunalata.webp',
-      work: 'Econ., Analista de Riesgos, Pycca',
-      time: '11:30 AM',
-    },
-    {
-      index: 8,
-      color: 'celeste',
-      title:
-        'Aplicación de Ciencia de Datos en Agricultura de Precisión: Caso Banano Ecuatoriano',
-      info: 'Daniela Roldán',
-      image: 'Daniela roldan.webp',
-      work: 'Econ. y M.Sc., Rewards Analyst en TaDa, AB InBev',
-      time: '11:50 AM',
-    },
-    {
-      index: 9,
-      color: 'verde',
-      title:
-        'Licitaciones Transparentes: El Poder del Análisis de Datos para Prevenir Irregularidades',
-      info: 'María Belén Rojas',
-      image: 'MaríaBelénRojas.webp',
-      work: 'Econ., Analista de Datos, Banco Bolivariano',
-      time: '12:10 PM',
-    },
-    {
-      color: 'celeste',
-      title:
-        'Eficiencia Gubernamental: Validación con Reconocimiento de Imágenes',
-      info: 'Nicole Gaibor',
-      image: 'NicoleGaibor.webp',
-      work: 'Econ., Analista de Datos, Ineval',
-      time: '12:55 PM',
-    },
-    {
-      index: 12,
-      color: 'verde',
-      title:
-        'Revolutionizing Data Centers: The Convergence of Data Science and Hardware',
-      info: 'María Isabel Mera',
-      image: 'MariaIsabelMera.webp',
-      work: 'Ph.H., Profesora e Investigadora de FIEC, ESPOL',
-      time: '01:15 PM',
-    },
-    {
-      index: 13,
-      color: 'morado',
-      title: 'Clausura',
-      info: 'Samira Carrillo',
-      image: 'SamiraCarrillo.webp',
-      work: 'Estudiante de economía',
-      time: '01:35 PM',
     },
   ],
   Talleres: [

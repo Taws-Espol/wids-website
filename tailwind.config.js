@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         acumin: ['Source Sans Pro', 'acumin-variable'],
+        barlow: ['Barlow', 'sans-serif'], // Añadido Barlow
         sans: [
           '"Source Sans Pro"',
           'ui-sans-serif',
