@@ -3,13 +3,16 @@ import { TimeLine } from '../../Cronograma/Components/TimeLineDatathon';
 import Subtitle from '../../../shared/Subtitle';
 import Separator from './Components/Separator';
 import FeaturesGrid from './Components/FeaturesGrid';
+import AnimatedSection from './../../../shared/AnimatedSection';
+import ProgramSchedule from '../../Cronograma/Components/ProgramSchedule';
+import { cronograma } from '../../../data/Cronograma';
 
 function Datathon() {
   const div1 = DatathonInfo[0];
   const div2 = DatathonInfo[1];
   const infos_dvi2 = div2.infos;
   const div5 = DatathonInfo[4];
-  const cronograma = div5.crono;
+  const cronograma_antiguo = div5.crono;
   const div6 = DatathonInfo[5];
   const infos_dvi6 = div6.infos;
 
@@ -89,7 +92,11 @@ function Datathon() {
         </div>
       </div>
       <Subtitle title="Cronograma" bgColor="#ff7800" />
-      <div className="w-full">{<TimeLine Data={cronograma} />}</div>
+      <AnimatedSection>
+        <div>
+          <ProgramSchedule events={cronograma.NextGen} />
+        </div>
+      </AnimatedSection>
     </div>
   );
 }

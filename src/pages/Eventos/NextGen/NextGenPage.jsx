@@ -8,6 +8,9 @@ import InfoSection from './Components/InfoSection';
 import Requirements from './Components/Requirements';
 import Subtitle from '../../../shared/Subtitle';
 import NewTallerista from './Components/NewTallerista';
+import ProgramSchedule from '../../Cronograma/Components/ProgramSchedule';
+import { cronograma } from '../../../data/Cronograma';
+
 function NextGen() {
   const edicionData = ediciones.find((edicion) => edicion.edicion == 2024);
 
@@ -28,21 +31,14 @@ function NextGen() {
       <div className="my-5 flex flex-col place-content-center place-items-center gap-10">
         <NewTallerista />
       </div>
+
       <Subtitle title="Cronograma" bgColor="#ff7800" />
-      <div
-        className={`my-5 flex flex-col place-content-center place-items-center gap-10`}
-      >
-        {edicionData &&
-          edicionData.talleres.map((evento, index) => (
-            <CardInfoEdition
-              key={index}
-              type="Talleres"
-              evento={evento}
-              year={2024}
-              index={index}
-            />
-          ))}
-      </div>
+
+      <AnimatedSection>
+        <div>
+          <ProgramSchedule events={cronograma.NextGen} />
+        </div>
+      </AnimatedSection>
     </AnimatedSection>
   );
 }

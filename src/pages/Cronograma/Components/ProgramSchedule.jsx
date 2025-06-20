@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ProgramSchedule({ events }) {
   return (
-    <div className="mt-[-40px] min-h-screen space-y-4 px-6">
+    <div className="mt-[40px] min-h-screen space-y-4 px-6">
       {events.map((event, index) => (
         <div
           key={index}
