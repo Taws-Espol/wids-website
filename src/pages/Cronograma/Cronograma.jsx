@@ -7,7 +7,7 @@ import ConferenceBanner from './Components/ConferenceBanner';
 import InfoBanner from './Components/InforBanner';
 import ProgramSchedule from './Components/ProgramSchedule';
 import AboutUs2 from './Components/AboutUs2';
-import LocationBanner from './components/LocationBanner';
+import LocationBanner from './Components/LocationBanner';
 import AnimatedSection from '../../shared/AnimatedSection';
 function Cronograma() {
   const [active, setActive] = useState('Conferencias');

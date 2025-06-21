@@ -6,6 +6,7 @@ import FeaturesGrid from './Components/FeaturesGrid';
 import AnimatedSection from './../../../shared/AnimatedSection';
 import ProgramSchedule from '../../Cronograma/Components/ProgramSchedule';
 import { cronograma } from '../../../data/Cronograma';
+import EventCarrusel from '../../Home/Components/EventCarrusel.jsx';
 
 function Datathon() {
   const div1 = DatathonInfo[0];
@@ -16,8 +17,21 @@ function Datathon() {
   const div6 = DatathonInfo[5];
   const infos_dvi6 = div6.infos;
 
+  const slides = [
+    {
+      url: 'https://i.pinimg.com/736x/17/26/0a/17260a1d8cc3f8729eaa454da2342bbc.jpg',
+    },
+  ];
+
+  const fixedText = {
+    title: 'DATATHON',
+    description: 'Diagnóstico de Cáncer Metastásico en 90 Días',
+    date: '18–31 de Mayo',
+  };
+
   return (
     <div className="flex w-full select-none flex-col font-acumin">
+      <EventCarrusel slides={slides} fixedText={fixedText} />
       <div className="my-10 flex flex-row items-baseline justify-center gap-16 sm:gap-24">
         {/* Columna de Duración */}
         <div className="flex flex-col items-center text-center">
