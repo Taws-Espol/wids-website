@@ -46,7 +46,7 @@ function NextGen() {
         <Subtitle title="Talleristas" bgColor="#00422b" />
       </div>
       <div className="my-5 flex flex-col place-content-center place-items-center gap-10">
-        <NewTallerista />
+        <NewTallerista infotallertista={cronograma.NextGen} />
       </div>
 
       <Subtitle title="Cronograma" bgColor="#ff7800" />
