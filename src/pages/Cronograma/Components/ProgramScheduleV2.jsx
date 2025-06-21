@@ -339,7 +339,7 @@ export default function ProgramScheduleV2({ events }) {
 
   return (
     <div className="w-full bg-white">
-      <div className="px-4 py-12">
+      <div className="px-4">
         {eventsToRender.map((event, index) => {
           switch (event.type) {
             case 'room_session':

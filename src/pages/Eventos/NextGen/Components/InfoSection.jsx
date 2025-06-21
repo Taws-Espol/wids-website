@@ -1,10 +1,8 @@
 import React from 'react';
 
 // Puedes reemplazar estas URLs con tus propias imágenes.
-const image1 =
-  'https://images.pexels.com/photos/5940841/pexels-photo-5940841.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
-const image2 =
-  'https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
+const image1 = '../../../../../public/assets/Eventos/NextGen/_MG_2799.jpg';
+const image2 = '../../../../../public/assets/Eventos/NextGen/MG_2781.webp';
 
 export default function InfoSection() {
   // Textos extraídos de la imagen

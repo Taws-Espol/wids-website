@@ -6,13 +6,14 @@ import NewTallerista from './Components/NewTallerista';
 import ProgramSchedule from '../../Cronograma/Components/ProgramSchedule';
 import { cronograma } from '../../../data/Cronograma';
 import EventCarrusel from '../../Home/Components/EventCarrusel.jsx';
+import ProgramScheduleV3 from '../../Cronograma/Components/ProgramScheduleV3.jsx';
 
 const slides = [
   {
-    url: '../../../../public/assets/Eventos/NextGen/NextGen_empoderando.webp',
+    url: '../../../../public/assets/Eventos/NextGen/_MG_2799.jpg',
   },
   {
-    url: 'https://i.pinimg.com/736x/17/26/0a/17260a1d8cc3f8729eaa454da2342bbc.jpg',
+    url: '../../../../public/assets/Eventos/NextGen/MG_2769.webp',
   },
 ];
 
@@ -27,13 +28,7 @@ function NextGen() {
     <AnimatedSection>
       <EventCarrusel slides={slides} fixedText={fixedText} />
       <div className="flex w-full select-none flex-col place-content-center place-items-center overflow-x-hidden pb-10 font-acumin">
-        <InfoSection
-          textLeft="Un taller dirigido a jóvenes de bachillerato, el cual se llevará a cabo en los laboratorios de la Facultad de Ingeniería Eléctrica y Computación (FIEC) de la ESPOL."
-          textRight="El contenido del taller consta de 3 secciones: Introducción a la Ciencia de Datos, Estadística básica y Visualizaciones, donde los estudiantes podrán reforzar los conocimientos adquiridos."
-          leftImage="/assets/images/taller1.jpg"
-          rightImage="/assets/images/taller2.jpg"
-        />
-
+        <InfoSection />
         <Subtitle title="¿Cómo ser parte?" bgColor="#00a7d5" />
         <Requirements />
         <Subtitle title="Talleristas" bgColor="#00422b" />
@@ -46,7 +41,7 @@ function NextGen() {
 
       <AnimatedSection>
         <div>
-          <ProgramSchedule events={cronograma.NextGen} />
+          <ProgramScheduleV3 data={cronograma.NextGen} eventType="NextGen" />
         </div>
       </AnimatedSection>
     </AnimatedSection>

@@ -7,6 +7,7 @@ import AnimatedSection from './../../../shared/AnimatedSection';
 import ProgramSchedule from '../../Cronograma/Components/ProgramSchedule';
 import { cronograma } from '../../../data/Cronograma';
 import EventCarrusel from '../../Home/Components/EventCarrusel.jsx';
+import ProgramScheduleV3 from '../../Cronograma/Components/ProgramScheduleV3.jsx';
 
 function Datathon() {
   const div1 = DatathonInfo[0];
@@ -108,7 +109,7 @@ function Datathon() {
       <Subtitle title="Cronograma" bgColor="#ff7800" />
       <AnimatedSection>
         <div>
-          <ProgramSchedule events={cronograma.Talleres} />
+          <ProgramScheduleV3 data={cronograma.Talleres} eventType="Talleres" />
         </div>
       </AnimatedSection>
     </div>

@@ -93,7 +93,7 @@ function Navbar() {
             >
               Inicio
               <div
-                className={`absolute bottom-0 left-1/2 h-1 w-full ${isOpen ? '' : 'bg-primary-acc-green'} -translate-x-1/2 transform transition-all duration-300 ${nothome === '' ? '' : 'group-hover:w-[200%]'} `}
+                className={`absolute bottom-0 left-1/2 h-1 w-full ${isOpen ? '' : 'bg-primary-acc-green'} -translate-x-1/2 transform transition-all duration-300 ${nothome === '' ? '' : 'group-hover:w-[120%]'}`}
               ></div>
             </div>
           </Link>
@@ -109,13 +109,12 @@ function Navbar() {
             >
               Conferencia
               <div
-                className={`absolute bottom-0 left-1/2 h-1 w-full ${isOpen ? '' : 'bg-primary-orange'} -translate-x-1/2 transform transition-all duration-300 ${nothome === 'cronograma' || nothome === 'conferencistas' ? '' : 'group-hover:w-[200%]'} `}
+                className={`absolute bottom-0 left-1/2 h-1 w-full ${isOpen ? '' : 'bg-primary-orange'} -translate-x-1/2 transform transition-all duration-300 ${nothome === 'cronograma' || nothome === 'conferencistas' ? '' : 'group-hover:w-[120%]'}`}
               ></div>
             </div>
           </button>
 
           {isDropdownOpen && (
-            // CAMBIO: Se eliminó mt-2 para subir el menú
             <div className="absolute left-1/2 top-full hidden w-48 -translate-x-1/2 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 lg:block">
               <div className="py-1" role="menu" aria-orientation="vertical">
                 <Link
@@ -168,7 +167,7 @@ function Navbar() {
             >
               Next Gen
               <div
-                className={`absolute bottom-0 left-1/2 h-1 w-full ${isOpen ? '' : 'bg-primary-acc-violet'} -translate-x-1/2 transform transition-all duration-300 ${nothome === 'nextgen' ? '' : 'group-hover:w-[200%]'} `}
+                className={`absolute bottom-0 left-1/2 h-1 w-full ${isOpen ? '' : 'bg-primary-acc-violet'} -translate-x-1/2 transform transition-all duration-300 ${nothome === 'nextgen' ? '' : 'group-hover:w-[120%]'}`}
               ></div>
             </div>
           </Link>
@@ -183,7 +182,7 @@ function Navbar() {
             >
               Datathon
               <div
-                className={`absolute bottom-0 left-1/2 h-1 w-full ${isOpen ? '' : 'bg-primary-acc-yellow'} -translate-x-1/2 transform transition-all duration-300 ${nothome === 'datathon' ? '' : 'group-hover:w-[200%]'} `}
+                className={`absolute bottom-0 left-1/2 h-1 w-full ${isOpen ? '' : 'bg-primary-acc-yellow'} -translate-x-1/2 transform transition-all duration-300 ${nothome === 'datathon' ? '' : 'group-hover:w-[120%]'}`}
               ></div>
             </div>
           </Link>
@@ -198,7 +197,7 @@ function Navbar() {
             >
               Nosotros
               <div
-                className={`absolute bottom-0 left-1/2 h-1 w-full ${isOpen ? '' : 'bg-primary-acc-blue'} -translate-x-1/2 transform transition-all duration-300 ${nothome === 'nosotros' ? '' : 'group-hover:w-[200%]'} `}
+                className={`absolute bottom-0 left-1/2 h-1 w-full ${isOpen ? '' : 'bg-primary-acc-blue'} -translate-x-1/2 transform transition-all duration-300 ${nothome === 'nosotros' ? '' : 'group-hover:w-[120%]'}`}
               ></div>
             </div>
           </Link>

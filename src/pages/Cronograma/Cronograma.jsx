@@ -7,6 +7,7 @@ import LocationBanner from './Components/LocationBanner';
 import AnimatedSection from '../../shared/AnimatedSection';
 import ConferencistasCarrusel from './Components/ConferencistasCarrusel';
 import ProgramScheduleV2 from './Components/ProgramScheduleV2';
+import Subtitle from '../../shared/Subtitle';
 
 function Cronograma() {
   return (
@@ -25,10 +26,8 @@ function Cronograma() {
         />
       </AnimatedSection>
 
-      <AnimatedSection>
-        <InfoBanner />
-      </AnimatedSection>
-
+      <AnimatedSection>{/*<InfoBanner />*/}</AnimatedSection>
+      <Subtitle title="Programa" bgColor="#ff7800" />
       <AnimatedSection>
         <ProgramScheduleV2 events={cronograma.agendaEvents} />
       </AnimatedSection>

@@ -38,8 +38,8 @@ export function ConferenceContainer({
   let image = path_conferencistas + imganName;
 
   return (
-    <>
-      <div className="font-acumin flex flex-row flex-wrap place-content-center place-items-center gap-10">
+    <div className="mt-10">
+      <div className="flex flex-row flex-wrap place-content-center place-items-center gap-10 font-acumin">
         {conferenceActive && (
           <div
             id={div_principal}
@@ -105,6 +105,6 @@ export function ConferenceContainer({
             />
           ))}
       </div>
-    </>
+    </div>
   );
 }
