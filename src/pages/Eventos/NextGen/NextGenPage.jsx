@@ -1,9 +1,4 @@
-import { NextGenInfo } from './../../../data/Eventos/NextGen';
 import AnimatedSection from './../../../shared/AnimatedSection';
-import { CardRequirement } from './Components/CardRequirements';
-import { ColBenef } from './Components/ColBene';
-import { CardInfoEdition } from './../../Edicion/Components/CardInfoEdition';
-import { ediciones } from './../../../data/ediciones';
 import InfoSection from './Components/InfoSection';
 import Requirements from './Components/Requirements';
 import Subtitle from '../../../shared/Subtitle';
@@ -28,8 +23,6 @@ const fixedText = {
 };
 
 function NextGen() {
-  const edicionData = ediciones.find((edicion) => edicion.edicion == 2024);
-
   return (
     <AnimatedSection>
       <EventCarrusel slides={slides} fixedText={fixedText} />

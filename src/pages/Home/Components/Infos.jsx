@@ -1,6 +1,5 @@
 import 'animate.css';
 import React from 'react';
-import { InfoSquared } from './InfoSquared';
 import { ProgressiveInfoSquared } from './ProgressiveInfoSquared';
 
 export function Infos() {

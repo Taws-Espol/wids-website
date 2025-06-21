@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import redes from '../data/redes';
 import emailjs from '@emailjs/browser';
-import { useLocation } from 'react-router-dom';
 import { FaSquareFacebook, FaInstagram, FaXTwitter } from 'react-icons/fa6';
 function Footer() {
   //https://www.emailjs.com/
@@ -10,7 +9,7 @@ function Footer() {
   //pruebastaws@gmail.com
   //PruebasTaws1234
   const form = useRef();
-
+  /*
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -27,7 +26,7 @@ function Footer() {
         },
       );
   };
-
+  */
   return (
     <footer className="font-sans">
       <div

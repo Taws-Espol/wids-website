@@ -1,11 +1,7 @@
-import { ButtonEditionComponents } from '../Edicion/Components/ButtonEditionComponents';
-import { useState } from 'react';
-import { TimeLine } from './Components/TimeLine';
 import 'react-vertical-timeline-component/style.min.css';
 import { cronograma } from '../../data/Cronograma';
 import ConferenceBanner from './Components/ConferenceBanner';
 import InfoBanner from './Components/InforBanner';
-import ProgramSchedule from './Components/ProgramSchedule';
 import AboutUs2 from './Components/AboutUs2';
 import LocationBanner from './Components/LocationBanner';
 import AnimatedSection from '../../shared/AnimatedSection';

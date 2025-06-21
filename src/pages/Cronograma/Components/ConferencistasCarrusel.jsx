@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { cronograma } from '../../../data/Cronograma';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
