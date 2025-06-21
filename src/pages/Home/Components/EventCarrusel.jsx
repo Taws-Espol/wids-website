@@ -69,10 +69,10 @@ export default function EventCarrucel({ slides = [], fixedText }) {
             <h1 className="mb-4 text-3xl font-bold text-green-900 md:text-4xl lg:text-5xl">
               {fixedText.title}
             </h1>
-            <p className="mb-4 text-base text-green-900 md:text-lg">
+            <p className="mb-4 text-xl text-green-900 md:text-2xl">
               {fixedText.description}
             </p>
-            <p className="text-sm text-green-900 md:text-base">
+            <p className="text-xl text-green-900 md:text-2xl">
               {fixedText.date}
             </p>
           </div>
