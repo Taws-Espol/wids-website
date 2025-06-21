@@ -9,6 +9,9 @@ import ProgramSchedule from './Components/ProgramSchedule';
 import AboutUs2 from './Components/AboutUs2';
 import LocationBanner from './Components/LocationBanner';
 import AnimatedSection from '../../shared/AnimatedSection';
+import ConferencistasCarrusel from './Components/ConferencistasCarrusel';
+import CarruselConferences from '../Home/Components/CarruselConferences';
+
 function Cronograma() {
   const [active, setActive] = useState('Conferencias');
 
@@ -38,6 +41,9 @@ function Cronograma() {
         <div>
           <ProgramSchedule events={cronograma.Conferencias} />
         </div>
+      </AnimatedSection>
+      <AnimatedSection className="w-full">
+        <ConferencistasCarrusel />
       </AnimatedSection>
     </div>
   );
