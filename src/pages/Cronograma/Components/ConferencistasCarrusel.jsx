@@ -85,7 +85,7 @@ function ConferencistasCarrusel() {
     overflow: 'visible', // Cambiar de 'hidden' a 'visible' para que la sombra se vea completa
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     borderRadius: '0', // Mantener esquinas cuadradas
-    margin: '0 auto 15px', // Añadir margen inferior para separar de los dots
+    margin: '0 auto 30px', // Añadir margen inferior para separar de los dots
     backgroundColor: 'white',
     height: '380px',
     display: 'flex',
@@ -110,7 +110,7 @@ function ConferencistasCarrusel() {
     objectPosition: 'center top', // Prioriza mostrar la parte superior (rostros)
   };
 
-  // Estilo para el contenedor de texto
+  // Estilo para la sección de texto
   const textContainerStyle = {
     padding: '16px',
     height: '100px', // Altura fija para la sección de texto
@@ -119,7 +119,7 @@ function ConferencistasCarrusel() {
     justifyContent: 'center', // Centra verticalmente el contenido
   };
 
-  // Configuración del slider (ajustar el bottom del appendDots)
+  // Configuración del slider con dots similares a SponsorsCarousel
   const settings = {
     dots: true,
     infinite: true,
@@ -148,29 +148,10 @@ function ConferencistasCarrusel() {
         },
       },
     ],
-    dotsClass: 'slick-dots custom-dots',
-    appendDots: (dots) => (
-      <div
-        style={{
-          bottom: '-30px', // Aumentado de -30px a -45px para dar más espacio
-        }}
-      >
-        <ul style={{ margin: '0' }}> {dots} </ul>
-      </div>
-    ),
-    customPaging: (i) => (
-      <div
-        className="mt-6"
-        style={{
-          width: '12px',
-          height: '12px',
-          backgroundColor: '#00412B',
-          borderRadius: '50%',
-          opacity: 0.6,
-          transition: 'all 0.3s ease',
-        }}
-      ></div>
-    ),
+    // Simplificamos para usar los estilos predeterminados como en SponsorsCarousel
+    dotsClass: 'slick-dots',
+    // Eliminamos el appendDots personalizado
+    // Eliminamos el customPaging personalizado
   };
 
   return (
@@ -240,13 +221,6 @@ function ConferencistasCarrusel() {
           </div>
         </div>
       </div>
-
-      <style jsx global>{`
-        .custom-dots .slick-active div {
-          opacity: 1;
-          transform: scale(1.2);
-        }
-      `}</style>
     </div>
   );
 }
