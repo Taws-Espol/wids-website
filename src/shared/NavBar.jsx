@@ -40,7 +40,7 @@ function Navbar() {
 
   return (
     <nav className="left-0 top-0 w-full select-none font-acumin text-sm lg:flex lg:items-center lg:justify-between lg:px-4 lg:text-base lg:text-lg">
-      <div className="flex items-center justify-between bg-[rgb(252,252,252)] px-4 py-2">
+      <div className="flex items-center justify-between bg-white px-4 py-2">
         <Link to="/" onClick={closeAllMenus}>
           <img
             src="/assets/navbar/Logo_wids2024.svg"
@@ -49,7 +49,7 @@ function Navbar() {
           />
         </Link>
         <div
-          className="mx-6 w-8 items-center rounded-md hover:bg-gray-100 lg:hidden"
+          className="mx-6 w-8 items-center rounded-md hover:bg-white lg:hidden"
           onClick={toggleMobileMenu}
         >
           <span
@@ -69,7 +69,7 @@ function Navbar() {
         id="Menu"
       >
         <div
-          className={`absolute right-4 top-4 w-8 items-center rounded-md hover:bg-gray-100 lg:hidden ${isOpen ? 'block' : 'hidden'}`}
+          className={`absolute right-4 top-4 w-8 items-center rounded-md hover:bg-white lg:hidden ${isOpen ? 'block' : 'hidden'}`}
           onClick={toggleMobileMenu}
         >
           <span
@@ -120,7 +120,7 @@ function Navbar() {
               <div className="py-1" role="menu" aria-orientation="vertical">
                 <Link
                   to="/cronograma"
-                  className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
+                  className="block px-4 py-2 text-lg text-gray-700 hover:bg-white"
                   role="menuitem"
                   onClick={closeAllMenus}
                 >
@@ -128,7 +128,7 @@ function Navbar() {
                 </Link>
                 <Link
                   to="/conferencistas"
-                  className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
+                  className="block px-4 py-2 text-lg text-gray-700 hover:bg-white"
                   role="menuitem"
                   onClick={closeAllMenus}
                 >

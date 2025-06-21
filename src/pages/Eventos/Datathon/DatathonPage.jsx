@@ -108,7 +108,7 @@ function Datathon() {
       <Subtitle title="Cronograma" bgColor="#ff7800" />
       <AnimatedSection>
         <div>
-          <ProgramSchedule events={cronograma.NextGen} />
+          <ProgramSchedule events={cronograma.Talleres} />
         </div>
       </AnimatedSection>
     </div>

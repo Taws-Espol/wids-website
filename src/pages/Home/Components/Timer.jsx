@@ -1,26 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import '../../../index.css'; // Asegúrate que la ruta sea correcta
 
 // --- Sub-componente para cada tarjeta del contador ---
 function CardTimer({ time, timeInfo, isLast = false }) {
-  // --- CAMBIO PRINCIPAL ---
-  // Se ha eliminado la línea que añadía el cero inicial.
-  // const formattedTime = String(time).padStart(2, '0'); // <-- ESTA LÍNEA FUE ELIMINADA
-
   // Estilo condicional: verde si es la última caja, blanco en caso contrario.
   const boxStyle = isLast
-    ? 'bg-primary-dark-green text-white' // Reemplaza 'bg-primary-dark-green' si tu color se llama diferente
+    ? 'bg-green-600 text-white' // Verde para la última caja
     : 'bg-white text-black border border-gray-200';
 
   return (
     <div
       className={`flex h-24 w-24 select-none flex-col items-center justify-center rounded-lg shadow-lg ${boxStyle}`}
     >
-      <p className="text-5xl font-bold leading-tight">
-        {/* Ahora se muestra el número directamente, sin formato */}
-        {time}
-      </p>
-      {/* El mt-[-0.5rem] ayuda a juntar el texto con el número, como en la imagen */}
+      <p className="text-5xl font-bold leading-tight">{time}</p>
       <p className="mt-[-0.5rem] text-sm font-semibold uppercase tracking-wide">
         {timeInfo}
       </p>
@@ -62,11 +53,32 @@ export function Timer({ Event_date }) {
 
   return (
     <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-      {/* CAMBIO: Etiquetas actualizadas a español */}
       <CardTimer time={timeLeft.weeks} timeInfo="Semanas" />
       <CardTimer time={timeLeft.days} timeInfo="Días" />
-      <CardTimer time={timeLeft.hours} timeInfo="Hora" />
+      <CardTimer time={timeLeft.hours} timeInfo="Horas" />
       <CardTimer time={timeLeft.seconds} timeInfo="Seg" isLast={true} />
     </div>
   );
 }
+
+// --- Componente de demostración ---
+function App() {
+  // Fecha del evento: 19 de julio de 2025
+  const eventDate = '2025-07-19T00:00:00';
+
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-gray-100 p-4">
+      <div className="text-center">
+        <h1 className="mb-8 text-3xl font-bold text-gray-800">
+          Countdown al 19 de Julio
+        </h1>
+        <Timer Event_date={eventDate} />
+        <p className="mt-6 text-gray-600">
+          Fecha del evento: 19 de julio de 2025
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export default App;

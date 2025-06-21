@@ -23,13 +23,13 @@ export default function InfoSection() {
             {/* Forma decorativa azul */}
             <div
               id="rectangulo_blue"
-              className="absolute left-[-1.5rem] top-[-1.5rem] z-10 h-full w-full rounded-2xl bg-cyan-300"
+              className="absolute left-[-1.5rem] top-[-1.5rem] z-10 h-full w-full bg-cyan-300"
             ></div>
             {/* Imagen */}
             <img
               src={image1}
               alt="Estudiantes en laboratorio de computación"
-              className="relative z-20 h-auto w-full rounded-2xl object-cover shadow-lg"
+              className="relative z-20 h-auto w-full object-cover shadow-lg"
             />
           </div>
         </div>
@@ -53,13 +53,13 @@ export default function InfoSection() {
             {/* Forma decorativa violeta */}
             <div
               id="shape_purple"
-              className="absolute bottom-[-1.5rem] right-[-1.5rem] z-10 h-full w-full rounded-2xl bg-violet-300"
+              className="absolute bottom-[-1.5rem] right-[-1.5rem] z-10 h-full w-full bg-violet-300"
             ></div>
             {/* Imagen */}
             <img
               src={image2}
               alt="Estudiantes colaborando en un proyecto"
-              className="relative z-20 h-auto w-full rounded-2xl object-cover shadow-lg"
+              className="relative z-20 h-auto w-full object-cover shadow-lg"
             />
           </div>
         </div>

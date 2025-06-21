@@ -34,7 +34,7 @@ const LeftArrowIcon = () => (
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className="h-6 w-6"
+    className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6"
   >
     <path
       strokeLinecap="round"
@@ -51,7 +51,7 @@ const RightArrowIcon = () => (
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className="h-6 w-6"
+    className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6"
   >
     <path
       strokeLinecap="round"
@@ -106,7 +106,7 @@ export default function Carrusel() {
 
   return (
     // Se añade `group` para que las flechas aparezcan al hacer hover sobre el carrusel
-    <div className="group relative h-[450px] w-full overflow-hidden bg-gray-100 md:h-[500px]">
+    <div className="group relative h-[300px] w-full overflow-hidden bg-gray-100 sm:h-[350px] md:h-[450px] lg:h-[500px]">
       <div className="relative h-full w-full">
         {/* --- Imagen de fondo --- */}
         <div
@@ -114,51 +114,69 @@ export default function Carrusel() {
           className="absolute inset-0 h-full w-full bg-cover bg-center transition-all duration-700"
         />
 
-        <div className="absolute inset-0 h-full w-full bg-black bg-opacity-10"></div>
-        <div className="absolute left-0 top-1/2 h-[800px] w-[1200px] -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-yellow-400"></div>
-        <div className="absolute left-[290px] top-[60px] z-10 h-16 w-[400px] bg-yellow-300"></div>
+        <div className="absolute inset-0 h-full w-full bg-black bg-opacity-30"></div>
 
-        <div className="absolute left-6 top-1/2 z-20 w-[400px] -translate-y-1/2 transform pl-4 text-center md:left-[100px]">
-          <h1 className="mb-3 font-sans text-4xl font-bold text-gray-800 md:text-5xl lg:text-6xl">
+        {/* Elementos decorativos - se ocultan en móviles para mejor legibilidad */}
+        <div className="absolute left-0 top-1/2 hidden h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-yellow-400 sm:block sm:h-[600px] sm:w-[800px] md:h-[800px] md:w-[1200px]"></div>
+        <div className="absolute left-[150px] top-[30px] z-10 hidden h-8 w-[200px] bg-yellow-300 sm:block sm:h-12 sm:w-[300px] md:left-[290px] md:top-[60px] md:h-16 md:w-[400px]"></div>
+
+        {/* Contenido principal - optimizado para móviles con mejor contraste */}
+        <div className="absolute left-4 top-1/2 z-20 w-[calc(100%-2rem)] max-w-[400px] -translate-y-1/2 transform px-2 text-center sm:left-6 sm:w-[400px] sm:pl-4 md:left-[100px]">
+          <h1 className="mb-2 font-sans text-xl font-bold text-white drop-shadow-2xl sm:mb-3 sm:text-2xl md:text-4xl md:text-gray-800 lg:text-5xl xl:text-6xl">
             {currentEvent.title}
           </h1>
-          <p className="mb-6 font-sans text-base text-gray-700 md:text-lg">
-            {currentEvent.date} <br /> {currentEvent.place}
+          <p className="mb-4 rounded-lg bg-black/40 px-3 py-2 font-sans text-sm text-white backdrop-blur-sm sm:mb-6 sm:bg-transparent sm:px-0 sm:py-0 sm:text-base sm:text-gray-700 sm:backdrop-blur-none md:text-lg">
+            {currentEvent.date} <br className="hidden sm:block" />
+            <span className="sm:hidden"> - </span>
+            {currentEvent.place}
           </p>
           {currentEvent.linkform && (
             <a
               href={currentEvent.linkform}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block transform rounded-full bg-[#004425] px-8 py-3 font-semibold text-white shadow-lg transition-transform duration-300 hover:scale-105"
+              className="inline-block transform rounded-full bg-[#004425] px-4 py-2 text-sm font-semibold text-white shadow-2xl transition-transform duration-300 hover:scale-105 sm:px-6 sm:py-2.5 sm:text-base md:px-8 md:py-3"
             >
               Ir a la página
             </a>
           )}
         </div>
 
-        <div className="absolute bottom-6 right-6 z-20 md:bottom-8 md:right-8">
-          <Timer
-            key={currentIndex} // La key asegura que el Timer se reinicie si el evento cambia
-            Event_date={new Date(currentEvent.dateTimer)}
-          />
+        {/* Timer - oculto en móviles, visible desde tablets */}
+        <div className="absolute bottom-6 right-6 z-20 hidden sm:block md:bottom-8 md:right-8">
+          <Timer Event_date="2025-07-19T00:00:00" />
         </div>
       </div>
 
-      {/* --- NUEVO: Flechas de Navegación --- */}
+      {/* --- Flechas de Navegación - mejoradas para móviles --- */}
       {/* Flecha Izquierda */}
       <div
         onClick={goToPrevious}
-        className="absolute left-5 top-1/2 z-30 -translate-y-1/2 cursor-pointer rounded-full bg-black/30 p-2 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        className="absolute left-2 top-1/2 z-30 -translate-y-1/2 cursor-pointer rounded-full bg-black/30 p-1.5 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:left-3 sm:p-2 md:left-5"
       >
         <LeftArrowIcon />
       </div>
       {/* Flecha Derecha */}
       <div
         onClick={goToNext}
-        className="absolute right-5 top-1/2 z-30 -translate-y-1/2 cursor-pointer rounded-full bg-black/30 p-2 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        className="absolute right-2 top-1/2 z-30 -translate-y-1/2 cursor-pointer rounded-full bg-black/30 p-1.5 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:right-3 sm:p-2 md:right-5"
       >
         <RightArrowIcon />
+      </div>
+
+      {/* --- Indicadores de posición (opcional) - solo visibles en móviles --- */}
+      <div className="absolute bottom-2 left-1/2 z-30 flex -translate-x-1/2 transform space-x-2 sm:hidden">
+        {(infoImages.length > 0 ? infoImages : infoImagesExample).map(
+          (_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`h-2 w-2 rounded-full transition-colors duration-200 ${
+                index === currentIndex ? 'bg-white' : 'bg-white/50'
+              }`}
+            />
+          ),
+        )}
       </div>
     </div>
   );
