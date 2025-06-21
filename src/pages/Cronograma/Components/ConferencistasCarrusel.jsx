@@ -82,30 +82,44 @@ function ConferencistasCarrusel() {
   // Estilo personalizado para envolver la tarjeta
   const cardWrapperStyle = {
     width: '280px',
-    overflow: 'hidden',
+    overflow: 'visible', // Cambiar de 'hidden' a 'visible' para que la sombra se vea completa
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    borderRadius: '8px',
-    margin: '0 auto',
+    borderRadius: '0', // Mantener esquinas cuadradas
+    margin: '0 auto 15px', // Añadir margen inferior para separar de los dots
     backgroundColor: 'white',
+    height: '380px',
+    display: 'flex',
+    flexDirection: 'column',
   };
 
-  // Estilo para el contenedor de la imagen
+  // Estilo para el contenedor de la imagen - asegurando relación 1:1
   const imageContainerStyle = {
-    width: '100%',
+    width: '280px',
     height: '280px',
     overflow: 'hidden',
     position: 'relative',
+    flexShrink: 0, // Evita que se encoja
+    backgroundColor: '#f4f4f4', // Color de fondo en caso de que la imagen no cubra todo
   };
 
-  // Estilo para la imagen
+  // Estilo para la imagen - garantizando recorte cuadrado
   const imageStyle = {
     width: '100%',
     height: '100%',
     objectFit: 'cover',
-    objectPosition: 'center top',
+    objectPosition: 'center top', // Prioriza mostrar la parte superior (rostros)
   };
 
-  // Configuración del slider
+  // Estilo para el contenedor de texto
+  const textContainerStyle = {
+    padding: '16px',
+    height: '100px', // Altura fija para la sección de texto
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center', // Centra verticalmente el contenido
+  };
+
+  // Configuración del slider (ajustar el bottom del appendDots)
   const settings = {
     dots: true,
     infinite: true,
@@ -138,7 +152,7 @@ function ConferencistasCarrusel() {
     appendDots: (dots) => (
       <div
         style={{
-          bottom: '-30px',
+          bottom: '-30px', // Aumentado de -30px a -45px para dar más espacio
         }}
       >
         <ul style={{ margin: '0' }}> {dots} </ul>
@@ -181,7 +195,7 @@ function ConferencistasCarrusel() {
             <div className="mt-4 hidden md:mt-0 md:block">
               <button
                 onClick={handleNavigateToConferencistas}
-                className="rounded-full bg-primary-orange px-8 py-3 font-medium text-white transition-colors hover:bg-[#d86a37]"
+                className="rounded-full bg-[#EF7B45] px-8 py-3 font-medium text-white transition-colors hover:bg-[#d86a37]"
               >
                 Conoce más de ellas
               </button>
@@ -201,7 +215,7 @@ function ConferencistasCarrusel() {
                         style={imageStyle}
                       />
                     </div>
-                    <div className="p-4">
+                    <div style={textContainerStyle}>
                       <h3 className="text-center text-xl font-semibold text-green-700">
                         {conferencista.name}
                       </h3>
