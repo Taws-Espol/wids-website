@@ -1,4 +1,134 @@
 export let cronograma = {
+  agendaEvents: [
+    {
+      type: 'header',
+      time: '8:00',
+      title: 'Participant Registration',
+      color: 'default', // O puedes definir un color específico si el header tiene fondo
+    },
+    {
+      type: 'header',
+      time: '9:00',
+      title: 'Welcome & Opening Remarks',
+      description: [
+        '• Introduction to WiDS (Women in Data Science)',
+        '• Why are we hosting this event?',
+        '• Sponsor presentations:',
+        '  o The North Highland',
+        '  o Banco Guayaquil',
+        '  o Coding Bootcamps',
+        '• Organized by:',
+        '  o TAWS',
+        '  o Coding Bootcamps',
+        '  o ESPOL',
+      ],
+      color: 'default',
+    },
+    {
+      type: 'room_session',
+      time: '09:20',
+      roomA: {
+        title:
+          'Conectar datos, personas y estrategias: liderazgo femenino desde la inteligencia de negocios + Q&A',
+        speaker: 'Kelly Carvajal',
+        work: 'Head of Commercial Planning and Corporate Data Governance',
+        image: 'KellyCarvajal.png', // Asegúrate de tener esta imagen
+        color: 'verde',
+      },
+      roomB: {
+        title: 'Aplicaciones de IA Generativa en Marketing Digital + Q&A',
+        speaker: 'Karen Calva',
+        work: 'Head of Data Intelligence',
+        image: 'KarenCalva.png', // Asegúrate de tener esta imagen
+        color: 'verde', // O el color que corresponda para esta sección
+      },
+    },
+    {
+      type: 'room_session',
+      time: '09:40',
+      roomA: {
+        title:
+          'Storytelling: Telling Stories Through Data - A Practical Case + Q&A',
+        speaker: 'Estefanía Cisneros Freire',
+        work: 'Head of Credit Data Analytics',
+        image: 'EstefaniaCisnerosFreire.png', // Asegúrate de tener esta imagen
+        color: 'verde',
+      },
+      roomB: {
+        title:
+          'Más allá del código: cómo comunicar datos para influir, liderar y transformar- Q&A',
+        speaker: 'Diana Once',
+        work: 'IT Tools Specialist',
+        image: 'DianaOnce.png', // Asegúrate de tener esta imagen
+        color: 'verde',
+      },
+    },
+    {
+      type: 'break',
+      time: '10:00',
+      title: 'Coffee Break',
+    },
+    {
+      type: 'single_session',
+      time: '10:30',
+      title: 'More Than Models: The Art of Discovering Value in Data + Q&A',
+      speaker: 'Iris Bustamante',
+      work: 'Senior Data Scientist',
+      image: 'IrisBustamante.png', // Asegúrate de tener esta imagen
+      color: 'verde',
+    },
+    {
+      type: 'single_session',
+      time: '10:50',
+      title: 'Speaker Banco Guayaquil',
+      // No hay speaker/work/image explícito para este, solo el título
+      color: 'verde',
+    },
+    {
+      type: 'single_session',
+      time: '11:10',
+      title: 'Understanding the Customer Through Data + Q&A',
+      speaker: 'Sofía España',
+      work: 'Data Scientists at Xtrim',
+      image: 'SofiaEspana.png', // Asegúrate de tener esta imagen
+      color: 'verde',
+    },
+    {
+      type: 'single_session',
+      time: '11:30',
+      title:
+        'From Chaos to Control: How to Use Data and Metrics to Anticipate Failures and Protect Your Business + Q&A',
+      speaker: 'Vicky Valverde',
+      work: 'Senior Full Stack Engineer',
+      image: 'VickyValverde.png', // Asegúrate de tener esta imagen
+      color: 'verde',
+    },
+    {
+      type: 'single_session',
+      time: '11:50',
+      title: 'From Excel to AI: A Journey into Data Transformation + Q&A',
+      speaker: 'Nicole Agila',
+      work: 'Senior Data Scientist',
+      image: 'NicoleAgila.png', // Asegúrate de tener esta imagen
+      color: 'verde',
+    },
+    {
+      type: 'closing_remarks',
+      time: '12:10',
+      title: 'Closing Remarks',
+      points: [
+        '• Acknowledgements to sponsors',
+        '• Acknowledgements to speakers',
+        '• Acknowledgements to collaborators',
+        '• Acknowledgements to attendees',
+      ],
+    },
+    {
+      type: 'end_session',
+      time: '12:30',
+      title: 'End of Session',
+    },
+  ],
   Conferencias: [
     {
       index: 0,

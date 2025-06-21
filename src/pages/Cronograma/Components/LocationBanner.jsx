@@ -26,15 +26,15 @@ const MapPinIcon = () => (
 export default function LocationBanner({ title, address, mapLink }) {
   return (
     <div className="w-full bg-white px-8 py-6">
-      <div className="mx-auto flex max-w-6xl items-center justify-between">
+      <div className="flex max-w-6xl items-center justify-between">
         {/* Contenedor para el Título y la Dirección */}
-        <div>
+        <div className="px-4">
           <h2 className="text-3xl font-bold text-[#004425]">{title}</h2>
           <p className="text-base text-gray-600">{address}</p>
         </div>
 
         {/* Botón para encontrar la ubicación */}
-        <div>
+        <div className="px-4">
           <a
             href={mapLink}
             target="_blank"

@@ -27,13 +27,11 @@ function Footer() {
         },
       );
   };
-  const location = useLocation();
-  const nothome = location.pathname.split('/').pop();
 
   return (
     <footer className="font-sans">
       <div
-        className={`flex flex-col flex-wrap place-content-center place-items-center bg-opacity-20 sm:flex-row ${nothome ? 'hidden' : 'block'}`}
+        className={`flex flex-col flex-wrap place-content-center place-items-center bg-opacity-20 sm:flex-row`}
       >
         {/* Imagen para escritorio */}
         <img
