@@ -17,7 +17,7 @@ const ambassadors = [
   {
     name: 'Carmen Vaca',
     role: 'Embajador',
-    image: 'assets/ambrassador/anna.png',
+    image: 'assets/ambrassador/drcarmen2.0.webp',
   },
 ];
 
