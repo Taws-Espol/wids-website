@@ -10,10 +10,10 @@ import ProgramScheduleV3 from '../../Cronograma/Components/ProgramScheduleV3.jsx
 
 const slides = [
   {
-    url: '../../../../public/assets/Eventos/NextGen/_MG_2799.jpg',
+    url: '../../../../public/assets/Eventos/NextGen/MG_2769.webp',
   },
   {
-    url: '../../../../public/assets/Eventos/NextGen/MG_2769.webp',
+    url: '../../../../public/assets/Eventos/NextGen/NextGen_empoderando.webp',
   },
 ];
 

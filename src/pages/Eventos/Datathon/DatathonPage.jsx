@@ -20,7 +20,19 @@ function Datathon() {
 
   const slides = [
     {
-      url: 'https://i.pinimg.com/736x/17/26/0a/17260a1d8cc3f8729eaa454da2342bbc.jpg',
+      url: '../../../../public/assets/Eventos/Datathon/2025/IMG-20250425-WA0073.webp',
+    },
+    {
+      url: '../../../../public/assets/Eventos/Datathon/2025/IMG-20250425-WA0076.webp',
+    },
+    {
+      url: '../../../../public/assets/Eventos/Datathon/2025/IMG-20250425-WA0097.webp',
+    },
+    {
+      url: '../../../../public/assets/Eventos/Datathon/2025/IMG-20250430-WA0160.webp',
+    },
+    {
+      url: '../../../../public/assets/Eventos/Datathon/2025/IMG-20250512-WA0076.webp',
     },
   ];
 
