@@ -1385,7 +1385,7 @@ export const ediciones = [
         place: 'ESPOL',
         work: 'Data Driven Decisions',
         schedule: '',
-        imageName: 'dracarmen.webp',
+        imageName: 'carmenVacaRuiz.webp',
         linkeding: 'https://www.linkedin.com/in/carmen-vaca-ruiz/',
         x: '',
         info: 'Carmen Vaca es profesora e investigadora en ESPOL, donde también dirige los Coding Bootcamps. Es ex alumna de Fulbright con especialidades en ciencia de datos, estrategia de datos y análisis de negocios. Posee experiencia en minería de datos espaciales, análisis de redes sociales y seguimiento de indicadores socioeconómicos urbanos a través de redes sociales. Tiene estudios en la Saïd Business School de la Universidad de Oxford y Stanford University. En ESPOL, lleva trabajando desde mayo de 2021, liderando decisiones basadas en datos y diseñando cursos para los Coding Bootcamps. También ha trabajado como investigadora en el Politecnico di Milano, el Instituto Max Planck para Sistemas de Software y Yahoo!, centrándose en el análisis de redes sociales, patrones temporales en la actividad de usuarios y computación urbana con datos de redes sociales. Ha participado en varios proyectos de investigación y publicaciones en revistas científicas y conferencias internacionales.',

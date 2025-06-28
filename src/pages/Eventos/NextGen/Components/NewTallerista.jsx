@@ -12,7 +12,7 @@ function TalleristaProfile({ profile }) {
   return (
     <div className="flex max-w-[200px] flex-col items-center text-center">
       <img
-        src={`/assets/Eventos/Ediciones/2024/Images/conferencistas/${profile.image}`}
+        src={`/assets/Eventos/Ediciones/2025/Images/conferencistas/${profile.image}`}
         alt={`Perfil de ${profile.info}`}
         className="mb-4 h-36 w-36 rounded-full border-2 border-white object-cover shadow-lg"
       />
