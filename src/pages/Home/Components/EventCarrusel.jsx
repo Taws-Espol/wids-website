@@ -83,7 +83,7 @@ export default function EventCarrucel({ slides = [], fixedText }) {
           <div className="absolute left-[-50px] top-[50%] h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-yellow-400 lg:h-[1000px] lg:w-[1000px] xl:h-[1200px] xl:w-[1200px]"></div>
 
           {/* Contenido del texto - centrado con el círculo */}
-          <div className="z-10 ml-1 flex max-w-md flex-col items-center justify-center text-center md:ml-[-30px] lg:ml-[-60px] xl:ml-[-90px]">
+          <div className="z-10 ml-1 flex max-w-md flex-col items-center justify-center text-center md:ml-[-30px] lg:ml-[-120px] xl:ml-[-300px]">
             <h1 className="mb-4 text-4xl font-bold text-green-900 lg:text-5xl xl:text-6xl">
               {fixedText?.title || 'Título'}
             </h1>
