@@ -1328,16 +1328,16 @@ export const ediciones = [
       },
       {
         title:
-          'Licitaciones Transparentes: El Poder del Análisis de Datos para Prevenir Irregularidades',
+          'Sin rumbo claro: Cómo los riesgos te llevan a crecer profesionalmente',
         name: 'Nicole Agila',
         place: 'Banco Bolivariano',
-        work: 'Analista de Datos',
+        work: 'Científica de Datos',
         schedule: '12:10 - 12:30',
         imageName: 'MaríaBelénRojas.webp',
         linkeding:
-          'https://www.linkedin.com/in/mar%C3%ADa-bel%C3%A9n-rojas-arguello-173a63172',
+          'https://www.linkedin.com/in/nicoleagilap/?originalSubdomain=ec',
         x: '',
-        info: 'Analista de datos de Ecuador con experiencia en análisis financiero y contabilidad. Actualmente trabaja en el Banco Bolivariano. Anteriormente, ha desempeñado roles en la Superintendencia de Compañías, Valores y Seguros y en Pycca. Posee una maestría en Inteligencia de Negocios y Ciencia de Datos de la Universidad Espíritu Santo y un título en Economía con mención en Gestión Empresarial de la Escuela Superior Politécnica del Litoral. Su perfil profesional destaca su capacidad analítica y habilidades en contabilidad y análisis financiero.',
+        info: '',
       },
     ],
     talleres: [
