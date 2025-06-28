@@ -9,7 +9,7 @@ export default function InfoSection() {
   const textRight =
     'Un taller dirigido a jóvenes de bachillerato, el cual se llevará a cabo en los laboratorios de la Facultad de Ingeniería Eléctrica y Computación (FIEC) de la ESPOL.';
   const textLeft =
-    'El contenido del taller consta de 3 secciones, Introducción a la Ciencia de Datos, Estadística básica y Visualizaciones, dondelos estudiantes podrán reforzar losconocimientos adquiridos.';
+    'El contenido del taller consta de 3 secciones: La ciencia de datos y por qué es para todas, Explorar y cambiar el mundo con datos, y Tú puedes liderar el futuro de la tecnología, donde las estudiantes podrán reforzar los conocimientos adquiridos.';
 
   return (
     <div className="relative flex w-full flex-col items-center justify-center gap-24 px-6 py-20 font-sans">
