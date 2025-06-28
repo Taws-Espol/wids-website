@@ -4,7 +4,7 @@ import { ConferenceContainer } from './../Conferencistas/Components/ConferencesC
 import { ediciones } from './../../data/ediciones';
 import Subtitle from '../../shared/Subtitle';
 function Nosotros() {
-  const edicionData = ediciones.find((edicion) => edicion.edicion == 2024);
+  const edicionData = ediciones.find((edicion) => edicion.edicion == 2025);
   return (
     <>
       <AnimatedSection>

@@ -1,25 +1,6 @@
 export const Sponsors_Cola = {
-  colaboradores: [
-    {
-      name: 'CIAP',
-      location: '',
-      website: '',
-      logo: '/assets/sponsors/CIAP.webp',
-    },
-    {
-      name: 'IEEE',
-      location: '',
-      website: '',
-      logo: '/assets/sponsors/IEEE.webp',
-    },
-  ],
+  colaboradores: [],
   sponsors: [
-    {
-      name: 'DATIL',
-      location: '',
-      website: 'https://datil.com/',
-      logo: '/assets/sponsors/datil.png',
-    },
     {
       name: 'BANCO GUAYAQUIL',
       location: '',
@@ -39,12 +20,5 @@ export const Sponsors_Cola = {
       logo: '/assets/sponsors/taws.webp',
     },
   ],
-  importants: [
-    {
-      name: 'GOOGLE DEEPMIND',
-      location: '',
-      website: 'https://deepmind.google/',
-      logo: '/assets/sponsors/deepMind.webp',
-    },
-  ],
+  importants: [],
 };

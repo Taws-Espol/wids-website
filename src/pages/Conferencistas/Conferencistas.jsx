@@ -2,7 +2,7 @@ import { ConferenceContainer } from './Components/ConferencesContainer';
 import AnimatedSection from './../../shared/AnimatedSection';
 import { ediciones } from '../../data/ediciones';
 function Conferencistas() {
-  const year = '2024';
+  const year = '2025';
   const edicionData = ediciones.find((edicion) => edicion.edicion === year);
   return (
     <AnimatedSection>

@@ -31,6 +31,7 @@ export function ConferenceContainer({
     2022: '/assets/Eventos/Ediciones/2022/Images/conferencistas/',
     2023: '/assets/Eventos/Ediciones/2023/Images/conferencistas/',
     2024: '/assets/Eventos/Ediciones/2024/Images/conferencistas/',
+    2025: '/assets/Eventos/Ediciones/2025/images/conferencistas/',
   };
   let edition = edicionData.edicion;
   const path_conferencistas = link[edition];

@@ -3,7 +3,6 @@ import InfoSection from './Components/InfoSection';
 import Requirements from './Components/Requirements';
 import Subtitle from '../../../shared/Subtitle';
 import NewTallerista from './Components/NewTallerista';
-import ProgramSchedule from '../../Cronograma/Components/ProgramSchedule';
 import { cronograma } from '../../../data/Cronograma';
 import EventCarrusel from '../../Home/Components/EventCarrusel.jsx';
 import ProgramScheduleV3 from '../../Cronograma/Components/ProgramScheduleV3.jsx';
