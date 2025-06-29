@@ -1,13 +1,18 @@
 import { DatathonInfo } from '../../../data/Eventos/Datathon';
-import { TimeLine } from '../../Cronograma/Components/TimeLineDatathon';
 import Subtitle from '../../../shared/Subtitle';
 import Separator from './Components/Separator';
 import FeaturesGrid from './Components/FeaturesGrid';
 import AnimatedSection from './../../../shared/AnimatedSection';
-import ProgramSchedule from '../../Cronograma/Components/ProgramSchedule';
 import { cronograma } from '../../../data/Cronograma';
 import EventCarrusel from '../../Home/Components/EventCarrusel.jsx';
 import ProgramScheduleV3 from '../../Cronograma/Components/ProgramScheduleV3.jsx';
+
+//provicional url photo
+import image1 from '/assets/Eventos/Datathon/2025/IMG-20250425-WA0073.webp';
+import image2 from '/assets/Eventos/Datathon/2025/IMG-20250425-WA0076.webp';
+import image3 from '/assets/Eventos/Datathon/2025/IMG-20250425-WA0097.webp';
+import image4 from '/assets/Eventos/Datathon/2025/IMG-20250430-WA0160.webp';
+import image5 from '/assets/Eventos/Datathon/2025/IMG-20250512-WA0076.webp';
 
 function Datathon() {
   const div1 = DatathonInfo[0];
@@ -20,19 +25,19 @@ function Datathon() {
 
   const slides = [
     {
-      url: '../../../../public/assets/Eventos/Datathon/2025/IMG-20250425-WA0073.webp',
+      url: image1,
     },
     {
-      url: '../../../../public/assets/Eventos/Datathon/2025/IMG-20250425-WA0076.webp',
+      url: image2,
     },
     {
-      url: '../../../../public/assets/Eventos/Datathon/2025/IMG-20250425-WA0097.webp',
+      url: image3,
     },
     {
-      url: '../../../../public/assets/Eventos/Datathon/2025/IMG-20250430-WA0160.webp',
+      url: image4,
     },
     {
-      url: '../../../../public/assets/Eventos/Datathon/2025/IMG-20250512-WA0076.webp',
+      url: image5,
     },
   ];
 

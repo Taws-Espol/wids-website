@@ -1,12 +1,9 @@
 import Carrusel from './Components/Carrusel';
 import { Infos } from './Components/Infos';
 import Sponsors from './Components/Sponsors';
-import Ubicacion from './Components/Ubicacion';
 import AnimatedSection from './../../shared/AnimatedSection';
-import Programa from './Components/Programa';
 import AboutUsHome from './Components/about-us-home/AboutUsHome';
 import Ambrassador from './Components/Ambrassador';
-import Contact from './Components/Contact_home';
 import AboutUsHome2 from './Components/AboutUs2';
 
 function Inicio() {
