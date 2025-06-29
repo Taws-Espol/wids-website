@@ -298,7 +298,7 @@ export let cronograma = {
       color: 'morado',
       type: 'Taller',
       title: 'Taller 3 - Parte 2',
-      info: 'Isabella Martín',
+      info: 'Annabella Sánchez',
       image: 'anna.webp',
       work: 'Estudiantes de Ingeniería en Computación de ESPOL',
       time: '11:20 PM',
