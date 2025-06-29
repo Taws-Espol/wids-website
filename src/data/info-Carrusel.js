@@ -7,7 +7,7 @@ export let infoImages = [
     place: 'Guayaquil',
     uni: 'ESPOL',
     dateTimer: 'July 13, 2024 00:00:00',
-    linkform: 'https://forms.gle/BnU5kCFcho3m4f4Y8',
+    linkform: 'https://forms.gle/mmDHENEmASgqRNmn8',
   },
   {
     id: '2',
