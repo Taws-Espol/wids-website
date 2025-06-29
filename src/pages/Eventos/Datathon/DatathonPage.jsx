@@ -43,8 +43,8 @@ function Datathon() {
 
   const fixedText = {
     title: 'DATATHON',
-    description: 'Diagnóstico de Cáncer Metastásico en 90 Días',
-    date: '18–31 de Mayo',
+    description: 'Unraveling the Mysteries of the Female Brain',
+    date: '21–25 de Abril, 2025',
   };
 
   return (

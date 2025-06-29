@@ -94,7 +94,7 @@ export const DatathonInfo = [
       },
       {
         id: 'day4',
-        date: 'Viernes, 31 de Mayo',
+        date: 'Viernes, 23 de Abril',
         time: '9:00 - 13:00',
         title: 'Datathon',
         info: [

@@ -137,7 +137,7 @@ export default function Carrusel() {
               rel="noopener noreferrer"
               className="inline-block transform rounded-full bg-[#004425] px-4 py-2 text-sm font-semibold text-white shadow-2xl transition-transform duration-300 hover:scale-105 sm:px-6 sm:py-2.5 sm:text-base md:px-8 md:py-3"
             >
-              Ir a la página
+              Regístrate
             </a>
           )}
         </div>

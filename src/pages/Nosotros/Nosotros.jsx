@@ -24,7 +24,7 @@ function Nosotros() {
               <p className="!text-justify font-acumin text-xs sm:text-base md:text-left md:text-lg lg:text-xl xl:text-xl">
                 {/* Texto de Lorem Ipsum */}
                 WiDS Guayaquil@ESPOL es un evento independiente organizado por
-                la PhD. Carmen Vaca con sede en la Escuela Superior Politécnica
+                la PhD Carmen Vaca con sede en la Escuela Superior Politécnica
                 del Litoral (ESPOL), que coincide con la conferencia anual
                 global de Women in Data Science (WiDS) realizada por la
                 Universidad de Stanford y aproximadamente más de 150 localidades
