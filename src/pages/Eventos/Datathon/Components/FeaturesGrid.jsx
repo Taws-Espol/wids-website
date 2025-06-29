@@ -1,29 +1,34 @@
 import React from 'react';
-// Importamos el ícono específico de la librería react-icons
-import { BsClipboardPulse } from 'react-icons/bs';
-
+// Usar react-icons que ya está instalado
+import { FaBrain, FaClock } from 'react-icons/fa';
+import { BsBarChartFill, BsFileEarmarkText } from 'react-icons/bs';
 // --- ESTRUCTURA DE DATOS ---
-// Define los datos para cada tarjeta. Así es fácil añadir, quitar o modificar elementos.
+// Define los datos para cada tarjeta con sus iconos correspondientes
 const featuresData = [
   {
     title: 'Predicción Temprana',
-    subtitle: 'Factores Demográficos y Ambientales',
-    color: 'orange', // Corresponde a una de nuestras variantes de color
+    subtitle: 'Detección anticipada de necesidad de tratamiento en mujeres',
+    color: 'orange',
+    icon: FaClock, // ⏱️ Predicción Temprana
   },
   {
     title: 'Análisis Predictivo',
-    subtitle: 'Modelos de Machine Learning',
+    subtitle:
+      'Uso de ML para identificar condiciones como TDAH desde imágenes cerebrales',
     color: 'cyan',
+    icon: FaBrain, // 🧠📊 Análisis Predictivo
   },
   {
     title: 'Visualización de Datos',
-    subtitle: 'Dashboards Interactivos',
+    subtitle: 'Exploración de patrones cerebrales según etapa de vida',
     color: 'yellow',
+    icon: BsBarChartFill, // 📈 Visualización de Datos
   },
   {
     title: 'Reportes Automatizados',
-    subtitle: 'Generación de Informes de Salud',
+    subtitle: 'Generación de reportes con predicciones clínicas personalizadas',
     color: 'green',
+    icon: BsFileEarmarkText, // 📄⚙️ Reportes Automatizados
   },
 ];
 
@@ -54,14 +59,15 @@ const colorVariants = {
 
 /**
  * Componente para la tarjeta de característica individual (Ícono + Texto)
- * @param {{ title: string, subtitle: string, color: 'orange'|'cyan'|'yellow'|'green' }} props
+ * @param {{ title: string, subtitle: string, color: 'orange'|'cyan'|'yellow'|'green', icon: Component }} props
  */
-function FeatureCard({ title, subtitle, color = 'cyan' }) {
+function FeatureCard({ title, subtitle, color = 'cyan', icon: Icon }) {
   const styles = colorVariants[color] || colorVariants.cyan;
 
   return (
+    // Volvemos a items-center como estaba originalmente
     <div className="flex items-center gap-5">
-      {/* Contenedor del Ícono con efecto de apilado */}
+      {/* Contenedor del Ícono */}
       <div className="relative flex-shrink-0">
         <div
           className={`absolute left-1.5 top-1.5 h-20 w-20 rounded-lg ${styles.bg} ${styles.border} border-2`}
@@ -69,11 +75,18 @@ function FeatureCard({ title, subtitle, color = 'cyan' }) {
         <div
           className={`relative flex h-20 w-20 items-center justify-center rounded-lg bg-white ${styles.border} border-2`}
         >
-          <BsClipboardPulse size={40} className={styles.icon} />
+          {/* Solución simple: contenedor con tamaño fijo */}
+          <div className="flex h-12 w-12 items-center justify-center">
+            {Icon ? (
+              <Icon size={28} className={styles.icon} />
+            ) : (
+              <div className={`h-8 w-8 ${styles.bg} rounded-full`}></div>
+            )}
+          </div>
         </div>
       </div>
 
-      {/* Contenedor del Texto */}
+      {/* Contenedor del Texto - sin padding-top */}
       <div>
         <h3 className="text-lg font-bold text-gray-800">{title}</h3>
         <p className="text-gray-600">{subtitle}</p>
@@ -90,12 +103,22 @@ export default function FeaturesGrid() {
     <div className="mx-auto w-full max-w-4xl p-8">
       <div className="grid grid-cols-1 gap-x-24 gap-y-12 md:grid-cols-2">
         {featuresData.map((feature, index) => (
-          // El elemento en la posición 1 (arriba a la derecha) se empuja hacia abajo en pantallas grandes para crear el efecto escalonado
-          <div key={index} className={index === 1 ? 'md:mt-16' : ''}>
+          <div
+            key={index}
+            // El escalonado está comentado pero disponible para futuras revisiones:
+            // className={
+            //   index === 1
+            //     ? 'md:mt-8' // Escalonar segundo elemento (arriba derecha)
+            //     : index === 2
+            //     ? 'md:-mt-8' // Escalonar tercer elemento (abajo izquierda)
+            //     : ''
+            // }
+          >
             <FeatureCard
               title={feature.title}
               subtitle={feature.subtitle}
               color={feature.color}
+              icon={feature.icon}
             />
           </div>
         ))}

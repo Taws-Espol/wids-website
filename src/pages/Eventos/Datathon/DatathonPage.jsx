@@ -68,8 +68,7 @@ function Datathon() {
       </div>
       <Subtitle title="Problema a resolver" bgColor="#00a7d5" />
       <p className="w-full py-2 text-center text-[20px] font-bold">
-        Desarrollo de modelos predictivos para diagnósticos rápidos de cáncer
-        metastásico{' '}
+        Desentrañando los Misterios del Cerebro Femenino{' '}
       </p>
       <FeaturesGrid />
       <Subtitle title="Participantes" bgColor="#00432d" />
