@@ -21,8 +21,10 @@ export default function ConferenceBanner() {
           inspiración y conocimiento en las conferencias de WIDS en ESPOL!
         </p>
         <a
-          href="#"
+          href="https://forms.gle/mmDHENEmASgqRNmn8"
           className="rounded-full bg-teal-600 px-8 py-3 text-lg font-semibold text-white hover:bg-teal-700"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Regístrate aquí
         </a>
