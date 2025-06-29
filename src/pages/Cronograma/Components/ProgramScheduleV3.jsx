@@ -1,32 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Componente para un taller individual
 const TallerEvent = ({ taller }) => (
-  <div className="border-b border-gray-300 py-8">
+  <div className="border-b border-gray-300 py-4 sm:py-8">
     <div className="flex justify-center">
       <div className="max-w-4xl text-center">
-        <div className="mb-4 flex items-center justify-center">
-          <div className="flex-1 border-t border-gray-300"></div>
-          <div className="px-6">
-            <span className="mr-4 text-2xl font-bold text-gray-900">
+        <div className="mb-2 flex items-center justify-center sm:mb-4">
+          <div className="hidden flex-1 border-t border-gray-300 sm:block"></div>
+          <div className="px-2 sm:px-6">
+            <span className="mr-2 text-lg font-bold text-gray-900 sm:mr-4 sm:text-2xl">
               {taller.time}
             </span>
-            <span className="text-2xl font-bold" style={{ color: '#19c2ee' }}>
+            <span
+              className="text-lg font-bold sm:text-2xl"
+              style={{ color: '#19c2ee' }}
+            >
               {taller.title}
             </span>
           </div>
-          <div className="flex-1 border-t border-gray-300"></div>
+          <div className="hidden flex-1 border-t border-gray-300 sm:block"></div>
         </div>
 
         {/* Información del facilitador */}
         {taller.info && (
-          <p className="mt-2 text-lg font-medium text-gray-900">
+          <p className="mt-1 text-base font-medium text-gray-900 sm:mt-2 sm:text-lg">
             {taller.info}
           </p>
         )}
 
         {/* Trabajo/Descripción */}
-        {taller.work && <p className="text-lg text-gray-600">{taller.work}</p>}
+        {taller.work && (
+          <p className="text-sm text-gray-600 sm:text-lg">{taller.work}</p>
+        )}
       </div>
     </div>
   </div>
@@ -34,18 +39,20 @@ const TallerEvent = ({ taller }) => (
 
 // Componente para descansos
 const BreakEvent = ({ taller }) => (
-  <div className="border-b border-gray-300 py-8">
+  <div className="border-b border-gray-300 py-4 sm:py-8">
     <div className="flex justify-center">
       <div className="max-w-4xl text-center">
         <div className="flex items-center justify-center">
-          <div className="flex-1 border-t border-gray-300"></div>
-          <div className="px-6">
-            <span className="mr-4 text-2xl font-bold text-gray-900">
+          <div className="hidden flex-1 border-t border-gray-300 sm:block"></div>
+          <div className="px-2 sm:px-6">
+            <span className="mr-2 text-lg font-bold text-gray-900 sm:mr-4 sm:text-2xl">
               {taller.time}
             </span>
-            <span className="text-2xl font-bold text-green-500">Descanso</span>
+            <span className="text-lg font-bold text-green-500 sm:text-2xl">
+              Descanso
+            </span>
           </div>
-          <div className="flex-1 border-t border-gray-300"></div>
+          <div className="hidden flex-1 border-t border-gray-300 sm:block"></div>
         </div>
       </div>
     </div>
@@ -54,6 +61,19 @@ const BreakEvent = ({ taller }) => (
 
 // Componente para talleres simultáneos (misma hora, diferentes días/rooms)
 const SimultaneousTalleres = ({ talleres, time, eventType }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detectar cambios en el tamaño de la pantalla
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIfMobile(); // Verificar en el montaje inicial
+    window.addEventListener('resize', checkIfMobile);
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+
   // Determinar las etiquetas basadas en el tipo de evento y número de talleres
   const getLabels = () => {
     if (eventType === 'NextGen') {
@@ -70,6 +90,52 @@ const SimultaneousTalleres = ({ talleres, time, eventType }) => {
   const labels = getLabels();
   const numCols = talleres.length;
 
+  // Vista móvil - Apilada verticalmente
+  if (isMobile) {
+    return (
+      <div className="border-b border-gray-300">
+        <div className="py-4">
+          <div className="mb-2 flex justify-center">
+            <span className="text-xl font-bold text-gray-900">{time}</span>
+          </div>
+
+          {talleres.map((taller, index) => (
+            <div
+              key={`mobile-${taller.index}-${index}`}
+              className="mb-6 border-b border-gray-200 pb-6 last:border-b-0 last:pb-0"
+            >
+              <div className="mb-3 bg-gray-50 p-3 text-center">
+                <h4 className="text-lg font-bold text-green-500">
+                  {labels[index]}
+                </h4>
+              </div>
+
+              <div className="px-3">
+                {/* Título */}
+                <h3 className="mb-2 text-lg font-medium text-[#19c2ee]">
+                  {taller.title}
+                </h3>
+
+                {/* Información del facilitador */}
+                {taller.info && (
+                  <p className="mb-1 text-base font-medium text-gray-900">
+                    {taller.info}
+                  </p>
+                )}
+
+                {/* Trabajo/Descripción */}
+                {taller.work && (
+                  <p className="text-sm text-gray-600">{taller.work}</p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // Vista desktop - Grid con columnas
   return (
     <div className="border-b border-gray-300">
       {/* Headers dinámicos - Mejor alineación */}
@@ -149,7 +215,7 @@ const SimultaneousTalleres = ({ talleres, time, eventType }) => {
   );
 };
 
-// Componente principal
+// Componente principal - modificado con márgenes para móvil
 export default function ProgramScheduleV3({
   data = [],
   eventType = 'Talleres',
@@ -160,123 +226,8 @@ export default function ProgramScheduleV3({
     return time.replace(/^0(\d)/, '$1');
   };
 
-  // Datos de ejemplo con formato de hora normalizado
-  const defaultTalleres = [
-    {
-      index: 1,
-      color: 'morado',
-      type: 'Taller',
-      title: 'Taller 1',
-      info: 'Juan Francisco Fernández',
-      work: 'Estudiante de Ingeniería en Computación en ESPOL',
-      time: '8:00 PM',
-    },
-    {
-      index: 2,
-      color: 'morado',
-      type: 'Taller',
-      title: 'Taller 2',
-      info: 'Jonathan Zambrano',
-      work: 'Estudiante de Ingeniería en Computación en ESPOL',
-      time: '9:30 PM',
-    },
-    {
-      index: 3,
-      color: 'morado',
-      type: 'Taller',
-      title: 'Taller 3',
-      info: 'Juan Andrés Munizaga',
-      work: 'Estudiante de Ingeniería en Computación en ESPOL',
-      time: '8:00 PM',
-    },
-    {
-      index: 4,
-      color: 'morado',
-      type: 'Taller',
-      title: 'Taller 4',
-      info: 'Mariu Andrade',
-      work: 'Estudiante de Ingeniería en Computación en ESPOL',
-      time: '9:30 PM',
-    },
-    {
-      index: 5,
-      color: 'morado',
-      type: 'Taller',
-      title: 'Taller 5',
-      info: 'Jonathan Zambrano',
-      work: 'Estudiante de Ingeniería en Computación en ESPOL',
-      time: '8:00 PM',
-    },
-    {
-      index: 6,
-      color: 'morado',
-      type: 'Taller',
-      title: 'Taller 6',
-      info: 'Darwin Pacheco',
-      work: 'Estudiante de Ingeniería en Computación en ESPOL',
-      time: '9:30 PM',
-    },
-    {
-      index: 7,
-      color: 'morado',
-      type: 'Taller',
-      title: 'Taller 7',
-      info: 'Diego Salazar',
-      work: 'Estudiante de Administración de Empresas en ESPOL',
-      time: '8:00 PM',
-    },
-    {
-      index: 8,
-      color: 'morado',
-      type: 'Taller',
-      title: 'Taller 8',
-      info: 'Juan Andrés Munizaga',
-      work: 'Estudiante de Ingeniería en Computación en ESPOL',
-      time: '9:30 PM',
-    },
-  ];
-
-  // Datos de ejemplo para NextGen
-  const nextGenData = [
-    {
-      index: 1,
-      color: 'morado',
-      type: 'Taller',
-      title: 'Taller 1',
-      info: 'María Isabel Mera',
-      image: 'MariaIsabelMera.webp',
-      work: 'Ph.D., Profesora e Investigadora de FIEC, ESPOL',
-      time: '01:15 PM',
-    },
-    {
-      index: 2,
-      color: 'morado',
-      type: 'Taller',
-      title: 'Taller 2',
-      info: 'María Isabel Mera',
-      image: 'MariaIsabelMera.webp',
-      work: 'Ph.D., Profesora e Investigadora de FIEC, ESPOL',
-      time: '02:15 PM',
-    },
-    {
-      index: 3,
-      color: 'morado',
-      type: 'Taller',
-      title: 'Taller 3',
-      info: 'María Isabel Mera',
-      image: 'MariaIsabelMera.webp',
-      work: 'Ph.D., Profesora e Investigadora de FIEC, ESPOL',
-      time: '01:15 PM',
-    },
-  ];
-
   // Usar datos apropiados basado en el tipo de evento
-  const rawData =
-    data.length > 0
-      ? data
-      : eventType === 'NextGen'
-        ? nextGenData
-        : defaultTalleres;
+  const rawData = data.length > 0 ? data : [];
 
   // Normalizar las horas en todos los datos
   const talleres = rawData.map((taller) => ({
@@ -295,8 +246,10 @@ export default function ProgramScheduleV3({
   }, {});
 
   return (
-    <div className="w-full bg-white">
-      <div className="px-0">
+    <div className="w-full overflow-x-auto bg-white">
+      <div className="min-w-full px-4 sm:px-0">
+        {' '}
+        {/* Añadido px-4 para móvil, sm:px-0 para quitar en pantallas más grandes */}
         {Object.entries(tallersByTime).map(([time, talleresEnHora]) => {
           // Si hay más de un taller a la misma hora, mostrarlos simultáneamente
           if (talleresEnHora.length > 1) {
