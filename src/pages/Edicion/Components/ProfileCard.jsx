@@ -44,7 +44,7 @@ export function ProfileCard({
       >
         <CardHeader
           floated={false}
-          className={`relative min-h-96 w-full overflow-hidden ${home ? 'h-60' : ''}`}
+          className={`relative ml-[-2px] h-[400px] w-full overflow-hidden ${home ? 'h-60' : ''}`}
         >
           <img
             src={image}
