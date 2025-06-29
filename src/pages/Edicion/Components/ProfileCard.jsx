@@ -39,7 +39,7 @@ export function ProfileCard({
       className={`transition-opacity duration-1000 ${isVisible ? `${animationClass}` : 'opacity-0'}`}
     >
       <Card
-        className={`h-[600px] w-96 max-sm:w-80 ${home ? 'h-[600px] w-80' : ''} ${value ? 'opacity-40' : ''} transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:cursor-pointer hover:shadow-2xl`}
+        className={`h-[600px] w-96 px-8 pt-3 max-sm:w-80 ${home ? 'h-[600px] w-80' : ''} ${value ? 'opacity-40' : ''} transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:cursor-pointer hover:shadow-2xl`}
         onClick={() => onClickFunction(conferencista)}
       >
         <CardHeader
@@ -49,7 +49,11 @@ export function ProfileCard({
           <img
             src={image}
             alt="Conferencista"
-            className="h-full w-full object-cover"
+            className={`h-full w-full object-cover ${
+              conferencista.imageName?.endsWith('drcarmen2.0.webp')
+                ? 'object-top'
+                : 'object-center'
+            }`}
           />
         </CardHeader>
         <CardBody className="h-32 text-center text-primary-dark-green">

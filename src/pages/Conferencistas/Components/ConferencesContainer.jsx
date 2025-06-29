@@ -44,15 +44,15 @@ export function ConferenceContainer({
         {conferenceActive && (
           <div
             id={div_principal}
-            className="my-20 flex w-full flex-row flex-wrap place-content-center place-items-center gap-10 py-10 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:shadow-2xl"
+            className="my-20 flex w-full flex-row flex-wrap place-content-center place-items-center gap-10 bg-[#ffff] py-10 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:shadow-2xl"
           >
             <img
               src={image}
               alt="Conferencista"
               className="h-96 w-96 rounded-3xl object-cover max-sm:h-80 max-sm:w-80"
             />
-            <div className="flex h-[384px] w-[800px] flex-col justify-center gap-8 rounded-xl p-10 align-middle max-sm:w-[350px]">
-              <div className="flex flex-col max-sm:mt-10">
+            <div className="flex h-[384px] w-[800px] flex-col justify-center gap-8 rounded-xl bg-[#ffff] p-10 align-middle max-sm:w-[350px]">
+              <div className="flex flex-col bg-[#ffff] max-sm:mt-10">
                 <p className="mt-6 text-3xl font-bold text-primary-dark-green">
                   {conferenceActive.name}
                 </p>

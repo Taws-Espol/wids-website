@@ -6,7 +6,7 @@ function Conferencistas() {
   const edicionData = ediciones.find((edicion) => edicion.edicion === year);
   return (
     <AnimatedSection>
-      <div className="flex w-full select-none flex-col place-content-center place-items-center font-acumin">
+      <div className="flex w-full select-none flex-col place-content-center place-items-center bg-[#F2F2F2] font-acumin">
         <div className="relative flex w-full items-center justify-center text-center">
           <div className="flex w-full flex-col place-content-center place-items-center items-center max-lg:mt-32">
             <img
@@ -23,7 +23,7 @@ function Conferencistas() {
           <h1 className="text-5xl font-bold text-white">Conferencistas WiDS</h1>
         </div>
 
-        <div className="mb-10 w-3/4">
+        <div className="mb-10 w-3/4 bg-[#F2F2F2]">
           <ConferenceContainer edicionData={edicionData} />
         </div>
       </div>
