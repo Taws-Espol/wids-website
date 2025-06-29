@@ -1,5 +1,5 @@
 import React from 'react';
-import imagen1 from '../../../../public/assets/Conferences/conference.webp';
+import imagen1 from '/assets/Conferences/conference.webp';
 export default function ConferenceBanner() {
   return (
     <div className="w-full">
