@@ -3,21 +3,21 @@ export let cronograma = {
     {
       type: 'header',
       time: '8:00',
-      title: 'Participant Registration',
+      title: 'Registro de participantes',
       color: 'default', // O puedes definir un color específico si el header tiene fondo
     },
     {
       type: 'header',
       time: '9:00',
-      title: 'Welcome & Opening Remarks',
+      title: 'Bienvenvenida y palabras de apertura',
       description: [
-        '• Introduction to WiDS (Women in Data Science)',
-        '• Why are we hosting this event?',
-        '• Sponsor presentations:',
-        '  o The North Highland',
+        '• Introducción a WiDS',
+        '• ¿Por qué organizamos este evento?',
+        '• Presentaciones de patrocinadores:',
+        '  o North Highland',
         '  o Banco Guayaquil',
         '  o Coding Bootcamps',
-        '• Organized by:',
+        '• Organizado por:',
         '  o TAWS',
         '  o Coding Bootcamps',
         '  o ESPOL',
@@ -31,14 +31,14 @@ export let cronograma = {
         title:
           'Conectar datos, personas y estrategias: liderazgo femenino desde la inteligencia de negocios + Q&A',
         speaker: 'Kelly Carvajal',
-        work: 'Head of Commercial Planning and Corporate Data Governance',
+        work: 'Jefa de Planificación Comercial y Gobernanza de Datos Corporativos',
         image: 'KellyCarvajal.png', // Asegúrate de tener esta imagen
         color: 'verde',
       },
       roomB: {
         title: 'Aplicaciones de IA Generativa en Marketing Digital + Q&A',
         speaker: 'Karen Calva',
-        work: 'Head of Data Intelligence',
+        work: 'Jefa de Inteligencia de Datos',
         image: 'KarenCalva.png', // Asegúrate de tener esta imagen
         color: 'verde', // O el color que corresponda para esta sección
       },
@@ -48,17 +48,17 @@ export let cronograma = {
       time: '09:40',
       roomA: {
         title:
-          'Storytelling: Telling Stories Through Data - A Practical Case + Q&A',
+          'Storytelling: Contando historias a través de datos – Un caso práctico + Q&A',
         speaker: 'Estefanía Cisneros Freire',
-        work: 'Head of Credit Data Analytics',
+        work: 'Jefa de Analítica de Datos de Crédito',
         image: 'EstefaniaCisnerosFreire.png', // Asegúrate de tener esta imagen
         color: 'verde',
       },
       roomB: {
         title:
-          'Más allá del código: cómo comunicar datos para influir, liderar y transformar- Q&A',
+          'Más allá del código: Cómo comunicar datos para influir, liderar y transformar- Q&A',
         speaker: 'Diana Once',
-        work: 'IT Tools Specialist',
+        work: 'Especialista en Herramientas de TI',
         image: 'DianaOnce.png', // Asegúrate de tener esta imagen
         color: 'verde',
       },
@@ -71,25 +71,28 @@ export let cronograma = {
     {
       type: 'single_session',
       time: '10:30',
-      title: 'More Than Models: The Art of Discovering Value in Data + Q&A',
+      title: 'Más que modelos: El arte de descubrir valor en los datos + Q&A',
       speaker: 'Iris Bustamante',
-      work: 'Senior Data Scientist',
+      work: 'Científica de Datos Senior',
       image: 'IrisBustamante.png', // Asegúrate de tener esta imagen
       color: 'verde',
     },
     {
       type: 'single_session',
       time: '10:50',
-      title: 'Speaker Banco Guayaquil',
+      title:
+        'Monitorear modelos: Cómo detectar el deterioro antes que impacte el negocio + Q&A',
+      speaker: 'Denisse Orozco',
+      work: 'Oficial Senior de Modelos de Riesgo en Banco Guayaquil',
       // No hay speaker/work/image explícito para este, solo el título
       color: 'verde',
     },
     {
       type: 'single_session',
       time: '11:10',
-      title: 'Understanding the Customer Through Data + Q&A',
+      title: 'Conocer al cliente mediante la data + Q&A',
       speaker: 'Sofía España',
-      work: 'Data Scientists at Xtrim',
+      work: 'Científica de Datos en Xtrim',
       image: 'SofiaEspana.png', // Asegúrate de tener esta imagen
       color: 'verde',
     },
@@ -97,36 +100,37 @@ export let cronograma = {
       type: 'single_session',
       time: '11:30',
       title:
-        'From Chaos to Control: How to Use Data and Metrics to Anticipate Failures and Protect Your Business + Q&A',
+        'Del caos al control: Cómo usar datos y métricas para anticipar fallos y proteger tu negocio + Q&A',
       speaker: 'Vicky Valverde',
-      work: 'Senior Full Stack Engineer',
+      work: 'Ingeniera Full Stack Senior',
       image: 'VickyValverde.png', // Asegúrate de tener esta imagen
       color: 'verde',
     },
     {
       type: 'single_session',
       time: '11:50',
-      title: 'From Excel to AI: A Journey into Data Transformation + Q&A',
+      title:
+        'Sin rumbo claro: Cómo los riesgos te llevan a crecer profesionalmente + Q&A',
       speaker: 'Nicole Agila',
-      work: 'Senior Data Scientist',
+      work: 'Científica de Datos Senior',
       image: 'NicoleAgila.png', // Asegúrate de tener esta imagen
       color: 'verde',
     },
     {
       type: 'closing_remarks',
       time: '12:10',
-      title: 'Closing Remarks',
+      title: 'Cierre del evento',
       points: [
-        '• Acknowledgements to sponsors',
-        '• Acknowledgements to speakers',
-        '• Acknowledgements to collaborators',
-        '• Acknowledgements to attendees',
+        '• Agradecimientos a patrocinadores',
+        '• Agradecimientos a ponentes',
+        '• Agradecimientos a colaboradores',
+        '• Agradecimientos a los asistentes',
       ],
     },
     {
       type: 'end_session',
       time: '12:30',
-      title: 'End of Session',
+      title: 'Fin de la sesión',
     },
   ],
   Conferencias: [

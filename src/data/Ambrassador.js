@@ -1,5 +1,10 @@
 const ambassadors = [
   {
+    name: 'Carmen Vaca',
+    role: 'Embajador',
+    image: 'assets/ambrassador/drcarmen2.0.webp',
+  },
+  {
     name: 'Annabella Sánchez',
     role: 'Coembajadora',
     image: 'assets/ambrassador/anna.webp',
@@ -13,11 +18,6 @@ const ambassadors = [
     name: 'Isabella Martín',
     role: 'Coembajadora',
     image: 'assets/ambrassador/isa_1.webp',
-  },
-  {
-    name: 'Carmen Vaca',
-    role: 'Embajador',
-    image: 'assets/ambrassador/drcarmen2.0.webp',
   },
 ];
 

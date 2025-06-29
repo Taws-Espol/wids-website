@@ -18,10 +18,9 @@ function Conferencistas() {
         </div>
         <div
           id="rectangulo_text"
-          className="z-[15] w-full bg-custom-gre py-3 text-center lg:left-20"
+          className="z-[15] w-full bg-custom-gre py-6 text-center lg:left-20"
         >
-          <h1 className="text-5xl font-bold text-white">Conferencistas</h1>
-          <h1 className="mb-4 text-5xl font-bold text-white">WIDS</h1>
+          <h1 className="text-5xl font-bold text-white">Conferencistas WiDS</h1>
         </div>
 
         <div className="mb-10 w-3/4">
