@@ -1,5 +1,5 @@
 import React from 'react';
-import imagen1 from '../../../../public/assets/Conferences/conference.webp';
+import imagen1 from '/assets/Conferences/conference.webp';
 export default function ConferenceBanner() {
   return (
     <div className="w-full">
@@ -21,8 +21,10 @@ export default function ConferenceBanner() {
           inspiración y conocimiento en las conferencias de WIDS en ESPOL!
         </p>
         <a
-          href="#"
+          href="https://forms.gle/mmDHENEmASgqRNmn8"
           className="rounded-full bg-teal-600 px-8 py-3 text-lg font-semibold text-white hover:bg-teal-700"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Regístrate aquí
         </a>

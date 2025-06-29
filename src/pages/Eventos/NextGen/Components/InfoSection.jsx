@@ -1,11 +1,6 @@
 import React from 'react';
 
-// Puedes reemplazar estas URLs con tus propias imágenes.
-const image1 = '../../../../../public/assets/Eventos/NextGen/_MG_2799.jpg';
-const image2 = '../../../../../public/assets/Eventos/NextGen/MG_2781.webp';
-
-export default function InfoSection() {
-  // Textos extraídos de la imagen
+export default function InfoSection({ image1, image2 }) {
   const textRight =
     'Un taller dirigido a jóvenes de bachillerato, el cual se llevará a cabo en los laboratorios de la Facultad de Ingeniería Eléctrica y Computación (FIEC) de la ESPOL.';
   const textLeft =
@@ -18,11 +13,8 @@ export default function InfoSection() {
         {/* Contenedor de la Imagen Izquierda */}
         <div className="flex w-full justify-center md:w-1/2 md:justify-end">
           <div className="relative w-full max-w-sm">
-            {/* Forma decorativa azul */}
-            <div
-              id="rectangulo_blue"
-              className="absolute left-[-1.5rem] top-[-1.5rem] z-10 h-full w-full bg-cyan-300"
-            ></div>
+            {/* Forma decorativa azul - Mejorada para responsive */}
+            <div className="absolute left-[-0.75rem] top-[-0.75rem] z-10 h-full w-full bg-cyan-300 sm:left-[-1.5rem] sm:top-[-1.5rem]"></div>
             {/* Imagen */}
             <img
               src={image1}
@@ -48,11 +40,8 @@ export default function InfoSection() {
         {/* Contenedor de la Imagen Derecha */}
         <div className="flex w-full justify-center md:w-1/2 md:justify-start">
           <div className="relative w-full max-w-sm">
-            {/* Forma decorativa violeta */}
-            <div
-              id="shape_purple"
-              className="absolute bottom-[-1.5rem] right-[-1.5rem] z-10 h-full w-full bg-violet-300"
-            ></div>
+            {/* Forma decorativa violeta - Mejorada para responsive */}
+            <div className="absolute bottom-[-0.75rem] right-[-0.75rem] z-10 h-full w-full bg-violet-300 sm:bottom-[-1.5rem] sm:right-[-1.5rem]"></div>
             {/* Imagen */}
             <img
               src={image2}
