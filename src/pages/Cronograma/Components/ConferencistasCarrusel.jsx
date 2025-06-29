@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { cronograma } from '../../../data/Cronograma';
+import { ediciones } from '../../../data/ediciones';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -24,18 +24,21 @@ function ConferencistasCarrusel() {
     const conferencistaNames = new Set();
 
     // La ruta correcta donde se encuentran las imágenes
-    const imagePath = '/assets/Eventos/Ediciones/2024/Images/conferencistas/';
+    const imagePath = '/assets/Eventos/Ediciones/2025/Images/conferencistas/';
+    const edicion2025 = ediciones.find((edicion) => edicion.edicion === '2025');
 
-    cronograma.Conferencias.forEach((conf) => {
-      if (!conferencistaNames.has(conf.info) && conf.info && conf.image) {
-        conferencistaNames.add(conf.info);
-        uniqueConferencistas.push({
-          name: conf.info,
-          title: conf.work || 'Conferencista',
-          image: `${imagePath}${conf.imageName || conf.image}`,
-        });
-      }
-    });
+    if (edicion2025 && edicion2025.conferencistas) {
+      edicion2025.conferencistas.forEach((conf) => {
+        if (!conferencistaNames.has(conf.name) && conf.name && conf.imageName) {
+          conferencistaNames.add(conf.name);
+          uniqueConferencistas.push({
+            name: conf.name,
+            title: conf.work || 'Conferencista',
+            image: `${imagePath}${conf.imageName}`,
+          });
+        }
+      });
+    }
 
     setConferencistas(uniqueConferencistas);
   }, []);

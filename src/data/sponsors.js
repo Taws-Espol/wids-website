@@ -19,6 +19,12 @@ export const Sponsors_Cola = {
       website: 'https://taws.espol.edu.ec/',
       logo: '/assets/sponsors/taws.webp',
     },
+    {
+      name: 'NORTH HIGHLAND',
+      location: '',
+      website: 'https://northhighland.com/',
+      logo: '/assets/sponsors/NH_Logo_Stacked.webp',
+    },
   ],
   importants: [],
 };

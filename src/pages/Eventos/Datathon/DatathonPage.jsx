@@ -74,11 +74,11 @@ function Datathon() {
       <FeaturesGrid />
       <Subtitle title="Participantes" bgColor="#00432d" />
       <div className="flex flex-col items-center justify-center px-10 py-5 lg:flex-row">
-        <div className="mx-5 my-4 flex flex-col items-center md:my-0 md:w-1/5">
+        <div className="mx-4 my-4 flex flex-col items-center md:my-0 md:w-1/5">
           <img
             src="/assets/Eventos/Datathon/espol.webp"
             alt="Logo"
-            className="h-[92px] w-[92px] object-cover"
+            className="h-[92px] w-[120px] object-cover"
           />
           <div className="mb-2 mt-4 text-center text-3xl font-bold text-gray-800">
             <p>{infos_dvi6[0]}</p>
