@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+// import Script from "next/script";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
-import "./globals.css";
-import { cn } from "@/lib/utils";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+import "@/shared/styles/globals.css";
+import { cn } from "@/shared/utils/cn";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +29,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn("font-sans", inter.variable)}>
+      {/* <head>
+        <Script
+          defer
+          src="http://umami-cilz5zql4prmde6gygtlplyt.200.10.147.251.sslip.io/script.js"
+          data-website-id="a9968fe2-7cbd-485c-889b-df72651c22d9"
+        />
+      </head> */}
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
