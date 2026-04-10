@@ -1,25 +1,12 @@
 import type { CollectionConfig } from "payload";
-
-import { isAdminOrEditor } from "@/shared/lib/payload/utils/is-admin-or-editor";
+import { LANDING_TAG } from "../../../constants/cache-tags.ts";
+import { revalidateCache } from "../../../utils/revalidate-cache.ts";
+import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
 
 export const Media: CollectionConfig = {
   slug: "media",
   labels: { singular: "Media", plural: "Media" },
   upload: {
-    imageSizes: [
-      {
-        name: "thumbnail",
-        width: 300,
-        height: 300,
-        position: "centre",
-      },
-      {
-        name: "card",
-        width: 600,
-        height: 600,
-        position: "centre",
-      },
-    ],
     adminThumbnail: "thumbnail",
     mimeTypes: ["image/*"],
     crop: true,
@@ -42,4 +29,11 @@ export const Media: CollectionConfig = {
       required: true,
     },
   ],
+  hooks: {
+    afterChange: [
+      async ({ req }) => {
+        await revalidateCache({ req, source: "media", tag: LANDING_TAG });
+      },
+    ],
+  },
 };

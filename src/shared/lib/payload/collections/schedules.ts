@@ -1,11 +1,12 @@
-import type { CollectionConfig } from "payload";
+import type { CollectionConfig, PayloadRequest } from "payload";
+import { LANDING_TAG } from "../../../constants/cache-tags.ts";
+import { revalidateCache } from "../../../utils/revalidate-cache.ts";
+import { SCHEDULE_TYPES } from "../constants/schedule-types.ts";
+import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
 
-import { SCHEDULE_TYPES } from "@/shared/lib/payload/constants/schedule-types";
-import { isAdminOrEditor } from "@/shared/lib/payload/utils/is-admin-or-editor";
-
-export const Schedule: CollectionConfig = {
+export const Schedules: CollectionConfig = {
   slug: "schedules",
-  labels: { singular: "Schedule Item", plural: "Schedule" },
+  labels: { singular: "Schedule", plural: "Schedules" },
   access: {
     create: isAdminOrEditor,
     read: () => true,
@@ -18,7 +19,7 @@ export const Schedule: CollectionConfig = {
       "title",
       "type",
       "event",
-      "date",
+      "startTime",
       "createdAt",
       "updatedAt",
     ],
@@ -39,34 +40,99 @@ export const Schedule: CollectionConfig = {
         label: type.charAt(0).toUpperCase() + type.slice(1),
         value: type,
       })),
+      validate: async (
+        value: string | null | undefined,
+        {
+          req,
+          siblingData,
+        }: { req: PayloadRequest; siblingData: Record<string, unknown> },
+      ) => {
+        if (!value || !siblingData?.event) return true;
+
+        const eventId =
+          typeof siblingData.event === "object" && siblingData.event !== null
+            ? (siblingData.event as { id: string }).id
+            : (siblingData.event as string);
+
+        const event = await req.payload.findByID({
+          collection: "events",
+          id: eventId,
+          depth: 0,
+        });
+
+        if (!event?.type) return true;
+
+        if (
+          event.type === "conference" &&
+          !["activity", "talk"].includes(value)
+        ) {
+          return "Conference events only allow activity or talk schedules";
+        }
+
+        if (
+          ["nextgen", "datathon"].includes(event.type) &&
+          value !== "workshop"
+        ) {
+          return "NextGen and Datathon events only allow workshop schedules";
+        }
+
+        return true;
+      },
     },
     {
       name: "title",
       type: "text",
       required: true,
+      localized: true,
     },
     {
       name: "description",
       type: "textarea",
+      localized: true,
     },
     {
       name: "speaker",
       type: "relationship",
       relationTo: "speakers",
       admin: {
-        condition: (_, siblingData) => siblingData?.type === "talk",
+        condition: (_, siblingData) =>
+          siblingData?.type === "talk" || siblingData?.type === "workshop",
       },
     },
     {
-      name: "date",
+      name: "startTime",
       type: "date",
       required: true,
+      label: "Start Time",
       admin: {
         date: {
           pickerAppearance: "dayAndTime",
-          displayFormat: "h:mm a",
+          displayFormat: "MMM d, yyyy h:mm a",
         },
       },
+    },
+    {
+      type: "row",
+      fields: [
+        {
+          name: "duration",
+          type: "number",
+          required: true,
+          min: 1,
+          admin: { width: "50%" },
+        },
+        {
+          name: "durationUnit",
+          type: "select",
+          required: true,
+          defaultValue: "minutes",
+          options: [
+            { label: "Minutes", value: "minutes" },
+            { label: "Hours", value: "hours" },
+          ],
+          admin: { width: "50%" },
+        },
+      ],
     },
     {
       name: "location",
@@ -74,4 +140,11 @@ export const Schedule: CollectionConfig = {
       required: true,
     },
   ],
+  hooks: {
+    afterChange: [
+      async ({ req }) => {
+        await revalidateCache({ req, source: "schedules", tag: LANDING_TAG });
+      },
+    ],
+  },
 };

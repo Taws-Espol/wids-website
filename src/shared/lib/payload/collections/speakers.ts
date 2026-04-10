@@ -1,6 +1,7 @@
 import type { CollectionConfig } from "payload";
-
-import { isAdminOrEditor } from "@/shared/lib/payload/utils/is-admin-or-editor";
+import { LANDING_TAG } from "../../../constants/cache-tags.ts";
+import { revalidateCache } from "../../../utils/revalidate-cache.ts";
+import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
 
 export const Speakers: CollectionConfig = {
   slug: "speakers",
@@ -15,8 +16,8 @@ export const Speakers: CollectionConfig = {
     group: "Content",
     defaultColumns: [
       "name",
-      "jobTitle",
-      "company",
+      "title",
+      "affiliation",
       "event",
       "createdAt",
       "updatedAt",
@@ -30,13 +31,13 @@ export const Speakers: CollectionConfig = {
       required: true,
     },
     {
-      name: "jobTitle",
+      name: "title",
       type: "text",
-      label: "Job Title",
       required: true,
+      localized: true,
     },
     {
-      name: "company",
+      name: "affiliation",
       type: "text",
       required: true,
     },
@@ -47,9 +48,10 @@ export const Speakers: CollectionConfig = {
       required: true,
     },
     {
-      name: "bio",
+      name: "about",
       type: "textarea",
       required: true,
+      localized: true,
     },
     {
       name: "linkedin",
@@ -59,8 +61,16 @@ export const Speakers: CollectionConfig = {
     {
       name: "event",
       type: "relationship",
+      label: "Event",
       relationTo: "events",
       required: true,
     },
   ],
+  hooks: {
+    afterChange: [
+      async ({ req }) => {
+        await revalidateCache({ req, source: "speakers", tag: LANDING_TAG });
+      },
+    ],
+  },
 };

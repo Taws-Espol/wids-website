@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WiDS Website
 
-## Getting Started
+Official website for WiDS (Women in Data Science). Built with Next.js 16, Payload CMS 3, and PostgreSQL.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+| Layer                | Technology                                                |
+| -------------------- | --------------------------------------------------------- |
+| Framework            | Next.js 16 (App Router, React Compiler, Cache Components) |
+| Runtime              | React 19                                                  |
+| CMS                  | Payload CMS 3 (headless, self-hosted)                     |
+| Database             | PostgreSQL (Docker for local development)                 |
+| Storage              | S3-compatible object storage                              |
+| Styling              | Tailwind CSS 4, shadcn/ui                                 |
+| Internationalization | next-intl (English, Spanish)                              |
+| Email                | React Email, Nodemailer                                   |
+| Language             | TypeScript 5                                              |
+| Package Manager      | pnpm                                                      |
+| Code Quality         | ESLint, Prettier, Husky, lint-staged                      |
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── (payload)/              # Payload CMS admin panel and API routes
+│   └── (wids)/
+│       ├── [locale]/           # Locale-prefixed public pages
+│       │   ├── (home)/         # Landing page
+│       │   ├── about/
+│       │   ├── blog/
+│       │   ├── conference/
+│       │   ├── datathon/
+│       │   └── nextgen/
+│       └── api/                # Health check, revalidation endpoints
+├── features/                   # Feature-specific modules (queries, components)
+│   ├── landing/
+│   ├── blog/
+│   └── registration/
+└── shared/
+    ├── components/             # Reusable UI components (header, footer, shadcn/ui)
+    ├── constants/              # App-wide constants (i18n, colors, cache tags)
+    ├── fonts/                  # Custom font files (Acumin Pro)
+    ├── hooks/                  # Shared React hooks
+    ├── lib/
+    │   ├── next-intl/          # Internationalization config and routing
+    │   ├── payload/            # Collections, globals, seed script, types
+    │   └── react-email/        # Email templates
+    ├── styles/                 # Global CSS
+    └── utils/                  # Utility functions (cn, revalidation, error handling)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Key configuration files at the project root:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `payload.config.ts` -- Payload CMS collections, globals, plugins, and database adapter.
+- `next.config.ts` -- Next.js configuration with Payload and next-intl integrations.
+- `docker-compose.yaml` -- Local PostgreSQL instance.
+- `messages/` -- Translation files (`en.json`, `es.json`).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Requirements
 
-## Learn More
+- [Node.js](https://nodejs.org/) v18.18 or later
+- [pnpm](https://pnpm.io/)
+- [Docker](https://www.docker.com/) (required for the local PostgreSQL database)
 
-To learn more about Next.js, take a look at the following resources:
+## Local Development Setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 1. Install dependencies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm install
+```
 
-## Deploy on Vercel
+### 2. Configure environment variables
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Copy the example file and fill in the required values:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+cp .env.example .env.local
+```
+
+At minimum, set the following variables for local development:
+
+| Variable           | Description                                                                                  |
+| ------------------ | -------------------------------------------------------------------------------------------- |
+| `APP_URL`          | Application URL (e.g., `http://localhost:3000`)                                              |
+| `PAYLOAD_SECRET`   | Any random string used to encrypt Payload tokens                                             |
+| `DATABASE_URL`     | PostgreSQL connection string (e.g., `postgresql://postgres:postgres@localhost:5432/payload`) |
+| `REVALIDATE_TOKEN` | Secret token for on-demand revalidation                                                      |
+| `S3_*`             | S3-compatible storage credentials                                                            |
+| `SMTP_*`           | SMTP server credentials for transactional email                                              |
+
+### 3. Seed the database
+
+This command tears down any existing local database, starts a fresh PostgreSQL container via Docker Compose, and runs the Payload seed script:
+
+```bash
+pnpm payload:seed
+```
+
+### 4. Start the development server
+
+```bash
+pnpm dev
+```
+
+The application will be available at [http://localhost:3000](http://localhost:3000). The Payload admin panel is accessible at [http://localhost:3000/admin](http://localhost:3000/admin).
+
+## Available Scripts
+
+| Command              | Description                          |
+| -------------------- | ------------------------------------ |
+| `pnpm dev`           | Start the Next.js development server |
+| `pnpm build`         | Create a production build            |
+| `pnpm start`         | Run the production build             |
+| `pnpm lint`          | Run ESLint                           |
+| `pnpm payload:types` | Regenerate Payload TypeScript types  |
+| `pnpm payload:seed`  | Reset and seed the local database    |
+| `pnpm dev:email`     | Start the React Email preview server |

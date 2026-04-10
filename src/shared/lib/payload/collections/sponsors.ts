@@ -1,7 +1,8 @@
 import type { CollectionConfig } from "payload";
-
-import { SPONSOR_TIERS } from "@/shared/lib/payload/constants/sponsor-tiers";
-import { isAdminOrEditor } from "@/shared/lib/payload/utils/is-admin-or-editor";
+import { LANDING_TAG } from "../../../constants/cache-tags.ts";
+import { revalidateCache } from "../../../utils/revalidate-cache.ts";
+import { SPONSOR_TIERS } from "../constants/sponsor-tiers.ts";
+import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
 
 export const Sponsors: CollectionConfig = {
   slug: "sponsors",
@@ -44,10 +45,17 @@ export const Sponsors: CollectionConfig = {
       })),
     },
     {
-      name: "event",
+      name: "edition",
       type: "relationship",
-      relationTo: "events",
+      relationTo: "editions",
       required: true,
     },
   ],
+  hooks: {
+    afterChange: [
+      async ({ req }) => {
+        await revalidateCache({ req, source: "sponsors", tag: LANDING_TAG });
+      },
+    ],
+  },
 };

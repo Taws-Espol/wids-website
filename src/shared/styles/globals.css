@@ -7,8 +7,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-barlow: var(--font-barlow);
+  --font-barlow-condensed: var(--font-barlow-condensed);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -45,19 +45,47 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* WIDS COLORS */
+
+  /* Primary Colors */
+  --color-w-green-light: var(--w-green-light);
+  --color-w-green-light-foreground: var(--w-green-light-foreground);
+  --color-w-blue: var(--w-blue);
+  --color-w-blue-foreground: var(--w-blue-foreground);
+  --color-w-yellow: var(--w-yellow);
+  --color-w-yellow-foreground: var(--w-yellow-foreground);
+  --color-w-orange: var(--w-orange);
+  --color-w-orange-foreground: var(--w-orange-foreground);
+  --color-w-purple: var(--w-purple);
+  --color-w-purple-foreground: var(--w-purple-foreground);
+  --color-w-green-dark: var(--w-green-dark);
+  --color-w-green-dark-foreground: var(--w-green-dark-foreground);
+
+  /* Secondary Colors */
+  --color-ws-green: var(--ws-green);
+  --color-ws-green-foreground: var(--ws-green-foreground);
+  --color-ws-blue: var(--ws-blue);
+  --color-ws-blue-foreground: var(--ws-blue-foreground);
+  --color-ws-yellow: var(--ws-yellow);
+  --color-ws-yellow-foreground: var(--ws-yellow-foreground);
+  --color-ws-orange: var(--ws-orange);
+  --color-ws-orange-foreground: var(--ws-orange-foreground);
+  --color-ws-purple: var(--ws-purple);
+  --color-ws-purple-foreground: var(--ws-purple-foreground);
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  --background: #ffffff;
+  --foreground: #173a21;
+  --card: #ffffff;
+  --card-foreground: #173a21;
+  --popover: #ffffff;
+  --popover-foreground: #173a21;
+  --primary: #004029;
+  --primary-foreground: #fafafa;
+  --secondary: #ffcb05;
+  --secondary-foreground: #fafafa;
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
@@ -80,6 +108,39 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* WIDS COLORS */
+
+  /* Neutral Colors */
+  --w-black: #000000;
+  --w-gray: #808080;
+  --w-white: #fafafa;
+
+  /* Primary Colors */
+  --w-green-light: #4ab969;
+  --w-green-light-foreground: #173a21;
+  --w-blue: #00a7d5;
+  --w-blue-foreground: #173a21;
+  --w-yellow: #ffcb05;
+  --w-yellow-foreground: #173a21;
+  --w-orange: #ff8003;
+  --w-orange-foreground: #173a21;
+  --w-purple: #a2a2ff;
+  --w-purple-foreground: #173a21;
+  --w-green-dark: #004029;
+  --w-green-dark-foreground: #fafafa;
+
+  /* Secondary Colors */
+  --ws-green: #95e6ac;
+  --ws-green-foreground: #173a21;
+  --ws-blue: #a1dbe4;
+  --ws-blue-foreground: #173a21;
+  --ws-yellow: #ffea95;
+  --ws-yellow-foreground: #173a21;
+  --ws-orange: #fcc5a1;
+  --ws-orange-foreground: #173a21;
+  --ws-purple: #ececff;
+  --ws-purple-foreground: #173a21;
 }
 
 .dark {
@@ -124,6 +185,6 @@
     @apply bg-background text-foreground;
   }
   html {
-    @apply font-sans;
+    @apply font-barlow;
   }
 }

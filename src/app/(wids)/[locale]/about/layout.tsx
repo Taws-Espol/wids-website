@@ -1,0 +1,30 @@
+import type { Metadata } from "next";
+
+import type { Locale } from "@/shared/lib/next-intl/types";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  const metadata: Record<Locale, Metadata> = {
+    en: {
+      title: "WiDS Guayaquil | About",
+      description:
+        "Learn about the WiDS Guayaquil community, its ambassadors, and the people building more inclusive data science opportunities.",
+    },
+    es: {
+      title: "WiDS Guayaquil | Nosotros",
+      description:
+        "Conoce la comunidad de WiDS Guayaquil, sus embajadoras y a las personas que impulsan oportunidades mas inclusivas en ciencia de datos.",
+    },
+  };
+
+  return metadata[locale];
+}
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return children;
+}

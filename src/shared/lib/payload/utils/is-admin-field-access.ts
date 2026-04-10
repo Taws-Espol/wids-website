@@ -1,6 +1,6 @@
 import type { FieldAccess } from "payload";
 
-import { checkRole } from "@/shared/lib/payload/utils/check-role";
+import { checkRole } from "../utils/check-role.ts";
 
 export const isAdminFieldAccess: FieldAccess = ({ req: { user } }) =>
   checkRole(["admin"], user);

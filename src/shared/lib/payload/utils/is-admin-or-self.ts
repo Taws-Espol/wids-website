@@ -1,6 +1,6 @@
 import type { Access } from "payload";
 
-import { checkRole } from "@/shared/lib/payload/utils/check-role";
+import { checkRole } from "../utils/check-role.ts";
 
 export const isAdminOrSelf: Access = ({ req: { user } }) => {
   if (!user) return false;

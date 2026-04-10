@@ -1,15 +1,49 @@
+import { render } from "@react-email/render";
 import type { CollectionConfig } from "payload";
 
-import { checkRole } from "@/shared/lib/payload/utils/check-role";
-import { ensureFirstUserIsAdmin } from "@/shared/lib/payload/utils/ensure-first-user-is-admin";
-import { isAdmin } from "@/shared/lib/payload/utils/is-admin";
-import { isAdminFieldAccess } from "@/shared/lib/payload/utils/is-admin-field-access";
-import { isAdminOrSelf } from "@/shared/lib/payload/utils/is-admin-or-self";
+import ForgotPassword from "../../react-email/forgot-password.tsx";
+import VerifyEmail from "../../react-email/verify-email.tsx";
+import { checkRole } from "../utils/check-role.ts";
+import { ensureFirstUserIsAdmin } from "../utils/ensure-first-user-is-admin.ts";
+import { isAdmin } from "../utils/is-admin.ts";
+import { isAdminFieldAccess } from "../utils/is-admin-field-access.ts";
+import { isAdminOrSelf } from "../utils/is-admin-or-self.ts";
 
 export const Users: CollectionConfig = {
   slug: "users",
   labels: { singular: "User", plural: "Users" },
-  auth: true,
+  auth: {
+    verify: {
+      generateEmailSubject: () => "WiDS Guayaquil | Confirm your email address",
+      async generateEmailHTML(args) {
+        const url = `${process.env.APP_URL}/admin/users/verify/${args?.token}`;
+
+        const html = await render(
+          VerifyEmail({
+            url,
+            name: args?.user?.name ?? "there",
+          }),
+        );
+
+        return html;
+      },
+    },
+    forgotPassword: {
+      generateEmailSubject: () => "WiDS Guayaquil | Reset your password",
+      async generateEmailHTML(args) {
+        const url = `${process.env.APP_URL}/admin/reset/${args?.token}`;
+
+        const html = await render(
+          ForgotPassword({
+            url,
+            name: args?.user?.name ?? "there",
+          }),
+        );
+
+        return html;
+      },
+    },
+  },
   access: {
     admin: ({ req: { user } }) =>
       checkRole(["admin", "editor", "viewer"], user),

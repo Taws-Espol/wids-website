@@ -1,3 +1,3 @@
-import type { ROLES } from "@/shared/lib/payload/constants/roles";
+import type { ROLES } from "../constants/roles.ts";
 
 export type Role = (typeof ROLES)[number];

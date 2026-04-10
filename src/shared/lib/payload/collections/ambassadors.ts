@@ -1,6 +1,7 @@
 import type { CollectionConfig } from "payload";
-
-import { isAdminOrEditor } from "@/shared/lib/payload/utils/is-admin-or-editor";
+import { LANDING_TAG } from "../../../constants/cache-tags.ts";
+import { revalidateCache } from "../../../utils/revalidate-cache.ts";
+import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
 
 export const Ambassadors: CollectionConfig = {
   slug: "ambassadors",
@@ -13,7 +14,7 @@ export const Ambassadors: CollectionConfig = {
   },
   admin: {
     group: "Content",
-    defaultColumns: ["name", "title", "event", "createdAt", "updatedAt"],
+    defaultColumns: ["name", "title", "edition", "createdAt", "updatedAt"],
     useAsTitle: "name",
   },
   fields: [
@@ -26,6 +27,12 @@ export const Ambassadors: CollectionConfig = {
       name: "title",
       type: "text",
       required: true,
+      localized: true,
+    },
+    {
+      name: "affiliation",
+      type: "text",
+      required: true,
     },
     {
       name: "photo",
@@ -34,9 +41,10 @@ export const Ambassadors: CollectionConfig = {
       required: true,
     },
     {
-      name: "bio",
+      name: "about",
       type: "textarea",
       required: true,
+      localized: true,
     },
     {
       name: "linkedin",
@@ -44,10 +52,17 @@ export const Ambassadors: CollectionConfig = {
       label: "LinkedIn",
     },
     {
-      name: "event",
+      name: "edition",
       type: "relationship",
-      relationTo: "events",
+      relationTo: "editions",
       required: true,
     },
   ],
+  hooks: {
+    afterChange: [
+      async ({ req }) => {
+        await revalidateCache({ req, source: "ambassadors", tag: LANDING_TAG });
+      },
+    ],
+  },
 };

@@ -1,0 +1,40 @@
+{
+  "shared": {
+    "header": {
+      "nav": {
+        "home": "Inicio",
+        "conference": "Conferencia",
+        "datathon": "Datathon",
+        "nextgen": "NextGen",
+        "about": "Nosotros"
+      },
+      "cta": "Registro"
+    },
+    "footer": {
+      "siteName": "WiDS Guayaquil",
+      "description": "Comunidad local de Women in Data Science en Guayaquil: conferencias, datathon y talleres.",
+      "nav": {
+        "home": "Inicio",
+        "conference": "Conferencia",
+        "datathon": "Datathon",
+        "nextgen": "NextGen",
+        "about": "Nosotros"
+      },
+      "social": {
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "x": "X",
+        "linkedin": "LinkedIn"
+      }
+    }
+  },
+  "features": {
+    "landing": {
+      "home": {},
+      "conference": {},
+      "datathon": {},
+      "nextgen": {},
+      "about": {}
+    }
+  }
+}

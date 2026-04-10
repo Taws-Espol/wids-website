@@ -1,6 +1,6 @@
 import type { TypedUser } from "payload";
 
-import type { Role } from "@/shared/lib/payload/types/role";
+import type { Role } from "../types/role.ts";
 
 export function checkRole(roles: Role[], user: TypedUser | null): boolean {
   if (!user) return false;

@@ -1,1 +1,1 @@
-export const SCHEDULE_TYPES = ["activity", "talk"] as const;
+export const SCHEDULE_TYPES = ["activity", "talk", "workshop"] as const;
