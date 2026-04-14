@@ -1,8 +1,6 @@
-import { cacheTag } from "next/cache";
 import Image from "next/image";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 
-import { LANDING_TAG } from "@/shared/constants/cache-tags";
 import { TypographyParagraph } from "@/shared/components/ui/typography-paragraph";
 import type { Locale } from "@/shared/lib/next-intl/types";
 import { TypographyH1 } from "@/shared/components/ui/typography-h1";
@@ -16,12 +14,9 @@ export default async function About({
 }: {
   params: Promise<{ locale: Locale }>;
 }) {
-  "use cache";
-
   const { locale } = await params;
 
   setRequestLocale(locale);
-  cacheTag(LANDING_TAG);
 
   const t = await getTranslations("features.landing.about");
 

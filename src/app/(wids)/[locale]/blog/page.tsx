@@ -1,10 +1,8 @@
-import { cacheTag } from "next/cache";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 
 import { TypographyH1 } from "@/shared/components/ui/typography-h1";
 import { TypographyParagraph } from "@/shared/components/ui/typography-paragraph";
-import { BLOG_TAG } from "@/shared/constants/cache-tags";
 import type { Locale } from "@/shared/lib/next-intl/types";
 
 import { HeroSection } from "@/features/landing/components/hero-section";
@@ -14,12 +12,9 @@ export default async function Blog({
 }: {
   params: Promise<{ locale: Locale }>;
 }) {
-  "use cache";
-
   const { locale } = await params;
 
   setRequestLocale(locale);
-  cacheTag(BLOG_TAG);
 
   const t = await getTranslations("features.landing.blog");
 

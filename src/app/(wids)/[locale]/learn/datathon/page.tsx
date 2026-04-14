@@ -1,4 +1,3 @@
-import { cacheTag } from "next/cache";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -9,7 +8,6 @@ import {
   CheckCircle,
 } from "@hugeicons/core-free-icons";
 
-import { LANDING_TAG } from "@/shared/constants/cache-tags";
 import { Button } from "@/shared/components/ui/button";
 import {
   TypographyH1,
@@ -28,12 +26,9 @@ export default async function Datathon({
 }: {
   params: Promise<{ locale: Locale }>;
 }) {
-  "use cache";
-
   const { locale } = await params;
 
   setRequestLocale(locale);
-  cacheTag(LANDING_TAG);
 
   const t = await getTranslations("features.landing.learn-datathon");
 
