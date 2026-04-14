@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-// import Script from "next/script";
+import Script from "next/script";
 import { notFound } from "next/navigation";
+import { Barlow, Barlow_Condensed } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
+
 import { Footer } from "@/shared/components/footer";
 import { Header } from "@/shared/components/header";
-import { Barlow, Barlow_Condensed } from "next/font/google";
 import { routing } from "@/shared/lib/next-intl/routing";
 import { cn } from "@/shared/utils/cn";
 import { getAppUrl } from "@/shared/utils/get-app-url";
@@ -72,13 +73,13 @@ export default async function RootLayout({
         barlowCondensed.variable,
       )}
     >
-      {/* <head>
+      <head>
         <Script
           defer
-          src="http://umami-cilz5zql4prmde6gygtlplyt.200.10.147.251.sslip.io/script.js"
+          src="https://analytics.taws.espol.edu.ec/script.js"
           data-website-id="a9968fe2-7cbd-485c-889b-df72651c22d9"
         />
-      </head> */}
+      </head>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
