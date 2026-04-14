@@ -18,6 +18,14 @@ export async function getDatathonPageData(locale: Locale) {
   });
 
   const currentEdition = editionsResult.docs?.[0];
+  if (!currentEdition) {
+    return {
+      event: null,
+      speakers: [],
+      schedule: [],
+    };
+  }
+
   const currentEditionId = currentEdition.id;
 
   // 2. Get the datathon event for this edition
@@ -31,6 +39,13 @@ export async function getDatathonPageData(locale: Locale) {
     },
   });
   const event = eventResult.docs?.[0];
+  if (!event) {
+    return {
+      event: null,
+      speakers: [],
+      schedule: [],
+    };
+  }
 
   // 3. Get the speakers for the datathon event
   const speakersResult = await payload.find({
@@ -41,7 +56,7 @@ export async function getDatathonPageData(locale: Locale) {
       event: { equals: event?.id },
     },
   });
-  const speakers = speakersResult.docs;
+  const speakers = speakersResult.docs ?? [];
 
   // 4. Get the schedule for the datathon event
   const scheduleResult = await payload.find({
@@ -53,7 +68,7 @@ export async function getDatathonPageData(locale: Locale) {
     },
     sort: "startTime",
   });
-  const schedule = scheduleResult.docs;
+  const schedule = scheduleResult.docs ?? [];
 
   return {
     event,

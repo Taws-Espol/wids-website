@@ -28,12 +28,13 @@ export function HeroSection({ title, src, alt, color }: Props) {
 
       <div
         className={cn(
-          "absolute -top-[20%] left-[10%] flex aspect-square items-center justify-center rounded-full p-6 text-center md:w-auto md:p-12",
+          "absolute -top-[20%] left-[4%] flex size-[clamp(8rem,28vw,18rem)] items-center justify-center rounded-full text-center sm:left-[8%]",
           color && `bg-w-${color.replace("_", "-")}`,
         )}
       >
         <TypographyH2
           className={cn(
+            "max-w-[85%] text-[clamp(1rem,4vw,2.625rem)] text-balance sm:max-w-[80%]",
             color && `text-w-${color.replace("_", "-")}-foreground`,
           )}
         >

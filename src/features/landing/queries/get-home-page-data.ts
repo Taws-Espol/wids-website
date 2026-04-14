@@ -17,6 +17,14 @@ export async function getHomePageData(locale: Locale) {
     sort: "-year",
   });
   const edition = editionsResult.docs?.[0];
+  if (!edition) {
+    return {
+      edition: null,
+      events: [],
+      ambassadors: [],
+      sponsors: [],
+    };
+  }
 
   const editionId = edition.id;
 
