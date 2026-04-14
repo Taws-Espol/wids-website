@@ -1,0 +1,108 @@
+{
+  "shared": {
+    "header": {
+      "nav": {
+        "home": "Home",
+        "conference": "Conference",
+        "learn": "Learn",
+        "learn-datathon": "Datathon",
+        "learn-nextgen": "NextGen",
+        "blog": "Blog",
+        "about": "About",
+        "subtitle": "About us",
+        "description": "Women in Data Science (WiDS) Worldwide empowers women to reach their full potential in the field of data science."
+      },
+      "cta": "Register"
+    },
+    "footer": {
+      "siteName": "WiDS Guayaquil",
+      "description": "Local Women in Data Science community in Guayaquil: conference, datathon, and workshops.",
+      "nav": {
+        "home": "Home",
+        "conference": "Conference",
+        "learn": "Learn",
+        "learn-datathon": "Datathon",
+        "learn-nextgen": "NextGen",
+        "blog": "Blog",
+        "about": "About"
+      },
+      "social": {
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "x": "X",
+        "linkedin": "LinkedIn"
+      }
+    }
+  },
+  "features": {
+    "landing": {
+      "home": {
+        "ambassador": "Ambassador",
+        "co-ambassadors": "Co-Ambassadors",
+        "sponsors": "Sponsors"
+      },
+      "conference": {
+        "title": "Conference",
+        "cta": "Register",
+        "details": "Details",
+        "requirements": "Requirements",
+        "speakers": "Speakers",
+        "duration-units": {
+          "minutes": "{count, plural, one {# minute} other {# minutes}}",
+          "hours": "{count, plural, one {# hour} other {# hours}}",
+          "days": "{count, plural, one {# day} other {# days}}"
+        },
+        "schedule": "Schedule"
+      },
+      "learn": {
+        "title": "Learn",
+        "subtitle": "Build Your Data Science and AI Skills with WiDS",
+        "description": "WiDS is committed to inspiring, educating, and supporting data scientists around the world. WiDS programs consist of exciting Datathon challenges, in-depth upskilling workshops, and resources for educators from secondary schools to graduate studies.",
+        "datathon": "Datathon",
+        "datathon-description": "The WiDS Datathon is an opportunity to discover and hone data science skills while solving an interesting and critical social impact challenge.",
+        "datathon-cta": "Read more",
+        "nextgen": "NextGen",
+        "nextgen-description": "Education outreach program promoting careers in data science, AI, and related fields for secondary school students.",
+        "nextgen-cta": "Read more"
+      },
+      "learn-datathon": {
+        "title": "Datathon",
+        "cta": "Register",
+        "details": "Details",
+        "requirements": "Requirements",
+        "speakers": "Speakers",
+        "duration-units": {
+          "minutes": "{count, plural, one {# minute} other {# minutes}}",
+          "hours": "{count, plural, one {# hour} other {# hours}}",
+          "days": "{count, plural, one {# day} other {# days}}"
+        },
+        "schedule": "Schedule"
+      },
+      "learn-nextgen": {
+        "title": "NextGen",
+        "cta": "Register",
+        "details": "Details",
+        "requirements": "Requirements",
+        "speakers": "Speakers",
+        "duration-units": {
+          "minutes": "{count, plural, one {# minute} other {# minutes}}",
+          "hours": "{count, plural, one {# hour} other {# hours}}",
+          "days": "{count, plural, one {# day} other {# days}}"
+        },
+        "schedule": "Schedule"
+      },
+      "blog": {
+        "title": "Blog",
+        "subtitle": "Empowering Women in Data Science: A Source of Inspiration",
+        "description": "Discover inspiring stories, insights, and news from the world of women in data science. Stay updated with articles, interviews, and highlights from our community on the WiDS Blog."
+      },
+      "about": {
+        "title": "About Us",
+        "subtitle": "About us",
+        "description": "WiDS Guayaquil @ ESPOL is an independent event organized by Ph.D. Carmen Vaca, based at the Escuela Superior Politécnica del Litoral (ESPOL). This event coincides with the annual global Women in Data Science (WiDS) conference, held by Stanford University with over 150 locations around the world. Everyone is invited to attend the regional WiDS events, which feature outstanding women doing exceptional work.",
+        "ambassador": "Ambassador",
+        "co-ambassadors": "Co-Ambassadors"
+      }
+    }
+  }
+}
