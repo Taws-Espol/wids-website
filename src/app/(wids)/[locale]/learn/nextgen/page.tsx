@@ -1,6 +1,6 @@
 import { cacheTag } from "next/cache";
-import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   CalendarIcon,
@@ -10,18 +10,18 @@ import {
 } from "@hugeicons/core-free-icons";
 
 import { LANDING_TAG } from "@/shared/constants/cache-tags";
+import { Button } from "@/shared/components/ui/button";
 import { TypographyH1 } from "@/shared/components/ui/typography-h1";
 import { TypographyParagraph } from "@/shared/components/ui/typography-paragraph";
-import { Button } from "@/shared/components/ui/button";
 import type { Locale } from "@/shared/lib/next-intl/types";
 import type { Speaker } from "@/shared/lib/payload/types/payload";
 
-import { HeroSection } from "@/features/landing/components/hero-section";
+import { BreadcrumbBanner } from "@/features/landing/components/breadcrumb-banner";
 import { Stepper } from "@/features/landing/components/stepper";
 import { PersonCard } from "@/features/landing/components/person-card";
-import { getConferencePageData } from "@/features/landing/queries/get-conference-page-data";
+import { getNextgenPageData } from "@/features/landing/queries/get-nextgen-page-data";
 
-export default async function Conference({
+export default async function NextGen({
   params,
 }: {
   params: Promise<{ locale: Locale }>;
@@ -33,17 +33,17 @@ export default async function Conference({
   setRequestLocale(locale);
   cacheTag(LANDING_TAG);
 
-  const t = await getTranslations("features.landing.conference");
+  const t = await getTranslations("features.landing.learn-nextgen");
 
-  const { event, schedule, speakers } = await getConferencePageData(locale);
+  const { event, schedule, speakers } = await getNextgenPageData(locale);
 
   return (
-    <main className="flex flex-col gap-20 px-4 py-20 md:px-4 lg:px-8 xl:px-42">
-      <HeroSection
+    <main className="flex flex-col gap-20 px-4 pb-20 md:px-4 lg:px-8 xl:px-42">
+      <BreadcrumbBanner
         title={t("title")}
-        src="https://cdn.taws.espol.edu.ec/wids/conference-hero.png"
-        alt="Conference hero"
-        color="green_light"
+        backLinkHref="/learn"
+        backLinkLabel="Learn"
+        color="blue"
       />
 
       <section className="flex flex-col items-center gap-8 md:flex-row">
@@ -52,15 +52,15 @@ export default async function Conference({
 
           <TypographyParagraph>{event?.description}</TypographyParagraph>
 
-          <Button variant="green-light" className="self-start">
+          <Button variant="blue" className="self-start">
             {t("cta")}
           </Button>
         </div>
 
-        <div className="relative aspect-2048/1365 w-full md:w-1/2">
+        <div className="relative aspect-49/41 w-full md:w-1/2">
           <Image
-            src="https://cdn.taws.espol.edu.ec/wids/conference-collage.jpg"
-            alt="Conference collage"
+            src="https://cdn.taws.espol.edu.ec/wids/nextgen-collage.jpg"
+            alt="NextGen collage"
             fill
             loading="eager"
             fetchPriority="high"

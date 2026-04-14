@@ -2,11 +2,13 @@
   "shared": {
     "header": {
       "nav": {
-        "home": "Inicio",
         "conference": "Conferencia",
-        "datathon": "Datathon",
-        "nextgen": "NextGen",
-        "about": "Nosotros"
+        "learn": "Aprender",
+        "learn-datathon": "Datathon",
+        "learn-nextgen": "NextGen",
+        "blog": "Blog",
+        "about": "Nosotros",
+        "description": "Women in Data Science (WiDS) Guayaquil empodera a las mujeres para que alcancen su máximo potencial en el campo de la ciencia de datos."
       },
       "cta": "Registro"
     },
@@ -14,10 +16,11 @@
       "siteName": "WiDS Guayaquil",
       "description": "Comunidad local de Women in Data Science en Guayaquil: conferencias, datathon y talleres.",
       "nav": {
-        "home": "Inicio",
         "conference": "Conferencia",
-        "datathon": "Datathon",
-        "nextgen": "NextGen",
+        "learn": "Aprender",
+        "learn-datathon": "Datathon",
+        "learn-nextgen": "NextGen",
+        "blog": "Blog",
         "about": "Nosotros"
       },
       "social": {
@@ -30,11 +33,73 @@
   },
   "features": {
     "landing": {
-      "home": {},
-      "conference": {},
-      "datathon": {},
-      "nextgen": {},
-      "about": {}
+      "home": {
+        "ambassador": "Embajadora",
+        "co-ambassadors": "Co-Embajadoras",
+        "sponsors": "Patrocinadores"
+      },
+      "conference": {
+        "title": "Conferencia",
+        "cta": "Registrarse",
+        "details": "Detalles",
+        "requirements": "Requisitos",
+        "speakers": "Expositores",
+        "duration-units": {
+          "minutes": "{count, plural, one {# minuto} other {# minutos}}",
+          "hours": "{count, plural, one {# hora} other {# horas}}",
+          "days": "{count, plural, one {# día} other {# días}}"
+        },
+        "schedule": "Cronograma"
+      },
+      "learn": {
+        "title": "Aprender",
+        "subtitle": "Aprende a usar la ciencia de datos y la inteligencia artificial con WiDS",
+        "description": "WiDS está comprometido con inspirar, educar y apoyar a los científicos de datos en todo el mundo. Los programas de WiDS consisten en desafíos emocionantes de Datathon, talleres de capacitación en profundidad y recursos para educadores desde secundaria hasta estudios de posgrado.",
+        "datathon": "Datathon",
+        "datathon-description": "El Datathon WiDS es una oportunidad para descubrir y perfeccionar habilidades en ciencia de datos mientras se resuelve un reto de impacto social interesante y crítico.",
+        "datathon-cta": "Leer más",
+        "nextgen": "NextGen",
+        "nextgen-description": "Programa de educación para promover carreras en ciencia de datos, inteligencia artificial (IA) y campos afines para estudiantes de secundaria.",
+        "nextgen-cta": "Leer más"
+      },
+      "learn-datathon": {
+        "title": "Datathon",
+        "cta": "Registrarse",
+        "details": "Detalles",
+        "requirements": "Requisitos",
+        "speakers": "Expositores",
+        "duration-units": {
+          "minutes": "{count, plural, one {# minuto} other {# minutos}}",
+          "hours": "{count, plural, one {# hora} other {# horas}}",
+          "days": "{count, plural, one {# día} other {# días}}"
+        },
+        "schedule": "Cronograma"
+      },
+      "learn-nextgen": {
+        "title": "NextGen",
+        "cta": "Registrarse",
+        "details": "Detalles",
+        "requirements": "Requisitos",
+        "speakers": "Expositores",
+        "duration-units": {
+          "minutes": "{count, plural, one {# minuto} other {# minutos}}",
+          "hours": "{count, plural, one {# hora} other {# horas}}",
+          "days": "{count, plural, one {# día} other {# días}}"
+        },
+        "schedule": "Cronograma"
+      },
+      "blog": {
+        "title": "Blog",
+        "subtitle": "Empodera a las mujeres en ciencia de datos: una fuente de inspiración",
+        "description": "Descubre historias inspiradoras, insights y noticias del mundo de las mujeres en ciencia de datos. Mantente actualizado con artículos, entrevistas y resúmenes de nuestra comunidad en el Blog de WiDS."
+      },
+      "about": {
+        "title": "Nosotros",
+        "subtitle": "Sobre nosotros",
+        "description": "WiDS Guayaquil @ ESPOL es un evento independiente organizado por la Ph.D. Carmen Vaca, con sede en la Escuela Superior Politécnica del Litoral (ESPOL). Este evento coincide con la conferencia anual global Women in Data Science (WiDS), realizada por la Universidad de Stanford y aproximadamente más de 150 sedes alrededor del mundo. Todas las personas están invitadas a asistir a los eventos regionales de WiDS, que presentan a mujeres destacadas que realizan un trabajo excepcional.",
+        "ambassador": "Embajadora",
+        "co-ambassadors": "Co-Embajadoras"
+      }
     }
   }
 }

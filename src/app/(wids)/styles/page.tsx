@@ -7,6 +7,7 @@ import { TypographyH3 } from "@/shared/components/ui/typography-h3";
 import { TypographyH4 } from "@/shared/components/ui/typography-h4";
 import { TypographyH5 } from "@/shared/components/ui/typography-h5";
 import { TypographyH6 } from "@/shared/components/ui/typography-h6";
+import { Link } from "@/shared/components/ui/link";
 import { cn } from "@/shared/utils/cn";
 
 import "@/shared/styles/globals.css";
@@ -14,13 +15,13 @@ import "@/shared/styles/globals.css";
 export const barlow = Barlow({
   subsets: ["latin"],
   variable: "--font-barlow",
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
   variable: "--font-barlow-condensed",
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "700"],
 });
 
 export default function StylesPage() {
@@ -46,6 +47,18 @@ export default function StylesPage() {
         <Button variant="orange">Button</Button>
         <Button variant="purple">Button</Button>
         <Button variant="green-dark">Button</Button>
+        <Link variant="default" href="/">
+          Link
+        </Link>
+        <Link variant="main-nav" href="/" underlineColor="#ffcb05">
+          Link
+        </Link>
+        <Link variant="alt-nav" href="/">
+          Link
+        </Link>
+        <Link variant="alt-subnav" href="/">
+          Link
+        </Link>
       </body>
     </html>
   );

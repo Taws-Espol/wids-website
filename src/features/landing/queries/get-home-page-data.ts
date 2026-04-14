@@ -16,14 +16,9 @@ export async function getHomePageData(locale: Locale) {
     limit: 1,
     sort: "-year",
   });
+  const edition = editionsResult.docs?.[0];
 
-  const currentEdition = editionsResult.docs?.[0];
-
-  if (!currentEdition) {
-    return null;
-  }
-
-  const currentEditionId = currentEdition.id;
+  const editionId = edition.id;
 
   // 2. Get the three events for this edition and their dates
   const eventsResult = await payload.find({
@@ -31,26 +26,20 @@ export async function getHomePageData(locale: Locale) {
     locale,
     depth: 0,
     where: {
-      edition: { equals: currentEditionId },
+      edition: { equals: editionId },
     },
-    limit: 3,
     sort: "date",
   });
 
-  const events = eventsResult.docs?.map((event) => ({
-    id: event.id,
-    title: event.title,
-    date: event.date,
-    type: event.type,
-  }));
+  const events = eventsResult.docs ?? [];
 
   // 3. Get all ambassadors of this edition
   const ambassadorsResult = await payload.find({
     collection: "ambassadors",
     locale,
-    depth: 0,
+    depth: 1,
     where: {
-      edition: { equals: currentEditionId },
+      edition: { equals: editionId },
     },
   });
   const ambassadors = ambassadorsResult.docs ?? [];
@@ -59,15 +48,15 @@ export async function getHomePageData(locale: Locale) {
   const sponsorsResult = await payload.find({
     collection: "sponsors",
     locale,
-    depth: 0,
+    depth: 1,
     where: {
-      edition: { equals: currentEditionId },
+      edition: { equals: editionId },
     },
   });
   const sponsors = sponsorsResult.docs ?? [];
 
   return {
-    edition: currentEdition,
+    edition,
     events,
     ambassadors,
     sponsors,

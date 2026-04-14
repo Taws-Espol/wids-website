@@ -94,6 +94,16 @@ export const Schedules: CollectionConfig = {
       name: "speaker",
       type: "relationship",
       relationTo: "speakers",
+      validate: (
+        value: unknown,
+        { siblingData }: { siblingData: Record<string, unknown> },
+      ) => {
+        if (siblingData?.type === "workshop" && !value) {
+          return "Workshop schedules require a speaker";
+        }
+
+        return true;
+      },
       admin: {
         condition: (_, siblingData) =>
           siblingData?.type === "talk" || siblingData?.type === "workshop",
@@ -102,6 +112,9 @@ export const Schedules: CollectionConfig = {
     {
       name: "startTime",
       type: "date",
+      timezone: {
+        defaultTimezone: "America/Bogota",
+      },
       required: true,
       label: "Start Time",
       admin: {

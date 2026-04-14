@@ -1,8 +1,16 @@
 import { cacheTag } from "next/cache";
-import { setRequestLocale } from "next-intl/server";
-import { getHomePageData } from "@/features/landing/queries/get-home-page-data";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import Image from "next/image";
+
 import { LANDING_TAG } from "@/shared/constants/cache-tags";
+import { TypographyH1 } from "@/shared/components/ui/typography-h1";
+import { TypographyParagraph } from "@/shared/components/ui/typography-paragraph";
 import type { Locale } from "@/shared/lib/next-intl/types";
+
+import { PersonCard } from "@/features/landing/components/person-card";
+import { SponsorCard } from "@/features/landing/components/sponsor-card";
+import { HeroSlider } from "@/features/landing/components/hero-slider";
+import { getHomePageData } from "@/features/landing/queries/get-home-page-data";
 
 export default async function Home({
   params,
@@ -16,109 +24,66 @@ export default async function Home({
   setRequestLocale(locale);
   cacheTag(LANDING_TAG);
 
-  const data = await getHomePageData(locale);
+  const t = await getTranslations("features.landing.home");
+
+  const { edition, events, ambassadors, sponsors } =
+    await getHomePageData(locale);
+
+  const ambassador = ambassadors.find(
+    (ambassador) => ambassador.role === "ambassador",
+  );
+  const coAmbassadors = ambassadors.filter(
+    (ambassador) => ambassador.role === "co-ambassador",
+  );
 
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-10 px-6 py-16">
-      <section className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">
-          Welcome to Women in Data Science!
-        </h1>
-        <p className="text-lg text-gray-700">
-          Empowering women and showcasing innovations in data science across the
-          world.
-        </p>
+    <main className="flex flex-col gap-20 px-4 pb-20 md:px-4 lg:px-8 xl:px-42">
+      <HeroSlider events={events} />
+
+      <section className="flex flex-col items-center gap-8 md:flex-row">
+        <div className="flex w-full flex-col gap-8 md:w-1/2">
+          <TypographyH1>{edition?.title}</TypographyH1>
+
+          <TypographyParagraph>{edition?.description}</TypographyParagraph>
+        </div>
+
+        <div className="relative aspect-640/541 w-full md:w-1/2">
+          <Image
+            src="https://cdn.taws.espol.edu.ec/wids/home-collage.png"
+            alt="Home collage"
+            fill
+            sizes="(max-width: 768px) calc(100vw - 2rem), 50vw"
+          />
+        </div>
       </section>
 
-      {data && (
-        <>
-          {/* Edition Info */}
-          <section className="rounded-lg bg-gray-100 px-6 py-4 shadow">
-            <h2 className="mb-2 text-2xl font-semibold">
-              {data.edition?.title} ({data.edition?.year})
-            </h2>
-            <p className="text-gray-600">
-              Discover this year&apos;s edition, its events, ambassadors, and
-              sponsors.
-            </p>
-          </section>
+      <section className="flex w-full flex-col items-center justify-center gap-8">
+        <TypographyH1>{t("ambassador")}</TypographyH1>
 
-          {/* Events */}
-          <section>
-            <h3 className="mb-2 text-xl font-bold">Upcoming Events</h3>
-            {data.events && data.events.length > 0 ? (
-              <ul className="grid grid-cols-1 gap-4 md:grid-cols-3">
-                {data.events.map((event) => (
-                  <li
-                    key={event.id}
-                    className="flex flex-col items-start rounded-lg bg-white p-4 shadow"
-                  >
-                    <div className="mb-2 text-sm font-semibold text-gray-500 uppercase">
-                      {event.type}
-                    </div>
-                    <div className="mb-1 text-lg font-bold">{event.title}</div>
-                    <div className="text-sm text-gray-600">
-                      {event.date
-                        ? new Date(event.date).toLocaleDateString()
-                        : "TBA"}
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-gray-500">No upcoming events listed yet.</p>
-            )}
-          </section>
+        <div className="flex items-center justify-center">
+          <PersonCard person={ambassador!} />
+        </div>
+      </section>
 
-          {/* Ambassadors */}
-          <section>
-            <h3 className="mb-2 text-xl font-bold">Ambassadors</h3>
-            {data.ambassadors && data.ambassadors.length > 0 ? (
-              <ul className="flex flex-wrap gap-3">
-                {data.ambassadors.map((ambassador) => (
-                  <li
-                    key={ambassador.id}
-                    className="flex items-center rounded bg-gray-50 px-3 py-1 text-gray-800 shadow"
-                  >
-                    {/* Add avatar/icon if available */}
-                    <span>
-                      {ambassador.name ||
-                        ambassador.title ||
-                        `Ambassador #${ambassador.id}`}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-gray-500">
-                Ambassador information coming soon.
-              </p>
-            )}
-          </section>
+      <section className="flex flex-col items-center gap-8">
+        <TypographyH1>{t("co-ambassadors")}</TypographyH1>
 
-          {/* Sponsors */}
-          <section>
-            <h3 className="mb-2 text-xl font-bold">Sponsors</h3>
-            {data.sponsors && data.sponsors.length > 0 ? (
-              <ul className="mt-3 flex flex-wrap items-center gap-4">
-                {data.sponsors.map((sponsor) => (
-                  <li
-                    key={sponsor.id}
-                    className="flex items-center justify-center rounded-lg bg-white px-4 py-2 shadow"
-                  >
-                    {/* Ideally display sponsor logo if available */}
-                    <span className="font-semibold">
-                      {sponsor.name || `Sponsor #${sponsor.id}`}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-gray-500">Sponsor information coming soon.</p>
-            )}
-          </section>
-        </>
-      )}
+        <div className="flex flex-wrap items-center justify-center gap-8">
+          {coAmbassadors.map((coAmbassador) => (
+            <PersonCard key={coAmbassador.id} person={coAmbassador} />
+          ))}
+        </div>
+      </section>
+
+      <section className="flex flex-col items-center gap-8">
+        <TypographyH1>{t("sponsors")}</TypographyH1>
+
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          {sponsors.map((sponsor) => (
+            <SponsorCard key={sponsor.id} sponsor={sponsor} />
+          ))}
+        </div>
+      </section>
     </main>
   );
 }

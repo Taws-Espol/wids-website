@@ -5,8 +5,14 @@ import createNextIntlPlugin from "next-intl/plugin";
 const nextConfig: NextConfig = {
   reactCompiler: true,
   cacheComponents: true,
+  allowedDevOrigins: ["192.168.0.111"],
   images: {
-    dangerouslyAllowLocalIP: process.env.NODE_ENV !== "production",
+    localPatterns: [
+      {
+        pathname: "/assets/images/**",
+        search: "",
+      },
+    ],
     remotePatterns: [
       {
         protocol: "http",
@@ -21,19 +27,6 @@ const nextConfig: NextConfig = {
         hostname: "s3.taws.espol.edu.ec",
       },
     ],
-  },
-  async headers() {
-    return [
-      {
-        source: "/api/media/file/:filename*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
-    ];
   },
 };
 

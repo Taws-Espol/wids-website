@@ -24,6 +24,21 @@ export const Ambassadors: CollectionConfig = {
       required: true,
     },
     {
+      name: "role",
+      type: "select",
+      options: [
+        {
+          label: "Ambassador",
+          value: "ambassador",
+        },
+        {
+          label: "Co-Ambassador",
+          value: "co-ambassador",
+        },
+      ],
+      required: true,
+    },
+    {
       name: "title",
       type: "text",
       required: true,

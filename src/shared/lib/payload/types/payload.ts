@@ -245,6 +245,7 @@ export interface OperationsMedia {
 export interface Edition {
   id: number;
   title: string;
+  description: string;
   year: number;
   updatedAt: string;
   createdAt: string;
@@ -259,8 +260,15 @@ export interface Event {
   type: "conference" | "nextgen" | "datathon";
   title: string;
   description: string;
+  requirements?:
+    | {
+        text: string;
+        id?: string | null;
+      }[]
+    | null;
   location: string;
   date: string;
+  date_tz: SupportedTimezones;
   duration: number;
   durationUnit: "minutes" | "hours" | "days";
   updatedAt: string;
@@ -371,6 +379,7 @@ export interface Schedule {
   description?: string | null;
   speaker?: (number | null) | Speaker;
   startTime: string;
+  startTime_tz: SupportedTimezones;
   duration: number;
   durationUnit: "minutes" | "hours";
   location: string;
@@ -400,6 +409,7 @@ export interface Speaker {
 export interface Ambassador {
   id: number;
   name: string;
+  role: "ambassador" | "co-ambassador";
   title: string;
   affiliation: string;
   photo: number | Media;
@@ -779,6 +789,7 @@ export interface OperationsMediaSelect<T extends boolean = true> {
  */
 export interface EditionsSelect<T extends boolean = true> {
   title?: T;
+  description?: T;
   year?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -792,8 +803,15 @@ export interface EventsSelect<T extends boolean = true> {
   type?: T;
   title?: T;
   description?: T;
+  requirements?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
   location?: T;
   date?: T;
+  date_tz?: T;
   duration?: T;
   durationUnit?: T;
   updatedAt?: T;
@@ -878,6 +896,7 @@ export interface SchedulesSelect<T extends boolean = true> {
   description?: T;
   speaker?: T;
   startTime?: T;
+  startTime_tz?: T;
   duration?: T;
   durationUnit?: T;
   location?: T;
@@ -905,6 +924,7 @@ export interface SpeakersSelect<T extends boolean = true> {
  */
 export interface AmbassadorsSelect<T extends boolean = true> {
   name?: T;
+  role?: T;
   title?: T;
   affiliation?: T;
   photo?: T;

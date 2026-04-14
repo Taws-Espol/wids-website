@@ -18,13 +18,17 @@ export const routing = defineRouting({
       en: "/conference",
       es: "/conferencia",
     },
-    "/nextgen": {
-      en: "/nextgen",
-      es: "/nextgen",
+    "/learn": {
+      en: "/learn",
+      es: "/aprender",
     },
-    "/datathon": {
-      en: "/datathon",
-      es: "/datathon",
+    "/learn/datathon": {
+      en: "/learn/datathon",
+      es: "/aprender/datathon",
+    },
+    "/learn/nextgen": {
+      en: "/learn/nextgen",
+      es: "/aprender/nextgen",
     },
     "/blog": {
       en: "/blog",

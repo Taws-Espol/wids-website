@@ -29,6 +29,11 @@ export default buildConfig({
       scriptPath: path.resolve(process.cwd(), "src/shared/lib/payload/seed.ts"),
     },
   ],
+  admin: {
+    timezones: {
+      defaultTimezone: "America/Bogota",
+    },
+  },
   editor: lexicalEditor(),
   collections: [
     Users,
@@ -68,20 +73,37 @@ export default buildConfig({
     s3Storage({
       collections: {
         media: {
-          prefix: "public/site-assets",
-        },
-        "operations-media": {
-          prefix: "private/operations-assets",
+          prefix: "wids",
+          generateFileURL: (file) => {
+            return `https://cdn.taws.espol.edu.ec/${file.prefix}/${file.filename}`;
+          },
         },
       },
-      bucket: process.env.S3_BUCKET_NAME ?? "",
+      bucket: process.env.PUBLIC_S3_BUCKET_NAME ?? "",
       config: {
         credentials: {
-          accessKeyId: process.env.S3_ACCESS_KEY_ID ?? "",
-          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY ?? "",
+          accessKeyId: process.env.PUBLIC_S3_ACCESS_KEY_ID ?? "",
+          secretAccessKey: process.env.PUBLIC_S3_SECRET_ACCESS_KEY ?? "",
         },
-        region: process.env.S3_REGION ?? "",
-        endpoint: process.env.S3_ENDPOINT ?? "",
+        region: process.env.PUBLIC_S3_REGION ?? "",
+        endpoint: process.env.PUBLIC_S3_ENDPOINT ?? "",
+        forcePathStyle: true,
+      },
+    }),
+    s3Storage({
+      collections: {
+        "operations-media": {
+          prefix: "operations-assets",
+        },
+      },
+      bucket: process.env.PRIVATE_S3_BUCKET_NAME ?? "",
+      config: {
+        credentials: {
+          accessKeyId: process.env.PRIVATE_S3_ACCESS_KEY_ID ?? "",
+          secretAccessKey: process.env.PRIVATE_S3_SECRET_ACCESS_KEY ?? "",
+        },
+        region: process.env.PRIVATE_S3_REGION ?? "",
+        endpoint: process.env.PRIVATE_S3_ENDPOINT ?? "",
         forcePathStyle: true,
       },
     }),

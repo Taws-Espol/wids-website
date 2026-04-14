@@ -14,15 +14,17 @@ import "@/shared/styles/globals.css";
 export const barlow = Barlow({
   subsets: ["latin"],
   variable: "--font-barlow",
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
+  preload: false,
 });
 
 export const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
   variable: "--font-barlow-condensed",
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "700"],
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {

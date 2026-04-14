@@ -54,6 +54,18 @@ export const Events: CollectionConfig = {
       localized: true,
     },
     {
+      name: "requirements",
+      type: "array",
+      localized: true,
+      fields: [
+        {
+          name: "text",
+          type: "text",
+          required: true,
+        },
+      ],
+    },
+    {
       name: "location",
       type: "text",
       required: true,
@@ -61,6 +73,9 @@ export const Events: CollectionConfig = {
     {
       name: "date",
       type: "date",
+      timezone: {
+        defaultTimezone: "America/Bogota",
+      },
       required: true,
       admin: {
         date: {

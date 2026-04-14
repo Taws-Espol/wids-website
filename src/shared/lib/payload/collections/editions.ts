@@ -25,6 +25,12 @@ export const Editions: CollectionConfig = {
       localized: true,
     },
     {
+      name: "description",
+      type: "textarea",
+      required: true,
+      localized: true,
+    },
+    {
       name: "year",
       type: "number",
       required: true,
