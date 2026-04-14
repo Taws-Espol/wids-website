@@ -1,4 +1,3 @@
-import { cacheTag } from "next/cache";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -9,7 +8,6 @@ import {
   CheckCircle,
 } from "@hugeicons/core-free-icons";
 
-import { LANDING_TAG } from "@/shared/constants/cache-tags";
 import { Button } from "@/shared/components/ui/button";
 import { TypographyH1 } from "@/shared/components/ui/typography-h1";
 import { TypographyParagraph } from "@/shared/components/ui/typography-paragraph";
@@ -26,12 +24,9 @@ export default async function NextGen({
 }: {
   params: Promise<{ locale: Locale }>;
 }) {
-  "use cache";
-
   const { locale } = await params;
 
   setRequestLocale(locale);
-  cacheTag(LANDING_TAG);
 
   const t = await getTranslations("features.landing.learn-nextgen");
 

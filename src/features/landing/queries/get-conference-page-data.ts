@@ -1,11 +1,17 @@
 import "server-only";
 
+import { cacheTag } from "next/cache";
 import config from "@payload-config";
 import { getPayload } from "payload";
 
+import { LANDING_TAG } from "@/shared/constants/cache-tags";
 import type { Locale } from "@/shared/lib/next-intl/types";
 
 export async function getConferencePageData(locale: Locale) {
+  "use cache";
+
+  cacheTag(LANDING_TAG);
+
   const payload = await getPayload({ config });
 
   // 1. Get the latest/current edition (by year, assuming descending sort)
