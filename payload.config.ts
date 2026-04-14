@@ -121,6 +121,10 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URL ?? "",
     },
+    migrationDir: path.resolve(
+      process.cwd(),
+      "src/shared/lib/payload/migrations",
+    ),
   }),
   sharp,
   localization: {

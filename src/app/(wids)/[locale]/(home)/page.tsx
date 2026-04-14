@@ -38,52 +38,60 @@ export default async function Home({
 
   return (
     <main className="flex flex-col gap-20 px-4 pb-20 md:px-4 lg:px-8 xl:px-42">
-      <HeroSlider events={events} />
+      {events.length > 0 && <HeroSlider events={events} />}
 
-      <section className="flex flex-col items-center gap-8 md:flex-row">
-        <div className="flex w-full flex-col gap-8 md:w-1/2">
-          <TypographyH1>{edition?.title}</TypographyH1>
+      {edition && (
+        <section className="flex flex-col items-center gap-8 md:flex-row">
+          <div className="flex w-full flex-col gap-8 md:w-1/2">
+            <TypographyH1>{edition.title}</TypographyH1>
 
-          <TypographyParagraph>{edition?.description}</TypographyParagraph>
-        </div>
+            <TypographyParagraph>{edition.description}</TypographyParagraph>
+          </div>
 
-        <div className="relative aspect-640/541 w-full md:w-1/2">
-          <Image
-            src="https://cdn.taws.espol.edu.ec/wids/home-collage.png"
-            alt="Home collage"
-            fill
-            sizes="(max-width: 768px) calc(100vw - 2rem), 50vw"
-          />
-        </div>
-      </section>
+          <div className="relative aspect-640/541 w-full md:w-1/2">
+            <Image
+              src="https://cdn.taws.espol.edu.ec/wids/home-collage.png"
+              alt="Home collage"
+              fill
+              sizes="(max-width: 768px) calc(100vw - 2rem), 50vw"
+            />
+          </div>
+        </section>
+      )}
 
-      <section className="flex w-full flex-col items-center justify-center gap-8">
-        <TypographyH1>{t("ambassador")}</TypographyH1>
+      {ambassador && (
+        <section className="flex w-full flex-col items-center justify-center gap-8">
+          <TypographyH1>{t("ambassador")}</TypographyH1>
 
-        <div className="flex items-center justify-center">
-          <PersonCard person={ambassador!} />
-        </div>
-      </section>
+          <div className="flex items-center justify-center">
+            <PersonCard person={ambassador} />
+          </div>
+        </section>
+      )}
 
-      <section className="flex flex-col items-center gap-8">
-        <TypographyH1>{t("co-ambassadors")}</TypographyH1>
+      {coAmbassadors.length > 0 && (
+        <section className="flex flex-col items-center gap-8">
+          <TypographyH1>{t("co-ambassadors")}</TypographyH1>
 
-        <div className="flex flex-wrap items-center justify-center gap-8">
-          {coAmbassadors.map((coAmbassador) => (
-            <PersonCard key={coAmbassador.id} person={coAmbassador} />
-          ))}
-        </div>
-      </section>
+          <div className="flex flex-wrap items-center justify-center gap-8">
+            {coAmbassadors.map((coAmbassador) => (
+              <PersonCard key={coAmbassador.id} person={coAmbassador} />
+            ))}
+          </div>
+        </section>
+      )}
 
-      <section className="flex flex-col items-center gap-8">
-        <TypographyH1>{t("sponsors")}</TypographyH1>
+      {sponsors.length > 0 && (
+        <section className="flex flex-col items-center gap-8">
+          <TypographyH1>{t("sponsors")}</TypographyH1>
 
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          {sponsors.map((sponsor) => (
-            <SponsorCard key={sponsor.id} sponsor={sponsor} />
-          ))}
-        </div>
-      </section>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {sponsors.map((sponsor) => (
+              <SponsorCard key={sponsor.id} sponsor={sponsor} />
+            ))}
+          </div>
+        </section>
+      )}
     </main>
   );
 }

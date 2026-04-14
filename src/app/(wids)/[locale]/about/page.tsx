@@ -53,23 +53,27 @@ export default async function About({
         </div>
       </section>
 
-      <section className="flex w-full flex-col items-center justify-center gap-8">
-        <TypographyH1>{t("ambassador")}</TypographyH1>
+      {ambassador && (
+        <section className="flex w-full flex-col items-center justify-center gap-8">
+          <TypographyH1>{t("ambassador")}</TypographyH1>
 
-        <div className="flex items-center justify-center">
-          <PersonCard person={ambassador} />
-        </div>
-      </section>
+          <div className="flex items-center justify-center">
+            <PersonCard person={ambassador} />
+          </div>
+        </section>
+      )}
 
-      <section className="flex flex-col items-center gap-8">
-        <TypographyH1>{t("co-ambassadors")}</TypographyH1>
+      {coAmbassadors.length > 0 && (
+        <section className="flex flex-col items-center gap-8">
+          <TypographyH1>{t("co-ambassadors")}</TypographyH1>
 
-        <div className="flex flex-wrap items-center justify-center gap-8">
-          {coAmbassadors.map((coAmbassador) => (
-            <PersonCard key={coAmbassador.id} person={coAmbassador} />
-          ))}
-        </div>
-      </section>
+          <div className="flex flex-wrap items-center justify-center gap-8">
+            {coAmbassadors.map((coAmbassador) => (
+              <PersonCard key={coAmbassador.id} person={coAmbassador} />
+            ))}
+          </div>
+        </section>
+      )}
     </main>
   );
 }

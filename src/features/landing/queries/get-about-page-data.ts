@@ -17,6 +17,13 @@ export async function getAboutPageData(locale: Locale) {
   });
 
   const currentEdition = editionsResult.docs?.[0];
+  if (!currentEdition) {
+    return {
+      ambassador: null,
+      coAmbassadors: [],
+    };
+  }
+
   const currentEditionId = currentEdition.id;
 
   // 2. Get all ambassadors of this edition
@@ -29,9 +36,9 @@ export async function getAboutPageData(locale: Locale) {
     },
   });
   const ambassadors = ambassadorsResult.docs ?? [];
-  const ambassador = ambassadors.filter(
+  const ambassador = ambassadors.find(
     (ambassador) => ambassador.role === "ambassador",
-  )[0];
+  );
   const coAmbassadors = ambassadors.filter(
     (ambassador) => ambassador.role === "co-ambassador",
   );

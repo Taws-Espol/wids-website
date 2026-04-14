@@ -4,11 +4,10 @@
   "private": false,
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "next build",
+    "build": "payload migrate && next build",
     "start": "next start",
     "lint": "eslint",
-    "payload:types": "payload generate:types",
-    "payload:seed": "docker compose down -v && docker compose up -d && payload seed",
+    "payload": "payload",
     "dev:email": "email dev --dir ./src/shared/lib/react-email",
     "prepare": "husky"
   },
@@ -57,7 +56,7 @@
     "tailwindcss": "^4.2.2",
     "typescript": "^6"
   },
-  "packageManager": "pnpm",
+  "packageManager": "pnpm@10.33.0",
   "type": "module",
   "lint-staged": {
     "*.{ts,tsx}": "eslint --fix",
