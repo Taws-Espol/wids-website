@@ -15,7 +15,7 @@ import "@/shared/styles/globals.css";
 export const barlow = Barlow({
   subsets: ["latin"],
   variable: "--font-barlow",
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "600", "700"],
   display: "swap",
   preload: false,
 });
@@ -61,9 +61,6 @@ export default async function RootLayout({
 
   setRequestLocale(locale);
 
-  const messages = (await import(`../../../../messages/${locale}.json`))
-    .default;
-
   return (
     <html
       lang={locale}
@@ -81,7 +78,7 @@ export default async function RootLayout({
         />
       </head>
       <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider>
           <Header />
           {children}
           <Footer />

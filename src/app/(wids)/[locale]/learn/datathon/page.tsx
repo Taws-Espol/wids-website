@@ -27,7 +27,6 @@ export default async function Datathon({
   params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
-
   setRequestLocale(locale);
 
   const t = await getTranslations("features.landing.learn-datathon");
