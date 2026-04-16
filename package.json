@@ -54,7 +54,7 @@
     "tailwindcss": "^4.2.2",
     "typescript": "^6.0.2"
   },
-  "packageManager": "pnpm",
+  "packageManager": "pnpm@10.33.0",
   "type": "module",
   "lint-staged": {
     "*.{ts,tsx,css,json}": [
