@@ -1,5 +1,7 @@
-import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
+import { use } from "react";
+import { useTranslations } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   LaptopProgrammingIcon,
@@ -14,16 +16,15 @@ import type { Locale } from "@/shared/lib/next-intl/types";
 
 import { HeroSection } from "@/features/landing/components/hero-section";
 
-export default async function Learn({
+export default function Learn({
   params,
 }: {
   params: Promise<{ locale: Locale }>;
 }) {
-  const { locale } = await params;
-
+  const { locale } = use(params);
   setRequestLocale(locale);
 
-  const t = await getTranslations("features.landing.learn");
+  const t = useTranslations("features.landing.learn");
 
   return (
     <main className="flex flex-col gap-20 px-4 py-20 md:px-4 lg:px-8 xl:px-42">
