@@ -25,7 +25,6 @@ export default async function NextGen({
   params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
-
   setRequestLocale(locale);
 
   const t = await getTranslations("features.landing.learn-nextgen");

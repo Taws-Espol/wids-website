@@ -1,4 +1,4 @@
-import { render } from "@react-email/render";
+import { render } from "react-email";
 import type { CollectionConfig } from "payload";
 
 import ForgotPassword from "../../react-email/forgot-password.tsx";

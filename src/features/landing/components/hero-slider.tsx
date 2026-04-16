@@ -21,7 +21,8 @@ export function HeroSlider({ events }: Props) {
     <section className="relative right-1/2 left-1/2 -mx-[50vw] w-screen max-w-none">
       <Carousel opts={{ loop: true }} plugins={[Autoplay({ delay: 5000 })]}>
         <CarouselContent>
-          {events.map((event) => {
+          {events.map((event, index) => {
+            const isFirst = index === 0;
             const imageSrc =
               event.type == "conference"
                 ? "https://cdn.taws.espol.edu.ec/wids/conference-hero.png"
@@ -54,8 +55,8 @@ export function HeroSlider({ events }: Props) {
                     src={imageSrc}
                     alt={imageAlt}
                     fill
-                    fetchPriority="high"
-                    loading="eager"
+                    fetchPriority={isFirst ? "high" : "auto"}
+                    loading={isFirst ? "eager" : "lazy"}
                     sizes="(max-width: 2340px) 100vw, 2340px"
                     className="object-cover"
                   />

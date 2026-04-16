@@ -9,7 +9,6 @@ import type { Locale } from "@/shared/lib/next-intl/types";
 
 export async function getDatathonPageData(locale: Locale) {
   "use cache";
-
   cacheTag(LANDING_TAG);
 
   const payload = await getPayload({ config });
