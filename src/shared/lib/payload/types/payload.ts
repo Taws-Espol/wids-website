@@ -141,6 +141,8 @@ export interface Config {
   user: User;
   jobs: {
     tasks: {
+      "conference-registration-confirmation": TaskConferenceRegistrationConfirmation;
+      "conference-registration-reminder": TaskConferenceRegistrationReminder;
       createCollectionExport: TaskCreateCollectionExport;
       createCollectionImport: TaskCreateCollectionImport;
       inline: {
@@ -579,6 +581,8 @@ export interface PayloadJob {
         completedAt: string;
         taskSlug:
           | "inline"
+          | "conference-registration-confirmation"
+          | "conference-registration-reminder"
           | "createCollectionExport"
           | "createCollectionImport";
         taskID: string;
@@ -614,7 +618,13 @@ export interface PayloadJob {
       }[]
     | null;
   taskSlug?:
-    | ("inline" | "createCollectionExport" | "createCollectionImport")
+    | (
+        | "inline"
+        | "conference-registration-confirmation"
+        | "conference-registration-reminder"
+        | "createCollectionExport"
+        | "createCollectionImport"
+      )
     | null;
   queue?: string | null;
   waitUntil?: string | null;
@@ -1086,6 +1096,30 @@ export interface CollectionsWidget {
     [k: string]: unknown;
   };
   width: "full";
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TaskConference-registration-confirmation".
+ */
+export interface TaskConferenceRegistrationConfirmation {
+  input: {
+    "registration-id": number;
+    "event-id": number;
+    locale: string;
+  };
+  output?: unknown;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TaskConference-registration-reminder".
+ */
+export interface TaskConferenceRegistrationReminder {
+  input: {
+    "registration-id": number;
+    "event-id": number;
+    locale: string;
+  };
+  output?: unknown;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

@@ -19,7 +19,7 @@ export const validateUniquePhoneNumberPerEvent: TextFieldValidation = async (
     string | null | undefined
   >,
 ) => {
-  if (!value) return "Phone number is required.";
+  if (!value) return "validation.phone-number-required";
 
   const event = siblingData?.event;
 
@@ -37,7 +37,5 @@ export const validateUniquePhoneNumberPerEvent: TextFieldValidation = async (
     limit: 1,
   });
 
-  return existing.totalDocs > 0
-    ? "This phone number is already registered for this event"
-    : true;
+  return existing.totalDocs > 0 ? "validation.phone-number-duplicate" : true;
 };

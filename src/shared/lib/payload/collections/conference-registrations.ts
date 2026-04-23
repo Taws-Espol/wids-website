@@ -1,6 +1,10 @@
 import type { CollectionConfig } from "payload";
 
-import { HEARD_ABOUT_OPTIONS } from "../constants/registrations.ts";
+import {
+  ATTENDANCE_MODE_OPTIONS,
+  HEARD_ABOUT_OPTIONS,
+  PARTICIPANT_TYPE_OPTIONS,
+} from "../constants/registrations.ts";
 import { createEventTypeValidationHook } from "../utils/create-event-type-validation.ts";
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
 import { validateProfessionalField } from "../utils/validate-professional-field.ts";
@@ -84,16 +88,10 @@ export const ConferenceRegistrations: CollectionConfig = {
       name: "participantType",
       type: "radio",
       required: true,
-      options: [
-        {
-          label: "Student",
-          value: "student",
-        },
-        {
-          label: "Professional",
-          value: "professional",
-        },
-      ],
+      options: PARTICIPANT_TYPE_OPTIONS.map((option) => ({
+        label: option.label,
+        value: option.value,
+      })),
     },
     {
       type: "row",
@@ -142,16 +140,10 @@ export const ConferenceRegistrations: CollectionConfig = {
       type: "radio",
       required: true,
       defaultValue: "in-person",
-      options: [
-        {
-          label: "In person",
-          value: "in-person",
-        },
-        {
-          label: "Virtual",
-          value: "virtual",
-        },
-      ],
+      options: ATTENDANCE_MODE_OPTIONS.map((option) => ({
+        label: option.label,
+        value: option.value,
+      })),
     },
     {
       name: "receiveNotifications",

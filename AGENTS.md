@@ -16,6 +16,12 @@ Before any Next.js work, find and read the relevant doc in `node_modules/next/di
 ## Project Structure
 - src/app is the main Next.js application directory
 - src/features contains feature-specific code (e.g., blog, landing, registration)
+  - Each feature follows domain-drive design. It has its own components, hooks, types, and styles. Example structure for a feature:
+    - src/features/feature-name/
+      - components/ (feature-specific components)
+      - hooks/ (feature-specific hooks)
+      - types/ (feature-specific types)
+      - styles/ (feature-specific styles)
 - src/shared contains reusable components, constants, hooks, styles, utils, and styles
 - src/shared/lib contains third-party libraries and custom utilities. It includes lib configuration files.
 

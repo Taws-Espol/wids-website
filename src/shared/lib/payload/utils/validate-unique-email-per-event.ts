@@ -19,7 +19,7 @@ export const validateUniqueEmailPerEvent: EmailFieldValidation = async (
     string | null | undefined
   >,
 ) => {
-  if (!value) return "Email is required.";
+  if (!value) return "validation.email-required";
 
   const event = siblingData?.event;
 
@@ -37,7 +37,5 @@ export const validateUniqueEmailPerEvent: EmailFieldValidation = async (
     limit: 1,
   });
 
-  return existing.totalDocs > 0
-    ? "This email is already registered for this event"
-    : true;
+  return existing.totalDocs > 0 ? "validation.email-duplicate" : true;
 };

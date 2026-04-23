@@ -103,6 +103,127 @@
         "ambassador": "Ambassador",
         "co-ambassadors": "Co-Ambassadors"
       }
+    },
+    "registration": {
+      "conference-form": {
+        "container": {
+          "title": "Conference registration",
+          "description": "Complete the form to reserve your spot."
+        },
+        "actions": {
+          "submit": "Submit registration",
+          "close": "Close registration form"
+        },
+        "states": {
+          "submitting": "Submitting...",
+          "success": "Registration submitted successfully."
+        },
+        "errors": {
+          "schema-validation": "Please review the highlighted fields and try again.",
+          "payload-validation": "This registration could not be saved. Please review your data and try again.",
+          "unknown": "We could not complete your registration. Please try again."
+        },
+        "validation": {
+          "required": "This field is required.",
+          "invalid-email": "Please enter a valid email address.",
+          "invalid-phone-number": "Please enter a valid Ecuador phone number (09XXXXXXXX).",
+          "accepted-terms-required": "You must accept the terms and conditions.",
+          "email-required": "Email is required.",
+          "email-duplicate": "This email is already registered for this event.",
+          "phone-number-required": "Phone number is required.",
+          "phone-number-duplicate": "This phone number is already registered for this event.",
+          "student-field-required": "This field is required for students.",
+          "professional-field-required": "This field is required for professionals.",
+          "server-field": "Please verify this field."
+        },
+        "fields": {
+          "first-name": {
+            "label": "First name"
+          },
+          "last-name": {
+            "label": "Last name"
+          },
+          "email": {
+            "label": "Email"
+          },
+          "phone-number": {
+            "label": "Phone number"
+          },
+          "participant-type": {
+            "label": "Participant type",
+            "options": {
+              "student": "Student",
+              "professional": "Professional"
+            }
+          },
+          "university-name": {
+            "label": "University name"
+          },
+          "major": {
+            "label": "Major"
+          },
+          "organization-name": {
+            "label": "Organization name"
+          },
+          "job-title": {
+            "label": "Job title"
+          },
+          "attendance-mode": {
+            "label": "Attendance mode",
+            "options": {
+              "in-person": "In person",
+              "virtual": "Virtual"
+            }
+          },
+          "heard-about-event": {
+            "label": "How did you hear about the event?",
+            "options": {
+              "friend": "A friend",
+              "flyer": "Flyer",
+              "social-media": "Social media",
+              "email": "Email",
+              "website": "Website",
+              "university": "University",
+              "workplace": "Workplace",
+              "other": "Other"
+            }
+          },
+          "receive-notifications": {
+            "label": "I would like to receive notifications",
+            "description": "You can unsubscribe from notifications at any time."
+          },
+          "accepted-terms": {
+            "label": "I accept the terms and conditions"
+          }
+        }
+      },
+      "conference-emails": {
+        "confirmation": {
+          "subject": "WiDS Guayaquil | Conference registration confirmed",
+          "preview": "Your WiDS Guayaquil conference registration is confirmed",
+          "heading": "You are registered",
+          "greeting": "Hello",
+          "description": "Thank you for registering for our conference. Save the event details below and we will see you there.",
+          "event-date-label": "Date:",
+          "event-location-label": "Location:",
+          "cta": "View conference page",
+          "copy-and-paste-label": "If the button does not work, copy and paste this link into your browser:",
+          "footer-note": "You are receiving this email because you completed a registration on WiDS Guayaquil."
+        },
+        "reminder": {
+          "subject": "WiDS Guayaquil | Reminder: conference is tomorrow",
+          "preview": "WiDS Guayaquil conference starts in 1 day",
+          "heading": "Reminder: conference is tomorrow",
+          "greeting": "Hello",
+          "description": "This is a reminder that your registered conference starts in less than 24 hours.",
+          "emphasis": "Please arrive a few minutes early to complete your check-in.",
+          "event-date-label": "Date:",
+          "event-location-label": "Location:",
+          "cta": "Review conference details",
+          "copy-and-paste-label": "If the button does not work, copy and paste this link into your browser:",
+          "footer-note": "You are receiving this reminder because you registered for a WiDS Guayaquil conference."
+        }
+      }
     }
   }
 }

@@ -100,6 +100,127 @@
         "ambassador": "Embajadora",
         "co-ambassadors": "Co-Embajadoras"
       }
+    },
+    "registration": {
+      "conference-form": {
+        "container": {
+          "title": "Registro a la conferencia",
+          "description": "Completa el formulario para reservar tu cupo."
+        },
+        "actions": {
+          "submit": "Enviar registro",
+          "close": "Cerrar formulario de registro"
+        },
+        "states": {
+          "submitting": "Enviando...",
+          "success": "Registro enviado con éxito."
+        },
+        "errors": {
+          "schema-validation": "Revisa los campos resaltados e inténtalo nuevamente.",
+          "payload-validation": "No se pudo guardar este registro. Revisa los datos e inténtalo nuevamente.",
+          "unknown": "No pudimos completar tu registro. Inténtalo nuevamente."
+        },
+        "validation": {
+          "required": "Este campo es obligatorio.",
+          "invalid-email": "Ingresa un correo electrónico válido.",
+          "invalid-phone-number": "Ingresa un número de teléfono de Ecuador válido (09XXXXXXXX).",
+          "accepted-terms-required": "Debes aceptar los términos y condiciones.",
+          "email-required": "El correo electrónico es obligatorio.",
+          "email-duplicate": "Este correo electrónico ya está registrado para este evento.",
+          "phone-number-required": "El número de teléfono es obligatorio.",
+          "phone-number-duplicate": "Este número de teléfono ya está registrado para este evento.",
+          "student-field-required": "Este campo es obligatorio para estudiantes.",
+          "professional-field-required": "Este campo es obligatorio para profesionales.",
+          "server-field": "Verifica este campo."
+        },
+        "fields": {
+          "first-name": {
+            "label": "Nombre"
+          },
+          "last-name": {
+            "label": "Apellido"
+          },
+          "email": {
+            "label": "Correo electrónico"
+          },
+          "phone-number": {
+            "label": "Número de teléfono"
+          },
+          "participant-type": {
+            "label": "Tipo de participante",
+            "options": {
+              "student": "Estudiante",
+              "professional": "Profesional"
+            }
+          },
+          "university-name": {
+            "label": "Universidad"
+          },
+          "major": {
+            "label": "Carrera"
+          },
+          "organization-name": {
+            "label": "Organización"
+          },
+          "job-title": {
+            "label": "Cargo"
+          },
+          "attendance-mode": {
+            "label": "Modalidad de asistencia",
+            "options": {
+              "in-person": "Presencial",
+              "virtual": "Virtual"
+            }
+          },
+          "heard-about-event": {
+            "label": "¿Cómo te enteraste del evento?",
+            "options": {
+              "friend": "Amistad",
+              "flyer": "Volante",
+              "social-media": "Redes sociales",
+              "email": "Correo electrónico",
+              "website": "Sitio web",
+              "university": "Universidad",
+              "workplace": "Lugar de trabajo",
+              "other": "Otro"
+            }
+          },
+          "receive-notifications": {
+            "label": "Deseo recibir notificaciones",
+            "description": "Puedes cancelar las notificaciones en cualquier momento."
+          },
+          "accepted-terms": {
+            "label": "Acepto los términos y condiciones"
+          }
+        }
+      },
+      "conference-emails": {
+        "confirmation": {
+          "subject": "WiDS Guayaquil | Registro a conferencia confirmado",
+          "preview": "Tu registro a la conferencia de WiDS Guayaquil está confirmado",
+          "heading": "Tu registro fue exitoso",
+          "greeting": "Hola",
+          "description": "Gracias por registrarte en nuestra conferencia. Guarda los detalles del evento y nos vemos pronto.",
+          "event-date-label": "Fecha:",
+          "event-location-label": "Lugar:",
+          "cta": "Ver página de la conferencia",
+          "copy-and-paste-label": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
+          "footer-note": "Recibes este correo porque completaste un registro en WiDS Guayaquil."
+        },
+        "reminder": {
+          "subject": "WiDS Guayaquil | Recordatorio: la conferencia es mañana",
+          "preview": "La conferencia de WiDS Guayaquil inicia en 1 día",
+          "heading": "Recordatorio: la conferencia es mañana",
+          "greeting": "Hola",
+          "description": "Te recordamos que la conferencia a la que te registraste inicia en menos de 24 horas.",
+          "emphasis": "Te recomendamos llegar unos minutos antes para completar tu check-in.",
+          "event-date-label": "Fecha:",
+          "event-location-label": "Lugar:",
+          "cta": "Revisar detalles de la conferencia",
+          "copy-and-paste-label": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
+          "footer-note": "Recibes este recordatorio porque te registraste en una conferencia de WiDS Guayaquil."
+        }
+      }
     }
   }
 }

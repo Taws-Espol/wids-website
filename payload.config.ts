@@ -1,6 +1,6 @@
 import path from "node:path";
 import { postgresAdapter } from "@payloadcms/db-postgres";
-// import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
+import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
 import { importExportPlugin } from "@payloadcms/plugin-import-export";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { s3Storage } from "@payloadcms/storage-s3";
@@ -20,6 +20,10 @@ import { Schedules } from "./src/shared/lib/payload/collections/schedules.ts";
 import { Speakers } from "./src/shared/lib/payload/collections/speakers.ts";
 import { Sponsors } from "./src/shared/lib/payload/collections/sponsors.ts";
 import { Users } from "./src/shared/lib/payload/collections/users.ts";
+import {
+  conferenceRegistrationConfirmationTask,
+  conferenceRegistrationReminderTask,
+} from "./src/shared/lib/payload/jobs/conference-registration-tasks.ts";
 import { getAppUrl } from "./src/shared/utils/get-app-url.ts";
 
 export default buildConfig({
@@ -50,6 +54,10 @@ export default buildConfig({
     Sponsors,
   ],
   jobs: {
+    tasks: [
+      conferenceRegistrationConfirmationTask,
+      conferenceRegistrationReminderTask,
+    ],
     shouldAutoRun: () => process.env.ENABLE_JOB_WORKERS === "true",
     autoRun: [
       {
@@ -138,18 +146,17 @@ export default buildConfig({
     ),
   },
   serverURL: getAppUrl().origin,
-  // email: nodemailerAdapter({
-  //   defaultFromAddress: process.env.DEFAULT_FROM_ADDRESS ?? "",
-  //   defaultFromName: process.env.DEFAULT_FROM_NAME ?? "",
-  //   skipVerify: true,
-  //   transportOptions: {
-  //     host: process.env.SMTP_HOST ?? "",
-  //     port: Number(process.env.SMTP_PORT ?? ""),
-  //     secure: true,
-  //     auth: {
-  //       user: process.env.SMTP_USER ?? "",
-  //       pass: process.env.SMTP_PASS ?? "",
-  //     },
-  //   },
-  // }),
+  email: nodemailerAdapter({
+    defaultFromAddress: process.env.DEFAULT_FROM_ADDRESS ?? "",
+    defaultFromName: process.env.DEFAULT_FROM_NAME ?? "",
+    transportOptions: {
+      host: process.env.SMTP_HOST ?? "",
+      port: Number(process.env.SMTP_PORT ?? ""),
+      secure: true,
+      auth: {
+        user: process.env.SMTP_USER ?? "",
+        pass: process.env.SMTP_PASS ?? "",
+      },
+    },
+  }),
 });
