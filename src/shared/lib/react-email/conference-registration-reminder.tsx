@@ -16,11 +16,10 @@ import {
 import { createTranslator } from "next-intl";
 
 import { CONFERENCE_REGISTRATION_REMINDER_PIXEL_URL } from "@/shared/lib/umami/umami-email-pixels";
-
-type EmailLocale = "en" | "es";
+import type { Locale } from "@/shared/lib/next-intl/types";
 
 type Props = {
-  locale: EmailLocale;
+  locale: Locale;
   name: string;
   eventTitle: string;
   eventDateTimeText: string;

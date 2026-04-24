@@ -1,11 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import { useTranslations } from "next-intl";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { Cancel01Icon } from "@hugeicons/core-free-icons";
-
-import { useIsMobile } from "@/shared/hooks/use-is-mobile";
 import { Button } from "@/shared/components/ui/button";
 import {
   Dialog,
@@ -16,32 +10,27 @@ import {
 } from "@/shared/components/ui/dialog";
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
   DrawerDescription,
   DrawerHeader,
   DrawerTitle,
 } from "@/shared/components/ui/drawer";
 
-import { ConferenceRegistrationForm } from "./conference-registration-form";
+import { ConferenceRegistrationForm } from "@/features/registration/components/conference-registration-form";
+import { useConferenceRegistrationCta } from "@/features/registration/hooks/use-conference-registration-cta";
 
-type ConferenceRegistrationCtaProps = {
+type Props = {
   ctaLabel: string;
   eventId: number;
 };
 
-export function ConferenceRegistrationCta({
-  ctaLabel,
-  eventId,
-}: ConferenceRegistrationCtaProps) {
-  const [open, setOpen] = useState(false);
-  const isMobile = useIsMobile();
-  const t = useTranslations("features.registration.conference-form");
+export function ConferenceRegistrationDialog({ ctaLabel, eventId }: Props) {
+  const { open, setOpen, isMobile, t } = useConferenceRegistrationCta();
 
   const triggerButton = (
     <Button
       variant="green-light"
-      className="self-center"
+      className="self-start"
       onClick={() => setOpen(true)}
     >
       {ctaLabel}
@@ -53,28 +42,19 @@ export function ConferenceRegistrationCta({
       <>
         {triggerButton}
         <Drawer direction="bottom" open={open} onOpenChange={setOpen}>
-          <DrawerContent className="max-h-[90dvh] overflow-hidden">
-            <DrawerHeader className="shrink-0 pb-0">
+          <DrawerContent>
+            <DrawerHeader className="mb-8">
               <DrawerTitle>{t("container.title")}</DrawerTitle>
+
               <DrawerDescription>
                 {t("container.description")}
               </DrawerDescription>
-              <DrawerClose asChild className="self-end">
-                <Button
-                  variant="transparent"
-                  size="icon"
-                  aria-label={t("actions.close")}
-                >
-                  <HugeiconsIcon icon={Cancel01Icon} className="size-6" />
-                </Button>
-              </DrawerClose>
             </DrawerHeader>
+
             <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-4">
               <ConferenceRegistrationForm
                 eventId={eventId}
-                onSuccess={() => {
-                  setOpen(false);
-                }}
+                closeDialog={() => setOpen(false)}
               />
             </div>
           </DrawerContent>
@@ -88,16 +68,14 @@ export function ConferenceRegistrationCta({
       {triggerButton}
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-h-[90dvh] overflow-y-auto">
-          <DialogHeader className="mb-4">
+          <DialogHeader className="p-8">
             <DialogTitle>{t("container.title")}</DialogTitle>
             <DialogDescription>{t("container.description")}</DialogDescription>
           </DialogHeader>
 
           <ConferenceRegistrationForm
             eventId={eventId}
-            onSuccess={() => {
-              setOpen(false);
-            }}
+            closeDialog={() => setOpen(false)}
           />
         </DialogContent>
       </Dialog>

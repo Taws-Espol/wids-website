@@ -1103,9 +1103,9 @@ export interface CollectionsWidget {
  */
 export interface TaskConferenceRegistrationConfirmation {
   input: {
-    "registration-id": number;
-    "event-id": number;
-    locale: string;
+    registrationId: number;
+    eventId: number;
+    locale: "en" | "es";
   };
   output?: unknown;
 }
@@ -1115,9 +1115,9 @@ export interface TaskConferenceRegistrationConfirmation {
  */
 export interface TaskConferenceRegistrationReminder {
   input: {
-    "registration-id": number;
-    "event-id": number;
-    locale: string;
+    registrationId: number;
+    eventId: number;
+    locale: "en" | "es";
   };
   output?: unknown;
 }

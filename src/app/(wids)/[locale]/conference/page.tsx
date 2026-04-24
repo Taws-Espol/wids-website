@@ -17,7 +17,7 @@ import { HeroSection } from "@/features/landing/components/hero-section";
 import { Stepper } from "@/features/landing/components/stepper";
 import { PersonCard } from "@/features/landing/components/person-card";
 import { getConferencePageData } from "@/features/landing/queries/get-conference-page-data";
-import { ConferenceRegistrationCta } from "@/features/registration/components/conference-registration-cta";
+import { ConferenceRegistrationDialog } from "@/features/registration/components/conference-registration-dialog";
 
 export default async function Conference({
   params,
@@ -47,7 +47,10 @@ export default async function Conference({
 
             <TypographyParagraph>{event.description}</TypographyParagraph>
 
-            <ConferenceRegistrationCta ctaLabel={t("cta")} eventId={event.id} />
+            <ConferenceRegistrationDialog
+              ctaLabel={t("cta")}
+              eventId={event.id}
+            />
           </div>
 
           <div className="relative aspect-2048/1365 w-full md:w-1/2">

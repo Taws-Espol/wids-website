@@ -111,8 +111,8 @@
           "description": "Complete the form to reserve your spot."
         },
         "actions": {
-          "submit": "Submit registration",
-          "close": "Close registration form"
+          "submit": "Register",
+          "close": "Close form"
         },
         "states": {
           "submitting": "Submitting...",
@@ -126,7 +126,7 @@
         "validation": {
           "required": "This field is required.",
           "invalid-email": "Please enter a valid email address.",
-          "invalid-phone-number": "Please enter a valid Ecuador phone number (09XXXXXXXX).",
+          "invalid-phone-number": "Please enter a valid phone number (e.g. +5939XXXXXXXX).",
           "accepted-terms-required": "You must accept the terms and conditions.",
           "email-required": "Email is required.",
           "email-duplicate": "This email is already registered for this event.",
@@ -151,6 +151,7 @@
           },
           "participant-type": {
             "label": "Participant type",
+            "description": "Whether you are attending as a student or a professional.",
             "options": {
               "student": "Student",
               "professional": "Professional"
@@ -170,6 +171,7 @@
           },
           "attendance-mode": {
             "label": "Attendance mode",
+            "description": "Choose how you plan to take part in the event.",
             "options": {
               "in-person": "In person",
               "virtual": "Virtual"
@@ -177,6 +179,7 @@
           },
           "heard-about-event": {
             "label": "How did you hear about the event?",
+            "description": "Choose the option that best matches how you found us.",
             "options": {
               "friend": "A friend",
               "flyer": "Flyer",

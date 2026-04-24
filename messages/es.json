@@ -108,7 +108,7 @@
           "description": "Completa el formulario para reservar tu cupo."
         },
         "actions": {
-          "submit": "Enviar registro",
+          "submit": "Registrarse",
           "close": "Cerrar formulario de registro"
         },
         "states": {
@@ -123,7 +123,7 @@
         "validation": {
           "required": "Este campo es obligatorio.",
           "invalid-email": "Ingresa un correo electrónico válido.",
-          "invalid-phone-number": "Ingresa un número de teléfono de Ecuador válido (09XXXXXXXX).",
+          "invalid-phone-number": "Ingresa un número de teléfono válido (ej. +5939XXXXXXXX).",
           "accepted-terms-required": "Debes aceptar los términos y condiciones.",
           "email-required": "El correo electrónico es obligatorio.",
           "email-duplicate": "Este correo electrónico ya está registrado para este evento.",
@@ -148,6 +148,7 @@
           },
           "participant-type": {
             "label": "Tipo de participante",
+            "description": "Indica si participas como estudiante o profesional.",
             "options": {
               "student": "Estudiante",
               "professional": "Profesional"
@@ -167,6 +168,7 @@
           },
           "attendance-mode": {
             "label": "Modalidad de asistencia",
+            "description": "Elige cómo planeas participar en el evento.",
             "options": {
               "in-person": "Presencial",
               "virtual": "Virtual"
@@ -174,6 +176,7 @@
           },
           "heard-about-event": {
             "label": "¿Cómo te enteraste del evento?",
+            "description": "Elige la opción que mejor describa cómo nos conociste.",
             "options": {
               "friend": "Amistad",
               "flyer": "Volante",
