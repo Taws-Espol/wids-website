@@ -226,6 +226,251 @@
           "copy-and-paste-label": "If the button does not work, copy and paste this link into your browser:",
           "footer-note": "You are receiving this reminder because you registered for a WiDS Guayaquil conference."
         }
+      },
+      "datathon-form": {
+        "container": {
+          "title": "Datathon registration",
+          "description": "Complete the form to register your team."
+        },
+        "actions": {
+          "submit": "Register team",
+          "close": "Close form"
+        },
+        "states": {
+          "submitting": "Submitting...",
+          "success": "Team registration submitted successfully."
+        },
+        "errors": {
+          "schema-validation": "Please review the highlighted fields and try again.",
+          "payload-validation": "This registration could not be saved. Please review your data and try again.",
+          "bank-voucher-upload-failed": "We could not upload your bank voucher. Please try again.",
+          "unknown": "We could not complete your registration. Please try again."
+        },
+        "validation": {
+          "required": "This field is required.",
+          "invalid-email": "Please enter a valid email address.",
+          "invalid-phone-number": "Please enter a valid phone number that starts with + or a digit, using only digits, spaces, parentheses, or dashes.",
+          "invalid-integer": "Please enter a valid whole number.",
+          "min-members": "At least 1 team member is required.",
+          "max-members": "A team can have at most 3 members.",
+          "member-count-mismatch": "The number of team members must match the member count.",
+          "single-leader-required": "Exactly one team member must be marked as leader.",
+          "min-female-ratio": "At least 50% of team members must be female.",
+          "bank-voucher-required": "Bank voucher is required.",
+          "bank-voucher-invalid-type": "Upload a PDF, JPG, PNG, or WEBP file.",
+          "bank-voucher-max-size": "The bank voucher must be 10 MB or smaller.",
+          "accepted-terms-required": "You must accept the terms and conditions.",
+          "email-required": "Email is required.",
+          "email-duplicate": "An email in this team is already registered for this event.",
+          "team-name-duplicate": "This team name is already registered for this event.",
+          "phone-number-required": "Phone number is required.",
+          "phone-number-duplicate": "A phone number in this team is already registered for this event.",
+          "server-field": "Please verify this field."
+        },
+        "fields": {
+          "team-name": {
+            "label": "Team name"
+          },
+          "member-count": {
+            "label": "Number of team members",
+            "description": "Enter the number of participants in your team (1 to 3)."
+          },
+          "members": {
+            "label": "Team members",
+            "member-title": "Member {index}",
+            "is-leader": {
+              "label": "Team leader"
+            },
+            "first-name": {
+              "label": "First name"
+            },
+            "last-name": {
+              "label": "Last name"
+            },
+            "sex": {
+              "label": "Sex",
+              "options": {
+                "female": "Female",
+                "male": "Male"
+              }
+            },
+            "email": {
+              "label": "Email"
+            },
+            "phone-number": {
+              "label": "Phone number"
+            },
+            "university-name": {
+              "label": "University name"
+            },
+            "major": {
+              "label": "Major"
+            },
+            "year": {
+              "label": "Year",
+              "options": {
+                "freshman": "Freshman",
+                "sophomore": "Sophomore",
+                "junior": "Junior",
+                "senior": "Senior",
+                "graduate": "Graduate",
+                "other": "Other"
+              }
+            }
+          },
+          "bank-voucher": {
+            "label": "Bank voucher",
+            "description": "Upload your payment voucher (PDF or image, max 10 MB)."
+          },
+          "heard-about-event": {
+            "label": "How did you hear about the event?",
+            "description": "Choose the option that best matches how you found us.",
+            "options": {
+              "friend": "A friend",
+              "flyer": "Flyer",
+              "social-media": "Social media",
+              "email": "Email",
+              "website": "Website",
+              "university": "University",
+              "workplace": "Workplace",
+              "other": "Other"
+            }
+          },
+          "receive-notifications": {
+            "label": "I would like to receive notifications",
+            "description": "You can unsubscribe from notifications at any time."
+          },
+          "accepted-terms": {
+            "label": "I accept the terms and conditions"
+          }
+        }
+      },
+      "datathon-emails": {
+        "confirmation": {
+          "subject": "WiDS Guayaquil | Datathon registration confirmed",
+          "preview": "Your WiDS Guayaquil Datathon team registration is confirmed",
+          "heading": "Your team is registered",
+          "greeting": "Hello",
+          "description": "Thank you for registering your team for Datathon. Save the event details below and we will see you there.",
+          "team-name-label": "Team:",
+          "event-date-label": "Date:",
+          "event-location-label": "Location:",
+          "cta": "View Datathon page",
+          "copy-and-paste-label": "If the button does not work, copy and paste this link into your browser:",
+          "footer-note": "You are receiving this email because you completed a Datathon team registration on WiDS Guayaquil."
+        },
+        "reminder": {
+          "subject": "WiDS Guayaquil | Reminder: Datathon is tomorrow",
+          "preview": "WiDS Guayaquil Datathon starts in 1 day",
+          "heading": "Reminder: Datathon is tomorrow",
+          "greeting": "Hello",
+          "description": "This is a reminder that your registered Datathon starts in less than 24 hours.",
+          "emphasis": "Please arrive a few minutes early to complete your check-in.",
+          "team-name-label": "Team:",
+          "event-date-label": "Date:",
+          "event-location-label": "Location:",
+          "cta": "Review Datathon details",
+          "copy-and-paste-label": "If the button does not work, copy and paste this link into your browser:",
+          "footer-note": "You are receiving this reminder because your team is registered for a WiDS Guayaquil Datathon event."
+        }
+      },
+      "nextgen-form": {
+        "container": {
+          "title": "NextGen registration",
+          "description": "Complete the form to reserve your spot."
+        },
+        "actions": {
+          "submit": "Register",
+          "close": "Close form"
+        },
+        "states": {
+          "submitting": "Submitting...",
+          "success": "Registration submitted successfully."
+        },
+        "errors": {
+          "schema-validation": "Please review the highlighted fields and try again.",
+          "payload-validation": "This registration could not be saved. Please review your data and try again.",
+          "unknown": "We could not complete your registration. Please try again."
+        },
+        "validation": {
+          "required": "This field is required.",
+          "invalid-email": "Please enter a valid email address.",
+          "invalid-phone-number": "Please enter a valid phone number that starts with + or a digit, using only digits, spaces, parentheses, or dashes.",
+          "invalid-integer": "Please enter a valid whole number.",
+          "min-attendees": "Must be at least 1.",
+          "accepted-terms-required": "You must accept the terms and conditions.",
+          "email-required": "Email is required.",
+          "email-duplicate": "This email is already registered for this event.",
+          "phone-number-required": "Phone number is required.",
+          "phone-number-duplicate": "This phone number is already registered for this event.",
+          "server-field": "Please verify this field."
+        },
+        "fields": {
+          "affiliation": {
+            "label": "Institution"
+          },
+          "affiliation-city": {
+            "label": "Institution city"
+          },
+          "email": {
+            "label": "Email"
+          },
+          "phone-number": {
+            "label": "Phone number"
+          },
+          "expected-attendees": {
+            "label": "Number of people expected to attend",
+            "description": "Enter the expected number of attendees."
+          },
+          "heard-about-event": {
+            "label": "How did you hear about the event?",
+            "description": "Choose the option that best matches how you found us.",
+            "options": {
+              "friend": "A friend",
+              "flyer": "Flyer",
+              "social-media": "Social media",
+              "email": "Email",
+              "website": "Website",
+              "university": "University",
+              "workplace": "Workplace",
+              "other": "Other"
+            }
+          },
+          "receive-notifications": {
+            "label": "I would like to receive notifications",
+            "description": "You can unsubscribe from notifications at any time."
+          },
+          "accepted-terms": {
+            "label": "I accept the terms and conditions"
+          }
+        }
+      },
+      "nextgen-emails": {
+        "confirmation": {
+          "subject": "WiDS Guayaquil | NextGen registration confirmed",
+          "preview": "Your WiDS Guayaquil NextGen registration is confirmed",
+          "heading": "Your registration is confirmed",
+          "greeting": "Hello",
+          "description": "Thank you for registering your institution for NextGen. Save the event details below and we will see you there.",
+          "event-date-label": "Date:",
+          "event-location-label": "Location:",
+          "cta": "View NextGen page",
+          "copy-and-paste-label": "If the button does not work, copy and paste this link into your browser:",
+          "footer-note": "You are receiving this email because you completed a registration on WiDS Guayaquil."
+        },
+        "reminder": {
+          "subject": "WiDS Guayaquil | Reminder: NextGen is tomorrow",
+          "preview": "WiDS Guayaquil NextGen starts in 1 day",
+          "heading": "Reminder: NextGen is tomorrow",
+          "greeting": "Hello",
+          "description": "This is a reminder that your registered NextGen event starts in less than 24 hours.",
+          "emphasis": "Please arrive a few minutes early to complete your check-in.",
+          "event-date-label": "Date:",
+          "event-location-label": "Location:",
+          "cta": "Review NextGen details",
+          "copy-and-paste-label": "If the button does not work, copy and paste this link into your browser:",
+          "footer-note": "You are receiving this reminder because you registered an institution for a WiDS Guayaquil NextGen event."
+        }
       }
     }
   }

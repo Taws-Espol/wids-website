@@ -223,6 +223,349 @@
           "copy-and-paste-label": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
           "footer-note": "Recibes este recordatorio porque te registraste en una conferencia de WiDS Guayaquil."
         }
+      },
+      "nextgen-form": {
+        "container": {
+          "title": "Registro a NextGen",
+          "description": "Completa el formulario para reservar tu cupo."
+        },
+        "actions": {
+          "submit": "Registrarse",
+          "close": "Cerrar formulario de registro"
+        },
+        "states": {
+          "submitting": "Enviando...",
+          "success": "Registro enviado con éxito."
+        },
+        "errors": {
+          "schema-validation": "Revisa los campos resaltados e inténtalo nuevamente.",
+          "payload-validation": "No se pudo guardar este registro. Revisa los datos e inténtalo nuevamente.",
+          "unknown": "No pudimos completar tu registro. Inténtalo nuevamente."
+        },
+        "validation": {
+          "required": "Este campo es obligatorio.",
+          "invalid-email": "Ingresa un correo electrónico válido.",
+          "invalid-phone-number": "Ingresa un número de teléfono válido que inicie con + o un dígito, y use solo dígitos, espacios, paréntesis o guiones.",
+          "invalid-integer": "Ingresa un número entero válido.",
+          "min-attendees": "Debe ser al menos 1.",
+          "accepted-terms-required": "Debes aceptar los términos y condiciones.",
+          "email-required": "El correo electrónico es obligatorio.",
+          "email-duplicate": "Este correo electrónico ya está registrado para este evento.",
+          "phone-number-required": "El número de teléfono es obligatorio.",
+          "phone-number-duplicate": "Este número de teléfono ya está registrado para este evento.",
+          "server-field": "Verifica este campo."
+        },
+        "fields": {
+          "affiliation": {
+            "label": "Institución"
+          },
+          "affiliation-city": {
+            "label": "Ciudad de la institución"
+          },
+          "email": {
+            "label": "Correo electrónico"
+          },
+          "phone-number": {
+            "label": "Número de teléfono"
+          },
+          "expected-attendees": {
+            "label": "Número de personas que asistirán",
+            "description": "Ingresa la cantidad esperada de asistentes."
+          },
+          "heard-about-event": {
+            "label": "¿Cómo te enteraste del evento?",
+            "description": "Elige la opción que mejor describa cómo nos conociste.",
+            "options": {
+              "friend": "Amistad",
+              "flyer": "Volante",
+              "social-media": "Redes sociales",
+              "email": "Correo electrónico",
+              "website": "Sitio web",
+              "university": "Universidad",
+              "workplace": "Lugar de trabajo",
+              "other": "Otro"
+            }
+          },
+          "receive-notifications": {
+            "label": "Deseo recibir notificaciones",
+            "description": "Puedes cancelar las notificaciones en cualquier momento."
+          },
+          "accepted-terms": {
+            "label": "Acepto los términos y condiciones"
+          }
+        }
+      },
+      "nextgen-emails": {
+        "confirmation": {
+          "subject": "WiDS Guayaquil | Registro a NextGen confirmado",
+          "preview": "Tu registro a NextGen de WiDS Guayaquil está confirmado",
+          "heading": "Tu registro fue exitoso",
+          "greeting": "Hola",
+          "description": "Gracias por registrar a tu institución en NextGen. Guarda los detalles del evento y nos vemos pronto.",
+          "event-date-label": "Fecha:",
+          "event-location-label": "Lugar:",
+          "cta": "Ver página de NextGen",
+          "copy-and-paste-label": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
+          "footer-note": "Recibes este correo porque completaste un registro en WiDS Guayaquil."
+        },
+        "reminder": {
+          "subject": "WiDS Guayaquil | Recordatorio: NextGen es mañana",
+          "preview": "NextGen de WiDS Guayaquil inicia en 1 día",
+          "heading": "Recordatorio: NextGen es mañana",
+          "greeting": "Hola",
+          "description": "Te recordamos que el evento NextGen al que te registraste inicia en menos de 24 horas.",
+          "emphasis": "Te recomendamos llegar unos minutos antes para completar tu check-in.",
+          "event-date-label": "Fecha:",
+          "event-location-label": "Lugar:",
+          "cta": "Revisar detalles de NextGen",
+          "copy-and-paste-label": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
+          "footer-note": "Recibes este recordatorio porque registraste una institución en un evento NextGen de WiDS Guayaquil."
+        }
+      },
+      "datathon-form": {
+        "container": {
+          "title": "Registro al Datathon",
+          "description": "Completa el formulario para registrar a tu equipo."
+        },
+        "actions": {
+          "submit": "Registrar equipo",
+          "close": "Cerrar formulario"
+        },
+        "states": {
+          "submitting": "Enviando...",
+          "success": "Registro del equipo enviado con éxito."
+        },
+        "errors": {
+          "schema-validation": "Revisa los campos resaltados e inténtalo nuevamente.",
+          "payload-validation": "No se pudo guardar este registro. Revisa los datos e inténtalo nuevamente.",
+          "bank-voucher-upload-failed": "No pudimos subir el comprobante bancario. Inténtalo nuevamente.",
+          "unknown": "No pudimos completar tu registro. Inténtalo nuevamente."
+        },
+        "validation": {
+          "required": "Este campo es obligatorio.",
+          "invalid-email": "Ingresa un correo electrónico válido.",
+          "invalid-phone-number": "Ingresa un número de teléfono válido que inicie con + o un dígito, y use solo dígitos, espacios, paréntesis o guiones.",
+          "invalid-integer": "Ingresa un número entero válido.",
+          "min-members": "Se requiere al menos 1 integrante en el equipo.",
+          "max-members": "Un equipo puede tener máximo 3 integrantes.",
+          "member-count-mismatch": "La cantidad de integrantes debe coincidir con el número indicado.",
+          "single-leader-required": "Exactamente una persona debe estar marcada como líder del equipo.",
+          "min-female-ratio": "Al menos el 50% de integrantes del equipo deben ser mujeres.",
+          "bank-voucher-required": "El comprobante bancario es obligatorio.",
+          "bank-voucher-invalid-type": "Sube un archivo PDF, JPG, PNG o WEBP.",
+          "bank-voucher-max-size": "El comprobante bancario debe pesar máximo 10 MB.",
+          "accepted-terms-required": "Debes aceptar los términos y condiciones.",
+          "email-required": "El correo electrónico es obligatorio.",
+          "email-duplicate": "Un correo del equipo ya está registrado para este evento.",
+          "team-name-duplicate": "Este nombre de equipo ya está registrado para este evento.",
+          "phone-number-required": "El número de teléfono es obligatorio.",
+          "phone-number-duplicate": "Un número de teléfono del equipo ya está registrado para este evento.",
+          "server-field": "Verifica este campo."
+        },
+        "fields": {
+          "team-name": {
+            "label": "Nombre del equipo"
+          },
+          "member-count": {
+            "label": "Número de integrantes del equipo",
+            "description": "Ingresa la cantidad de participantes de tu equipo (1 a 3)."
+          },
+          "members": {
+            "label": "Integrantes del equipo",
+            "member-title": "Integrante {index}",
+            "is-leader": {
+              "label": "Líder del equipo"
+            },
+            "first-name": {
+              "label": "Nombre"
+            },
+            "last-name": {
+              "label": "Apellido"
+            },
+            "sex": {
+              "label": "Sexo",
+              "options": {
+                "female": "Femenino",
+                "male": "Masculino"
+              }
+            },
+            "email": {
+              "label": "Correo electrónico"
+            },
+            "phone-number": {
+              "label": "Número de teléfono"
+            },
+            "university-name": {
+              "label": "Universidad"
+            },
+            "major": {
+              "label": "Carrera"
+            },
+            "year": {
+              "label": "Nivel",
+              "options": {
+                "freshman": "Primer año",
+                "sophomore": "Segundo año",
+                "junior": "Tercer año",
+                "senior": "Cuarto año",
+                "graduate": "Posgrado",
+                "other": "Otro"
+              }
+            }
+          },
+          "bank-voucher": {
+            "label": "Comprobante bancario",
+            "description": "Sube tu comprobante de pago (PDF o imagen, máximo 10 MB)."
+          },
+          "heard-about-event": {
+            "label": "¿Cómo te enteraste del evento?",
+            "description": "Elige la opción que mejor describa cómo nos conociste.",
+            "options": {
+              "friend": "Amistad",
+              "flyer": "Volante",
+              "social-media": "Redes sociales",
+              "email": "Correo electrónico",
+              "website": "Sitio web",
+              "university": "Universidad",
+              "workplace": "Lugar de trabajo",
+              "other": "Otro"
+            }
+          },
+          "receive-notifications": {
+            "label": "Deseo recibir notificaciones",
+            "description": "Puedes cancelar las notificaciones en cualquier momento."
+          },
+          "accepted-terms": {
+            "label": "Acepto los términos y condiciones"
+          }
+        }
+      },
+      "datathon-emails": {
+        "confirmation": {
+          "subject": "WiDS Guayaquil | Registro al Datathon confirmado",
+          "preview": "El registro de tu equipo al Datathon de WiDS Guayaquil está confirmado",
+          "heading": "Tu equipo está registrado",
+          "greeting": "Hola",
+          "description": "Gracias por registrar a tu equipo en el Datathon. Guarda los detalles del evento y nos vemos pronto.",
+          "team-name-label": "Equipo:",
+          "event-date-label": "Fecha:",
+          "event-location-label": "Lugar:",
+          "cta": "Ver página del Datathon",
+          "copy-and-paste-label": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
+          "footer-note": "Recibes este correo porque completaste un registro de equipo al Datathon en WiDS Guayaquil."
+        },
+        "reminder": {
+          "subject": "WiDS Guayaquil | Recordatorio: Datathon es mañana",
+          "preview": "Datathon de WiDS Guayaquil inicia en 1 día",
+          "heading": "Recordatorio: Datathon es mañana",
+          "greeting": "Hola",
+          "description": "Te recordamos que el Datathon al que registraste a tu equipo inicia en menos de 24 horas.",
+          "emphasis": "Te recomendamos llegar unos minutos antes para completar tu check-in.",
+          "team-name-label": "Equipo:",
+          "event-date-label": "Fecha:",
+          "event-location-label": "Lugar:",
+          "cta": "Revisar detalles del Datathon",
+          "copy-and-paste-label": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
+          "footer-note": "Recibes este recordatorio porque tu equipo está registrado en un Datathon de WiDS Guayaquil."
+        }
+      },
+      "nextgen-form": {
+        "container": {
+          "title": "Registro a NextGen",
+          "description": "Completa el formulario para reservar tu cupo."
+        },
+        "actions": {
+          "submit": "Registrarse",
+          "close": "Cerrar formulario de registro"
+        },
+        "states": {
+          "submitting": "Enviando...",
+          "success": "Registro enviado con éxito."
+        },
+        "errors": {
+          "schema-validation": "Revisa los campos resaltados e inténtalo nuevamente.",
+          "payload-validation": "No se pudo guardar este registro. Revisa los datos e inténtalo nuevamente.",
+          "unknown": "No pudimos completar tu registro. Inténtalo nuevamente."
+        },
+        "validation": {
+          "required": "Este campo es obligatorio.",
+          "invalid-email": "Ingresa un correo electrónico válido.",
+          "invalid-phone-number": "Ingresa un número de teléfono válido que inicie con + o un dígito, y use solo dígitos, espacios, paréntesis o guiones.",
+          "invalid-integer": "Ingresa un número entero válido.",
+          "min-attendees": "Debe ser al menos 1.",
+          "accepted-terms-required": "Debes aceptar los términos y condiciones.",
+          "email-required": "El correo electrónico es obligatorio.",
+          "email-duplicate": "Este correo electrónico ya está registrado para este evento.",
+          "phone-number-required": "El número de teléfono es obligatorio.",
+          "phone-number-duplicate": "Este número de teléfono ya está registrado para este evento.",
+          "server-field": "Verifica este campo."
+        },
+        "fields": {
+          "affiliation": {
+            "label": "Institución"
+          },
+          "affiliation-city": {
+            "label": "Ciudad de la institución"
+          },
+          "email": {
+            "label": "Correo electrónico"
+          },
+          "phone-number": {
+            "label": "Número de teléfono"
+          },
+          "expected-attendees": {
+            "label": "Número de personas que asistirán",
+            "description": "Ingresa la cantidad esperada de asistentes."
+          },
+          "heard-about-event": {
+            "label": "¿Cómo te enteraste del evento?",
+            "description": "Elige la opción que mejor describa cómo nos conociste.",
+            "options": {
+              "friend": "Amistad",
+              "flyer": "Volante",
+              "social-media": "Redes sociales",
+              "email": "Correo electrónico",
+              "website": "Sitio web",
+              "university": "Universidad",
+              "workplace": "Lugar de trabajo",
+              "other": "Otro"
+            }
+          },
+          "receive-notifications": {
+            "label": "Deseo recibir notificaciones",
+            "description": "Puedes cancelar las notificaciones en cualquier momento."
+          },
+          "accepted-terms": {
+            "label": "Acepto los términos y condiciones"
+          }
+        }
+      },
+      "nextgen-emails": {
+        "confirmation": {
+          "subject": "WiDS Guayaquil | Registro a NextGen confirmado",
+          "preview": "Tu registro a NextGen de WiDS Guayaquil está confirmado",
+          "heading": "Tu registro fue exitoso",
+          "greeting": "Hola",
+          "description": "Gracias por registrar a tu institución en NextGen. Guarda los detalles del evento y nos vemos pronto.",
+          "event-date-label": "Fecha:",
+          "event-location-label": "Lugar:",
+          "cta": "Ver página de NextGen",
+          "copy-and-paste-label": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
+          "footer-note": "Recibes este correo porque completaste un registro en WiDS Guayaquil."
+        },
+        "reminder": {
+          "subject": "WiDS Guayaquil | Recordatorio: NextGen es mañana",
+          "preview": "NextGen de WiDS Guayaquil inicia en 1 día",
+          "heading": "Recordatorio: NextGen es mañana",
+          "greeting": "Hola",
+          "description": "Te recordamos que el evento NextGen al que te registraste inicia en menos de 24 horas.",
+          "emphasis": "Te recomendamos llegar unos minutos antes para completar tu check-in.",
+          "event-date-label": "Fecha:",
+          "event-location-label": "Lugar:",
+          "cta": "Revisar detalles de NextGen",
+          "copy-and-paste-label": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
+          "footer-note": "Recibes este recordatorio porque registraste una institución en un evento NextGen de WiDS Guayaquil."
+        }
       }
     }
   }

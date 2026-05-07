@@ -22,6 +22,8 @@ import { Sponsors } from "./src/shared/lib/payload/collections/sponsors.ts";
 import { Users } from "./src/shared/lib/payload/collections/users.ts";
 import { conferenceRegistrationConfirmationTask } from "./src/shared/lib/payload/tasks/conference-registration-confirmation.ts";
 import { conferenceRegistrationReminderTask } from "./src/shared/lib/payload/tasks/conference-registration-reminder.ts";
+import { datathonRegistrationConfirmationTask } from "./src/shared/lib/payload/tasks/datathon-registration-confirmation.ts";
+import { datathonRegistrationReminderTask } from "./src/shared/lib/payload/tasks/datathon-registration-reminder.ts";
 import { getAppUrl } from "./src/shared/utils/get-app-url.ts";
 
 export default buildConfig({
@@ -55,6 +57,8 @@ export default buildConfig({
     tasks: [
       conferenceRegistrationConfirmationTask,
       conferenceRegistrationReminderTask,
+      datathonRegistrationConfirmationTask,
+      datathonRegistrationReminderTask,
     ],
     shouldAutoRun: () => process.env.ENABLE_JOB_WORKERS === "true",
     autoRun: [

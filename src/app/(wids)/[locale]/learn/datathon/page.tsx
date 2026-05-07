@@ -8,7 +8,6 @@ import {
   CheckCircle,
 } from "@hugeicons/core-free-icons";
 
-import { Button } from "@/shared/components/ui/button";
 import {
   TypographyH1,
   TypographyParagraph,
@@ -20,6 +19,7 @@ import { BreadcrumbBanner } from "@/features/landing/components/breadcrumb-banne
 import { Stepper } from "@/features/landing/components/stepper";
 import { PersonCard } from "@/features/landing/components/person-card";
 import { getDatathonPageData } from "@/features/landing/queries/get-datathon-page-data";
+import { DatathonRegistrationDialog } from "@/features/registration/components/datathon-registration-dialog";
 
 export default async function Datathon({
   params,
@@ -49,9 +49,10 @@ export default async function Datathon({
 
             <TypographyParagraph>{event.description}</TypographyParagraph>
 
-            <Button variant="blue" className="self-start">
-              {t("cta")}
-            </Button>
+            <DatathonRegistrationDialog
+              ctaLabel={t("cta")}
+              eventId={event.id}
+            />
           </div>
 
           <div className="relative aspect-1024/683 w-full md:w-1/2">
