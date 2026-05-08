@@ -5,7 +5,7 @@ import createNextIntlPlugin from "next-intl/plugin";
 const nextConfig: NextConfig = {
   reactCompiler: true,
   cacheComponents: true,
-  allowedDevOrigins: ["192.168.0.111"],
+  allowedDevOrigins: ["192.168.0.115"],
   images: {
     localPatterns: [
       {
