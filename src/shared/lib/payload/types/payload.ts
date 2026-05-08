@@ -13,53 +13,53 @@
  * via the `definition` "supportedTimezones".
  */
 export type SupportedTimezones =
-  | "Pacific/Midway"
-  | "Pacific/Niue"
-  | "Pacific/Honolulu"
-  | "Pacific/Rarotonga"
-  | "America/Anchorage"
-  | "Pacific/Gambier"
-  | "America/Los_Angeles"
-  | "America/Tijuana"
-  | "America/Denver"
-  | "America/Phoenix"
-  | "America/Chicago"
-  | "America/Guatemala"
-  | "America/New_York"
-  | "America/Bogota"
-  | "America/Caracas"
-  | "America/Santiago"
-  | "America/Buenos_Aires"
-  | "America/Sao_Paulo"
-  | "Atlantic/South_Georgia"
-  | "Atlantic/Azores"
-  | "Atlantic/Cape_Verde"
-  | "Europe/London"
-  | "Europe/Berlin"
-  | "Africa/Lagos"
-  | "Europe/Athens"
-  | "Africa/Cairo"
-  | "Europe/Moscow"
-  | "Asia/Riyadh"
-  | "Asia/Dubai"
-  | "Asia/Baku"
-  | "Asia/Karachi"
-  | "Asia/Tashkent"
-  | "Asia/Calcutta"
-  | "Asia/Dhaka"
-  | "Asia/Almaty"
-  | "Asia/Jakarta"
-  | "Asia/Bangkok"
-  | "Asia/Shanghai"
-  | "Asia/Singapore"
-  | "Asia/Tokyo"
-  | "Asia/Seoul"
-  | "Australia/Brisbane"
-  | "Australia/Sydney"
-  | "Pacific/Guam"
-  | "Pacific/Noumea"
-  | "Pacific/Auckland"
-  | "Pacific/Fiji";
+  | 'Pacific/Midway'
+  | 'Pacific/Niue'
+  | 'Pacific/Honolulu'
+  | 'Pacific/Rarotonga'
+  | 'America/Anchorage'
+  | 'Pacific/Gambier'
+  | 'America/Los_Angeles'
+  | 'America/Tijuana'
+  | 'America/Denver'
+  | 'America/Phoenix'
+  | 'America/Chicago'
+  | 'America/Guatemala'
+  | 'America/New_York'
+  | 'America/Bogota'
+  | 'America/Caracas'
+  | 'America/Santiago'
+  | 'America/Buenos_Aires'
+  | 'America/Sao_Paulo'
+  | 'Atlantic/South_Georgia'
+  | 'Atlantic/Azores'
+  | 'Atlantic/Cape_Verde'
+  | 'Europe/London'
+  | 'Europe/Berlin'
+  | 'Africa/Lagos'
+  | 'Europe/Athens'
+  | 'Africa/Cairo'
+  | 'Europe/Moscow'
+  | 'Asia/Riyadh'
+  | 'Asia/Dubai'
+  | 'Asia/Baku'
+  | 'Asia/Karachi'
+  | 'Asia/Tashkent'
+  | 'Asia/Calcutta'
+  | 'Asia/Dhaka'
+  | 'Asia/Almaty'
+  | 'Asia/Jakarta'
+  | 'Asia/Bangkok'
+  | 'Asia/Shanghai'
+  | 'Asia/Singapore'
+  | 'Asia/Tokyo'
+  | 'Asia/Seoul'
+  | 'Australia/Brisbane'
+  | 'Australia/Sydney'
+  | 'Pacific/Guam'
+  | 'Pacific/Noumea'
+  | 'Pacific/Auckland'
+  | 'Pacific/Fiji';
 
 export interface Config {
   auth: {
@@ -69,78 +69,63 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
-    "operations-media": OperationsMedia;
+    'operations-media': OperationsMedia;
     editions: Edition;
     events: Event;
-    "conference-registrations": ConferenceRegistration;
-    "datathon-registrations": DatathonRegistration;
-    "nextgen-registrations": NextgenRegistration;
+    'conference-registrations': ConferenceRegistration;
+    'datathon-registrations': DatathonRegistration;
+    'nextgen-registrations': NextgenRegistration;
     schedules: Schedule;
     speakers: Speaker;
     ambassadors: Ambassador;
     sponsors: Sponsor;
     exports: Export;
     imports: Import;
-    "payload-kv": PayloadKv;
-    "payload-jobs": PayloadJob;
-    "payload-locked-documents": PayloadLockedDocument;
-    "payload-preferences": PayloadPreference;
-    "payload-migrations": PayloadMigration;
+    'payload-kv': PayloadKv;
+    'payload-jobs': PayloadJob;
+    'payload-locked-documents': PayloadLockedDocument;
+    'payload-preferences': PayloadPreference;
+    'payload-migrations': PayloadMigration;
   };
   collectionsJoins: {};
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
-    "operations-media":
-      | OperationsMediaSelect<false>
-      | OperationsMediaSelect<true>;
+    'operations-media': OperationsMediaSelect<false> | OperationsMediaSelect<true>;
     editions: EditionsSelect<false> | EditionsSelect<true>;
     events: EventsSelect<false> | EventsSelect<true>;
-    "conference-registrations":
-      | ConferenceRegistrationsSelect<false>
-      | ConferenceRegistrationsSelect<true>;
-    "datathon-registrations":
-      | DatathonRegistrationsSelect<false>
-      | DatathonRegistrationsSelect<true>;
-    "nextgen-registrations":
-      | NextgenRegistrationsSelect<false>
-      | NextgenRegistrationsSelect<true>;
+    'conference-registrations': ConferenceRegistrationsSelect<false> | ConferenceRegistrationsSelect<true>;
+    'datathon-registrations': DatathonRegistrationsSelect<false> | DatathonRegistrationsSelect<true>;
+    'nextgen-registrations': NextgenRegistrationsSelect<false> | NextgenRegistrationsSelect<true>;
     schedules: SchedulesSelect<false> | SchedulesSelect<true>;
     speakers: SpeakersSelect<false> | SpeakersSelect<true>;
     ambassadors: AmbassadorsSelect<false> | AmbassadorsSelect<true>;
     sponsors: SponsorsSelect<false> | SponsorsSelect<true>;
     exports: ExportsSelect<false> | ExportsSelect<true>;
     imports: ImportsSelect<false> | ImportsSelect<true>;
-    "payload-kv": PayloadKvSelect<false> | PayloadKvSelect<true>;
-    "payload-jobs": PayloadJobsSelect<false> | PayloadJobsSelect<true>;
-    "payload-locked-documents":
-      | PayloadLockedDocumentsSelect<false>
-      | PayloadLockedDocumentsSelect<true>;
-    "payload-preferences":
-      | PayloadPreferencesSelect<false>
-      | PayloadPreferencesSelect<true>;
-    "payload-migrations":
-      | PayloadMigrationsSelect<false>
-      | PayloadMigrationsSelect<true>;
+    'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
+    'payload-jobs': PayloadJobsSelect<false> | PayloadJobsSelect<true>;
+    'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
+    'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
+    'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
     defaultIDType: number;
   };
-  fallbackLocale:
-    | ("false" | "none" | "null")
-    | false
-    | null
-    | ("en" | "es")
-    | ("en" | "es")[];
+  fallbackLocale: ('false' | 'none' | 'null') | false | null | ('en' | 'es') | ('en' | 'es')[];
   globals: {};
   globalsSelect: {};
-  locale: "en" | "es";
+  locale: 'en' | 'es';
   widgets: {
     collections: CollectionsWidget;
   };
   user: User;
   jobs: {
     tasks: {
+      'conference-registration-confirmation': TaskConferenceRegistrationConfirmation;
+      'conference-registration-reminder': TaskConferenceRegistrationReminder;
+      'datathon-registration-confirmation': TaskDatathonRegistrationConfirmation;
+      'datathon-registration-reminder': TaskDatathonRegistrationReminder;
       createCollectionExport: TaskCreateCollectionExport;
       createCollectionImport: TaskCreateCollectionImport;
       inline: {
@@ -176,7 +161,7 @@ export interface UserAuthOperations {
 export interface User {
   id: number;
   name: string;
-  role?: ("admin" | "editor" | "viewer") | null;
+  role?: ('admin' | 'editor' | 'viewer') | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -196,7 +181,7 @@ export interface User {
       }[]
     | null;
   password?: string | null;
-  collection: "users";
+  collection: 'users';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -257,7 +242,7 @@ export interface Edition {
 export interface Event {
   id: number;
   edition: number | Edition;
-  type: "conference" | "nextgen" | "datathon";
+  type: 'conference' | 'nextgen' | 'datathon';
   title: string;
   description: string;
   requirements?:
@@ -270,7 +255,7 @@ export interface Event {
   date: string;
   date_tz: SupportedTimezones;
   duration: number;
-  durationUnit: "minutes" | "hours" | "days";
+  durationUnit: 'minutes' | 'hours' | 'days';
   updatedAt: string;
   createdAt: string;
 }
@@ -285,23 +270,15 @@ export interface ConferenceRegistration {
   lastName: string;
   email: string;
   phoneNumber: string;
-  participantType: "student" | "professional";
+  participantType: 'student' | 'professional';
   universityName?: string | null;
   major?: string | null;
   organizationName?: string | null;
   jobTitle?: string | null;
-  attendanceMode: "in-person" | "virtual";
+  attendanceMode: 'in-person' | 'virtual';
   receiveNotifications?: boolean | null;
   acceptedTerms: boolean;
-  heardAboutEvent:
-    | "friend"
-    | "flyer"
-    | "social-media"
-    | "email"
-    | "website"
-    | "university"
-    | "workplace"
-    | "other";
+  heardAboutEvent: 'friend' | 'flyer' | 'social-media' | 'email' | 'website' | 'university' | 'workplace' | 'other';
   updatedAt: string;
   createdAt: string;
 }
@@ -318,26 +295,18 @@ export interface DatathonRegistration {
     isLeader?: boolean | null;
     firstName: string;
     lastName: string;
-    sex: "female" | "male";
+    sex: 'female' | 'male';
     email: string;
     phoneNumber: string;
     universityName: string;
     major: string;
-    year: "freshman" | "sophomore" | "junior" | "senior" | "graduate" | "other";
+    year: 'freshman' | 'sophomore' | 'junior' | 'senior' | 'graduate' | 'other';
     id?: string | null;
   }[];
   bankVoucher: number | OperationsMedia;
   receiveNotifications?: boolean | null;
   acceptedTerms: boolean;
-  heardAboutEvent:
-    | "friend"
-    | "flyer"
-    | "social-media"
-    | "email"
-    | "website"
-    | "university"
-    | "workplace"
-    | "other";
+  heardAboutEvent: 'friend' | 'flyer' | 'social-media' | 'email' | 'website' | 'university' | 'workplace' | 'other';
   updatedAt: string;
   createdAt: string;
 }
@@ -355,15 +324,7 @@ export interface NextgenRegistration {
   expectedAttendees: number;
   receiveNotifications?: boolean | null;
   acceptedTerms: boolean;
-  heardAboutEvent:
-    | "friend"
-    | "flyer"
-    | "social-media"
-    | "email"
-    | "website"
-    | "university"
-    | "workplace"
-    | "other";
+  heardAboutEvent: 'friend' | 'flyer' | 'social-media' | 'email' | 'website' | 'university' | 'workplace' | 'other';
   updatedAt: string;
   createdAt: string;
 }
@@ -374,14 +335,14 @@ export interface NextgenRegistration {
 export interface Schedule {
   id: number;
   event: number | Event;
-  type: "activity" | "talk" | "workshop";
+  type: 'activity' | 'talk' | 'workshop';
   title: string;
   description?: string | null;
   speaker?: (number | null) | Speaker;
   startTime: string;
   startTime_tz: SupportedTimezones;
   duration: number;
-  durationUnit: "minutes" | "hours";
+  durationUnit: 'minutes' | 'hours';
   location: string;
   updatedAt: string;
   createdAt: string;
@@ -409,7 +370,7 @@ export interface Speaker {
 export interface Ambassador {
   id: number;
   name: string;
-  role: "ambassador" | "co-ambassador";
+  role: 'ambassador' | 'co-ambassador';
   title: string;
   affiliation: string;
   photo: number | Media;
@@ -428,7 +389,7 @@ export interface Sponsor {
   name: string;
   logo: number | Media;
   website?: string | null;
-  tier: "platinum" | "gold" | "silver" | "bronze";
+  tier: 'platinum' | 'gold' | 'silver' | 'bronze';
   edition: number | Edition;
   updatedAt: string;
   createdAt: string;
@@ -440,14 +401,14 @@ export interface Sponsor {
 export interface Export {
   id: number;
   name?: string | null;
-  format: "csv" | "json";
+  format: 'csv' | 'json';
   limit?: number | null;
   page?: number | null;
   sort?: string | null;
-  sortOrder?: ("asc" | "desc") | null;
-  locale?: ("all" | "en" | "es") | null;
-  drafts?: ("yes" | "no") | null;
-  selectionToUse?: ("currentSelection" | "currentFilters" | "all") | null;
+  sortOrder?: ('asc' | 'desc') | null;
+  locale?: ('all' | 'en' | 'es') | null;
+  drafts?: ('yes' | 'no') | null;
+  selectionToUse?: ('currentSelection' | 'currentFilters' | 'all') | null;
   fields?: string[] | null;
   collectionSlug: string;
   where?:
@@ -478,9 +439,9 @@ export interface Export {
 export interface Import {
   id: number;
   collectionSlug: string;
-  importMode?: ("create" | "update" | "upsert") | null;
+  importMode?: ('create' | 'update' | 'upsert') | null;
   matchField?: string | null;
-  status?: ("pending" | "completed" | "partial" | "failed") | null;
+  status?: ('pending' | 'completed' | 'partial' | 'failed') | null;
   summary?: {
     imported?: number | null;
     updated?: number | null;
@@ -578,9 +539,13 @@ export interface PayloadJob {
         executedAt: string;
         completedAt: string;
         taskSlug:
-          | "inline"
-          | "createCollectionExport"
-          | "createCollectionImport";
+          | 'inline'
+          | 'conference-registration-confirmation'
+          | 'conference-registration-reminder'
+          | 'datathon-registration-confirmation'
+          | 'datathon-registration-reminder'
+          | 'createCollectionExport'
+          | 'createCollectionImport';
         taskID: string;
         input?:
           | {
@@ -600,7 +565,7 @@ export interface PayloadJob {
           | number
           | boolean
           | null;
-        state: "failed" | "succeeded";
+        state: 'failed' | 'succeeded';
         error?:
           | {
               [k: string]: unknown;
@@ -614,7 +579,15 @@ export interface PayloadJob {
       }[]
     | null;
   taskSlug?:
-    | ("inline" | "createCollectionExport" | "createCollectionImport")
+    | (
+        | 'inline'
+        | 'conference-registration-confirmation'
+        | 'conference-registration-reminder'
+        | 'datathon-registration-confirmation'
+        | 'datathon-registration-reminder'
+        | 'createCollectionExport'
+        | 'createCollectionImport'
+      )
     | null;
   queue?: string | null;
   waitUntil?: string | null;
@@ -630,56 +603,56 @@ export interface PayloadLockedDocument {
   id: number;
   document?:
     | ({
-        relationTo: "users";
+        relationTo: 'users';
         value: number | User;
       } | null)
     | ({
-        relationTo: "media";
+        relationTo: 'media';
         value: number | Media;
       } | null)
     | ({
-        relationTo: "operations-media";
+        relationTo: 'operations-media';
         value: number | OperationsMedia;
       } | null)
     | ({
-        relationTo: "editions";
+        relationTo: 'editions';
         value: number | Edition;
       } | null)
     | ({
-        relationTo: "events";
+        relationTo: 'events';
         value: number | Event;
       } | null)
     | ({
-        relationTo: "conference-registrations";
+        relationTo: 'conference-registrations';
         value: number | ConferenceRegistration;
       } | null)
     | ({
-        relationTo: "datathon-registrations";
+        relationTo: 'datathon-registrations';
         value: number | DatathonRegistration;
       } | null)
     | ({
-        relationTo: "nextgen-registrations";
+        relationTo: 'nextgen-registrations';
         value: number | NextgenRegistration;
       } | null)
     | ({
-        relationTo: "schedules";
+        relationTo: 'schedules';
         value: number | Schedule;
       } | null)
     | ({
-        relationTo: "speakers";
+        relationTo: 'speakers';
         value: number | Speaker;
       } | null)
     | ({
-        relationTo: "ambassadors";
+        relationTo: 'ambassadors';
         value: number | Ambassador;
       } | null)
     | ({
-        relationTo: "sponsors";
+        relationTo: 'sponsors';
         value: number | Sponsor;
       } | null);
   globalSlug?: string | null;
   user: {
-    relationTo: "users";
+    relationTo: 'users';
     value: number | User;
   };
   updatedAt: string;
@@ -692,7 +665,7 @@ export interface PayloadLockedDocument {
 export interface PayloadPreference {
   id: number;
   user: {
-    relationTo: "users";
+    relationTo: 'users';
     value: number | User;
   };
   key?: string | null;
@@ -1085,7 +1058,55 @@ export interface CollectionsWidget {
   data?: {
     [k: string]: unknown;
   };
-  width: "full";
+  width: 'full';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TaskConference-registration-confirmation".
+ */
+export interface TaskConferenceRegistrationConfirmation {
+  input: {
+    registrationId: number;
+    eventId: number;
+    locale: 'en' | 'es';
+  };
+  output?: unknown;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TaskConference-registration-reminder".
+ */
+export interface TaskConferenceRegistrationReminder {
+  input: {
+    registrationId: number;
+    eventId: number;
+    locale: 'en' | 'es';
+  };
+  output?: unknown;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TaskDatathon-registration-confirmation".
+ */
+export interface TaskDatathonRegistrationConfirmation {
+  input: {
+    registrationId: number;
+    eventId: number;
+    locale: 'en' | 'es';
+  };
+  output?: unknown;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TaskDatathon-registration-reminder".
+ */
+export interface TaskDatathonRegistrationReminder {
+  input: {
+    registrationId: number;
+    eventId: number;
+    locale: 'en' | 'es';
+  };
+  output?: unknown;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -1097,24 +1118,24 @@ export interface TaskCreateCollectionExport {
     name: string;
     batchSize?: number | null;
     collectionSlug:
-      | "users"
-      | "media"
-      | "operations-media"
-      | "editions"
-      | "events"
-      | "conference-registrations"
-      | "datathon-registrations"
-      | "nextgen-registrations"
-      | "schedules"
-      | "speakers"
-      | "ambassadors"
-      | "sponsors"
-      | "exports"
-      | "imports";
-    drafts?: ("yes" | "no") | null;
+      | 'users'
+      | 'media'
+      | 'operations-media'
+      | 'editions'
+      | 'events'
+      | 'conference-registrations'
+      | 'datathon-registrations'
+      | 'nextgen-registrations'
+      | 'schedules'
+      | 'speakers'
+      | 'ambassadors'
+      | 'sponsors'
+      | 'exports'
+      | 'imports';
+    drafts?: ('yes' | 'no') | null;
     exportCollection: string;
     fields?: string[] | null;
-    format: "csv" | "json";
+    format: 'csv' | 'json';
     limit?: number | null;
     locale?: string | null;
     maxLimit?: number | null;
@@ -1146,7 +1167,7 @@ export interface TaskCreateCollectionImport {
     userCollection?: string | null;
     batchSize?: number | null;
     debug?: boolean | null;
-    defaultVersionStatus?: ("draft" | "published") | null;
+    defaultVersionStatus?: ('draft' | 'published') | null;
     maxLimit?: number | null;
   };
   output?: unknown;
@@ -1159,6 +1180,7 @@ export interface Auth {
   [k: string]: unknown;
 }
 
-declare module "payload" {
+
+declare module 'payload' {
   export interface GeneratedTypes extends Config {}
 }

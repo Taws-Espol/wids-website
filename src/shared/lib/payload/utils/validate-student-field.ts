@@ -4,6 +4,8 @@ import type {
   ValidateOptions,
 } from "payload";
 
+import { CONFERENCE_REGISTRATION_ERROR_CODES } from "@/shared/constants/conference-registration-error-codes";
+
 export const validateStudentField: TextFieldSingleValidation = (
   value,
   {
@@ -14,5 +16,5 @@ export const validateStudentField: TextFieldSingleValidation = (
 
   if (typeof value === "string" && value.trim().length > 0) return true;
 
-  return "This field is required for students.";
+  return CONFERENCE_REGISTRATION_ERROR_CODES.STUDENT_FIELD_REQUIRED;
 };

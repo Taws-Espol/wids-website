@@ -5,6 +5,7 @@ import { Barlow, Barlow_Condensed } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 
+import { Toaster } from "@/shared/components/ui/sonner";
 import { Footer } from "@/shared/components/footer";
 import { Header } from "@/shared/components/header";
 import { routing } from "@/shared/lib/next-intl/routing";
@@ -81,6 +82,7 @@ export default async function RootLayout({
         <NextIntlClientProvider>
           <Header />
           {children}
+          <Toaster />
           <Footer />
         </NextIntlClientProvider>
       </body>

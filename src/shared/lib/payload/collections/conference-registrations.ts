@@ -1,12 +1,35 @@
 import type { CollectionConfig } from "payload";
 
-import { HEARD_ABOUT_OPTIONS } from "../constants/registrations.ts";
+import {
+  ATTENDANCE_MODE_OPTIONS,
+  HEARD_ABOUT_OPTIONS,
+  PARTICIPANT_TYPE_OPTIONS,
+} from "../constants/registrations.ts";
+import {
+  CONFERENCE_REGISTRATION_CONFIRMATION_TASK_SLUG,
+  CONFERENCE_REGISTRATION_REMINDER_TASK_SLUG,
+} from "../constants/slugs.ts";
+import { CONFERENCE_REGISTRATION_ERROR_CODES } from "../../../constants/conference-registration-error-codes.ts";
+import { routing } from "../../next-intl/routing.ts";
+import type { Locale } from "../../next-intl/types.ts";
+import { tryCatch } from "../../../utils/try-catch.ts";
 import { createEventTypeValidationHook } from "../utils/create-event-type-validation.ts";
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
 import { validateProfessionalField } from "../utils/validate-professional-field.ts";
 import { validateStudentField } from "../utils/validate-student-field.ts";
 import { validateUniqueEmailPerEvent } from "../utils/validate-unique-email-per-event.ts";
 import { validateUniquePhoneNumberPerEvent } from "../utils/validate-unique-phone-number-per-event.ts";
+
+const ONE_DAY_IN_MILLISECONDS = 24 * 60 * 60 * 1000;
+
+function getRelationshipId(
+  value: number | { id: number } | null | undefined,
+): number | null {
+  if (value == null) {
+    return null;
+  }
+  return typeof value === "object" ? value.id : value;
+}
 
 export const ConferenceRegistrations: CollectionConfig = {
   slug: "conference-registrations",
@@ -84,16 +107,10 @@ export const ConferenceRegistrations: CollectionConfig = {
       name: "participantType",
       type: "radio",
       required: true,
-      options: [
-        {
-          label: "Student",
-          value: "student",
-        },
-        {
-          label: "Professional",
-          value: "professional",
-        },
-      ],
+      options: PARTICIPANT_TYPE_OPTIONS.map((option) => ({
+        label: option.label,
+        value: option.value,
+      })),
     },
     {
       type: "row",
@@ -142,16 +159,10 @@ export const ConferenceRegistrations: CollectionConfig = {
       type: "radio",
       required: true,
       defaultValue: "in-person",
-      options: [
-        {
-          label: "In person",
-          value: "in-person",
-        },
-        {
-          label: "Virtual",
-          value: "virtual",
-        },
-      ],
+      options: ATTENDANCE_MODE_OPTIONS.map((option) => ({
+        label: option.label,
+        value: option.value,
+      })),
     },
     {
       name: "receiveNotifications",
@@ -165,7 +176,9 @@ export const ConferenceRegistrations: CollectionConfig = {
       required: true,
       label: "I accept the terms and conditions",
       validate: (value) =>
-        value ? true : "You must accept the terms and conditions.",
+        value
+          ? true
+          : CONFERENCE_REGISTRATION_ERROR_CODES.ACCEPTED_TERMS_REQUIRED,
     },
     {
       name: "heardAboutEvent",
@@ -180,5 +193,82 @@ export const ConferenceRegistrations: CollectionConfig = {
   ],
   hooks: {
     beforeValidate: [createEventTypeValidationHook("conference")],
+    afterChange: [
+      async ({ doc, operation, req }) => {
+        if (operation !== "create") {
+          return;
+        }
+
+        const eventId = getRelationshipId(doc.event);
+        if (eventId == null) {
+          req.payload.logger.error({
+            err: new Error("Conference registration created without event id"),
+          });
+          return;
+        }
+
+        const locale =
+          (req.context as { conferenceRegistrationLocale?: Locale } | undefined)
+            ?.conferenceRegistrationLocale ?? routing.defaultLocale;
+
+        const { data: eventData, error: eventError } = await tryCatch(
+          req.payload.findByID({
+            collection: "events",
+            id: eventId,
+            depth: 0,
+            locale,
+            req,
+            select: {
+              date: true,
+              date_tz: true,
+            },
+          }),
+        );
+
+        if (eventError) {
+          req.payload.logger.error({
+            message:
+              "Failed to load event for conference registration email queue.",
+            error: eventError,
+          });
+          throw eventError;
+        }
+
+        const { error: queueError } = await tryCatch(
+          Promise.all([
+            req.payload.jobs.queue({
+              task: CONFERENCE_REGISTRATION_CONFIRMATION_TASK_SLUG,
+              input: {
+                registrationId: doc.id,
+                eventId,
+                locale,
+              },
+              queue: "critical",
+            }),
+            req.payload.jobs.queue({
+              task: CONFERENCE_REGISTRATION_REMINDER_TASK_SLUG,
+              input: {
+                registrationId: doc.id,
+                eventId,
+                locale,
+              },
+              queue: "batch",
+              waitUntil: new Date(
+                new Date(eventData.date).getTime() - ONE_DAY_IN_MILLISECONDS,
+              ),
+            }),
+          ]),
+        );
+
+        if (queueError) {
+          req.payload.logger.error({
+            message:
+              "Unexpected error while queueing mails for conference registration.",
+            error: queueError,
+          });
+          throw queueError;
+        }
+      },
+    ],
   },
 };

@@ -5,6 +5,8 @@ import type {
   ValidateOptions,
 } from "payload";
 
+import { CONFERENCE_REGISTRATION_ERROR_CODES } from "@/shared/constants/conference-registration-error-codes";
+
 export const validateUniquePhoneNumberPerEvent: TextFieldValidation = async (
   value,
   {
@@ -19,7 +21,7 @@ export const validateUniquePhoneNumberPerEvent: TextFieldValidation = async (
     string | null | undefined
   >,
 ) => {
-  if (!value) return "Phone number is required.";
+  if (!value) return CONFERENCE_REGISTRATION_ERROR_CODES.PHONE_REQUIRED;
 
   const event = siblingData?.event;
 
@@ -38,6 +40,6 @@ export const validateUniquePhoneNumberPerEvent: TextFieldValidation = async (
   });
 
   return existing.totalDocs > 0
-    ? "This phone number is already registered for this event"
+    ? CONFERENCE_REGISTRATION_ERROR_CODES.UNIQUE_PHONE_NUMBER
     : true;
 };
