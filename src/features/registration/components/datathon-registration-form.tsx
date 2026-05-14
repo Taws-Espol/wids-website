@@ -26,6 +26,7 @@ import {
   HEARD_ABOUT_OPTIONS,
   SEX_OPTIONS,
 } from "@/shared/lib/payload/constants/registrations";
+import { Link } from "@/shared/components/ui/link";
 
 import { useDatathonRegistrationForm } from "@/features/registration/hooks/use-datathon-registration-form";
 
@@ -83,8 +84,8 @@ export function DatathonRegistrationForm({ eventId, closeDialog }: Props) {
                 <Input
                   id="memberCount"
                   type="number"
-                  min={1}
-                  max={3}
+                  min={3}
+                  max={4}
                   value={field.value ?? ""}
                   onChange={(event) => {
                     const nextValue = event.target.value;
@@ -98,7 +99,7 @@ export function DatathonRegistrationForm({ eventId, closeDialog }: Props) {
                     field.onChange(
                       Number.isNaN(parsedValue)
                         ? null
-                        : Math.min(3, parsedValue),
+                        : Math.min(4, parsedValue),
                     );
                   }}
                   aria-invalid={fieldState.invalid}
@@ -177,7 +178,7 @@ export function DatathonRegistrationForm({ eventId, closeDialog }: Props) {
                     )}
                   />
 
-                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                     <Controller
                       name={`members.${index}.firstName` as const}
                       control={form.control}
@@ -227,9 +228,7 @@ export function DatathonRegistrationForm({ eventId, closeDialog }: Props) {
                         </Field>
                       )}
                     />
-                  </div>
 
-                  <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
                     <Controller
                       name={`members.${index}.sex` as const}
                       control={form.control}
@@ -265,6 +264,137 @@ export function DatathonRegistrationForm({ eventId, closeDialog }: Props) {
                               ))}
                             </SelectContent>
                           </Select>
+
+                          {fieldState.error?.message && (
+                            <FieldError>
+                              {t(fieldState.error.message)}
+                            </FieldError>
+                          )}
+                        </Field>
+                      )}
+                    />
+                  </div>
+
+                  <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
+                    <Controller
+                      name={`members.${index}.email` as const}
+                      control={form.control}
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <FieldLabel htmlFor={`members.${index}.email`}>
+                            {t("fields.members.email.label")}
+                          </FieldLabel>
+
+                          <Input
+                            {...field}
+                            id={`members.${index}.email`}
+                            type="email"
+                            aria-invalid={fieldState.invalid}
+                          />
+
+                          {fieldState.error?.message && (
+                            <FieldError>
+                              {t(fieldState.error.message)}
+                            </FieldError>
+                          )}
+                        </Field>
+                      )}
+                    />
+
+                    <Controller
+                      name={`members.${index}.nationalId` as const}
+                      control={form.control}
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <FieldLabel htmlFor={`members.${index}.nationalId`}>
+                            {t("fields.members.national-id.label")}
+                          </FieldLabel>
+
+                          <Input
+                            {...field}
+                            id={`members.${index}.nationalId`}
+                            type="text"
+                            aria-invalid={fieldState.invalid}
+                          />
+
+                          {fieldState.error?.message && (
+                            <FieldError>
+                              {t(fieldState.error.message)}
+                            </FieldError>
+                          )}
+                        </Field>
+                      )}
+                    />
+
+                    <Controller
+                      name={`members.${index}.phoneNumber` as const}
+                      control={form.control}
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <FieldLabel htmlFor={`members.${index}.phoneNumber`}>
+                            {t("fields.members.phone-number.label")}
+                          </FieldLabel>
+
+                          <Input
+                            {...field}
+                            id={`members.${index}.phoneNumber`}
+                            type="tel"
+                            aria-invalid={fieldState.invalid}
+                          />
+
+                          {fieldState.error?.message && (
+                            <FieldError>
+                              {t(fieldState.error.message)}
+                            </FieldError>
+                          )}
+                        </Field>
+                      )}
+                    />
+                  </div>
+
+                  <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
+                    <Controller
+                      name={`members.${index}.universityName` as const}
+                      control={form.control}
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <FieldLabel
+                            htmlFor={`members.${index}.universityName`}
+                          >
+                            {t("fields.members.university-name.label")}
+                          </FieldLabel>
+
+                          <Input
+                            {...field}
+                            id={`members.${index}.universityName`}
+                            type="text"
+                            aria-invalid={fieldState.invalid}
+                          />
+
+                          {fieldState.error?.message && (
+                            <FieldError>
+                              {t(fieldState.error.message)}
+                            </FieldError>
+                          )}
+                        </Field>
+                      )}
+                    />
+
+                    <Controller
+                      name={`members.${index}.major` as const}
+                      control={form.control}
+                      render={({ field, fieldState }) => (
+                        <Field data-invalid={fieldState.invalid}>
+                          <FieldLabel htmlFor={`members.${index}.major`}>
+                            {t("fields.members.major.label")}
+                          </FieldLabel>
+
+                          <Input
+                            {...field}
+                            id={`members.${index}.major`}
+                            type="text"
+                            aria-invalid={fieldState.invalid}
+                          />
 
                           {fieldState.error?.message && (
                             <FieldError>
@@ -320,112 +450,6 @@ export function DatathonRegistrationForm({ eventId, closeDialog }: Props) {
                       )}
                     />
                   </div>
-
-                  <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
-                    <Controller
-                      name={`members.${index}.email` as const}
-                      control={form.control}
-                      render={({ field, fieldState }) => (
-                        <Field data-invalid={fieldState.invalid}>
-                          <FieldLabel htmlFor={`members.${index}.email`}>
-                            {t("fields.members.email.label")}
-                          </FieldLabel>
-
-                          <Input
-                            {...field}
-                            id={`members.${index}.email`}
-                            type="email"
-                            aria-invalid={fieldState.invalid}
-                          />
-
-                          {fieldState.error?.message && (
-                            <FieldError>
-                              {t(fieldState.error.message)}
-                            </FieldError>
-                          )}
-                        </Field>
-                      )}
-                    />
-
-                    <Controller
-                      name={`members.${index}.phoneNumber` as const}
-                      control={form.control}
-                      render={({ field, fieldState }) => (
-                        <Field data-invalid={fieldState.invalid}>
-                          <FieldLabel htmlFor={`members.${index}.phoneNumber`}>
-                            {t("fields.members.phone-number.label")}
-                          </FieldLabel>
-
-                          <Input
-                            {...field}
-                            id={`members.${index}.phoneNumber`}
-                            type="tel"
-                            aria-invalid={fieldState.invalid}
-                          />
-
-                          {fieldState.error?.message && (
-                            <FieldError>
-                              {t(fieldState.error.message)}
-                            </FieldError>
-                          )}
-                        </Field>
-                      )}
-                    />
-                  </div>
-
-                  <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
-                    <Controller
-                      name={`members.${index}.universityName` as const}
-                      control={form.control}
-                      render={({ field, fieldState }) => (
-                        <Field data-invalid={fieldState.invalid}>
-                          <FieldLabel
-                            htmlFor={`members.${index}.universityName`}
-                          >
-                            {t("fields.members.university-name.label")}
-                          </FieldLabel>
-
-                          <Input
-                            {...field}
-                            id={`members.${index}.universityName`}
-                            type="text"
-                            aria-invalid={fieldState.invalid}
-                          />
-
-                          {fieldState.error?.message && (
-                            <FieldError>
-                              {t(fieldState.error.message)}
-                            </FieldError>
-                          )}
-                        </Field>
-                      )}
-                    />
-
-                    <Controller
-                      name={`members.${index}.major` as const}
-                      control={form.control}
-                      render={({ field, fieldState }) => (
-                        <Field data-invalid={fieldState.invalid}>
-                          <FieldLabel htmlFor={`members.${index}.major`}>
-                            {t("fields.members.major.label")}
-                          </FieldLabel>
-
-                          <Input
-                            {...field}
-                            id={`members.${index}.major`}
-                            type="text"
-                            aria-invalid={fieldState.invalid}
-                          />
-
-                          {fieldState.error?.message && (
-                            <FieldError>
-                              {t(fieldState.error.message)}
-                            </FieldError>
-                          )}
-                        </Field>
-                      )}
-                    />
-                  </div>
                 </div>
               ))}
             </div>
@@ -437,37 +461,6 @@ export function DatathonRegistrationForm({ eventId, closeDialog }: Props) {
             )}
           </FieldSet>
         )}
-
-        <Controller
-          name="bankVoucher"
-          control={form.control}
-          render={({ field, fieldState }) => (
-            <Field className="w-full" data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor="bankVoucher">
-                {t("fields.bank-voucher.label")}
-              </FieldLabel>
-
-              <Input
-                id="bankVoucher"
-                type="file"
-                accept="application/pdf,image/jpeg,image/jpg,image/png,image/webp"
-                onChange={(event) => {
-                  const file = event.target.files?.[0] ?? null;
-                  field.onChange(file);
-                }}
-                aria-invalid={fieldState.invalid}
-              />
-
-              <FieldDescription>
-                {t("fields.bank-voucher.description")}
-              </FieldDescription>
-
-              {fieldState.error?.message && (
-                <FieldError>{t(fieldState.error.message)}</FieldError>
-              )}
-            </Field>
-          )}
-        />
 
         <Controller
           name="heardAboutEvent"
@@ -516,6 +509,39 @@ export function DatathonRegistrationForm({ eventId, closeDialog }: Props) {
               {fieldState.error?.message && (
                 <FieldError>{t(fieldState.error.message)}</FieldError>
               )}
+            </Field>
+          )}
+        />
+
+        <Controller
+          name="allowIndividualsToJoin"
+          control={form.control}
+          render={({ field, fieldState }) => (
+            <Field
+              className="w-full max-w-xs"
+              data-invalid={fieldState.invalid}
+            >
+              <div className="flex items-start gap-2">
+                <Checkbox
+                  id="allowIndividualsToJoin"
+                  name={field.name}
+                  checked={field.value}
+                  onCheckedChange={field.onChange}
+                  aria-invalid={fieldState.invalid}
+                />
+                <div className="flex min-w-0 flex-1 flex-col gap-1.5">
+                  <FieldLabel
+                    className="font-normal"
+                    htmlFor="allowIndividualsToJoin"
+                  >
+                    {t("fields.allow-individuals-to-join.label")}
+                  </FieldLabel>
+
+                  <FieldDescription>
+                    {t("fields.allow-individuals-to-join.description")}
+                  </FieldDescription>
+                </div>
+              </div>
             </Field>
           )}
         />
@@ -570,7 +596,9 @@ export function DatathonRegistrationForm({ eventId, closeDialog }: Props) {
                   aria-invalid={fieldState.invalid}
                 />
                 <FieldLabel className="font-normal" htmlFor="acceptedTerms">
-                  {t("fields.accepted-terms.label")}
+                  <Link href="/terms-and-conditions" target="_blank">
+                    {t("fields.accepted-terms.label")}
+                  </Link>
                 </FieldLabel>
               </div>
 

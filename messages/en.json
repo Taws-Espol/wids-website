@@ -41,6 +41,11 @@
         "co-ambassadors": "Co-Ambassadors",
         "sponsors": "Sponsors"
       },
+      "terms-and-conditions": {
+        "title": "WiDS Guayaquil Terms and Conditions",
+        "subtitle": "Read the terms and conditions to participate in WiDS Guayaquil events",
+        "description": "By registering for any WiDS Guayaquil event, you agree to comply with the following terms and conditions. Please read carefully before completing your registration."
+      },
       "conference": {
         "title": "Conference",
         "cta": "Register",
@@ -227,11 +232,19 @@
           "footer-note": "You are receiving this reminder because you registered for a WiDS Guayaquil conference."
         }
       },
-      "datathon-form": {
-        "container": {
-          "title": "Datathon registration",
-          "description": "Complete the form to register your team."
+      "datathon-dialog": {
+        "title": "Datathon registration",
+        "description": "Complete the form to register your team.",
+        "team": {
+          "cta": "Already have a team?",
+          "description": "If you have a team of 3 to 4 members, you can register together."
         },
+        "individual": {
+          "cta": "Don't have a team?",
+          "description": "If you don't have a team, you can register individually and be assigned to a team."
+        }
+      },
+      "datathon-form": {
         "actions": {
           "submit": "Register team",
           "close": "Close form"
@@ -243,22 +256,19 @@
         "errors": {
           "schema-validation": "Please review the highlighted fields and try again.",
           "payload-validation": "This registration could not be saved. Please review your data and try again.",
-          "bank-voucher-upload-failed": "We could not upload your bank voucher. Please try again.",
           "unknown": "We could not complete your registration. Please try again."
         },
         "validation": {
           "required": "This field is required.",
           "invalid-email": "Please enter a valid email address.",
           "invalid-phone-number": "Please enter a valid phone number that starts with + or a digit, using only digits, spaces, parentheses, or dashes.",
+          "invalid-national-id": "Please enter a valid national ID.",
           "invalid-integer": "Please enter a valid whole number.",
-          "min-members": "At least 1 team member is required.",
-          "max-members": "A team can have at most 3 members.",
+          "min-members": "At least 3 team members are required.",
+          "max-members": "A team can have at most 4 members.",
           "member-count-mismatch": "The number of team members must match the member count.",
           "single-leader-required": "Exactly one team member must be marked as leader.",
           "min-female-ratio": "At least 50% of team members must be female.",
-          "bank-voucher-required": "Bank voucher is required.",
-          "bank-voucher-invalid-type": "Upload a PDF, JPG, PNG, or WEBP file.",
-          "bank-voucher-max-size": "The bank voucher must be 10 MB or smaller.",
           "accepted-terms-required": "You must accept the terms and conditions.",
           "email-required": "Email is required.",
           "email-duplicate": "An email in this team is already registered for this event.",
@@ -273,7 +283,7 @@
           },
           "member-count": {
             "label": "Number of team members",
-            "description": "Enter the number of participants in your team (1 to 3)."
+            "description": "Enter the number of participants in your team (3 to 4)."
           },
           "members": {
             "label": "Team members",
@@ -286,6 +296,9 @@
             },
             "last-name": {
               "label": "Last name"
+            },
+            "national-id": {
+              "label": "National ID number"
             },
             "sex": {
               "label": "Sex",
@@ -318,9 +331,103 @@
               }
             }
           },
-          "bank-voucher": {
-            "label": "Bank voucher",
-            "description": "Upload your payment voucher (PDF or image, max 10 MB)."
+          "heard-about-event": {
+            "label": "How did you hear about the event?",
+            "description": "Choose the option that best matches how you found us.",
+            "options": {
+              "friend": "A friend",
+              "flyer": "Flyer",
+              "social-media": "Social media",
+              "email": "Email",
+              "website": "Website",
+              "university": "University",
+              "workplace": "Workplace",
+              "other": "Other"
+            }
+          },
+          "allow-individuals-to-join": {
+            "label": "Allow individuals to join my team",
+            "description": "If your team has fewer than 4 members, other people will be able to join to complete the team."
+          },
+          "receive-notifications": {
+            "label": "I would like to receive notifications",
+            "description": "You can unsubscribe from notifications at any time."
+          },
+          "accepted-terms": {
+            "label": "I accept the terms and conditions"
+          }
+        }
+      },
+      "datathon-individual-form": {
+        "container": {
+          "title": "Individual Datathon registration",
+          "description": "Complete the form to register individually and be assigned to a team."
+        },
+        "actions": {
+          "submit": "Register without team",
+          "close": "Close form"
+        },
+        "states": {
+          "submitting": "Submitting...",
+          "success": "Registration submitted successfully."
+        },
+        "errors": {
+          "schema-validation": "Please review the highlighted fields and try again.",
+          "payload-validation": "This registration could not be saved. Please review your data and try again.",
+          "unknown": "We could not complete your registration. Please try again."
+        },
+        "validation": {
+          "required": "This field is required.",
+          "invalid-email": "Please enter a valid email address.",
+          "invalid-phone-number": "Please enter a valid phone number that starts with + or a digit, using only digits, spaces, parentheses, or dashes.",
+          "invalid-integer": "Please enter a valid whole number.",
+          "invalid-national-id": "Please enter a valid national ID.",
+          "accepted-terms-required": "You must accept the terms and conditions.",
+          "email-required": "Email is required.",
+          "email-duplicate": "This email is already registered for this event.",
+          "phone-number-required": "Phone number is required.",
+          "phone-number-duplicate": "This phone number is already registered for this event.",
+          "server-field": "Please verify this field."
+        },
+        "fields": {
+          "first-name": {
+            "label": "First name"
+          },
+          "last-name": {
+            "label": "Last name"
+          },
+          "sex": {
+            "label": "Sex",
+            "options": {
+              "female": "Female",
+              "male": "Male"
+            }
+          },
+          "national-id": {
+            "label": "National ID number"
+          },
+          "email": {
+            "label": "Email"
+          },
+          "phone-number": {
+            "label": "Phone number"
+          },
+          "university-name": {
+            "label": "University name"
+          },
+          "major": {
+            "label": "Major"
+          },
+          "year": {
+            "label": "Year",
+            "options": {
+              "freshman": "Freshman",
+              "sophomore": "Sophomore",
+              "junior": "Junior",
+              "senior": "Senior",
+              "graduate": "Graduate",
+              "other": "Other"
+            }
           },
           "heard-about-event": {
             "label": "How did you hear about the event?",

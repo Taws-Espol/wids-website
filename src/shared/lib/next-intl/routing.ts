@@ -30,6 +30,10 @@ export const routing = defineRouting({
       en: "/learn/nextgen",
       es: "/aprender/nextgen",
     },
+    "/terms-and-conditions": {
+      en: "/terms-and-conditions",
+      es: "/terminos-y-condiciones",
+    },
     "/blog": {
       en: "/blog",
       es: "/blog",

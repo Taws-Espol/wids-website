@@ -17,15 +17,24 @@ import {
 } from "@/shared/components/ui/drawer";
 
 import { DatathonRegistrationForm } from "@/features/registration/components/datathon-registration-form";
-import { useDatathonRegistrationCta } from "@/features/registration/hooks/use-datathon-registration-cta";
+import { DatathonRegistrationIndividualForm } from "@/features/registration/components/datathon-registration-individual-form";
+import { useDatathonRegistrationDialog } from "@/features/registration/hooks/use-datathon-registration-dialog";
 
 type Props = {
   ctaLabel: string;
   eventId: number;
+  eventDate: string;
 };
 
-export function DatathonRegistrationDialog({ ctaLabel, eventId }: Props) {
-  const { open, setOpen, isMobile, t } = useDatathonRegistrationCta();
+export function DatathonRegistrationDialog({
+  ctaLabel,
+  eventId,
+  eventDate,
+}: Props) {
+  const { open, setOpen, isMobile, t, isIndividual, setIsIndividual } =
+    useDatathonRegistrationDialog();
+
+  if (new Date(eventDate) <= new Date()) return null;
 
   const triggerButton = (
     <Button variant="blue" className="self-start" onClick={() => setOpen(true)}>
@@ -40,19 +49,40 @@ export function DatathonRegistrationDialog({ ctaLabel, eventId }: Props) {
         <Drawer direction="bottom" open={open} onOpenChange={setOpen}>
           <DrawerContent>
             <DrawerHeader className="mb-8">
-              <DrawerTitle>{t("container.title")}</DrawerTitle>
+              <DrawerTitle>{t("title")}</DrawerTitle>
 
-              <DrawerDescription>
-                {t("container.description")}
-              </DrawerDescription>
+              <DrawerDescription>{t("description")}</DrawerDescription>
             </DrawerHeader>
 
-            <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-4">
+            <div className="flex items-center gap-2 px-8 pb-4">
+              <span className="text-sm">
+                {isIndividual ? t("team.cta") : t("individual.cta")}
+              </span>
+              <span
+                aria-checked={isIndividual}
+                role="switch"
+                className="text-muted-foreground cursor-pointer text-sm hover:underline"
+                onClick={() => setIsIndividual((value) => !value)}
+              >
+                {isIndividual
+                  ? t("team.description")
+                  : t("individual.description")}
+              </span>
+            </div>
+
+            {isIndividual && (
+              <DatathonRegistrationIndividualForm
+                eventId={eventId}
+                closeDialog={() => setOpen(false)}
+              />
+            )}
+
+            {!isIndividual && (
               <DatathonRegistrationForm
                 eventId={eventId}
                 closeDialog={() => setOpen(false)}
               />
-            </div>
+            )}
           </DrawerContent>
         </Drawer>
       </>
@@ -65,14 +95,39 @@ export function DatathonRegistrationDialog({ ctaLabel, eventId }: Props) {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-h-[90dvh] overflow-y-auto">
           <DialogHeader className="p-8">
-            <DialogTitle>{t("container.title")}</DialogTitle>
-            <DialogDescription>{t("container.description")}</DialogDescription>
+            <DialogTitle>{t("title")}</DialogTitle>
+            <DialogDescription>{t("description")}</DialogDescription>
           </DialogHeader>
 
-          <DatathonRegistrationForm
-            eventId={eventId}
-            closeDialog={() => setOpen(false)}
-          />
+          <div className="flex items-center gap-2 px-8 pb-4">
+            <span className="text-sm">
+              {isIndividual ? t("team.cta") : t("individual.cta")}
+            </span>
+            <span
+              aria-checked={isIndividual}
+              role="switch"
+              className="text-muted-foreground cursor-pointer text-sm hover:underline"
+              onClick={() => setIsIndividual((value) => !value)}
+            >
+              {isIndividual
+                ? t("team.description")
+                : t("individual.description")}
+            </span>
+          </div>
+
+          {isIndividual && (
+            <DatathonRegistrationIndividualForm
+              eventId={eventId}
+              closeDialog={() => setOpen(false)}
+            />
+          )}
+
+          {!isIndividual && (
+            <DatathonRegistrationForm
+              eventId={eventId}
+              closeDialog={() => setOpen(false)}
+            />
+          )}
         </DialogContent>
       </Dialog>
     </>

@@ -1,5 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
+import Link from "next/link";
+import { Suspense } from "react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   CalendarIcon,
@@ -49,10 +51,13 @@ export default async function Datathon({
 
             <TypographyParagraph>{event.description}</TypographyParagraph>
 
-            <DatathonRegistrationDialog
-              ctaLabel={t("cta")}
-              eventId={event.id}
-            />
+            <Suspense>
+              <DatathonRegistrationDialog
+                ctaLabel={t("cta")}
+                eventId={event.id}
+                eventDate={event.date}
+              />
+            </Suspense>
           </div>
 
           <div className="relative aspect-1024/683 w-full md:w-1/2">
@@ -72,8 +77,8 @@ export default async function Datathon({
         <section className="flex w-full flex-col items-center justify-center gap-16">
           <TypographyH1>{t("details")}</TypographyH1>
 
-          <div className="flex flex-col gap-8 md:flex-row md:gap-24">
-            <div className="flex flex-col items-center gap-2 text-center">
+          <div className="flex flex-col gap-8 md:flex-row md:flex-wrap md:justify-evenly md:gap-12">
+            <div className="flex flex-1 flex-col items-center gap-2 text-center">
               <HugeiconsIcon
                 icon={CalendarIcon}
                 className="text-w-green-dark size-12"
@@ -88,7 +93,7 @@ export default async function Datathon({
               </TypographyParagraph>
             </div>
 
-            <div className="flex flex-col items-center gap-2 text-center">
+            <div className="flex flex-1 flex-col items-center gap-2 text-center">
               <HugeiconsIcon
                 icon={ClockIcon}
                 className="text-w-green-dark size-12"
@@ -100,11 +105,17 @@ export default async function Datathon({
               </TypographyParagraph>
             </div>
 
-            <div className="flex flex-col items-center gap-2 text-center">
-              <HugeiconsIcon
-                icon={Location01Icon}
-                className="text-w-green-dark size-12"
-              />
+            <div className="flex flex-1 flex-col items-center gap-2 text-center">
+              <Link
+                href={event.locationUrl || "#"}
+                target={event.locationUrl ? "_blank" : undefined}
+                rel={event.locationUrl ? "noopener noreferrer" : undefined}
+              >
+                <HugeiconsIcon
+                  icon={Location01Icon}
+                  className="text-w-green-dark size-12"
+                />
+              </Link>
               <TypographyParagraph>{event.location}</TypographyParagraph>
             </div>
           </div>

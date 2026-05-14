@@ -17,15 +17,22 @@ import {
 } from "@/shared/components/ui/drawer";
 
 import { ConferenceRegistrationForm } from "@/features/registration/components/conference-registration-form";
-import { useConferenceRegistrationCta } from "@/features/registration/hooks/use-conference-registration-cta";
+import { useConferenceRegistrationDialog } from "@/features/registration/hooks/use-conference-registration-dialog";
 
 type Props = {
   ctaLabel: string;
   eventId: number;
+  eventDate: string;
 };
 
-export function ConferenceRegistrationDialog({ ctaLabel, eventId }: Props) {
-  const { open, setOpen, isMobile, t } = useConferenceRegistrationCta();
+export function ConferenceRegistrationDialog({
+  ctaLabel,
+  eventId,
+  eventDate,
+}: Props) {
+  const { open, setOpen, isMobile, t } = useConferenceRegistrationDialog();
+
+  if (new Date(eventDate) <= new Date()) return null;
 
   const triggerButton = (
     <Button
