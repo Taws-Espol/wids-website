@@ -1,8 +1,8 @@
-import { render } from "react-email";
+// import { render } from "react-email";
 import type { CollectionConfig } from "payload";
 
-import ForgotPassword from "../../react-email/forgot-password.tsx";
-import VerifyEmail from "../../react-email/verify-email.tsx";
+// import ForgotPassword from "../../react-email/forgot-password.tsx";
+// import VerifyEmail from "../../react-email/verify-email.tsx";
 import { checkRole } from "../utils/check-role.ts";
 import { ensureFirstUserIsAdmin } from "../utils/ensure-first-user-is-admin.ts";
 import { isAdmin } from "../utils/is-admin.ts";
@@ -12,38 +12,39 @@ import { isAdminOrSelf } from "../utils/is-admin-or-self.ts";
 export const Users: CollectionConfig = {
   slug: "users",
   labels: { singular: "User", plural: "Users" },
-  auth: {
-    verify: {
-      generateEmailSubject: () => "WiDS Guayaquil | Confirm your email address",
-      async generateEmailHTML(args) {
-        const url = `${process.env.APP_URL}/admin/users/verify/${args?.token}`;
+  auth: true,
+  // auth: {
+  //   verify: {
+  //     generateEmailSubject: () => "WiDS Guayaquil | Confirm your email address",
+  //     async generateEmailHTML(args) {
+  //       const url = `${process.env.APP_URL}/admin/users/verify/${args?.token}`;
 
-        const html = await render(
-          VerifyEmail({
-            url,
-            name: args?.user?.name ?? "there",
-          }),
-        );
+  //       const html = await render(
+  //         VerifyEmail({
+  //           url,
+  //           name: args?.user?.name ?? "there",
+  //         }),
+  //       );
 
-        return html;
-      },
-    },
-    forgotPassword: {
-      generateEmailSubject: () => "WiDS Guayaquil | Reset your password",
-      async generateEmailHTML(args) {
-        const url = `${process.env.APP_URL}/admin/reset/${args?.token}`;
+  //       return html;
+  //     },
+  //   },
+  //   forgotPassword: {
+  //     generateEmailSubject: () => "WiDS Guayaquil | Reset your password",
+  //     async generateEmailHTML(args) {
+  //       const url = `${process.env.APP_URL}/admin/reset/${args?.token}`;
 
-        const html = await render(
-          ForgotPassword({
-            url,
-            name: args?.user?.name ?? "there",
-          }),
-        );
+  //       const html = await render(
+  //         ForgotPassword({
+  //           url,
+  //           name: args?.user?.name ?? "there",
+  //         }),
+  //       );
 
-        return html;
-      },
-    },
-  },
+  //       return html;
+  //     },
+  //   },
+  // },
   access: {
     admin: ({ req: { user } }) =>
       checkRole(["admin", "editor", "viewer"], user),

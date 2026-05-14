@@ -173,7 +173,6 @@ export const script = async () => {
         password: "admin",
         name: "Admin",
         role: "admin",
-        _verified: true,
       },
     });
 

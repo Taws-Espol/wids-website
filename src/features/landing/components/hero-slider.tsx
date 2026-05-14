@@ -18,7 +18,7 @@ interface Props {
 
 export function HeroSlider({ events }: Props) {
   return (
-    <section className="relative right-1/2 left-1/2 -mx-[50vw] w-screen max-w-none">
+    <section className="relative right-1/2 left-1/2 mx-[-50vw] w-screen max-w-none">
       <Carousel opts={{ loop: true }} plugins={[Autoplay({ delay: 5000 })]}>
         <CarouselContent>
           {events.map((event, index) => {

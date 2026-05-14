@@ -1,6 +1,6 @@
 import path from "node:path";
 import { postgresAdapter } from "@payloadcms/db-postgres";
-import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
+// import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
 import { importExportPlugin } from "@payloadcms/plugin-import-export";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { s3Storage } from "@payloadcms/storage-s3";
@@ -11,11 +11,11 @@ import { LOCALES } from "./src/shared/lib/next-intl/locales.ts";
 import { Ambassadors } from "./src/shared/lib/payload/collections/ambassadors.ts";
 import { ConferenceRegistrations } from "./src/shared/lib/payload/collections/conference-registrations.ts";
 import { DatathonRegistrations } from "./src/shared/lib/payload/collections/datathon-registrations.ts";
+import { DatathonRegistrationsIndividuals } from "./src/shared/lib/payload/collections/datathon-registrations-individuals.ts";
 import { Editions } from "./src/shared/lib/payload/collections/editions.ts";
 import { Events } from "./src/shared/lib/payload/collections/events.ts";
 import { Media } from "./src/shared/lib/payload/collections/media.ts";
 import { NextgenRegistrations } from "./src/shared/lib/payload/collections/nextgen-registrations.ts";
-import { OperationsMedia } from "./src/shared/lib/payload/collections/operations-media.ts";
 import { Schedules } from "./src/shared/lib/payload/collections/schedules.ts";
 import { Speakers } from "./src/shared/lib/payload/collections/speakers.ts";
 import { Sponsors } from "./src/shared/lib/payload/collections/sponsors.ts";
@@ -25,6 +25,7 @@ import { conferenceRegistrationReminderTask } from "./src/shared/lib/payload/tas
 import { datathonRegistrationConfirmationTask } from "./src/shared/lib/payload/tasks/datathon-registration-confirmation.ts";
 import { datathonRegistrationReminderTask } from "./src/shared/lib/payload/tasks/datathon-registration-reminder.ts";
 import { getAppUrl } from "./src/shared/utils/get-app-url.ts";
+import { TermsAndConditions } from "./src/shared/lib/payload/globals/terms-and-conditions.ts";
 
 export default buildConfig({
   bin: [
@@ -39,14 +40,15 @@ export default buildConfig({
     },
   },
   editor: lexicalEditor(),
+  globals: [TermsAndConditions],
   collections: [
     Users,
     Media,
-    OperationsMedia,
     Editions,
     Events,
     ConferenceRegistrations,
     DatathonRegistrations,
+    DatathonRegistrationsIndividuals,
     NextgenRegistrations,
     Schedules,
     Speakers,
@@ -100,28 +102,12 @@ export default buildConfig({
         forcePathStyle: true,
       },
     }),
-    s3Storage({
-      collections: {
-        "operations-media": {
-          prefix: "operations-assets",
-        },
-      },
-      bucket: process.env.PRIVATE_S3_BUCKET_NAME ?? "",
-      config: {
-        credentials: {
-          accessKeyId: process.env.PRIVATE_S3_ACCESS_KEY_ID ?? "",
-          secretAccessKey: process.env.PRIVATE_S3_SECRET_ACCESS_KEY ?? "",
-        },
-        region: process.env.PRIVATE_S3_REGION ?? "",
-        endpoint: process.env.PRIVATE_S3_ENDPOINT ?? "",
-        forcePathStyle: true,
-      },
-    }),
     importExportPlugin({
       collections: [
         { slug: "users" },
         { slug: "conference-registrations" },
         { slug: "datathon-registrations" },
+        { slug: "datathon-registrations-individuals" },
         { slug: "nextgen-registrations" },
       ],
     }),
@@ -148,18 +134,17 @@ export default buildConfig({
     ),
   },
   serverURL: getAppUrl().origin,
-  email: nodemailerAdapter({
-    skipVerify: true,
-    defaultFromAddress: process.env.DEFAULT_FROM_ADDRESS ?? "",
-    defaultFromName: process.env.DEFAULT_FROM_NAME ?? "",
-    transportOptions: {
-      host: process.env.SMTP_HOST ?? "",
-      port: Number(process.env.SMTP_PORT ?? ""),
-      secure: true,
-      auth: {
-        user: process.env.SMTP_USER ?? "",
-        pass: process.env.SMTP_PASS ?? "",
-      },
-    },
-  }),
+  // email: nodemailerAdapter({
+  //   defaultFromAddress: process.env.DEFAULT_FROM_ADDRESS ?? "",
+  //   defaultFromName: process.env.DEFAULT_FROM_NAME ?? "",
+  //   transportOptions: {
+  //     host: process.env.SMTP_HOST ?? "",
+  //     port: Number(process.env.SMTP_PORT ?? ""),
+  //     secure: true,
+  //     auth: {
+  //       user: process.env.SMTP_USER ?? "",
+  //       pass: process.env.SMTP_PASS ?? "",
+  //     },
+  //   },
+  // }),
 });

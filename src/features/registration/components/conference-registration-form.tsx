@@ -27,6 +27,7 @@ import {
   HEARD_ABOUT_OPTIONS,
   PARTICIPANT_TYPES,
 } from "@/shared/lib/payload/constants/registrations";
+import { Link } from "@/shared/components/ui/link";
 
 import { useConferenceRegistrationForm } from "@/features/registration/hooks/use-conference-registration-form";
 import { TypographyParagraph } from "@/shared/components/ui/typography-paragraph";
@@ -377,7 +378,13 @@ export function ConferenceRegistrationForm({ eventId, closeDialog }: Props) {
                     className="w-full"
                     aria-invalid={fieldState.invalid}
                   >
-                    <SelectValue />
+                    <SelectValue>
+                      {(value) =>
+                        typeof value === "string"
+                          ? t(`fields.heard-about-event.options.${value}`)
+                          : ""
+                      }
+                    </SelectValue>
                   </SelectTrigger>
 
                   <SelectContent>
@@ -454,7 +461,9 @@ export function ConferenceRegistrationForm({ eventId, closeDialog }: Props) {
                     aria-invalid={fieldState.invalid}
                   />
                   <FieldLabel className="font-normal" htmlFor="acceptedTerms">
-                    {t("fields.accepted-terms.label")}
+                    <Link href="/terms-and-conditions" target="_blank">
+                      {t("fields.accepted-terms.label")}
+                    </Link>
                   </FieldLabel>
                 </div>
 

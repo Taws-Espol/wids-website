@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -8,7 +9,7 @@ import {
   CheckCircle,
 } from "@hugeicons/core-free-icons";
 
-import { Button } from "@/shared/components/ui/button";
+// import { Button } from "@/shared/components/ui/button";
 import { TypographyH1 } from "@/shared/components/ui/typography-h1";
 import { TypographyParagraph } from "@/shared/components/ui/typography-paragraph";
 import type { Locale } from "@/shared/lib/next-intl/types";
@@ -47,9 +48,9 @@ export default async function NextGen({
 
             <TypographyParagraph>{event.description}</TypographyParagraph>
 
-            <Button variant="blue" className="self-start">
+            {/* <Button variant="blue" className="self-start">
               {t("cta")}
-            </Button>
+            </Button> */}
           </div>
 
           <div className="relative aspect-49/41 w-full md:w-1/2">
@@ -69,8 +70,8 @@ export default async function NextGen({
         <section className="flex w-full flex-col items-center justify-center gap-16">
           <TypographyH1>{t("details")}</TypographyH1>
 
-          <div className="flex flex-col gap-8 md:flex-row md:gap-24">
-            <div className="flex flex-col items-center gap-2 text-center">
+          <div className="flex flex-col gap-8 md:flex-row md:flex-wrap md:justify-evenly md:gap-12">
+            <div className="flex flex-1 flex-col items-center gap-2 text-center">
               <HugeiconsIcon
                 icon={CalendarIcon}
                 className="text-w-green-dark size-12"
@@ -85,7 +86,7 @@ export default async function NextGen({
               </TypographyParagraph>
             </div>
 
-            <div className="flex flex-col items-center gap-2 text-center">
+            <div className="flex flex-1 flex-col items-center gap-2 text-center">
               <HugeiconsIcon
                 icon={ClockIcon}
                 className="text-w-green-dark size-12"
@@ -97,11 +98,17 @@ export default async function NextGen({
               </TypographyParagraph>
             </div>
 
-            <div className="flex flex-col items-center gap-2 text-center">
-              <HugeiconsIcon
-                icon={Location01Icon}
-                className="text-w-green-dark size-12"
-              />
+            <div className="flex flex-1 flex-col items-center gap-2 text-center">
+              <Link
+                href={event.locationUrl || "#"}
+                target={event.locationUrl ? "_blank" : undefined}
+                rel={event.locationUrl ? "noopener noreferrer" : undefined}
+              >
+                <HugeiconsIcon
+                  icon={Location01Icon}
+                  className="text-w-green-dark size-12"
+                />
+              </Link>
               <TypographyParagraph>{event.location}</TypographyParagraph>
             </div>
           </div>

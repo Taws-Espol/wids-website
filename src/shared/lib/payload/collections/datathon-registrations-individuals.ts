@@ -1,24 +1,24 @@
 import type { CollectionConfig } from "payload";
 
+import { DATATHON_REGISTRATION_ERROR_CODES } from "@/shared/constants/datathon-registration-error-codes";
+
 import {
-  ATTENDANCE_MODE_OPTIONS,
+  COLLEGE_YEAR_OPTIONS,
   HEARD_ABOUT_OPTIONS,
-  PARTICIPANT_TYPE_OPTIONS,
+  SEX_OPTIONS,
 } from "../constants/registrations.ts";
 // import {
-//   CONFERENCE_REGISTRATION_CONFIRMATION_TASK_SLUG,
-//   CONFERENCE_REGISTRATION_REMINDER_TASK_SLUG,
+//   DATATHON_REGISTRATION_CONFIRMATION_TASK_SLUG,
+//   DATATHON_REGISTRATION_REMINDER_TASK_SLUG,
 // } from "../constants/slugs.ts";
-import { CONFERENCE_REGISTRATION_ERROR_CODES } from "../../../constants/conference-registration-error-codes.ts";
 // import { routing } from "../../next-intl/routing.ts";
 // import type { Locale } from "../../next-intl/types.ts";
 // import { tryCatch } from "../../../utils/try-catch.ts";
 import { createEventTypeValidationHook } from "../utils/create-event-type-validation.ts";
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
-import { validateProfessionalField } from "../utils/validate-professional-field.ts";
-import { validateStudentField } from "../utils/validate-student-field.ts";
 import { validateUniqueEmailPerEvent } from "../utils/validate-unique-email-per-event.ts";
 import { validateUniquePhoneNumberPerEvent } from "../utils/validate-unique-phone-number-per-event.ts";
+import { validateValidNationalId } from "../utils/validate-valid-national-id.ts";
 
 // const ONE_DAY_IN_MILLISECONDS = 24 * 60 * 60 * 1000;
 
@@ -28,14 +28,15 @@ import { validateUniquePhoneNumberPerEvent } from "../utils/validate-unique-phon
 //   if (value == null) {
 //     return null;
 //   }
+
 //   return typeof value === "object" ? value.id : value;
 // }
 
-export const ConferenceRegistrations: CollectionConfig = {
-  slug: "conference-registrations",
+export const DatathonRegistrationsIndividuals: CollectionConfig = {
+  slug: "datathon-registrations-individuals",
   labels: {
-    singular: "Conference Registration",
-    plural: "Conference Registrations",
+    singular: "Datathon Registration (Individuals)",
+    plural: "Datathon Registrations (Individuals)",
   },
   access: {
     create: () => true,
@@ -46,14 +47,14 @@ export const ConferenceRegistrations: CollectionConfig = {
   admin: {
     group: "Operations",
     defaultColumns: [
+      "event",
       "firstName",
       "lastName",
-      "email",
-      "event",
-      "attendanceMode",
+      "isAssignedToTeam",
       "createdAt",
+      "updatedAt",
     ],
-    useAsTitle: "email",
+    useAsTitle: "firstName",
   },
   fields: [
     {
@@ -63,7 +64,7 @@ export const ConferenceRegistrations: CollectionConfig = {
       required: true,
       filterOptions: {
         type: {
-          equals: "conference",
+          equals: "datathon",
         },
       },
     },
@@ -74,13 +75,24 @@ export const ConferenceRegistrations: CollectionConfig = {
           name: "firstName",
           type: "text",
           required: true,
-          admin: { width: "50%" },
+          label: "First name",
+          admin: { width: "33%" },
         },
         {
           name: "lastName",
           type: "text",
+          label: "Last name",
+          admin: { width: "33%" },
+        },
+        {
+          name: "sex",
+          type: "select",
           required: true,
-          admin: { width: "50%" },
+          options: SEX_OPTIONS.map((option) => ({
+            label: option.label,
+            value: option.value,
+          })),
+          admin: { width: "33%" },
         },
       ],
     },
@@ -91,78 +103,60 @@ export const ConferenceRegistrations: CollectionConfig = {
           name: "email",
           type: "email",
           required: true,
-          admin: { width: "50%" },
+          admin: { width: "33%" },
           validate: validateUniqueEmailPerEvent,
+        },
+        {
+          name: "nationalId",
+          type: "text",
+          required: true,
+          admin: { width: "33%" },
+          validate: validateValidNationalId,
         },
         {
           name: "phoneNumber",
           type: "text",
           required: true,
-          admin: { width: "50%" },
+          admin: { width: "33%" },
           validate: validateUniquePhoneNumberPerEvent,
         },
       ],
     },
     {
-      name: "participantType",
-      type: "radio",
-      required: true,
-      options: PARTICIPANT_TYPE_OPTIONS.map((option) => ({
-        label: option.label,
-        value: option.value,
-      })),
-    },
-    {
       type: "row",
-      admin: {
-        condition: (_, siblingData) =>
-          siblingData?.participantType === "student",
-      },
       fields: [
         {
           name: "universityName",
           type: "text",
-          validate: validateStudentField,
-          admin: { width: "50%" },
+          required: true,
+
+          admin: { width: "33%" },
         },
         {
           name: "major",
           type: "text",
-          validate: validateStudentField,
-          admin: { width: "50%" },
+          required: true,
+          admin: { width: "33%" },
+        },
+        {
+          name: "year",
+          type: "select",
+          required: true,
+          options: COLLEGE_YEAR_OPTIONS.map((option) => ({
+            label: option.label,
+            value: option.value,
+          })),
+          admin: { width: "33%" },
         },
       ],
     },
     {
-      type: "row",
+      name: "isAssignedToTeam",
+      type: "checkbox",
+      defaultValue: false,
       admin: {
-        condition: (_, siblingData) =>
-          siblingData?.participantType === "professional",
+        position: "sidebar",
       },
-      fields: [
-        {
-          name: "organizationName",
-          type: "text",
-          validate: validateProfessionalField,
-          admin: { width: "50%" },
-        },
-        {
-          name: "jobTitle",
-          type: "text",
-          validate: validateProfessionalField,
-          admin: { width: "50%" },
-        },
-      ],
-    },
-    {
-      name: "attendanceMode",
-      type: "radio",
-      required: true,
-      defaultValue: "in-person",
-      options: ATTENDANCE_MODE_OPTIONS.map((option) => ({
-        label: option.label,
-        value: option.value,
-      })),
     },
     {
       name: "receiveNotifications",
@@ -178,7 +172,7 @@ export const ConferenceRegistrations: CollectionConfig = {
       validate: (value) =>
         value
           ? true
-          : CONFERENCE_REGISTRATION_ERROR_CODES.ACCEPTED_TERMS_REQUIRED,
+          : DATATHON_REGISTRATION_ERROR_CODES.ACCEPTED_TERMS_REQUIRED,
     },
     {
       name: "heardAboutEvent",
@@ -192,7 +186,7 @@ export const ConferenceRegistrations: CollectionConfig = {
     },
   ],
   hooks: {
-    beforeValidate: [createEventTypeValidationHook("conference")],
+    beforeValidate: [createEventTypeValidationHook("datathon")],
     // afterChange: [
     //   async ({ doc, operation, req }) => {
     //     if (operation !== "create") {
@@ -202,14 +196,14 @@ export const ConferenceRegistrations: CollectionConfig = {
     //     const eventId = getRelationshipId(doc.event);
     //     if (eventId == null) {
     //       req.payload.logger.error({
-    //         err: new Error("Conference registration created without event id"),
+    //         err: new Error("Datathon registration created without event id"),
     //       });
     //       return;
     //     }
 
     //     const locale =
-    //       (req.context as { conferenceRegistrationLocale?: Locale } | undefined)
-    //         ?.conferenceRegistrationLocale ?? routing.defaultLocale;
+    //       (req.context as { datathonRegistrationLocale?: Locale } | undefined)
+    //         ?.datathonRegistrationLocale ?? routing.defaultLocale;
 
     //     const { data: eventData, error: eventError } = await tryCatch(
     //       req.payload.findByID({
@@ -228,7 +222,7 @@ export const ConferenceRegistrations: CollectionConfig = {
     //     if (eventError) {
     //       req.payload.logger.error({
     //         message:
-    //           "Failed to load event for conference registration email queue.",
+    //           "Failed to load event for Datathon registration email queue.",
     //         error: eventError,
     //       });
     //       throw eventError;
@@ -237,7 +231,7 @@ export const ConferenceRegistrations: CollectionConfig = {
     //     const { error: queueError } = await tryCatch(
     //       Promise.all([
     //         req.payload.jobs.queue({
-    //           task: CONFERENCE_REGISTRATION_CONFIRMATION_TASK_SLUG,
+    //           task: DATATHON_REGISTRATION_CONFIRMATION_TASK_SLUG,
     //           input: {
     //             registrationId: doc.id,
     //             eventId,
@@ -246,7 +240,7 @@ export const ConferenceRegistrations: CollectionConfig = {
     //           queue: "critical",
     //         }),
     //         req.payload.jobs.queue({
-    //           task: CONFERENCE_REGISTRATION_REMINDER_TASK_SLUG,
+    //           task: DATATHON_REGISTRATION_REMINDER_TASK_SLUG,
     //           input: {
     //             registrationId: doc.id,
     //             eventId,
@@ -263,7 +257,7 @@ export const ConferenceRegistrations: CollectionConfig = {
     //     if (queueError) {
     //       req.payload.logger.error({
     //         message:
-    //           "Unexpected error while queueing mails for conference registration.",
+    //           "Unexpected error while queueing mails for Datathon registration.",
     //         error: queueError,
     //       });
     //       throw queueError;
