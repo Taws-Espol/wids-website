@@ -38,6 +38,11 @@
         "co-ambassadors": "Co-Embajadoras",
         "sponsors": "Patrocinadores"
       },
+      "terms-and-conditions": {
+        "title": "Términos y condiciones de WiDS Guayaquil",
+        "subtitle": "Lee los términos y condiciones para participar en los eventos de WiDS Guayaquil",
+        "description": "Al registrarte en cualquier evento de WiDS Guayaquil, aceptas cumplir con los siguientes términos y condiciones. Por favor, lee cuidadosamente antes de completar tu registro."
+      },
       "conference": {
         "title": "Conferencia",
         "cta": "Registrarse",
@@ -338,7 +343,6 @@
         "errors": {
           "schema-validation": "Revisa los campos resaltados e inténtalo nuevamente.",
           "payload-validation": "No se pudo guardar este registro. Revisa los datos e inténtalo nuevamente.",
-          "bank-voucher-upload-failed": "No pudimos subir el comprobante bancario. Inténtalo nuevamente.",
           "unknown": "No pudimos completar tu registro. Inténtalo nuevamente."
         },
         "validation": {
@@ -346,14 +350,12 @@
           "invalid-email": "Ingresa un correo electrónico válido.",
           "invalid-phone-number": "Ingresa un número de teléfono válido que inicie con + o un dígito, y use solo dígitos, espacios, paréntesis o guiones.",
           "invalid-integer": "Ingresa un número entero válido.",
-          "min-members": "Se requiere al menos 1 integrante en el equipo.",
-          "max-members": "Un equipo puede tener máximo 3 integrantes.",
+          "invalid-national-id": "Ingresa un ID nacional válido.",
+          "min-members": "Se requiere al menos 3 integrantes en el equipo.",
+          "max-members": "Un equipo puede tener máximo 4 integrantes.",
           "member-count-mismatch": "La cantidad de integrantes debe coincidir con el número indicado.",
           "single-leader-required": "Exactamente una persona debe estar marcada como líder del equipo.",
           "min-female-ratio": "Al menos el 50% de integrantes del equipo deben ser mujeres.",
-          "bank-voucher-required": "El comprobante bancario es obligatorio.",
-          "bank-voucher-invalid-type": "Sube un archivo PDF, JPG, PNG o WEBP.",
-          "bank-voucher-max-size": "El comprobante bancario debe pesar máximo 10 MB.",
           "accepted-terms-required": "Debes aceptar los términos y condiciones.",
           "email-required": "El correo electrónico es obligatorio.",
           "email-duplicate": "Un correo del equipo ya está registrado para este evento.",
@@ -368,7 +370,7 @@
           },
           "member-count": {
             "label": "Número de integrantes del equipo",
-            "description": "Ingresa la cantidad de participantes de tu equipo (1 a 3)."
+            "description": "Ingresa la cantidad de participantes de tu equipo (3 a 4)."
           },
           "members": {
             "label": "Integrantes del equipo",
@@ -392,6 +394,9 @@
             "email": {
               "label": "Correo electrónico"
             },
+            "national-id": {
+              "label": "Número de cédula"
+            },
             "phone-number": {
               "label": "Número de teléfono"
             },
@@ -413,9 +418,111 @@
               }
             }
           },
-          "bank-voucher": {
-            "label": "Comprobante bancario",
-            "description": "Sube tu comprobante de pago (PDF o imagen, máximo 10 MB)."
+          "heard-about-event": {
+            "label": "¿Cómo te enteraste del evento?",
+            "description": "Elige la opción que mejor describa cómo nos conociste.",
+            "options": {
+              "friend": "Amistad",
+              "flyer": "Volante",
+              "social-media": "Redes sociales",
+              "email": "Correo electrónico",
+              "website": "Sitio web",
+              "university": "Universidad",
+              "workplace": "Lugar de trabajo",
+              "other": "Otro"
+            }
+          },
+          "allow-individuals-to-join": {
+            "label": "Permitir que individuos se unan a mi equipo",
+            "description": "Si tu equipo tiene menos de 4 integrantes, otras personas podrán unirse para completar el equipo."
+          },
+          "receive-notifications": {
+            "label": "Deseo recibir notificaciones",
+            "description": "Puedes cancelar las notificaciones en cualquier momento."
+          },
+          "accepted-terms": {
+            "label": "Acepto los términos y condiciones"
+          }
+        }
+      },
+      "datathon-dialog": {
+        "title": "Registro al Datathon",
+        "description": "Completa el formulario para registrar a tu equipo.",
+        "team": {
+          "cta": "¿Ya tienes un equipo?",
+          "description": "Si tienes un equipo de 3 a 4 integrantes, puedes registrarse juntos."
+        },
+        "individual": {
+          "cta": "¿No tienes un equipo?",
+          "description": "Si no tienes un equipo, puedes registrarte individualmente y ser asignado a un equipo."
+        }
+      },
+      "datathon-individual-form": {
+        "actions": {
+          "submit": "Registrarme sin equipo",
+          "close": "Cerrar formulario"
+        },
+        "states": {
+          "submitting": "Enviando...",
+          "success": "Registro enviado con éxito."
+        },
+        "errors": {
+          "schema-validation": "Revisa los campos resaltados e inténtalo nuevamente.",
+          "payload-validation": "No se pudo guardar este registro. Revisa los datos e inténtalo nuevamente.",
+          "unknown": "No pudimos completar tu registro. Inténtalo nuevamente."
+        },
+        "validation": {
+          "required": "Este campo es obligatorio.",
+          "invalid-email": "Ingresa un correo electrónico válido.",
+          "invalid-phone-number": "Ingresa un número de teléfono válido que inicie con + o un dígito, y use solo dígitos, espacios, paréntesis o guiones.",
+          "invalid-integer": "Ingresa un número entero válido.",
+          "invalid-national-id": "Ingresa un ID nacional válido.",
+          "accepted-terms-required": "Debes aceptar los términos y condiciones.",
+          "email-required": "El correo electrónico es obligatorio.",
+          "email-duplicate": "Un correo del equipo ya está registrado para este evento.",
+          "phone-number-required": "El número de teléfono es obligatorio.",
+          "phone-number-duplicate": "Un número de teléfono del equipo ya está registrado para este evento.",
+          "server-field": "Verifica este campo."
+        },
+        "fields": {
+          "first-name": {
+            "label": "Nombre"
+          },
+          "last-name": {
+            "label": "Apellido"
+          },
+          "sex": {
+            "label": "Sexo",
+            "options": {
+              "female": "Femenino",
+              "male": "Masculino"
+            }
+          },
+          "national-id": {
+            "label": "Número de cédula"
+          },
+          "email": {
+            "label": "Correo electrónico"
+          },
+          "phone-number": {
+            "label": "Número de teléfono"
+          },
+          "university-name": {
+            "label": "Universidad"
+          },
+          "major": {
+            "label": "Carrera"
+          },
+          "year": {
+            "label": "Nivel",
+            "options": {
+              "freshman": "Primer año",
+              "sophomore": "Segundo año",
+              "junior": "Tercer año",
+              "senior": "Cuarto año",
+              "graduate": "Posgrado",
+              "other": "Otro"
+            }
           },
           "heard-about-event": {
             "label": "¿Cómo te enteraste del evento?",
@@ -467,104 +574,6 @@
           "cta": "Revisar detalles del Datathon",
           "copy-and-paste-label": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
           "footer-note": "Recibes este recordatorio porque tu equipo está registrado en un Datathon de WiDS Guayaquil."
-        }
-      },
-      "nextgen-form": {
-        "container": {
-          "title": "Registro a NextGen",
-          "description": "Completa el formulario para reservar tu cupo."
-        },
-        "actions": {
-          "submit": "Registrarse",
-          "close": "Cerrar formulario de registro"
-        },
-        "states": {
-          "submitting": "Enviando...",
-          "success": "Registro enviado con éxito."
-        },
-        "errors": {
-          "schema-validation": "Revisa los campos resaltados e inténtalo nuevamente.",
-          "payload-validation": "No se pudo guardar este registro. Revisa los datos e inténtalo nuevamente.",
-          "unknown": "No pudimos completar tu registro. Inténtalo nuevamente."
-        },
-        "validation": {
-          "required": "Este campo es obligatorio.",
-          "invalid-email": "Ingresa un correo electrónico válido.",
-          "invalid-phone-number": "Ingresa un número de teléfono válido que inicie con + o un dígito, y use solo dígitos, espacios, paréntesis o guiones.",
-          "invalid-integer": "Ingresa un número entero válido.",
-          "min-attendees": "Debe ser al menos 1.",
-          "accepted-terms-required": "Debes aceptar los términos y condiciones.",
-          "email-required": "El correo electrónico es obligatorio.",
-          "email-duplicate": "Este correo electrónico ya está registrado para este evento.",
-          "phone-number-required": "El número de teléfono es obligatorio.",
-          "phone-number-duplicate": "Este número de teléfono ya está registrado para este evento.",
-          "server-field": "Verifica este campo."
-        },
-        "fields": {
-          "affiliation": {
-            "label": "Institución"
-          },
-          "affiliation-city": {
-            "label": "Ciudad de la institución"
-          },
-          "email": {
-            "label": "Correo electrónico"
-          },
-          "phone-number": {
-            "label": "Número de teléfono"
-          },
-          "expected-attendees": {
-            "label": "Número de personas que asistirán",
-            "description": "Ingresa la cantidad esperada de asistentes."
-          },
-          "heard-about-event": {
-            "label": "¿Cómo te enteraste del evento?",
-            "description": "Elige la opción que mejor describa cómo nos conociste.",
-            "options": {
-              "friend": "Amistad",
-              "flyer": "Volante",
-              "social-media": "Redes sociales",
-              "email": "Correo electrónico",
-              "website": "Sitio web",
-              "university": "Universidad",
-              "workplace": "Lugar de trabajo",
-              "other": "Otro"
-            }
-          },
-          "receive-notifications": {
-            "label": "Deseo recibir notificaciones",
-            "description": "Puedes cancelar las notificaciones en cualquier momento."
-          },
-          "accepted-terms": {
-            "label": "Acepto los términos y condiciones"
-          }
-        }
-      },
-      "nextgen-emails": {
-        "confirmation": {
-          "subject": "WiDS Guayaquil | Registro a NextGen confirmado",
-          "preview": "Tu registro a NextGen de WiDS Guayaquil está confirmado",
-          "heading": "Tu registro fue exitoso",
-          "greeting": "Hola",
-          "description": "Gracias por registrar a tu institución en NextGen. Guarda los detalles del evento y nos vemos pronto.",
-          "event-date-label": "Fecha:",
-          "event-location-label": "Lugar:",
-          "cta": "Ver página de NextGen",
-          "copy-and-paste-label": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
-          "footer-note": "Recibes este correo porque completaste un registro en WiDS Guayaquil."
-        },
-        "reminder": {
-          "subject": "WiDS Guayaquil | Recordatorio: NextGen es mañana",
-          "preview": "NextGen de WiDS Guayaquil inicia en 1 día",
-          "heading": "Recordatorio: NextGen es mañana",
-          "greeting": "Hola",
-          "description": "Te recordamos que el evento NextGen al que te registraste inicia en menos de 24 horas.",
-          "emphasis": "Te recomendamos llegar unos minutos antes para completar tu check-in.",
-          "event-date-label": "Fecha:",
-          "event-location-label": "Lugar:",
-          "cta": "Revisar detalles de NextGen",
-          "copy-and-paste-label": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
-          "footer-note": "Recibes este recordatorio porque registraste una institución en un evento NextGen de WiDS Guayaquil."
         }
       }
     }

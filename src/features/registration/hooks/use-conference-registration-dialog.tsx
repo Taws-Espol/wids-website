@@ -3,10 +3,10 @@ import { useTranslations } from "next-intl";
 
 import { useIsMobile } from "@/shared/hooks/use-is-mobile";
 
-export const useDatathonRegistrationCta = () => {
+export const useConferenceRegistrationDialog = () => {
   const [open, setOpen] = useState(false);
   const isMobile = useIsMobile();
-  const t = useTranslations("features.registration.datathon-form");
+  const t = useTranslations("features.registration.conference-form");
 
   return {
     open,

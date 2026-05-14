@@ -1,9 +1,7 @@
 import Image from "next/image";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { GlobeIcon } from "@hugeicons/core-free-icons";
+import Link from "next/link";
 
 import type { Sponsor, Media } from "@/shared/lib/payload/types/payload";
-import { Link } from "@/shared/components/ui/link";
 
 interface Props {
   sponsor: Sponsor;
@@ -12,8 +10,16 @@ interface Props {
 export function SponsorCard({ sponsor }: Props) {
   const logo = sponsor.logo as Media;
 
+  if (!sponsor.website) return null;
+
   return (
-    <div className="flex w-52 max-w-full flex-none flex-col items-center gap-1">
+    <Link
+      className="flex w-52 max-w-full flex-none flex-col items-center gap-1"
+      title={sponsor.name}
+      href={sponsor.website}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <div className="relative aspect-square w-38">
         <Image
           src={logo.url as string}
@@ -32,18 +38,6 @@ export function SponsorCard({ sponsor }: Props) {
           {sponsor.tier}
         </span>
       </div>
-
-      {sponsor.website && (
-        <Link
-          title="Website"
-          href={sponsor.website}
-          className="flex items-center gap-2"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <HugeiconsIcon icon={GlobeIcon} className="size-5" />
-        </Link>
-      )}
-    </div>
+    </Link>
   );
 }

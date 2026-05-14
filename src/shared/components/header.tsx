@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { HugeiconsIcon } from "@hugeicons/react";
@@ -38,7 +38,7 @@ import { TypographyParagraph } from "@/shared/components/ui/typography-paragraph
 import { NAVIGATION_ITEMS, SOCIAL_LINKS } from "@/shared/constants/app";
 
 export function Header() {
-  const router = useRouter();
+  // const router = useRouter();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const t = useTranslations("shared.header");
 
@@ -219,13 +219,13 @@ export function Header() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <Button
+        {/* <Button
           variant="yellow"
           onClick={() => router.push("/conference")}
           className="md:text-sm lg:text-lg xl:text-xl"
         >
           {t("cta")}
-        </Button>
+        </Button> */}
       </div>
     </header>
   );

@@ -16,7 +16,7 @@ export const validateDatathonTeams: ArrayFieldValidation = (
   { siblingData },
 ) => {
   if (!Array.isArray(value)) {
-    return "Add at least one team member.";
+    return "Add at least three team members.";
   }
 
   const datathonData = siblingData as DatathonSiblingData | undefined;

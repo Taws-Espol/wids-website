@@ -71,6 +71,10 @@ export const Events: CollectionConfig = {
       required: true,
     },
     {
+      name: "locationUrl",
+      type: "text",
+    },
+    {
       name: "date",
       type: "date",
       timezone: {

@@ -11,8 +11,8 @@ import {
 import type { Locale } from "@/shared/lib/next-intl/types";
 import { tryCatch } from "@/shared/utils/try-catch";
 
-import { datathonRegistrationSchema } from "@/features/registration/schemas/datathon-registration";
-import type { DatathonRegistrationValues } from "@/features/registration/types/datathon-registration";
+import { datathonRegistrationIndividualSchema } from "@/features/registration/schemas/datathon-registration-individuals";
+import { DatathonRegistrationIndividualValues } from "@/features/registration/types/datathon-registration-individuals";
 
 type PayloadValidationIssue = {
   message?: string;
@@ -55,10 +55,6 @@ function mapDatathonPayloadValidationError(
 
     if (!isPayloadUniqueMessage(message)) continue;
 
-    if (normalizedPath === "teamName") {
-      return DATATHON_REGISTRATION_ERROR_CODES.UNIQUE_TEAM_NAME;
-    }
-
     if (/^members(\.\d+)?\.email$/.test(normalizedPath)) {
       return DATATHON_REGISTRATION_ERROR_CODES.UNIQUE_EMAIL;
     }
@@ -71,21 +67,22 @@ function mapDatathonPayloadValidationError(
   return DATATHON_REGISTRATION_ERROR_CODES.PAYLOAD_VALIDATION;
 }
 
-export async function registerForDatathonAction(
+export async function registerForDatathonIndividualAction(
   eventId: number,
   locale: Locale,
-  values: DatathonRegistrationValues,
+  values: DatathonRegistrationIndividualValues,
 ): Promise<ActionResponse<null, DatathonRegistrationErrorCode>> {
   // Schema validation
 
-  const validatedValues = datathonRegistrationSchema.safeParse(values);
+  const validatedValues =
+    datathonRegistrationIndividualSchema.safeParse(values);
 
   if (!validatedValues.success) {
     return {
       data: null,
       error: {
         code: DATATHON_REGISTRATION_ERROR_CODES.SCHEMA_VALIDATION,
-        message: "Datathon registration schema validation failed.",
+        message: "Datathon registration (individual) schema validation failed.",
       },
     };
   }
@@ -96,7 +93,7 @@ export async function registerForDatathonAction(
 
   const { error: createRegistrationError } = await tryCatch(
     payload.create({
-      collection: "datathon-registrations",
+      collection: "datathon-registrations-individuals",
       context: { datathonRegistrationLocale: locale },
       data: {
         event: eventId,
@@ -115,13 +112,15 @@ export async function registerForDatathonAction(
         data: null,
         error: {
           code: errorCode,
-          message: "Validation error while creating registration for Datathon.",
+          message:
+            "Validation error while creating registration for Datathon (individual).",
         },
       };
     }
 
     payload.logger.error({
-      message: "Unexpected error while creating registration for Datathon.",
+      message:
+        "Unexpected error while creating registration for Datathon (individual).",
       error: createRegistrationError,
     });
 
@@ -129,7 +128,8 @@ export async function registerForDatathonAction(
       data: null,
       error: {
         code: DATATHON_REGISTRATION_ERROR_CODES.UNKNOWN,
-        message: "Unexpected error while creating registration for Datathon.",
+        message:
+          "Unexpected error while creating registration for Datathon (individual).",
       },
     };
   }

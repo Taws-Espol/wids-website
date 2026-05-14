@@ -7,30 +7,31 @@ import {
   HEARD_ABOUT_OPTIONS,
   SEX_OPTIONS,
 } from "../constants/registrations.ts";
-import {
-  DATATHON_REGISTRATION_CONFIRMATION_TASK_SLUG,
-  DATATHON_REGISTRATION_REMINDER_TASK_SLUG,
-} from "../constants/slugs.ts";
-import { routing } from "../../next-intl/routing.ts";
-import type { Locale } from "../../next-intl/types.ts";
-import { tryCatch } from "../../../utils/try-catch.ts";
+// import {
+//   DATATHON_REGISTRATION_CONFIRMATION_TASK_SLUG,
+//   DATATHON_REGISTRATION_REMINDER_TASK_SLUG,
+// } from "../constants/slugs.ts";
+// import { routing } from "../../next-intl/routing.ts";
+// import type { Locale } from "../../next-intl/types.ts";
+// import { tryCatch } from "../../../utils/try-catch.ts";
 import { createEventTypeValidationHook } from "../utils/create-event-type-validation.ts";
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
 import { validateDatathonTeams } from "../utils/validate-datathon-teams.ts";
 import { validateUniqueEmailPerEvent } from "../utils/validate-unique-email-per-event.ts";
 import { validateUniquePhoneNumberPerEvent } from "../utils/validate-unique-phone-number-per-event.ts";
+import { validateValidNationalId } from "../utils/validate-valid-national-id.ts";
 
-const ONE_DAY_IN_MILLISECONDS = 24 * 60 * 60 * 1000;
+// const ONE_DAY_IN_MILLISECONDS = 24 * 60 * 60 * 1000;
 
-function getRelationshipId(
-  value: number | { id: number } | null | undefined,
-): number | null {
-  if (value == null) {
-    return null;
-  }
+// function getRelationshipId(
+//   value: number | { id: number } | null | undefined,
+// ): number | null {
+//   if (value == null) {
+//     return null;
+//   }
 
-  return typeof value === "object" ? value.id : value;
-}
+//   return typeof value === "object" ? value.id : value;
+// }
 
 export const DatathonRegistrations: CollectionConfig = {
   slug: "datathon-registrations",
@@ -78,16 +79,16 @@ export const DatathonRegistrations: CollectionConfig = {
       name: "memberCount",
       type: "number",
       required: true,
-      min: 1,
-      max: 3,
+      min: 3,
+      max: 4,
       label: "Number of team members",
     },
     {
       name: "members",
       type: "array",
       required: true,
-      minRows: 1,
-      maxRows: 3,
+      minRows: 3,
+      maxRows: 4,
       validate: validateDatathonTeams,
       fields: [
         {
@@ -130,32 +131,40 @@ export const DatathonRegistrations: CollectionConfig = {
               name: "email",
               type: "email",
               required: true,
-              admin: { width: "50%" },
+              admin: { width: "33%" },
               validate: validateUniqueEmailPerEvent,
+            },
+            {
+              name: "nationalId",
+              type: "text",
+              required: true,
+              admin: { width: "33%" },
+              validate: validateValidNationalId,
             },
             {
               name: "phoneNumber",
               type: "text",
-              unique: true,
               required: true,
-              admin: { width: "50%" },
+              admin: { width: "33%" },
               validate: validateUniquePhoneNumberPerEvent,
             },
           ],
         },
-        {
-          name: "universityName",
-          type: "text",
-          required: true,
-        },
+
         {
           type: "row",
           fields: [
             {
+              name: "universityName",
+              type: "text",
+              required: true,
+              admin: { width: "33%" },
+            },
+            {
               name: "major",
               type: "text",
               required: true,
-              admin: { width: "50%" },
+              admin: { width: "33%" },
             },
             {
               name: "year",
@@ -165,18 +174,17 @@ export const DatathonRegistrations: CollectionConfig = {
                 label: option.label,
                 value: option.value,
               })),
-              admin: { width: "50%" },
+              admin: { width: "33%" },
             },
           ],
         },
       ],
     },
     {
-      name: "bankVoucher",
-      type: "upload",
-      relationTo: "operations-media",
-      required: true,
-      label: "Bank voucher",
+      name: "allowIndividualsToJoin",
+      type: "checkbox",
+      defaultValue: false,
+      label: "Allow individuals without a team to be included in this team",
     },
     {
       name: "receiveNotifications",
@@ -207,82 +215,82 @@ export const DatathonRegistrations: CollectionConfig = {
   ],
   hooks: {
     beforeValidate: [createEventTypeValidationHook("datathon")],
-    afterChange: [
-      async ({ doc, operation, req }) => {
-        if (operation !== "create") {
-          return;
-        }
+    // afterChange: [
+    //   async ({ doc, operation, req }) => {
+    //     if (operation !== "create") {
+    //       return;
+    //     }
 
-        const eventId = getRelationshipId(doc.event);
-        if (eventId == null) {
-          req.payload.logger.error({
-            err: new Error("Datathon registration created without event id"),
-          });
-          return;
-        }
+    //     const eventId = getRelationshipId(doc.event);
+    //     if (eventId == null) {
+    //       req.payload.logger.error({
+    //         err: new Error("Datathon registration created without event id"),
+    //       });
+    //       return;
+    //     }
 
-        const locale =
-          (req.context as { datathonRegistrationLocale?: Locale } | undefined)
-            ?.datathonRegistrationLocale ?? routing.defaultLocale;
+    //     const locale =
+    //       (req.context as { datathonRegistrationLocale?: Locale } | undefined)
+    //         ?.datathonRegistrationLocale ?? routing.defaultLocale;
 
-        const { data: eventData, error: eventError } = await tryCatch(
-          req.payload.findByID({
-            collection: "events",
-            id: eventId,
-            depth: 0,
-            locale,
-            req,
-            select: {
-              date: true,
-              date_tz: true,
-            },
-          }),
-        );
+    //     const { data: eventData, error: eventError } = await tryCatch(
+    //       req.payload.findByID({
+    //         collection: "events",
+    //         id: eventId,
+    //         depth: 0,
+    //         locale,
+    //         req,
+    //         select: {
+    //           date: true,
+    //           date_tz: true,
+    //         },
+    //       }),
+    //     );
 
-        if (eventError) {
-          req.payload.logger.error({
-            message:
-              "Failed to load event for Datathon registration email queue.",
-            error: eventError,
-          });
-          throw eventError;
-        }
+    //     if (eventError) {
+    //       req.payload.logger.error({
+    //         message:
+    //           "Failed to load event for Datathon registration email queue.",
+    //         error: eventError,
+    //       });
+    //       throw eventError;
+    //     }
 
-        const { error: queueError } = await tryCatch(
-          Promise.all([
-            req.payload.jobs.queue({
-              task: DATATHON_REGISTRATION_CONFIRMATION_TASK_SLUG,
-              input: {
-                registrationId: doc.id,
-                eventId,
-                locale,
-              },
-              queue: "critical",
-            }),
-            req.payload.jobs.queue({
-              task: DATATHON_REGISTRATION_REMINDER_TASK_SLUG,
-              input: {
-                registrationId: doc.id,
-                eventId,
-                locale,
-              },
-              queue: "batch",
-              waitUntil: new Date(
-                new Date(eventData.date).getTime() - ONE_DAY_IN_MILLISECONDS,
-              ),
-            }),
-          ]),
-        );
+    //     const { error: queueError } = await tryCatch(
+    //       Promise.all([
+    //         req.payload.jobs.queue({
+    //           task: DATATHON_REGISTRATION_CONFIRMATION_TASK_SLUG,
+    //           input: {
+    //             registrationId: doc.id,
+    //             eventId,
+    //             locale,
+    //           },
+    //           queue: "critical",
+    //         }),
+    //         req.payload.jobs.queue({
+    //           task: DATATHON_REGISTRATION_REMINDER_TASK_SLUG,
+    //           input: {
+    //             registrationId: doc.id,
+    //             eventId,
+    //             locale,
+    //           },
+    //           queue: "batch",
+    //           waitUntil: new Date(
+    //             new Date(eventData.date).getTime() - ONE_DAY_IN_MILLISECONDS,
+    //           ),
+    //         }),
+    //       ]),
+    //     );
 
-        if (queueError) {
-          req.payload.logger.error({
-            message:
-              "Unexpected error while queueing mails for Datathon registration.",
-            error: queueError,
-          });
-          throw queueError;
-        }
-      },
-    ],
+    //     if (queueError) {
+    //       req.payload.logger.error({
+    //         message:
+    //           "Unexpected error while queueing mails for Datathon registration.",
+    //         error: queueError,
+    //       });
+    //       throw queueError;
+    //     }
+    //   },
+    // ],
   },
 };

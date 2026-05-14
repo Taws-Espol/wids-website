@@ -1,7 +1,7 @@
 import {
   FacebookIcon,
   InstagramIcon,
-  TwitterIcon,
+  NewTwitterIcon,
   LinkedinIcon,
 } from "@hugeicons/core-free-icons";
 
@@ -59,7 +59,7 @@ export const SOCIAL_LINKS = [
     platform: "x",
     label: "X",
     href: "https://x.com/widsespol",
-    icon: TwitterIcon,
+    icon: NewTwitterIcon,
   },
   {
     platform: "linkedin",

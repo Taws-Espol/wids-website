@@ -25,6 +25,7 @@ const createDefaultMember = (isLeader = false) => ({
   firstName: "",
   lastName: "",
   sex: SEX_OPTIONS[0].value,
+  nationalId: "",
   email: "",
   phoneNumber: "",
   universityName: "",
@@ -45,6 +46,7 @@ export const useDatathonRegistrationForm = ({
       acceptedTerms: false,
       heardAboutEvent: HEARD_ABOUT_OPTIONS[0].value,
       members: [],
+      allowIndividualsToJoin: false,
       receiveNotifications: false,
       teamName: "",
     },
@@ -63,7 +65,7 @@ export const useDatathonRegistrationForm = ({
   useEffect(() => {
     const targetCount =
       typeof memberCount === "number" && Number.isFinite(memberCount)
-        ? Math.max(0, Math.min(3, memberCount))
+        ? Math.max(0, Math.min(4, memberCount))
         : 0;
 
     const currentCount = membersFieldArray.fields.length;
@@ -90,34 +92,13 @@ export const useDatathonRegistrationForm = ({
   const handleSubmit = async (values: DatathonRegistrationValues) => {
     form.clearErrors();
 
-    const formData = new FormData();
-    formData.append("teamName", values.teamName);
-    formData.append("memberCount", String(values.memberCount));
-    formData.append("members", JSON.stringify(values.members));
-    formData.append("bankVoucher", values.bankVoucher);
-    formData.append(
-      "receiveNotifications",
-      String(values.receiveNotifications),
-    );
-    formData.append("acceptedTerms", String(values.acceptedTerms));
-    formData.append("heardAboutEvent", values.heardAboutEvent);
-
-    const { error } = await registerForDatathonAction(
-      eventId,
-      locale,
-      formData,
-    );
+    const { error } = await registerForDatathonAction(eventId, locale, values);
 
     if (error) {
       switch (error.code) {
         case "SCHEMA_VALIDATION":
           form.setError("root.serverError", {
             message: "errors.schema-validation",
-          });
-          return;
-        case "BANK_VOUCHER_UPLOAD_FAILED":
-          form.setError("root.serverError", {
-            message: "errors.bank-voucher-upload-failed",
           });
           return;
         case "UNIQUE_EMAIL":
