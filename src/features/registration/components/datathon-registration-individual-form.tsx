@@ -175,10 +175,6 @@ export function DatathonRegistrationIndividualForm({
                     id="nationalId"
                     type="text"
                     aria-invalid={fieldState.invalid}
-                    onChange={(e) => {
-                      field.onChange(e);
-                      void form.trigger("nationalId");
-                    }}
                   />
 
                   {fieldState.error?.message && (

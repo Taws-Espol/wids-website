@@ -45,7 +45,7 @@ export function DatathonRegistrationForm({ eventId, closeDialog }: Props) {
   return (
     <form
       onSubmit={form.handleSubmit(handleSubmit)}
-      className="flex flex-col gap-5 md:p-8"
+      className="flex flex-col gap-5 text-base md:p-8"
     >
       <FieldGroup>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -315,14 +315,7 @@ export function DatathonRegistrationForm({ eventId, closeDialog }: Props) {
                             id={`members.${index}.nationalId`}
                             type="text"
                             aria-invalid={fieldState.invalid}
-                            onChange={(e) => {
-                              field.onChange(e);
-                              void form.trigger(
-                                `members.${index}.nationalId` as const,
-                              );
-                            }}
                           />
-
                           {fieldState.error?.message && (
                             <FieldError>
                               {t(fieldState.error.message)}
@@ -459,13 +452,13 @@ export function DatathonRegistrationForm({ eventId, closeDialog }: Props) {
                 </div>
               ))}
             </div>
-
-            {typeof form.formState.errors.members?.message === "string" && (
-              <FieldError>
-                {t(form.formState.errors.members.message)}
-              </FieldError>
-            )}
           </FieldSet>
+        )}
+
+        {form.formState.errors.members?.root?.message && (
+          <FieldError>
+            {t(form.formState.errors.members.root.message)}
+          </FieldError>
         )}
 
         <Controller
@@ -625,6 +618,8 @@ export function DatathonRegistrationForm({ eventId, closeDialog }: Props) {
         )}
 
         <Button
+          id="datathon-registration-button"
+          data-umami-event="Datathon registration button"
           type="submit"
           variant="blue"
           disabled={form.formState.isSubmitting}

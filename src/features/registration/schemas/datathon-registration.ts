@@ -11,16 +11,15 @@ const datathonMemberSchema = z.object({
   nationalId: z
     .string()
     .trim()
-    .min(1, "validation.required")
-    .max(10, "validation.invalid-national-id")
+    .length(10, "validation.invalid-national-id")
     .regex(/^\d+$/, "validation.invalid-national-id")
     .refine(validateNationalId, "validation.invalid-national-id"),
   email: z.email("validation.invalid-email").trim().toLowerCase(),
   phoneNumber: z
     .string()
     .trim()
-    .min(1, "validation.required")
-    .regex(/^[+\d][\d\s()-]{7,}$/, "validation.invalid-phone-number"),
+    .length(10, "validation.invalid-phone-number")
+    .regex(/^\d+$/, "validation.invalid-phone-number"),
   universityName: z.string().trim().min(1, "validation.required"),
   major: z.string().trim().min(1, "validation.required"),
   year: z.enum([
@@ -81,6 +80,40 @@ export const datathonRegistrationSchema = z
       context.addIssue({
         code: "custom",
         message: "validation.min-female-ratio",
+        path: ["members"],
+      });
+    }
+
+    // Check for duplicate national IDs
+    const nationalIds = data.members
+      .map((member) => member.nationalId)
+      .filter(Boolean);
+    if (new Set(nationalIds).size !== nationalIds.length) {
+      context.addIssue({
+        code: "custom",
+        message: "validation.national-id-duplicate",
+        path: ["members"],
+      });
+    }
+
+    // Check for duplicate emails
+    const emails = data.members.map((member) => member.email).filter(Boolean);
+    if (new Set(emails).size !== emails.length) {
+      context.addIssue({
+        code: "custom",
+        message: "validation.email-duplicate",
+        path: ["members"],
+      });
+    }
+
+    // Check for duplicate phone numbers
+    const phoneNumbers = data.members
+      .map((member) => member.phoneNumber)
+      .filter(Boolean);
+    if (new Set(phoneNumbers).size !== phoneNumbers.length) {
+      context.addIssue({
+        code: "custom",
+        message: "validation.phone-number-duplicate",
         path: ["members"],
       });
     }

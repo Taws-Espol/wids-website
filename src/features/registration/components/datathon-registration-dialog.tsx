@@ -15,6 +15,14 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from "@/shared/components/ui/drawer";
+import { RadioGroup, RadioGroupItem } from "@/shared/components/ui/radio-group";
+import {
+  Field,
+  FieldDescription,
+  FieldLabel,
+  FieldLegend,
+  FieldSet,
+} from "@/shared/components/ui/field";
 
 import { DatathonRegistrationForm } from "@/features/registration/components/datathon-registration-form";
 import { DatathonRegistrationIndividualForm } from "@/features/registration/components/datathon-registration-individual-form";
@@ -47,41 +55,59 @@ export function DatathonRegistrationDialog({
       <>
         {triggerButton}
         <Drawer direction="bottom" open={open} onOpenChange={setOpen}>
-          <DrawerContent>
-            <DrawerHeader className="mb-8">
+          <DrawerContent className="px-6">
+            <DrawerHeader>
               <DrawerTitle>{t("title")}</DrawerTitle>
 
               <DrawerDescription>{t("description")}</DrawerDescription>
             </DrawerHeader>
 
-            <div className="flex items-center gap-2 px-8 pb-4">
-              <span className="text-sm">
+            <FieldSet className="w-full max-w-xs px-4 pb-8">
+              <FieldLegend variant="label">
                 {isIndividual ? t("team.cta") : t("individual.cta")}
-              </span>
-              <span
-                aria-checked={isIndividual}
-                role="switch"
-                className="text-muted-foreground cursor-pointer text-sm hover:underline"
-                onClick={() => setIsIndividual((value) => !value)}
-              >
+              </FieldLegend>
+              <FieldDescription>
                 {isIndividual
                   ? t("team.description")
                   : t("individual.description")}
-              </span>
-            </div>
+              </FieldDescription>
+              <RadioGroup
+                defaultValue="team"
+                onValueChange={(value) =>
+                  setIsIndividual(value === "individual")
+                }
+              >
+                <Field orientation="horizontal">
+                  <RadioGroupItem value="team" id="team" />
+                  <FieldLabel htmlFor="team" className="font-normal">
+                    Team
+                  </FieldLabel>
+                </Field>
+                <Field orientation="horizontal">
+                  <RadioGroupItem value="individual" id="individual" />
+                  <FieldLabel htmlFor="individual" className="font-normal">
+                    Individual
+                  </FieldLabel>
+                </Field>
+              </RadioGroup>
+            </FieldSet>
 
             {isIndividual && (
-              <DatathonRegistrationIndividualForm
-                eventId={eventId}
-                closeDialog={() => setOpen(false)}
-              />
+              <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-4">
+                <DatathonRegistrationIndividualForm
+                  eventId={eventId}
+                  closeDialog={() => setOpen(false)}
+                />
+              </div>
             )}
 
             {!isIndividual && (
-              <DatathonRegistrationForm
-                eventId={eventId}
-                closeDialog={() => setOpen(false)}
-              />
+              <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-4">
+                <DatathonRegistrationForm
+                  eventId={eventId}
+                  closeDialog={() => setOpen(false)}
+                />
+              </div>
             )}
           </DrawerContent>
         </Drawer>
@@ -99,21 +125,33 @@ export function DatathonRegistrationDialog({
             <DialogDescription>{t("description")}</DialogDescription>
           </DialogHeader>
 
-          <div className="flex items-center gap-2 px-8 pb-4">
-            <span className="text-sm">
+          <FieldSet className="w-full px-8 pb-8">
+            <FieldLegend variant="label">
               {isIndividual ? t("team.cta") : t("individual.cta")}
-            </span>
-            <span
-              aria-checked={isIndividual}
-              role="switch"
-              className="text-muted-foreground cursor-pointer text-sm hover:underline"
-              onClick={() => setIsIndividual((value) => !value)}
-            >
+            </FieldLegend>
+            <FieldDescription>
               {isIndividual
                 ? t("team.description")
                 : t("individual.description")}
-            </span>
-          </div>
+            </FieldDescription>
+            <RadioGroup
+              defaultValue="team"
+              onValueChange={(value) => setIsIndividual(value === "individual")}
+            >
+              <Field orientation="horizontal">
+                <RadioGroupItem value="team" id="team" />
+                <FieldLabel htmlFor="team" className="font-normal">
+                  Team
+                </FieldLabel>
+              </Field>
+              <Field orientation="horizontal">
+                <RadioGroupItem value="individual" id="individual" />
+                <FieldLabel htmlFor="individual" className="font-normal">
+                  Individual
+                </FieldLabel>
+              </Field>
+            </RadioGroup>
+          </FieldSet>
 
           {isIndividual && (
             <DatathonRegistrationIndividualForm

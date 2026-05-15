@@ -21,7 +21,7 @@ export function BreadcrumbBanner({
   return (
     <section
       className={cn(
-        "fixed top-0 left-0 flex w-screen items-center justify-start px-32 py-8",
+        "fixed top-0 left-0 flex w-screen items-center justify-start px-12 py-8 md:px-32",
         color &&
           `bg-w-${color.replace("_", "-")} text-w-${color.replace("_", "-")}-foreground`,
       )}

@@ -106,13 +106,18 @@ export const useDatathonRegistrationForm = ({
             message: "validation.email-duplicate",
           });
           return;
+        case "UNIQUE_NATIONAL_ID":
+          form.setError("root.serverError", {
+            message: "validation.national-id-duplicate",
+          });
+          return;
         case "UNIQUE_PHONE_NUMBER":
           form.setError("root.serverError", {
             message: "validation.phone-number-duplicate",
           });
           return;
         case "UNIQUE_TEAM_NAME":
-          form.setError("root.serverError", {
+          form.setError("teamName", {
             message: "validation.team-name-duplicate",
           });
           return;

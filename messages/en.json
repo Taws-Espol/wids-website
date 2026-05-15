@@ -131,12 +131,14 @@
         "validation": {
           "required": "This field is required.",
           "invalid-email": "Please enter a valid email address.",
-          "invalid-phone-number": "Please enter a valid phone number (e.g. +5939XXXXXXXX).",
+          "invalid-phone-number": "Please enter a valid phone number (10 digits).",
           "accepted-terms-required": "You must accept the terms and conditions.",
           "email-required": "Email is required.",
-          "email-duplicate": "This email is already registered for this event.",
+          "email-duplicate": "An email in this team is already registered for this event.",
+          "national-id-required": "National ID is required.",
+          "national-id-duplicate": "A national ID in this team is already registered for this event.",
           "phone-number-required": "Phone number is required.",
-          "phone-number-duplicate": "This phone number is already registered for this event.",
+          "phone-number-duplicate": "A phone number in this team is already registered for this event.",
           "student-field-required": "This field is required for students.",
           "professional-field-required": "This field is required for professionals.",
           "server-field": "Please verify this field."
@@ -261,7 +263,7 @@
         "validation": {
           "required": "This field is required.",
           "invalid-email": "Please enter a valid email address.",
-          "invalid-phone-number": "Please enter a valid phone number that starts with + or a digit, using only digits, spaces, parentheses, or dashes.",
+          "invalid-phone-number": "Please enter a valid phone number (10 digits).",
           "invalid-national-id": "Please enter a valid national ID.",
           "invalid-integer": "Please enter a valid whole number.",
           "min-members": "At least 3 team members are required.",
@@ -271,10 +273,11 @@
           "min-female-ratio": "At least 50% of team members must be female.",
           "accepted-terms-required": "You must accept the terms and conditions.",
           "email-required": "Email is required.",
-          "email-duplicate": "An email in this team is already registered for this event.",
+          "email-duplicate": "Each team member must have a unique email address.",
+          "national-id-duplicate": "Each team member must have a unique national ID.",
           "team-name-duplicate": "This team name is already registered for this event.",
           "phone-number-required": "Phone number is required.",
-          "phone-number-duplicate": "A phone number in this team is already registered for this event.",
+          "phone-number-duplicate": "Each team member must have a unique phone number.",
           "server-field": "Please verify this field."
         },
         "fields": {
@@ -379,12 +382,14 @@
         "validation": {
           "required": "This field is required.",
           "invalid-email": "Please enter a valid email address.",
-          "invalid-phone-number": "Please enter a valid phone number that starts with + or a digit, using only digits, spaces, parentheses, or dashes.",
+          "invalid-phone-number": "Please enter a valid phone number (10 digits).",
           "invalid-integer": "Please enter a valid whole number.",
           "invalid-national-id": "Please enter a valid national ID.",
           "accepted-terms-required": "You must accept the terms and conditions.",
           "email-required": "Email is required.",
           "email-duplicate": "This email is already registered for this event.",
+          "national-id-required": "National ID is required.",
+          "national-id-duplicate": "This national ID is already registered for this event.",
           "phone-number-required": "Phone number is required.",
           "phone-number-duplicate": "This phone number is already registered for this event.",
           "server-field": "Please verify this field."
@@ -479,104 +484,6 @@
           "cta": "Review Datathon details",
           "copy-and-paste-label": "If the button does not work, copy and paste this link into your browser:",
           "footer-note": "You are receiving this reminder because your team is registered for a WiDS Guayaquil Datathon event."
-        }
-      },
-      "nextgen-form": {
-        "container": {
-          "title": "NextGen registration",
-          "description": "Complete the form to reserve your spot."
-        },
-        "actions": {
-          "submit": "Register",
-          "close": "Close form"
-        },
-        "states": {
-          "submitting": "Submitting...",
-          "success": "Registration submitted successfully."
-        },
-        "errors": {
-          "schema-validation": "Please review the highlighted fields and try again.",
-          "payload-validation": "This registration could not be saved. Please review your data and try again.",
-          "unknown": "We could not complete your registration. Please try again."
-        },
-        "validation": {
-          "required": "This field is required.",
-          "invalid-email": "Please enter a valid email address.",
-          "invalid-phone-number": "Please enter a valid phone number that starts with + or a digit, using only digits, spaces, parentheses, or dashes.",
-          "invalid-integer": "Please enter a valid whole number.",
-          "min-attendees": "Must be at least 1.",
-          "accepted-terms-required": "You must accept the terms and conditions.",
-          "email-required": "Email is required.",
-          "email-duplicate": "This email is already registered for this event.",
-          "phone-number-required": "Phone number is required.",
-          "phone-number-duplicate": "This phone number is already registered for this event.",
-          "server-field": "Please verify this field."
-        },
-        "fields": {
-          "affiliation": {
-            "label": "Institution"
-          },
-          "affiliation-city": {
-            "label": "Institution city"
-          },
-          "email": {
-            "label": "Email"
-          },
-          "phone-number": {
-            "label": "Phone number"
-          },
-          "expected-attendees": {
-            "label": "Number of people expected to attend",
-            "description": "Enter the expected number of attendees."
-          },
-          "heard-about-event": {
-            "label": "How did you hear about the event?",
-            "description": "Choose the option that best matches how you found us.",
-            "options": {
-              "friend": "A friend",
-              "flyer": "Flyer",
-              "social-media": "Social media",
-              "email": "Email",
-              "website": "Website",
-              "university": "University",
-              "workplace": "Workplace",
-              "other": "Other"
-            }
-          },
-          "receive-notifications": {
-            "label": "I would like to receive notifications",
-            "description": "You can unsubscribe from notifications at any time."
-          },
-          "accepted-terms": {
-            "label": "I accept the terms and conditions"
-          }
-        }
-      },
-      "nextgen-emails": {
-        "confirmation": {
-          "subject": "WiDS Guayaquil | NextGen registration confirmed",
-          "preview": "Your WiDS Guayaquil NextGen registration is confirmed",
-          "heading": "Your registration is confirmed",
-          "greeting": "Hello",
-          "description": "Thank you for registering your institution for NextGen. Save the event details below and we will see you there.",
-          "event-date-label": "Date:",
-          "event-location-label": "Location:",
-          "cta": "View NextGen page",
-          "copy-and-paste-label": "If the button does not work, copy and paste this link into your browser:",
-          "footer-note": "You are receiving this email because you completed a registration on WiDS Guayaquil."
-        },
-        "reminder": {
-          "subject": "WiDS Guayaquil | Reminder: NextGen is tomorrow",
-          "preview": "WiDS Guayaquil NextGen starts in 1 day",
-          "heading": "Reminder: NextGen is tomorrow",
-          "greeting": "Hello",
-          "description": "This is a reminder that your registered NextGen event starts in less than 24 hours.",
-          "emphasis": "Please arrive a few minutes early to complete your check-in.",
-          "event-date-label": "Date:",
-          "event-location-label": "Location:",
-          "cta": "Review NextGen details",
-          "copy-and-paste-label": "If the button does not work, copy and paste this link into your browser:",
-          "footer-note": "You are receiving this reminder because you registered an institution for a WiDS Guayaquil NextGen event."
         }
       }
     }

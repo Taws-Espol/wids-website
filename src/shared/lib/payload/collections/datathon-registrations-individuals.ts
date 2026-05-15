@@ -18,7 +18,7 @@ import { createEventTypeValidationHook } from "../utils/create-event-type-valida
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
 import { validateUniqueEmailPerEvent } from "../utils/validate-unique-email-per-event.ts";
 import { validateUniquePhoneNumberPerEvent } from "../utils/validate-unique-phone-number-per-event.ts";
-import { validateValidNationalId } from "../utils/validate-valid-national-id.ts";
+import { validateUniqueNationalIdPerEvent } from "../utils/validate-unique-national-id-per-event.ts";
 
 // const ONE_DAY_IN_MILLISECONDS = 24 * 60 * 60 * 1000;
 
@@ -111,7 +111,7 @@ export const DatathonRegistrationsIndividuals: CollectionConfig = {
           type: "text",
           required: true,
           admin: { width: "33%" },
-          validate: validateValidNationalId,
+          validate: validateUniqueNationalIdPerEvent,
         },
         {
           name: "phoneNumber",
