@@ -315,6 +315,12 @@ export function DatathonRegistrationForm({ eventId, closeDialog }: Props) {
                             id={`members.${index}.nationalId`}
                             type="text"
                             aria-invalid={fieldState.invalid}
+                            onChange={(e) => {
+                              field.onChange(e);
+                              void form.trigger(
+                                `members.${index}.nationalId` as const,
+                              );
+                            }}
                           />
 
                           {fieldState.error?.message && (
