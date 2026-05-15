@@ -54,7 +54,12 @@ export function DatathonRegistrationDialog({
     return (
       <>
         {triggerButton}
-        <Drawer direction="bottom" open={open} onOpenChange={setOpen}>
+        <Drawer
+          direction="bottom"
+          open={open}
+          onOpenChange={setOpen}
+          repositionInputs={false}
+        >
           <DrawerContent className="px-6">
             <DrawerHeader>
               <DrawerTitle>{t("title")}</DrawerTitle>

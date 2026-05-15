@@ -48,7 +48,12 @@ export function ConferenceRegistrationDialog({
     return (
       <>
         {triggerButton}
-        <Drawer direction="bottom" open={open} onOpenChange={setOpen}>
+        <Drawer
+          direction="bottom"
+          open={open}
+          onOpenChange={setOpen}
+          repositionInputs={false}
+        >
           <DrawerContent>
             <DrawerHeader className="mb-8">
               <DrawerTitle>{t("container.title")}</DrawerTitle>
