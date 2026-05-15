@@ -10,16 +10,15 @@ export const datathonRegistrationIndividualSchema = z.object({
   nationalId: z
     .string()
     .trim()
-    .min(1, "validation.required")
-    .max(10, "validation.invalid-national-id")
+    .length(10, "validation.invalid-national-id")
     .regex(/^\d+$/, "validation.invalid-national-id")
     .refine(validateNationalId, "validation.invalid-national-id"),
   email: z.email("validation.invalid-email").trim().toLowerCase(),
   phoneNumber: z
     .string()
     .trim()
-    .min(1, "validation.required")
-    .regex(/^[+\d][\d\s()-]{7,}$/, "validation.invalid-phone-number"),
+    .length(10, "validation.invalid-phone-number")
+    .regex(/^\d+$/, "validation.invalid-phone-number"),
   universityName: z.string().trim().min(1, "validation.required"),
   major: z.string().trim().min(1, "validation.required"),
   year: z.enum([

@@ -14,8 +14,8 @@ export const conferenceRegistrationSchema = z
     phoneNumber: z
       .string()
       .trim()
-      .min(1, "validation.required")
-      .regex(/^[+\d][\d\s()-]{7,}$/, "validation.invalid-phone-number"),
+      .length(10, "validation.invalid-phone-number")
+      .regex(/^\d+$/, "validation.invalid-phone-number"),
     participantType: z.enum(PARTICIPANT_TYPES),
     universityName: z.string().trim().optional(),
     major: z.string().trim().optional(),

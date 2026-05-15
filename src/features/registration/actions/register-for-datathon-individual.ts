@@ -14,59 +14,6 @@ import { tryCatch } from "@/shared/utils/try-catch";
 import { datathonRegistrationIndividualSchema } from "@/features/registration/schemas/datathon-registration-individuals";
 import { DatathonRegistrationIndividualValues } from "@/features/registration/types/datathon-registration-individuals";
 
-type PayloadValidationIssue = {
-  message?: string;
-  path?: string;
-};
-
-function isPayloadUniqueMessage(message: string): boolean {
-  return message === "Value must be unique";
-}
-
-function normalizePayloadPath(path: string): string {
-  return path.replaceAll("[", ".").replaceAll("]", "");
-}
-
-function mapDatathonPayloadValidationError(
-  payloadValidationError: ValidationError,
-): DatathonRegistrationErrorCode {
-  const issues = (payloadValidationError.data?.errors ?? []) as
-    | PayloadValidationIssue[]
-    | undefined;
-
-  if (!issues || issues.length === 0) {
-    return DATATHON_REGISTRATION_ERROR_CODES.PAYLOAD_VALIDATION;
-  }
-
-  for (const issue of issues) {
-    const message = issue.message ?? "";
-    const normalizedPath = normalizePayloadPath(issue.path ?? "");
-    if (message === DATATHON_REGISTRATION_ERROR_CODES.UNIQUE_EMAIL) {
-      return DATATHON_REGISTRATION_ERROR_CODES.UNIQUE_EMAIL;
-    }
-
-    if (message === DATATHON_REGISTRATION_ERROR_CODES.UNIQUE_PHONE_NUMBER) {
-      return DATATHON_REGISTRATION_ERROR_CODES.UNIQUE_PHONE_NUMBER;
-    }
-
-    if (message === DATATHON_REGISTRATION_ERROR_CODES.UNIQUE_TEAM_NAME) {
-      return DATATHON_REGISTRATION_ERROR_CODES.UNIQUE_TEAM_NAME;
-    }
-
-    if (!isPayloadUniqueMessage(message)) continue;
-
-    if (/^members(\.\d+)?\.email$/.test(normalizedPath)) {
-      return DATATHON_REGISTRATION_ERROR_CODES.UNIQUE_EMAIL;
-    }
-
-    if (/^members(\.\d+)?\.phoneNumber$/.test(normalizedPath)) {
-      return DATATHON_REGISTRATION_ERROR_CODES.UNIQUE_PHONE_NUMBER;
-    }
-  }
-
-  return DATATHON_REGISTRATION_ERROR_CODES.PAYLOAD_VALIDATION;
-}
-
 export async function registerForDatathonIndividualAction(
   eventId: number,
   locale: Locale,
@@ -104,14 +51,13 @@ export async function registerForDatathonIndividualAction(
 
   if (createRegistrationError) {
     if (createRegistrationError instanceof ValidationError) {
-      const errorCode = mapDatathonPayloadValidationError(
-        createRegistrationError,
-      );
-
       return {
         data: null,
         error: {
-          code: errorCode,
+          code:
+            (createRegistrationError.data.errors[0]
+              .message as DatathonRegistrationErrorCode) ||
+            DATATHON_REGISTRATION_ERROR_CODES.PAYLOAD_VALIDATION,
           message:
             "Validation error while creating registration for Datathon (individual).",
         },

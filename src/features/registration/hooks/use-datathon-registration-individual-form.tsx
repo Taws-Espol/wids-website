@@ -61,18 +61,18 @@ export const useDatathonRegistrationIndividualForm = ({
           });
           return;
         case "UNIQUE_EMAIL":
-          form.setError("root.serverError", {
+          form.setError("email", {
             message: "validation.email-duplicate",
           });
           return;
-        case "UNIQUE_PHONE_NUMBER":
-          form.setError("root.serverError", {
-            message: "validation.phone-number-duplicate",
+        case "UNIQUE_NATIONAL_ID":
+          form.setError("nationalId", {
+            message: "validation.national-id-duplicate",
           });
           return;
-        case "UNIQUE_TEAM_NAME":
-          form.setError("root.serverError", {
-            message: "validation.team-name-duplicate",
+        case "UNIQUE_PHONE_NUMBER":
+          form.setError("phoneNumber", {
+            message: "validation.phone-number-duplicate",
           });
           return;
         case "PAYLOAD_VALIDATION":

@@ -5,9 +5,9 @@ import type {
   ValidateOptions,
 } from "payload";
 
-import { CONFERENCE_REGISTRATION_ERROR_CODES } from "@/shared/constants/conference-registration-error-codes";
+import { DATATHON_REGISTRATION_ERROR_CODES } from "@/shared/constants/datathon-registration-error-codes";
 
-export const validateUniquePhoneNumberPerEvent: TextFieldValidation = async (
+export const validateUniqueTeamNamePerEvent: TextFieldValidation = async (
   value,
   {
     req,
@@ -21,7 +21,7 @@ export const validateUniquePhoneNumberPerEvent: TextFieldValidation = async (
     string | null | undefined
   >,
 ) => {
-  if (!value) return CONFERENCE_REGISTRATION_ERROR_CODES.PHONE_REQUIRED;
+  if (!value) return DATATHON_REGISTRATION_ERROR_CODES.REQUIRED;
 
   const event = siblingData?.event;
 
@@ -36,12 +36,12 @@ export const validateUniquePhoneNumberPerEvent: TextFieldValidation = async (
         ? { id: { not_equals: (data as { id: string | number }).id } }
         : { id: { not_equals: null } }),
       event: { equals: event },
-      phoneNumber: { equals: trimmedValue },
+      teamName: { equals: trimmedValue },
     },
     limit: 1,
   });
 
   return existing.totalDocs > 0
-    ? CONFERENCE_REGISTRATION_ERROR_CODES.UNIQUE_PHONE_NUMBER
+    ? DATATHON_REGISTRATION_ERROR_CODES.UNIQUE_TEAM_NAME
     : true;
 };

@@ -44,7 +44,7 @@ export function ConferenceRegistrationForm({ eventId, closeDialog }: Props) {
   return (
     <form
       onSubmit={form.handleSubmit(handleSubmit)}
-      className="flex flex-col gap-5 md:p-8"
+      className="flex flex-col gap-5 text-base md:p-8"
     >
       <FieldGroup>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -485,6 +485,8 @@ export function ConferenceRegistrationForm({ eventId, closeDialog }: Props) {
         )}
 
         <Button
+          id="conference-registration-button"
+          data-umami-event="Conference registration button"
           type="submit"
           variant="green-dark"
           disabled={form.formState.isSubmitting}

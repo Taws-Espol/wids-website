@@ -128,7 +128,7 @@
         "validation": {
           "required": "Este campo es obligatorio.",
           "invalid-email": "Ingresa un correo electrónico válido.",
-          "invalid-phone-number": "Ingresa un número de teléfono válido (ej. +5939XXXXXXXX).",
+          "invalid-phone-number": "Ingresa un número de teléfono válido, use solo 10 dígitos",
           "accepted-terms-required": "Debes aceptar los términos y condiciones.",
           "email-required": "El correo electrónico es obligatorio.",
           "email-duplicate": "Este correo electrónico ya está registrado para este evento.",
@@ -229,104 +229,6 @@
           "footer-note": "Recibes este recordatorio porque te registraste en una conferencia de WiDS Guayaquil."
         }
       },
-      "nextgen-form": {
-        "container": {
-          "title": "Registro a NextGen",
-          "description": "Completa el formulario para reservar tu cupo."
-        },
-        "actions": {
-          "submit": "Registrarse",
-          "close": "Cerrar formulario de registro"
-        },
-        "states": {
-          "submitting": "Enviando...",
-          "success": "Registro enviado con éxito."
-        },
-        "errors": {
-          "schema-validation": "Revisa los campos resaltados e inténtalo nuevamente.",
-          "payload-validation": "No se pudo guardar este registro. Revisa los datos e inténtalo nuevamente.",
-          "unknown": "No pudimos completar tu registro. Inténtalo nuevamente."
-        },
-        "validation": {
-          "required": "Este campo es obligatorio.",
-          "invalid-email": "Ingresa un correo electrónico válido.",
-          "invalid-phone-number": "Ingresa un número de teléfono válido que inicie con + o un dígito, y use solo dígitos, espacios, paréntesis o guiones.",
-          "invalid-integer": "Ingresa un número entero válido.",
-          "min-attendees": "Debe ser al menos 1.",
-          "accepted-terms-required": "Debes aceptar los términos y condiciones.",
-          "email-required": "El correo electrónico es obligatorio.",
-          "email-duplicate": "Este correo electrónico ya está registrado para este evento.",
-          "phone-number-required": "El número de teléfono es obligatorio.",
-          "phone-number-duplicate": "Este número de teléfono ya está registrado para este evento.",
-          "server-field": "Verifica este campo."
-        },
-        "fields": {
-          "affiliation": {
-            "label": "Institución"
-          },
-          "affiliation-city": {
-            "label": "Ciudad de la institución"
-          },
-          "email": {
-            "label": "Correo electrónico"
-          },
-          "phone-number": {
-            "label": "Número de teléfono"
-          },
-          "expected-attendees": {
-            "label": "Número de personas que asistirán",
-            "description": "Ingresa la cantidad esperada de asistentes."
-          },
-          "heard-about-event": {
-            "label": "¿Cómo te enteraste del evento?",
-            "description": "Elige la opción que mejor describa cómo nos conociste.",
-            "options": {
-              "friend": "Amistad",
-              "flyer": "Volante",
-              "social-media": "Redes sociales",
-              "email": "Correo electrónico",
-              "website": "Sitio web",
-              "university": "Universidad",
-              "workplace": "Lugar de trabajo",
-              "other": "Otro"
-            }
-          },
-          "receive-notifications": {
-            "label": "Deseo recibir notificaciones",
-            "description": "Puedes cancelar las notificaciones en cualquier momento."
-          },
-          "accepted-terms": {
-            "label": "Acepto los términos y condiciones"
-          }
-        }
-      },
-      "nextgen-emails": {
-        "confirmation": {
-          "subject": "WiDS Guayaquil | Registro a NextGen confirmado",
-          "preview": "Tu registro a NextGen de WiDS Guayaquil está confirmado",
-          "heading": "Tu registro fue exitoso",
-          "greeting": "Hola",
-          "description": "Gracias por registrar a tu institución en NextGen. Guarda los detalles del evento y nos vemos pronto.",
-          "event-date-label": "Fecha:",
-          "event-location-label": "Lugar:",
-          "cta": "Ver página de NextGen",
-          "copy-and-paste-label": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
-          "footer-note": "Recibes este correo porque completaste un registro en WiDS Guayaquil."
-        },
-        "reminder": {
-          "subject": "WiDS Guayaquil | Recordatorio: NextGen es mañana",
-          "preview": "NextGen de WiDS Guayaquil inicia en 1 día",
-          "heading": "Recordatorio: NextGen es mañana",
-          "greeting": "Hola",
-          "description": "Te recordamos que el evento NextGen al que te registraste inicia en menos de 24 horas.",
-          "emphasis": "Te recomendamos llegar unos minutos antes para completar tu check-in.",
-          "event-date-label": "Fecha:",
-          "event-location-label": "Lugar:",
-          "cta": "Revisar detalles de NextGen",
-          "copy-and-paste-label": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
-          "footer-note": "Recibes este recordatorio porque registraste una institución en un evento NextGen de WiDS Guayaquil."
-        }
-      },
       "datathon-form": {
         "container": {
           "title": "Registro al Datathon",
@@ -348,7 +250,7 @@
         "validation": {
           "required": "Este campo es obligatorio.",
           "invalid-email": "Ingresa un correo electrónico válido.",
-          "invalid-phone-number": "Ingresa un número de teléfono válido que inicie con + o un dígito, y use solo dígitos, espacios, paréntesis o guiones.",
+          "invalid-phone-number": "Ingresa un número de teléfono válido, use solo 10 dígitos",
           "invalid-integer": "Ingresa un número entero válido.",
           "invalid-national-id": "Ingresa un ID nacional válido.",
           "min-members": "Se requiere al menos 3 integrantes en el equipo.",
@@ -358,10 +260,12 @@
           "min-female-ratio": "Al menos el 50% de integrantes del equipo deben ser mujeres.",
           "accepted-terms-required": "Debes aceptar los términos y condiciones.",
           "email-required": "El correo electrónico es obligatorio.",
-          "email-duplicate": "Un correo del equipo ya está registrado para este evento.",
+          "email-duplicate": "Cada integrante del equipo debe tener un correo electrónico único.",
+          "national-id-required": "El número de cédula es obligatorio.",
+          "national-id-duplicate": "Cada integrante del equipo debe tener un número de cédula único.",
           "team-name-duplicate": "Este nombre de equipo ya está registrado para este evento.",
           "phone-number-required": "El número de teléfono es obligatorio.",
-          "phone-number-duplicate": "Un número de teléfono del equipo ya está registrado para este evento.",
+          "phone-number-duplicate": "Cada integrante del equipo debe tener un número de teléfono único.",
           "server-field": "Verifica este campo."
         },
         "fields": {
@@ -474,14 +378,16 @@
         "validation": {
           "required": "Este campo es obligatorio.",
           "invalid-email": "Ingresa un correo electrónico válido.",
-          "invalid-phone-number": "Ingresa un número de teléfono válido que inicie con + o un dígito, y use solo dígitos, espacios, paréntesis o guiones.",
+          "invalid-phone-number": "Ingresa un número de teléfono válido, use solo 10 dígitos",
           "invalid-integer": "Ingresa un número entero válido.",
           "invalid-national-id": "Ingresa un ID nacional válido.",
           "accepted-terms-required": "Debes aceptar los términos y condiciones.",
           "email-required": "El correo electrónico es obligatorio.",
-          "email-duplicate": "Un correo del equipo ya está registrado para este evento.",
+          "email-duplicate": "Este correo electrónico ya está registrado para este evento.",
+          "national-id-required": "El número de cédula es obligatorio.",
+          "national-id-duplicate": "Este número de cédula ya está registrado para este evento.",
           "phone-number-required": "El número de teléfono es obligatorio.",
-          "phone-number-duplicate": "Un número de teléfono del equipo ya está registrado para este evento.",
+          "phone-number-duplicate": "Este número de teléfono ya está registrado para este evento.",
           "server-field": "Verifica este campo."
         },
         "fields": {
