@@ -12,7 +12,9 @@ import {
   ArrowDown01Icon,
 } from "@hugeicons/core-free-icons";
 
-const Select = SelectPrimitive.Root;
+function Select({ modal = false, ...props }: SelectPrimitive.Root.Props) {
+  return <SelectPrimitive.Root data-slot="select" modal={modal} {...props} />;
+}
 
 function SelectGroup({ className, ...props }: SelectPrimitive.Group.Props) {
   return (
@@ -82,13 +84,14 @@ function SelectContent({
   >) {
   return (
     <SelectPrimitive.Portal>
+      <SelectPrimitive.Backdrop className="fixed inset-0 z-[199]" />
       <SelectPrimitive.Positioner
         side={side}
         sideOffset={sideOffset}
         align={align}
         alignOffset={alignOffset}
         alignItemWithTrigger={alignItemWithTrigger}
-        className="isolate z-50"
+        className="isolate z-[200]"
       >
         <SelectPrimitive.Popup
           data-slot="select-content"

@@ -46,7 +46,7 @@ export function DatathonRegistrationIndividualForm({
   return (
     <form
       onSubmit={form.handleSubmit(handleSubmit)}
-      className="flex flex-col gap-5 md:p-8"
+      className="flex flex-col gap-5 p-4 md:p-8"
     >
       <FieldGroup>
         <div>
