@@ -49,13 +49,13 @@ export default async function Conference({
 
             <TypographyParagraph>{event.description}</TypographyParagraph>
 
-            <Suspense>
-              <ConferenceRegistrationDialog
-                ctaLabel={t("cta")}
-                eventId={event.id}
-                eventDate={event.date}
-              />
-            </Suspense>
+            {/* <Suspense> */}
+            {/*   <ConferenceRegistrationDialog */}
+            {/*     ctaLabel={t("cta")} */}
+            {/*     eventId={event.id} */}
+            {/*     eventDate={event.date} */}
+            {/*   /> */}
+            {/* </Suspense> */}
           </div>
 
           <div className="relative aspect-2048/1365 w-full md:w-1/2">
