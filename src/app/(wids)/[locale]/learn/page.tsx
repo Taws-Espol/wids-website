@@ -30,7 +30,7 @@ export default function Learn({
     <main className="flex flex-col gap-20 px-4 py-20 md:px-4 lg:px-8 xl:px-42">
       <HeroSection
         title={t("title")}
-        src="https://cdn.taws.espol.edu.ec/wids/learn-hero.jpg"
+        src="https://cdn.taws.espol.edu.ec/wids/learn-hero.webp"
         alt="Learn hero"
         color="blue"
       />
@@ -42,9 +42,9 @@ export default function Learn({
           <TypographyParagraph>{t("description")}</TypographyParagraph>
         </div>
 
-        <div className="relative aspect-1024/683 w-full md:w-1/2">
+        <div className="relative aspect-square w-full md:w-1/2">
           <Image
-            src="https://cdn.taws.espol.edu.ec/wids/learn-collage.jpg"
+            src="https://cdn.taws.espol.edu.ec/wids/learn-collage.webp"
             alt="Learn collage"
             fill
             sizes="(max-width: 768px) calc(100vw - 2rem), 50vw"

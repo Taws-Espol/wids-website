@@ -42,9 +42,9 @@ export default async function Home({
             <TypographyParagraph>{edition.description}</TypographyParagraph>
           </div>
 
-          <div className="relative aspect-640/541 w-full md:w-1/2">
+          <div className="relative aspect-square w-full md:w-1/2">
             <Image
-              src="https://cdn.taws.espol.edu.ec/wids/home-collage.png"
+              src="https://cdn.taws.espol.edu.ec/wids/home-collage.webp"
               alt="Home collage"
               fill
               sizes="(max-width: 768px) calc(100vw - 2rem), 50vw"

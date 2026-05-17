@@ -1,7 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Link from "next/link";
 import Image from "next/image";
-import { Suspense } from "react";
+// import { Suspense } from "react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   CalendarIcon,
@@ -19,7 +19,7 @@ import { HeroSection } from "@/features/landing/components/hero-section";
 import { Stepper } from "@/features/landing/components/stepper";
 import { PersonCard } from "@/features/landing/components/person-card";
 import { getConferencePageData } from "@/features/landing/queries/get-conference-page-data";
-import { ConferenceRegistrationDialog } from "@/features/registration/components/conference-registration-dialog";
+// import { ConferenceRegistrationDialog } from "@/features/registration/components/conference-registration-dialog";
 
 export default async function Conference({
   params,
@@ -37,7 +37,7 @@ export default async function Conference({
     <main className="flex flex-col gap-20 px-4 py-20 md:px-4 lg:px-8 xl:px-42">
       <HeroSection
         title={t("title")}
-        src="https://cdn.taws.espol.edu.ec/wids/conference-hero.png"
+        src="https://cdn.taws.espol.edu.ec/wids/conference-hero.webp"
         alt="Conference hero"
         color="green_light"
       />
@@ -58,9 +58,9 @@ export default async function Conference({
             {/* </Suspense> */}
           </div>
 
-          <div className="relative aspect-2048/1365 w-full md:w-1/2">
+          <div className="relative aspect-square w-full md:w-1/2">
             <Image
-              src="https://cdn.taws.espol.edu.ec/wids/conference-collage.jpg"
+              src="https://cdn.taws.espol.edu.ec/wids/conference-collage.webp"
               alt="Conference collage"
               fill
               loading="eager"

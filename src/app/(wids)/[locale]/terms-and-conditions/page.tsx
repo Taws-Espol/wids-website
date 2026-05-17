@@ -28,9 +28,9 @@ export default async function TermsAndConditions({
           <TypographyParagraph>{t("description")}</TypographyParagraph>
         </div>
 
-        <div className="relative aspect-1024/683 w-full md:w-1/2">
+        <div className="relative aspect-square w-full md:w-1/2">
           <Image
-            src="https://cdn.taws.espol.edu.ec/wids/learn-collage.jpg"
+            src="https://cdn.taws.espol.edu.ec/wids/learn-collage.webp"
             alt="Learn collage"
             fill
             sizes="(max-width: 768px) calc(100vw - 2rem), 50vw"

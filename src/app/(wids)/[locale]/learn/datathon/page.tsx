@@ -60,10 +60,10 @@ export default async function Datathon({
             </Suspense>
           </div>
 
-          <div className="relative aspect-1024/683 w-full md:w-1/2">
+          <div className="relative aspect-square w-full md:w-1/2">
             <Image
-              src="https://cdn.taws.espol.edu.ec/wids/learn-collage.jpg"
-              alt="Learn collage"
+              src="https://cdn.taws.espol.edu.ec/wids/datathon-collage.webp"
+              alt="Datathon collage"
               fill
               loading="eager"
               fetchPriority="high"
