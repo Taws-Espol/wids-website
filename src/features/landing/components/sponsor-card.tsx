@@ -14,13 +14,13 @@ export function SponsorCard({ sponsor }: Props) {
 
   return (
     <Link
-      className="flex w-52 max-w-full flex-none flex-col items-center gap-1"
+      className="flex w-52 max-w-full flex-none flex-col items-center gap-6"
       title={sponsor.name}
       href={sponsor.website}
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div className="relative aspect-square w-38">
+      <div className="relative aspect-square w-30">
         <Image
           src={logo.url as string}
           alt={logo.alt as string}
