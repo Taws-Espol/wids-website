@@ -1,6 +1,6 @@
 import path from "node:path";
 import { postgresAdapter } from "@payloadcms/db-postgres";
-// import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
+import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
 import { importExportPlugin } from "@payloadcms/plugin-import-export";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { s3Storage } from "@payloadcms/storage-s3";
@@ -134,17 +134,18 @@ export default buildConfig({
     ),
   },
   serverURL: getAppUrl().origin,
-  // email: nodemailerAdapter({
-  //   defaultFromAddress: process.env.DEFAULT_FROM_ADDRESS ?? "",
-  //   defaultFromName: process.env.DEFAULT_FROM_NAME ?? "",
-  //   transportOptions: {
-  //     host: process.env.SMTP_HOST ?? "",
-  //     port: Number(process.env.SMTP_PORT ?? ""),
-  //     secure: true,
-  //     auth: {
-  //       user: process.env.SMTP_USER ?? "",
-  //       pass: process.env.SMTP_PASS ?? "",
-  //     },
-  //   },
-  // }),
+  email: nodemailerAdapter({
+    defaultFromAddress: process.env.DEFAULT_FROM_ADDRESS ?? "",
+    defaultFromName: process.env.DEFAULT_FROM_NAME ?? "",
+    transportOptions: {
+      host: process.env.SMTP_HOST ?? "",
+      port: Number(process.env.SMTP_PORT ?? ""),
+      secure: true,
+      pool: true,
+      auth: {
+        user: process.env.SMTP_USER ?? "",
+        pass: process.env.SMTP_PASS ?? "",
+      },
+    },
+  }),
 });

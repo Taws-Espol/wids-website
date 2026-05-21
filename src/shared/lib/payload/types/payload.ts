@@ -258,6 +258,10 @@ export interface Event {
   locationUrl?: string | null;
   date: string;
   date_tz: SupportedTimezones;
+  registrationStart?: string | null;
+  registrationStart_tz?: SupportedTimezones;
+  registrationEnd?: string | null;
+  registrationEnd_tz?: SupportedTimezones;
   duration: number;
   durationUnit: "minutes" | "hours" | "days";
   updatedAt: string;
@@ -825,6 +829,10 @@ export interface EventsSelect<T extends boolean = true> {
   locationUrl?: T;
   date?: T;
   date_tz?: T;
+  registrationStart?: T;
+  registrationStart_tz?: T;
+  registrationEnd?: T;
+  registrationEnd_tz?: T;
   duration?: T;
   durationUnit?: T;
   updatedAt?: T;

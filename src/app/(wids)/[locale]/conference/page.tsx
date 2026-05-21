@@ -1,7 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Link from "next/link";
 import Image from "next/image";
-// import { Suspense } from "react";
+import { Suspense } from "react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   CalendarIcon,
@@ -19,7 +19,7 @@ import { HeroSection } from "@/features/landing/components/hero-section";
 import { Stepper } from "@/features/landing/components/stepper";
 import { PersonCard } from "@/features/landing/components/person-card";
 import { getConferencePageData } from "@/features/landing/queries/get-conference-page-data";
-// import { ConferenceRegistrationDialog } from "@/features/registration/components/conference-registration-dialog";
+import { ConferenceRegistrationDialog } from "@/features/registration/components/conference-registration-dialog";
 
 export default async function Conference({
   params,
@@ -49,13 +49,15 @@ export default async function Conference({
 
             <TypographyParagraph>{event.description}</TypographyParagraph>
 
-            {/* <Suspense> */}
-            {/*   <ConferenceRegistrationDialog */}
-            {/*     ctaLabel={t("cta")} */}
-            {/*     eventId={event.id} */}
-            {/*     eventDate={event.date} */}
-            {/*   /> */}
-            {/* </Suspense> */}
+            <Suspense>
+              <ConferenceRegistrationDialog
+                ctaLabel={t("cta")}
+                eventId={event.id}
+                eventDate={event.date}
+                registrationStart={event.registrationStart ?? ""}
+                registrationEnd={event.registrationEnd ?? ""}
+              />
+            </Suspense>
           </div>
 
           <div className="relative aspect-square w-full md:w-1/2">

@@ -23,16 +23,21 @@ type Props = {
   ctaLabel: string;
   eventId: number;
   eventDate: string;
+  registrationStart: string;
+  registrationEnd: string;
 };
 
 export function ConferenceRegistrationDialog({
   ctaLabel,
   eventId,
-  eventDate,
+  registrationStart,
+  registrationEnd,
 }: Props) {
   const { open, setOpen, isMobile, t } = useConferenceRegistrationDialog();
 
-  if (new Date(eventDate) <= new Date()) return null;
+  const now = new Date();
+  if (now < new Date(registrationStart) || now > new Date(registrationEnd))
+    return null;
 
   const triggerButton = (
     <Button

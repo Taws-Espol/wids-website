@@ -20,7 +20,7 @@ import { validateUniqueEmailPerEvent } from "../utils/validate-unique-email-per-
 import { validateUniquePhoneNumberPerEvent } from "../utils/validate-unique-phone-number-per-event.ts";
 import { validateUniqueNationalIdPerEvent } from "../utils/validate-unique-national-id-per-event.ts";
 
-// const ONE_DAY_IN_MILLISECONDS = 24 * 60 * 60 * 1000;
+// const ONE_DAY_IN_MILLISECONDS = 24 * 60 * 60 * 1000 + 1000;
 
 // function getRelationshipId(
 //   value: number | { id: number } | null | undefined,

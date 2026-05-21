@@ -89,6 +89,34 @@ export const Events: CollectionConfig = {
       },
     },
     {
+      name: "registrationStart",
+      type: "date",
+      timezone: {
+        defaultTimezone: "America/Bogota",
+      },
+      // required: true,
+      admin: {
+        date: {
+          pickerAppearance: "dayAndTime",
+          displayFormat: "MMM d, yyyy h:mm a",
+        },
+      },
+    },
+    {
+      name: "registrationEnd",
+      type: "date",
+      timezone: {
+        defaultTimezone: "America/Bogota",
+      },
+      // required: true,
+      admin: {
+        date: {
+          pickerAppearance: "dayAndTime",
+          displayFormat: "MMM d, yyyy h:mm a",
+        },
+      },
+    },
+    {
       type: "row",
       fields: [
         {

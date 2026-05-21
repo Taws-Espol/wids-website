@@ -422,6 +422,8 @@ export function DatathonRegistrationIndividualForm({
         )}
 
         <Button
+          id="datathon-registration-button"
+          data-umami-event="Datathon registration button (individual)"
           type="submit"
           variant="blue"
           disabled={form.formState.isSubmitting}
