@@ -120,7 +120,7 @@ export function DatathonRegistrationIndividualForm({
                       </SelectValue>
                     </SelectTrigger>
 
-                    <SelectContent>
+                    <SelectContent data-vaul-no-drag>
                       {SEX_OPTIONS.map((item) => (
                         <SelectItem key={item.value} value={item.value}>
                           {t(`fields.sex.options.${item.value}`)}
@@ -280,7 +280,7 @@ export function DatathonRegistrationIndividualForm({
                       </SelectValue>
                     </SelectTrigger>
 
-                    <SelectContent>
+                    <SelectContent data-vaul-no-drag>
                       {COLLEGE_YEAR_OPTIONS.map((item) => (
                         <SelectItem key={item.value} value={item.value}>
                           {t(`fields.year.options.${item.value}`)}
@@ -329,7 +329,7 @@ export function DatathonRegistrationIndividualForm({
                   </SelectValue>
                 </SelectTrigger>
 
-                <SelectContent>
+                <SelectContent data-vaul-no-drag>
                   {HEARD_ABOUT_OPTIONS.map((item) => (
                     <SelectItem key={item.value} value={item.value}>
                       {t(`fields.heard-about-event.options.${item.value}`)}
