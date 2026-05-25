@@ -387,7 +387,7 @@ export function ConferenceRegistrationForm({ eventId, closeDialog }: Props) {
                     </SelectValue>
                   </SelectTrigger>
 
-                  <SelectContent data-vaul-no-drag>
+                  <SelectContent>
                     {HEARD_ABOUT_OPTIONS.map((item) => (
                       <SelectItem key={item.value} value={item.value}>
                         {t(`fields.heard-about-event.options.${item.value}`)}
