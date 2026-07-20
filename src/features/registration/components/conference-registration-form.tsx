@@ -313,6 +313,7 @@ export function ConferenceRegistrationForm({ eventId, closeDialog }: Props) {
           render={({ field, fieldState }) => {
             return (
               <FieldSet
+                hidden
                 className="w-full max-w-xs"
                 data-invalid={fieldState.invalid}
               >
