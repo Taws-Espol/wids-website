@@ -3,6 +3,7 @@ import * as migration_20260511_032740 from "./20260511_032740";
 import * as migration_20260513_225900 from "./20260513_225900";
 import * as migration_20260521_022131 from "./20260521_022131";
 import * as migration_20260724_020828_add_conference_attendance_confirmation from "./20260724_020828_add_conference_attendance_confirmation";
+import * as migration_20260724_035754_add_attendance_confirmation_job_slug from "./20260724_035754_add_attendance_confirmation_job_slug";
 
 export const migrations = [
   {
@@ -29,5 +30,10 @@ export const migrations = [
     up: migration_20260724_020828_add_conference_attendance_confirmation.up,
     down: migration_20260724_020828_add_conference_attendance_confirmation.down,
     name: "20260724_020828_add_conference_attendance_confirmation",
+  },
+  {
+    up: migration_20260724_035754_add_attendance_confirmation_job_slug.up,
+    down: migration_20260724_035754_add_attendance_confirmation_job_slug.down,
+    name: "20260724_035754_add_attendance_confirmation_job_slug",
   },
 ];
