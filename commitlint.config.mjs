@@ -1,5 +1,5 @@
 /** @type {import("@commitlint/types").UserConfig} */
-export default {
+const config = {
   extends: ["@commitlint/config-conventional"],
   rules: {
     // Scopes are optional and free-form, but must be lower-case kebab-case so
@@ -7,3 +7,5 @@ export default {
     "scope-case": [2, "always", "kebab-case"],
   },
 };
+
+export default config;

@@ -10,9 +10,6 @@ import {
   CONFERENCE_REGISTRATION_REMINDER_TASK_SLUG,
 } from "../constants/slugs.ts";
 import { CONFERENCE_REGISTRATION_ERROR_CODES } from "../../../constants/conference-registration-error-codes.ts";
-import { routing } from "../../next-intl/routing.ts";
-import type { Locale } from "../../next-intl/types.ts";
-import { tryCatch } from "../../../utils/try-catch.ts";
 import { createEventTypeValidationHook } from "../utils/create-event-type-validation.ts";
 import { createRegistrationEmailQueueHook } from "../utils/create-registration-email-queue-hook.ts";
 import { generateAttendanceToken } from "../utils/generate-attendance-token.ts";
