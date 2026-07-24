@@ -11,9 +11,6 @@ import {
   DATATHON_REGISTRATION_CONFIRMATION_TASK_SLUG,
   DATATHON_REGISTRATION_REMINDER_TASK_SLUG,
 } from "../constants/slugs.ts";
-import { routing } from "../../next-intl/routing.ts";
-import type { Locale } from "../../next-intl/types.ts";
-import { tryCatch } from "../../../utils/try-catch.ts";
 import { createEventTypeValidationHook } from "../utils/create-event-type-validation.ts";
 import { createRegistrationEmailQueueHook } from "../utils/create-registration-email-queue-hook.ts";
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";

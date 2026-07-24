@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "payload migrate && next build",
     "start": "next start",
-    "lint": "eslint",
+    "lint": "eslint --max-warnings 0",
     "typecheck": "tsc --noEmit",
     "payload": "payload",
     "dev:email": "email dev --dir ./src/shared/lib/react-email",
