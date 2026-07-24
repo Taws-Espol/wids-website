@@ -9,7 +9,9 @@
     "lint": "eslint",
     "payload": "payload",
     "dev:email": "email dev --dir ./src/shared/lib/react-email",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
@@ -59,7 +61,8 @@
     "prettier": "3.9.6",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "tailwindcss": "^4.3.3",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.10"
   },
   "packageManager": "pnpm@10.33.4",
   "type": "module",
