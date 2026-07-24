@@ -12,6 +12,7 @@ import {
 
 import { registerForConferenceAction } from "@/features/registration/actions/register-for-conference";
 import { conferenceRegistrationSchema } from "@/features/registration/schemas/conference-registration";
+import { mapConferenceRegistrationError } from "@/features/registration/utils/map-conference-registration-error";
 import type { ConferenceRegistrationValues } from "@/features/registration/types/conference-registration";
 
 interface Props {
@@ -65,38 +66,14 @@ export const useConferenceRegistrationForm = ({
     );
 
     if (error) {
-      switch (error.code) {
-        case "SCHEMA_VALIDATION":
-          form.setError("root.serverError", {
-            message: "errors.schema-validation",
-          });
-          return;
-        case "UNIQUE_EMAIL":
-          form.setError("email", {
-            message: "validation.email-duplicate",
-          });
-          return;
-        case "UNIQUE_PHONE_NUMBER":
-          form.setError("phoneNumber", {
-            message: "validation.phone-number-duplicate",
-          });
-          return;
-        case "PAYLOAD_VALIDATION":
-          form.setError("root.serverError", {
-            message: "errors.payload-validation",
-          });
-          return;
-        case "UNKNOWN":
-          form.setError("root.serverError", {
-            message: "errors.unknown",
-          });
-          return;
-        default:
-          form.setError("root.serverError", {
-            message: "errors.unknown",
-          });
-          return;
+      for (const { field, message } of mapConferenceRegistrationError(
+        error.code,
+        form.getValues(),
+      )) {
+        form.setError(field, { message });
       }
+
+      return;
     }
 
     toast.success(t("states.success"));
