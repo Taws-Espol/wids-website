@@ -9,6 +9,7 @@ import { Toaster } from "@/shared/components/ui/sonner";
 import { Footer } from "@/shared/components/footer";
 import { Header } from "@/shared/components/header";
 import { routing } from "@/shared/lib/next-intl/routing";
+import { UMAMI_TRACKED_DOMAINS } from "@/shared/lib/umami/umami-domains";
 import { cn } from "@/shared/utils/cn";
 import { getAppUrl } from "@/shared/utils/get-app-url";
 import "@/shared/styles/globals.css";
@@ -76,6 +77,7 @@ export default async function RootLayout({
           defer
           src="https://analytics.taws.espol.edu.ec/script.js"
           data-website-id="a9968fe2-7cbd-485c-889b-df72651c22d9"
+          data-domains={UMAMI_TRACKED_DOMAINS}
         />
       </head>
       <body>

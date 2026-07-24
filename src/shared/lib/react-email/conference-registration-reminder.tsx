@@ -15,7 +15,7 @@ import {
 } from "react-email";
 import { createTranslator } from "next-intl";
 
-import { CONFERENCE_REGISTRATION_REMINDER_PIXEL_URL } from "@/shared/lib/umami/umami-email-pixels";
+import { getConferenceRegistrationReminderPixelUrl } from "@/shared/lib/umami/umami-email-pixels";
 import type { Locale } from "@/shared/lib/next-intl/types";
 
 type Props = {
@@ -232,7 +232,7 @@ export const ConferenceRegistrationReminderEmail = async ({
             </Text>
 
             <Img
-              src={CONFERENCE_REGISTRATION_REMINDER_PIXEL_URL}
+              src={getConferenceRegistrationReminderPixelUrl()}
               alt=""
               width="1"
               height="1"

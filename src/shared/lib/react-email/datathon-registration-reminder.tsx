@@ -15,7 +15,7 @@ import {
 } from "react-email";
 import { createTranslator } from "next-intl";
 
-import { DATATHON_REGISTRATION_REMINDER_PIXEL_URL } from "@/shared/lib/umami/umami-email-pixels";
+import { getDatathonRegistrationReminderPixelUrl } from "@/shared/lib/umami/umami-email-pixels";
 import type { Locale } from "@/shared/lib/next-intl/types";
 
 type Props = {
@@ -246,7 +246,7 @@ export const DatathonRegistrationReminderEmail = async ({
             </Text>
 
             <Img
-              src={DATATHON_REGISTRATION_REMINDER_PIXEL_URL}
+              src={getDatathonRegistrationReminderPixelUrl()}
               alt=""
               width="1"
               height="1"
