@@ -116,7 +116,12 @@ Two rulesets are active and will block a merge that does not satisfy them:
 
 ## CI/CD
 
-Every PR gets a preview deployment automatically. If the build fails, the PR will not be reviewed — fix the build first.
+Two things run on every PR, and both must pass before review:
+
+- **GitHub Actions** (`.github/workflows/ci.yml`) runs `pnpm lint`, `pnpm typecheck` and `pnpm test`.
+- **A preview deployment** is built automatically. If the build fails, the PR will not be reviewed — fix the build first.
+
+The production build is not repeated in Actions, because it needs a Postgres instance and the preview deployment already covers it.
 
 ## Local enforcement
 
@@ -130,4 +135,11 @@ Hooks run through husky:
 
 If a hook blocks something it should not, fix the name or message rather than passing `--no-verify`.
 
-`pnpm lint` and `npx tsc --noEmit` must both pass before you open a PR.
+Run these before opening a PR. Use pnpm scripts — never `npx`, which can resolve a different version than the `packageManager` field pins.
+
+| Command | What it checks |
+| ---------------- | ------------------------------------- |
+| `pnpm lint`      | eslint across the repository          |
+| `pnpm typecheck` | `tsc --noEmit`                        |
+| `pnpm test`      | vitest, once, non-watching            |
+| `pnpm build`     | the production build (needs Postgres) |
