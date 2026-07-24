@@ -1,47 +1,12 @@
-import type {
-  CollectionSlug,
-  TextField,
-  TextFieldValidation,
-  ValidateOptions,
-} from "payload";
+import type { TextFieldValidation } from "payload";
 
 import { DATATHON_REGISTRATION_ERROR_CODES } from "@/shared/constants/datathon-registration-error-codes";
 
-export const validateUniqueNationalIdPerEvent: TextFieldValidation = async (
-  value,
-  {
-    req,
-    siblingData,
-    data,
-    collectionSlug,
-  }: ValidateOptions<
-    unknown,
-    Record<string, unknown>,
-    TextField,
-    string | null | undefined
-  >,
-) => {
-  if (!value) return DATATHON_REGISTRATION_ERROR_CODES.REQUIRED;
+import { createUniquePerEventValidator } from "./create-unique-per-event-validator";
 
-  const event = siblingData?.event;
-
-  if (!event) return true;
-
-  const trimmedValue = value.trim();
-
-  const existing = await req.payload.find({
-    collection: collectionSlug as CollectionSlug,
-    where: {
-      ...(data && typeof data === "object" && "id" in data && data.id
-        ? { id: { not_equals: (data as { id: string | number }).id } }
-        : { id: { not_equals: null } }),
-      event: { equals: event },
-      nationalId: { equals: trimmedValue },
-    },
-    limit: 1,
+export const validateUniqueNationalIdPerEvent: TextFieldValidation =
+  createUniquePerEventValidator({
+    field: "nationalId",
+    requiredErrorCode: DATATHON_REGISTRATION_ERROR_CODES.REQUIRED,
+    duplicateErrorCode: DATATHON_REGISTRATION_ERROR_CODES.UNIQUE_NATIONAL_ID,
   });
-
-  return existing.totalDocs > 0
-    ? DATATHON_REGISTRATION_ERROR_CODES.UNIQUE_NATIONAL_ID
-    : true;
-};
