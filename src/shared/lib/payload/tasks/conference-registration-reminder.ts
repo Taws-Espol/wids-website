@@ -1,12 +1,11 @@
-import { render } from "react-email";
 import type { TaskConfig } from "payload";
 
 import type { Locale } from "@/shared/lib/next-intl/types";
 import { LOCALES } from "@/shared/lib/next-intl/locales";
 import { CONFERENCE_REGISTRATION_REMINDER_TASK_SLUG } from "@/shared/lib/payload/constants/slugs";
-import { ConferenceRegistrationReminderEmail } from "@/shared/lib/react-email/conference-registration-reminder";
+import { conferenceRegistrationReminderEmail } from "@/shared/lib/react-email/conference-registration-reminder";
+import { renderTransactionalEmail } from "@/shared/lib/react-email/render-transactional-email";
 import { getAppUrl } from "@/shared/utils/get-app-url";
-import { getEmailSubject } from "@/shared/utils/get-email-subject";
 import { formatDateTimeText } from "@/shared/utils/format-datetime-text";
 import { tryCatch } from "@/shared/utils/try-catch";
 
@@ -89,21 +88,17 @@ export const conferenceRegistrationReminderTask: TaskConfig<ConferenceRegistrati
 
       const eventUrl = new URL("/conference", getAppUrl().origin).toString();
 
-      const html = await render(
-        ConferenceRegistrationReminderEmail({
-          locale: input.locale,
-          name: registrationData.firstName,
+      const { subject, html } = await renderTransactionalEmail({
+        definition: conferenceRegistrationReminderEmail,
+        locale: input.locale,
+        name: registrationData.firstName,
+        ctaHref: eventUrl,
+        data: {
           eventTitle: eventData.title,
           eventDateTimeText: formatDateTimeText(eventData.date, input.locale),
           eventLocation: eventData.location,
-          eventUrl,
-        }),
-      );
-
-      const subject = await getEmailSubject(
-        input.locale,
-        "features.registration.conference-emails.reminder",
-      );
+        },
+      });
 
       const { error: sendEmailError } = await tryCatch(
         req.payload.sendEmail({

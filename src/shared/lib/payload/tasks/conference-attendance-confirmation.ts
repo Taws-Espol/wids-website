@@ -1,13 +1,12 @@
 import type { TaskConfig } from "payload";
-import { render } from "react-email";
 
 import { LOCALES } from "@/shared/lib/next-intl/locales";
 import type { Locale } from "@/shared/lib/next-intl/types";
 import { CONFERENCE_ATTENDANCE_CONFIRMATION_TASK_SLUG } from "@/shared/lib/payload/constants/slugs";
-import { ConferenceAttendanceConfirmationEmail } from "@/shared/lib/react-email/conference-attendance-confirmation";
+import { conferenceAttendanceConfirmationEmail } from "@/shared/lib/react-email/conference-attendance-confirmation";
+import { renderTransactionalEmail } from "@/shared/lib/react-email/render-transactional-email";
 import { formatDateTimeText } from "@/shared/utils/format-datetime-text";
 import { getAppUrl } from "@/shared/utils/get-app-url";
-import { getEmailSubject } from "@/shared/utils/get-email-subject";
 import { tryCatch } from "@/shared/utils/try-catch";
 
 type ConferenceAttendanceConfirmationTaskInputOutput = {
@@ -113,21 +112,17 @@ export const conferenceAttendanceConfirmationTask: TaskConfig<ConferenceAttendan
       confirmUrl.searchParams.set("utm_medium", "email");
       confirmUrl.searchParams.set("utm_campaign", "attendance-confirmation");
 
-      const subject = await getEmailSubject(
-        input.locale,
-        "features.registration.conference-emails.attendance-confirmation",
-      );
-
-      const html = await render(
-        ConferenceAttendanceConfirmationEmail({
-          locale: input.locale,
-          name: registrationData.firstName,
+      const { subject, html } = await renderTransactionalEmail({
+        definition: conferenceAttendanceConfirmationEmail,
+        locale: input.locale,
+        name: registrationData.firstName,
+        ctaHref: confirmUrl.toString(),
+        data: {
           eventTitle: eventData.title,
           eventDateTimeText: formatDateTimeText(eventData.date, input.locale),
           eventLocation: eventData.location,
-          confirmUrl: confirmUrl.toString(),
-        }),
-      );
+        },
+      });
 
       const { error: sendEmailError } = await tryCatch(
         req.payload.sendEmail({

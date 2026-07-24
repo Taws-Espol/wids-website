@@ -1,12 +1,11 @@
-import { render } from "react-email";
 import type { TaskConfig } from "payload";
 
 import type { Locale } from "@/shared/lib/next-intl/types";
 import { LOCALES } from "@/shared/lib/next-intl/locales";
 import { DATATHON_REGISTRATION_REMINDER_TASK_SLUG } from "@/shared/lib/payload/constants/slugs";
-import { DatathonRegistrationReminderEmail } from "@/shared/lib/react-email/datathon-registration-reminder";
+import { datathonRegistrationReminderEmail } from "@/shared/lib/react-email/datathon-registration-reminder";
+import { renderTransactionalEmail } from "@/shared/lib/react-email/render-transactional-email";
 import { getAppUrl } from "@/shared/utils/get-app-url";
-import { getEmailSubject } from "@/shared/utils/get-email-subject";
 import { formatDateTimeText } from "@/shared/utils/format-datetime-text";
 import { tryCatch } from "@/shared/utils/try-catch";
 
@@ -139,18 +138,19 @@ export const datathonRegistrationReminderTask: TaskConfig<DatathonRegistrationRe
         getAppUrl().origin,
       ).toString();
 
-      const { data: html, error: renderEmailError } = await tryCatch(
-        render(
-          DatathonRegistrationReminderEmail({
-            locale: input.locale,
-            name: leader.firstName,
+      const { data: email, error: renderEmailError } = await tryCatch(
+        renderTransactionalEmail({
+          definition: datathonRegistrationReminderEmail,
+          locale: input.locale,
+          name: leader.firstName,
+          ctaHref: eventUrl,
+          data: {
             teamName: registrationData.teamName,
             eventTitle: eventData.title,
             eventDateTimeText: formatDateTimeText(eventData.date, input.locale),
             eventLocation: eventData.location,
-            eventUrl,
-          }),
-        ),
+          },
+        }),
       );
 
       if (renderEmailError) {
@@ -169,29 +169,7 @@ export const datathonRegistrationReminderTask: TaskConfig<DatathonRegistrationRe
         };
       }
 
-      const { data: subject, error: subjectError } = await tryCatch(
-        getEmailSubject(
-          input.locale,
-          "features.registration.datathon-emails.reminder",
-        ),
-      );
-
-      if (subjectError) {
-        req.payload.logger.error({
-          ...taskContext,
-          error: subjectError,
-          message:
-            "Datathon reminder task failed while generating email subject.",
-        });
-
-        return {
-          state: "failed",
-          output: {
-            success: false,
-            message: "Unexpected error while generating email subject.",
-          },
-        };
-      }
+      const { subject, html } = email;
 
       const { error: sendEmailError } = await tryCatch(
         req.payload.sendEmail({

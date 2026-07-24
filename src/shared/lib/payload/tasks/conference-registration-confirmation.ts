@@ -1,13 +1,12 @@
 import type { TaskConfig } from "payload";
-import { render } from "react-email";
 
 import { LOCALES } from "@/shared/lib/next-intl/locales";
 import type { Locale } from "@/shared/lib/next-intl/types";
 import { CONFERENCE_REGISTRATION_CONFIRMATION_TASK_SLUG } from "@/shared/lib/payload/constants/slugs";
-import { ConferenceRegistrationConfirmationEmail } from "@/shared/lib/react-email/conference-registration-confirmation";
+import { conferenceRegistrationConfirmationEmail } from "@/shared/lib/react-email/conference-registration-confirmation";
+import { renderTransactionalEmail } from "@/shared/lib/react-email/render-transactional-email";
 import { formatDateTimeText } from "@/shared/utils/format-datetime-text";
 import { getAppUrl } from "@/shared/utils/get-app-url";
-import { getEmailSubject } from "@/shared/utils/get-email-subject";
 import { tryCatch } from "@/shared/utils/try-catch";
 
 type ConferenceRegistrationConfirmationTaskInputOutput = {
@@ -88,21 +87,17 @@ export const conferenceRegistrationConfirmationTask: TaskConfig<ConferenceRegist
 
       const eventUrl = new URL("/conference", getAppUrl().origin).toString();
 
-      const subject = await getEmailSubject(
-        input.locale,
-        "features.registration.conference-emails.confirmation",
-      );
-
-      const html = await render(
-        ConferenceRegistrationConfirmationEmail({
-          locale: input.locale,
-          name: registrationData.firstName,
+      const { subject, html } = await renderTransactionalEmail({
+        definition: conferenceRegistrationConfirmationEmail,
+        locale: input.locale,
+        name: registrationData.firstName,
+        ctaHref: eventUrl,
+        data: {
           eventTitle: eventData.title,
           eventDateTimeText: formatDateTimeText(eventData.date, input.locale),
           eventLocation: eventData.location,
-          eventUrl,
-        }),
-      );
+        },
+      });
 
       const { error: sendEmailError } = await tryCatch(
         req.payload.sendEmail({
