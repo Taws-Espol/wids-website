@@ -62,6 +62,13 @@
   --color-w-green-dark: var(--w-green-dark);
   --color-w-green-dark-foreground: var(--w-green-dark-foreground);
 
+  /* Primary Colors for Accessibility */
+  --color-w-green-light-accessible: var(--w-green-light-accessible);
+  --color-w-blue-accessible: var(--w-blue-accessible);
+  --color-w-orange-accessible: var(--w-orange-accessible);
+  --color-w-purple-accessible: var(--w-purple-accessible);
+  --color-w-green-dark-accessible: var(--w-green-dark-accessible);
+
   /* Secondary Colors */
   --color-ws-green: var(--ws-green);
   --color-ws-green-foreground: var(--ws-green-foreground);
@@ -75,6 +82,12 @@
   --color-ws-purple-foreground: var(--ws-purple-foreground);
 }
 
+/*
+ * The --w-* and --ws-* values below are mirrored in
+ * src/shared/constants/wids-palette.ts, which transactional emails use because
+ * react-email's <Tailwind> config takes a JS object and cannot read this file.
+ * Change both together.
+ */
 :root {
   --background: #ffffff;
   --foreground: #173a21;
@@ -85,7 +98,8 @@
   --primary: #004029;
   --primary-foreground: #fafafa;
   --secondary: #ffcb05;
-  --secondary-foreground: #fafafa;
+  /* Matches --w-yellow-foreground. #fafafa on this yellow is 1.46:1 and fails WCAG AA. */
+  --secondary-foreground: #173a21;
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
@@ -113,7 +127,8 @@
 
   /* Neutral Colors */
   --w-black: #000000;
-  --w-gray: #808080;
+  /* Brand guidelines p.10 — body text on white. #808080 was 3.95:1 and failed AA. */
+  --w-gray: #676767;
   --w-white: #fafafa;
 
   /* Primary Colors */
@@ -129,6 +144,19 @@
   --w-purple-foreground: #173a21;
   --w-green-dark: #004029;
   --w-green-dark-foreground: #fafafa;
+
+  /*
+   * Primary Colors for Accessibility (brand guidelines p.10-11)
+   * Darkened primaries, for text at 24px+ on white or as headings. The
+   * undarkened primaries above are background-only — none of them reaches 3:1
+   * as text. Yellow has no accessible variant: the guidelines restrict it to
+   * backgrounds, graphic elements and web components.
+   */
+  --w-green-light-accessible: #42a85f;
+  --w-blue-accessible: #009ec9;
+  --w-orange-accessible: #f76902;
+  --w-purple-accessible: #8d73de;
+  --w-green-dark-accessible: #173a21;
 
   /* Secondary Colors */
   --ws-green: #95e6ac;

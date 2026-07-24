@@ -2,7 +2,6 @@ import { getConferenceAttendanceConfirmationPixelUrl } from "@/shared/lib/umami/
 import type { Locale } from "@/shared/lib/next-intl/types";
 
 import { EmailDetailsCard } from "./email-details-card";
-import { CONFERENCE_EMAIL_THEME } from "./email-theme";
 import {
   buildTransactionalEmail,
   type EmailDefinition,
@@ -18,11 +17,11 @@ export const conferenceAttendanceConfirmationEmail: EmailDefinition<ConferenceAt
   {
     namespace:
       "features.registration.conference-emails.attendance-confirmation",
-    theme: CONFERENCE_EMAIL_THEME,
+    program: "conference",
     getPixelUrl: getConferenceAttendanceConfirmationPixelUrl,
     children: (t, data) => (
       <EmailDetailsCard
-        theme={CONFERENCE_EMAIL_THEME}
+        program="conference"
         title={data.eventTitle}
         rows={[
           <>

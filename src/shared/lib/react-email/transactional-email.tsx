@@ -3,6 +3,7 @@ import {
   Body,
   Button,
   Container,
+  Font,
   Head,
   Heading,
   Html,
@@ -15,7 +16,9 @@ import {
   Text,
 } from "react-email";
 
-import type { EmailTheme } from "./email-theme";
+import { WIDS_PALETTE } from "@/shared/constants/wids-palette";
+
+import { EMAIL_PROGRAM_STYLES, type EmailProgram } from "./email-program";
 
 export type EmailCopy = {
   preview: string;
@@ -32,99 +35,82 @@ type Props = {
   copy: EmailCopy;
   name: string;
   ctaHref: string;
-  theme: EmailTheme;
+  program?: EmailProgram;
   pixelUrl?: string;
   children?: ReactNode;
 };
 
+/**
+ * The shell every transactional email renders inside. Pure and synchronous —
+ * copy arrives already resolved, so this module knows nothing about locales,
+ * events or teams.
+ *
+ * Styling is expressed only as Tailwind classes. `<Tailwind>` inlines them at
+ * render time, so a mirrored `style` object would be a second copy of the same
+ * values with nothing keeping the two in step.
+ */
 export const TransactionalEmail = ({
   copy,
   name,
   ctaHref,
-  theme,
+  program = "general",
   pixelUrl,
   children,
 }: Props) => (
   <Html>
-    <Head />
+    <Head>
+      <Font
+        fontFamily="Barlow"
+        fallbackFontFamily={["Helvetica", "Arial", "sans-serif"]}
+        webFont={{
+          url: "https://fonts.gstatic.com/s/barlow/v12/7cHpv4kjgoGqM7E_DMs5.woff2",
+          format: "woff2",
+        }}
+        fontWeight={400}
+        fontStyle="normal"
+      />
+    </Head>
     <Preview>{copy.preview}</Preview>
-    <Tailwind config={{ presets: [pixelBasedPreset] }}>
-      <Body className="m-0 bg-transparent px-[16px] py-[32px] font-sans text-[#111827]">
+    <Tailwind
+      config={{
+        presets: [pixelBasedPreset],
+        theme: { extend: { colors: WIDS_PALETTE } },
+      }}
+    >
+      <Body className="text-w-foreground m-0 bg-transparent px-[16px] py-[32px] font-sans">
+        {/*
+         * If a per-side border colour is ever reintroduced here, set physical
+         * sides rather than the `border-<color>` shorthand: Tailwind emits the
+         * shorthand after `border-top-color` and silently overwrites it, and
+         * `border-x-` emits the logical `border-inline-color`, which older
+         * Outlook does not support.
+         */}
         <Container
-          className="mx-auto w-full max-w-[440px] rounded-[20px] border border-solid border-[#e5e7eb] bg-white px-[28px] py-[32px]"
-          style={{
-            margin: "0 auto",
-            maxWidth: "440px",
-            border: "1px solid #e5e7eb",
-            borderRadius: "20px",
-            backgroundColor: "#ffffff",
-            padding: "32px 28px",
-          }}
+          className={`mx-auto w-full max-w-[440px] rounded-[20px] border border-solid bg-white px-[28px] py-[32px] ${EMAIL_PROGRAM_STYLES[program].border}`}
         >
           <Section className="mb-[28px]">
-            <Text
-              className={`m-0 text-[14px] font-semibold tracking-[0.12em] uppercase ${theme.eyebrowClassName}`}
-              style={{
-                margin: 0,
-                color: theme.eyebrowColor,
-                fontSize: "14px",
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-              }}
-            >
+            <Text className="text-w-green-dark m-0 text-[14px] font-semibold tracking-[0.12em] uppercase">
               WiDS Guayaquil
             </Text>
 
-            <Heading
-              className="mt-[12px] mb-0 text-[28px] leading-[34px] font-semibold text-[#111827]"
-              style={{
-                margin: "12px 0 0",
-                fontSize: "28px",
-                lineHeight: "34px",
-                fontWeight: 600,
-                color: "#111827",
-              }}
-            >
+            <Heading className="text-w-foreground mt-[12px] mb-0 text-[28px] leading-[34px] font-semibold">
               {copy.heading}
             </Heading>
           </Section>
 
           <Section className="mb-[24px]">
-            <Text
-              className="m-0 mb-[12px] text-[15px] leading-[24px] text-[#374151]"
-              style={{
-                margin: "0 0 12px",
-                fontSize: "15px",
-                lineHeight: "24px",
-                color: "#374151",
-              }}
-            >
+            <Text className="text-w-foreground m-0 mb-[12px] text-[15px] leading-[24px]">
               {copy.greeting} {name},
             </Text>
 
             <Text
-              className={`m-0 text-[15px] leading-[24px] text-[#374151] ${copy.emphasis ? "mb-[8px]" : ""}`}
-              style={{
-                margin: copy.emphasis ? "0 0 8px" : 0,
-                fontSize: "15px",
-                lineHeight: "24px",
-                color: "#374151",
-              }}
+              className={`text-w-foreground m-0 text-[15px] leading-[24px] ${copy.emphasis ? "mb-[8px]" : ""}`}
             >
               {copy.description}
             </Text>
 
             {copy.emphasis && (
-              <Text
-                className="m-0 text-[15px] leading-[24px] text-[#374151]"
-                style={{
-                  margin: 0,
-                  fontSize: "15px",
-                  lineHeight: "24px",
-                  color: "#374151",
-                }}
-              >
+              <Text className="text-w-foreground m-0 text-[15px] leading-[24px] font-semibold">
                 {copy.emphasis}
               </Text>
             )}
@@ -135,60 +121,26 @@ export const TransactionalEmail = ({
           <Section className="mb-[24px] text-center">
             <Button
               href={ctaHref}
-              className={`rounded-[12px] px-[20px] py-[14px] text-[14px] font-semibold text-white no-underline ${theme.buttonClassName}`}
-              style={{
-                backgroundColor: theme.buttonColor,
-                borderRadius: "12px",
-                color: "#ffffff",
-                display: "inline-block",
-                fontSize: "14px",
-                fontWeight: 600,
-                padding: "14px 20px",
-                textDecoration: "none",
-              }}
+              className="bg-w-green-dark text-w-white rounded-[12px] px-[20px] py-[14px] text-[14px] font-semibold no-underline"
             >
               {copy.cta}
             </Button>
           </Section>
 
           <Section className="border-t border-solid border-[#f3f4f6] pt-[20px]">
-            <Text
-              className="m-0 mb-[8px] text-[13px] leading-[22px] text-[#6b7280]"
-              style={{
-                margin: "0 0 8px",
-                fontSize: "13px",
-                lineHeight: "22px",
-                color: "#6b7280",
-              }}
-            >
+            <Text className="text-w-gray m-0 mb-[8px] text-[13px] leading-[22px]">
               {copy.copyAndPasteLabel}
             </Text>
 
             <Link
               href={ctaHref}
-              className={`text-[13px] leading-[22px] underline ${theme.linkClassName}`}
-              style={{
-                fontSize: "13px",
-                lineHeight: "22px",
-                color: theme.linkColor,
-                textDecoration: "underline",
-                wordBreak: "break-all",
-              }}
+              className="text-w-green-dark text-[13px] leading-[22px] break-all underline"
             >
               {ctaHref}
             </Link>
           </Section>
 
-          <Text
-            className="m-0 mt-[24px] text-center text-[12px] leading-[18px] text-[#9ca3af]"
-            style={{
-              margin: "24px 0 0",
-              fontSize: "12px",
-              lineHeight: "18px",
-              color: "#9ca3af",
-              textAlign: "center",
-            }}
-          >
+          <Text className="text-w-gray m-0 mt-[24px] text-center text-[12px] leading-[18px]">
             {copy.footerNote}
             <br />
             &copy; {new Date().getFullYear()} WiDS Guayaquil
@@ -200,13 +152,7 @@ export const TransactionalEmail = ({
               alt=""
               width="1"
               height="1"
-              style={{
-                display: "block",
-                width: "1px",
-                height: "1px",
-                opacity: 0,
-                overflow: "hidden",
-              }}
+              className="block h-[1px] w-[1px] overflow-hidden opacity-0"
             />
           )}
         </Container>

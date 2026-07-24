@@ -1,55 +1,33 @@
 import type { ReactNode } from "react";
 import { Section, Text } from "react-email";
 
-import type { EmailTheme } from "./email-theme";
+import { EMAIL_PROGRAM_STYLES, type EmailProgram } from "./email-program";
 
 type Props = {
   title: string;
   rows: ReactNode[];
-  theme: EmailTheme;
+  program?: EmailProgram;
 };
 
-export const EmailDetailsCard = ({ title, rows, theme }: Props) => (
+export const EmailDetailsCard = ({
+  title,
+  rows,
+  program = "general",
+}: Props) => (
   <Section
-    className={`mb-[24px] rounded-[14px] border border-solid px-[16px] py-[14px] ${theme.cardClassName}`}
-    style={{
-      marginBottom: "24px",
-      border: `1px solid ${theme.cardBorderColor}`,
-      borderRadius: "14px",
-      backgroundColor: theme.cardBackgroundColor,
-      padding: "14px 16px",
-    }}
+    className={`mb-[24px] rounded-[14px] px-[16px] py-[14px] ${EMAIL_PROGRAM_STYLES[program].card}`}
   >
-    <Text
-      className={`m-0 mb-[8px] text-[14px] leading-[22px] font-semibold ${theme.cardTextClassName}`}
-      style={{
-        margin: "0 0 8px",
-        fontSize: "14px",
-        lineHeight: "22px",
-        fontWeight: 600,
-        color: theme.cardTextColor,
-      }}
-    >
+    <Text className="text-w-foreground m-0 mb-[8px] text-[14px] leading-[22px] font-semibold">
       {title}
     </Text>
 
-    {rows.map((row, index) => {
-      const isLast = index === rows.length - 1;
-
-      return (
-        <Text
-          key={index}
-          className={`m-0 text-[14px] leading-[22px] ${theme.cardTextClassName} ${isLast ? "" : "mb-[8px]"}`}
-          style={{
-            margin: isLast ? 0 : "0 0 8px",
-            fontSize: "14px",
-            lineHeight: "22px",
-            color: theme.cardTextColor,
-          }}
-        >
-          {row}
-        </Text>
-      );
-    })}
+    {rows.map((row, index) => (
+      <Text
+        key={index}
+        className={`text-w-foreground m-0 text-[14px] leading-[22px] ${index === rows.length - 1 ? "" : "mb-[8px]"}`}
+      >
+        {row}
+      </Text>
+    ))}
   </Section>
 );

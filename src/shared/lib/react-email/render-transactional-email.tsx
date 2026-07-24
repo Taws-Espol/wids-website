@@ -4,7 +4,7 @@ import { render } from "react-email";
 
 import type { Locale } from "@/shared/lib/next-intl/types";
 
-import type { EmailTheme } from "./email-theme";
+import type { EmailProgram } from "./email-program";
 import { TransactionalEmail } from "./transactional-email";
 
 export type EmailTranslator = {
@@ -19,7 +19,8 @@ export type EmailTranslator = {
  */
 export type EmailDefinition<TData> = {
   namespace: string;
-  theme: EmailTheme;
+  /** Drives the colour coding system. Defaults to `general`. */
+  program?: EmailProgram;
   getPixelUrl?: () => string;
   children?: (t: EmailTranslator, data: TData) => ReactNode;
 };
@@ -62,7 +63,7 @@ export async function buildTransactionalEmail<TData>({
       }}
       name={name}
       ctaHref={ctaHref}
-      theme={definition.theme}
+      program={definition.program}
       pixelUrl={definition.getPixelUrl?.()}
     >
       {definition.children?.(t, data)}

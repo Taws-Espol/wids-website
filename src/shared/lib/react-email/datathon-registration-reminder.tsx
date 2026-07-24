@@ -2,7 +2,6 @@ import { getDatathonRegistrationReminderPixelUrl } from "@/shared/lib/umami/umam
 import type { Locale } from "@/shared/lib/next-intl/types";
 
 import { EmailDetailsCard } from "./email-details-card";
-import { DATATHON_EMAIL_THEME } from "./email-theme";
 import {
   buildTransactionalEmail,
   type EmailDefinition,
@@ -18,11 +17,11 @@ export type DatathonRegistrationReminderData = {
 export const datathonRegistrationReminderEmail: EmailDefinition<DatathonRegistrationReminderData> =
   {
     namespace: "features.registration.datathon-emails.reminder",
-    theme: DATATHON_EMAIL_THEME,
+    program: "datathon",
     getPixelUrl: getDatathonRegistrationReminderPixelUrl,
     children: (t, data) => (
       <EmailDetailsCard
-        theme={DATATHON_EMAIL_THEME}
+        program="datathon"
         title={data.eventTitle}
         rows={[
           <>
