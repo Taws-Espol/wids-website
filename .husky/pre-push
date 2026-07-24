@@ -1,4 +1,4 @@
-pattern='^(feat|fix|hotfix|ops|refactor|perf|docs|style|test|build|ci|chore|revert)/wids-[0-9]+$'
+pattern='^(feat|fix|refactor|perf|docs|style|test|build|ci|chore|revert)/wids-[0-9]+$'
 zero='0000000000000000000000000000000000000000'
 
 # git feeds one line per ref being pushed:

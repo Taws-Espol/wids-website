@@ -6,25 +6,23 @@ For local setup (dependencies, environment variables, database, seeding, dev ser
 
 ## Types
 
-Every branch name, commit message, and PR title starts with a type. This project uses the [Conventional Commits](https://www.conventionalcommits.org/) set plus two of its own:
+Every branch name, commit message, and PR title starts with a type from the [Conventional Commits](https://www.conventionalcommits.org/) set:
 
 | Type       | Use it for                                                                     |
 | ---------- | ------------------------------------------------------------------------------ |
 | `feat`     | New user-facing behaviour                                                      |
-| `fix`      | A bug fix that follows the normal review and release flow                      |
-| `hotfix`   | A narrow, urgent fix to something already broken in production                 |
-| `ops`      | Deployment, hosting, or environment configuration — Coolify, Docker, env vars  |
+| `fix`      | A bug fix, urgent or not                                                       |
 | `refactor` | Restructuring that does not change behaviour                                   |
 | `perf`     | A change made specifically to improve performance                              |
 | `docs`     | Documentation only                                                             |
 | `style`    | Formatting only, no logic change                                               |
 | `test`     | Adding or correcting tests                                                     |
-| `build`    | Build system or dependency changes                                             |
+| `build`    | Build system, dependencies, deployment, and environment configuration          |
 | `ci`       | CI pipeline and GitHub Actions configuration only                              |
 | `chore`    | Maintenance that fits nothing above, including tooling and agent configuration |
 | `revert`   | Reverting a previous commit                                                    |
 
-`hotfix` and `ops` are not part of the Conventional Commits specification. They are kept because this repository has always used them, and they are accepted by the commit linter.
+The commit linter accepts these and nothing else.
 
 ## Scopes
 
@@ -70,7 +68,7 @@ This is enforced by the `commit-msg` hook, which runs `commitlint` against `comm
 
 Use one of the issue forms — blank issues are disabled. The form marks **Acceptance criteria** as required, so every issue states what "done" looks like.
 
-**Issue titles are plain descriptive English, not Conventional Commits.** An issue describes a _problem_; a commit describes a _change_. The type is a property of the eventual fix, which nobody knows at filing time — the same bug might land as a `fix`, a `refactor`, or a `hotfix`. Type belongs in **labels**, which are filterable; a title prefix is not.
+**Issue titles are plain descriptive English, not Conventional Commits.** An issue describes a _problem_; a commit describes a _change_. The type is a property of the eventual fix, which nobody knows at filing time — the same bug might land as a `fix`, a `refactor`, or a `perf`. Type belongs in **labels**, which are filterable; a title prefix is not.
 
 The forms prefill a `[Bug]:` or `[Request]:` marker, which also keeps issues visually distinct from PRs in the shared number space.
 
@@ -132,6 +130,4 @@ Hooks run through husky:
 
 If a hook blocks something it should not, fix the name or message rather than passing `--no-verify`.
 
-### Known baseline failures
-
-`pnpm lint` currently exits non-zero because of one pre-existing error in `src/shared/components/ui/carousel.tsx` (`setState` called synchronously within an effect), plus a number of unused-variable warnings in generated Payload migrations. Do not treat these as caused by your change — the bar for a PR is **no new** errors or warnings, not a clean exit code, until that baseline is fixed.
+`pnpm lint` and `npx tsc --noEmit` must both pass before you open a PR.

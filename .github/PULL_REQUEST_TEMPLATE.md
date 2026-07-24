@@ -32,6 +32,6 @@ migrations, or a note that this is safe and self-contained.
 - [ ] Branch is named `type/wids-<issue-number>`
 - [ ] Linked issue above, so it closes on merge
 - [ ] Everything is in English
-- [ ] `npx tsc --noEmit` passes, and `pnpm lint` reports no _new_ errors or warnings
+- [ ] `pnpm lint` and `npx tsc --noEmit` both pass
 - [ ] Preview deployment builds successfully
 - [ ] Acceptance criteria on the linked issue are met
