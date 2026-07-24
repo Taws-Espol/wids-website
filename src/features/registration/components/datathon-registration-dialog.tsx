@@ -31,7 +31,6 @@ import { useDatathonRegistrationDialog } from "@/features/registration/hooks/use
 type Props = {
   ctaLabel: string;
   eventId: number;
-  eventDate: string;
   registrationStart: string;
   registrationEnd: string;
 };
