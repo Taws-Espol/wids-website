@@ -14,6 +14,7 @@ import { routing } from "../../next-intl/routing.ts";
 import type { Locale } from "../../next-intl/types.ts";
 import { tryCatch } from "../../../utils/try-catch.ts";
 import { createEventTypeValidationHook } from "../utils/create-event-type-validation.ts";
+import { createRegistrationEmailQueueHook } from "../utils/create-registration-email-queue-hook.ts";
 import { generateAttendanceToken } from "../utils/generate-attendance-token.ts";
 import { isAdminFieldAccess } from "../utils/is-admin-field-access.ts";
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
@@ -21,17 +22,6 @@ import { validateProfessionalField } from "../utils/validate-professional-field.
 import { validateStudentField } from "../utils/validate-student-field.ts";
 import { validateUniqueEmailPerEvent } from "../utils/validate-unique-email-per-event.ts";
 import { validateUniquePhoneNumberPerEvent } from "../utils/validate-unique-phone-number-per-event.ts";
-
-const ONE_DAY_IN_MILLISECONDS = 24 * 60 * 60 * 1000 + 1000;
-
-function getRelationshipId(
-  value: number | { id: number } | null | undefined,
-): number | null {
-  if (value == null) {
-    return null;
-  }
-  return typeof value === "object" ? value.id : value;
-}
 
 export const ConferenceRegistrations: CollectionConfig = {
   slug: "conference-registrations",
@@ -244,81 +234,12 @@ export const ConferenceRegistrations: CollectionConfig = {
   hooks: {
     beforeValidate: [createEventTypeValidationHook("conference")],
     afterChange: [
-      async ({ doc, operation, req }) => {
-        if (operation !== "create") {
-          return;
-        }
-
-        const eventId = getRelationshipId(doc.event);
-        if (eventId == null) {
-          req.payload.logger.error({
-            err: new Error("Conference registration created without event id"),
-          });
-          return;
-        }
-
-        const locale =
-          (req.context as { conferenceRegistrationLocale?: Locale } | undefined)
-            ?.conferenceRegistrationLocale ?? routing.defaultLocale;
-
-        const { data: eventData, error: eventError } = await tryCatch(
-          req.payload.findByID({
-            collection: "events",
-            id: eventId,
-            depth: 0,
-            locale,
-            req,
-            select: {
-              date: true,
-              date_tz: true,
-            },
-          }),
-        );
-
-        if (eventError) {
-          req.payload.logger.error({
-            message:
-              "Failed to load event for conference registration email queue.",
-            error: eventError,
-          });
-          throw eventError;
-        }
-
-        const { error: queueError } = await tryCatch(
-          Promise.all([
-            req.payload.jobs.queue({
-              task: CONFERENCE_REGISTRATION_CONFIRMATION_TASK_SLUG,
-              input: {
-                registrationId: doc.id,
-                eventId,
-                locale,
-              },
-              queue: "critical",
-            }),
-            req.payload.jobs.queue({
-              task: CONFERENCE_REGISTRATION_REMINDER_TASK_SLUG,
-              input: {
-                registrationId: doc.id,
-                eventId,
-                locale,
-              },
-              queue: "batch",
-              waitUntil: new Date(
-                new Date(eventData.date).getTime() - ONE_DAY_IN_MILLISECONDS,
-              ),
-            }),
-          ]),
-        );
-
-        if (queueError) {
-          req.payload.logger.error({
-            message:
-              "Unexpected error while queueing mails for conference registration.",
-            error: queueError,
-          });
-          throw queueError;
-        }
-      },
+      createRegistrationEmailQueueHook({
+        label: "conference",
+        localeContextKey: "conferenceRegistrationLocale",
+        confirmationTaskSlug: CONFERENCE_REGISTRATION_CONFIRMATION_TASK_SLUG,
+        reminderTaskSlug: CONFERENCE_REGISTRATION_REMINDER_TASK_SLUG,
+      }),
     ],
   },
 };
