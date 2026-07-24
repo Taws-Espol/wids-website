@@ -135,8 +135,6 @@
           "accepted-terms-required": "You must accept the terms and conditions.",
           "email-required": "Email is required.",
           "email-duplicate": "An email in this team is already registered for this event.",
-          "national-id-required": "National ID is required.",
-          "national-id-duplicate": "A national ID in this team is already registered for this event.",
           "phone-number-required": "Phone number is required.",
           "phone-number-duplicate": "A phone number in this team is already registered for this event.",
           "student-field-required": "This field is required for students.",
