@@ -7,6 +7,7 @@
     "build": "payload migrate && next build",
     "start": "next start",
     "lint": "eslint",
+    "typecheck": "tsc --noEmit",
     "payload": "payload",
     "dev:email": "email dev --dir ./src/shared/lib/react-email",
     "prepare": "husky",
@@ -71,5 +72,6 @@
       "eslint --fix",
       "prettier --write"
     ]
-  }
+  },
+  "license": "MIT"
 }
