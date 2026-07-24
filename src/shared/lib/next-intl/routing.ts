@@ -18,6 +18,10 @@ export const routing = defineRouting({
       en: "/conference",
       es: "/conferencia",
     },
+    "/conference/attendance": {
+      en: "/conference/attendance",
+      es: "/conferencia/asistencia",
+    },
     "/learn": {
       en: "/learn",
       es: "/aprender",

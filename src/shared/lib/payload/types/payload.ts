@@ -97,14 +97,12 @@ export interface Config {
       | ConferenceRegistrationsSelect<false>
       | ConferenceRegistrationsSelect<true>;
     "datathon-registrations":
-      | DatathonRegistrationsSelect<false>
-      | DatathonRegistrationsSelect<true>;
+      DatathonRegistrationsSelect<false> | DatathonRegistrationsSelect<true>;
     "datathon-registrations-individuals":
       | DatathonRegistrationsIndividualsSelect<false>
       | DatathonRegistrationsIndividualsSelect<true>;
     "nextgen-registrations":
-      | NextgenRegistrationsSelect<false>
-      | NextgenRegistrationsSelect<true>;
+      NextgenRegistrationsSelect<false> | NextgenRegistrationsSelect<true>;
     schedules: SchedulesSelect<false> | SchedulesSelect<true>;
     speakers: SpeakersSelect<false> | SpeakersSelect<true>;
     ambassadors: AmbassadorsSelect<false> | AmbassadorsSelect<true>;
@@ -114,14 +112,11 @@ export interface Config {
     "payload-kv": PayloadKvSelect<false> | PayloadKvSelect<true>;
     "payload-jobs": PayloadJobsSelect<false> | PayloadJobsSelect<true>;
     "payload-locked-documents":
-      | PayloadLockedDocumentsSelect<false>
-      | PayloadLockedDocumentsSelect<true>;
+      PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     "payload-preferences":
-      | PayloadPreferencesSelect<false>
-      | PayloadPreferencesSelect<true>;
+      PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     "payload-migrations":
-      | PayloadMigrationsSelect<false>
-      | PayloadMigrationsSelect<true>;
+      PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
   };
   db: {
     defaultIDType: number;
@@ -137,8 +132,7 @@ export interface Config {
   };
   globalsSelect: {
     "terms-and-conditions":
-      | TermsAndConditionsSelect<false>
-      | TermsAndConditionsSelect<true>;
+      TermsAndConditionsSelect<false> | TermsAndConditionsSelect<true>;
   };
   locale: "en" | "es";
   widgets: {
@@ -151,6 +145,7 @@ export interface Config {
       "conference-registration-reminder": TaskConferenceRegistrationReminder;
       "datathon-registration-confirmation": TaskDatathonRegistrationConfirmation;
       "datathon-registration-reminder": TaskDatathonRegistrationReminder;
+      "conference-attendance-confirmation": TaskConferenceAttendanceConfirmation;
       createCollectionExport: TaskCreateCollectionExport;
       createCollectionImport: TaskCreateCollectionImport;
       inline: {
@@ -295,6 +290,22 @@ export interface ConferenceRegistration {
     | "university"
     | "workplace"
     | "other";
+  /**
+   * Whether this person confirmed they will attend, via the attendance confirmation email.
+   */
+  attendanceConfirmed: boolean;
+  /**
+   * When attendance was last confirmed or un-confirmed.
+   */
+  attendanceConfirmedAt?: string | null;
+  /**
+   * Opaque token used in the attendance confirmation link. Never derived from email/phone.
+   */
+  attendanceToken: string;
+  /**
+   * Set once the attendance confirmation email has been sent, to prevent re-sending.
+   */
+  attendanceConfirmationEmailSentAt?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -608,6 +619,7 @@ export interface PayloadJob {
           | "conference-registration-reminder"
           | "datathon-registration-confirmation"
           | "datathon-registration-reminder"
+          | "conference-attendance-confirmation"
           | "createCollectionExport"
           | "createCollectionImport";
         taskID: string;
@@ -649,6 +661,7 @@ export interface PayloadJob {
         | "conference-registration-reminder"
         | "datathon-registration-confirmation"
         | "datathon-registration-reminder"
+        | "conference-attendance-confirmation"
         | "createCollectionExport"
         | "createCollectionImport"
       )
@@ -857,6 +870,10 @@ export interface ConferenceRegistrationsSelect<T extends boolean = true> {
   receiveNotifications?: T;
   acceptedTerms?: T;
   heardAboutEvent?: T;
+  attendanceConfirmed?: T;
+  attendanceConfirmedAt?: T;
+  attendanceToken?: T;
+  attendanceConfirmationEmailSentAt?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1194,6 +1211,18 @@ export interface TaskDatathonRegistrationConfirmation {
  * via the `definition` "TaskDatathon-registration-reminder".
  */
 export interface TaskDatathonRegistrationReminder {
+  input: {
+    registrationId: number;
+    eventId: number;
+    locale: "en" | "es";
+  };
+  output?: unknown;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TaskConference-attendance-confirmation".
+ */
+export interface TaskConferenceAttendanceConfirmation {
   input: {
     registrationId: number;
     eventId: number;

@@ -14,6 +14,8 @@ import { routing } from "../../next-intl/routing.ts";
 import type { Locale } from "../../next-intl/types.ts";
 import { tryCatch } from "../../../utils/try-catch.ts";
 import { createEventTypeValidationHook } from "../utils/create-event-type-validation.ts";
+import { generateAttendanceToken } from "../utils/generate-attendance-token.ts";
+import { isAdminFieldAccess } from "../utils/is-admin-field-access.ts";
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
 import { validateProfessionalField } from "../utils/validate-professional-field.ts";
 import { validateStudentField } from "../utils/validate-student-field.ts";
@@ -51,6 +53,7 @@ export const ConferenceRegistrations: CollectionConfig = {
       "email",
       "event",
       "attendanceMode",
+      "attendanceConfirmed",
       "createdAt",
     ],
     useAsTitle: "email",
@@ -189,6 +192,53 @@ export const ConferenceRegistrations: CollectionConfig = {
         label: option.label,
         value: option.value,
       })),
+    },
+    {
+      name: "attendanceConfirmed",
+      type: "checkbox",
+      required: true,
+      defaultValue: false,
+      label: "Attendance confirmed",
+      admin: {
+        description:
+          "Whether this person confirmed they will attend, via the attendance confirmation email.",
+      },
+    },
+    {
+      name: "attendanceConfirmedAt",
+      type: "date",
+      admin: {
+        readOnly: true,
+        description: "When attendance was last confirmed or un-confirmed.",
+      },
+    },
+    {
+      name: "attendanceToken",
+      type: "text",
+      required: true,
+      unique: true,
+      index: true,
+      defaultValue: generateAttendanceToken,
+      access: {
+        create: () => false,
+        read: isAdminFieldAccess,
+        update: () => false,
+      },
+      admin: {
+        readOnly: true,
+        hidden: true,
+        description:
+          "Opaque token used in the attendance confirmation link. Never derived from email/phone.",
+      },
+    },
+    {
+      name: "attendanceConfirmationEmailSentAt",
+      type: "date",
+      admin: {
+        readOnly: true,
+        description:
+          "Set once the attendance confirmation email has been sent, to prevent re-sending.",
+      },
     },
   ],
   hooks: {

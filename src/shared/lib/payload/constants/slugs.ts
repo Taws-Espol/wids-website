@@ -9,3 +9,6 @@ export const DATATHON_REGISTRATION_CONFIRMATION_TASK_SLUG =
 
 export const DATATHON_REGISTRATION_REMINDER_TASK_SLUG =
   "datathon-registration-reminder" as const;
+
+export const CONFERENCE_ATTENDANCE_CONFIRMATION_TASK_SLUG =
+  "conference-attendance-confirmation" as const;

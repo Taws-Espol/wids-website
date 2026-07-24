@@ -227,6 +227,54 @@
           "cta": "Revisar detalles de la conferencia",
           "copy-and-paste-label": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
           "footer-note": "Recibes este recordatorio porque te registraste en una conferencia de WiDS Guayaquil."
+        },
+        "attendance-confirmation": {
+          "subject": "WiDS Guayaquil | Confirma tu asistencia a la conferencia",
+          "preview": "¿Nos acompañarás en la conferencia de WiDS Guayaquil?",
+          "heading": "Confirma tu asistencia",
+          "greeting": "Hola",
+          "description": "Tu evento se acerca. Confírmanos que asistirás para ayudarnos a organizar todo correctamente.",
+          "event-date-label": "Fecha:",
+          "event-location-label": "Lugar:",
+          "cta": "Confirmar asistencia",
+          "copy-and-paste-label": "Si el botón no funciona, copia y pega este enlace en tu navegador:",
+          "footer-note": "Recibes este correo porque te registraste en una conferencia de WiDS Guayaquil."
+        }
+      },
+      "attendance-confirmation": {
+        "not-found": {
+          "title": "No encontramos tu registro",
+          "description": "El enlace que usaste no es válido o ya expiró. Si crees que esto es un error, contáctanos.",
+          "cta": "Volver a la conferencia"
+        },
+        "event-passed": {
+          "title": "Este evento ya finalizó",
+          "description": "El periodo para confirmar tu asistencia a esta conferencia ya cerró."
+        },
+        "pending": {
+          "heading": "Confirma tu asistencia",
+          "greeting": "Hola",
+          "description": "¿Nos acompañarás en la conferencia? Confirma tu asistencia para ayudarnos a organizar todo.",
+          "event-date-label": "Fecha:",
+          "event-location-label": "Lugar:",
+          "confirm-cta": "Confirmar asistencia"
+        },
+        "confirmed": {
+          "heading": "¡Gracias por confirmar!",
+          "description": "Registramos que asistirás a la conferencia. Nos vemos pronto.",
+          "cancel-cta": "Cancelar confirmación"
+        },
+        "states": {
+          "pending": "Enviando..."
+        },
+        "errors": {
+          "token-invalid": "No pudimos verificar tu registro. Intenta abrir el enlace del correo nuevamente.",
+          "event-passed": "Ya no es posible cambiar tu asistencia porque el evento finalizó.",
+          "unknown": "Ocurrió un error inesperado. Intenta de nuevo."
+        },
+        "toasts": {
+          "confirmed": "Tu asistencia fue confirmada.",
+          "cancelled": "Cancelaste tu confirmación de asistencia."
         }
       },
       "datathon-form": {

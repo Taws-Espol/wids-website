@@ -9,3 +9,6 @@ export const DATATHON_REGISTRATION_CONFIRMATION_PIXEL_URL =
 
 export const DATATHON_REGISTRATION_REMINDER_PIXEL_URL =
   "https://analytics.taws.espol.edu.ec/p/vxymZsi2k";
+
+export const CONFERENCE_ATTENDANCE_CONFIRMATION_PIXEL_URL =
+  "https://analytics.taws.espol.edu.ec/p/PkJ4rJLpZ";

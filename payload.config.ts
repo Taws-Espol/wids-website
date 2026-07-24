@@ -20,6 +20,7 @@ import { Schedules } from "./src/shared/lib/payload/collections/schedules.ts";
 import { Speakers } from "./src/shared/lib/payload/collections/speakers.ts";
 import { Sponsors } from "./src/shared/lib/payload/collections/sponsors.ts";
 import { Users } from "./src/shared/lib/payload/collections/users.ts";
+import { conferenceAttendanceConfirmationTask } from "./src/shared/lib/payload/tasks/conference-attendance-confirmation.ts";
 import { conferenceRegistrationConfirmationTask } from "./src/shared/lib/payload/tasks/conference-registration-confirmation.ts";
 import { conferenceRegistrationReminderTask } from "./src/shared/lib/payload/tasks/conference-registration-reminder.ts";
 import { datathonRegistrationConfirmationTask } from "./src/shared/lib/payload/tasks/datathon-registration-confirmation.ts";
@@ -32,6 +33,13 @@ export default buildConfig({
     {
       key: "seed",
       scriptPath: path.resolve(process.cwd(), "src/shared/lib/payload/seed.ts"),
+    },
+    {
+      key: "queue-attendance-confirmations",
+      scriptPath: path.resolve(
+        process.cwd(),
+        "src/shared/lib/payload/queue-attendance-confirmations.ts",
+      ),
     },
   ],
   admin: {
@@ -61,6 +69,7 @@ export default buildConfig({
       conferenceRegistrationReminderTask,
       datathonRegistrationConfirmationTask,
       datathonRegistrationReminderTask,
+      conferenceAttendanceConfirmationTask,
     ],
     shouldAutoRun: () => process.env.ENABLE_JOB_WORKERS === "true",
     autoRun: [
@@ -78,6 +87,11 @@ export default buildConfig({
         cron: "0 2 * * *", // Daily at 2 AM
         limit: 1000,
         queue: "batch",
+      },
+      {
+        cron: "* * * * *", // Every minute
+        limit: 60,
+        queue: "mailing",
       },
     ],
   },
@@ -142,6 +156,10 @@ export default buildConfig({
       port: Number(process.env.SMTP_PORT ?? ""),
       secure: true,
       pool: true,
+      maxConnections: 1,
+      maxMessages: 100,
+      rateDelta: 1000,
+      rateLimit: 1,
       auth: {
         user: process.env.SMTP_USER ?? "",
         pass: process.env.SMTP_PASS ?? "",

@@ -232,6 +232,54 @@
           "cta": "Review conference details",
           "copy-and-paste-label": "If the button does not work, copy and paste this link into your browser:",
           "footer-note": "You are receiving this reminder because you registered for a WiDS Guayaquil conference."
+        },
+        "attendance-confirmation": {
+          "subject": "WiDS Guayaquil | Confirm your attendance to the conference",
+          "preview": "Will you be joining us at the WiDS Guayaquil conference?",
+          "heading": "Confirm your attendance",
+          "greeting": "Hi",
+          "description": "The event is coming up. Let us know you'll be attending so we can plan accordingly.",
+          "event-date-label": "Date:",
+          "event-location-label": "Location:",
+          "cta": "Confirm attendance",
+          "copy-and-paste-label": "If the button does not work, copy and paste this link into your browser:",
+          "footer-note": "You are receiving this email because you registered for a WiDS Guayaquil conference."
+        }
+      },
+      "attendance-confirmation": {
+        "not-found": {
+          "title": "We couldn't find your registration",
+          "description": "The link you used is invalid or has expired. If you think this is a mistake, please contact us.",
+          "cta": "Back to the conference"
+        },
+        "event-passed": {
+          "title": "This event has already ended",
+          "description": "The window to confirm your attendance for this conference has closed."
+        },
+        "pending": {
+          "heading": "Confirm your attendance",
+          "greeting": "Hi",
+          "description": "Will you be joining us at the conference? Confirm your attendance to help us plan ahead.",
+          "event-date-label": "Date:",
+          "event-location-label": "Location:",
+          "confirm-cta": "Confirm attendance"
+        },
+        "confirmed": {
+          "heading": "Thanks for confirming!",
+          "description": "We've noted that you'll be attending the conference. See you soon.",
+          "cancel-cta": "Cancel confirmation"
+        },
+        "states": {
+          "pending": "Sending..."
+        },
+        "errors": {
+          "token-invalid": "We couldn't verify your registration. Try opening the link from the email again.",
+          "event-passed": "Attendance can no longer be changed because the event has ended.",
+          "unknown": "Something went wrong. Please try again."
+        },
+        "toasts": {
+          "confirmed": "Your attendance was confirmed.",
+          "cancelled": "You cancelled your attendance confirmation."
         }
       },
       "datathon-dialog": {

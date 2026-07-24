@@ -9,6 +9,7 @@ import {
   type ConferenceRegistrationErrorCode,
 } from "@/shared/constants/conference-registration-error-codes";
 import type { Locale } from "@/shared/lib/next-intl/types";
+import { generateAttendanceToken } from "@/shared/lib/payload/utils/generate-attendance-token";
 import { tryCatch } from "@/shared/utils/try-catch";
 
 import { conferenceRegistrationSchema } from "@/features/registration/schemas/conference-registration";
@@ -44,6 +45,8 @@ export async function registerForConferenceAction(
       data: {
         event: eventId,
         ...validatedValues.data,
+        attendanceConfirmed: false,
+        attendanceToken: generateAttendanceToken(),
       },
     }),
   );
