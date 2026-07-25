@@ -99,7 +99,9 @@
       "blog": {
         "title": "Blog",
         "subtitle": "Empowering Women in Data Science: A Source of Inspiration",
-        "description": "Discover inspiring stories, insights, and news from the world of women in data science. Stay updated with articles, interviews, and highlights from our community on the WiDS Blog."
+        "description": "Discover inspiring stories, insights, and news from the world of women in data science. Stay updated with articles, interviews, and highlights from our community on the WiDS Blog.",
+        "empty": "No posts yet. Check back soon.",
+        "back-to-blog": "Back to the blog"
       },
       "about": {
         "title": "About Us",

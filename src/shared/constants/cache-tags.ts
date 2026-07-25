@@ -15,3 +15,12 @@ export const SPONSORS_TAG = "sponsors";
 export const AMBASSADORS_TAG = "ambassadors";
 export const MEDIA_TAG = "media";
 export const TERMS_AND_CONDITIONS_TAG = "terms-and-conditions";
+export const POSTS_TAG = "posts";
+
+/**
+ * Tags a single post, so editing one does not invalidate the other post pages.
+ * Keyed by id rather than slug because slugs are localized and editable.
+ */
+export function postTag(id: number | string) {
+  return `${POSTS_TAG}:${id}`;
+}
