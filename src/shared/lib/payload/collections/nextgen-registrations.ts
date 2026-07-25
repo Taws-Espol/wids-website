@@ -3,6 +3,7 @@ import type { CollectionConfig } from "payload";
 import { HEARD_ABOUT_OPTIONS } from "../constants/registrations.ts";
 import { createEventTypeValidationHook } from "../utils/create-event-type-validation.ts";
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
+import { CONFERENCE_REGISTRATION_ERROR_CODES } from "../../../constants/conference-registration-error-codes.ts";
 import { validateUniqueEmailPerEvent } from "../utils/validate-unique-email-per-event.ts";
 import { validateUniquePhoneNumberPerEvent } from "../utils/validate-unique-phone-number-per-event.ts";
 
@@ -96,7 +97,9 @@ export const NextgenRegistrations: CollectionConfig = {
       required: true,
       label: "I accept the terms and conditions",
       validate: (value) =>
-        value ? true : "You must accept the terms and conditions.",
+        value
+          ? true
+          : CONFERENCE_REGISTRATION_ERROR_CODES.ACCEPTED_TERMS_REQUIRED,
     },
     {
       name: "heardAboutEvent",
