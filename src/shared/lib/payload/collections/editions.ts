@@ -1,5 +1,5 @@
 import type { CollectionConfig } from "payload";
-import { LANDING_TAG } from "../../../constants/cache-tags.ts";
+import { EDITIONS_TAG } from "../../../constants/cache-tags.ts";
 import { revalidateCache } from "../../../utils/revalidate-cache.ts";
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
 
@@ -41,7 +41,7 @@ export const Editions: CollectionConfig = {
   hooks: {
     afterChange: [
       async ({ req }) => {
-        await revalidateCache({ req, source: "editions", tag: LANDING_TAG });
+        await revalidateCache({ req, source: "editions", tag: EDITIONS_TAG });
       },
     ],
   },

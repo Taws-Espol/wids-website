@@ -4,12 +4,12 @@ import { cacheTag } from "next/cache";
 import config from "@payload-config";
 import { getPayload } from "payload";
 
-import { LANDING_TAG } from "@/shared/constants/cache-tags";
+import { TERMS_AND_CONDITIONS_TAG } from "@/shared/constants/cache-tags";
 import type { Locale } from "@/shared/lib/next-intl/types";
 
 export async function getTermsAndConditionsPageData(locale: Locale) {
   "use cache";
-  cacheTag(LANDING_TAG);
+  cacheTag(TERMS_AND_CONDITIONS_TAG);
 
   const payload = await getPayload({ config });
 

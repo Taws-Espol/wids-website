@@ -1,5 +1,5 @@
 import type { CollectionConfig } from "payload";
-import { LANDING_TAG } from "../../../constants/cache-tags.ts";
+import { AMBASSADORS_TAG } from "../../../constants/cache-tags.ts";
 import { revalidateCache } from "../../../utils/revalidate-cache.ts";
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
 
@@ -76,7 +76,11 @@ export const Ambassadors: CollectionConfig = {
   hooks: {
     afterChange: [
       async ({ req }) => {
-        await revalidateCache({ req, source: "ambassadors", tag: LANDING_TAG });
+        await revalidateCache({
+          req,
+          source: "ambassadors",
+          tag: AMBASSADORS_TAG,
+        });
       },
     ],
   },

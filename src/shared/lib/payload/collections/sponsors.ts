@@ -1,5 +1,5 @@
 import type { CollectionConfig } from "payload";
-import { LANDING_TAG } from "../../../constants/cache-tags.ts";
+import { SPONSORS_TAG } from "../../../constants/cache-tags.ts";
 import { revalidateCache } from "../../../utils/revalidate-cache.ts";
 import { SPONSOR_TIERS } from "../constants/sponsor-tiers.ts";
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
@@ -54,7 +54,7 @@ export const Sponsors: CollectionConfig = {
   hooks: {
     afterChange: [
       async ({ req }) => {
-        await revalidateCache({ req, source: "sponsors", tag: LANDING_TAG });
+        await revalidateCache({ req, source: "sponsors", tag: SPONSORS_TAG });
       },
     ],
   },
