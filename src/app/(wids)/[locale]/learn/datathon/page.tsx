@@ -55,7 +55,6 @@ export default async function Datathon({
               <DatathonRegistrationDialog
                 ctaLabel={t("cta")}
                 eventId={event.id}
-                eventDate={event.date}
                 registrationStart={event.registrationStart ?? ""}
                 registrationEnd={event.registrationEnd ?? ""}
               />

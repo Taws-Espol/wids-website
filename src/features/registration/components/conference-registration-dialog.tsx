@@ -22,7 +22,6 @@ import { useConferenceRegistrationDialog } from "@/features/registration/hooks/u
 type Props = {
   ctaLabel: string;
   eventId: number;
-  eventDate: string;
   registrationStart: string;
   registrationEnd: string;
 };

@@ -53,7 +53,6 @@ export default async function Conference({
               <ConferenceRegistrationDialog
                 ctaLabel={t("cta")}
                 eventId={event.id}
-                eventDate={event.date}
                 registrationStart={event.registrationStart ?? ""}
                 registrationEnd={event.registrationEnd ?? ""}
               />
