@@ -1,5 +1,5 @@
 import type { CollectionConfig } from "payload";
-import { LANDING_TAG } from "../../../constants/cache-tags.ts";
+import { EVENTS_TAG } from "../../../constants/cache-tags.ts";
 import { revalidateCache } from "../../../utils/revalidate-cache.ts";
 import { EVENT_TYPES } from "../constants/event-types.ts";
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
@@ -144,7 +144,7 @@ export const Events: CollectionConfig = {
   hooks: {
     afterChange: [
       async ({ req }) => {
-        await revalidateCache({ req, source: "events", tag: LANDING_TAG });
+        await revalidateCache({ req, source: "events", tag: EVENTS_TAG });
       },
     ],
   },

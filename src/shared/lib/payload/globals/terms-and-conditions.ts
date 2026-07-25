@@ -1,7 +1,7 @@
 import type { GlobalConfig } from "payload";
 
 import { isAdminOrEditor } from "../utils/is-admin-or-editor";
-import { LANDING_TAG } from "../../../constants/cache-tags";
+import { TERMS_AND_CONDITIONS_TAG } from "../../../constants/cache-tags";
 import { revalidateCache } from "../../../utils/revalidate-cache";
 
 export const TermsAndConditions: GlobalConfig = {
@@ -27,7 +27,7 @@ export const TermsAndConditions: GlobalConfig = {
         await revalidateCache({
           req,
           source: "terms-and-conditions",
-          tag: LANDING_TAG,
+          tag: TERMS_AND_CONDITIONS_TAG,
         });
       },
     ],
