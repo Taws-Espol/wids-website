@@ -7,30 +7,11 @@ import {
   HEARD_ABOUT_OPTIONS,
   SEX_OPTIONS,
 } from "../constants/registrations.ts";
-// import {
-//   DATATHON_REGISTRATION_CONFIRMATION_TASK_SLUG,
-//   DATATHON_REGISTRATION_REMINDER_TASK_SLUG,
-// } from "../constants/slugs.ts";
-// import { routing } from "../../next-intl/routing.ts";
-// import type { Locale } from "../../next-intl/types.ts";
-// import { tryCatch } from "../../../utils/try-catch.ts";
 import { createEventTypeValidationHook } from "../utils/create-event-type-validation.ts";
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
 import { validateUniqueEmailPerEvent } from "../utils/validate-unique-email-per-event.ts";
 import { validateUniquePhoneNumberPerEvent } from "../utils/validate-unique-phone-number-per-event.ts";
 import { validateUniqueNationalIdPerEvent } from "../utils/validate-unique-national-id-per-event.ts";
-
-// const ONE_DAY_IN_MILLISECONDS = 24 * 60 * 60 * 1000 + 1000;
-
-// function getRelationshipId(
-//   value: number | { id: number } | null | undefined,
-// ): number | null {
-//   if (value == null) {
-//     return null;
-//   }
-
-//   return typeof value === "object" ? value.id : value;
-// }
 
 export const DatathonRegistrationsIndividuals: CollectionConfig = {
   slug: "datathon-registrations-individuals",
@@ -187,82 +168,12 @@ export const DatathonRegistrationsIndividuals: CollectionConfig = {
   ],
   hooks: {
     beforeValidate: [createEventTypeValidationHook("datathon")],
-    // afterChange: [
-    //   async ({ doc, operation, req }) => {
-    //     if (operation !== "create") {
-    //       return;
-    //     }
 
-    //     const eventId = getRelationshipId(doc.event);
-    //     if (eventId == null) {
-    //       req.payload.logger.error({
-    //         err: new Error("Datathon registration created without event id"),
-    //       });
-    //       return;
-    //     }
-
-    //     const locale =
-    //       (req.context as { datathonRegistrationLocale?: Locale } | undefined)
-    //         ?.datathonRegistrationLocale ?? routing.defaultLocale;
-
-    //     const { data: eventData, error: eventError } = await tryCatch(
-    //       req.payload.findByID({
-    //         collection: "events",
-    //         id: eventId,
-    //         depth: 0,
-    //         locale,
-    //         req,
-    //         select: {
-    //           date: true,
-    //           date_tz: true,
-    //         },
-    //       }),
-    //     );
-
-    //     if (eventError) {
-    //       req.payload.logger.error({
-    //         message:
-    //           "Failed to load event for Datathon registration email queue.",
-    //         error: eventError,
-    //       });
-    //       throw eventError;
-    //     }
-
-    //     const { error: queueError } = await tryCatch(
-    //       Promise.all([
-    //         req.payload.jobs.queue({
-    //           task: DATATHON_REGISTRATION_CONFIRMATION_TASK_SLUG,
-    //           input: {
-    //             registrationId: doc.id,
-    //             eventId,
-    //             locale,
-    //           },
-    //           queue: "critical",
-    //         }),
-    //         req.payload.jobs.queue({
-    //           task: DATATHON_REGISTRATION_REMINDER_TASK_SLUG,
-    //           input: {
-    //             registrationId: doc.id,
-    //             eventId,
-    //             locale,
-    //           },
-    //           queue: "batch",
-    //           waitUntil: new Date(
-    //             new Date(eventData.date).getTime() - ONE_DAY_IN_MILLISECONDS,
-    //           ),
-    //         }),
-    //       ]),
-    //     );
-
-    //     if (queueError) {
-    //       req.payload.logger.error({
-    //         message:
-    //           "Unexpected error while queueing mails for Datathon registration.",
-    //         error: queueError,
-    //       });
-    //       throw queueError;
-    //     }
-    //   },
-    // ],
+    /*
+     * No afterChange email queueing, unlike conference-registrations and
+     * datathon-registrations. Individual registrants are not sent confirmation
+     * or reminder emails, and never have been. If that changes, use
+     * createRegistrationEmailQueueHook rather than reimplementing it here.
+     */
   },
 };
