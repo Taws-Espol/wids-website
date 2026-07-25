@@ -6,6 +6,7 @@ import { getPayload, ValidationError } from "payload";
 import type { ActionResponse } from "@/shared/types/action";
 import {
   CONFERENCE_REGISTRATION_ERROR_CODES,
+  isConferenceRegistrationErrorCode,
   type ConferenceRegistrationErrorCode,
 } from "@/shared/constants/conference-registration-error-codes";
 import type { Locale } from "@/shared/lib/next-intl/types";
@@ -53,10 +54,14 @@ export async function registerForConferenceAction(
 
   if (createRegistrationError) {
     if (createRegistrationError instanceof ValidationError) {
-      const errorCode =
-        (createRegistrationError.data.errors[0]
-          .message as ConferenceRegistrationErrorCode) ||
-        CONFERENCE_REGISTRATION_ERROR_CODES.PAYLOAD_VALIDATION;
+      // Payload's message is an arbitrary string: our validators return codes,
+      // but Payload generates its own messages too. Narrow rather than assert,
+      // so anything unrecognised becomes PAYLOAD_VALIDATION instead of flowing
+      // on as a code the client has no case for.
+      const rawMessage = createRegistrationError.data.errors[0]?.message;
+      const errorCode = isConferenceRegistrationErrorCode(rawMessage)
+        ? rawMessage
+        : CONFERENCE_REGISTRATION_ERROR_CODES.PAYLOAD_VALIDATION;
 
       return {
         data: null,
