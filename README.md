@@ -1,6 +1,11 @@
 # WiDS Website
 
-Official website for WiDS (Women in Data Science). Built with Next.js 16, Payload CMS 3, and PostgreSQL.
+[![CI](https://github.com/Taws-Espol/wids-website/actions/workflows/ci.yml/badge.svg)](https://github.com/Taws-Espol/wids-website/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
+
+Official website for WiDS Guayaquil (Women in Data Science). Built with Next.js 16, Payload CMS 3, and PostgreSQL.
+
+Editors manage events, speakers, schedules, sponsors, ambassadors and blog posts from the Payload admin panel. Attendees register for the conference, the datathon and NextGen, and receive transactional email through a background job queue.
 
 ## Stack
 
@@ -16,7 +21,9 @@ Official website for WiDS (Women in Data Science). Built with Next.js 16, Payloa
 | Email                | React Email, Nodemailer                                   |
 | Language             | TypeScript 5                                              |
 | Package Manager      | pnpm                                                      |
-| Code Quality         | ESLint, Prettier, Husky, lint-staged                      |
+| Testing              | Vitest                                                    |
+| Code Quality         | ESLint, Prettier, Husky, lint-staged, commitlint          |
+| CI                   | GitHub Actions                                            |
 
 ## Project Structure
 
@@ -24,44 +31,52 @@ Official website for WiDS (Women in Data Science). Built with Next.js 16, Payloa
 src/
 ├── app/
 │   ├── (payload)/              # Payload CMS admin panel and API routes
-│   └── (wids)/
-│       ├── [locale]/           # Locale-prefixed public pages
-│       │   ├── (home)/         # Landing page
-│       │   ├── about/
-│       │   ├── blog/
-│       │   ├── conference/
-│       │   ├── datathon/
-│       │   └── nextgen/
-│       └── api/                # Health check, revalidation endpoints
-├── features/                   # Feature-specific modules (queries, components)
-│   ├── landing/
+│   ├── (wids)/
+│   │   ├── [locale]/           # Locale-prefixed public pages
+│   │   │   ├── (home)/         # Landing page
+│   │   │   ├── about/
+│   │   │   ├── blog/           # Blog listing and [slug] post pages
+│   │   │   ├── conference/     # Conference page and attendance confirmation
+│   │   │   ├── learn/          # Datathon and NextGen programmes
+│   │   │   └── terms-and-conditions/
+│   │   └── api/                # Health check, revalidation, attendance endpoints
+│   ├── robots.ts
+│   └── sitemap.ts
+├── features/                   # Feature modules: components, queries, utils, tests
 │   ├── blog/
+│   ├── landing/
 │   └── registration/
 └── shared/
-    ├── components/             # Reusable UI components (header, footer, shadcn/ui)
-    ├── constants/              # App-wide constants (i18n, colors, cache tags)
-    ├── fonts/                  # Custom font files (Acumin Pro)
+    ├── components/             # Reusable UI (header, footer, shadcn/ui, typography)
+    ├── constants/              # Cache tags, WiDS palette, error codes, time zone
     ├── hooks/                  # Shared React hooks
     ├── lib/
     │   ├── next-intl/          # Internationalization config and routing
-    │   ├── payload/            # Collections, globals, seed script, types
-    │   └── react-email/        # Email templates
-    ├── styles/                 # Global CSS
-    └── utils/                  # Utility functions (cn, revalidation, error handling)
+    │   ├── payload/            # Collections, globals, tasks, migrations, types
+    │   └── react-email/        # Transactional email templates
+    ├── styles/                 # Global CSS and design tokens
+    ├── tests/                  # Tests for shared modules
+    ├── types/
+    └── utils/
 ```
 
-Key configuration files at the project root:
+Key files at the project root:
 
-- `payload.config.ts` -- Payload CMS collections, globals, plugins, and database adapter.
-- `next.config.ts` -- Next.js configuration with Payload and next-intl integrations.
-- `docker-compose.yaml` -- Local PostgreSQL instance.
-- `messages/` -- Translation files (`en.json`, `es.json`).
+| File                    | Purpose                                                              |
+| ----------------------- | -------------------------------------------------------------------- |
+| `payload.config.ts`     | Collections, globals, plugins, jobs, localization, database adapter  |
+| `next.config.ts`        | Next.js configuration with Payload and next-intl integrations        |
+| `docker-compose.yaml`   | Local PostgreSQL instance                                            |
+| `vitest.config.ts`      | Test runner configuration                                            |
+| `commitlint.config.mjs` | Commit message rules                                                 |
+| `messages/`             | Translation files (`en.json`, `es.json`)                             |
+| `docs/agents/`          | Configuration read by the agent skills — issue tracker, labels, docs |
 
 ## Requirements
 
-- [Node.js](https://nodejs.org/) v18.18 or later
-- [pnpm](https://pnpm.io/)
-- [Docker](https://www.docker.com/) (required for the local PostgreSQL database)
+- [Node.js](https://nodejs.org/) 20.9 or later, as required by Next.js 16. CI and `flake.nix` both use Node 24.
+- [pnpm](https://pnpm.io/) — the version is pinned in `packageManager`, so use `pnpm`, never `npx`.
+- [Docker](https://www.docker.com/), for the local PostgreSQL database.
 
 ## Local Development Setup
 
@@ -73,26 +88,24 @@ pnpm install
 
 ### 2. Configure environment variables
 
-Copy the example file and fill in the required values:
-
 ```bash
 cp .env.example .env.local
 ```
 
-At minimum, set the following variables for local development:
+| Variable                                    | Description                                                              |
+| ------------------------------------------- | ------------------------------------------------------------------------ |
+| `APP_URL`                                   | Application URL, e.g. `http://localhost:3000`                            |
+| `PAYLOAD_SECRET`                            | Any random string, used to encrypt Payload tokens                        |
+| `DATABASE_URL`                              | `postgresql://postgres:postgres@localhost:5432/payload` for local Docker |
+| `REVALIDATE_TOKEN`                          | Bearer token the Payload hooks use to call `/api/revalidate`             |
+| `ENABLE_JOB_WORKERS`                        | Whether this instance runs the background job queue                      |
+| `PUBLIC_S3_*`                               | Endpoint, region, key id, secret and bucket for media storage            |
+| `SMTP_*`                                    | Host, port, user and password for transactional email                    |
+| `DEFAULT_FROM_ADDRESS`, `DEFAULT_FROM_NAME` | Sender identity for transactional email                                  |
 
-| Variable           | Description                                                                                  |
-| ------------------ | -------------------------------------------------------------------------------------------- |
-| `APP_URL`          | Application URL (e.g., `http://localhost:3000`)                                              |
-| `PAYLOAD_SECRET`   | Any random string used to encrypt Payload tokens                                             |
-| `DATABASE_URL`     | PostgreSQL connection string (e.g., `postgresql://postgres:postgres@localhost:5432/payload`) |
-| `REVALIDATE_TOKEN` | Secret token for on-demand revalidation                                                      |
-| `S3_*`             | S3-compatible storage credentials                                                            |
-| `SMTP_*`           | SMTP server credentials for transactional email                                              |
+Media uploads and outbound email need real credentials; the rest of the site runs without them.
 
 ### 3. Start PostgreSQL
-
-Start the local PostgreSQL database:
 
 ```bash
 docker compose up -d
@@ -100,19 +113,19 @@ docker compose up -d
 
 ### 4. Optionally seed local data
 
-Use the Payload seed script only when you intentionally want to insert seed data into the current database:
+Run the seed script only when you deliberately want bootstrap content in the current database:
 
 ```bash
 pnpm payload seed
 ```
 
-If you want a fresh local sandbox, reset the local Docker volume first and then seed:
+For a clean sandbox, reset the volume first:
 
 ```bash
 docker compose down -v && docker compose up -d && pnpm payload seed
 ```
 
-`pnpm payload seed` is a manual operation and should not be part of a normal production deploy.
+`pnpm payload seed` is a manual operation and must never run in a production deploy.
 
 ### 5. Start the development server
 
@@ -120,78 +133,102 @@ docker compose down -v && docker compose up -d && pnpm payload seed
 pnpm dev
 ```
 
-The application will be available at [http://localhost:3000](http://localhost:3000). The Payload admin panel is accessible at [http://localhost:3000/admin](http://localhost:3000/admin).
+The site is at [http://localhost:3000](http://localhost:3000) and the admin panel at [http://localhost:3000/admin](http://localhost:3000/admin).
+
+To preview transactional email templates instead:
+
+```bash
+pnpm dev:email
+```
+
+## Checks
+
+Run these before opening a pull request. The first three are what CI runs.
+
+```bash
+pnpm lint        # eslint — a single warning fails it
+pnpm typecheck   # tsc --noEmit
+pnpm test        # vitest, once
+pnpm build       # production build; needs PostgreSQL running
+```
+
+### Testing
+
+Vitest runs in a `node` environment with no jsdom, so tests cover pure logic rather than rendered components — query filters, cache-tag wiring, email rendering, error mapping.
+
+Tests live in a `tests/` folder scoped to the code they cover: `src/shared/tests/` for shared modules, `src/features/<feature>/tests/` for a feature. Use `pnpm test:watch` while working.
+
+Anything needing a database — Payload access control in particular — is verified on the preview deployment rather than in CI.
 
 ## Payload Migration Workflow
 
-This project uses PostgreSQL with Payload migrations stored in `src/shared/lib/payload/migrations`.
+Migrations live in `src/shared/lib/payload/migrations`. The baseline is `20260414_203346.ts`; later files capture schema and data transitions.
 
-### Local schema workflow
+### Creating a migration
 
-1. Run local development normally with Payload/Postgres push mode.
-2. Make your collection or field changes.
-3. Once the schema change is ready, create a migration:
+1. Develop normally — Payload pushes schema changes to your local database automatically.
+2. Once a collection or field change is settled, generate the migration:
 
-```bash
-pnpm payload migrate:create your-change-name
-```
+   ```bash
+   pnpm payload migrate:create your-change-name
+   ```
 
-4. Review the generated files in `src/shared/lib/payload/migrations`.
-5. Commit the schema changes and migration files together.
+3. Review the generated files and commit them together with the schema change.
 
-Do not run migrations against your local development database if you are already using push mode there. Treat local push mode as a sandbox, then generate migrations for deployment.
+### The migrate prompt
 
-### Existing baseline migration
+`payload migrate` stops on an interactive prompt when it detects a dev-pushed database:
 
-The first generated migration in this repository is the baseline schema migration:
+> It looks like you've run Payload in dev mode … data loss will occur. Would you like to proceed?
 
-- `src/shared/lib/payload/migrations/20260414_203346.ts`
+- Answer **no** during `pnpm build`. Answering yes makes Payload replay the whole chain against an already-migrated database, which fails on types that already exist.
+- Answer **yes** only to apply migrations to an empty database, after `docker compose down -v && docker compose up -d`. That is also how to verify a new migration applies cleanly from scratch.
 
-That migration defines the initial schema. Future migrations should only capture later schema or data transitions.
+### Seeding versus migrations
 
-### Seeding vs migrations
+Migrations carry schema changes and the data transformations needed to evolve existing records. `pnpm payload seed` inserts bootstrap content and is never part of a deploy.
 
-Keep seed data separate from schema migrations:
+## Deployment
 
-- Use migrations for schema changes and transactional data transformations needed to evolve existing records safely.
-- Use `pnpm payload seed` only when you explicitly want to insert bootstrap content.
-
-## Coolify Deployment
-
-This project runs Payload migrations as part of the build command:
+Deployed on Coolify. The build command runs migrations first:
 
 ```bash
-pnpm build
+pnpm build   # payload migrate && next build
 ```
-
-That command executes:
-
-```bash
-payload migrate && next build
-```
-
-This is intentional for this SSR setup, so the database schema is up to date before the Next.js production build runs.
-
-### Recommended commands
 
 - Build command: `pnpm build`
 - Start command: `pnpm start`
 
-Running `pnpm build` applies any pending Payload migrations first, then executes `next build`.
+### Production safety
 
-### Production safety notes
-
-- Never run `pnpm payload seed` automatically in production deploys.
-- Never run `docker compose down -v && docker compose up -d && pnpm payload seed` outside local development.
-- Prefer a single migration step per deploy to avoid multiple app replicas trying to migrate at the same time.
+- Never run `pnpm payload seed` automatically in a deploy.
+- Never run `docker compose down -v` against anything but a local database.
+- Keep to a single migration step per deploy, so replicas do not migrate concurrently.
 
 ## Available Scripts
 
-| Command          | Description                                               |
-| ---------------- | --------------------------------------------------------- |
-| `pnpm dev`       | Start the Next.js development server                      |
-| `pnpm build`     | Run Payload migrations, then create a production build    |
-| `pnpm start`     | Run the production build                                  |
-| `pnpm lint`      | Run ESLint                                                |
-| `pnpm payload`   | Run the Payload CLI directly, e.g. `pnpm payload migrate` |
-| `pnpm dev:email` | Start the React Email preview server                      |
+| Command           | Description                                             |
+| ----------------- | ------------------------------------------------------- |
+| `pnpm dev`        | Start the Next.js development server                    |
+| `pnpm build`      | Run Payload migrations, then create a production build  |
+| `pnpm start`      | Run the production build                                |
+| `pnpm lint`       | Run ESLint; a single warning fails the command          |
+| `pnpm typecheck`  | Type-check with `tsc --noEmit`                          |
+| `pnpm test`       | Run the test suite once                                 |
+| `pnpm test:watch` | Run the test suite in watch mode                        |
+| `pnpm payload`    | Run the Payload CLI, e.g. `pnpm payload migrate:create` |
+| `pnpm dev:email`  | Start the React Email preview server                    |
+
+## Contributing
+
+Read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a pull request. It covers branch naming, the Conventional Commits rules enforced by commitlint, how issues are filed and triaged, and the review flow.
+
+Every pull request runs lint, typecheck and tests in GitHub Actions, and gets a preview deployment.
+
+## Security
+
+Report vulnerabilities privately through GitHub's Security tab. See [SECURITY.md](./SECURITY.md).
+
+## License
+
+[MIT](./LICENSE)
