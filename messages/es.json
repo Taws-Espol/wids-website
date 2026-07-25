@@ -96,7 +96,9 @@
       "blog": {
         "title": "Blog",
         "subtitle": "Empodera a las mujeres en ciencia de datos: una fuente de inspiración",
-        "description": "Descubre historias inspiradoras, insights y noticias del mundo de las mujeres en ciencia de datos. Mantente actualizado con artículos, entrevistas y resúmenes de nuestra comunidad en el Blog de WiDS."
+        "description": "Descubre historias inspiradoras, insights y noticias del mundo de las mujeres en ciencia de datos. Mantente actualizado con artículos, entrevistas y resúmenes de nuestra comunidad en el Blog de WiDS.",
+        "empty": "Aún no hay publicaciones. Vuelve pronto.",
+        "back-to-blog": "Volver al blog"
       },
       "about": {
         "title": "Nosotros",

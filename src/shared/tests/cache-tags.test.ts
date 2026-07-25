@@ -1,10 +1,10 @@
-import { readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
 import * as cacheTags from "@/shared/constants/cache-tags";
 
-const QUERIES_DIR = "src/features/landing/queries";
+const FEATURES_DIR = "src/features";
 const COLLECTIONS_DIR = "src/shared/lib/payload/collections";
 const GLOBALS_DIR = "src/shared/lib/payload/globals";
 
@@ -15,7 +15,16 @@ function readAll(dir: string) {
     .join("\n");
 }
 
-const consumers = readAll(QUERIES_DIR);
+/** Every feature's queries, so a new feature's tags are covered automatically. */
+function readAllFeatureQueries() {
+  return readdirSync(FEATURES_DIR)
+    .map((feature) => join(FEATURES_DIR, feature, "queries"))
+    .filter((dir) => existsSync(dir))
+    .map(readAll)
+    .join("\n");
+}
+
+const consumers = readAllFeatureQueries();
 const producers = `${readAll(COLLECTIONS_DIR)}\n${readAll(GLOBALS_DIR)}`;
 const TAG_NAMES = Object.keys(cacheTags);
 

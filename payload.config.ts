@@ -15,6 +15,7 @@ import { DatathonRegistrationsIndividuals } from "./src/shared/lib/payload/colle
 import { Editions } from "./src/shared/lib/payload/collections/editions.ts";
 import { Events } from "./src/shared/lib/payload/collections/events.ts";
 import { Media } from "./src/shared/lib/payload/collections/media.ts";
+import { Posts } from "./src/shared/lib/payload/collections/posts.ts";
 import { NextgenRegistrations } from "./src/shared/lib/payload/collections/nextgen-registrations.ts";
 import { Schedules } from "./src/shared/lib/payload/collections/schedules.ts";
 import { Speakers } from "./src/shared/lib/payload/collections/speakers.ts";
@@ -62,6 +63,7 @@ export default buildConfig({
     Speakers,
     Ambassadors,
     Sponsors,
+    Posts,
   ],
   jobs: {
     tasks: [

@@ -79,6 +79,7 @@ export interface Config {
     speakers: Speaker;
     ambassadors: Ambassador;
     sponsors: Sponsor;
+    posts: Post;
     exports: Export;
     imports: Import;
     "payload-kv": PayloadKv;
@@ -107,6 +108,7 @@ export interface Config {
     speakers: SpeakersSelect<false> | SpeakersSelect<true>;
     ambassadors: AmbassadorsSelect<false> | AmbassadorsSelect<true>;
     sponsors: SponsorsSelect<false> | SponsorsSelect<true>;
+    posts: PostsSelect<false> | PostsSelect<true>;
     exports: ExportsSelect<false> | ExportsSelect<true>;
     imports: ImportsSelect<false> | ImportsSelect<true>;
     "payload-kv": PayloadKvSelect<false> | PayloadKvSelect<true>;
@@ -471,6 +473,47 @@ export interface Sponsor {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts".
+ */
+export interface Post {
+  id: number;
+  title: string;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  /**
+   * Shown on the blog listing card and used as the page description.
+   */
+  excerpt: string;
+  coverImage: number | Media;
+  /**
+   * Leave empty for a post from WiDS Guayaquil itself.
+   */
+  author?: string | null;
+  publishedAt?: string | null;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ("ltr" | "rtl") | null;
+      format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ("draft" | "published") | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "exports".
  */
 export interface Export {
@@ -726,6 +769,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: "sponsors";
         value: number | Sponsor;
+      } | null)
+    | ({
+        relationTo: "posts";
+        value: number | Post;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -1012,6 +1059,23 @@ export interface SponsorsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts_select".
+ */
+export interface PostsSelect<T extends boolean = true> {
+  title?: T;
+  generateSlug?: T;
+  slug?: T;
+  excerpt?: T;
+  coverImage?: T;
+  author?: T;
+  publishedAt?: T;
+  content?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "exports_select".
  */
 export interface ExportsSelect<T extends boolean = true> {
@@ -1252,6 +1316,7 @@ export interface TaskCreateCollectionExport {
       | "speakers"
       | "ambassadors"
       | "sponsors"
+      | "posts"
       | "exports"
       | "imports";
     drafts?: ("yes" | "no") | null;

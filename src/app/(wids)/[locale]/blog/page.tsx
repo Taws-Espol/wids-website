@@ -1,22 +1,24 @@
 import Image from "next/image";
-import { use } from "react";
-import { setRequestLocale } from "next-intl/server";
-import { useTranslations } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { TypographyH1 } from "@/shared/components/ui/typography-h1";
 import { TypographyParagraph } from "@/shared/components/ui/typography-paragraph";
+import type { Locale } from "@/shared/lib/next-intl/types";
 
 import { HeroSection } from "@/features/landing/components/hero-section";
+import { PostCard } from "@/features/blog/components/post-card";
+import { getBlogPosts } from "@/features/blog/queries/get-blog-posts";
 
-export default function Blog({
+export default async function Blog({
   params,
 }: {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: Locale }>;
 }) {
-  const { locale } = use(params);
+  const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = useTranslations("features.landing.blog");
+  const t = await getTranslations("features.landing.blog");
+  const posts = await getBlogPosts(locale);
 
   return (
     <main className="flex flex-col gap-20 px-4 py-20 md:px-4 lg:px-8 xl:px-42">
@@ -42,6 +44,20 @@ export default function Blog({
             sizes="(max-width: 768px) calc(100vw - 2rem), 50vw"
           />
         </div>
+      </section>
+
+      <section>
+        {posts.length === 0 ? (
+          <TypographyParagraph className="text-w-gray">
+            {t("empty")}
+          </TypographyParagraph>
+        ) : (
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+            {posts.map((post) => (
+              <PostCard key={post.id} post={post} locale={locale} />
+            ))}
+          </div>
+        )}
       </section>
     </main>
   );
