@@ -6,6 +6,7 @@ import { getPayload, ValidationError } from "payload";
 import type { ActionResponse } from "@/shared/types/action";
 import {
   DATATHON_REGISTRATION_ERROR_CODES,
+  isDatathonRegistrationErrorCode,
   type DatathonRegistrationErrorCode,
 } from "@/shared/constants/datathon-registration-error-codes";
 import type { Locale } from "@/shared/lib/next-intl/types";
@@ -51,13 +52,16 @@ export async function registerForDatathonIndividualAction(
 
   if (createRegistrationError) {
     if (createRegistrationError instanceof ValidationError) {
+      // Narrow rather than assert: Payload generates its own messages too,
+      // and an unrecognised one must not flow on as a code.
+      const rawMessage = createRegistrationError.data.errors[0]?.message;
+
       return {
         data: null,
         error: {
-          code:
-            (createRegistrationError.data.errors[0]
-              .message as DatathonRegistrationErrorCode) ||
-            DATATHON_REGISTRATION_ERROR_CODES.PAYLOAD_VALIDATION,
+          code: isDatathonRegistrationErrorCode(rawMessage)
+            ? rawMessage
+            : DATATHON_REGISTRATION_ERROR_CODES.PAYLOAD_VALIDATION,
           message:
             "Validation error while creating registration for Datathon (individual).",
         },

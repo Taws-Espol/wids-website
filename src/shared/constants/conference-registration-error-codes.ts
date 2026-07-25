@@ -1,7 +1,11 @@
 /**
- * Single vocabulary for conference registration: zod, Payload validators,
- * and the server action all use these string codes. No paths or i18n —
- * the client maps codes to fields and translations.
+ * The error vocabulary for conference registration, spoken by the Payload field
+ * validators and passed through by the server action. The client maps a code to
+ * a field and a translation key.
+ *
+ * Note zod does not use these codes: the schema emits translation keys directly,
+ * because it runs on the client where it can resolve them. So a given rule can
+ * surface either way depending on which layer rejected it.
  */
 export const CONFERENCE_REGISTRATION_ERROR_CODES = {
   SCHEMA_VALIDATION: "SCHEMA_VALIDATION",
