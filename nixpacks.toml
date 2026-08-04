@@ -1,4 +1,5 @@
 [phases.setup]
+nixpkgsArchive = "b6018f87da91d19d0ab4cf979885689b469cdd41"
 nixPkgs = ["nodejs_24", "openssl"]
 
 [phases.install]
