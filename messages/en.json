@@ -32,6 +32,16 @@
         "x": "X",
         "linkedin": "LinkedIn"
       }
+    },
+    "not-found": {
+      "title": "Page not found",
+      "description": "The link you followed does not exist, or the content is no longer available.",
+      "cta": "Back to home"
+    },
+    "error": {
+      "title": "Something went wrong",
+      "description": "We could not load this page. You can try again.",
+      "cta": "Try again"
     }
   },
   "features": {
