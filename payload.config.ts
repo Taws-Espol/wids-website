@@ -100,20 +100,10 @@ export default buildConfig({
   plugins: [
     s3Storage({
       collections: {
+        // No `prefix`: objects sit at the root of the private bucket, so the
+        // storage key is just the filename. The `wids/` prefix only existed to
+        // namespace the shared public bucket this replaced.
         media: {
-          /**
-           * No prefix: objects sit at the root of the private bucket. The
-           * `wids/` prefix existed only to namespace the shared public bucket.
-           *
-           * Kept as an explicit empty string rather than omitted. The plugin
-           * only injects the `prefix` field when this option is defined, so
-           * omitting it would drop `media.prefix` from the schema while the
-           * column still exists — and would break reads on the running
-           * deployment during the window between `payload migrate` and the new
-           * container taking over. Empty keeps schema and database aligned and
-           * still resolves keys to the bucket root.
-           */
-          prefix: "",
           /**
            * Relative on purpose: same origin, no hostname compiled into the
            * app, and `next/image` treats it as a local path in every

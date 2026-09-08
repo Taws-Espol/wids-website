@@ -84,25 +84,27 @@ be given real media documents or moved into `public/`.
 
 The `wids/` prefix existed only to namespace a shared public bucket. The private
 bucket holds nothing else, so the prefix earns nothing and is dropped: objects
-are copied to the root, and the collection's `prefix` is `""`.
+live at the root, and the collection declares no `prefix` at all.
 
-This makes the `prefix` column load-bearing in a way `url` is not. Storage keys
-are built as `docPrefix || collectionPrefix`, and `getFilePrefix` resolves
-`docPrefix` from the stored column when no `?prefix=` param is present. Rows
-holding the old `'wids'` would win over the empty collection prefix and keep
-pointing at a path that no longer exists, so the migration clears them and
-resets the column default.
+This made the `prefix` column load-bearing during the cutover in a way `url`
+never was. Storage keys are built as `docPrefix || collectionPrefix`, and
+`getFilePrefix` resolves `docPrefix` from the stored column when no `?prefix=`
+param is present. Rows holding the old `'wids'` would have won over the empty
+collection prefix and kept pointing at a path that no longer exists, so
+migration `20260907_120000_relative_media_urls` clears them and resets the
+column default.
 
-`prefix` is kept as an explicit `""` rather than removed. The plugin only
-injects the `prefix` field when the option is defined, so omitting it would drop
-`media.prefix` from the schema while the column still exists in the database.
-Worse, during a deploy `payload migrate` runs before the new container takes
-over, so a dropped column would break media reads in the still-running old
-release. An empty prefix keeps schema and database aligned and resolves keys to
-the root.
+The cutover shipped with `prefix: ""` rather than removing the option, because
+the plugin only injects the `prefix` field when the option is defined. Omitting
+it drops `media.prefix` from the schema while the column still exists, and
+`payload migrate` runs before the new container takes over during a deploy — so
+a dropped column would have broken media reads in the still-running release. The
+option was removed once that window had passed (#184); with no field injected,
+`getFilePrefix` finds no prefix on the document, returns `""`, and keys resolve
+to the root exactly as before.
 
-Removing the column outright is a reasonable follow-up once the cutover has
-settled, when it can be done on its own rather than during a bucket switch.
+The `media.prefix` column itself is now vestigial. Dropping it is safe only in
+its own deploy, for the same reason: nothing running may still select it.
 
 ## Alternatives considered
 
