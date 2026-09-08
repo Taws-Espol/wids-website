@@ -7,20 +7,23 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   allowedDevOrigins: ["192.168.0.106"],
   images: {
+    // An allowlist the moment it is non-empty: any local path without an entry
+    // here is rejected by the optimizer with a 400.
     localPatterns: [
       {
         pathname: "/assets/images/**",
         search: "",
+      },
+      {
+        // Media is served by Payload from the private bucket. `search` is left
+        // open because the file route also accepts a `?prefix=` query param.
+        pathname: "/api/media/**",
       },
     ],
     remotePatterns: [
       {
         protocol: "http",
         hostname: "localhost",
-      },
-      {
-        protocol: "https",
-        hostname: "cdn.taws.espol.edu.ec",
       },
       {
         protocol: "https",

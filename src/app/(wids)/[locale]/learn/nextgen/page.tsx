@@ -55,7 +55,7 @@ export default async function NextGen({
 
           <div className="relative aspect-square w-full md:w-1/2">
             <Image
-              src="https://cdn.taws.espol.edu.ec/wids/nextgen-collage.webp"
+              src="/api/media/file/nextgen-collage.webp"
               alt="NextGen collage"
               fill
               loading="eager"

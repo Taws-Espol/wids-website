@@ -37,7 +37,7 @@ export default async function Conference({
     <main className="flex flex-col gap-20 px-4 py-20 md:px-4 lg:px-8 xl:px-42">
       <HeroSection
         title={t("title")}
-        src="https://cdn.taws.espol.edu.ec/wids/conference-hero.webp"
+        src="/api/media/file/conference-hero.webp"
         alt="Conference hero"
         color="green_light"
       />
@@ -61,7 +61,7 @@ export default async function Conference({
 
           <div className="relative aspect-square w-full md:w-1/2">
             <Image
-              src="https://cdn.taws.espol.edu.ec/wids/conference-collage.webp"
+              src="/api/media/file/conference-collage.webp"
               alt="Conference collage"
               fill
               loading="eager"

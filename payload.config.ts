@@ -101,20 +101,41 @@ export default buildConfig({
     s3Storage({
       collections: {
         media: {
-          prefix: "wids",
-          generateFileURL: (file) => {
-            return `https://cdn.taws.espol.edu.ec/${file.prefix}/${file.filename}`;
-          },
+          /**
+           * No prefix: objects sit at the root of the private bucket. The
+           * `wids/` prefix existed only to namespace the shared public bucket.
+           *
+           * Kept as an explicit empty string rather than omitted. The plugin
+           * only injects the `prefix` field when this option is defined, so
+           * omitting it would drop `media.prefix` from the schema while the
+           * column still exists — and would break reads on the running
+           * deployment during the window between `payload migrate` and the new
+           * container taking over. Empty keeps schema and database aligned and
+           * still resolves keys to the bucket root.
+           */
+          prefix: "",
+          /**
+           * Relative on purpose: same origin, no hostname compiled into the
+           * app, and `next/image` treats it as a local path in every
+           * environment. `disablePayloadAccessControl` stays unset so Payload
+           * serves the bytes itself and applies the media collection's `read`
+           * access to them — the bucket is private and has no public URL.
+           *
+           * The plugin recomputes this on every read (see the `url` field's
+           * afterRead hook in `plugin-cloud-storage`), so the stored `media.url`
+           * column is ignored for documents that have a filename.
+           */
+          generateFileURL: ({ filename }) => `/api/media/file/${filename}`,
         },
       },
-      bucket: process.env.PUBLIC_S3_BUCKET_NAME ?? "",
+      bucket: process.env.S3_BUCKET_NAME ?? "",
       config: {
         credentials: {
-          accessKeyId: process.env.PUBLIC_S3_ACCESS_KEY_ID ?? "",
-          secretAccessKey: process.env.PUBLIC_S3_SECRET_ACCESS_KEY ?? "",
+          accessKeyId: process.env.S3_ACCESS_KEY_ID ?? "",
+          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY ?? "",
         },
-        region: process.env.PUBLIC_S3_REGION ?? "",
-        endpoint: process.env.PUBLIC_S3_ENDPOINT ?? "",
+        region: process.env.S3_REGION ?? "",
+        endpoint: process.env.S3_ENDPOINT ?? "",
         forcePathStyle: true,
       },
     }),

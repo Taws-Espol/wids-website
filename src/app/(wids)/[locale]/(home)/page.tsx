@@ -44,7 +44,7 @@ export default async function Home({
 
           <div className="relative aspect-square w-full md:w-1/2">
             <Image
-              src="https://cdn.taws.espol.edu.ec/wids/home-collage.webp"
+              src="/api/media/file/home-collage.webp"
               alt="Home collage"
               fill
               sizes="(max-width: 768px) calc(100vw - 2rem), 50vw"

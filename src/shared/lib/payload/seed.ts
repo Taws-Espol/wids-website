@@ -2,6 +2,7 @@ import payloadConfig from "@payload-config";
 // import { readFile } from "node:fs/promises";
 import { basename /* extname, resolve */ } from "node:path";
 import { getPayload, type Payload } from "payload";
+import { getAppUrl } from "../../utils/get-app-url.ts";
 import type {
   Ambassador,
   Edition,
@@ -42,11 +43,16 @@ async function findOrCreateSeedRemoteMedia(
     return existing.docs[0];
   }
 
-  const response = await fetch(args.url);
+  // Seed sources are relative media paths, the same form the rest of the app
+  // uses. `fetch` needs an absolute URL, so they are resolved against the app —
+  // which means the app has to be running and reachable at APP_URL when seeding.
+  const sourceUrl = new URL(args.url, getAppUrl()).toString();
+
+  const response = await fetch(sourceUrl);
 
   if (!response.ok) {
     throw new Error(
-      `Failed to fetch seed media (${response.status}): ${args.url}`,
+      `Failed to fetch seed media (${response.status}): ${sourceUrl}`,
     );
   }
 
@@ -178,7 +184,7 @@ export const script = async () => {
 
     // const media = await findOrCreateSeedRemoteMedia(payload, {
     //   alt: "WiDS logo",
-    //   url: "https://cdn.taws.espol.edu.ec/wids/WiDS-line1-3.svg",
+    //   url: "/api/media/file/WiDS-line1-3.svg",
     // });
 
     const editionNames = [
@@ -333,7 +339,7 @@ export const script = async () => {
         titleEs: "Líder de Ciencia de Datos",
         titleEn: "Head of Data Science",
         affiliation: "DataLab Caribe",
-        photoUrl: "https://cdn.taws.espol.edu.ec/wids/carmen-vaca-pfp.png",
+        photoUrl: "/api/media/file/carmen-vaca-pfp.png",
         photoAlt: "Ana Perez profile photo",
         aboutEs:
           "Ana trabaja en equipos de producto y analítica para convertir datos complejos en decisiones simples.",
@@ -348,7 +354,7 @@ export const script = async () => {
         titleEs: "Mentor de IA",
         titleEn: "AI Mentor",
         affiliation: "Studio ML",
-        photoUrl: "https://cdn.taws.espol.edu.ec/wids/carmen-vaca-pfp.png",
+        photoUrl: "/api/media/file/carmen-vaca-pfp.png",
         photoAlt: "Luis Gomez profile photo",
         aboutEs:
           "Luis acompaña a equipos junior en prototipos de machine learning y despliegue de modelos.",
@@ -363,7 +369,7 @@ export const script = async () => {
         titleEs: "Mentora de Datathon",
         titleEn: "Datathon Mentor",
         affiliation: "Analytics Lab",
-        photoUrl: "https://cdn.taws.espol.edu.ec/wids/carmen-vaca-pfp.png",
+        photoUrl: "/api/media/file/carmen-vaca-pfp.png",
         photoAlt: "Camila Rios profile photo",
         aboutEs:
           "Camila acompana a equipos en formulacion de problemas, validacion experimental y comunicacion de resultados.",
@@ -758,7 +764,7 @@ export const script = async () => {
       {
         name: "Ph.D. Carmen Vaca",
         role: "ambassador" as const,
-        photoUrl: "https://cdn.taws.espol.edu.ec/wids/carmen-vaca-pfp.png",
+        photoUrl: "/api/media/file/carmen-vaca-pfp.png",
         photoAlt: "Ph.D. Carmen Vaca profile photo",
         titleEs: "Investigadora en IA & Líder en Ciencia de Datos",
         titleEn: "AI Researcher & Data Science Leader",
@@ -772,8 +778,7 @@ export const script = async () => {
       {
         name: "M.Sc. Adriana Collaguazo",
         role: "co-ambassador" as const,
-        photoUrl:
-          "https://cdn.taws.espol.edu.ec/wids/adriana-collaguazo-pfp.jpeg",
+        photoUrl: "/api/media/file/adriana-collaguazo-pfp.jpeg",
         photoAlt: "M.Sc. Adriana Collaguazo profile photo",
         titleEs:
           "Ingeniera de Inteligencia Artificial, Científica de Datos, Profesora, Investigadora",
@@ -789,7 +794,7 @@ export const script = async () => {
       {
         name: "Gabriela Jiménez",
         role: "co-ambassador" as const,
-        photoUrl: "https://cdn.taws.espol.edu.ec/wids/gabriela-jimenez-pfp.png",
+        photoUrl: "/api/media/file/gabriela-jimenez-pfp.png",
         photoAlt: "Gabriela Jiménez profile photo",
         titleEs: "Estudiante de Ingeniería en Ciencias de la Computación",
         titleEn: "Computer Science Engineering Student",
@@ -801,7 +806,7 @@ export const script = async () => {
       {
         name: "Maitte Apupalo",
         role: "co-ambassador" as const,
-        photoUrl: "https://cdn.taws.espol.edu.ec/wids/maitte-apupalo-pfp.jpeg",
+        photoUrl: "/api/media/file/maitte-apupalo-pfp.jpeg",
         photoAlt: "Maitte Apupalo profile photo",
         titleEs: "Estudiante de Ingeniería en Logística y Transporte",
         titleEn: "Logistics and Transportation Engineering Student",
@@ -813,7 +818,7 @@ export const script = async () => {
       {
         name: "Mariu Andrade",
         role: "co-ambassador" as const,
-        photoUrl: "https://cdn.taws.espol.edu.ec/wids/mariu-andrade-pfp.jpeg",
+        photoUrl: "/api/media/file/mariu-andrade-pfp.jpeg",
         photoAlt: "Mariu Andrade profile photo",
         titleEs: "Estudiante de Ingeniería en Ciencias de la Computación",
         titleEn: "Computer Science Engineering Student",
@@ -825,7 +830,7 @@ export const script = async () => {
       {
         name: "Ainhara Meza",
         role: "co-ambassador" as const,
-        photoUrl: "https://cdn.taws.espol.edu.ec/wids/ainhara-meza-pfp.png",
+        photoUrl: "/api/media/file/ainhara-meza-pfp.png",
         photoAlt: "Ainhara Meza profile photo",
         titleEs: "Estudiante de Administración de Empresas",
         titleEn: "Business Administration Student",
@@ -871,7 +876,7 @@ export const script = async () => {
       {
         nameEs: "Banco Guayaquil",
         nameEn: "Banco Guayaquil",
-        logoUrl: "https://cdn.taws.espol.edu.ec/wids/banco-guayaquil-logo.png",
+        logoUrl: "/api/media/file/banco-guayaquil-logo.png",
         logoAlt: "Banco Guayaquil logo",
         website: "https://www.bancoguayaquil.com",
         tier: "gold" as const,
@@ -879,7 +884,7 @@ export const script = async () => {
       {
         nameEs: "Google DeepMind",
         nameEn: "Google DeepMind",
-        logoUrl: "https://cdn.taws.espol.edu.ec/wids/google-deepmind-logo.png",
+        logoUrl: "/api/media/file/google-deepmind-logo.png",
         logoAlt: "Google DeepMind logo",
         website: "https://deepmind.google",
         tier: "platinum" as const,

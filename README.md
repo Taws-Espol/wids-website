@@ -99,7 +99,7 @@ cp .env.example .env.local
 | `DATABASE_URL`                              | `postgresql://postgres:postgres@localhost:5432/payload` for local Docker |
 | `REVALIDATE_TOKEN`                          | Bearer token the Payload hooks use to call `/api/revalidate`             |
 | `ENABLE_JOB_WORKERS`                        | Whether this instance runs the background job queue                      |
-| `PUBLIC_S3_*`                               | Endpoint, region, key id, secret and bucket for media storage            |
+| `S3_*`                                      | Endpoint, region, key id, secret and bucket for media storage            |
 | `SMTP_*`                                    | Host, port, user and password for transactional email                    |
 | `DEFAULT_FROM_ADDRESS`, `DEFAULT_FROM_NAME` | Sender identity for transactional email                                  |
 
