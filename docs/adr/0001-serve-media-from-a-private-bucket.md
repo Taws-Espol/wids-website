@@ -103,8 +103,11 @@ option was removed once that window had passed (#184); with no field injected,
 `getFilePrefix` finds no prefix on the document, returns `""`, and keys resolve
 to the root exactly as before.
 
-The `media.prefix` column itself is now vestigial. Dropping it is safe only in
-its own deploy, for the same reason: nothing running may still select it.
+The `media.prefix` column was then dropped in its own deploy (#186), once the
+running release no longer selected it. That separation was the point: `payload
+migrate` runs before the new container takes over, so dropping a column that the
+serving release still reads would break every media read for the length of a
+deploy.
 
 ## Alternatives considered
 
