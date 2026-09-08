@@ -18,7 +18,7 @@ import {
 } from "@payloadcms/richtext-lexical";
 
 import { POSTS_TAG, postTag } from "../../../constants/cache-tags.ts";
-import { revalidateCache } from "../../../utils/revalidate-cache.ts";
+import { createRevalidateHooks } from "../utils/create-revalidate-hooks.ts";
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
 
 export const Posts: CollectionConfig = {
@@ -123,25 +123,11 @@ export const Posts: CollectionConfig = {
         return data;
       },
     ],
-    afterChange: [
-      async ({ doc, req }) => {
-        await revalidateCache({
-          req,
-          source: "posts",
-          // The listing plus this post's own page; other posts stay cached.
-          tag: `${POSTS_TAG},${postTag(doc.id)}`,
-        });
-      },
-    ],
-    afterDelete: [
-      async ({ doc, req }) => {
-        await revalidateCache({
-          req,
-          source: "posts",
-          tag: `${POSTS_TAG},${postTag(doc.id)}`,
-        });
-      },
-    ],
+    ...createRevalidateHooks({
+      source: "posts",
+      // The listing plus this post's own page; other posts stay cached.
+      tag: (doc) => `${POSTS_TAG},${postTag(doc.id)}`,
+    }),
   },
   timestamps: true,
 };

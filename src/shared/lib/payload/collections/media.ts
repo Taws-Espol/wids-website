@@ -1,6 +1,6 @@
 import type { CollectionConfig } from "payload";
 import { MEDIA_TAG } from "../../../constants/cache-tags.ts";
-import { revalidateCache } from "../../../utils/revalidate-cache.ts";
+import { createRevalidateHooks } from "../utils/create-revalidate-hooks.ts";
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
 
 export const Media: CollectionConfig = {
@@ -54,11 +54,5 @@ export const Media: CollectionConfig = {
       required: true,
     },
   ],
-  hooks: {
-    afterChange: [
-      async ({ req }) => {
-        await revalidateCache({ req, source: "media", tag: MEDIA_TAG });
-      },
-    ],
-  },
+  hooks: createRevalidateHooks({ source: "media", tag: MEDIA_TAG }),
 };

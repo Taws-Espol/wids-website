@@ -1,6 +1,6 @@
 import type { CollectionConfig } from "payload";
 import { SPEAKERS_TAG } from "../../../constants/cache-tags.ts";
-import { revalidateCache } from "../../../utils/revalidate-cache.ts";
+import { createRevalidateHooks } from "../utils/create-revalidate-hooks.ts";
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
 
 export const Speakers: CollectionConfig = {
@@ -66,11 +66,5 @@ export const Speakers: CollectionConfig = {
       required: true,
     },
   ],
-  hooks: {
-    afterChange: [
-      async ({ req }) => {
-        await revalidateCache({ req, source: "speakers", tag: SPEAKERS_TAG });
-      },
-    ],
-  },
+  hooks: createRevalidateHooks({ source: "speakers", tag: SPEAKERS_TAG }),
 };

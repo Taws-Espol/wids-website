@@ -1,6 +1,6 @@
 import "server-only";
 
-import { cacheTag } from "next/cache";
+import { cacheLife, cacheTag } from "next/cache";
 import config from "@payload-config";
 import { getPayload, type Payload } from "payload";
 
@@ -22,6 +22,7 @@ function findBySlug(payload: Payload, slug: string, locale: Locale) {
 
 export async function getBlogPostBySlug(slug: string, locale: Locale) {
   "use cache";
+  cacheLife("content");
 
   const payload = await getPayload({ config });
 

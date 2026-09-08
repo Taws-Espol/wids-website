@@ -1,6 +1,6 @@
 import type { CollectionConfig } from "payload";
 import { SPONSORS_TAG } from "../../../constants/cache-tags.ts";
-import { revalidateCache } from "../../../utils/revalidate-cache.ts";
+import { createRevalidateHooks } from "../utils/create-revalidate-hooks.ts";
 import { SPONSOR_TIERS } from "../constants/sponsor-tiers.ts";
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
 
@@ -51,11 +51,5 @@ export const Sponsors: CollectionConfig = {
       required: true,
     },
   ],
-  hooks: {
-    afterChange: [
-      async ({ req }) => {
-        await revalidateCache({ req, source: "sponsors", tag: SPONSORS_TAG });
-      },
-    ],
-  },
+  hooks: createRevalidateHooks({ source: "sponsors", tag: SPONSORS_TAG }),
 };

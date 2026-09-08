@@ -14,32 +14,8 @@ import { PostBody } from "@/features/blog/components/post-body";
 import { PostSkeleton } from "@/features/blog/components/post-skeleton";
 import { formatPostDate } from "@/features/blog/utils/format-post-date";
 import { getBlogPostBySlug } from "@/features/blog/queries/get-blog-post-by-slug";
-import { getLatestPostSlugs } from "@/features/blog/queries/get-latest-post-slugs";
 
 type Params = Promise<{ locale: Locale; slug: string }>;
-
-/**
- * Prerenders only the most recent posts, so build time stays flat as the
- * archive grows; anything older renders on first request via `dynamicParams`.
- *
- * Cache Components rejects an empty array, and a blog with no posts yet is a
- * real state, so a slug that resolves to 404 stands in for that case.
- */
-const NO_POSTS_PLACEHOLDER_SLUG = "no-posts-yet";
-
-export async function generateStaticParams({
-  params,
-}: {
-  params: { locale: string };
-}) {
-  const slugs = await getLatestPostSlugs(params.locale as Locale);
-
-  if (slugs.length === 0) {
-    return [{ slug: NO_POSTS_PLACEHOLDER_SLUG }];
-  }
-
-  return slugs.map((slug) => ({ slug }));
-}
 
 export async function generateMetadata({
   params,
@@ -70,9 +46,19 @@ export async function generateMetadata({
 }
 
 /*
- * The slug is runtime data, so under Cache Components it has to resolve inside a
- * Suspense boundary — otherwise it blocks the route's shell from prerendering
- * for every slug not covered by generateStaticParams.
+ * No `generateStaticParams`: no post is prerendered at build time. The archive
+ * is expected to grow, and build work spent on posts that may never be
+ * requested is wasted — it would also tie the build to database availability.
+ *
+ * With `cacheComponents` and `partialPrefetching`, omitting it makes every
+ * locale's route a partial prerender: a visitor gets the App Shell — the
+ * `PostSkeleton` below — immediately, the post streams in, and the rendered
+ * result is cached so the next visitor gets it statically. A `<Link>` entering
+ * the viewport on the listing page starts that upgrade before the click.
+ *
+ * The slug is runtime data, so it has to resolve inside a Suspense boundary.
+ * Awaiting `params` above the boundary would tie the shell to one URL and
+ * defeat the whole arrangement.
  */
 export default function BlogPost({ params }: { params: Params }) {
   return (

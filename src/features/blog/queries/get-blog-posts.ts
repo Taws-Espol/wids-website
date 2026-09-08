@@ -1,6 +1,6 @@
 import "server-only";
 
-import { cacheTag } from "next/cache";
+import { cacheLife, cacheTag } from "next/cache";
 import config from "@payload-config";
 import { getPayload } from "payload";
 
@@ -14,6 +14,7 @@ const MAX_POSTS = 50;
 
 export async function getBlogPosts(locale: Locale) {
   "use cache";
+  cacheLife("content");
   // depth 1 populates coverImage, so a media edit has to invalidate this too.
   cacheTag(POSTS_TAG, MEDIA_TAG);
 
