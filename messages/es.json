@@ -29,6 +29,16 @@
         "x": "X",
         "linkedin": "LinkedIn"
       }
+    },
+    "not-found": {
+      "title": "Página no encontrada",
+      "description": "El enlace que seguiste no existe o el contenido ya no está disponible.",
+      "cta": "Volver al inicio"
+    },
+    "error": {
+      "title": "Algo salió mal",
+      "description": "No pudimos cargar esta página. Puedes intentarlo de nuevo.",
+      "cta": "Intentar de nuevo"
     }
   },
   "features": {
