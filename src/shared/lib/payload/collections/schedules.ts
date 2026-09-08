@@ -1,6 +1,6 @@
 import type { CollectionConfig, PayloadRequest } from "payload";
 import { SCHEDULES_TAG } from "../../../constants/cache-tags.ts";
-import { revalidateCache } from "../../../utils/revalidate-cache.ts";
+import { createRevalidateHooks } from "../utils/create-revalidate-hooks.ts";
 import { SCHEDULE_TYPES } from "../constants/schedule-types.ts";
 import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
 
@@ -153,11 +153,5 @@ export const Schedules: CollectionConfig = {
       required: true,
     },
   ],
-  hooks: {
-    afterChange: [
-      async ({ req }) => {
-        await revalidateCache({ req, source: "schedules", tag: SCHEDULES_TAG });
-      },
-    ],
-  },
+  hooks: createRevalidateHooks({ source: "schedules", tag: SCHEDULES_TAG }),
 };

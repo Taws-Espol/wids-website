@@ -1,6 +1,6 @@
 import "server-only";
 
-import { cacheTag } from "next/cache";
+import { cacheLife, cacheTag } from "next/cache";
 import config from "@payload-config";
 import { getPayload } from "payload";
 
@@ -15,6 +15,7 @@ import type { Locale } from "@/shared/lib/next-intl/types";
 
 export async function getConferencePageData(locale: Locale) {
   "use cache";
+  cacheLife("content");
   cacheTag(EDITIONS_TAG, EVENTS_TAG, MEDIA_TAG, SCHEDULES_TAG, SPEAKERS_TAG);
 
   const payload = await getPayload({ config });

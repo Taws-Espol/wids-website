@@ -1,6 +1,6 @@
 import "server-only";
 
-import { cacheTag } from "next/cache";
+import { cacheLife, cacheTag } from "next/cache";
 import config from "@payload-config";
 import { getPayload } from "payload";
 
@@ -9,6 +9,7 @@ import type { Locale } from "@/shared/lib/next-intl/types";
 
 export async function getTermsAndConditionsPageData(locale: Locale) {
   "use cache";
+  cacheLife("content");
   cacheTag(TERMS_AND_CONDITIONS_TAG);
 
   const payload = await getPayload({ config });
