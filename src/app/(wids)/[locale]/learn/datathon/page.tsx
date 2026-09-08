@@ -17,6 +17,8 @@ import {
 import type { Locale } from "@/shared/lib/next-intl/types";
 import type { Speaker } from "@/shared/lib/payload/types/payload";
 
+import { JsonLd } from "@/shared/components/json-ld";
+import { getEventJsonLd } from "@/features/landing/utils/get-event-json-ld";
 import { BreadcrumbBanner } from "@/features/landing/components/breadcrumb-banner";
 import { Stepper } from "@/features/landing/components/stepper";
 import { PersonCard } from "@/features/landing/components/person-card";
@@ -37,6 +39,10 @@ export default async function Datathon({
 
   return (
     <main className="flex flex-col gap-20 px-4 pb-20 md:px-4 lg:px-8 xl:px-42">
+      {/* Only when the CMS has an event: an Event block with no date or
+          venue is worse than none. */}
+      {event && <JsonLd data={getEventJsonLd(event)} />}
+
       <BreadcrumbBanner
         title={t("title")}
         backLinkHref="/learn"
