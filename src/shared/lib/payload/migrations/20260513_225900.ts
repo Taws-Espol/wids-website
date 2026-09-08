@@ -94,9 +94,13 @@ export async function down({
   DROP TABLE "datathon_registrations_individuals" CASCADE;
   DROP TABLE "terms_and_conditions" CASCADE;
   DROP TABLE "terms_and_conditions_locales" CASCADE;
-  ALTER TABLE "payload_locked_documents_rels" DROP CONSTRAINT "payload_locked_documents_rels_datathon_registrations_indi_fk";
-  
-  DROP INDEX "payload_locked_documents_rels_datathon_registrations_ind_idx";
+  -- IF EXISTS because the "DROP TABLE ... CASCADE" above already removes this
+  -- foreign key. Without it the rollback fails with
+  -- "constraint ... does not exist". Same generated-migration bug as the posts
+  -- migration; migrate:create does not account for the cascade.
+  ALTER TABLE "payload_locked_documents_rels" DROP CONSTRAINT IF EXISTS "payload_locked_documents_rels_datathon_registrations_indi_fk";
+
+  DROP INDEX IF EXISTS "payload_locked_documents_rels_datathon_registrations_ind_idx";
   ALTER TABLE "users" ADD COLUMN "_verified" boolean;
   ALTER TABLE "users" ADD COLUMN "_verificationtoken" varchar;
   ALTER TABLE "datathon_registrations" ADD COLUMN "bank_voucher_id" integer NOT NULL;
