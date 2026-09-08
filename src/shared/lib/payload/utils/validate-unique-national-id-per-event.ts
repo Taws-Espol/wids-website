@@ -2,7 +2,7 @@ import type { TextFieldValidation } from "payload";
 
 import { DATATHON_REGISTRATION_ERROR_CODES } from "@/shared/constants/datathon-registration-error-codes";
 
-import { createUniquePerEventValidator } from "./create-unique-per-event-validator";
+import { createUniquePerEventValidator } from "@/shared/lib/payload/utils/create-unique-per-event-validator";
 
 export const validateUniqueNationalIdPerEvent: TextFieldValidation =
   createUniquePerEventValidator({

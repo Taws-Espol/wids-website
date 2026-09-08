@@ -3,7 +3,7 @@ import type {
   CollectionAfterDeleteHook,
 } from "payload";
 
-import { revalidateCache } from "../../../utils/revalidate-cache.ts";
+import { revalidateCache } from "@/shared/utils/revalidate-cache";
 
 type Options = {
   /** Names the collection in log messages. */

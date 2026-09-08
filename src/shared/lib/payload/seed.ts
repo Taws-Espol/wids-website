@@ -2,7 +2,7 @@ import payloadConfig from "@payload-config";
 // import { readFile } from "node:fs/promises";
 import { basename /* extname, resolve */ } from "node:path";
 import { getPayload, type Payload } from "payload";
-import { getAppUrl } from "../../utils/get-app-url.ts";
+import { getAppUrl } from "@/shared/utils/get-app-url";
 import type {
   Ambassador,
   Edition,
@@ -10,7 +10,7 @@ import type {
   Schedule,
   Speaker,
   Sponsor,
-} from "./types/payload.ts";
+} from "@/shared/lib/payload/types/payload";
 
 // const LOCAL_IMAGE_MIME_TYPES: Record<string, string> = {
 //   ".jpeg": "image/jpeg",

@@ -110,13 +110,19 @@ async function PostArticle({ params }: { params: Params }) {
           </TypographyParagraph>
         </header>
 
+        {/*
+          The cover is this page's LCP element. `priority` was deprecated in
+          Next 16, and the docs recommend this `loading`/`fetchPriority` pair
+          over `preload` unless the image is the only LCP candidate.
+        */}
         {coverImage?.url && (
           <div className="relative aspect-[3/2] w-full overflow-hidden rounded-[20px]">
             <Image
               src={coverImage.url}
               alt={coverImage.alt ?? ""}
               fill
-              priority
+              loading="eager"
+              fetchPriority="high"
               sizes="(max-width: 768px) 100vw, 900px"
               className="object-cover"
             />

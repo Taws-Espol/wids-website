@@ -1,9 +1,9 @@
 import type { CollectionAfterChangeHook, TypedJobs } from "payload";
 
-import { routing } from "../../next-intl/routing.ts";
-import type { Locale } from "../../next-intl/types.ts";
-import { tryCatch } from "../../../utils/try-catch.ts";
-import { getRelationshipId } from "./get-relationship-id.ts";
+import { routing } from "@/shared/lib/next-intl/routing";
+import type { Locale } from "@/shared/lib/next-intl/types";
+import { tryCatch } from "@/shared/utils/try-catch";
+import { getRelationshipId } from "@/shared/lib/payload/utils/get-relationship-id";
 
 /** The reminder is scheduled a day before the event, plus a second of slack. */
 const ONE_DAY_IN_MILLISECONDS = 24 * 60 * 60 * 1000 + 1000;

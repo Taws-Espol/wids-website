@@ -143,3 +143,24 @@ Run these before opening a PR. Use pnpm scripts — never `npx`, which can resol
 | `pnpm typecheck` | `tsc --noEmit`                        |
 | `pnpm test`      | vitest, once, non-watching            |
 | `pnpm build`     | the production build (needs Postgres) |
+
+### When you touch `src/shared/lib/payload/`
+
+Also run:
+
+```bash
+pnpm payload seed
+```
+
+Nothing above covers it. The `bin` scripts declared in `payload.config.ts` —
+`seed` and `queue-attendance-confirmations` — are loaded by the Payload CLI from
+`scriptPath`, outside both the Next bundler and `payload migrate`. A module that
+resolves everywhere else can still fail there, and the failure is silent until
+somebody seeds.
+
+That folder used relative imports with explicit `.ts` extensions for exactly
+this reason: the `@/` alias used to break the seed. It no longer does — both bin
+scripts were verified against Payload 3.88 and Next 16.3.4 — so the folder now
+uses the alias like the rest of the codebase. If the seed ever starts failing to
+resolve a module after a Payload or Next upgrade, this is the first place to
+look.

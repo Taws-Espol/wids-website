@@ -1,6 +1,6 @@
 import type { ArrayFieldValidation } from "payload";
 
-import type { SEX_OPTIONS } from "../constants/registrations.ts";
+import type { SEX_OPTIONS } from "@/shared/lib/payload/constants/registrations";
 
 type DatathonSiblingData = {
   memberCount?: number | null;

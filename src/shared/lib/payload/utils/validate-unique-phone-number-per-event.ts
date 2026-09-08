@@ -2,7 +2,7 @@ import type { TextFieldValidation } from "payload";
 
 import { CONFERENCE_REGISTRATION_ERROR_CODES } from "@/shared/constants/conference-registration-error-codes";
 
-import { createUniquePerEventValidator } from "./create-unique-per-event-validator";
+import { createUniquePerEventValidator } from "@/shared/lib/payload/utils/create-unique-per-event-validator";
 
 export const validateUniquePhoneNumberPerEvent: TextFieldValidation =
   createUniquePerEventValidator({
