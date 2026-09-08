@@ -24,7 +24,7 @@ export default async function Blog({
     <main className="flex flex-col gap-20 px-4 py-20 md:px-4 lg:px-8 xl:px-42">
       <HeroSection
         title={t("title")}
-        src="https://cdn.taws.espol.edu.ec/wids/blog-hero.webp"
+        src="/api/media/file/blog-hero.webp"
         alt="Blog hero"
         color="yellow"
       />
@@ -38,7 +38,7 @@ export default async function Blog({
 
         <div className="relative aspect-square w-full md:w-1/2">
           <Image
-            src="https://cdn.taws.espol.edu.ec/wids/blog-collage.webp"
+            src="/api/media/file/blog-collage.webp"
             alt="Blog collage"
             fill
             sizes="(max-width: 768px) calc(100vw - 2rem), 50vw"

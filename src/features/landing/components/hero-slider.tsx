@@ -25,11 +25,11 @@ export function HeroSlider({ events }: Props) {
             const isFirst = index === 0;
             const imageSrc =
               event.type == "conference"
-                ? "https://cdn.taws.espol.edu.ec/wids/conference-hero.webp"
+                ? "/api/media/file/conference-hero.webp"
                 : event.type == "nextgen"
-                  ? "https://cdn.taws.espol.edu.ec/wids/nextgen-hero.webp"
+                  ? "/api/media/file/nextgen-hero.webp"
                   : event.type == "datathon"
-                    ? "https://cdn.taws.espol.edu.ec/wids/datathon-hero.webp"
+                    ? "/api/media/file/datathon-hero.webp"
                     : "";
             const imageAlt =
               event.type == "conference"

@@ -63,7 +63,7 @@ export default async function Datathon({
 
           <div className="relative aspect-square w-full md:w-1/2">
             <Image
-              src="https://cdn.taws.espol.edu.ec/wids/datathon-collage.webp"
+              src="/api/media/file/datathon-collage.webp"
               alt="Datathon collage"
               fill
               loading="eager"
