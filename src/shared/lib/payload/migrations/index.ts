@@ -6,6 +6,7 @@ import * as migration_20260724_020828_add_conference_attendance_confirmation fro
 import * as migration_20260724_035754_add_attendance_confirmation_job_slug from "./20260724_035754_add_attendance_confirmation_job_slug";
 import * as migration_20260725_012713_add_posts_collection from "./20260725_012713_add_posts_collection";
 import * as migration_20260907_120000_relative_media_urls from "./20260907_120000_relative_media_urls";
+import * as migration_20260908_060000_drop_media_prefix from "./20260908_060000_drop_media_prefix";
 
 export const migrations = [
   {
@@ -47,5 +48,10 @@ export const migrations = [
     up: migration_20260907_120000_relative_media_urls.up,
     down: migration_20260907_120000_relative_media_urls.down,
     name: "20260907_120000_relative_media_urls",
+  },
+  {
+    up: migration_20260908_060000_drop_media_prefix.up,
+    down: migration_20260908_060000_drop_media_prefix.down,
+    name: "20260908_060000_drop_media_prefix",
   },
 ];
