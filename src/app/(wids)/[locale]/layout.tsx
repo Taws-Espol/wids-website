@@ -3,11 +3,13 @@ import Script from "next/script";
 import { notFound } from "next/navigation";
 import { Barlow, Barlow_Condensed } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { Toaster } from "@/shared/components/ui/sonner";
 import { Footer } from "@/shared/components/footer";
 import { Header } from "@/shared/components/header";
+import { JsonLd } from "@/shared/components/json-ld";
+import { getOrganizationJsonLd } from "@/shared/lib/seo/get-organization-json-ld";
 import { routing } from "@/shared/lib/next-intl/routing";
 import { UMAMI_TRACKED_DOMAINS } from "@/shared/lib/umami/umami-domains";
 import { cn } from "@/shared/utils/cn";
@@ -63,6 +65,8 @@ export default async function RootLayout({
 
   setRequestLocale(locale);
 
+  const t = await getTranslations("shared.footer");
+
   return (
     <html
       lang={locale}
@@ -81,6 +85,10 @@ export default async function RootLayout({
         />
       </head>
       <body>
+        {/* Site-wide identity: name, logo and the social profiles that let a
+            search engine tie this site to accounts it already knows. */}
+        <JsonLd data={getOrganizationJsonLd(t("description"))} />
+
         <NextIntlClientProvider>
           <Header />
           {children}
