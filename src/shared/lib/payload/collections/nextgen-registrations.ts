@@ -1,11 +1,11 @@
 import type { CollectionConfig } from "payload";
 
-import { HEARD_ABOUT_OPTIONS } from "../constants/registrations.ts";
-import { createEventTypeValidationHook } from "../utils/create-event-type-validation.ts";
-import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
-import { CONFERENCE_REGISTRATION_ERROR_CODES } from "../../../constants/conference-registration-error-codes.ts";
-import { validateUniqueEmailPerEvent } from "../utils/validate-unique-email-per-event.ts";
-import { validateUniquePhoneNumberPerEvent } from "../utils/validate-unique-phone-number-per-event.ts";
+import { HEARD_ABOUT_OPTIONS } from "@/shared/lib/payload/constants/registrations";
+import { createEventTypeValidationHook } from "@/shared/lib/payload/utils/create-event-type-validation";
+import { isAdminOrEditor } from "@/shared/lib/payload/utils/is-admin-or-editor";
+import { CONFERENCE_REGISTRATION_ERROR_CODES } from "@/shared/constants/conference-registration-error-codes";
+import { validateUniqueEmailPerEvent } from "@/shared/lib/payload/utils/validate-unique-email-per-event";
+import { validateUniquePhoneNumberPerEvent } from "@/shared/lib/payload/utils/validate-unique-phone-number-per-event";
 
 export const NextgenRegistrations: CollectionConfig = {
   slug: "nextgen-registrations",

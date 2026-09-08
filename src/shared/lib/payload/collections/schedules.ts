@@ -1,8 +1,8 @@
 import type { CollectionConfig, PayloadRequest } from "payload";
-import { SCHEDULES_TAG } from "../../../constants/cache-tags.ts";
-import { createRevalidateHooks } from "../utils/create-revalidate-hooks.ts";
-import { SCHEDULE_TYPES } from "../constants/schedule-types.ts";
-import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
+import { SCHEDULES_TAG } from "@/shared/constants/cache-tags";
+import { createRevalidateHooks } from "@/shared/lib/payload/utils/create-revalidate-hooks";
+import { SCHEDULE_TYPES } from "@/shared/lib/payload/constants/schedule-types";
+import { isAdminOrEditor } from "@/shared/lib/payload/utils/is-admin-or-editor";
 
 export const Schedules: CollectionConfig = {
   slug: "schedules",

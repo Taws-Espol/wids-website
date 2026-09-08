@@ -1,8 +1,8 @@
 import type { CollectionConfig } from "payload";
-import { SPONSORS_TAG } from "../../../constants/cache-tags.ts";
-import { createRevalidateHooks } from "../utils/create-revalidate-hooks.ts";
-import { SPONSOR_TIERS } from "../constants/sponsor-tiers.ts";
-import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
+import { SPONSORS_TAG } from "@/shared/constants/cache-tags";
+import { createRevalidateHooks } from "@/shared/lib/payload/utils/create-revalidate-hooks";
+import { SPONSOR_TIERS } from "@/shared/lib/payload/constants/sponsor-tiers";
+import { isAdminOrEditor } from "@/shared/lib/payload/utils/is-admin-or-editor";
 
 export const Sponsors: CollectionConfig = {
   slug: "sponsors",

@@ -1,7 +1,7 @@
 import type { CollectionConfig } from "payload";
-import { SPEAKERS_TAG } from "../../../constants/cache-tags.ts";
-import { createRevalidateHooks } from "../utils/create-revalidate-hooks.ts";
-import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
+import { SPEAKERS_TAG } from "@/shared/constants/cache-tags";
+import { createRevalidateHooks } from "@/shared/lib/payload/utils/create-revalidate-hooks";
+import { isAdminOrEditor } from "@/shared/lib/payload/utils/is-admin-or-editor";
 
 export const Speakers: CollectionConfig = {
   slug: "speakers",

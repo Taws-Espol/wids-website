@@ -1,8 +1,8 @@
 import type { CollectionConfig } from "payload";
-import { EVENTS_TAG } from "../../../constants/cache-tags.ts";
-import { createRevalidateHooks } from "../utils/create-revalidate-hooks.ts";
-import { EVENT_TYPES } from "../constants/event-types.ts";
-import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
+import { EVENTS_TAG } from "@/shared/constants/cache-tags";
+import { createRevalidateHooks } from "@/shared/lib/payload/utils/create-revalidate-hooks";
+import { EVENT_TYPES } from "@/shared/lib/payload/constants/event-types";
+import { isAdminOrEditor } from "@/shared/lib/payload/utils/is-admin-or-editor";
 
 export const Events: CollectionConfig = {
   slug: "events",

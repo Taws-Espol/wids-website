@@ -1,6 +1,6 @@
 import type { CollectionBeforeValidateHook } from "payload";
 
-import type { Event } from "../types/event.ts";
+import type { Event } from "@/shared/lib/payload/types/event";
 
 const extractEventId = (value: unknown): number | null => {
   if (typeof value === "number") {

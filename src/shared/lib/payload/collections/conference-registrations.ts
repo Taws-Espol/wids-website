@@ -4,21 +4,21 @@ import {
   ATTENDANCE_MODE_OPTIONS,
   HEARD_ABOUT_OPTIONS,
   PARTICIPANT_TYPE_OPTIONS,
-} from "../constants/registrations.ts";
+} from "@/shared/lib/payload/constants/registrations";
 import {
   CONFERENCE_REGISTRATION_CONFIRMATION_TASK_SLUG,
   CONFERENCE_REGISTRATION_REMINDER_TASK_SLUG,
-} from "../constants/slugs.ts";
-import { CONFERENCE_REGISTRATION_ERROR_CODES } from "../../../constants/conference-registration-error-codes.ts";
-import { createEventTypeValidationHook } from "../utils/create-event-type-validation.ts";
-import { createRegistrationEmailQueueHook } from "../utils/create-registration-email-queue-hook.ts";
-import { generateAttendanceToken } from "../utils/generate-attendance-token.ts";
-import { isAdminFieldAccess } from "../utils/is-admin-field-access.ts";
-import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
-import { validateProfessionalField } from "../utils/validate-professional-field.ts";
-import { validateStudentField } from "../utils/validate-student-field.ts";
-import { validateUniqueEmailPerEvent } from "../utils/validate-unique-email-per-event.ts";
-import { validateUniquePhoneNumberPerEvent } from "../utils/validate-unique-phone-number-per-event.ts";
+} from "@/shared/lib/payload/constants/slugs";
+import { CONFERENCE_REGISTRATION_ERROR_CODES } from "@/shared/constants/conference-registration-error-codes";
+import { createEventTypeValidationHook } from "@/shared/lib/payload/utils/create-event-type-validation";
+import { createRegistrationEmailQueueHook } from "@/shared/lib/payload/utils/create-registration-email-queue-hook";
+import { generateAttendanceToken } from "@/shared/lib/payload/utils/generate-attendance-token";
+import { isAdminFieldAccess } from "@/shared/lib/payload/utils/is-admin-field-access";
+import { isAdminOrEditor } from "@/shared/lib/payload/utils/is-admin-or-editor";
+import { validateProfessionalField } from "@/shared/lib/payload/utils/validate-professional-field";
+import { validateStudentField } from "@/shared/lib/payload/utils/validate-student-field";
+import { validateUniqueEmailPerEvent } from "@/shared/lib/payload/utils/validate-unique-email-per-event";
+import { validateUniquePhoneNumberPerEvent } from "@/shared/lib/payload/utils/validate-unique-phone-number-per-event";
 
 export const ConferenceRegistrations: CollectionConfig = {
   slug: "conference-registrations",

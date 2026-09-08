@@ -1,13 +1,13 @@
 // import { render } from "react-email";
 import type { CollectionConfig } from "payload";
 
-// import ForgotPassword from "../../react-email/forgot-password.tsx";
-// import VerifyEmail from "../../react-email/verify-email.tsx";
-import { checkRole } from "../utils/check-role.ts";
-import { ensureFirstUserIsAdmin } from "../utils/ensure-first-user-is-admin.ts";
-import { isAdmin } from "../utils/is-admin.ts";
-import { isAdminFieldAccess } from "../utils/is-admin-field-access.ts";
-import { isAdminOrSelf } from "../utils/is-admin-or-self.ts";
+// import ForgotPassword from "@/shared/lib/react-email/forgot-password";
+// import VerifyEmail from "@/shared/lib/react-email/verify-email";
+import { checkRole } from "@/shared/lib/payload/utils/check-role";
+import { ensureFirstUserIsAdmin } from "@/shared/lib/payload/utils/ensure-first-user-is-admin";
+import { isAdmin } from "@/shared/lib/payload/utils/is-admin";
+import { isAdminFieldAccess } from "@/shared/lib/payload/utils/is-admin-field-access";
+import { isAdminOrSelf } from "@/shared/lib/payload/utils/is-admin-or-self";
 
 export const Users: CollectionConfig = {
   slug: "users",

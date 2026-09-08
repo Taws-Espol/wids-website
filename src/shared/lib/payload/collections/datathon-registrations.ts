@@ -6,19 +6,19 @@ import {
   COLLEGE_YEAR_OPTIONS,
   HEARD_ABOUT_OPTIONS,
   SEX_OPTIONS,
-} from "../constants/registrations.ts";
+} from "@/shared/lib/payload/constants/registrations";
 import {
   DATATHON_REGISTRATION_CONFIRMATION_TASK_SLUG,
   DATATHON_REGISTRATION_REMINDER_TASK_SLUG,
-} from "../constants/slugs.ts";
-import { createEventTypeValidationHook } from "../utils/create-event-type-validation.ts";
-import { createRegistrationEmailQueueHook } from "../utils/create-registration-email-queue-hook.ts";
-import { isAdminOrEditor } from "../utils/is-admin-or-editor.ts";
-import { validateDatathonTeams } from "../utils/validate-datathon-teams.ts";
-import { validateUniqueEmailPerEvent } from "../utils/validate-unique-email-per-event.ts";
-import { validateUniquePhoneNumberPerEvent } from "../utils/validate-unique-phone-number-per-event.ts";
-import { validateUniqueNationalIdPerEvent } from "../utils/validate-unique-national-id-per-event.ts";
-import { validateUniqueTeamNamePerEvent } from "../utils/validate-unique-team-name-per-event.ts";
+} from "@/shared/lib/payload/constants/slugs";
+import { createEventTypeValidationHook } from "@/shared/lib/payload/utils/create-event-type-validation";
+import { createRegistrationEmailQueueHook } from "@/shared/lib/payload/utils/create-registration-email-queue-hook";
+import { isAdminOrEditor } from "@/shared/lib/payload/utils/is-admin-or-editor";
+import { validateDatathonTeams } from "@/shared/lib/payload/utils/validate-datathon-teams";
+import { validateUniqueEmailPerEvent } from "@/shared/lib/payload/utils/validate-unique-email-per-event";
+import { validateUniquePhoneNumberPerEvent } from "@/shared/lib/payload/utils/validate-unique-phone-number-per-event";
+import { validateUniqueNationalIdPerEvent } from "@/shared/lib/payload/utils/validate-unique-national-id-per-event";
+import { validateUniqueTeamNamePerEvent } from "@/shared/lib/payload/utils/validate-unique-team-name-per-event";
 
 export const DatathonRegistrations: CollectionConfig = {
   slug: "datathon-registrations",

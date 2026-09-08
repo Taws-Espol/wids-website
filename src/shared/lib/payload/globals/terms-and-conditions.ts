@@ -1,8 +1,8 @@
 import type { GlobalConfig } from "payload";
 
-import { isAdminOrEditor } from "../utils/is-admin-or-editor";
-import { TERMS_AND_CONDITIONS_TAG } from "../../../constants/cache-tags";
-import { revalidateCache } from "../../../utils/revalidate-cache";
+import { isAdminOrEditor } from "@/shared/lib/payload/utils/is-admin-or-editor";
+import { TERMS_AND_CONDITIONS_TAG } from "@/shared/constants/cache-tags";
+import { revalidateCache } from "@/shared/utils/revalidate-cache";
 
 export const TermsAndConditions: GlobalConfig = {
   slug: "terms-and-conditions",
