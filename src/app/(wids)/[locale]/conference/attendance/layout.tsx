@@ -14,10 +14,14 @@ export async function generateMetadata({
     en: {
       title: "WiDS Guayaquil | Confirm your attendance",
       robots: { index: false, follow: false },
+      // Clears the canonical inherited from the conference layout, which would
+      // otherwise point this page at /conference.
+      alternates: { canonical: null },
     },
     es: {
       title: "WiDS Guayaquil | Confirma tu asistencia",
       robots: { index: false, follow: false },
+      alternates: { canonical: null },
     },
   };
 

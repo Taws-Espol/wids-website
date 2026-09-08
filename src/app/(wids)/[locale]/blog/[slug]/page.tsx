@@ -9,6 +9,7 @@ import { TypographyH1 } from "@/shared/components/ui/typography-h1";
 import { TypographyParagraph } from "@/shared/components/ui/typography-paragraph";
 import { Link } from "@/shared/lib/next-intl/navigation";
 import type { Locale } from "@/shared/lib/next-intl/types";
+import { getAppUrl } from "@/shared/utils/get-app-url";
 
 import { PostBody } from "@/features/blog/components/post-body";
 import { PostSkeleton } from "@/features/blog/components/post-skeleton";
@@ -35,6 +36,19 @@ export async function generateMetadata({
   return {
     title: `WiDS Guayaquil | ${post.title}`,
     description: post.excerpt,
+    alternates: {
+      /*
+       * Canonical only, no `languages`. Slugs are localized, so an hreflang
+       * pair needs the other locale's slug, and this page has no query that
+       * resolves it. Emitting a pair built from *this* slug would point at a
+       * URL that does not exist — worse than emitting nothing.
+       *
+       * Built by hand rather than with next-intl's `getPathname`, which drops
+       * the alternates during prerendering under `cacheComponents` — see
+       * `get-alternates-metadata.ts`.
+       */
+      canonical: new URL(`/${locale}/blog/${slug}`, getAppUrl()).toString(),
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,

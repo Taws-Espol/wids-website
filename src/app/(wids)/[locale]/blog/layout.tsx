@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { getAlternatesMetadata } from "@/shared/lib/next-intl/get-alternates-metadata";
 import type { Locale } from "@/shared/lib/next-intl/types";
 import { setRequestLocale } from "next-intl/server";
 
@@ -23,7 +24,10 @@ export async function generateMetadata({
     },
   };
 
-  return metadata[locale];
+  return {
+    ...metadata[locale],
+    alternates: getAlternatesMetadata("/blog", locale),
+  };
 }
 
 export default async function Layout({
